@@ -1,0 +1,82 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ---------------< com.pet.platform:pet-platform-backend >----------------
+[INFO] Building pet-platform-backend 0.0.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- clean:3.5.0:clean (default-clean) @ pet-platform-backend ---
+[INFO] Deleting /Users/kimwell/work/pet-platform/apps/backend/target
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ pet-platform-backend ---
+[INFO] Copying 4 resources from src/main/resources to target/classes
+[INFO] Copying 0 resource from src/main/resources to target/classes
+[INFO] 
+[INFO] --- compiler:3.14.1:compile (default-compile) @ pet-platform-backend ---
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 2 source files with javac [debug parameters release 21] to target/classes
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ pet-platform-backend ---
+[INFO] skip non existing resourceDirectory /Users/kimwell/work/pet-platform/apps/backend/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.14.1:testCompile (default-testCompile) @ pet-platform-backend ---
+[INFO] Recompiling the module because of changed dependency.
+[INFO] Compiling 1 source file with javac [debug parameters release 21] to target/test-classes
+[INFO] 
+[INFO] --- surefire:3.5.6:test (default-test) @ pet-platform-backend ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running com.pet.platform.ApplicationTest
+07:23:32.702 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.pet.platform.ApplicationTest]: ApplicationTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+07:23:32.775 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.pet.platform.Application for test class com.pet.platform.ApplicationTest
+07:23:32.832 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.pet.platform.ApplicationTest]: ApplicationTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+07:23:32.833 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.pet.platform.Application for test class com.pet.platform.ApplicationTest
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v4.0.8)
+
+2026-10-08T07:23:33.113+08:00  INFO 99037 --- [pet-platform-backend] [           main] com.pet.platform.ApplicationTest         : Starting ApplicationTest using Java 21.0.12.1 with PID 99037 (started by kimwell in /Users/kimwell/work/pet-platform/apps/backend)
+2026-10-08T07:23:33.114+08:00  INFO 99037 --- [pet-platform-backend] [           main] com.pet.platform.ApplicationTest         : The following 1 profile is active: "test"
+2026-10-08T07:23:33.559+08:00  INFO 99037 --- [pet-platform-backend] [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 0 (http)
+2026-10-08T07:23:33.569+08:00  INFO 99037 --- [pet-platform-backend] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-10-08T07:23:33.569+08:00  INFO 99037 --- [pet-platform-backend] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.24]
+2026-10-08T07:23:33.590+08:00  INFO 99037 --- [pet-platform-backend] [           main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 453 ms
+2026-10-08T07:23:33.792+08:00  INFO 99037 --- [pet-platform-backend] [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 65485 (http) with context path '/'
+2026-10-08T07:23:33.796+08:00  INFO 99037 --- [pet-platform-backend] [           main] com.pet.platform.ApplicationTest         : Started ApplicationTest in 0.93 seconds (process running for 1.635)
+2026-10-08T07:23:34.119+08:00  INFO 99037 --- [pet-platform-backend] [1-auto-1-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-10-08T07:23:34.120+08:00  INFO 99037 --- [pet-platform-backend] [1-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-10-08T07:23:34.121+08:00  INFO 99037 --- [pet-platform-backend] [1-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.592 s -- in com.pet.platform.ApplicationTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] 
+[INFO] --- jar:3.4.2:jar (default-jar) @ pet-platform-backend ---
+[INFO] Building jar: /Users/kimwell/work/pet-platform/apps/backend/target/pet-platform-backend-0.0.0-SNAPSHOT.jar
+[INFO] 
+[INFO] --- spring-boot:4.0.8:repackage (repackage) @ pet-platform-backend ---
+[INFO] Replacing main artifact /Users/kimwell/work/pet-platform/apps/backend/target/pet-platform-backend-0.0.0-SNAPSHOT.jar with repackaged archive, adding nested dependencies in BOOT-INF/.
+[INFO] The original artifact has been renamed to /Users/kimwell/work/pet-platform/apps/backend/target/pet-platform-backend-0.0.0-SNAPSHOT.jar.original
+[INFO] 
+[INFO] --- failsafe:3.5.6:integration-test (default) @ pet-platform-backend ---
+[INFO] 
+[INFO] --- failsafe:3.5.6:verify (default) @ pet-platform-backend ---
+[INFO] No tests to run.
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  4.517 s
+[INFO] Finished at: 2026-10-08T07:23:35+08:00
+[INFO] ------------------------------------------------------------------------
+OpenJDK 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended

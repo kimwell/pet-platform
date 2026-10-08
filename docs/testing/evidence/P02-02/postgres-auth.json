@@ -1,0 +1,27 @@
+{
+  "id": "postgres-auth",
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "command": [
+    "docker",
+    "compose",
+    "--env-file",
+    "/Users/kimwell/work/pet-platform/.local-data/p02-infra.env",
+    "-p",
+    "pet-platform-p02-validation",
+    "-f",
+    "/Users/kimwell/work/pet-platform/infra/local/docker-compose.yml",
+    "exec",
+    "-T",
+    "postgres",
+    "sh",
+    "-ec",
+    "PGPASSWORD=\"$POSTGRES_PASSWORD\" psql -h host.docker.internal -p 25432 -U \"$POSTGRES_USER\" -d \"$POSTGRES_DB\" -v ON_ERROR_STOP=1 -Atc \"SELECT current_database(), current_user, 1\""
+  ],
+  "exit_code": 0,
+  "expected_exit_code": 0,
+  "status": "PASS",
+  "started_at": "2026-10-08T07:30:04.147690+08:00",
+  "duration_seconds": 0.136,
+  "evidence": "postgres-auth.log",
+  "summary": "p02_fixture|p02_fixture|1\n"
+}

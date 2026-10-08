@@ -1,0 +1,4 @@
+
+> @pet/wechat-miniprogram@0.0.0 lint /Users/kimwell/work/pet-platform/apps/wechat-miniprogram
+> eslint miniprogram --max-warnings=0
+

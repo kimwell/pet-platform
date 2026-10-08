@@ -1,0 +1,55 @@
+{
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "command": [
+    "python3",
+    "/Users/kimwell/work/pet-platform/docs/testing/evidence/P02-02/runtime.py",
+    "start"
+  ],
+  "exit_code": 0,
+  "status": "PASS",
+  "checks": [
+    {
+      "url": "http://127.0.0.1:8080/",
+      "status": 404,
+      "content_type": "application/json",
+      "body": "{\"timestamp\":\"2026-10-07T23:25:13.498Z\",\"status\":404,\"error\":\"Not Found\",\"path\":\"/\"}"
+    },
+    {
+      "url": "http://127.0.0.1:8080/missing",
+      "status": 404,
+      "content_type": "application/json",
+      "body": "{\"timestamp\":\"2026-10-07T23:25:13.517Z\",\"status\":404,\"error\":\"Not Found\",\"path\":\"/missing\"}"
+    },
+    {
+      "url": "http://127.0.0.1:5173/",
+      "status": 200,
+      "content_type": "text/html",
+      "body": "<!doctype html>\n<html lang=\"zh-CN\">\n  <head>\n    <script type=\"module\">import { injectIntoGlobalHook } from \"/@react-refresh\";\ninjectIntoGlobalHook(window);\nwindow.$RefreshReg$ = () => {};\nwindow.$RefreshSig$ = () => (type) => type;</script>\n\n    <script type=\"module\" src=\"/@vite/client\"></script>\n\n    <meta charset=\"UTF-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <title>企业应用工程入口</title>\n  </head>\n  <body>\n    <div id=\"root\"></div>\n    <script type=\"module\" src=\"/src/main.tsx\"></script>\n  </body>\n</html>\n"
+    },
+    {
+      "url": "http://127.0.0.1:5173/missing/deep",
+      "status": 200,
+      "content_type": "text/html",
+      "body": "<!doctype html>\n<html lang=\"zh-CN\">\n  <head>\n    <script type=\"module\">import { injectIntoGlobalHook } from \"/@react-refresh\";\ninjectIntoGlobalHook(window);\nwindow.$RefreshReg$ = () => {};\nwindow.$RefreshSig$ = () => (type) => type;</script>\n\n    <script type=\"module\" src=\"/@vite/client\"></script>\n\n    <meta charset=\"UTF-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <title>企业应用工程入口</title>\n  </head>\n  <body>\n    <div id=\"root\"></div>\n    <script type=\"module\" src=\"/src/main.tsx\"></script>\n  </body>\n</html>\n"
+    },
+    {
+      "url": "http://127.0.0.1:5173/api/p02-02-missing",
+      "status": 404,
+      "content_type": "application/json",
+      "body": "{\"timestamp\":\"2026-10-07T23:25:13.725Z\",\"status\":404,\"error\":\"Not Found\",\"path\":\"/api/p02-02-missing\"}"
+    },
+    {
+      "url": "http://127.0.0.1:4173/",
+      "status": 200,
+      "content_type": "text/html",
+      "body": "<!doctype html>\n<html lang=\"zh-CN\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <title>企业应用工程入口</title>\n    <script type=\"module\" crossorigin src=\"/assets/index-D9gzWvXX.js\"></script>\n    <link rel=\"stylesheet\" crossorigin href=\"/assets/index-CNdMMY7y.css\">\n  </head>\n  <body>\n    <div id=\"root\"></div>\n  </body>\n</html>\n"
+    },
+    {
+      "url": "http://127.0.0.1:4173/missing/deep",
+      "status": 200,
+      "content_type": "text/html",
+      "body": "<!doctype html>\n<html lang=\"zh-CN\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <title>企业应用工程入口</title>\n    <script type=\"module\" crossorigin src=\"/assets/index-D9gzWvXX.js\"></script>\n    <link rel=\"stylesheet\" crossorigin href=\"/assets/index-CNdMMY7y.css\">\n  </head>\n  <body>\n    <div id=\"root\"></div>\n  </body>\n</html>\n"
+    }
+  ],
+  "proxy_boundary": "/api/p02-02-missing 真实透传后端 404，没有正式业务接口"
+}

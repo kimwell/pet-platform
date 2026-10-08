@@ -1,0 +1,12 @@
+[38;5;87m2026-10-07 23:23:43.253347+00:00 [notice] <0.64.0> SIGTERM received - shutting down[0m
+[38;5;87m2026-10-07 23:23:43.253347+00:00 [notice] <0.64.0> [0m
+[38;5;214m2026-10-07 23:23:43.256061+00:00 [warning] <0.819.0> HTTP listener registry could not find context rabbitmq_prometheus_tls[0m
+[38;5;214m2026-10-07 23:23:43.259346+00:00 [warning] <0.819.0> HTTP listener registry could not find context rabbitmq_management_tls[0m
+2026-10-07 23:23:43.266213+00:00 [info] <0.943.0> stopped TCP listener on [::]:5672[0m
+2026-10-07 23:23:43.267219+00:00 [info] <0.765.0> Virtual host '/' is stopping[0m
+2026-10-07 23:23:43.267352+00:00 [info] <0.1014.0> Closing all connections in vhost '/' on node 'rabbit@2ccb1a9559b8' because the vhost is stopping[0m
+2026-10-07 23:23:43.267453+00:00 [info] <0.778.0> Stopping message store for directory '/var/lib/rabbitmq/mnesia/rabbit@2ccb1a9559b8/msg_stores/vhosts/628WB79CIFDYO9LJI6DKMI09L/msg_store_persistent'[0m
+2026-10-07 23:23:43.272145+00:00 [info] <0.778.0> Message store for directory '/var/lib/rabbitmq/mnesia/rabbit@2ccb1a9559b8/msg_stores/vhosts/628WB79CIFDYO9LJI6DKMI09L/msg_store_persistent' is stopped[0m
+2026-10-07 23:23:43.272280+00:00 [info] <0.774.0> Stopping message store for directory '/var/lib/rabbitmq/mnesia/rabbit@2ccb1a9559b8/msg_stores/vhosts/628WB79CIFDYO9LJI6DKMI09L/msg_store_transient'[0m
+2026-10-07 23:23:43.275854+00:00 [info] <0.774.0> Message store for directory '/var/lib/rabbitmq/mnesia/rabbit@2ccb1a9559b8/msg_stores/vhosts/628WB79CIFDYO9LJI6DKMI09L/msg_store_transient' is stopped[0m
+[38;5;214m2026-10-07 23:23:43.284131+00:00 [warning] <0.533.0> RabbitMQ metadata store: worker exited with shutdown[0m

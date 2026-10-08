@@ -1,0 +1,12 @@
+{
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "command": [
+    "/Users/kimwell/Applications/WechatDevTools-2.02.2608080.app/Contents/MacOS/cli",
+    "--help"
+  ],
+  "started_at": "2026-10-08T08:06:12.308295+08:00",
+  "duration_seconds": 3.044,
+  "exit_code": 0,
+  "log": "target-cli-help.log",
+  "summary": "cli\n\nCommands:\n  cli cloud            CloudBase commands\n  cli open             Open IDE / IDE project\n  cli login            re-login IDE\n  cli islogin          #islogin-desc\n  cli preview          preview\n  cli auto-preview     Auto preview\n  cli upload           Upload mini program\n  cli build-npm        build NPM\n  cli auto             Enable automation\n  cli auto-replay      Enable automation\n  cli agent            Agent commands\n  cli reset-fileutils  #reset-fileutils-desc\n  cli close            Close project\n  cli quit             Quit IDE\n  cli cache            clean cache\n  cli engine           engine\n  cli open-other       Open other project\n  cli build-ipa        generate ipa\n  cli build-apk        genreate apk\n\nProject options:\n  --project    project path\n  --appid      miniprogram appid or 3rd platform appid. Ignored when --project\n               is provided\n  --ext-appid  miniprogram appid to be developed by 3rd platform. Ignored when\n               --project is provided\n\nOther global options:\n  --port         Optional. IDE HTTP server port. If IDE hasn't been launched, it\n                 will be launched and start HTTP server at <port>. If IDE has\n                 launched with a HTTP server of different port, you must quit\n                 IDE before re-run the command.                         [number]\n  --token        Optional. CLI access token configured in IDE Security Settings.\n                 It can also be set with the WECHAT_DEVTOOLS_CLI_TOKEN\n                 environment variable.                                  [string]\n  --lang         Optional. 'en' or 'zh'. Defaults to 'en'.\n  --debug        Optional. Turn on debug mode\n  --disable-gpu  Disable GPU Acceleration when launching IDE           [boolean]\n  -h, --help     Show help                                             [boolean]\n"
+}

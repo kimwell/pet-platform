@@ -1,0 +1,12 @@
+{
+  "url": "https://repo.maven.apache.org/maven2/cn/dev33/sa-token-core/1.46.0/sa-token-core-1.46.0-sources.jar",
+  "date": "2026-10-07",
+  "http_status": 200,
+  "sha256": "2d59b0f44c3062fb481adc923224ccde0491eda1502189a76e29da2846b08ba5",
+  "source_files": [
+    "cn/dev33/satoken/stp/StpLogic.java",
+    "cn/dev33/satoken/config/SaTokenConfig.java",
+    "cn/dev33/satoken/stp/parameter/SaLoginParameter.java"
+  ],
+  "result": "RESOLVED; 官方精确版本源码读取，不是安全集成运行验收"
+}

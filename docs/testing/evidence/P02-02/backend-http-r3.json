@@ -1,0 +1,23 @@
+{
+  "status": "PASS",
+  "exit_code": 0,
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "steps": [
+    "最终配置 Wrapper local 启动",
+    "实际 HTTP 根与未知路径 404"
+  ],
+  "checks": [
+    {
+      "url": "http://127.0.0.1:8080/",
+      "status": 404,
+      "content_type": "application/json",
+      "body": "{\"timestamp\":\"2026-10-07T23:37:06.707Z\",\"status\":404,\"error\":\"Not Found\",\"path\":\"/\"}"
+    },
+    {
+      "url": "http://127.0.0.1:8080/missing",
+      "status": 404,
+      "content_type": "application/json",
+      "body": "{\"timestamp\":\"2026-10-07T23:37:06.724Z\",\"status\":404,\"error\":\"Not Found\",\"path\":\"/missing\"}"
+    }
+  ]
+}

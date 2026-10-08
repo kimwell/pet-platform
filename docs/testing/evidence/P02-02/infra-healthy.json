@@ -1,0 +1,24 @@
+{
+  "id": "infra-healthy",
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "command": [
+    "docker",
+    "compose",
+    "--env-file",
+    "/Users/kimwell/work/pet-platform/.local-data/p02-infra.env",
+    "-p",
+    "pet-platform-p02-validation",
+    "-f",
+    "/Users/kimwell/work/pet-platform/infra/local/docker-compose.yml",
+    "ps",
+    "--format",
+    "json"
+  ],
+  "exit_code": 0,
+  "expected_exit_code": 0,
+  "status": "PASS",
+  "started_at": "2026-10-08T07:30:04.011398+08:00",
+  "duration_seconds": 0.06,
+  "evidence": "infra-healthy.log",
+  "summary": ".docker.compose.service=rabbitmq,com.docker.compose.version=5.1.1,desktop.docker.io/ports.scheme=v2\",\"LocalVolumes\":\"1\",\"Mounts\":\"pet-platform-p…\",\"Name\":\"pet-platform-p02-validation-rabbitmq-1\",\"Names\":\"pet-platform-p02-validation-rabbitmq-1\",\"Networks\":\"pet-platform-p02-validation_default\",\"Ports\":\"127.0.0.1:25672-\\u003e5672/tcp, 127.0.0.1:25673-\\u003e15672/tcp\",\"Project\":\"pet-platform-p02-validation\",\"Publishers\":[{\"URL\":\"127.0.0.1\",\"TargetPort\":5672,\"PublishedPort\":25672,\"Protocol\":\"tcp\"},{\"URL\":\"127.0.0.1\",\"TargetPort\":15672,\"PublishedPort\":25673,\"Protocol\":\"tcp\"}],\"RunningFor\":\"8 seconds ago\",\"Service\":\"rabbitmq\",\"Size\":\"0B\",\"State\":\"running\",\"Status\":\"Up 6 seconds (healthy)\"}\n{\"Command\":\"\\\"docker-entrypoint.s…\\\"\",\"CreatedAt\":\"2026-10-07 22:14:04 +0800 CST\",\"ExitCode\":0,\"Health\":\"healthy\",\"ID\":\"c32b316136a1\",\"Image\":\"redis:8.2.10-bookworm@sha256:47670742d7924adbcdb404d1288b6327815b23141969c0939b8e5d61f78c2634\",\"Labels\":\"com.docker.compose.project=pet-platform-p02-validation,com.docker.compose.project.config_files=/Users/kimwell/work/pet-platform/infra/local/docker-compose.yml,com.docker.compose.project.environment_file=/Users/kimwell/work/pet-platform/.local-data/p02-infra.env,com.docker.compose.version=5.1.1,desktop.docker.io/ports.scheme=v2,com.docker.compose.config-hash=a830fa6f50be0d93fbf4af63a95b3e5fc82ebd810339abec60795f4f438a0d72,com.docker.compose.container-number=1,com.docker.compose.depends_on=,com.docker.compose.project.working_dir=/Users/kimwell/work/pet-platform/infra/local,com.docker.compose.service=redis,desktop.docker.io/ports/6379/tcp=127.0.0.1:26379,com.docker.compose.image=sha256:24b9104084a234b37af6120cb58b2880262eab681ca8dc438f921f471f32f3f4,com.docker.compose.oneoff=False\",\"LocalVolumes\":\"1\",\"Mounts\":\"pet-platform-p…\",\"Name\":\"pet-platform-p02-validation-redis-1\",\"Names\":\"pet-platform-p02-validation-redis-1\",\"Networks\":\"pet-platform-p02-validation_default\",\"Ports\":\"127.0.0.1:26379-\\u003e6379/tcp\",\"Project\":\"pet-platform-p02-validation\",\"Publishers\":[{\"URL\":\"127.0.0.1\",\"TargetPort\":6379,\"PublishedPort\":26379,\"Protocol\":\"tcp\"}],\"RunningFor\":\"9 hours ago\",\"Service\":\"redis\",\"Size\":\"0B\",\"State\":\"running\",\"Status\":\"Up 13 seconds (healthy)\"}\n"
+}

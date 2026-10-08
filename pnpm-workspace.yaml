@@ -1,0 +1,7 @@
+packages:
+  - apps/admin-web
+  - apps/wechat-miniprogram
+  - packages/*
+# 仅允许 Vite/Vitest 已解析的 esbuild 安装脚本，不开放所有依赖脚本。
+onlyBuiltDependencies:
+  - esbuild

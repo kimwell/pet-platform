@@ -1,0 +1,19 @@
+{
+  "plist": {
+    "CFBundleIdentifier": "com.tencent.webplusdevtools",
+    "CFBundleShortVersionString": "2.01.2510260",
+    "CFBundleVersion": "4240.111"
+  },
+  "package": {
+    "version": "2.01.2510260",
+    "name": "微信开发者工具"
+  },
+  "path": "/Applications/wechatwebdevtools.app",
+  "cli_help_exit_code": 0,
+  "islogin_exit_code": 0,
+  "login": true,
+  "service_port": "127.0.0.1:18530",
+  "permission_for_supplied_appid": "NOT_VERIFIED；旧窗口标题/AppID不是本次授权证据",
+  "quit_exit_code": 0,
+  "reason_for_quit": "切换至独立安装的冻结目标工具；未改旧安装文件或运行其临时项目"
+}

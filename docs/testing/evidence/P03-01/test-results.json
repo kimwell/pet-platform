@@ -1,0 +1,26 @@
+[
+  {
+    "name": "com.pet.platform.ApplicationTest",
+    "tests": "2",
+    "failures": "0",
+    "errors": "0",
+    "skipped": "0",
+    "time": "0.409"
+  },
+  {
+    "name": "com.pet.platform.protocol.ApiProtocolTest",
+    "tests": "30",
+    "failures": "0",
+    "errors": "0",
+    "skipped": "0",
+    "time": "1.46"
+  },
+  {
+    "name": "com.pet.platform.protocol.ApiProtocolIT",
+    "tests": "2",
+    "failures": "0",
+    "errors": "0",
+    "skipped": "0",
+    "time": "1.417"
+  }
+]

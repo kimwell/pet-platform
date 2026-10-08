@@ -1,0 +1,31 @@
+{
+  "name": "@pet/admin-web",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "preview": "vite preview",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint src vite.config.ts dev-config.ts --max-warnings=0",
+    "test": "vitest run",
+    "build": "tsc --noEmit && vite build"
+  },
+  "dependencies": {
+    "react": "19.2.8",
+    "react-dom": "19.2.8",
+    "antd": "6.6.5",
+    "@tanstack/react-router": "1.170.41",
+    "@tanstack/react-query": "5.104.1",
+    "zustand": "5.0.15"
+  },
+  "devDependencies": {
+    "@types/node": "24.19.1",
+    "@types/react": "19.2.18",
+    "@types/react-dom": "19.2.7",
+    "@vitejs/plugin-react": "5.2.0",
+    "vite": "7.3.7",
+    "vitest": "4.1.11",
+    "@pet/api-contracts": "workspace:*"
+  }
+}

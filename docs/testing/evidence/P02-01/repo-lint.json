@@ -1,0 +1,18 @@
+{
+  "id": "repo-lint",
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "command": [
+    "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/tools/node-v24.21.0-darwin-arm64/bin/node",
+    "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/tools/pnpm/package/bin/pnpm.cjs",
+    "exec",
+    "eslint",
+    "scripts",
+    "eslint.config.mjs",
+    "--max-warnings=0"
+  ],
+  "exit_code": 0,
+  "status": "PASS",
+  "duration_seconds": 1.56,
+  "evidence": "repo-lint.log",
+  "summary": ""
+}

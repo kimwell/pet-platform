@@ -1,0 +1,12 @@
+{
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "command": [
+    "/Applications/wechatwebdevtools.app/Contents/MacOS/cli",
+    "--help"
+  ],
+  "started_at": "2026-10-08T08:05:41.504904+08:00",
+  "duration_seconds": 0.28,
+  "exit_code": 0,
+  "log": "old-cli-help.log",
+  "summary": "index.js\n\nCommands:\n  index.js cloud            CloudBase commands\n  index.js open             Open IDE / IDE project\n  index.js login            re-login IDE\n  index.js islogin          #islogin-desc\n  index.js preview          preview\n  index.js auto-preview     Auto preview\n  index.js upload           Upload mini program\n  index.js build-npm        build NPM\n  index.js auto             Enable automation\n  index.js auto-replay      Enable automation\n  index.js reset-fileutils  #reset-fileutils-desc\n  index.js close            Close project\n  index.js quit             Quit IDE\n  index.js cache            clean cache\n  index.js engine           engine\n  index.js open-other       Open other project\n  index.js build-ipa        generate ipa\n  index.js build-apk        genreate apk\n\nProject options:\n  --project    project path\n  --appid      miniprogram appid or 3rd platform appid. Ignored when --project\n               is provided\n  --ext-appid  miniprogram appid to be developed by 3rd platform. Ignored when\n               --project is provided\n\nOther global options:\n  --port         Optional. IDE HTTP server port. If IDE hasn't been launched, it\n                 will be launched and start HTTP server at <port>. If IDE has\n                 launched with a HTTP server of different port, you must quit\n                 IDE before re-run the command.                         [number]\n  --lang         Optional. 'en' or 'zh'. Defaults to 'en'.\n  --debug        Optional. Turn on debug mode\n  --disable-gpu  Disable GPU Acceleration when launching IDE           [boolean]\n  -h, --help     Show help                                             [boolean]\n"
+}

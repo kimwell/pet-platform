@@ -1,0 +1,15 @@
+{
+  "id": "mini-offline-npm",
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "command": [
+    "node",
+    "docs/testing/evidence/P02-01/pack-api.cjs"
+  ],
+  "exit_code": 0,
+  "expected_exit_code": 0,
+  "status": "PASS",
+  "started_at": "2026-10-08T07:25:10.919556+08:00",
+  "duration_seconds": 2.068,
+  "evidence": "mini-offline-npm.log",
+  "summary": "[miniprogram-builder] initservices CI\n{\"miniProgramPackNum\":1,\"otherNpmPackNum\":0,\"warnList\":[]}\n"
+}

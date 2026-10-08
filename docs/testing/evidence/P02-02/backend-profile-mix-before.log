@@ -1,0 +1,23 @@
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v4.0.8)
+
+2026-10-08T07:36:23.128+08:00  INFO 8328 --- [pet-platform-backend] [           main] com.pet.platform.Application             : Starting Application v0.0.0-SNAPSHOT using Java 21.0.12.1 with PID 8328 (/Users/kimwell/work/pet-platform/apps/backend/target/pet-platform-backend-0.0.0-SNAPSHOT.jar started by kimwell in /Users/kimwell/work/pet-platform)
+2026-10-08T07:36:23.130+08:00  INFO 8328 --- [pet-platform-backend] [           main] com.pet.platform.Application             : The following 2 profiles are active: "prod", "local"
+2026-10-08T07:36:23.544+08:00  INFO 8328 --- [pet-platform-backend] [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 18080 (http)
+2026-10-08T07:36:23.554+08:00  INFO 8328 --- [pet-platform-backend] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-10-08T07:36:23.554+08:00  INFO 8328 --- [pet-platform-backend] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.24]
+2026-10-08T07:36:23.572+08:00  INFO 8328 --- [pet-platform-backend] [           main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 412 ms
+2026-10-08T07:36:23.759+08:00  INFO 8328 --- [pet-platform-backend] [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 18080 (http) with context path '/'
+2026-10-08T07:36:23.769+08:00  INFO 8328 --- [pet-platform-backend] [           main] com.pet.platform.Application             : Started Application in 0.892 seconds (process running for 1.218)
+2026-10-08T07:36:23.852+08:00  INFO 8328 --- [pet-platform-backend] [.1-18080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-10-08T07:36:23.852+08:00  INFO 8328 --- [pet-platform-backend] [.1-18080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-10-08T07:36:23.853+08:00  INFO 8328 --- [pet-platform-backend] [.1-18080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2026-10-08T07:36:23.902+08:00  INFO 8328 --- [pet-platform-backend] [ionShutdownHook] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-10-08T07:36:23.906+08:00  INFO 8328 --- [pet-platform-backend] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete

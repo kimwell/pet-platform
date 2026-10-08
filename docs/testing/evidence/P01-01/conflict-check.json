@@ -1,0 +1,43 @@
+{
+  "root": "/Users/kimwell/work/pet-platform",
+  "root_entries": [
+    ".DS_Store",
+    "ui"
+  ],
+  "conflicts": [],
+  "applicable_agents_before": [
+    {
+      "path": "/AGENTS.md",
+      "exists": false
+    },
+    {
+      "path": "/Users/AGENTS.md",
+      "exists": false
+    },
+    {
+      "path": "/Users/kimwell/AGENTS.md",
+      "exists": false
+    },
+    {
+      "path": "/Users/kimwell/work/AGENTS.md",
+      "exists": false
+    },
+    {
+      "path": "/Users/kimwell/work/pet-platform/AGENTS.md",
+      "exists": false
+    }
+  ],
+  "required_files": [
+    "AGENTS.md",
+    "README.md",
+    "docs/product/SCAFFOLD-SCOPE.md",
+    "docs/architecture/TECHNICAL-BASELINE.md",
+    "docs/architecture/PROJECT-STRUCTURE.md",
+    "docs/contracts/CORE-CONTRACTS.md",
+    "docs/development/VERSION-MATRIX.md",
+    "docs/development/ROADMAP.md",
+    "docs/development/DECISION-LOG.md",
+    "docs/testing/P01-01-VERIFICATION.md"
+  ],
+  "no_formal_dirs_before": true
+}

@@ -1,0 +1,329 @@
+[
+  {
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "argv": [
+      "docker",
+      "run",
+      "-d",
+      "--name",
+      "pet-platform-p03-02-runtime-115972f7",
+      "--label",
+      "com.pet.platform.validation=P03-02",
+      "-p",
+      "127.0.0.1::5432",
+      "-e",
+      "POSTGRES_DB=p03_runtime_fixture",
+      "-e",
+      "POSTGRES_USER=p03_runtime_fixture",
+      "-e",
+      "POSTGRES_PASSWORD=p03_runtime_technical_fixture",
+      "postgres:17.11-bookworm@sha256:3645570cccdfa447589da9f57dd740faa29b30938e861289a5574b6ca6b03826"
+    ],
+    "exitCode": 0,
+    "expectedExitCode": 0,
+    "startedAtUTC": "2026-10-08T01:08:58.918419+00:00",
+    "finishedAtUTC": "2026-10-08T01:08:59.611802+00:00",
+    "summary": "c0e2e5b10fdea0b8fd6b916b3ce25396db482418e1a94966ee60846130e4be69\n",
+    "log": "runtime-postgres-create.log"
+  },
+  {
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "argv": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .NetworkSettings.Ports}}",
+      "pet-platform-p03-02-runtime-115972f7"
+    ],
+    "exitCode": 0,
+    "expectedExitCode": 0,
+    "startedAtUTC": "2026-10-08T01:09:01.187694+00:00",
+    "finishedAtUTC": "2026-10-08T01:09:01.330660+00:00",
+    "summary": "{\"5432/tcp\":[{\"HostIp\":\"127.0.0.1\",\"HostPort\":\"59598\"}]}\n",
+    "log": "runtime-postgres-port.log"
+  },
+  {
+    "databaseReady": true,
+    "fixture": "公开技术容器凭据，不是业务或生产账号",
+    "databasePort": 59598
+  },
+  {
+    "url": "http://127.0.0.1:59775/actuator/health",
+    "status": 200,
+    "body": {
+      "groups": [
+        "liveness",
+        "readiness"
+      ],
+      "status": "UP"
+    }
+  },
+  {
+    "url": "http://127.0.0.1:59775/actuator/health/liveness",
+    "status": 200,
+    "body": {
+      "status": "UP"
+    }
+  },
+  {
+    "url": "http://127.0.0.1:59775/actuator/health/readiness",
+    "status": 200,
+    "body": {
+      "status": "UP"
+    }
+  },
+  {
+    "url": "http://127.0.0.1:59775/",
+    "status": 404,
+    "body": {
+      "success": false,
+      "error": {
+        "code": "RESOURCE_NOT_FOUND",
+        "message": "资源不存在或不可访问"
+      },
+      "traceId": "d4fb16b758ae49feadee2508037e93af"
+    }
+  },
+  {
+    "url": "http://127.0.0.1:59775/__protocol/success",
+    "status": 404,
+    "body": {
+      "success": false,
+      "error": {
+        "code": "RESOURCE_NOT_FOUND",
+        "message": "资源不存在或不可访问"
+      },
+      "traceId": "878da2efc5ed4931b16d9c2c9d251ccd"
+    }
+  },
+  {
+    "url": "http://127.0.0.1:59775/actuator/env",
+    "status": 404,
+    "body": {
+      "success": false,
+      "error": {
+        "code": "RESOURCE_NOT_FOUND",
+        "message": "资源不存在或不可访问"
+      },
+      "traceId": "544f96c3781d4a08a87d0a61c0abf685"
+    }
+  },
+  {
+    "url": "http://127.0.0.1:59775/actuator/beans",
+    "status": 404,
+    "body": {
+      "success": false,
+      "error": {
+        "code": "RESOURCE_NOT_FOUND",
+        "message": "资源不存在或不可访问"
+      },
+      "traceId": "2f4fbadd64c04c1d947ff5e9b775ec40"
+    }
+  },
+  {
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "argv": [
+      "docker",
+      "exec",
+      "pet-platform-p03-02-runtime-115972f7",
+      "psql",
+      "-U",
+      "p03_runtime_fixture",
+      "-d",
+      "p03_runtime_fixture",
+      "-Atc",
+      "select tablename from pg_tables where schemaname='public' order by tablename"
+    ],
+    "exitCode": 0,
+    "expectedExitCode": 0,
+    "startedAtUTC": "2026-10-08T01:09:13.567929+00:00",
+    "finishedAtUTC": "2026-10-08T01:09:13.990634+00:00",
+    "summary": "flyway_schema_history\n",
+    "log": "runtime-production-tables.log"
+  },
+  {
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "argv": [
+      "docker",
+      "stop",
+      "--time",
+      "10",
+      "pet-platform-p03-02-runtime-115972f7"
+    ],
+    "exitCode": 0,
+    "expectedExitCode": 0,
+    "startedAtUTC": "2026-10-08T01:09:13.990809+00:00",
+    "finishedAtUTC": "2026-10-08T01:09:14.322696+00:00",
+    "summary": "Flag --time has been deprecated, use --timeout instead\npet-platform-p03-02-runtime-115972f7\n",
+    "log": "runtime-postgres-stop.log"
+  },
+  {
+    "url": "http://127.0.0.1:59775/actuator/health/readiness",
+    "status": 503,
+    "body": {
+      "status": "DOWN"
+    }
+  },
+  {
+    "url": "http://127.0.0.1:59775/actuator/health/liveness",
+    "status": 200,
+    "body": {
+      "status": "UP"
+    }
+  },
+  {
+    "url": "http://127.0.0.1:59775/actuator/health",
+    "status": 503,
+    "body": {
+      "groups": [
+        "liveness",
+        "readiness"
+      ],
+      "status": "DOWN"
+    }
+  },
+  {
+    "process": "local-startup",
+    "pid": 51719,
+    "exitCode": 143,
+    "gracefulShutdown": true,
+    "portClosed": true
+  },
+  {
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "argv": [
+      "docker",
+      "start",
+      "pet-platform-p03-02-runtime-115972f7"
+    ],
+    "exitCode": 0,
+    "expectedExitCode": 0,
+    "startedAtUTC": "2026-10-08T01:09:24.579565+00:00",
+    "finishedAtUTC": "2026-10-08T01:09:24.911347+00:00",
+    "summary": "pet-platform-p03-02-runtime-115972f7\n",
+    "log": "runtime-postgres-restart.log"
+  },
+  {
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "argv": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .NetworkSettings.Ports}}",
+      "pet-platform-p03-02-runtime-115972f7"
+    ],
+    "exitCode": 0,
+    "expectedExitCode": 0,
+    "startedAtUTC": "2026-10-08T01:09:25.082846+00:00",
+    "finishedAtUTC": "2026-10-08T01:09:25.108016+00:00",
+    "summary": "{\"5432/tcp\":[{\"HostIp\":\"127.0.0.1\",\"HostPort\":\"59965\"}]}\n",
+    "log": "runtime-postgres-restarted-port.log"
+  },
+  {
+    "url": "http://127.0.0.1:60036/actuator/health/readiness",
+    "status": 200,
+    "body": {
+      "status": "UP"
+    }
+  },
+  {
+    "process": "local-restart",
+    "pid": 52243,
+    "exitCode": 143,
+    "gracefulShutdown": true,
+    "portClosed": true
+  },
+  {
+    "url": "http://127.0.0.1:60043/actuator/health/readiness",
+    "status": 200,
+    "body": {
+      "status": "UP"
+    }
+  },
+  {
+    "process": "prod-startup",
+    "pid": 52267,
+    "exitCode": 143,
+    "gracefulShutdown": true,
+    "portClosed": true
+  },
+  {
+    "process": "prod-missing-url",
+    "exitCode": 1,
+    "expectedFailureObserved": true,
+    "expectedMessage": "缺少必要数据库配置：spring.datasource.url",
+    "log": "prod-missing-url.log",
+    "noPasswordLeak": true
+  },
+  {
+    "process": "prod-missing-user",
+    "exitCode": 1,
+    "expectedFailureObserved": true,
+    "expectedMessage": "缺少必要数据库配置：spring.datasource.username",
+    "log": "prod-missing-user.log",
+    "noPasswordLeak": true
+  },
+  {
+    "process": "prod-missing-password",
+    "exitCode": 1,
+    "expectedFailureObserved": true,
+    "expectedMessage": "缺少必要数据库配置：spring.datasource.password",
+    "log": "prod-missing-password.log",
+    "noPasswordLeak": true
+  },
+  {
+    "process": "prod-migration-refused",
+    "exitCode": 1,
+    "expectedFailureObserved": true,
+    "expectedMessage": "spring.flyway.enabled 必须设置为 false",
+    "log": "prod-migration-refused.log",
+    "noPasswordLeak": true
+  },
+  {
+    "process": "wrong-password",
+    "exitCode": 1,
+    "expectedFailureObserved": true,
+    "expectedMessage": "password authentication failed",
+    "log": "wrong-password.log",
+    "noPasswordLeak": true
+  },
+  {
+    "process": "unavailable-database",
+    "exitCode": 1,
+    "expectedFailureObserved": true,
+    "expectedMessage": "Connection to 127.0.0.1:1 refused",
+    "log": "unavailable-database.log",
+    "noPasswordLeak": true
+  },
+  {
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "argv": [
+      "docker",
+      "stop",
+      "--time",
+      "10",
+      "pet-platform-p03-02-runtime-115972f7"
+    ],
+    "exitCode": 0,
+    "expectedExitCode": 0,
+    "startedAtUTC": "2026-10-08T01:10:05.406482+00:00",
+    "finishedAtUTC": "2026-10-08T01:10:05.714817+00:00",
+    "summary": "Flag --time has been deprecated, use --timeout instead\npet-platform-p03-02-runtime-115972f7\n",
+    "log": "runtime-postgres-final-stop.log"
+  },
+  {
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "argv": [
+      "docker",
+      "rm",
+      "-v",
+      "pet-platform-p03-02-runtime-115972f7"
+    ],
+    "exitCode": 0,
+    "expectedExitCode": 0,
+    "startedAtUTC": "2026-10-08T01:10:05.714920+00:00",
+    "finishedAtUTC": "2026-10-08T01:10:05.773866+00:00",
+    "summary": "pet-platform-p03-02-runtime-115972f7\n",
+    "log": "runtime-postgres-cleanup.log"
+  }
+]

@@ -1,0 +1,26 @@
+{
+  "id": "infra-missing-rabbitmq_default_user",
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "command": [
+    "docker",
+    "compose",
+    "--env-file",
+    "/Users/kimwell/work/pet-platform/.local-data/p02-infra.env",
+    "-p",
+    "pet-platform-p02-validation",
+    "-f",
+    "/Users/kimwell/work/pet-platform/infra/local/docker-compose.yml",
+    "config",
+    "--quiet"
+  ],
+  "exit_code": 1,
+  "expected_exit_code": 1,
+  "status": "PASS",
+  "started_at": "2026-10-08T07:27:11.143630+08:00",
+  "duration_seconds": 0.045,
+  "evidence": "infra-missing-rabbitmq_default_user.log",
+  "summary": "error while interpolating services.rabbitmq.environment.RABBITMQ_DEFAULT_USER: required variable RABBITMQ_DEFAULT_USER is missing a value: 请设置本地 RabbitMQ 用户\n",
+  "environment_fixture": {
+    "RABBITMQ_DEFAULT_USER": "<公开反例输入>"
+  }
+}

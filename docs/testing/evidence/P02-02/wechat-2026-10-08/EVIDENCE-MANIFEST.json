@@ -1,0 +1,327 @@
+{
+  "date": "2026-10-08",
+  "timezone": "Asia/Shanghai",
+  "scope": "仅本次微信续验证据；不更新或删除P02-02旧manifest",
+  "files": [
+    {
+      "path": "COMMAND-INDEX.json",
+      "size": 14910,
+      "sha256": "51fb6097e23c39b12f68afa232e607d432d438d1227fac0073f206e44fa85298"
+    },
+    {
+      "path": "appid-configuration.json",
+      "size": 283,
+      "sha256": "b6a847282dcc58a25deb2fbbb547436f5088d7651a6d37234fda11102f1893c0"
+    },
+    {
+      "path": "audit-continuation.py",
+      "size": 2870,
+      "sha256": "9859b499b7d59371ada657374337583dd0eda186d623652052bffa4ea939c0bd"
+    },
+    {
+      "path": "continuation-audit.json",
+      "size": 1063,
+      "sha256": "ca05e2c31f0bdb1399687f6986324f61b7546250cf4ab5ab33889ce357bd5ce1"
+    },
+    {
+      "path": "continuation-audit.log",
+      "size": 684,
+      "sha256": "4079865a65652ccafb51de8a27053ba06d08c9a627b8e811ad64f72d1cd03ff7"
+    },
+    {
+      "path": "download.json",
+      "size": 616,
+      "sha256": "56cb0b0aed159e1a5ad404d100bd0e49adc16a6f44fe2cb1647585cde0707c15"
+    },
+    {
+      "path": "final-audit.json",
+      "size": 684,
+      "sha256": "4079865a65652ccafb51de8a27053ba06d08c9a627b8e811ad64f72d1cd03ff7"
+    },
+    {
+      "path": "frozen-node.json",
+      "size": 250,
+      "sha256": "abb3c459af830987ce88d1fff451da8aef2424f9b02d121744c656b0242a5f66"
+    },
+    {
+      "path": "frozen-node.log",
+      "size": 9,
+      "sha256": "f2ec568164f99546161909b0189b57bb5be3e80f8e2ccd8a51a4aed8c4055a04"
+    },
+    {
+      "path": "frozen-pnpm.json",
+      "size": 249,
+      "sha256": "90e800bea8b56efd4989e17d9d3dc2bc070ecbc9cbd58efc332aeec1bd4112ae"
+    },
+    {
+      "path": "frozen-pnpm.log",
+      "size": 8,
+      "sha256": "6dc1e1141faa2fbd2829f769ae8fd389c7f0ab245bf47983c15c334186c5d9f2"
+    },
+    {
+      "path": "git-after.txt",
+      "size": 292,
+      "sha256": "5103c34305fe6a3a52964394064b75fc734a72e384cde2eeb8e44a7155ec4779"
+    },
+    {
+      "path": "git-before.txt",
+      "size": 292,
+      "sha256": "5103c34305fe6a3a52964394064b75fc734a72e384cde2eeb8e44a7155ec4779"
+    },
+    {
+      "path": "installed-tool-before.json",
+      "size": 269,
+      "sha256": "4b975085ebae2fc6f73b6ea1b22afc9fb9bd59c1b88950dc184bb9ae1fecf6c5"
+    },
+    {
+      "path": "login-ui.txt",
+      "size": 637,
+      "sha256": "6508c0bc383d025d6f4d0acb3d6e8baac2b8aa3864086a5f5885e4fe41eab0f3"
+    },
+    {
+      "path": "miniprogram-config.json",
+      "size": 368,
+      "sha256": "1c24ba701d346ebf0130d93abfdd5ba157c8a08ff3a93bde7fe29a5ff8a54314"
+    },
+    {
+      "path": "miniprogram-config.log",
+      "size": 100,
+      "sha256": "b80a626a232d047ac11054ac97673a1f34e6935284b090ef23e6033f3a41a820"
+    },
+    {
+      "path": "miniprogram-lint.json",
+      "size": 425,
+      "sha256": "0805e96d2230dc7b661ae2717896406295ba437350dd63fc4d61409956330a99"
+    },
+    {
+      "path": "miniprogram-lint.log",
+      "size": 134,
+      "sha256": "ef395f160e242ef01c29d07480f6f6d110d81a0e20bc2d5de6e6504bc93886d4"
+    },
+    {
+      "path": "miniprogram-typecheck.json",
+      "size": 417,
+      "sha256": "3f268c571277bf1bd9823102af8ce8aecdcbe3ef94f2db8d2e02bb29f0bc184f"
+    },
+    {
+      "path": "miniprogram-typecheck.log",
+      "size": 116,
+      "sha256": "94abbec6540ad06b8a403230625c96127692e02437a3ca874fce09bdc706fe71"
+    },
+    {
+      "path": "npm-output-before.json",
+      "size": 189592,
+      "sha256": "7eae5d771121ecb6757abec328bc93791129309171ea9db191c2676511937fa3"
+    },
+    {
+      "path": "official-cli.html",
+      "size": 80742,
+      "sha256": "2e80d0e976d03e619290b4cf7462664ba15ff27101683ee33b83c83839302678"
+    },
+    {
+      "path": "official-cli.txt",
+      "size": 19794,
+      "sha256": "08bf5940b3635308df357c0a706938596a8c57d9e9522924933b204b92a17701"
+    },
+    {
+      "path": "official-config.html",
+      "size": 88016,
+      "sha256": "3802aef387364f99b2ac6333ce407f9e21c9c4fadf49e52c6b012f09050a63e8"
+    },
+    {
+      "path": "official-config.txt",
+      "size": 21525,
+      "sha256": "1ce22be882c195dc2e691c8064dbb2953908a5f955164419c23e762152ad4180"
+    },
+    {
+      "path": "official-sources.json",
+      "size": 1277,
+      "sha256": "2fd066807efd5fbf67a1d22788a2ee8cb620299ebc7aa1719b1c32cf44c8a39d"
+    },
+    {
+      "path": "official-stable.html",
+      "size": 54567,
+      "sha256": "894038b7e5341ea32b5c1fce3cd33bfbc95ca03d17bad3f4069c96a19a749f4a"
+    },
+    {
+      "path": "official-stable.txt",
+      "size": 6545,
+      "sha256": "1d27c317a4ee803af7c8f4e9924549eb5115d6a95d3ed03eb796591c0b4d3944"
+    },
+    {
+      "path": "old-cli-help.json",
+      "size": 1990,
+      "sha256": "71bfeda5bd1e1d160b8a4ba4e72ccf2a4b6685dbc52b089e1fb81e82ea73be8c"
+    },
+    {
+      "path": "old-cli-help.log",
+      "size": 1665,
+      "sha256": "6ceac9f1152d81bccd7ec9c04f28996d0f9286e0d9cfff053918c7e1fdf0ecfc"
+    },
+    {
+      "path": "old-cli-islogin.json",
+      "size": 419,
+      "sha256": "fe1d31c5bbca61b9cce92030d0aa0d896bd19592f2cbf4d54e9211730de0ba2b"
+    },
+    {
+      "path": "old-cli-islogin.log",
+      "size": 118,
+      "sha256": "0ce7dca7d466b86462d8901e7c532bb44f20aad91da028c5716ba923f1b82918"
+    },
+    {
+      "path": "old-cli-quit.json",
+      "size": 390,
+      "sha256": "ea43fc6dcf6dbcdecfafff5d194e34dc2d9588065780c4843ea9e91a467b4c58"
+    },
+    {
+      "path": "old-cli-quit.log",
+      "size": 99,
+      "sha256": "0649353a8bdebffb1a922b533baa8015010e60dfdcf2eb60702c5b1dd3561261"
+    },
+    {
+      "path": "old-tool-observation.json",
+      "size": 641,
+      "sha256": "26665c64f3149c4494ba9708a29c1183f3b80ed2a0f182302abd619c3330ed6d"
+    },
+    {
+      "path": "package-expand.json",
+      "size": 353,
+      "sha256": "2ca46eb9d050cba69b9b235f80e0968bb0dd2804f8006275ede637c3a9afa8fb"
+    },
+    {
+      "path": "package-expand.log",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "package-signature.json",
+      "size": 1494,
+      "sha256": "3620bacb940bf597fb164f812f4700e31e973bf7c981dd2ec42d950d2f321913"
+    },
+    {
+      "path": "package-signature.log",
+      "size": 1155,
+      "sha256": "1cda91fefaae53d52d99b1636c8d3bdf7f9d5f042727d85998fd66a05eeccf40"
+    },
+    {
+      "path": "preservation-before.json",
+      "size": 61966,
+      "sha256": "19793a6b9a45d81ea31f2aa3ee37beafc7261e13d37a2f1097b3e545ceb2dd13"
+    },
+    {
+      "path": "private-config-ignored.json",
+      "size": 418,
+      "sha256": "2e6fd3d1b414f9b87e1cda2403f3a86355e8e964b6cd9a149ea6867bd59275d2"
+    },
+    {
+      "path": "private-config-ignored.log",
+      "size": 94,
+      "sha256": "9a105953d6602f684d0b152ae202fef98ea7bb3e77c5c8e86f463e7ae0b8bd5e"
+    },
+    {
+      "path": "record-command.py",
+      "size": 1166,
+      "sha256": "adfd161f6ba57f0922e70fc900952528eda91f8e4e4d52b21c8b07ac54ed5424"
+    },
+    {
+      "path": "skill-preview.html",
+      "size": 7204,
+      "sha256": "cc133c71b28947bbdd1b36e3de3f8cbad548a1a8b5b5cbd36891788e4cf2dc31"
+    },
+    {
+      "path": "stable-script.txt",
+      "size": 295,
+      "sha256": "8457262650eb529a82e72260a24d7fdc7c970afe7e5430bc4d4c08f4b0750def"
+    },
+    {
+      "path": "standalone-install.json",
+      "size": 386,
+      "sha256": "a1df6ecb91053ca2c636b06bc7ba5b7bb53e515276d9d1fdd1efa1a242b989a6"
+    },
+    {
+      "path": "standalone-install.log",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "target-build-npm-help.json",
+      "size": 1741,
+      "sha256": "ea5928e933b1b80a2fe29e846d64751acd349dd07c906e1a493dfdc9df749feb"
+    },
+    {
+      "path": "target-build-npm-help.log",
+      "size": 1371,
+      "sha256": "69cbb50070fab01a69b6955dd0b918737be71e9e3c3085f06cb2908b9ed8dde7"
+    },
+    {
+      "path": "target-cli-help.json",
+      "size": 2198,
+      "sha256": "afa44fac5f81f4ab10b606d977d518705bc064b360d9bc8d4622ee7ecc80701f"
+    },
+    {
+      "path": "target-cli-help.log",
+      "size": 1841,
+      "sha256": "43dc0ee0504c632cb92b8e9704af3c8dc1ae1dd9e9032320831551bf58c023cb"
+    },
+    {
+      "path": "target-cli-islogin-r2.json",
+      "size": 1087,
+      "sha256": "f1c60977fd4c8124b338237db4b617c80e4118f9b5b2f73a0ad5968125113ece"
+    },
+    {
+      "path": "target-cli-islogin-r2.log",
+      "size": 752,
+      "sha256": "aa41dd080132a66431ddfc60d8128130fb4141fa041411146e1bba8b7ac3b606"
+    },
+    {
+      "path": "target-cli-islogin.json",
+      "size": 1218,
+      "sha256": "d7871a7f66afcd5e246e6089ea13459d1048d1d85e07f821257eca6bea1c3aad"
+    },
+    {
+      "path": "target-cli-islogin.log",
+      "size": 888,
+      "sha256": "6b906778d57cd7c5ce9132f40c3c20009cb27e5f8ca6743ba1f3e72975cd334c"
+    },
+    {
+      "path": "target-code-signature.json",
+      "size": 350,
+      "sha256": "e4a9b14fc2e68d84fd7170477f156755a97e10a469a05af67998f680b7e52d52"
+    },
+    {
+      "path": "target-code-signature.log",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "target-installed-tool.json",
+      "size": 231,
+      "sha256": "9925815019fb49faaacc5531678ef26bf09df570c473f84b11eabefb4be9ba28"
+    },
+    {
+      "path": "target-package-version.json",
+      "size": 695,
+      "sha256": "e795713b62e701aeeaefdd988f9ed5142ebb5ecb0ed6b2bd7b1c06b3aae9947f"
+    },
+    {
+      "path": "target-package-version.log",
+      "size": 67,
+      "sha256": "2e1565e00643f3ea56548c95b8d82e7ebc2cacad1bd8097319e263d3c89f2e09"
+    },
+    {
+      "path": "target-version.txt",
+      "size": 2340,
+      "sha256": "33c7113241097677d4ae3eb91868ad049991a6b81918201718991c5dfca9a624"
+    },
+    {
+      "path": "ui-observation.json",
+      "size": 883,
+      "sha256": "f86547f3d770a64faa8717a7cddf018b7e2b4934f7528eaff87e7716cc1281d8"
+    },
+    {
+      "path": "wechat-environment-current.json",
+      "size": 887,
+      "sha256": "f9b535dab391962769282d7a863a97c7dcc6f84e7af7bcb192d523739d057fc8"
+    }
+  ]
+}

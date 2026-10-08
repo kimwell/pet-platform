@@ -1,0 +1,14 @@
+{
+  "id": "web-build",
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "command": [
+    "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/tools/node-v24.21.0-darwin-arm64/bin/node",
+    "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/tools/pnpm/package/bin/pnpm.cjs",
+    "build:web"
+  ],
+  "exit_code": 2,
+  "status": "FAIL",
+  "duration_seconds": 3.54,
+  "evidence": "web-build.log",
+  "summary": "\n> pet-platform@0.0.0 build:web /Users/kimwell/work/pet-platform\n> pnpm --filter @pet/admin-web build\n\n\n> @pet/admin-web@0.0.0 build /Users/kimwell/work/pet-platform/apps/admin-web\n> tsc --noEmit && vite build\n\nsrc/app/router/router.test.tsx(15,32): error TS2339: Property 'statusCode' does not exist on type 'RouterState<Route<Register, any, \"/\", \"/\", string, \"__root__\", undefined, {}, {}, AnyContext, AnyContext, {}, undefined, readonly [Route<unknown, RootRoute<Register, ... 10 more ..., undefined>, ... 15 more ..., undefined>], unknown, unknown, unknown, undefined>, MakeRouteMatchUnion>'.\n/Users/kimwell/work/pet-platform/apps/admin-web:\n ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL  @pet/admin-web@0.0.0 build: `tsc --noEmit && vite build`\nExit status 2\n ELIFECYCLE  Command failed with exit code 2.\n"
+}

@@ -1,0 +1,15 @@
+{
+  "id": "configuration-negatives",
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "command": [
+    "python3",
+    "docs/testing/evidence/P02-02/config-negatives.py"
+  ],
+  "exit_code": 0,
+  "expected_exit_code": 0,
+  "status": "PASS",
+  "started_at": "2026-10-08T07:27:11.400301+08:00",
+  "duration_seconds": 10.04,
+  "evidence": "configuration-negatives.log",
+  "summary": "5}\n{\"id\": \"backend-invalid-port\", \"exit_code\": 1, \"expected_exit_code\": 1, \"status\": \"PASS\", \"duration_seconds\": 0.842}\n{\"id\": \"backend-port-occupied\", \"exit_code\": 1, \"expected_exit_code\": 1, \"status\": \"PASS\", \"duration_seconds\": 1.152}\n{\"id\": \"web-empty-origin\", \"exit_code\": 1, \"expected_exit_code\": 1, \"status\": \"PASS\", \"duration_seconds\": 0.631}\n{\"id\": \"web-invalid-origin\", \"exit_code\": 1, \"expected_exit_code\": 1, \"status\": \"PASS\", \"duration_seconds\": 0.61}\n{\"id\": \"web-credential-origin\", \"exit_code\": 1, \"expected_exit_code\": 1, \"status\": \"PASS\", \"duration_seconds\": 0.605}\n{\"id\": \"web-port-occupied\", \"exit_code\": 1, \"expected_exit_code\": 1, \"status\": \"PASS\", \"duration_seconds\": 0.621}\n{\"id\": \"preview-port-occupied\", \"exit_code\": 1, \"expected_exit_code\": 1, \"status\": \"PASS\", \"duration_seconds\": 0.643}\n{\"id\": \"infra-no-env-file\", \"exit_code\": 1, \"expected_exit_code\": 1, \"status\": \"PASS\", \"duration_seconds\": 0.258}\n{\"id\": \"infra-missing-postgres_db\", \"exit_code\": 1, \"expected_exit_code\": 1, \"status\": \"PASS\", \"duration_seconds\": 0.168}\n{\"id\": \"infra-missing-postgres_user\", \"exit_code\": 1, \"expected_exit_code\": 1, \"status\": \"PASS\", \"duration_seconds\": 0.046}\n{\"id\": \"infra-missing-postgres_password\", \"exit_code\": 1, \"expected_exit_code\": 1, \"status\": \"PASS\", \"duration_seconds\": 0.048}\n{\"id\": \"infra-missing-redis_password\", \"exit_code\": 1, \"expected_exit_code\": 1, \"status\": \"PASS\", \"duration_seconds\": 0.046}\n{\"id\": \"infra-missing-rabbitmq_default_user\", \"exit_code\": 1, \"expected_exit_code\": 1, \"status\": \"PASS\", \"duration_seconds\": 0.045}\n{\"id\": \"infra-missing-rabbitmq_default_pass\", \"exit_code\": 1, \"expected_exit_code\": 1, \"status\": \"PASS\", \"duration_seconds\": 0.044}\n{\"id\": \"infra-invalid-postgres_port\", \"exit_code\": 1, \"expected_exit_code\": 15, \"status\": \"FAIL\", \"duration_seconds\": 0.052}\n{\"id\": \"infra-invalid-redis_port\", \"exit_code\": 1, \"expected_exit_code\": 15, \"status\": \"FAIL\", \"duration_seconds\": 0.051}\n{\"id\": \"infra-invalid-rabbitmq_port\", \"exit_code\": 1, \"expected_exit_code\": 15, \"status\": \"FAIL\", \"duration_seconds\": 0.052}\n{\"id\": \"infra-invalid-rabbitmq_management_port\", \"exit_code\": 1, \"expected_exit_code\": 15, \"status\": \"FAIL\", \"duration_seconds\": 0.052}\n"
+}

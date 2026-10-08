@@ -1,0 +1,178 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ---------------< com.pet.platform:pet-platform-backend >----------------
+[INFO] Building pet-platform-backend 0.0.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- clean:3.5.0:clean (default-clean) @ pet-platform-backend ---
+[INFO] Deleting /Users/kimwell/work/pet-platform/apps/backend/target
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ pet-platform-backend ---
+[INFO] Copying 4 resources from src/main/resources to target/classes
+[INFO] Copying 1 resource from src/main/resources to target/classes
+[INFO] 
+[INFO] --- compiler:3.14.1:compile (default-compile) @ pet-platform-backend ---
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 30 source files with javac [debug parameters release 21] to target/classes
+[INFO] /Users/kimwell/work/pet-platform/apps/backend/src/main/java/com/pet/platform/shared/openapi/OpenApiConfiguration.java: /Users/kimwell/work/pet-platform/apps/backend/src/main/java/com/pet/platform/shared/openapi/OpenApiConfiguration.java使用了未经检查或不安全的操作。
+[INFO] /Users/kimwell/work/pet-platform/apps/backend/src/main/java/com/pet/platform/shared/openapi/OpenApiConfiguration.java: 有关详细信息, 请使用 -Xlint:unchecked 重新编译。
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ pet-platform-backend ---
+[INFO] Copying 1 resource from src/test/resources to target/test-classes
+[INFO] 
+[INFO] --- compiler:3.14.1:testCompile (default-testCompile) @ pet-platform-backend ---
+[INFO] Recompiling the module because of changed dependency.
+[INFO] Compiling 18 source files with javac [debug parameters release 21] to target/test-classes
+[INFO] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/platform/protocol/ApiProtocolIT.java: 某些输入文件使用或覆盖了已过时的 API。
+[INFO] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/platform/protocol/ApiProtocolIT.java: 有关详细信息, 请使用 -Xlint:deprecation 重新编译。
+[INFO] 
+[INFO] --- surefire:3.5.6:test (default-test) @ pet-platform-backend ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running com.pet.testing.contracts.ContractExportTest
+09:28:46.132 [main] INFO org.testcontainers.images.PullPolicy -- Image pull policy will be performed by: DefaultPullPolicy()
+09:28:46.134 [main] INFO org.testcontainers.utility.ImageNameSubstitutor -- Image name substitution will be performed by: DefaultImageNameSubstitutor (composite of 'ConfigurationFileImageNameSubstitutor' and 'PrefixingImageNameSubstitutor')
+09:28:46.150 [main] INFO org.testcontainers.DockerClientFactory -- Testcontainers version: 2.0.5
+09:28:46.296 [main] INFO org.testcontainers.dockerclient.DockerClientProviderStrategy -- Loaded org.testcontainers.dockerclient.UnixSocketClientProviderStrategy from ~/.testcontainers.properties, will try it first
+09:28:46.609 [main] INFO org.testcontainers.dockerclient.DockerClientProviderStrategy -- Found Docker environment with local Unix socket (unix:///var/run/docker.sock)
+09:28:46.610 [main] INFO org.testcontainers.DockerClientFactory -- Docker host IP address is localhost
+09:28:46.628 [main] INFO org.testcontainers.DockerClientFactory -- Connected to docker: 
+  Server Version: 29.4.0
+  API Version: 1.54
+  Operating System: Docker Desktop
+  Total Memory: 9936 MB
+  Labels: 
+    com.docker.desktop.address=unix:///Users/kimwell/Library/Containers/com.docker.docker/Data/docker-cli.sock
+09:28:46.646 [main] INFO tc.testcontainers/ryuk:0.14.0 -- Creating container for image: testcontainers/ryuk:0.14.0
+09:28:46.755 [main] INFO org.testcontainers.utility.RegistryAuthLocator -- Credential helper/store (docker-credential-desktop) does not have credentials for https://index.docker.io/v1/
+09:28:46.824 [main] INFO tc.testcontainers/ryuk:0.14.0 -- Container testcontainers/ryuk:0.14.0 is starting: 18d5602ab15b28f04f67090ee4202fa6418aeb161616ba5c8e30460ee92caaf3
+09:28:47.089 [main] INFO tc.testcontainers/ryuk:0.14.0 -- Container testcontainers/ryuk:0.14.0 started in PT0.442514S
+09:28:47.097 [main] INFO org.testcontainers.utility.RyukResourceReaper -- Ryuk started - will monitor and terminate Testcontainers containers on JVM exit
+09:28:47.097 [main] INFO org.testcontainers.DockerClientFactory -- Checking the system...
+09:28:47.097 [main] INFO org.testcontainers.DockerClientFactory -- ✔︎ Docker server version should be at least 1.6.0
+09:28:47.102 [main] INFO tc.postgres:17.11-bookworm@sha256:364557... -- Creating container for image: postgres:17.11-bookworm@sha256:3645570cccdfa447589da9f57dd740faa29b30938e861289a5574b6ca6b03826
+09:28:47.123 [main] INFO tc.postgres:17.11-bookworm@sha256:364557... -- Container postgres:17.11-bookworm@sha256:3645570cccdfa447589da9f57dd740faa29b30938e861289a5574b6ca6b03826 is starting: 372121ce540441493e6c11c8b8f63f083ba4c3ebb580e58178fea633e781e290
+09:28:48.375 [main] INFO tc.postgres:17.11-bookworm@sha256:364557... -- Container postgres:17.11-bookworm@sha256:3645570cccdfa447589da9f57dd740faa29b30938e861289a5574b6ca6b03826 started in PT1.273057S
+09:28:48.376 [main] INFO tc.postgres:17.11-bookworm@sha256:364557... -- Container is started (JDBC URL: jdbc:postgresql://localhost:63868/p03_technical_fixture?loggerLevel=OFF)
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v4.0.8)
+
+2026-10-08T09:28:48.631+08:00  INFO 64035 --- [pet-platform-backend] [           main] c.p.t.contracts.ContractExportTest       : Starting ContractExportTest using Java 21.0.12.1 with PID 64035 (started by kimwell in /Users/kimwell/work/pet-platform/apps/backend)
+2026-10-08T09:28:48.632+08:00  INFO 64035 --- [pet-platform-backend] [           main] c.p.t.contracts.ContractExportTest       : The following 1 profile is active: "test"
+2026-10-08T09:28:49.102+08:00  INFO 64035 --- [pet-platform-backend] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-10-08T09:28:49.121+08:00  INFO 64035 --- [pet-platform-backend] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 14 ms. Found 0 JPA repository interfaces.
+2026-10-08T09:28:49.478+08:00  INFO 64035 --- [pet-platform-backend] [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 0 (http)
+2026-10-08T09:28:49.487+08:00  INFO 64035 --- [pet-platform-backend] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-10-08T09:28:49.487+08:00  INFO 64035 --- [pet-platform-backend] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.24]
+2026-10-08T09:28:49.510+08:00  INFO 64035 --- [pet-platform-backend] [           main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 870 ms
+2026-10-08T09:28:49.689+08:00  INFO 64035 --- [pet-platform-backend] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-10-08T09:28:49.793+08:00  INFO 64035 --- [pet-platform-backend] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@5eadc347
+2026-10-08T09:28:49.794+08:00  INFO 64035 --- [pet-platform-backend] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-10-08T09:28:49.808+08:00  INFO 64035 --- [pet-platform-backend] [           main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:postgresql://localhost:63868/p03_technical_fixture (PostgreSQL 17.11)
+2026-10-08T09:28:49.832+08:00  INFO 64035 --- [pet-platform-backend] [           main] o.f.c.i.s.JdbcTableSchemaHistory         : Schema history table "public"."flyway_schema_history" does not exist yet
+2026-10-08T09:28:49.833+08:00  INFO 64035 --- [pet-platform-backend] [           main] o.f.core.internal.command.DbValidate     : Successfully validated 0 migrations (execution time 00:00.006s)
+2026-10-08T09:28:49.833+08:00  WARN 64035 --- [pet-platform-backend] [           main] o.f.core.internal.command.DbValidate     : No migrations found. Are your locations set up correctly?
+2026-10-08T09:28:49.844+08:00  INFO 64035 --- [pet-platform-backend] [           main] o.f.c.i.s.JdbcTableSchemaHistory         : Creating Schema History table "public"."flyway_schema_history" ...
+2026-10-08T09:28:49.905+08:00  INFO 64035 --- [pet-platform-backend] [           main] o.f.core.internal.command.DbMigrate      : Current version of schema "public": << Empty Schema >>
+2026-10-08T09:28:49.908+08:00  INFO 64035 --- [pet-platform-backend] [           main] o.f.core.internal.command.DbMigrate      : Schema "public" is up to date. No migration necessary.
+2026-10-08T09:28:49.954+08:00  INFO 64035 --- [pet-platform-backend] [           main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-10-08T09:28:49.982+08:00  INFO 64035 --- [pet-platform-backend] [           main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.24.Final
+2026-10-08T09:28:50.176+08:00  INFO 64035 --- [pet-platform-backend] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-10-08T09:28:50.226+08:00  INFO 64035 --- [pet-platform-backend] [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:63868/p03_technical_fixture]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 17.11
+	Default catalog/schema: p03_technical_fixture/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-10-08T09:28:50.425+08:00  INFO 64035 --- [pet-platform-backend] [           main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-10-08T09:28:50.432+08:00  INFO 64035 --- [pet-platform-backend] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-10-08T09:28:50.877+08:00  INFO 64035 --- [pet-platform-backend] [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2026-10-08T09:28:50.912+08:00  INFO 64035 --- [pet-platform-backend] [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 63899 (http) with context path '/'
+2026-10-08T09:28:50.919+08:00  INFO 64035 --- [pet-platform-backend] [           main] c.p.t.contracts.ContractExportTest       : Started ContractExportTest in 2.465 seconds (process running for 5.578)
+OpenJDK 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
+2026-10-08T09:28:51.102+08:00  INFO 64035 --- [pet-platform-backend] [1-auto-1-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-10-08T09:28:51.102+08:00  INFO 64035 --- [pet-platform-backend] [1-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-10-08T09:28:51.103+08:00  INFO 64035 --- [pet-platform-backend] [1-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2026-10-08T09:28:51.381+08:00  INFO 64035 --- [pet-platform-backend] [1-auto-1-exec-4] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 145 ms
+[INFO] Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 5.606 s -- in com.pet.testing.contracts.ContractExportTest
+[INFO] Running com.pet.testing.contracts.ProductionOpenApiExportTest
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v4.0.8)
+
+2026-10-08T09:28:51.575+08:00  INFO 64035 --- [pet-platform-backend] [           main] c.p.t.c.ProductionOpenApiExportTest      : Starting ProductionOpenApiExportTest using Java 21.0.12.1 with PID 64035 (started by kimwell in /Users/kimwell/work/pet-platform/apps/backend)
+2026-10-08T09:28:51.576+08:00  INFO 64035 --- [pet-platform-backend] [           main] c.p.t.c.ProductionOpenApiExportTest      : The following 1 profile is active: "test"
+2026-10-08T09:28:51.693+08:00  INFO 64035 --- [pet-platform-backend] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-10-08T09:28:51.697+08:00  INFO 64035 --- [pet-platform-backend] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 2 ms. Found 0 JPA repository interfaces.
+2026-10-08T09:28:51.738+08:00  INFO 64035 --- [pet-platform-backend] [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 0 (http)
+2026-10-08T09:28:51.739+08:00  INFO 64035 --- [pet-platform-backend] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-10-08T09:28:51.739+08:00  INFO 64035 --- [pet-platform-backend] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.24]
+2026-10-08T09:28:51.751+08:00  INFO 64035 --- [pet-platform-backend] [           main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 175 ms
+2026-10-08T09:28:51.783+08:00  INFO 64035 --- [pet-platform-backend] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2026-10-08T09:28:51.798+08:00  INFO 64035 --- [pet-platform-backend] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Added connection org.postgresql.jdbc.PgConnection@99c24c
+2026-10-08T09:28:51.798+08:00  INFO 64035 --- [pet-platform-backend] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2026-10-08T09:28:51.799+08:00  INFO 64035 --- [pet-platform-backend] [           main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:postgresql://localhost:63868/p03_technical_fixture (PostgreSQL 17.11)
+2026-10-08T09:28:51.808+08:00  INFO 64035 --- [pet-platform-backend] [           main] o.f.core.internal.command.DbValidate     : Successfully validated 0 migrations (execution time 00:00.002s)
+2026-10-08T09:28:51.808+08:00  WARN 64035 --- [pet-platform-backend] [           main] o.f.core.internal.command.DbValidate     : No migrations found. Are your locations set up correctly?
+2026-10-08T09:28:51.824+08:00  INFO 64035 --- [pet-platform-backend] [           main] o.f.core.internal.command.DbMigrate      : Current version of schema "public": << Empty Schema >>
+2026-10-08T09:28:51.825+08:00  INFO 64035 --- [pet-platform-backend] [           main] o.f.core.internal.command.DbMigrate      : Schema "public" is up to date. No migration necessary.
+2026-10-08T09:28:51.839+08:00  INFO 64035 --- [pet-platform-backend] [           main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-10-08T09:28:51.850+08:00  INFO 64035 --- [pet-platform-backend] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-10-08T09:28:51.859+08:00  INFO 64035 --- [pet-platform-backend] [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:63868/p03_technical_fixture]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 17.11
+	Default catalog/schema: p03_technical_fixture/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-10-08T09:28:51.877+08:00  INFO 64035 --- [pet-platform-backend] [           main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-10-08T09:28:51.877+08:00  INFO 64035 --- [pet-platform-backend] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-10-08T09:28:52.038+08:00  INFO 64035 --- [pet-platform-backend] [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2026-10-08T09:28:52.045+08:00  INFO 64035 --- [pet-platform-backend] [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 63943 (http) with context path '/'
+2026-10-08T09:28:52.047+08:00  INFO 64035 --- [pet-platform-backend] [           main] c.p.t.c.ProductionOpenApiExportTest      : Started ProductionOpenApiExportTest in 0.489 seconds (process running for 6.707)
+2026-10-08T09:28:52.051+08:00  INFO 64035 --- [pet-platform-backend] [1-auto-2-exec-1] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-10-08T09:28:52.051+08:00  INFO 64035 --- [pet-platform-backend] [1-auto-2-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-10-08T09:28:52.052+08:00  INFO 64035 --- [pet-platform-backend] [1-auto-2-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2026-10-08T09:28:52.094+08:00  INFO 64035 --- [pet-platform-backend] [1-auto-2-exec-1] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 39 ms
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.556 s -- in com.pet.testing.contracts.ProductionOpenApiExportTest
+[INFO] Running com.pet.testing.architecture.StructureRulesTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.031 s -- in com.pet.testing.architecture.StructureRulesTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 12, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  9.974 s
+[INFO] Finished at: 2026-10-08T09:28:52+08:00
+[INFO] ------------------------------------------------------------------------

@@ -1,0 +1,40 @@
+{
+  "jar": "/Users/kimwell/work/pet-platform/apps/backend/target/pet-platform-backend-0.0.0-SNAPSHOT.jar",
+  "sha256": "c89e5492587698e26f54debff1a22a8372eb0267ef4018a11c367645f4b7f818",
+  "projectClasses": [
+    "BOOT-INF/classes/com/pet/platform/shared/config/ApiConfiguration.class",
+    "BOOT-INF/classes/com/pet/platform/shared/config/EnvironmentSettings.class",
+    "BOOT-INF/classes/com/pet/platform/shared/observability/TraceFilter.class",
+    "BOOT-INF/classes/com/pet/platform/shared/observability/TraceContext.class",
+    "BOOT-INF/classes/com/pet/platform/shared/persistence/BaseEntity.class",
+    "BOOT-INF/classes/com/pet/platform/shared/persistence/DatabaseConfigurationRules.class",
+    "BOOT-INF/classes/com/pet/platform/shared/persistence/JpaPageAdapter.class",
+    "BOOT-INF/classes/com/pet/platform/shared/persistence/PersistenceConfiguration.class",
+    "BOOT-INF/classes/com/pet/platform/shared/api/ApiResponse$Success.class",
+    "BOOT-INF/classes/com/pet/platform/shared/api/SortRule.class",
+    "BOOT-INF/classes/com/pet/platform/shared/api/FieldErrorDetail.class",
+    "BOOT-INF/classes/com/pet/platform/shared/api/SortRule$Direction.class",
+    "BOOT-INF/classes/com/pet/platform/shared/api/ApiError.class",
+    "BOOT-INF/classes/com/pet/platform/shared/api/ErrorCode.class",
+    "BOOT-INF/classes/com/pet/platform/shared/api/PageQuery.class",
+    "BOOT-INF/classes/com/pet/platform/shared/api/ApiResponse$Failure.class",
+    "BOOT-INF/classes/com/pet/platform/shared/api/PageResponse.class",
+    "BOOT-INF/classes/com/pet/platform/shared/api/SortWhitelist.class",
+    "BOOT-INF/classes/com/pet/platform/shared/api/ProtocolErrorController.class",
+    "BOOT-INF/classes/com/pet/platform/shared/api/ApiResponse.class",
+    "BOOT-INF/classes/com/pet/platform/shared/exception/ValidationErrors.class",
+    "BOOT-INF/classes/com/pet/platform/shared/exception/ResourceNotFoundException.class",
+    "BOOT-INF/classes/com/pet/platform/shared/exception/ConflictException.class",
+    "BOOT-INF/classes/com/pet/platform/shared/exception/PermissionDeniedException.class",
+    "BOOT-INF/classes/com/pet/platform/shared/exception/BusinessException.class",
+    "BOOT-INF/classes/com/pet/platform/shared/exception/TenantAccessDeniedException.class",
+    "BOOT-INF/classes/com/pet/platform/shared/exception/GlobalExceptionHandler.class",
+    "BOOT-INF/classes/com/pet/platform/Application.class"
+  ],
+  "productionMigrations": [
+    "BOOT-INF/classes/db/migration/",
+    "BOOT-INF/classes/db/migration/README.md"
+  ],
+  "forbiddenEntries": [],
+  "testArtifactsAbsent": true
+}

@@ -1,0 +1,14 @@
+{
+  "id": "startup-http",
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "command": [
+    "python3",
+    "-c",
+    "import urllib.request,urllib.error,json; results=[]; u=\"http://127.0.0.1:18080/\"; result=None; \ntry:\n urllib.request.urlopen(u,timeout=10)\nexcept urllib.error.HTTPError as e:\n assert e.code==404;results.append({\"url\":u,\"status\":e.code,\"result\":\"PASS\", \"meaning\":\"真实后端已启动，未实现业务端点\"})\nwith urllib.request.urlopen(\"http://127.0.0.1:5173/\",timeout=10) as r:\n assert r.status==200 and \"src/main.tsx\" in r.read().decode(); results.append({\"url\":\"http://127.0.0.1:5173/\",\"status\":200,\"result\":\"PASS\"})\nprint(json.dumps(results,ensure_ascii=False))"
+  ],
+  "exit_code": 0,
+  "status": "PASS",
+  "duration_seconds": 0.29,
+  "evidence": "startup-http.log",
+  "summary": "[{\"url\": \"http://127.0.0.1:18080/\", \"status\": 404, \"result\": \"PASS\", \"meaning\": \"真实后端已启动，未实现业务端点\"}, {\"url\": \"http://127.0.0.1:5173/\", \"status\": 200, \"result\": \"PASS\"}]\n"
+}

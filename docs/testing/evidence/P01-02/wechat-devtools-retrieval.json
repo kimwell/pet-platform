@@ -1,0 +1,8 @@
+{
+  "date": "2026-10-07",
+  "history_url": "https://devtools.wxqcloud.qq.com.cn/WechatWebDev/nightly/versions/history_stable.json",
+  "history_sha256": "4b084e554a0f030bb38b5c3015001896fa1fa5367a82e00fbd12a0c1befa5a7e",
+  "selected_url": "https://devtools.wxqcloud.qq.com.cn/WechatWebDev/nightly/versions/logs/stable_v2.02.2608080.json",
+  "selected_sha256": "33c7113241097677d4ae3eb91868ad049991a6b81918201718991c5dfca9a624",
+  "result": "RESOLVED;未下载安装或运行DevTools"
+}

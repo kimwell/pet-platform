@@ -1,0 +1,15 @@
+{
+  "id": "final-stop-chain",
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "command": [
+    "python3",
+    "docs/testing/evidence/P02-02/infra-stop-capture.py"
+  ],
+  "exit_code": 0,
+  "expected_exit_code": 0,
+  "status": "PASS",
+  "started_at": "2026-10-08T07:31:52.720867+08:00",
+  "duration_seconds": 3.405,
+  "evidence": "final-stop-chain.log",
+  "summary": "{\"id\": \"infra-stop-final\", \"exit_code\": 0, \"expected_exit_code\": 0, \"status\": \"PASS\", \"duration_seconds\": 2.256}\n{\"id\": \"containers-final-r2\", \"exit_code\": 0, \"expected_exit_code\": 0, \"status\": \"PASS\", \"duration_seconds\": 0.046}\n{\"id\": \"volumes-final-r2\", \"exit_code\": 0, \"expected_exit_code\": 0, \"status\": \"PASS\", \"duration_seconds\": 0.029}\n"
+}

@@ -1,0 +1,14 @@
+{
+  "id": "environment",
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "command": [
+    "python3",
+    "-c",
+    "import subprocess,json,plistlib,pathlib; commands=[[\"git\",\"branch\",\"--show-current\"],[\"git\",\"status\",\"--short\"],[\"java\",\"--version\"],[\"node\",\"--version\"],[\"docker\",\"--version\"],[\"docker\",\"compose\",\"version\"],[\"docker\",\"info\",\"--format\",\"{{.ServerVersion}}\"],[\"docker\",\"ps\",\"--format\",\"{{.Names}} {{.Ports}}\"]]; results=[]; [(results.append({\"command\":c,\"exit_code\":(r:=subprocess.run(c,capture_output=True,text=True)).returncode,\"output\":r.stdout+r.stderr})) for c in commands]; p=pathlib.Path(\"/Applications/wechatwebdevtools.app/Contents/Info.plist\"); results.append({\"devtools\":plistlib.loads(p.read_bytes()).get(\"CFBundleShortVersionString\")}); print(json.dumps(results,ensure_ascii=False,indent=2))"
+  ],
+  "exit_code": 0,
+  "status": "PASS",
+  "duration_seconds": 1.61,
+  "evidence": "environment.log",
+  "summary": "[\n  {\n    \"command\": [\n      \"git\",\n      \"branch\",\n      \"--show-current\"\n    ],\n    \"exit_code\": 0,\n    \"output\": \"main\\n\"\n  },\n  {\n    \"command\": [\n      \"git\",\n      \"status\",\n      \"--short\"\n    ],\n    \"exit_code\": 0,\n    \"output\": \"?? .editorconfig\\n?? .gitattributes\\n?? .github/\\n?? .gitignore\\n?? .npmrc\\n?? .nvmrc\\n?? AGENTS.md\\n?? README.md\\n?? apps/\\n?? docs/\\n?? eslint.config.mjs\\n?? infra/\\n?? package.json\\n?? packages/\\n?? pnpm-workspace.yaml\\n?? scripts/\\n?? ui/\\n\"\n  },\n  {\n    \"command\": [\n      \"java\",\n      \"--version\"\n    ],\n    \"exit_code\": 0,\n    \"output\": \"openjdk 21.0.12.1 2026-08-18 LTS\\nOpenJDK Runtime Environment Temurin-21.0.12.1+1 (build 21.0.12.1+1-LTS)\\nOpenJDK 64-Bit Server VM Temurin-21.0.12.1+1 (build 21.0.12.1+1-LTS, mixed mode, sharing)\\n\"\n  },\n  {\n    \"command\": [\n      \"node\",\n      \"--version\"\n    ],\n    \"exit_code\": 0,\n    \"output\": \"v24.21.0\\n\"\n  },\n  {\n    \"command\": [\n      \"docker\",\n      \"--version\"\n    ],\n    \"exit_code\": 0,\n    \"output\": \"Docker version 29.5.2, build 79eb04c7d8\\n\"\n  },\n  {\n    \"command\": [\n      \"docker\",\n      \"compose\",\n      \"version\"\n    ],\n    \"exit_code\": 0,\n    \"output\": \"Docker Compose version v5.1.1\\n\"\n  },\n  {\n    \"command\": [\n      \"docker\",\n      \"info\",\n      \"--format\",\n      \"{{.ServerVersion}}\"\n    ],\n    \"exit_code\": 0,\n    \"output\": \"29.4.0\\n\"\n  },\n  {\n    \"command\": [\n      \"docker\",\n      \"ps\",\n      \"--format\",\n      \"{{.Names}} {{.Ports}}\"\n    ],\n    \"exit_code\": 0,\n    \"output\": \"\"\n  },\n  {\n    \"devtools\": \"2.01.2510260\"\n  }\n]\n"
+}

@@ -1,0 +1,40 @@
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v4.0.8)
+
+2026-10-07T22:19:37.279+08:00  INFO 91853 --- [pet-platform-backend] [           main] com.pet.platform.Application             : Starting Application v0.0.0-SNAPSHOT using Java 21.0.12.1 with PID 91853 (/Users/kimwell/work/pet-platform/apps/backend/target/pet-platform-backend-0.0.0-SNAPSHOT.jar started by kimwell in /Users/kimwell/work/pet-platform/apps/backend)
+2026-10-07T22:19:37.281+08:00  INFO 91853 --- [pet-platform-backend] [           main] com.pet.platform.Application             : No active profile set, falling back to 1 default profile: "default"
+2026-10-07T22:19:37.849+08:00  INFO 91853 --- [pet-platform-backend] [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 18081 (http)
+2026-10-07T22:19:37.861+08:00  INFO 91853 --- [pet-platform-backend] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-10-07T22:19:37.861+08:00  INFO 91853 --- [pet-platform-backend] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.24]
+2026-10-07T22:19:37.876+08:00  INFO 91853 --- [pet-platform-backend] [           main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 558 ms
+2026-10-07T22:19:37.915+08:00  WARN 91853 --- [pet-platform-backend] [           main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.boot.context.properties.ConfigurationPropertiesBindException: Error creating bean with name 'pet-com.pet.platform.shared.config.EnvironmentSettings': Could not bind properties to 'EnvironmentSettings' : prefix=pet, ignoreInvalidFields=false, ignoreUnknownFields=true
+2026-10-07T22:19:37.918+08:00  INFO 91853 --- [pet-platform-backend] [           main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2026-10-07T22:19:37.923+08:00  INFO 91853 --- [pet-platform-backend] [           main] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2026-10-07T22:19:37.930+08:00 ERROR 91853 --- [pet-platform-backend] [           main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Failed to bind properties under 'pet.public-origin' to java.net.URI:
+
+    Property: pet.public-origin
+    Value: "${PET_PUBLIC_ORIGIN}"
+    Origin: class path resource [application.yml] from pet-platform-backend-0.0.0-SNAPSHOT.jar - 11:18
+    Reason: failed to convert java.lang.String to java.net.URI (caused by java.lang.IllegalArgumentException: Invalid URI syntax: Illegal character in path at index 1: ${PET_PUBLIC_ORIGIN})
+
+Action:
+
+Update your application's configuration
+

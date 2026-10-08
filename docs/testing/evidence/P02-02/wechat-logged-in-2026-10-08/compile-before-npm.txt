@@ -1,0 +1,238 @@
+Window: "WeChat Web Devtools", App: 微信开发者工具.
+0 标准窗口 WeChat Web Devtools, Secondary Actions: Raise
+	1 HTML 内容 file:///Users/kimwell/Applications/WechatDevTools-2.02.2608080.app/Contents/Resources/app.asar/html/electron-project.html?projectpath=%2FUsers%2Fkimwell%2Fwork%2Fpet-platform%2Fapps%2Fwechat-miniprogram&projectname=pet-platform-miniprogram-local&projectid=%2FUsers%2Fkimwell%2Fwork%2Fpet-platform%2Fapps%2Fwechat-miniprogram&theme=dark&skeletonPath=%2FUsers%2Fkimwell%2FLibrary%2FApplication%20Support%2F%E5%BE%AE%E4%BF%A1%E5%BC%80%E5%8F%91%E8%80%85%E5%B7%A5%E5%85%B7%2Fb0dc668933a0edaedd558a9f59ae66b5%2FWeappCache%2FskeletonCache%2F1a347ab98c653c1ba55887dc4e81fa9a%2Fpageskeleton.html&appid=wx9bcab67d52e2ee04&frame=0&devid=s0&runtimeid=0&devtype=miniprogram&proxyPort=15681&userDataPath=%2FUsers%2Fkimwell%2FLibrary%2FApplication%2520Support%2F%25E5%25BE%25AE%25E4%25BF%25A1%25E5%25BC%2580%25E5%258F%2591%25E8%2580%2585%25E5%25B7%25A5%25E5%2585%25B7%2Fb0dc668933a0edaedd558a9f59ae66b5&appVersion=2.02.2608080&appVersionType=0
+		2 container
+			3 文本 微信开发者工具 Stable 2.02.2608080
+			4 container
+				5 text 小程序模式
+			6 文本 预览
+			7 文本 真机调试
+			8 文本 上传
+			9 未加标签的图片 要获取缺失的图片说明，请打开上下文菜单。
+			10 container
+				11 container
+					12 标题 提示, Value: 3
+						13 文本 提示
+					14 文本 预览 Error: miniprogram/pages/system/entry/index.json: ["usingComponents"]["t-button"]: "tdesign-miniprogram/button/button"，在 /Users/kimwell/work/pet-platform/apps/wechat-miniprogram/miniprogram/pages/system/entry/tdesign-miniprogram/button/button
+					15 文本 /Users/kimwell/work/pet-platform/apps/wechat-miniprogram/miniprogram/pages/system/entry/tdesign-miniprogram/button/button/index
+					16 文本 /Users/kimwell/work/pet-platform/apps/wechat-miniprogram/miniprogram/pages/system/entry/miniprogram_npm/tdesign-miniprogram/button/button
+					17 文本 /Users/kimwell/work/pet-platform/apps/wechat-miniprogram/miniprogram/pages/system/entry/miniprogram_npm/tdesign-miniprogram/button/button/index
+					18 文本 /Users/kimwell/work/pet-platform/apps/wechat-miniprogram/miniprogram/pages/system/miniprogram_npm/tdesign-miniprogram/button/button
+					19 文本 /Users/kimwell/work/pet-platform/apps/wechat-miniprogram/miniprogram/pages/system/miniprogram_npm/tdesign-miniprogram/button/button/index
+					20 文本 /Users/kimwell/work/pet-platform/apps/wechat-miniprogram/miniprogram/pages/miniprogram_npm/tdesign-miniprogram/button/button
+					21 文本 /Users/kimwell/work/pet-platform/apps/wechat-miniprogram/miniprogram/pages/miniprogram_npm/tdesign-miniprogram/button/button/index
+					22 文本 /Users/kimwell/work/pet-platform/apps/wechat-miniprogram/miniprogram/miniprogram_npm/tdesign-miniprogram/button/button
+					23 文本 /Users/kimwell/work/pet-platform/apps/wechat-miniprogram/miniprogram/miniprogram_npm/tdesign-miniprogram/button/button/index 路径下未找到组件 [2.02.2608080][darwin-arm64]
+					24 链接 复制错误信息
+						25 文本 复制错误信息
+					26 container
+						27 按钮 相关问题
+						28 按钮 关闭
+				29 container
+					30 container
+						31 text 预览 编辑
+					32 container
+						33 text 普通编译
+					34 container
+						35 container
+							36 text 8 : 15
+						37 container
+							38 标题 模拟器启动失败, Value: 2
+								39 文本 模拟器启动失败
+							40 文本 Error: miniprogram/pages/system/entry/index.json: ["usingComponents"]["t-button"]: "tdesign-miniprogram/button/button"，在 /Users/kimwell/work/pet-platform/apps/wechat-miniprogram/miniprogram/pages/system/entry/tdesign-miniprogram/button/button
+/Users/kimwell/work/pet-platform/apps/wechat-miniprogram/miniprogram/pages/system/entry/tdesign-miniprogram/button/button/index
+/Users/kimwell/work/pet-platform/apps/wechat-miniprogram/miniprogram/pages/system/entry/miniprogram_npm/tdesign-miniprogram/button/button
+/Us
+							41 文本 请查看构建日志或调试器日志获取更多信息
+					42 container
+						43 文本 iPhone 12/13 (Pro) 71% 16
+					44 container
+						45 文本 页面路径
+					46 文本 (空)
+				47 container
+					48 container
+						49 container
+							50 文本 wechat-miniprogram
+							51 工具栏
+								52 按钮 Toggle Primary Side Bar (⌘K ⌘B)
+									53 文本 
+								54 按钮 切换面板 (⌘J)
+									55 文本 
+								56 按钮 Toggle Secondary Side Bar (⌥⌘B)
+									57 文本 
+						58 container
+							59 container
+								60 标签页组 活动视图切换器
+									61 标签 (selected) Description: 资源管理器 (⌘K ⇧⌘E), Value: 1
+										62 container 资源管理器 (⌘K ⇧⌘E)
+											63 文本 
+									64 标签 (settable, integer) Search (⇧⌘F), Value: 0
+										65 container Search (⇧⌘F)
+											66 文本 
+									67 标签 (settable, integer) Description: 源代码管理 (⌃⇧G) - 946 个挂起的更改, Value: 0
+										68 文本 
+									69 标签 (settable, integer) 扩展 (⇧⌘X), Value: 0
+										70 container 扩展 (⇧⌘X)
+											71 文本 
+									72 弹出式按钮 其他视图
+										73 文本 
+								74 container
+									75 标题 资源管理器, Help: 资源管理器 (⌘K ⇧⌘E), Value: 2
+										76 文本 资源管理器
+									77 内容列表 资源管理器操作
+										78 弹出式按钮 Views and More Actions...
+									79 container
+										80 container
+											81 按钮 文件资源管理器部分
+												82 文本 
+												83 标题 Description: 文件资源管理器部分, Help: wechat-miniprogram, Value: 3
+													84 文本 WECHAT-MINIPROGRAM
+											85 外框 树
+												86 container
+													87 row miniprogram
+														88 container
+															89 文本 
+															90 container ~/work/pet-platform/apps/wechat-miniprogram/miniprogram • 包含强调项
+																91 文本 miniprogram
+																92 文本 
+													93 row node_modules
+														94 container
+															95 文本 
+															96 文本 node_modules
+													97 row package.json
+														98 container
+															99 container ~/work/pet-platform/apps/wechat-miniprogram/package.json • Untracked
+																100 文本 package.json
+																101 文本 U
+													102 row project.config.json
+														103 container
+															104 container ~/work/pet-platform/apps/wechat-miniprogram/project.config.json • Untracked
+																105 文本 project.config.json
+																106 文本 U
+													107 row project.private.config.json
+														108 container
+															109 文本 project.private.config.json
+													110 row project.private.config.json.example
+														111 container
+															112 container ~/work/pet-platform/apps/wechat-miniprogram/project.private.config.json.example • Untracked
+																113 文本 project.private.config.json.example
+																114 文本 U
+													115 row tsconfig.json
+														116 container
+															117 container ~/work/pet-platform/apps/wechat-miniprogram/tsconfig.json • Untracked
+																118 文本 tsconfig.json
+																119 文本 U
+										120 按钮 大纲 Section
+											121 文本 
+											122 标题 大纲, Value: 3
+												123 文本 大纲
+										124 按钮 时间线 Section
+											125 文本 
+											126 标题 时间线, Value: 3
+												127 文本 时间线
+							128 container
+								129 container
+									130 container 第 1 组 (空)
+										131 container
+											132 定义列表
+												133 container 显示所有命令
+													134 文本 显示所有命令
+												135 container Command+K Command+P
+													136 text ⌘ K ⌘ P
+											137 定义列表
+												138 container Go to File
+													139 文本 Go to File
+												140 container Command+P
+													141 text ⌘ P
+											142 定义列表
+												143 container 在文件中查找
+													144 文本 在文件中查找
+												145 container Shift+Command+F
+													146 text ⇧ ⌘ F
+											147 定义列表
+												148 container 开始调试
+													149 文本 开始调试
+												150 文本 F5
+											151 定义列表
+												152 container 切换终端
+													153 文本 切换终端
+												154 container Control+`
+													155 text ⌃ `
+								156 container
+									157 标签页组 活动视图切换器
+										158 标签 (selected) Description: 构建 - Logs: 19, Value: 1
+											159 container 构建 - Logs: 19
+												160 文本 构建
+											161 container 构建 - Logs: 19
+												162 文本 19
+										163 标签 (settable, integer) 调试器 - Errors: 3, Warnings: 0 调试器 - Errors: 3, Warnings: 0, Value: 0
+											164 container 调试器 - Errors: 3, Warnings: 0
+												165 文本 调试器
+											166 container 调试器 - Errors: 3, Warnings: 0
+												167 文本 3
+										168 标签 (settable, integer) Description: 问题 (⌘K ⇧⌘M) - 总计 0 个问题, Value: 0
+											169 文本 问题
+										170 标签 (settable, integer) Description: 输出, Value: 0
+											171 文本 输出
+										172 标签 (settable, integer) Description: 调试控制台 (⇧⌘Y), Value: 0
+											173 文本 调试控制台
+										174 标签 (settable, integer) 终端 (⌃`), Value: 0
+											175 container 终端 (⌃`)
+												176 文本 终端
+										177 标签 (settable, integer) 代码质量, Value: 0
+											178 container 代码质量
+												179 文本 代码质量
+									180 工具栏 构建操作
+									181 工具栏
+										182 按钮 最大化面板大小
+											183 文本 
+										184 按钮 关闭面板
+											185 文本 
+									186 container
+										187 container
+											188 图像
+											189 文本栏 (settable) Terminal input
+											190 图像
+											191 图像
+											192 图像
+											193 图像
+						194 container
+							195 container pet-platform (Git) - main*, Checkout Branch/Tag...
+								196 按钮 pet-platform (Git) - main*, Checkout Branch/Tag...
+									197 文本 
+									198 文本  main*
+							199 container pet-platform (Git)
+								200 按钮 pet-platform (Git)
+							201 container 没有问题
+								202 按钮 没有问题
+									203 文本 
+									204 文本  0 
+									205 文本 
+									206 文本  0
+							207 container 进度和简要通知
+							208 container 已为屏幕阅读器优化
+								209 按钮 已为屏幕阅读器优化
+							210 container undefined
+							211 文本 1
+					212 文本 信息: Signing in to github.com...
+	213 关闭按钮
+	214 全屏幕按钮 Help: 此按钮也可以执行缩放窗口的操作, Secondary Actions: 缩放窗口
+	215 最小化按钮
+216 menu bar
+	217 微信开发者工具
+	218 项目
+	219 文件
+	220 编辑
+	221 工具
+	222 跳转
+	223 选择
+	224 界面
+	225 设置
+	226 插件
+	227 帮助
+
+Selected text: ```
+￼
+```
+
+Note: Pay special attention to the content selected by the user. If the user asks a question or refers to the content they are looking at on-screen, they might be referring to the selected content (but they might be referring to something else that's visible, too).

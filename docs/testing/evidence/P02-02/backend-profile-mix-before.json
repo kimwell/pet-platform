@@ -1,0 +1,16 @@
+{
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "command": [
+    "java",
+    "-jar",
+    "/Users/kimwell/work/pet-platform/apps/backend/target/pet-platform-backend-0.0.0-SNAPSHOT.jar",
+    "--spring.profiles.active=prod,local",
+    "--server.port=18080"
+  ],
+  "pid": 8328,
+  "port": 18080,
+  "status": "PASS",
+  "exit_code": null,
+  "evidence": "backend-profile-mix-before.log",
+  "boundary": "长驻进程启动观察，不伪造命令退出码"
+}

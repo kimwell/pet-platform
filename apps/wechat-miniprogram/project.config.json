@@ -1,0 +1,16 @@
+{
+  "description": "企业应用原生小程序工程入口；真实 AppID 在本地私有配置设置",
+  "miniprogramRoot": "miniprogram/",
+  "compileType": "miniprogram",
+  "appid": "",
+  "projectname": "pet-platform-miniprogram",
+  "libVersion": "3.17.2",
+  "setting": {
+    "es6": true,
+    "urlCheck": true,
+    "useCompilerPlugins": ["typescript"],
+    "packNpmManually": true,
+    "packNpmRelationList": [{ "packageJsonPath": "./package.json", "miniprogramNpmDistDir": "./miniprogram/" }]
+  },
+  "editorSetting": { "tabIndent": "insertSpaces", "tabSize": 2 }
+}

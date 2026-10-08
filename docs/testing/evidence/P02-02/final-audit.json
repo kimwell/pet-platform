@@ -1,0 +1,65 @@
+{
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "command": [
+    "python3",
+    "docs/testing/evidence/P02-02/audit.py"
+  ],
+  "exit_code": 0,
+  "status": "PASS",
+  "deleted": [],
+  "changed": [
+    ".github/workflows/check.yml",
+    "README.md",
+    "apps/admin-web/package.json",
+    "apps/admin-web/src/app/providers/AppProviders.tsx",
+    "apps/admin-web/vite.config.ts",
+    "apps/backend/src/main/java/com/pet/platform/Application.java",
+    "apps/backend/src/main/java/com/pet/platform/shared/config/EnvironmentSettings.java",
+    "apps/backend/src/main/resources/application-prod.yml",
+    "apps/backend/src/main/resources/application.yml",
+    "apps/backend/src/test/java/com/pet/platform/ApplicationTest.java",
+    "docs/architecture/CONFIGURATION.md",
+    "docs/architecture/PROJECT-STRUCTURE.md",
+    "docs/development/DECISION-LOG.md",
+    "docs/development/LOCAL-DEVELOPMENT.md",
+    "docs/development/ROADMAP.md",
+    "docs/testing/ACCEPTANCE-MATRIX.md",
+    "infra/local/README.md",
+    "infra/local/docker-compose.yml",
+    "package.json"
+  ],
+  "new": [
+    "apps/admin-web/dev-config.ts",
+    "apps/admin-web/src/app/router/dev-config.test.ts",
+    "docs/testing/P02-02-VERIFICATION.md",
+    "scripts/local-infra.mjs"
+  ],
+  "preserved_counts": {
+    "ui": 272,
+    "P01": 129,
+    "P02-01": 114,
+    "frozen": 4
+  },
+  "links_missing": [],
+  "volumes_before_count": 12,
+  "volumes_after_count": 12,
+  "containers": [
+    "pet-platform-p02-validation-rabbitmq-1 exited",
+    "pet-platform-p02-validation-postgres-1 exited",
+    "pet-platform-p02-validation-redis-1 exited"
+  ],
+  "ports_occupied": {
+    "8080": false,
+    "5173": false,
+    "4173": false,
+    "25432": false,
+    "26379": false,
+    "25672": false,
+    "25673": false
+  },
+  "private_paths_ignored": true,
+  "no_added_secret_files": true,
+  "final_rabbit_no_sigkill_oom": true,
+  "stable_rabbit_node": "rabbit@rabbitmq",
+  "scope": "工程配置与源码/证据保全；未实现业务/DB/认证/多租户；未执行微信工具/真机/远程CI/其他OS"
+}

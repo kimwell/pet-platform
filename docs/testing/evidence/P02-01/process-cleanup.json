@@ -1,0 +1,24 @@
+{
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "command": "本轮创建的进程组按记录PID发送SIGTERM并验证端口已释放",
+  "exit_code": 0,
+  "status": "PASS",
+  "processes": [
+    {
+      "id": "backend-start",
+      "pid": 90306,
+      "signal": "SIGTERM",
+      "command_matches_created_process": true
+    },
+    {
+      "id": "web-dev",
+      "pid": 90307,
+      "signal": "SIGTERM",
+      "command_matches_created_process": true
+    }
+  ],
+  "ports_released": [
+    18080,
+    5173
+  ]
+}

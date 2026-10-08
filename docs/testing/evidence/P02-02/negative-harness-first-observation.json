@@ -1,0 +1,6 @@
+{
+  "status": "FAIL",
+  "exit_code": 1,
+  "reason": "初次脚本断言期望先提示 pet.environment，实际 Spring 先在未解析的 pet.public-origin 占位符绑定处失败；应用确实以1拒绝启动，原日志保留。随后将空占位输入交给既有中文构造校验。",
+  "evidence": "backend-missing-profile.log"
+}

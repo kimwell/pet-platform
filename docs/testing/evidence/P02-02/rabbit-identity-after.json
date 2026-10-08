@@ -1,0 +1,18 @@
+{
+  "id": "rabbit-identity-after",
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "command": [
+    "docker",
+    "inspect",
+    "--format",
+    "ID={{.Id}} Hostname={{.Config.Hostname}} StopTimeout={{.Config.StopTimeout}} {{json .Mounts}}",
+    "pet-platform-p02-validation-rabbitmq-1"
+  ],
+  "exit_code": 0,
+  "expected_exit_code": 0,
+  "status": "PASS",
+  "started_at": "2026-10-08T07:30:03.381538+08:00",
+  "duration_seconds": 0.034,
+  "evidence": "rabbit-identity-after.log",
+  "summary": "ID=aaf4a5757d7b751d078727d63ff42303cbe9eb7429de9b9687202d3d9ae1dc6b Hostname=rabbitmq StopTimeout=30 [{\"Destination\":\"/var/lib/rabbitmq\",\"Driver\":\"local\",\"Mode\":\"rw\",\"Name\":\"pet-platform-p02-validation_rabbitmq-data\",\"Propagation\":\"\",\"RW\":true,\"Source\":\"/var/lib/docker/volumes/pet-platform-p02-validation_rabbitmq-data/_data\",\"Type\":\"volume\"}]\n"
+}

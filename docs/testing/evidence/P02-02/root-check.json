@@ -1,0 +1,15 @@
+{
+  "id": "root-check",
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "command": [
+    "pnpm",
+    "check"
+  ],
+  "exit_code": 2,
+  "expected_exit_code": 0,
+  "status": "FAIL",
+  "started_at": "2026-10-08T07:23:31.543669+08:00",
+  "duration_seconds": 3.199,
+  "evidence": "root-check.log",
+  "summary": "iniprogram.mjs\n\n单锁、精确直接依赖、工具链、固定后端入口及秘密特征检查通过。秘密检查不输出匹配值。\n原生小程序结构、页面和官方组件引用检查通过；这不是开发者工具编译。\n\n> pet-platform@0.0.0 check:web /Users/kimwell/work/pet-platform\n> pnpm --filter @pet/admin-web typecheck && pnpm --filter @pet/admin-web lint && pnpm --filter @pet/admin-web test\n\n\n> @pet/admin-web@0.0.0 typecheck /Users/kimwell/work/pet-platform/apps/admin-web\n> tsc --noEmit\n\nvite.config.ts(5,29): error TS2769: No overload matches this call.\n  The last overload gave the following error.\n    Argument of type '({ mode, command, isPreview }: ConfigEnv) => { plugins: Plugin<any>[][]; server: { host: string; port: number; strictPort: true; proxy: { '/api': { target: string; changeOrigin: boolean; }; } | { '/api'?: undefined; }; }; preview: { ...; }; }' is not assignable to parameter of type 'UserConfigExport'.\n      Type '({ mode, command, isPreview }: ConfigEnv) => { plugins: Plugin<any>[][]; server: { host: string; port: number; strictPort: true; proxy: { '/api': { target: string; changeOrigin: boolean; }; } | { '/api'?: undefined; }; }; preview: { ...; }; }' is not assignable to type 'UserConfigFnObject'.\n        Call signature return types '{ plugins: Plugin<any>[][]; server: { host: string; port: number; strictPort: true; proxy: { '/api': { target: string; changeOrigin: boolean; }; } | { '/api'?: undefined; }; }; preview: { host: string; port: number; strictPort: true; proxy: {}; }; }' and 'UserConfig' are incompatible.\n          The types of 'server.proxy' are incompatible between these types.\n            Type '{ '/api': { target: string; changeOrigin: boolean; }; } | { '/api'?: undefined; }' is not assignable to type 'Record<string, string | ProxyOptions> | undefined'.\n              Type '{ '/api'?: undefined; }' is not assignable to type 'Record<string, string | ProxyOptions>'.\n                Property ''/api'' is incompatible with index signature.\n                  Type 'undefined' is not assignable to type 'string | ProxyOptions'.\n/Users/kimwell/work/pet-platform/apps/admin-web:\n ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL  @pet/admin-web@0.0.0 typecheck: `tsc --noEmit`\nExit status 2\n ELIFECYCLE  Command failed with exit code 2.\n ELIFECYCLE  Command failed with exit code 2.\n"
+}

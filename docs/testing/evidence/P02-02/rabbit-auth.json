@@ -1,0 +1,27 @@
+{
+  "id": "rabbit-auth",
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "command": [
+    "docker",
+    "compose",
+    "--env-file",
+    "/Users/kimwell/work/pet-platform/.local-data/p02-infra.env",
+    "-p",
+    "pet-platform-p02-validation",
+    "-f",
+    "/Users/kimwell/work/pet-platform/infra/local/docker-compose.yml",
+    "exec",
+    "-T",
+    "rabbitmq",
+    "sh",
+    "-ec",
+    "rabbitmqctl authenticate_user \"$RABBITMQ_DEFAULT_USER\" \"$RABBITMQ_DEFAULT_PASS\""
+  ],
+  "exit_code": 0,
+  "expected_exit_code": 0,
+  "status": "PASS",
+  "started_at": "2026-10-08T07:30:05.281508+08:00",
+  "duration_seconds": 0.46,
+  "evidence": "rabbit-auth.log",
+  "summary": "Authenticating user \"p02_fixture\" ...\nSuccess\n"
+}

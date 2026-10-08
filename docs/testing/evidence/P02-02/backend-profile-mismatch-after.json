@@ -1,0 +1,20 @@
+{
+  "id": "backend-profile-mismatch-after",
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "command": [
+    "java",
+    "-jar",
+    "/Users/kimwell/work/pet-platform/apps/backend/target/pet-platform-backend-0.0.0-SNAPSHOT.jar",
+    "--spring.profiles.active=prod",
+    "--pet.environment=local",
+    "--pet.public-origin=http://localhost",
+    "--server.port=18080"
+  ],
+  "exit_code": 1,
+  "expected_exit_code": 1,
+  "status": "PASS",
+  "started_at": "2026-10-08T07:37:04.040672+08:00",
+  "duration_seconds": 1.066,
+  "evidence": "backend-profile-mismatch-after.log",
+  "summary": "nContext.java:621) ~[spring-context-7.0.9.jar!/:7.0.9]\n\tat org.springframework.boot.web.server.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:143) ~[spring-boot-web-server-4.0.8.jar!/:4.0.8]\n\tat org.springframework.boot.SpringApplication.refresh(SpringApplication.java:756) ~[spring-boot-4.0.8.jar!/:4.0.8]\n\tat org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:445) ~[spring-boot-4.0.8.jar!/:4.0.8]\n\tat org.springframework.boot.SpringApplication.run(SpringApplication.java:321) ~[spring-boot-4.0.8.jar!/:4.0.8]\n\tat org.springframework.boot.SpringApplication.run(SpringApplication.java:1365) ~[spring-boot-4.0.8.jar!/:4.0.8]\n\tat org.springframework.boot.SpringApplication.run(SpringApplication.java:1354) ~[spring-boot-4.0.8.jar!/:4.0.8]\n\tat com.pet.platform.Application.main(Application.java:20) ~[!/:0.0.0-SNAPSHOT]\n\tat java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]\n\tat java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]\n\tat org.springframework.boot.loader.launch.Launcher.launch(Launcher.java:106) ~[pet-platform-backend-0.0.0-SNAPSHOT.jar:0.0.0-SNAPSHOT]\n\tat org.springframework.boot.loader.launch.Launcher.launch(Launcher.java:64) ~[pet-platform-backend-0.0.0-SNAPSHOT.jar:0.0.0-SNAPSHOT]\n\tat org.springframework.boot.loader.launch.JarLauncher.main(JarLauncher.java:40) ~[pet-platform-backend-0.0.0-SNAPSHOT.jar:0.0.0-SNAPSHOT]\nCaused by: java.lang.IllegalArgumentException: 运行 profile 与 pet.environment 不一致，不能把本地配置用于生产\n\tat com.pet.platform.shared.config.EnvironmentSettings.verifyProfiles(EnvironmentSettings.java:37) ~[!/:0.0.0-SNAPSHOT]\n\tat com.pet.platform.Application.lambda$verifyRuntimeProfile$0(Application.java:16) ~[!/:0.0.0-SNAPSHOT]\n\tat org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1862) ~[spring-beans-7.0.9.jar!/:7.0.9]\n\tat org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1811) ~[spring-beans-7.0.9.jar!/:7.0.9]\n\t... 23 common frames omitted\n\n"
+}

@@ -1,0 +1,14 @@
+{
+  "cwd": "/Users/kimwell/work/pet-platform/apps/backend",
+  "command": [
+    "./mvnw",
+    "spring-boot:run",
+    "-Dspring-boot.run.profiles=local"
+  ],
+  "pid": 478,
+  "port": 8080,
+  "status": "PASS",
+  "exit_code": null,
+  "evidence": "backend-dev.log",
+  "boundary": "长驻进程启动观察，不伪造命令退出码"
+}

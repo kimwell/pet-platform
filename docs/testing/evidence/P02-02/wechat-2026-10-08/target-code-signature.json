@@ -1,0 +1,15 @@
+{
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "command": [
+    "codesign",
+    "--verify",
+    "--deep",
+    "--strict",
+    "/Users/kimwell/Applications/WechatDevTools-2.02.2608080.app"
+  ],
+  "started_at": "2026-10-08T08:06:12.269877+08:00",
+  "duration_seconds": 1.151,
+  "exit_code": 0,
+  "log": "target-code-signature.log",
+  "summary": ""
+}

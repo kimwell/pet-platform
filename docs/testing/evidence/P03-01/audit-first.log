@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "/Users/kimwell/work/pet-platform/docs/testing/evidence/P03-01/final-audit.py", line 28, in <module>
+    assert not broken,broken
+           ^^^^^^^^^^
+AssertionError: [('docs/testing/P03-01-VERIFICATION.md', 'evidence/P03-01/final-audit.json'), ('docs/testing/P03-01-VERIFICATION.md', 'evidence/P03-01/final-audit.json'), ('docs/testing/P03-01-VERIFICATION.md', 'evidence/P03-01/audit-final.json')]

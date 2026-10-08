@@ -1,0 +1,22 @@
+[
+  {
+    "id": "mini-npm-pack-isolated-r2",
+    "cwd": "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/ci-probe",
+    "command": [
+      "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/tools/node-v24.21.0-darwin-arm64/bin/node",
+      "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/tools/pnpm/package/bin/pnpm.cjs",
+      "--config.store-dir=/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/pnpm-store",
+      "dlx",
+      "miniprogram-ci@2.1.48",
+      "pack-npm-manually",
+      "--pack-npm-manually-package-json-path",
+      "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/frontend-probe/mini/package.json",
+      "--pack-npm-manually-miniprogram-npm-dist-dir",
+      "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/frontend-probe/mini"
+    ],
+    "exit_code": 0,
+    "result": "PASS",
+    "seconds": 51.25,
+    "log": "mini-npm-pack-isolated-r2.log"
+  }
+]

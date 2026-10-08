@@ -1,0 +1,13 @@
+{
+  "id": "documentation-audit-final",
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "command": [
+    "python3",
+    "docs/testing/evidence/P02-01/audit-reproduction.py"
+  ],
+  "exit_code": 0,
+  "status": "PASS",
+  "duration_seconds": 0.9,
+  "evidence": "documentation-audit-final.log",
+  "summary": "{\"cwd\": \"/Users/kimwell/work/pet-platform\", \"command\": [\"/Library/Frameworks/Python.framework/Versions/3.14/bin/python3\", \"/Users/kimwell/work/pet-platform/docs/testing/evidence/P02-01/audit-reproduction.py\"], \"exit_code\": 0, \"status\": \"PASS\", \"level\": \"DOCUMENTED\", \"baseline_files\": 430, \"unchanged_baseline_files\": 421, \"ui_files_unchanged\": 272, \"p01_evidence_files_unchanged\": 127, \"changed_baseline_files\": [\"AGENTS.md\", \"README.md\", \"docs/architecture/CONFIGURATION.md\", \"docs/architecture/PROJECT-STRUCTURE.md\", \"docs/architecture/TECHNICAL-BASELINE.md\", \"docs/development/DECISION-LOG.md\", \"docs/development/ROADMAP.md\", \"docs/development/VERSION-MATRIX.md\", \"docs/testing/ACCEPTANCE-MATRIX.md\"], \"deleted_files\": [], \"invalid_local_links\": [], \"secret_feature_findings\": [], \"new_file_count\": 168, \"business_scope\": \"无正式业务Controller/CRUD/迁移/会话/附件/Outbox/生成假DTO\", \"boundary\": \"源文件及文档审计，不替代运行或业务验收；秘密检查结合人工增量核对。\"}\n"
+}

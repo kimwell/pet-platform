@@ -1,0 +1,14 @@
+{
+  "id": "check-root",
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "command": [
+    "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/tools/node-v24.21.0-darwin-arm64/bin/node",
+    "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/tools/pnpm/package/bin/pnpm.cjs",
+    "check"
+  ],
+  "exit_code": 1,
+  "status": "FAIL",
+  "duration_seconds": 0.67,
+  "evidence": "check-root.log",
+  "summary": "\n> pet-platform@0.0.0 check /Users/kimwell/work/pet-platform\n> pnpm check:repo && pnpm check:web && pnpm check:miniprogram\n\n ERR_PNPM_UNSUPPORTED_ENGINE  Unsupported environment (bad pnpm and/or Node.js version)\n\nYour pnpm version is incompatible with \"/Users/kimwell/work/pet-platform\".\n\nExpected version: 10.34.6\nGot: 10.33.0\n\nThis is happening because the package's manifest has an engines.pnpm field specified.\nTo fix this issue, install the required pnpm version globally.\n\nTo install the latest version of pnpm, run \"pnpm i -g pnpm\".\nTo check your pnpm version, run \"pnpm -v\".\n ELIFECYCLE  Command failed with exit code 1.\n"
+}

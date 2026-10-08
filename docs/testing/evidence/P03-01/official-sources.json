@@ -1,0 +1,9 @@
+{
+  "readDate": "2026-10-08",
+  "sources": [
+    "https://docs.spring.io/spring-framework/reference/web/webmvc/mvc-controller/ann-validation.html",
+    "https://docs.spring.io/spring-framework/reference/web/webmvc/mvc-ann-rest-exceptions.html",
+    "https://docs.spring.io/spring-boot/4.0/reference/features/json.html"
+  ],
+  "localOwningEvidence": "backend-dependency-tree.txt; verify-third.log; verify-fourth.log; verify-final.log"
+}

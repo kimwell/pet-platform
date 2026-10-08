@@ -1,0 +1,120 @@
+[
+  {
+    "id": "target-node",
+    "cwd": "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm",
+    "command": [
+      "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/tools/node-v24.21.0-darwin-arm64/bin/node",
+      "--version"
+    ],
+    "exit_code": 0,
+    "result": "PASS",
+    "seconds": 3.57,
+    "log": "target-node.log"
+  },
+  {
+    "id": "target-pnpm",
+    "cwd": "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm",
+    "command": [
+      "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/tools/node-v24.21.0-darwin-arm64/bin/node",
+      "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/tools/pnpm/package/bin/pnpm.cjs",
+      "--version"
+    ],
+    "exit_code": 0,
+    "result": "PASS",
+    "seconds": 0.29,
+    "log": "target-pnpm.log"
+  },
+  {
+    "id": "probe-java",
+    "cwd": "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm",
+    "command": [
+      "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/tools/jdk-21.0.12.1+1/Contents/Home/bin/java",
+      "-version"
+    ],
+    "exit_code": 0,
+    "result": "PASS",
+    "seconds": 0.77,
+    "log": "probe-java.log"
+  },
+  {
+    "id": "wrapper-bootstrap",
+    "cwd": "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/backend-probe",
+    "command": [
+      "mvn",
+      "-B",
+      "-ntp",
+      "-s",
+      "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/settings.xml",
+      "-gs",
+      "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/settings.xml",
+      "-Dmaven.repo.local=/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/m2",
+      "org.apache.maven.plugins:maven-wrapper-plugin:3.3.4:wrapper",
+      "-Dmaven=3.9.16",
+      "-Dtype=only-script"
+    ],
+    "exit_code": 0,
+    "result": "PASS",
+    "seconds": 60.22,
+    "log": "wrapper-bootstrap.log"
+  },
+  {
+    "id": "wrapper-version",
+    "cwd": "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/backend-probe",
+    "command": [
+      "./mvnw",
+      "-B",
+      "-ntp",
+      "-s",
+      "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/settings.xml",
+      "-gs",
+      "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/settings.xml",
+      "-Dmaven.repo.local=/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/m2",
+      "--version"
+    ],
+    "exit_code": 0,
+    "result": "PASS",
+    "seconds": 23.69,
+    "log": "wrapper-version.log"
+  },
+  {
+    "id": "backend-resolve",
+    "cwd": "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/backend-probe",
+    "command": [
+      "./mvnw",
+      "-B",
+      "-ntp",
+      "-s",
+      "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/settings.xml",
+      "-gs",
+      "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/settings.xml",
+      "-Dmaven.repo.local=/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/m2",
+      "org.apache.maven.plugins:maven-dependency-plugin:3.9.0:tree",
+      "-Dverbose",
+      "-DoutputFile=/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/evidence/backend-dependency-tree.txt"
+    ],
+    "exit_code": 0,
+    "result": "PASS",
+    "seconds": 248.2,
+    "log": "backend-resolve.log"
+  },
+  {
+    "id": "backend-effective-pom",
+    "cwd": "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/backend-probe",
+    "command": [
+      "./mvnw",
+      "-B",
+      "-ntp",
+      "-s",
+      "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/settings.xml",
+      "-gs",
+      "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/settings.xml",
+      "-Dmaven.repo.local=/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/m2",
+      "help:effective-pom",
+      "-Doutput=/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/evidence/backend-effective-pom.xml"
+    ],
+    "exit_code": 0,
+    "result": "PASS",
+    "seconds": 35.38,
+    "log": "backend-effective-pom.log"
+  }
+]

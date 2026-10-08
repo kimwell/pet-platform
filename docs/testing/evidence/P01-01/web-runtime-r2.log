@@ -1,0 +1,9 @@
+
+ RUN  v4.1.11 /private/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/frontend-probe
+
+
+ Test Files  1 passed (1)
+      Tests  2 passed (2)
+   Start at  21:07:47
+   Duration  925ms (transform 30ms, setup 0ms, import 786ms, tests 47ms, environment 0ms)
+

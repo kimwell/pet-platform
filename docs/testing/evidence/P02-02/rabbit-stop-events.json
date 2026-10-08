@@ -1,0 +1,26 @@
+{
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "command": [
+    "docker",
+    "events",
+    "--since",
+    "1791415422",
+    "--until",
+    "1791415437",
+    "--filter",
+    "label=com.docker.compose.project=pet-platform-p02-validation",
+    "--filter",
+    "event=kill",
+    "--filter",
+    "event=die",
+    "--filter",
+    "event=stop",
+    "--filter",
+    "event=oom",
+    "--format",
+    "{{json .}}"
+  ],
+  "exit_code": 0,
+  "status": "PASS",
+  "evidence": "rabbit-stop-events.log"
+}

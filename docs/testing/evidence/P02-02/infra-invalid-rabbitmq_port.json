@@ -1,0 +1,26 @@
+{
+  "id": "infra-invalid-rabbitmq_port",
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "command": [
+    "docker",
+    "compose",
+    "--env-file",
+    "/Users/kimwell/work/pet-platform/.local-data/p02-infra.env",
+    "-p",
+    "pet-platform-p02-validation",
+    "-f",
+    "/Users/kimwell/work/pet-platform/infra/local/docker-compose.yml",
+    "config",
+    "--quiet"
+  ],
+  "exit_code": 1,
+  "expected_exit_code": 15,
+  "status": "FAIL",
+  "started_at": "2026-10-08T07:27:11.343000+08:00",
+  "duration_seconds": 0.052,
+  "evidence": "infra-invalid-rabbitmq_port.log",
+  "summary": "invalid hostPort: not-a-port\n",
+  "environment_fixture": {
+    "RABBITMQ_PORT": "<公开反例输入>"
+  }
+}

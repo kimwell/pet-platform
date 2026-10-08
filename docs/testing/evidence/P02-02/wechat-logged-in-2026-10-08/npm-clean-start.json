@@ -1,0 +1,8 @@
+{
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "operation": "将历史离线miniprogram_npm移到忽略目录保留；真实工具构建从无输出开始",
+  "source": "/Users/kimwell/work/pet-platform/apps/wechat-miniprogram/miniprogram/miniprogram_npm",
+  "backup": "/Users/kimwell/work/pet-platform/.local-data/p02-02-offline-npm-before-tool",
+  "output_absent_before_tool_build": true,
+  "started_at": "2026-10-08T08:15:14.501245+08:00"
+}

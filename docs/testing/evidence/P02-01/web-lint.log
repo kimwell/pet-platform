@@ -1,0 +1,4 @@
+
+> @pet/admin-web@0.0.0 lint /Users/kimwell/work/pet-platform/apps/admin-web
+> eslint src vite.config.ts --max-warnings=0
+

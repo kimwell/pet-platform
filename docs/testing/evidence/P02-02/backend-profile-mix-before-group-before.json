@@ -1,0 +1,11 @@
+{
+  "command": [
+    "ps",
+    "-o",
+    "pid=,pgid=,command=",
+    "-g",
+    "8328"
+  ],
+  "exit_code": 0,
+  "output": " 8328  8328 java -jar /Users/kimwell/work/pet-platform/apps/backend/target/pet-platform-backend-0.0.0-SNAPSHOT.jar --spring.profiles.active=prod,local --server.port=18080\n"
+}

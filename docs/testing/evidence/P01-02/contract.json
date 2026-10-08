@@ -1,0 +1,397 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "P01-02技术契约夹具，非已实现接口",
+    "version": "0.0.0-probe"
+  },
+  "paths": {
+    "/technical/me": {
+      "get": {
+        "operationId": "technicalMe",
+        "responses": {
+          "200": {
+            "description": "技术协议示例",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MeResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "ID": {
+        "type": "string",
+        "format": "uuid"
+      },
+      "BigInteger": {
+        "type": "string",
+        "pattern": "^(0|[1-9][0-9]*)$"
+      },
+      "Money": {
+        "type": "string",
+        "pattern": "^-?(0|[1-9][0-9]*)\\.[0-9]{2}$"
+      },
+      "UtcInstant": {
+        "type": "string",
+        "format": "date-time"
+      },
+      "DataScope": {
+        "type": "object",
+        "properties": {
+          "grants": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "permissionCode": {
+                  "type": "string"
+                },
+                "scopes": {
+                  "type": "array",
+                  "items": {
+                    "oneOf": [
+                      {
+                        "type": "object",
+                        "properties": {
+                          "type": {
+                            "type": "string",
+                            "const": "TENANT"
+                          }
+                        },
+                        "required": [
+                          "type"
+                        ],
+                        "additionalProperties": false
+                      },
+                      {
+                        "type": "object",
+                        "properties": {
+                          "type": {
+                            "type": "string",
+                            "const": "STORES"
+                          },
+                          "storeIds": {
+                            "type": "array",
+                            "items": {
+                              "$ref": "#/components/schemas/ID"
+                            }
+                          }
+                        },
+                        "required": [
+                          "type",
+                          "storeIds"
+                        ],
+                        "additionalProperties": false
+                      },
+                      {
+                        "type": "object",
+                        "properties": {
+                          "type": {
+                            "type": "string",
+                            "const": "SELF"
+                          }
+                        },
+                        "required": [
+                          "type"
+                        ],
+                        "additionalProperties": false
+                      }
+                    ]
+                  }
+                }
+              },
+              "required": [
+                "permissionCode",
+                "scopes"
+              ],
+              "additionalProperties": false
+            }
+          }
+        },
+        "required": [
+          "grants"
+        ],
+        "additionalProperties": false
+      },
+      "PLATFORMIdentity": {
+        "type": "object",
+        "properties": {
+          "principalId": {
+            "$ref": "#/components/schemas/ID"
+          },
+          "displayName": {
+            "type": "string"
+          },
+          "sessionId": {
+            "$ref": "#/components/schemas/ID"
+          },
+          "permissionCodes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "authorizedStoreIds": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ID"
+            }
+          },
+          "authorizationVersion": {
+            "$ref": "#/components/schemas/BigInteger"
+          },
+          "expiresAt": {
+            "$ref": "#/components/schemas/UtcInstant"
+          },
+          "idleTimeoutSeconds": {
+            "type": "integer"
+          },
+          "principalType": {
+            "type": "string",
+            "const": "PLATFORM"
+          },
+          "tenantId": {
+            "type": "null"
+          },
+          "dataScope": {
+            "type": "null"
+          }
+        },
+        "required": [
+          "principalId",
+          "displayName",
+          "sessionId",
+          "permissionCodes",
+          "authorizedStoreIds",
+          "authorizationVersion",
+          "expiresAt",
+          "idleTimeoutSeconds",
+          "principalType",
+          "tenantId",
+          "dataScope"
+        ],
+        "additionalProperties": false
+      },
+      "STAFFIdentity": {
+        "type": "object",
+        "properties": {
+          "principalId": {
+            "$ref": "#/components/schemas/ID"
+          },
+          "displayName": {
+            "type": "string"
+          },
+          "sessionId": {
+            "$ref": "#/components/schemas/ID"
+          },
+          "permissionCodes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "authorizedStoreIds": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ID"
+            }
+          },
+          "authorizationVersion": {
+            "$ref": "#/components/schemas/BigInteger"
+          },
+          "expiresAt": {
+            "$ref": "#/components/schemas/UtcInstant"
+          },
+          "idleTimeoutSeconds": {
+            "type": "integer"
+          },
+          "principalType": {
+            "type": "string",
+            "const": "STAFF"
+          },
+          "tenantId": {
+            "$ref": "#/components/schemas/ID"
+          },
+          "dataScope": {
+            "$ref": "#/components/schemas/DataScope"
+          }
+        },
+        "required": [
+          "principalId",
+          "displayName",
+          "sessionId",
+          "permissionCodes",
+          "authorizedStoreIds",
+          "authorizationVersion",
+          "expiresAt",
+          "idleTimeoutSeconds",
+          "principalType",
+          "tenantId",
+          "dataScope"
+        ],
+        "additionalProperties": false
+      },
+      "CUSTOMERIdentity": {
+        "type": "object",
+        "properties": {
+          "principalId": {
+            "$ref": "#/components/schemas/ID"
+          },
+          "displayName": {
+            "type": "string"
+          },
+          "sessionId": {
+            "$ref": "#/components/schemas/ID"
+          },
+          "permissionCodes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "authorizedStoreIds": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ID"
+            }
+          },
+          "authorizationVersion": {
+            "$ref": "#/components/schemas/BigInteger"
+          },
+          "expiresAt": {
+            "$ref": "#/components/schemas/UtcInstant"
+          },
+          "idleTimeoutSeconds": {
+            "type": "integer"
+          },
+          "principalType": {
+            "type": "string",
+            "const": "CUSTOMER"
+          },
+          "tenantId": {
+            "$ref": "#/components/schemas/ID"
+          },
+          "dataScope": {
+            "$ref": "#/components/schemas/DataScope"
+          }
+        },
+        "required": [
+          "principalId",
+          "displayName",
+          "sessionId",
+          "permissionCodes",
+          "authorizedStoreIds",
+          "authorizationVersion",
+          "expiresAt",
+          "idleTimeoutSeconds",
+          "principalType",
+          "tenantId",
+          "dataScope"
+        ],
+        "additionalProperties": false
+      },
+      "CurrentIdentity": {
+        "oneOf": [
+          {
+            "$ref": "#/components/schemas/PLATFORMIdentity"
+          },
+          {
+            "$ref": "#/components/schemas/STAFFIdentity"
+          },
+          {
+            "$ref": "#/components/schemas/CUSTOMERIdentity"
+          }
+        ],
+        "discriminator": {
+          "propertyName": "principalType",
+          "mapping": {
+            "PLATFORM": "#/components/schemas/PLATFORMIdentity",
+            "STAFF": "#/components/schemas/STAFFIdentity",
+            "CUSTOMER": "#/components/schemas/CUSTOMERIdentity"
+          }
+        }
+      },
+      "TypeFixture": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "$ref": "#/components/schemas/ID"
+          },
+          "amount": {
+            "$ref": "#/components/schemas/Money"
+          },
+          "version": {
+            "$ref": "#/components/schemas/BigInteger"
+          },
+          "occurredAt": {
+            "$ref": "#/components/schemas/UtcInstant"
+          },
+          "date": {
+            "type": "string",
+            "format": "date"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "TEMPORARY",
+              "BOUND"
+            ]
+          },
+          "nullableName": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "optionalName": {
+            "type": "string"
+          },
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ID"
+            }
+          }
+        },
+        "required": [
+          "id",
+          "amount",
+          "version",
+          "occurredAt",
+          "date",
+          "status",
+          "nullableName",
+          "items"
+        ],
+        "additionalProperties": false
+      },
+      "MeResponse": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean",
+            "const": true
+          },
+          "data": {
+            "$ref": "#/components/schemas/CurrentIdentity"
+          },
+          "traceId": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "success",
+          "data",
+          "traceId"
+        ],
+        "additionalProperties": false
+      }
+    }
+  }
+}

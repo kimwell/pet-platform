@@ -1,0 +1,19 @@
+{
+  "checked_at": "2026-10-08T08:10:10.202910+08:00",
+  "surface": "/Users/kimwell/Applications/WechatDevTools-2.02.2608080.app",
+  "actions": [
+    "通过cua.getApp独立应用路径启动",
+    "观察项目列表和v2.02.2608080、微信登录二维码",
+    "将项目列表窗口Raise到前台，最终仍显示微信登录",
+    "未点击游客模式、未运行其他临时工程、未开启服务端口"
+  ],
+  "evidence": "login-ui.txt；扫码界面截图在当前对话的CUA工具结果中，未将登录二维码/参数写入仓库",
+  "login": "NOT_LOGGED_IN",
+  "appid_permission": "NOT_VERIFIED",
+  "npm_build": "NOT_EXECUTED",
+  "compile": "NOT_EXECUTED",
+  "simulator": "NOT_EXECUTED",
+  "preview": "NOT_EXECUTED",
+  "device": "NOT_EXECUTED",
+  "process_state": "冻结目标工具留在登录窗口，等待用户扫码；旧工具正常退出且安装保留"
+}

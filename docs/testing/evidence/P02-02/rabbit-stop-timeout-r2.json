@@ -1,0 +1,18 @@
+{
+  "id": "rabbit-stop-timeout-r2",
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "command": [
+    "docker",
+    "inspect",
+    "--format",
+    "StopTimeout={{.Config.StopTimeout}} Memory={{.HostConfig.Memory}}",
+    "pet-platform-p02-validation-rabbitmq-1"
+  ],
+  "exit_code": 0,
+  "expected_exit_code": 0,
+  "status": "PASS",
+  "started_at": "2026-10-08T07:26:09.534540+08:00",
+  "duration_seconds": 0.056,
+  "evidence": "rabbit-stop-timeout-r2.log",
+  "summary": "StopTimeout=30 Memory=0\n"
+}

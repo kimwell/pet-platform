@@ -1,0 +1,13 @@
+{
+  "id": "ci-source-check",
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "command": [
+    "python3",
+    "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/pet-platform-p02-01-s8g6tcc1/check-ci.py"
+  ],
+  "exit_code": 0,
+  "status": "PASS",
+  "duration_seconds": 0.07,
+  "evidence": "ci-source-check.log",
+  "summary": "{\"workflow_yaml\": \"valid\", \"commands\": [\"pnpm install --frozen-lockfile\", \"pnpm check\", \"pnpm build:web\", \"docker compose -f infra/local/docker-compose.yml config --quiet\", \"./mvnw --version\\n./mvnw --batch-mode clean verify\\n\"], \"remote_ci\": \"NOT_EXECUTED\"}\n"
+}

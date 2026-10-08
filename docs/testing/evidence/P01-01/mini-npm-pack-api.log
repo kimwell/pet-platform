@@ -1,0 +1,4 @@
+[miniprogram-builder] initservices CI
+{"miniProgramPackNum":1,"otherNpmPackNum":0,"warnList":[]}
+Error: npm 构建缺少实际组件输出
+    at /private/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/ci-probe/pack-api.cjs:3:567

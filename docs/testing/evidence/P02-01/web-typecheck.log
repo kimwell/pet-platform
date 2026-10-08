@@ -1,0 +1,9 @@
+
+> @pet/admin-web@0.0.0 typecheck /Users/kimwell/work/pet-platform/apps/admin-web
+> tsc --noEmit
+
+src/app/router/router.test.tsx(14,86): error TS2339: Property 'globalNotFound' does not exist on type 'MakeRouteMatchUnion'.
+  Property 'globalNotFound' does not exist on type 'RouteMatch<"/", "/", ResolveParams<"/">, AnySchema, undefined, AnyContext, {}>'.
+/Users/kimwell/work/pet-platform/apps/admin-web:
+ ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL  @pet/admin-web@0.0.0 typecheck: `tsc --noEmit`
+Exit status 2

@@ -1,0 +1,142 @@
+{
+  "recorded_at": "2026-10-08T08:26:30.141938+08:00",
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "project": "/Users/kimwell/work/pet-platform/apps/wechat-miniprogram",
+  "application": "/Users/kimwell/Applications/WechatDevTools-2.02.2608080.app",
+  "version": "Stable 2.02.2608080",
+  "method": "本机微信开发者工具GUI真实操作；步骤索引按操作先后，不编造每步精确时间",
+  "operations": [
+    {
+      "sequence": 1,
+      "operation": "导入项目",
+      "observed": "导入当前apps/wechat-miniprogram；导入表单识别私有AppID，未手填替代值",
+      "result": "PASS",
+      "evidence": [
+        "import-appid.png"
+      ],
+      "exit_code": null,
+      "exit_code_reason": "GUI操作，无命令退出码"
+    },
+    {
+      "sequence": 2,
+      "operation": "首次自动编译",
+      "observed": "干净起点无npm输出，工具报TDesign组件路径缺失",
+      "result": "FAIL（历史观察，后续构建解决）",
+      "evidence": [
+        "compile-before-npm.png",
+        "compile-before-npm.txt"
+      ],
+      "exit_code": null,
+      "exit_code_reason": "GUI操作，无命令退出码"
+    },
+    {
+      "sequence": 3,
+      "operation": "工具 → 构建 npm",
+      "observed": "完成构建，面板显示1569毫秒，真实输出1177文件",
+      "result": "PASS",
+      "evidence": [
+        "npm-build-complete.png",
+        "npm-build-ui.txt",
+        "npm-tool-output-manifest.json"
+      ],
+      "exit_code": null,
+      "exit_code_reason": "GUI操作，无命令退出码"
+    },
+    {
+      "sequence": 4,
+      "operation": "恢复公共配置",
+      "observed": "工具导入写入公共AppID；保留快照后恢复原始SHA，私有字段保留",
+      "result": "RESOLVED",
+      "evidence": [
+        "project-config-import-auto-write.json",
+        "project-config-public-restored.json"
+      ],
+      "exit_code": null,
+      "exit_code_reason": "GUI操作，无命令退出码"
+    },
+    {
+      "sequence": 5,
+      "operation": "工具 → 编译",
+      "observed": "实际执行菜单源码编译，页面/组件渲染",
+      "result": "PASS",
+      "evidence": [
+        "compile-invoked-ui.txt",
+        "compile-entry.png"
+      ],
+      "exit_code": null,
+      "exit_code_reason": "GUI操作，无命令退出码"
+    },
+    {
+      "sequence": 6,
+      "operation": "模拟器点击按钮",
+      "observed": "点击查看工程状态，显示中文工程范围提示",
+      "result": "PASS",
+      "evidence": [
+        "simulator-click.png",
+        "simulator-click.txt"
+      ],
+      "exit_code": null,
+      "exit_code_reason": "GUI操作，无命令退出码"
+    },
+    {
+      "sequence": 7,
+      "operation": "运行控制台",
+      "observed": "基础库3.17.2；0 errors，2条内部资源preload warning保留",
+      "result": "PASS（限定入口）",
+      "evidence": [
+        "console-after-compile.png",
+        "console-after-compile.txt"
+      ],
+      "exit_code": null,
+      "exit_code_reason": "GUI操作，无命令退出码"
+    },
+    {
+      "sequence": 8,
+      "operation": "项目基本信息",
+      "observed": "工具获取应用名称数正智能，AppID与当前工程匹配",
+      "result": "PASS",
+      "evidence": [
+        "appid-basic-info.png",
+        "appid-basic-info.txt"
+      ],
+      "exit_code": null,
+      "exit_code_reason": "GUI操作，无命令退出码"
+    },
+    {
+      "sequence": 9,
+      "operation": "工具 → 预览",
+      "observed": "开发版预览二维码生成成功；证明当前开发/预览权限，代码质量建议保留",
+      "result": "PASS",
+      "evidence": [
+        "preview-qrcode.png",
+        "preview-result.txt"
+      ],
+      "exit_code": null,
+      "exit_code_reason": "GUI操作，无命令退出码"
+    },
+    {
+      "sequence": 10,
+      "operation": "项目 → 重新打开此项目",
+      "observed": "公共AppID为空时复开，同一私有AppID仍识别，入口运行",
+      "result": "PASS",
+      "evidence": [
+        "reopened-private-appid.png",
+        "reopened-private-appid.txt"
+      ],
+      "exit_code": null,
+      "exit_code_reason": "GUI操作，无命令退出码"
+    },
+    {
+      "sequence": 11,
+      "operation": "工具 → 清除缓存 → 清除文件缓存",
+      "observed": "清除文件缓存触发重编，入口仍运行；后台日志【idle-compile】 all done",
+      "result": "PASS",
+      "evidence": [
+        "source-compile-all-done.png"
+      ],
+      "exit_code": null,
+      "exit_code_reason": "GUI操作，无命令退出码"
+    }
+  ],
+  "device_feedback": "device-user-feedback.json（用户实际反馈，与GUI记录独立）"
+}

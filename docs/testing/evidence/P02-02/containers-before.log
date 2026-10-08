@@ -1,0 +1,3 @@
+220b713e01b2 pet-platform-p02-validation-postgres-1 Exited (0) 7 minutes ago pet-platform-p02-validation
+c32b316136a1 pet-platform-p02-validation-redis-1 Exited (0) 7 minutes ago pet-platform-p02-validation
+2ccb1a9559b8 pet-platform-p02-validation-rabbitmq-1 Exited (0) 5 minutes ago pet-platform-p02-validation

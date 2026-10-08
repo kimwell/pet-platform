@@ -1,0 +1,24 @@
+{
+  "id": "infra-start",
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "command": [
+    "docker",
+    "compose",
+    "--env-file",
+    ".local-data/p02-infra.env",
+    "-p",
+    "pet-platform-p02-validation",
+    "-f",
+    "infra/local/docker-compose.yml",
+    "up",
+    "-d",
+    "--wait",
+    "--wait-timeout",
+    "180"
+  ],
+  "exit_code": 0,
+  "status": "PASS",
+  "duration_seconds": 174.22,
+  "evidence": "infra-start.log",
+  "summary": "-bookworm@sha256:3645570cccdfa447589da9f57dd740faa29b30938e861289a5574b6ca6b03826 Pulled \n Network pet-platform-p02-validation_default Creating \n Network pet-platform-p02-validation_default Created \n Volume pet-platform-p02-validation_rabbitmq-data Creating \n Volume pet-platform-p02-validation_rabbitmq-data Created \n Volume pet-platform-p02-validation_postgres-data Creating \n Volume pet-platform-p02-validation_postgres-data Created \n Volume pet-platform-p02-validation_redis-data Creating \n Volume pet-platform-p02-validation_redis-data Created \n Container pet-platform-p02-validation-rabbitmq-1 Creating \n Container pet-platform-p02-validation-redis-1 Creating \n Container pet-platform-p02-validation-postgres-1 Creating \n Container pet-platform-p02-validation-postgres-1 Created \n Container pet-platform-p02-validation-redis-1 Created \n Container pet-platform-p02-validation-rabbitmq-1 Created \n Container pet-platform-p02-validation-redis-1 Starting \n Container pet-platform-p02-validation-postgres-1 Starting \n Container pet-platform-p02-validation-rabbitmq-1 Starting \n Container pet-platform-p02-validation-postgres-1 Started \n Container pet-platform-p02-validation-rabbitmq-1 Started \n Container pet-platform-p02-validation-redis-1 Started \n Container pet-platform-p02-validation-redis-1 Waiting \n Container pet-platform-p02-validation-rabbitmq-1 Waiting \n Container pet-platform-p02-validation-postgres-1 Waiting \n Container pet-platform-p02-validation-rabbitmq-1 Healthy \n Container pet-platform-p02-validation-postgres-1 Healthy \n Container pet-platform-p02-validation-redis-1 Healthy \n"
+}

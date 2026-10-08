@@ -1,0 +1,18 @@
+{
+  "id": "rabbit-stop-log-r2",
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "command": [
+    "docker",
+    "logs",
+    "--since",
+    "1791415569",
+    "pet-platform-p02-validation-rabbitmq-1"
+  ],
+  "exit_code": 0,
+  "expected_exit_code": 0,
+  "status": "PASS",
+  "started_at": "2026-10-08T07:26:12.199675+08:00",
+  "duration_seconds": 0.046,
+  "evidence": "rabbit-stop-log-r2.log",
+  "summary": "\u001b[38;5;87m2026-10-07 23:26:10.059027+00:00 [notice] <0.64.0> SIGTERM received - shutting down\u001b[0m\n\u001b[38;5;87m2026-10-07 23:26:10.059027+00:00 [notice] <0.64.0> \u001b[0m\n\u001b[38;5;214m2026-10-07 23:26:10.064956+00:00 [warning] <0.900.0> HTTP listener registry could not find context rabbitmq_prometheus_tls\u001b[0m\n\u001b[38;5;214m2026-10-07 23:26:10.072106+00:00 [warning] <0.900.0> HTTP listener registry could not find context rabbitmq_management_tls\u001b[0m\n2026-10-07 23:26:10.081531+00:00 [info] <0.1024.0> stopped TCP listener on [::]:5672\u001b[0m\n2026-10-07 23:26:10.082726+00:00 [info] <0.839.0> Virtual host '/' is stopping\u001b[0m\n2026-10-07 23:26:10.082904+00:00 [info] <0.1095.0> Closing all connections in vhost '/' on node 'rabbit@ded5f565fd15' because the vhost is stopping\u001b[0m\n2026-10-07 23:26:10.082954+00:00 [info] <0.852.0> Stopping message store for directory '/var/lib/rabbitmq/mnesia/rabbit@ded5f565fd15/msg_stores/vhosts/628WB79CIFDYO9LJI6DKMI09L/msg_store_persistent'\u001b[0m\n2026-10-07 23:26:10.087465+00:00 [info] <0.852.0> Message store for directory '/var/lib/rabbitmq/mnesia/rabbit@ded5f565fd15/msg_stores/vhosts/628WB79CIFDYO9LJI6DKMI09L/msg_store_persistent' is stopped\u001b[0m\n2026-10-07 23:26:10.087856+00:00 [info] <0.848.0> Stopping message store for directory '/var/lib/rabbitmq/mnesia/rabbit@ded5f565fd15/msg_stores/vhosts/628WB79CIFDYO9LJI6DKMI09L/msg_store_transient'\u001b[0m\n2026-10-07 23:26:10.092429+00:00 [info] <0.848.0> Message store for directory '/var/lib/rabbitmq/mnesia/rabbit@ded5f565fd15/msg_stores/vhosts/628WB79CIFDYO9LJI6DKMI09L/msg_store_transient' is stopped\u001b[0m\n\u001b[38;5;214m2026-10-07 23:26:10.098553+00:00 [warning] <0.532.0> RabbitMQ metadata store: worker exited with shutdown\u001b[0m\n"
+}

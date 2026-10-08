@@ -1,0 +1,15 @@
+{
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "argv": [
+    "python3",
+    "docs/testing/evidence/P03-03/final-audit.py"
+  ],
+  "exitCode": 0,
+  "startedAtUTC": "2026-10-08T01:42:12.542855+00:00",
+  "finishedAtUTC": "2026-10-08T01:42:13.803380+00:00",
+  "toolchain": {
+    "JAVA_HOME": "/private/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/pet-platform-p02-02-_qb1x3n7/tools/jdk/jdk-21.0.12.1+1/Contents/Home"
+  },
+  "log": "audit-final.log",
+  "summary": "{\n  \"status\": \"PASS\",\n  \"modified\": 30,\n  \"added\": 29,\n  \"tests\": {\n    \"tests\": 79,\n    \"failures\": 0,\n    \"errors\": 0,\n    \"skipped\": 0\n  },\n  \"preservedUi\": true,\n  \"missingLinks\": []\n}\n"
+}

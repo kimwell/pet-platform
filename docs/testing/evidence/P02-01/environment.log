@@ -1,0 +1,76 @@
+[
+  {
+    "command": [
+      "git",
+      "branch",
+      "--show-current"
+    ],
+    "exit_code": 0,
+    "output": "main\n"
+  },
+  {
+    "command": [
+      "git",
+      "status",
+      "--short"
+    ],
+    "exit_code": 0,
+    "output": "?? .editorconfig\n?? .gitattributes\n?? .github/\n?? .gitignore\n?? .npmrc\n?? .nvmrc\n?? AGENTS.md\n?? README.md\n?? apps/\n?? docs/\n?? eslint.config.mjs\n?? infra/\n?? package.json\n?? packages/\n?? pnpm-workspace.yaml\n?? scripts/\n?? ui/\n"
+  },
+  {
+    "command": [
+      "java",
+      "--version"
+    ],
+    "exit_code": 0,
+    "output": "openjdk 21.0.12.1 2026-08-18 LTS\nOpenJDK Runtime Environment Temurin-21.0.12.1+1 (build 21.0.12.1+1-LTS)\nOpenJDK 64-Bit Server VM Temurin-21.0.12.1+1 (build 21.0.12.1+1-LTS, mixed mode, sharing)\n"
+  },
+  {
+    "command": [
+      "node",
+      "--version"
+    ],
+    "exit_code": 0,
+    "output": "v24.21.0\n"
+  },
+  {
+    "command": [
+      "docker",
+      "--version"
+    ],
+    "exit_code": 0,
+    "output": "Docker version 29.5.2, build 79eb04c7d8\n"
+  },
+  {
+    "command": [
+      "docker",
+      "compose",
+      "version"
+    ],
+    "exit_code": 0,
+    "output": "Docker Compose version v5.1.1\n"
+  },
+  {
+    "command": [
+      "docker",
+      "info",
+      "--format",
+      "{{.ServerVersion}}"
+    ],
+    "exit_code": 0,
+    "output": "29.4.0\n"
+  },
+  {
+    "command": [
+      "docker",
+      "ps",
+      "--format",
+      "{{.Names}} {{.Ports}}"
+    ],
+    "exit_code": 0,
+    "output": ""
+  },
+  {
+    "devtools": "2.01.2510260"
+  }
+]

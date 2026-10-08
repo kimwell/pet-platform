@@ -1,0 +1,50 @@
+[
+  {
+    "port": 8080,
+    "occupied": false
+  },
+  {
+    "port": 18080,
+    "occupied": false
+  },
+  {
+    "port": 5173,
+    "occupied": false
+  },
+  {
+    "port": 4173,
+    "occupied": false
+  },
+  {
+    "port": 15432,
+    "occupied": false
+  },
+  {
+    "port": 16379,
+    "occupied": false
+  },
+  {
+    "port": 15672,
+    "occupied": false
+  },
+  {
+    "port": 15673,
+    "occupied": false
+  },
+  {
+    "port": 25432,
+    "occupied": false
+  },
+  {
+    "port": 26379,
+    "occupied": false
+  },
+  {
+    "port": 25672,
+    "occupied": false
+  },
+  {
+    "port": 25673,
+    "occupied": false
+  }
+]

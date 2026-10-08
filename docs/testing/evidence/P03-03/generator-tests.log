@@ -1,0 +1,15 @@
+
+> pet-platform@0.0.0 contracts:test /Users/kimwell/work/pet-platform
+> node --test scripts/contracts.test.mjs
+
+✔ 稳定化只移除动态loopback地址，保留required、null、枚举及认证语义 (1.621333ms)
+✔ 漂移报告包含真实变化且check不覆盖文件；同步只删除带标识的旧生成类型 (146.088458ms)
+✔ 同步拒绝符号链接目录 (57.97525ms)
+ℹ tests 3
+ℹ suites 0
+ℹ pass 3
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 306.103333

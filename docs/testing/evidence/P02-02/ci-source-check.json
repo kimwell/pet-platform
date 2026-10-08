@@ -1,0 +1,14 @@
+{
+  "status": "PASS",
+  "exit_code": 0,
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "steps": [
+    "PyYAML 实际解析 YAML",
+    "CI 的 pnpm frozen install/check/build 与本地命令一致",
+    "CI Compose 改用同一根检查脚本",
+    "后端 Wrapper working-directory/verify 一致",
+    "Actions 固定 SHA 与冻结基线未改"
+  ],
+  "remote_ci": "NOT_EXECUTED",
+  "windows_linux": "NOT_EXECUTED"
+}

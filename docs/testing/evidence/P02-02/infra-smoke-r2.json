@@ -1,0 +1,15 @@
+{
+  "id": "infra-smoke-r2",
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "command": [
+    "python3",
+    "docs/testing/evidence/P02-02/infra-smoke.py"
+  ],
+  "exit_code": 0,
+  "expected_exit_code": 0,
+  "status": "PASS",
+  "started_at": "2026-10-08T07:25:38.661911+08:00",
+  "duration_seconds": 1.879,
+  "evidence": "infra-smoke-r2.log",
+  "summary": "{\"id\": \"infra-healthy\", \"exit_code\": 0, \"expected_exit_code\": 0, \"status\": \"PASS\", \"duration_seconds\": 0.29}\n{\"id\": \"postgres-auth\", \"exit_code\": 0, \"expected_exit_code\": 0, \"status\": \"PASS\", \"duration_seconds\": 0.148}\n{\"id\": \"redis-auth\", \"exit_code\": 0, \"expected_exit_code\": 0, \"status\": \"PASS\", \"duration_seconds\": 0.116}\n{\"id\": \"redis-no-auth\", \"exit_code\": 0, \"expected_exit_code\": 0, \"status\": \"PASS\", \"duration_seconds\": 0.109}\n{\"id\": \"rabbit-node\", \"exit_code\": 0, \"expected_exit_code\": 0, \"status\": \"PASS\", \"duration_seconds\": 0.498}\n{\"id\": \"rabbit-auth\", \"exit_code\": 0, \"expected_exit_code\": 0, \"status\": \"PASS\", \"duration_seconds\": 0.499}\nAMQP 0-9-1 真实认证握手、打开 vhost /、正常关闭通过；未发布消息。\nRabbitMQ management authenticated=False HTTP 401\nRabbitMQ management authenticated=True HTTP 200\n"
+}

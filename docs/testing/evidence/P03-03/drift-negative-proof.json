@@ -1,0 +1,6 @@
+{
+  "injectedChange": "total string -> number in production snapshot",
+  "expectedExitCode": 1,
+  "snapshotNotOverwritten": true,
+  "restoredSHA256": "4cf6aaf80e65f900b00a3d373cd976afc1944988c5fa44d5df9baedb45080476"
+}

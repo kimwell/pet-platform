@@ -1,0 +1,15 @@
+{
+  "id": "tool-java-r2",
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "command": [
+    "java",
+    "--version"
+  ],
+  "exit_code": 0,
+  "expected_exit_code": 0,
+  "status": "PASS",
+  "started_at": "2026-10-08T07:22:09.726046+08:00",
+  "duration_seconds": 0.731,
+  "evidence": "tool-java-r2.log",
+  "summary": "openjdk 21.0.12.1 2026-08-18 LTS\nOpenJDK Runtime Environment Temurin-21.0.12.1+1 (build 21.0.12.1+1-LTS)\nOpenJDK 64-Bit Server VM Temurin-21.0.12.1+1 (build 21.0.12.1+1-LTS, mixed mode, sharing)\n"
+}

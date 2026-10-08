@@ -1,0 +1,18 @@
+{
+  "id": "backend-invalid-port",
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "command": [
+    "java",
+    "-jar",
+    "/Users/kimwell/work/pet-platform/apps/backend/target/pet-platform-backend-0.0.0-SNAPSHOT.jar",
+    "--spring.profiles.active=local",
+    "--server.port=not-a-port"
+  ],
+  "exit_code": 1,
+  "expected_exit_code": 1,
+  "status": "PASS",
+  "started_at": "2026-10-08T07:27:06.267358+08:00",
+  "duration_seconds": 0.842,
+  "evidence": "backend-invalid-port.log",
+  "summary": "\n  .   ____          _            __ _ _\n /\\\\ / ___'_ __ _ _(_)_ __  __ _ \\ \\ \\ \\\n( ( )\\___ | '_ | '_| | '_ \\/ _` | \\ \\ \\ \\\n \\\\/  ___)| |_)| | | | | || (_| |  ) ) ) )\n  '  |____| .__|_| |_|_| |_\\__, | / / / /\n =========|_|==============|___/=/_/_/_/\n\n :: Spring Boot ::                (v4.0.8)\n\n2026-10-08T07:27:05.928+08:00  INFO 1835 --- [pet-platform-backend] [           main] com.pet.platform.Application             : Starting Application v0.0.0-SNAPSHOT using Java 21.0.12.1 with PID 1835 (/Users/kimwell/work/pet-platform/apps/backend/target/pet-platform-backend-0.0.0-SNAPSHOT.jar started by kimwell in /Users/kimwell/work/pet-platform)\n2026-10-08T07:27:05.930+08:00  INFO 1835 --- [pet-platform-backend] [           main] com.pet.platform.Application             : The following 1 profile is active: \"local\"\n2026-10-08T07:27:06.237+08:00  WARN 1835 --- [pet-platform-backend] [           main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Unable to start web server\n2026-10-08T07:27:06.239+08:00  INFO 1835 --- [pet-platform-backend] [           main] .s.b.a.l.ConditionEvaluationReportLogger : \n\nError starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.\n2026-10-08T07:27:06.251+08:00 ERROR 1835 --- [pet-platform-backend] [           main] o.s.b.d.LoggingFailureAnalysisReporter   : \n\n***************************\nAPPLICATION FAILED TO START\n***************************\n\nDescription:\n\nFailed to bind properties under 'server.port' to java.lang.Integer:\n\n    Property: server.port\n    Value: \"not-a-port\"\n    Origin: \"server.port\" from property source \"commandLineArgs\"\n    Reason: failed to convert java.lang.String to java.lang.Integer (caused by java.lang.NumberFormatException: For input string: \"not-a-port\")\n\nAction:\n\nUpdate your application's configuration\n\n"
+}

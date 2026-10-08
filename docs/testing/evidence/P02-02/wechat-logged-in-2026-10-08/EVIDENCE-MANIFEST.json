@@ -1,0 +1,207 @@
+{
+  "generated_at": "2026-10-08T08:26:50.190658+08:00",
+  "scope": "本轮独立证据目录；排除SHA清单自身",
+  "file_count": 40,
+  "files": [
+    {
+      "path": "COMMAND-INDEX.json",
+      "bytes": 3203,
+      "sha256": "7d8a3e93289558b6307d6313f52a1bd71a8826a87fe4a68f5a31f4de8dfe172d"
+    },
+    {
+      "path": "appid-basic-info.png",
+      "bytes": 431679,
+      "sha256": "5142f999a0a225d181062867f2f320fca6d13de8a03b03c1b1a164e45bc3947e"
+    },
+    {
+      "path": "appid-basic-info.txt",
+      "bytes": 14125,
+      "sha256": "814b1dc29b25215a6eae15b0910a4c120dbeef45767db4fea7d18fd8b3a827b6"
+    },
+    {
+      "path": "audit-current.py",
+      "bytes": 4744,
+      "sha256": "77581d4b8becce2a6898e2f4f27afb0667cccdd09984adb20612e921d71a5b8a"
+    },
+    {
+      "path": "build-log-end.png",
+      "bytes": 766971,
+      "sha256": "546e741addc30b28b9d804b15f085940a5a04819304f6f6ed5a9bd177438bf20"
+    },
+    {
+      "path": "cli-current-service.json",
+      "bytes": 1086,
+      "sha256": "e269dad9ff60fc8b50ec0bc4badf45aa5e8357b8c71bbef95254d4f5286a7f0a"
+    },
+    {
+      "path": "cli-current-service.log",
+      "bytes": 752,
+      "sha256": "a70409d883c66059147174b1a5d9341af56ea62ccb8aae35fa712c0486c9d0aa"
+    },
+    {
+      "path": "compile-before-npm.png",
+      "bytes": 564145,
+      "sha256": "2b7b92612d4b69da612ca548c27f48173eed5f638af781d1b37958edcb8b03a9"
+    },
+    {
+      "path": "compile-before-npm.txt",
+      "bytes": 11458,
+      "sha256": "24d41d0e9205aec512db52e811901f0ea1c0d68e59af8b1e6e64ae100b74ee69"
+    },
+    {
+      "path": "compile-entry.png",
+      "bytes": 285750,
+      "sha256": "dc43dcd0cb7eaffbec913d6b4ed346ff24884fbf2499a8fcce3582f567f284e4"
+    },
+    {
+      "path": "compile-invoked-ui.txt",
+      "bytes": 10024,
+      "sha256": "d1f5ddf8077dc693d117ecd9bb58e22caabf6363c80aead449d519b32e75416c"
+    },
+    {
+      "path": "config-after-tool.json",
+      "bytes": 367,
+      "sha256": "c1198f6c9e3168783b3e71e449036f9180fbdfdb1a93a42f01780e8db56b87df"
+    },
+    {
+      "path": "config-after-tool.log",
+      "bytes": 100,
+      "sha256": "b80a626a232d047ac11054ac97673a1f34e6935284b090ef23e6033f3a41a820"
+    },
+    {
+      "path": "console-after-compile.png",
+      "bytes": 423951,
+      "sha256": "d174530c97cf5b4fa26971169a5df47a9b085d9ddde7abca7a55cadfb8df7896"
+    },
+    {
+      "path": "console-after-compile.txt",
+      "bytes": 13026,
+      "sha256": "61b38033a36ad5dd5efc619b250aa05a22eeded3f47c4f43f70e2bdec8229cfb"
+    },
+    {
+      "path": "device-user-feedback.json",
+      "bytes": 921,
+      "sha256": "d0037df412e624cf4b3f002bd56ec6bc5a8a2286ed1c564ebe2d88c5206f8114"
+    },
+    {
+      "path": "final-audit.json",
+      "bytes": 1114,
+      "sha256": "93fcfc8fd523ee57980e6fc27d5184afc49f181a3c2bb7e2c133f21885eb8ea1"
+    },
+    {
+      "path": "final-audit.log",
+      "bytes": 747,
+      "sha256": "653b640131c5a26ad4230b16d2824e52eabeb37e54f78a7d2d691c40318fd862"
+    },
+    {
+      "path": "git-after.txt",
+      "bytes": 292,
+      "sha256": "5103c34305fe6a3a52964394064b75fc734a72e384cde2eeb8e44a7155ec4779"
+    },
+    {
+      "path": "git-before.txt",
+      "bytes": 292,
+      "sha256": "5103c34305fe6a3a52964394064b75fc734a72e384cde2eeb8e44a7155ec4779"
+    },
+    {
+      "path": "import-appid.png",
+      "bytes": 141486,
+      "sha256": "a6d7af36226d292c0f3a0a1d606c23c4c3d32399fa3b8f5548c2a1d9b3b3c979"
+    },
+    {
+      "path": "npm-build-complete.png",
+      "bytes": 302131,
+      "sha256": "644a7ce341d40239e343141c3611a77bc1dbc5255286864e445c950872e75e5e"
+    },
+    {
+      "path": "npm-build-ui.txt",
+      "bytes": 9450,
+      "sha256": "6103ef7cc927723719b9dc0eb9237fe1ff09e5be03a6ba28ec1a7a9f71433a0b"
+    },
+    {
+      "path": "npm-clean-start.json",
+      "bytes": 445,
+      "sha256": "8dc9b3f4516626cb76c622e70db04bba805019441e27cd20dd94d984d6936585"
+    },
+    {
+      "path": "npm-tool-output-manifest.json",
+      "bytes": 267279,
+      "sha256": "980090a704768b8db2cf4740712ce64926cc9c755e9f6c6b6d2c5c3bca5c6936"
+    },
+    {
+      "path": "preservation-before.json",
+      "bytes": 106919,
+      "sha256": "24df0f9c71b4f61e6be6f16deb8cf69f76d95f360a7e1b3982e7eb2811be63e1"
+    },
+    {
+      "path": "preview-qrcode.png",
+      "bytes": 386189,
+      "sha256": "7d767a3ee6f4ac0f94ec8355d69b4a8e77cb1961834546f5a4edd3da3544501c"
+    },
+    {
+      "path": "preview-result.txt",
+      "bytes": 11830,
+      "sha256": "dd803a3d00d0e9326012d6dab1e545b79b4805feefad04c178525b88bc682486"
+    },
+    {
+      "path": "private-after-tool.json",
+      "bytes": 596,
+      "sha256": "1c26632d5abbd0382a5c58d8f943b8fe8f1e827c7f7aa986b6c03c8d2b71708c"
+    },
+    {
+      "path": "private-before.json",
+      "bytes": 128,
+      "sha256": "5f9025b81dd81b6099d96efdfed136cbd8bfec948df1ab15e1a24fe5bb6de8b4"
+    },
+    {
+      "path": "project-config-import-auto-write.json",
+      "bytes": 1125,
+      "sha256": "b388d75ff6464055d252b161baf6a97f81ab128262c1350f05545e6a6bc1ae13"
+    },
+    {
+      "path": "project-config-public-restored.json",
+      "bytes": 384,
+      "sha256": "427596a43c631ae4ca66ea67e9b4d4ad3dfc2fc179f7ad8be5441f3dc2c92fc7"
+    },
+    {
+      "path": "record-command.py",
+      "bytes": 1166,
+      "sha256": "adfd161f6ba57f0922e70fc900952528eda91f8e4e4d52b21c8b07ac54ed5424"
+    },
+    {
+      "path": "reopened-private-appid.png",
+      "bytes": 322154,
+      "sha256": "3b0d6f2d4faabfa4d63f6fd9773b33bcf576cfe7a29345287ebfc0c1434a85d1"
+    },
+    {
+      "path": "reopened-private-appid.txt",
+      "bytes": 13006,
+      "sha256": "5f8d1168c56a957dfcb29d9ebe7bde1fd224a737ae32c4fc3909824a6ee74fcd"
+    },
+    {
+      "path": "simulator-click.png",
+      "bytes": 776831,
+      "sha256": "962a61df32c9f91799d21306d1ce70768d3d01bf78a782853f5278c1ae01095d"
+    },
+    {
+      "path": "simulator-click.txt",
+      "bytes": 9182,
+      "sha256": "b172e5d3ba809064572411f91e0217789dfe0c92d8826cc6217ad08f71021855"
+    },
+    {
+      "path": "source-compile-all-done.png",
+      "bytes": 568950,
+      "sha256": "f718884ad8dfca1e7cecca9ef74e94bc378205f249b5316650c678cba63cddea"
+    },
+    {
+      "path": "ui-operations.json",
+      "bytes": 4712,
+      "sha256": "65f250719b61ea9325891ce8c41c2c5e44fef3badc8dc1987b45a627c6fc5c45"
+    },
+    {
+      "path": "wechat-results.json",
+      "bytes": 3724,
+      "sha256": "f295573088945855cf84c46b3f4eddc29749874deb8549056c8263312013478d"
+    }
+  ]
+}

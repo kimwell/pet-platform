@@ -1,0 +1,235 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ---------------< com.pet.platform:pet-platform-backend >----------------
+[INFO] Building pet-platform-backend 0.0.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- clean:3.5.0:clean (default-clean) @ pet-platform-backend ---
+[INFO] Deleting /Users/kimwell/work/pet-platform/apps/backend/target
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ pet-platform-backend ---
+[INFO] Copying 4 resources from src/main/resources to target/classes
+[INFO] Copying 0 resource from src/main/resources to target/classes
+[INFO] 
+[INFO] --- compiler:3.14.1:compile (default-compile) @ pet-platform-backend ---
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 21 source files with javac [debug parameters release 21] to target/classes
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ pet-platform-backend ---
+[INFO] skip non existing resourceDirectory /Users/kimwell/work/pet-platform/apps/backend/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.14.1:testCompile (default-testCompile) @ pet-platform-backend ---
+[INFO] Recompiling the module because of changed dependency.
+[INFO] Compiling 4 source files with javac [debug parameters release 21] to target/test-classes
+[INFO] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/platform/protocol/ApiProtocolIT.java: 某些输入文件使用或覆盖了已过时的 API。
+[INFO] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/platform/protocol/ApiProtocolIT.java: 有关详细信息, 请使用 -Xlint:deprecation 重新编译。
+[INFO] 
+[INFO] --- surefire:3.5.6:test (default-test) @ pet-platform-backend ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running com.pet.platform.protocol.ApiProtocolTest
+08:36:46.268 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.pet.platform.protocol.ApiProtocolTest]: ApiProtocolTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+08:36:46.344 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.pet.platform.Application for test class com.pet.platform.protocol.ApiProtocolTest
+08:36:46.382 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.pet.platform.protocol.ApiProtocolTest]: ApiProtocolTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+08:36:46.383 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.pet.platform.Application for test class com.pet.platform.protocol.ApiProtocolTest
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v4.0.8)
+
+2026-10-08T08:36:46.565+08:00  INFO 40187 --- [pet-platform-backend] [           main] c.pet.platform.protocol.ApiProtocolTest  : Starting ApiProtocolTest using Java 21.0.12.1 with PID 40187 (started by kimwell in /Users/kimwell/work/pet-platform/apps/backend)
+2026-10-08T08:36:46.566+08:00  INFO 40187 --- [pet-platform-backend] [           main] c.pet.platform.protocol.ApiProtocolTest  : The following 1 profile is active: "test"
+2026-10-08T08:36:47.092+08:00  INFO 40187 --- [pet-platform-backend] [           main] c.pet.platform.protocol.ApiProtocolTest  : Started ApiProtocolTest in 0.682 seconds (process running for 1.27)
+OpenJDK 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
+2026-10-08T08:36:47.253+08:00  INFO 40187 --- [pet-platform-backend] [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2026-10-08T08:36:47.253+08:00  INFO 40187 --- [pet-platform-backend] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-10-08T08:36:47.254+08:00  INFO 40187 --- [pet-platform-backend] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2026-10-08T08:36:47.347+08:00 ERROR 40187 --- [pet-platform-backend] [           main] c.p.p.s.e.GlobalExceptionHandler         : 请求处理失败，traceId=1b7efc31ff7c4c1c8ac50cbff3483994，异常类型=java.lang.IllegalArgumentException
+2026-10-08T08:36:47.358+08:00  INFO 40187 --- [pet-platform-backend] [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2026-10-08T08:36:47.358+08:00  INFO 40187 --- [pet-platform-backend] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-10-08T08:36:47.359+08:00  INFO 40187 --- [pet-platform-backend] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2026-10-08T08:36:47.366+08:00  INFO 40187 --- [pet-platform-backend] [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2026-10-08T08:36:47.366+08:00  INFO 40187 --- [pet-platform-backend] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-10-08T08:36:47.366+08:00  INFO 40187 --- [pet-platform-backend] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2026-10-08T08:36:47.431+08:00  INFO 40187 --- [pet-platform-backend] [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2026-10-08T08:36:47.431+08:00  INFO 40187 --- [pet-platform-backend] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-10-08T08:36:47.431+08:00  INFO 40187 --- [pet-platform-backend] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2026-10-08T08:36:47.450+08:00  INFO 40187 --- [pet-platform-backend] [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2026-10-08T08:36:47.450+08:00  INFO 40187 --- [pet-platform-backend] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-10-08T08:36:47.451+08:00  INFO 40187 --- [pet-platform-backend] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2026-10-08T08:36:47.458+08:00  INFO 40187 --- [pet-platform-backend] [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2026-10-08T08:36:47.459+08:00  INFO 40187 --- [pet-platform-backend] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-10-08T08:36:47.459+08:00  INFO 40187 --- [pet-platform-backend] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2026-10-08T08:36:47.463+08:00  INFO 40187 --- [pet-platform-backend] [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2026-10-08T08:36:47.463+08:00  INFO 40187 --- [pet-platform-backend] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-10-08T08:36:47.463+08:00  INFO 40187 --- [pet-platform-backend] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2026-10-08T08:36:47.468+08:00  INFO 40187 --- [pet-platform-backend] [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2026-10-08T08:36:47.468+08:00  INFO 40187 --- [pet-platform-backend] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-10-08T08:36:47.468+08:00  INFO 40187 --- [pet-platform-backend] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2026-10-08T08:36:47.473+08:00  INFO 40187 --- [pet-platform-backend] [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2026-10-08T08:36:47.473+08:00  INFO 40187 --- [pet-platform-backend] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-10-08T08:36:47.473+08:00  INFO 40187 --- [pet-platform-backend] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2026-10-08T08:36:47.477+08:00  INFO 40187 --- [pet-platform-backend] [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2026-10-08T08:36:47.477+08:00  INFO 40187 --- [pet-platform-backend] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-10-08T08:36:47.477+08:00  INFO 40187 --- [pet-platform-backend] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2026-10-08T08:36:47.481+08:00  INFO 40187 --- [pet-platform-backend] [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2026-10-08T08:36:47.481+08:00  INFO 40187 --- [pet-platform-backend] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-10-08T08:36:47.481+08:00  INFO 40187 --- [pet-platform-backend] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2026-10-08T08:36:47.486+08:00  INFO 40187 --- [pet-platform-backend] [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2026-10-08T08:36:47.486+08:00  INFO 40187 --- [pet-platform-backend] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-10-08T08:36:47.487+08:00  INFO 40187 --- [pet-platform-backend] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2026-10-08T08:36:47.491+08:00  INFO 40187 --- [pet-platform-backend] [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2026-10-08T08:36:47.491+08:00  INFO 40187 --- [pet-platform-backend] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-10-08T08:36:47.491+08:00  INFO 40187 --- [pet-platform-backend] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2026-10-08T08:36:47.494+08:00  INFO 40187 --- [pet-platform-backend] [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2026-10-08T08:36:47.495+08:00  INFO 40187 --- [pet-platform-backend] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-10-08T08:36:47.495+08:00  INFO 40187 --- [pet-platform-backend] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2026-10-08T08:36:47.499+08:00  INFO 40187 --- [pet-platform-backend] [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2026-10-08T08:36:47.499+08:00  INFO 40187 --- [pet-platform-backend] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-10-08T08:36:47.500+08:00  INFO 40187 --- [pet-platform-backend] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2026-10-08T08:36:47.504+08:00 ERROR 40187 --- [pet-platform-backend] [           main] c.p.p.s.e.GlobalExceptionHandler         : 请求处理失败，traceId=0123456789abcdef0123456789abcdef，异常类型=java.lang.IllegalArgumentException
+2026-10-08T08:36:47.508+08:00  INFO 40187 --- [pet-platform-backend] [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2026-10-08T08:36:47.508+08:00  INFO 40187 --- [pet-platform-backend] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-10-08T08:36:47.508+08:00  INFO 40187 --- [pet-platform-backend] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2026-10-08T08:36:47.530+08:00 ERROR 40187 --- [pet-platform-backend] [           main] c.p.p.s.e.GlobalExceptionHandler         : 请求处理失败，traceId=71f772969fee4885964df9baedfb4e57，异常类型=org.springframework.web.method.annotation.HandlerMethodValidationException
+2026-10-08T08:36:47.538+08:00  INFO 40187 --- [pet-platform-backend] [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2026-10-08T08:36:47.538+08:00  INFO 40187 --- [pet-platform-backend] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-10-08T08:36:47.539+08:00  INFO 40187 --- [pet-platform-backend] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2026-10-08T08:36:47.566+08:00  INFO 40187 --- [pet-platform-backend] [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2026-10-08T08:36:47.566+08:00  INFO 40187 --- [pet-platform-backend] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-10-08T08:36:47.566+08:00  INFO 40187 --- [pet-platform-backend] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2026-10-08T08:36:47.570+08:00  INFO 40187 --- [pet-platform-backend] [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2026-10-08T08:36:47.570+08:00  INFO 40187 --- [pet-platform-backend] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-10-08T08:36:47.571+08:00  INFO 40187 --- [pet-platform-backend] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2026-10-08T08:36:47.575+08:00  INFO 40187 --- [pet-platform-backend] [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2026-10-08T08:36:47.575+08:00  INFO 40187 --- [pet-platform-backend] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-10-08T08:36:47.576+08:00  INFO 40187 --- [pet-platform-backend] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2026-10-08T08:36:47.581+08:00  INFO 40187 --- [pet-platform-backend] [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2026-10-08T08:36:47.582+08:00  INFO 40187 --- [pet-platform-backend] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-10-08T08:36:47.582+08:00  INFO 40187 --- [pet-platform-backend] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2026-10-08T08:36:47.586+08:00  INFO 40187 --- [pet-platform-backend] [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2026-10-08T08:36:47.586+08:00  INFO 40187 --- [pet-platform-backend] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-10-08T08:36:47.586+08:00  INFO 40187 --- [pet-platform-backend] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2026-10-08T08:36:47.590+08:00  INFO 40187 --- [pet-platform-backend] [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2026-10-08T08:36:47.590+08:00  INFO 40187 --- [pet-platform-backend] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-10-08T08:36:47.591+08:00  INFO 40187 --- [pet-platform-backend] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2026-10-08T08:36:47.594+08:00  INFO 40187 --- [pet-platform-backend] [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2026-10-08T08:36:47.594+08:00  INFO 40187 --- [pet-platform-backend] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-10-08T08:36:47.595+08:00  INFO 40187 --- [pet-platform-backend] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2026-10-08T08:36:47.599+08:00  INFO 40187 --- [pet-platform-backend] [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2026-10-08T08:36:47.599+08:00  INFO 40187 --- [pet-platform-backend] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-10-08T08:36:47.599+08:00  INFO 40187 --- [pet-platform-backend] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2026-10-08T08:36:47.605+08:00  INFO 40187 --- [pet-platform-backend] [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2026-10-08T08:36:47.605+08:00  INFO 40187 --- [pet-platform-backend] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-10-08T08:36:47.606+08:00  INFO 40187 --- [pet-platform-backend] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2026-10-08T08:36:47.609+08:00  INFO 40187 --- [pet-platform-backend] [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2026-10-08T08:36:47.609+08:00  INFO 40187 --- [pet-platform-backend] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-10-08T08:36:47.609+08:00  INFO 40187 --- [pet-platform-backend] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2026-10-08T08:36:47.612+08:00  INFO 40187 --- [pet-platform-backend] [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2026-10-08T08:36:47.612+08:00  INFO 40187 --- [pet-platform-backend] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-10-08T08:36:47.612+08:00  INFO 40187 --- [pet-platform-backend] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2026-10-08T08:36:47.617+08:00  WARN 40187 --- [pet-platform-backend] [           main] o.s.web.servlet.PageNotFound             : Request method 'POST' is not supported
+2026-10-08T08:36:47.621+08:00  INFO 40187 --- [pet-platform-backend] [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2026-10-08T08:36:47.621+08:00  INFO 40187 --- [pet-platform-backend] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-10-08T08:36:47.622+08:00  INFO 40187 --- [pet-platform-backend] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2026-10-08T08:36:47.627+08:00  INFO 40187 --- [pet-platform-backend] [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2026-10-08T08:36:47.627+08:00  INFO 40187 --- [pet-platform-backend] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-10-08T08:36:47.628+08:00  INFO 40187 --- [pet-platform-backend] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+[INFO] Tests run: 30, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.460 s -- in com.pet.platform.protocol.ApiProtocolTest
+[INFO] Running com.pet.platform.ApplicationTest
+2026-10-08T08:36:47.644+08:00  INFO 40187 --- [pet-platform-backend] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.pet.platform.ApplicationTest]: ApplicationTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-10-08T08:36:47.648+08:00  INFO 40187 --- [pet-platform-backend] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.pet.platform.Application for test class com.pet.platform.ApplicationTest
+2026-10-08T08:36:47.648+08:00  INFO 40187 --- [pet-platform-backend] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.pet.platform.ApplicationTest]: ApplicationTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-10-08T08:36:47.649+08:00  INFO 40187 --- [pet-platform-backend] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.pet.platform.Application for test class com.pet.platform.ApplicationTest
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v4.0.8)
+
+2026-10-08T08:36:47.670+08:00  INFO 40187 --- [pet-platform-backend] [           main] com.pet.platform.ApplicationTest         : Starting ApplicationTest using Java 21.0.12.1 with PID 40187 (started by kimwell in /Users/kimwell/work/pet-platform/apps/backend)
+2026-10-08T08:36:47.670+08:00  INFO 40187 --- [pet-platform-backend] [           main] com.pet.platform.ApplicationTest         : The following 1 profile is active: "test"
+2026-10-08T08:36:47.804+08:00  INFO 40187 --- [pet-platform-backend] [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 0 (http)
+2026-10-08T08:36:47.813+08:00  INFO 40187 --- [pet-platform-backend] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-10-08T08:36:47.813+08:00  INFO 40187 --- [pet-platform-backend] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.24]
+2026-10-08T08:36:47.831+08:00  INFO 40187 --- [pet-platform-backend] [           main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 160 ms
+2026-10-08T08:36:47.909+08:00  INFO 40187 --- [pet-platform-backend] [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 57149 (http) with context path '/'
+2026-10-08T08:36:47.911+08:00  INFO 40187 --- [pet-platform-backend] [           main] com.pet.platform.ApplicationTest         : Started ApplicationTest in 0.259 seconds (process running for 2.09)
+2026-10-08T08:36:48.027+08:00  INFO 40187 --- [pet-platform-backend] [1-auto-1-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-10-08T08:36:48.027+08:00  INFO 40187 --- [pet-platform-backend] [1-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-10-08T08:36:48.027+08:00  INFO 40187 --- [pet-platform-backend] [1-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.409 s -- in com.pet.platform.ApplicationTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 32, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] 
+[INFO] --- jar:3.4.2:jar (default-jar) @ pet-platform-backend ---
+[INFO] Building jar: /Users/kimwell/work/pet-platform/apps/backend/target/pet-platform-backend-0.0.0-SNAPSHOT.jar
+[INFO] 
+[INFO] --- spring-boot:4.0.8:repackage (repackage) @ pet-platform-backend ---
+[INFO] Replacing main artifact /Users/kimwell/work/pet-platform/apps/backend/target/pet-platform-backend-0.0.0-SNAPSHOT.jar with repackaged archive, adding nested dependencies in BOOT-INF/.
+[INFO] The original artifact has been renamed to /Users/kimwell/work/pet-platform/apps/backend/target/pet-platform-backend-0.0.0-SNAPSHOT.jar.original
+[INFO] 
+[INFO] --- failsafe:3.5.6:integration-test (default) @ pet-platform-backend ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running com.pet.platform.protocol.ApiProtocolIT
+08:36:49.344 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.pet.platform.protocol.ApiProtocolIT]: ApiProtocolIT does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+08:36:49.414 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.pet.platform.Application for test class com.pet.platform.protocol.ApiProtocolIT
+08:36:49.457 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.pet.platform.protocol.ApiProtocolIT]: ApiProtocolIT does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+08:36:49.458 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.pet.platform.Application for test class com.pet.platform.protocol.ApiProtocolIT
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v4.0.8)
+
+2026-10-08T08:36:49.740+08:00  INFO 40202 --- [pet-platform-backend] [           main] c.pet.platform.protocol.ApiProtocolIT    : Starting ApiProtocolIT using Java 21.0.12.1 with PID 40202 (started by kimwell in /Users/kimwell/work/pet-platform/apps/backend)
+2026-10-08T08:36:49.741+08:00  INFO 40202 --- [pet-platform-backend] [           main] c.pet.platform.protocol.ApiProtocolIT    : The following 1 profile is active: "test"
+2026-10-08T08:36:50.155+08:00  INFO 40202 --- [pet-platform-backend] [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 0 (http)
+2026-10-08T08:36:50.163+08:00  INFO 40202 --- [pet-platform-backend] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-10-08T08:36:50.163+08:00  INFO 40202 --- [pet-platform-backend] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.24]
+2026-10-08T08:36:50.182+08:00  INFO 40202 --- [pet-platform-backend] [           main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 430 ms
+2026-10-08T08:36:50.381+08:00  INFO 40202 --- [pet-platform-backend] [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 57153 (http) with context path '/'
+2026-10-08T08:36:50.384+08:00  INFO 40202 --- [pet-platform-backend] [           main] c.pet.platform.protocol.ApiProtocolIT    : Started ApiProtocolIT in 0.801 seconds (process running for 1.443)
+OpenJDK 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
+2026-10-08T08:36:50.577+08:00  INFO 40202 --- [pet-platform-backend] [1-auto-1-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-10-08T08:36:50.577+08:00  INFO 40202 --- [pet-platform-backend] [1-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-10-08T08:36:50.577+08:00  INFO 40202 --- [pet-platform-backend] [1-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2026-10-08T08:36:50.655+08:00 ERROR 40202 --- [pet-platform-backend] [1-auto-1-exec-2] c.p.p.s.e.GlobalExceptionHandler         : 请求处理失败，traceId=0123456789abcdef0123456789abcdef，异常类型=java.lang.IllegalArgumentException
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.417 s -- in com.pet.platform.protocol.ApiProtocolIT
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] 
+[INFO] --- failsafe:3.5.6:verify (default) @ pet-platform-backend ---
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  7.140 s
+[INFO] Finished at: 2026-10-08T08:36:51+08:00
+[INFO] ------------------------------------------------------------------------

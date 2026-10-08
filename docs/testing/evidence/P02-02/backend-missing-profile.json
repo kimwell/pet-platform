@@ -1,0 +1,16 @@
+{
+  "id": "backend-missing-profile",
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "command": [
+    "java",
+    "-jar",
+    "/Users/kimwell/work/pet-platform/apps/backend/target/pet-platform-backend-0.0.0-SNAPSHOT.jar"
+  ],
+  "exit_code": 1,
+  "expected_exit_code": 1,
+  "status": "PASS",
+  "started_at": "2026-10-08T07:26:11.225725+08:00",
+  "duration_seconds": 1.128,
+  "evidence": "backend-missing-profile.log",
+  "summary": "rver          : Tomcat initialized with port 8080 (http)\n2026-10-08T07:26:11.124+08:00  INFO 1430 --- [pet-platform-backend] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]\n2026-10-08T07:26:11.125+08:00  INFO 1430 --- [pet-platform-backend] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.24]\n2026-10-08T07:26:11.139+08:00  INFO 1430 --- [pet-platform-backend] [           main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 422 ms\n2026-10-08T07:26:11.186+08:00  WARN 1430 --- [pet-platform-backend] [           main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.boot.context.properties.ConfigurationPropertiesBindException: Error creating bean with name 'pet-com.pet.platform.shared.config.EnvironmentSettings': Could not bind properties to 'EnvironmentSettings' : prefix=pet, ignoreInvalidFields=false, ignoreUnknownFields=true\n2026-10-08T07:26:11.187+08:00  INFO 1430 --- [pet-platform-backend] [           main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]\n2026-10-08T07:26:11.193+08:00  INFO 1430 --- [pet-platform-backend] [           main] .s.b.a.l.ConditionEvaluationReportLogger : \n\nError starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.\n2026-10-08T07:26:11.201+08:00 ERROR 1430 --- [pet-platform-backend] [           main] o.s.b.d.LoggingFailureAnalysisReporter   : \n\n***************************\nAPPLICATION FAILED TO START\n***************************\n\nDescription:\n\nFailed to bind properties under 'pet.public-origin' to java.net.URI:\n\n    Property: pet.public-origin\n    Value: \"${PET_PUBLIC_ORIGIN}\"\n    Origin: class path resource [application.yml] from pet-platform-backend-0.0.0-SNAPSHOT.jar - 11:18\n    Reason: failed to convert java.lang.String to java.net.URI (caused by java.lang.IllegalArgumentException: Invalid URI syntax: Illegal character in path at index 1: ${PET_PUBLIC_ORIGIN})\n\nAction:\n\nUpdate your application's configuration\n\n"
+}

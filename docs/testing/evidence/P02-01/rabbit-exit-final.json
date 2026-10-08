@@ -1,0 +1,16 @@
+{
+  "id": "rabbit-exit-final",
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "command": [
+    "docker",
+    "inspect",
+    "--format",
+    "ExitCode={{.State.ExitCode}} OOMKilled={{.State.OOMKilled}} Status={{.State.Status}}",
+    "pet-platform-p02-validation-rabbitmq-1"
+  ],
+  "exit_code": 0,
+  "status": "PASS",
+  "duration_seconds": 0.02,
+  "evidence": "rabbit-exit-final.log",
+  "summary": "ExitCode=0 OOMKilled=false Status=exited\n"
+}

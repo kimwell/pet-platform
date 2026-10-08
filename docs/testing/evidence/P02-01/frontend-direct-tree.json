@@ -1,0 +1,17 @@
+{
+  "id": "frontend-direct-tree",
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "command": [
+    "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/tools/node-v24.21.0-darwin-arm64/bin/node",
+    "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/tools/pnpm/package/bin/pnpm.cjs",
+    "list",
+    "--depth",
+    "0",
+    "-r"
+  ],
+  "exit_code": 0,
+  "status": "PASS",
+  "duration_seconds": 0.3,
+  "evidence": "frontend-direct-tree.log",
+  "summary": "Legend: production dependency, optional only, dev only\n\npet-platform@0.0.0 /Users/kimwell/work/pet-platform (PRIVATE)\n│\n│   devDependencies:\n├── @eslint/js@10.0.1\n├── eslint@10.12.0\n├── eslint-plugin-react-hooks@7.1.1\n├── eslint-plugin-react-refresh@0.5.7\n├── typescript@5.9.3\n└── typescript-eslint@8.71.1\n\n@pet/admin-web@0.0.0 /Users/kimwell/work/pet-platform/apps/admin-web (PRIVATE)\n│\n│   dependencies:\n├── @tanstack/react-query@5.104.1\n├── @tanstack/react-router@1.170.41\n├── antd@6.6.5\n├── react@19.2.8\n├── react-dom@19.2.8\n├── zustand@5.0.15\n│\n│   devDependencies:\n├── @types/node@24.19.1\n├── @types/react@19.2.18\n├── @types/react-dom@19.2.7\n├── @vitejs/plugin-react@5.2.0\n├── vite@7.3.7\n└── vitest@4.1.11\n\n@pet/wechat-miniprogram@0.0.0 /Users/kimwell/work/pet-platform/apps/wechat-miniprogram (PRIVATE)\n│\n│   dependencies:\n├── tdesign-miniprogram@1.17.0\n│\n│   devDependencies:\n└── miniprogram-api-typings@5.2.3\n\n20 packages in 4 projects\n"
+}

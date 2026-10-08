@@ -1,0 +1,18 @@
+{
+  "id": "containers-before",
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "command": [
+    "docker",
+    "ps",
+    "-a",
+    "--format",
+    "{{.ID}} {{.Names}} {{.Status}} {{.Label \"com.docker.compose.project\"}}"
+  ],
+  "exit_code": 0,
+  "expected_exit_code": 0,
+  "status": "PASS",
+  "started_at": "2026-10-08T07:21:49.280064+08:00",
+  "duration_seconds": 0.019,
+  "evidence": "containers-before.log",
+  "summary": "220b713e01b2 pet-platform-p02-validation-postgres-1 Exited (0) 7 minutes ago pet-platform-p02-validation\nc32b316136a1 pet-platform-p02-validation-redis-1 Exited (0) 7 minutes ago pet-platform-p02-validation\n2ccb1a9559b8 pet-platform-p02-validation-rabbitmq-1 Exited (0) 5 minutes ago pet-platform-p02-validation\n"
+}

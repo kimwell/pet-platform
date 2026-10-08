@@ -1,0 +1,84 @@
+spring:
+  application:
+    name: pet-platform-backend
+  datasource:
+    # 没有本地 URL 或默认凭据回退；Java 不自动加载 dotenv。
+    url: ${PET_DATABASE_URL:}
+    username: ${PET_DATABASE_USERNAME:}
+    password: ${PET_DATABASE_PASSWORD:}
+    driver-class-name: org.postgresql.Driver
+    hikari:
+      maximum-pool-size: ${PET_DATABASE_POOL_MAX:10}
+      minimum-idle: ${PET_DATABASE_POOL_MIN_IDLE:2}
+      connection-timeout: ${PET_DATABASE_CONNECTION_TIMEOUT_MS:5000}
+      validation-timeout: 2000
+      initialization-fail-timeout: 10000
+      data-source-properties:
+        connectTimeout: 5
+        socketTimeout: 30
+  jpa:
+    open-in-view: false
+    generate-ddl: false
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        jdbc.time_zone: UTC
+        order_by.default_null_ordering: last
+  sql:
+    init:
+      mode: never
+  flyway:
+    enabled: ${PET_DATABASE_MIGRATION_ENABLED:true}
+    locations: classpath:db/migration
+    clean-disabled: true
+    baseline-on-migrate: false
+    validate-on-migrate: true
+    validate-migration-naming: true
+    out-of-order: false
+    ignore-migration-patterns: []
+    fail-on-missing-locations: true
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health
+  endpoint:
+    health:
+      show-details: never
+      show-components: never
+      probes:
+        enabled: true
+      group:
+        liveness:
+          include: livenessState
+        readiness:
+          include: readinessState,db
+  health:
+    defaults:
+      enabled: false
+    db:
+      enabled: true
+server:
+  # 当前没有认证能力；默认只在本机监听，不隐式开放公网。
+  address: ${SERVER_ADDRESS:127.0.0.1}
+  port: ${SERVER_PORT:8080}
+springdoc:
+  api-docs:
+    enabled: false
+    version: OPENAPI_3_1
+  swagger-ui:
+    enabled: false
+  packages-to-scan: com.pet.platform
+  paths-to-exclude: /error,/actuator/**,/__*
+  show-actuator: false
+  enable-default-api-docs: true
+  remove-broken-reference-definitions: false
+  override-with-generic-response: false
+pet:
+  api:
+    # 来自POM过滤，只替换@占位，保留环境变量表达式。
+    version: "@pet.api.version@"
+  # 不设置默认环境，开发者须显式选 local/test/prod 或提供外部配置。
+  environment: ${PET_ENVIRONMENT:}
+  public-origin: ${PET_PUBLIC_ORIGIN:}

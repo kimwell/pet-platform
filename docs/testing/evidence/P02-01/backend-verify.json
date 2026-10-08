@@ -1,0 +1,15 @@
+{
+  "id": "backend-verify",
+  "cwd": "/Users/kimwell/work/pet-platform/apps/backend",
+  "command": [
+    "./mvnw",
+    "--batch-mode",
+    "clean",
+    "verify"
+  ],
+  "exit_code": 0,
+  "status": "PASS",
+  "duration_seconds": 32.05,
+  "evidence": "backend-verify.log",
+  "summary": "ps://maven.aliyun.com/nexus/content/groups/public/org/springframework/boot/spring-boot-buildpack-platform/4.0.8/spring-boot-buildpack-platform-4.0.8.jar\n[INFO] Downloaded from mirror: https://maven.aliyun.com/nexus/content/groups/public/org/springframework/boot/spring-boot-buildpack-platform/4.0.8/spring-boot-buildpack-platform-4.0.8.jar (333 kB at 1.4 MB/s)\n[INFO] Downloading from mirror: https://maven.aliyun.com/nexus/content/groups/public/org/springframework/boot/spring-boot-loader-tools/4.0.8/spring-boot-loader-tools-4.0.8.jar\n[INFO] Downloaded from mirror: https://maven.aliyun.com/nexus/content/groups/public/org/springframework/boot/spring-boot-loader-tools/4.0.8/spring-boot-loader-tools-4.0.8.jar (343 kB at 1.5 MB/s)\n[INFO] Replacing main artifact /Users/kimwell/work/pet-platform/apps/backend/target/pet-platform-backend-0.0.0-SNAPSHOT.jar with repackaged archive, adding nested dependencies in BOOT-INF/.\n[INFO] The original artifact has been renamed to /Users/kimwell/work/pet-platform/apps/backend/target/pet-platform-backend-0.0.0-SNAPSHOT.jar.original\n[INFO] \n[INFO] --- failsafe:3.5.6:integration-test (default) @ pet-platform-backend ---\n[INFO] \n[INFO] --- failsafe:3.5.6:verify (default) @ pet-platform-backend ---\n[INFO] No tests to run.\n[INFO] ------------------------------------------------------------------------\n[INFO] BUILD SUCCESS\n[INFO] ------------------------------------------------------------------------\n[INFO] Total time:  12.113 s\n[INFO] Finished at: 2026-10-07T22:11:21+08:00\n[INFO] ------------------------------------------------------------------------\n"
+}

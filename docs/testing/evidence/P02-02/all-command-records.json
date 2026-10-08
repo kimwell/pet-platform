@@ -1,0 +1,2492 @@
+[
+  {
+    "record": "backend-dev-group-before.json",
+    "command": [
+      "ps",
+      "-o",
+      "pid=,pgid=,command=",
+      "-g",
+      "478"
+    ],
+    "exit_code": 0,
+    "output": "  478   478 /var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/pet-platform-p02-02-_qb1x3n7/tools/jdk/jdk-21.0.12.1+1/Contents/Home/bin/java --enable-native-access=ALL-UNNAMED -classpath /Users/kimwell/.m2/wrapper/dists/apache-maven-3.9.16/56ba1f9f/boot/plexus-classworlds-2.11.0.jar -Dclassworlds.conf=/Users/kimwell/.m2/wrapper/dists/apache-maven-3.9.16/56ba1f9f/bin/m2.conf -Dmaven.home=/Users/kimwell/.m2/wrapper/dists/apache-maven-3.9.16/56ba1f9f -Dlibrary.jansi.path=/Users/kimwell/.m2/wrapper/dists/apache-maven-3.9.16/56ba1f9f/lib/jansi-native -Dmaven.multiModuleProjectDirectory=/Users/kimwell/work/pet-platform/apps/backend org.codehaus.plexus.classworlds.launcher.Launcher spring-boot:run -Dspring-boot.run.profiles=local\n  670   478 /private/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/pet-platform-p02-02-_qb1x3n7/tools/jdk/jdk-21.0.12.1+1/Contents/Home/bin/java -XX:TieredStopAtLevel=1 -cp /Users/kimwell/work/pet-platform/apps/backend/target/classes:/Users/kimwell/.m2/repository/ch/qos/logback/logback-classic/1.5.38/logback-classic-1.5.38.jar:/Users/kimwell/.m2/repository/ch/qos/logback/logback-core/1.5.38/logback-core-1.5.38.jar:/Users/kimwell/.m2/repository/org/apache/logging/log4j/log4j-to-slf4j/2.25.5/log4j-to-slf4j-2.25.5.jar:/Users/kimwell/.m2/repository/org/apache/logging/log4j/log4j-api/2.25.5/log4j-api-2.25.5.jar:/Users/kimwell/.m2/repository/org/slf4j/jul-to-slf4j/2.0.18/jul-to-slf4j-2.0.18.jar:/Users/kimwell/.m2/repository/org/springframework/boot/spring-boot-autoconfigure/4.0.8/spring-boot-autoconfigure-4.0.8.jar:/Users/kimwell/.m2/repository/jakarta/annotation/jakarta.annotation-api/3.0.0/jakarta.annotation-api-3.0.0.jar:/Users/kimwell/.m2/repository/org/yaml/snakeyaml/2.5/snakeyaml-2.5.jar:/Users/kimwell/.m2/repository/org/springframework/boot/spring-boot-jackson/4.0.8/spring-boot-jackson-4.0.8.jar:/Users/kimwell/.m2/repository/tools/jackson/core/jackson-databind/3.1.5/jackson-databind-3.1.5.jar:/Users/kimwell/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.21/jackson-annotations-2.21.jar:/Users/kimwell/.m2/repository/tools/jackson/core/jackson-core/3.1.5/jackson-core-3.1.5.jar:/Users/kimwell/.m2/repository/org/springframework/boot/spring-boot-web-server/4.0.8/spring-boot-web-server-4.0.8.jar:/Users/kimwell/.m2/repository/org/apache/tomcat/embed/tomcat-embed-core/11.0.24/tomcat-embed-core-11.0.24.jar:/Users/kimwell/.m2/repository/org/apache/tomcat/embed/tomcat-embed-el/11.0.24/tomcat-embed-el-11.0.24.jar:/Users/kimwell/.m2/repository/org/apache/tomcat/embed/tomcat-embed-websocket/11.0.24/tomcat-embed-websocket-11.0.24.jar:/Users/kimwell/.m2/repository/org/springframework/boot/spring-boot-tomcat/4.0.8/spring-boot-tomcat-4.0.8.jar:/Users/kimwell/.m2/repository/org/springframework/boot/spring-boot-http-converter/4.0.8/spring-boot-http-converter-4.0.8.jar:/Users/kimwell/.m2/repository/org/springframework/boot/spring-boot/4.0.8/spring-boot-4.0.8.jar:/Users/kimwell/.m2/repository/org/springframework/spring-context/7.0.9/spring-context-7.0.9.jar:/Users/kimwell/.m2/repository/org/springframework/spring-web/7.0.9/spring-web-7.0.9.jar:/Users/kimwell/.m2/repository/org/springframework/spring-beans/7.0.9/spring-beans-7.0.9.jar:/Users/kimwell/.m2/repository/io/micrometer/micrometer-observation/1.16.7/micrometer-observation-1.16.7.jar:/Users/kimwell/.m2/repository/io/micrometer/micrometer-commons/1.16.7/micrometer-commons-1.16.7.jar:/Users/kimwell/.m2/repository/org/springframework/boot/spring-boot-webmvc/4.0.8/spring-boot-webmvc-4.0.8.jar:/Users/kimwell/.m2/repository/org/springframework/boot/spring-boot-servlet/4.0.8/spring-boot-servlet-4.0.8.jar:/Users/kimwell/.m2/repository/org/springframework/spring-webmvc/7.0.9/spring-webmvc-7.0.9.jar:/Users/kimwell/.m2/repository/org/springframework/spring-aop/7.0.9/spring-aop-7.0.9.jar:/Users/kimwell/.m2/repository/org/springframework/spring-expression/7.0.9/spring-expression-7.0.9.jar:/Users/kimwell/.m2/repository/org/slf4j/slf4j-api/2.0.18/slf4j-api-2.0.18.jar:/Users/kimwell/.m2/repository/org/springframework/spring-core/7.0.9/spring-core-7.0.9.jar:/Users/kimwell/.m2/repository/commons-logging/commons-logging/1.3.6/commons-logging-1.3.6.jar:/Users/kimwell/.m2/repository/org/jspecify/jspecify/1.0.1/jspecify-1.0.1.jar com.pet.platform.Application --spring.profiles.active=local\n"
+  },
+  {
+    "record": "backend-dev-r2-group-before.json",
+    "command": [
+      "ps",
+      "-o",
+      "pid=,pgid=,command=",
+      "-g",
+      "5305"
+    ],
+    "exit_code": 0,
+    "output": " 5305  5305 /var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/pet-platform-p02-02-_qb1x3n7/tools/jdk/jdk-21.0.12.1+1/Contents/Home/bin/java --enable-native-access=ALL-UNNAMED -classpath /Users/kimwell/.m2/wrapper/dists/apache-maven-3.9.16/56ba1f9f/boot/plexus-classworlds-2.11.0.jar -Dclassworlds.conf=/Users/kimwell/.m2/wrapper/dists/apache-maven-3.9.16/56ba1f9f/bin/m2.conf -Dmaven.home=/Users/kimwell/.m2/wrapper/dists/apache-maven-3.9.16/56ba1f9f -Dlibrary.jansi.path=/Users/kimwell/.m2/wrapper/dists/apache-maven-3.9.16/56ba1f9f/lib/jansi-native -Dmaven.multiModuleProjectDirectory=/Users/kimwell/work/pet-platform/apps/backend org.codehaus.plexus.classworlds.launcher.Launcher spring-boot:run -Dspring-boot.run.profiles=local\n 5519  5305 /private/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/pet-platform-p02-02-_qb1x3n7/tools/jdk/jdk-21.0.12.1+1/Contents/Home/bin/java -XX:TieredStopAtLevel=1 -cp /Users/kimwell/work/pet-platform/apps/backend/target/classes:/Users/kimwell/.m2/repository/ch/qos/logback/logback-classic/1.5.38/logback-classic-1.5.38.jar:/Users/kimwell/.m2/repository/ch/qos/logback/logback-core/1.5.38/logback-core-1.5.38.jar:/Users/kimwell/.m2/repository/org/apache/logging/log4j/log4j-to-slf4j/2.25.5/log4j-to-slf4j-2.25.5.jar:/Users/kimwell/.m2/repository/org/apache/logging/log4j/log4j-api/2.25.5/log4j-api-2.25.5.jar:/Users/kimwell/.m2/repository/org/slf4j/jul-to-slf4j/2.0.18/jul-to-slf4j-2.0.18.jar:/Users/kimwell/.m2/repository/org/springframework/boot/spring-boot-autoconfigure/4.0.8/spring-boot-autoconfigure-4.0.8.jar:/Users/kimwell/.m2/repository/jakarta/annotation/jakarta.annotation-api/3.0.0/jakarta.annotation-api-3.0.0.jar:/Users/kimwell/.m2/repository/org/yaml/snakeyaml/2.5/snakeyaml-2.5.jar:/Users/kimwell/.m2/repository/org/springframework/boot/spring-boot-jackson/4.0.8/spring-boot-jackson-4.0.8.jar:/Users/kimwell/.m2/repository/tools/jackson/core/jackson-databind/3.1.5/jackson-databind-3.1.5.jar:/Users/kimwell/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.21/jackson-annotations-2.21.jar:/Users/kimwell/.m2/repository/tools/jackson/core/jackson-core/3.1.5/jackson-core-3.1.5.jar:/Users/kimwell/.m2/repository/org/springframework/boot/spring-boot-web-server/4.0.8/spring-boot-web-server-4.0.8.jar:/Users/kimwell/.m2/repository/org/apache/tomcat/embed/tomcat-embed-core/11.0.24/tomcat-embed-core-11.0.24.jar:/Users/kimwell/.m2/repository/org/apache/tomcat/embed/tomcat-embed-el/11.0.24/tomcat-embed-el-11.0.24.jar:/Users/kimwell/.m2/repository/org/apache/tomcat/embed/tomcat-embed-websocket/11.0.24/tomcat-embed-websocket-11.0.24.jar:/Users/kimwell/.m2/repository/org/springframework/boot/spring-boot-tomcat/4.0.8/spring-boot-tomcat-4.0.8.jar:/Users/kimwell/.m2/repository/org/springframework/boot/spring-boot-http-converter/4.0.8/spring-boot-http-converter-4.0.8.jar:/Users/kimwell/.m2/repository/org/springframework/boot/spring-boot/4.0.8/spring-boot-4.0.8.jar:/Users/kimwell/.m2/repository/org/springframework/spring-context/7.0.9/spring-context-7.0.9.jar:/Users/kimwell/.m2/repository/org/springframework/spring-web/7.0.9/spring-web-7.0.9.jar:/Users/kimwell/.m2/repository/org/springframework/spring-beans/7.0.9/spring-beans-7.0.9.jar:/Users/kimwell/.m2/repository/io/micrometer/micrometer-observation/1.16.7/micrometer-observation-1.16.7.jar:/Users/kimwell/.m2/repository/io/micrometer/micrometer-commons/1.16.7/micrometer-commons-1.16.7.jar:/Users/kimwell/.m2/repository/org/springframework/boot/spring-boot-webmvc/4.0.8/spring-boot-webmvc-4.0.8.jar:/Users/kimwell/.m2/repository/org/springframework/boot/spring-boot-servlet/4.0.8/spring-boot-servlet-4.0.8.jar:/Users/kimwell/.m2/repository/org/springframework/spring-webmvc/7.0.9/spring-webmvc-7.0.9.jar:/Users/kimwell/.m2/repository/org/springframework/spring-aop/7.0.9/spring-aop-7.0.9.jar:/Users/kimwell/.m2/repository/org/springframework/spring-expression/7.0.9/spring-expression-7.0.9.jar:/Users/kimwell/.m2/repository/org/slf4j/slf4j-api/2.0.18/slf4j-api-2.0.18.jar:/Users/kimwell/.m2/repository/org/springframework/spring-core/7.0.9/spring-core-7.0.9.jar:/Users/kimwell/.m2/repository/commons-logging/commons-logging/1.3.6/commons-logging-1.3.6.jar:/Users/kimwell/.m2/repository/org/jspecify/jspecify/1.0.1/jspecify-1.0.1.jar com.pet.platform.Application --spring.profiles.active=local\n"
+  },
+  {
+    "record": "backend-dev-r2.json",
+    "cwd": "/Users/kimwell/work/pet-platform/apps/backend",
+    "command": [
+      "./mvnw",
+      "spring-boot:run",
+      "-Dspring-boot.run.profiles=local"
+    ],
+    "pid": 5305,
+    "port": 8080,
+    "status": "PASS",
+    "exit_code": null,
+    "evidence": "backend-dev-r2.log",
+    "boundary": "长驻进程启动观察，不伪造命令退出码"
+  },
+  {
+    "record": "backend-dev-r3-group-before.json",
+    "command": [
+      "ps",
+      "-o",
+      "pid=,pgid=,command=",
+      "-g",
+      "8627"
+    ],
+    "exit_code": 0,
+    "output": " 8627  8627 /var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/pet-platform-p02-02-_qb1x3n7/tools/jdk/jdk-21.0.12.1+1/Contents/Home/bin/java --enable-native-access=ALL-UNNAMED -classpath /Users/kimwell/.m2/wrapper/dists/apache-maven-3.9.16/56ba1f9f/boot/plexus-classworlds-2.11.0.jar -Dclassworlds.conf=/Users/kimwell/.m2/wrapper/dists/apache-maven-3.9.16/56ba1f9f/bin/m2.conf -Dmaven.home=/Users/kimwell/.m2/wrapper/dists/apache-maven-3.9.16/56ba1f9f -Dlibrary.jansi.path=/Users/kimwell/.m2/wrapper/dists/apache-maven-3.9.16/56ba1f9f/lib/jansi-native -Dmaven.multiModuleProjectDirectory=/Users/kimwell/work/pet-platform/apps/backend org.codehaus.plexus.classworlds.launcher.Launcher spring-boot:run -Dspring-boot.run.profiles=local\n 8761  8627 /private/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/pet-platform-p02-02-_qb1x3n7/tools/jdk/jdk-21.0.12.1+1/Contents/Home/bin/java -XX:TieredStopAtLevel=1 -cp /Users/kimwell/work/pet-platform/apps/backend/target/classes:/Users/kimwell/.m2/repository/ch/qos/logback/logback-classic/1.5.38/logback-classic-1.5.38.jar:/Users/kimwell/.m2/repository/ch/qos/logback/logback-core/1.5.38/logback-core-1.5.38.jar:/Users/kimwell/.m2/repository/org/apache/logging/log4j/log4j-to-slf4j/2.25.5/log4j-to-slf4j-2.25.5.jar:/Users/kimwell/.m2/repository/org/apache/logging/log4j/log4j-api/2.25.5/log4j-api-2.25.5.jar:/Users/kimwell/.m2/repository/org/slf4j/jul-to-slf4j/2.0.18/jul-to-slf4j-2.0.18.jar:/Users/kimwell/.m2/repository/org/springframework/boot/spring-boot-autoconfigure/4.0.8/spring-boot-autoconfigure-4.0.8.jar:/Users/kimwell/.m2/repository/jakarta/annotation/jakarta.annotation-api/3.0.0/jakarta.annotation-api-3.0.0.jar:/Users/kimwell/.m2/repository/org/yaml/snakeyaml/2.5/snakeyaml-2.5.jar:/Users/kimwell/.m2/repository/org/springframework/boot/spring-boot-jackson/4.0.8/spring-boot-jackson-4.0.8.jar:/Users/kimwell/.m2/repository/tools/jackson/core/jackson-databind/3.1.5/jackson-databind-3.1.5.jar:/Users/kimwell/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.21/jackson-annotations-2.21.jar:/Users/kimwell/.m2/repository/tools/jackson/core/jackson-core/3.1.5/jackson-core-3.1.5.jar:/Users/kimwell/.m2/repository/org/springframework/boot/spring-boot-web-server/4.0.8/spring-boot-web-server-4.0.8.jar:/Users/kimwell/.m2/repository/org/apache/tomcat/embed/tomcat-embed-core/11.0.24/tomcat-embed-core-11.0.24.jar:/Users/kimwell/.m2/repository/org/apache/tomcat/embed/tomcat-embed-el/11.0.24/tomcat-embed-el-11.0.24.jar:/Users/kimwell/.m2/repository/org/apache/tomcat/embed/tomcat-embed-websocket/11.0.24/tomcat-embed-websocket-11.0.24.jar:/Users/kimwell/.m2/repository/org/springframework/boot/spring-boot-tomcat/4.0.8/spring-boot-tomcat-4.0.8.jar:/Users/kimwell/.m2/repository/org/springframework/boot/spring-boot-http-converter/4.0.8/spring-boot-http-converter-4.0.8.jar:/Users/kimwell/.m2/repository/org/springframework/boot/spring-boot/4.0.8/spring-boot-4.0.8.jar:/Users/kimwell/.m2/repository/org/springframework/spring-context/7.0.9/spring-context-7.0.9.jar:/Users/kimwell/.m2/repository/org/springframework/spring-web/7.0.9/spring-web-7.0.9.jar:/Users/kimwell/.m2/repository/org/springframework/spring-beans/7.0.9/spring-beans-7.0.9.jar:/Users/kimwell/.m2/repository/io/micrometer/micrometer-observation/1.16.7/micrometer-observation-1.16.7.jar:/Users/kimwell/.m2/repository/io/micrometer/micrometer-commons/1.16.7/micrometer-commons-1.16.7.jar:/Users/kimwell/.m2/repository/org/springframework/boot/spring-boot-webmvc/4.0.8/spring-boot-webmvc-4.0.8.jar:/Users/kimwell/.m2/repository/org/springframework/boot/spring-boot-servlet/4.0.8/spring-boot-servlet-4.0.8.jar:/Users/kimwell/.m2/repository/org/springframework/spring-webmvc/7.0.9/spring-webmvc-7.0.9.jar:/Users/kimwell/.m2/repository/org/springframework/spring-aop/7.0.9/spring-aop-7.0.9.jar:/Users/kimwell/.m2/repository/org/springframework/spring-expression/7.0.9/spring-expression-7.0.9.jar:/Users/kimwell/.m2/repository/org/slf4j/slf4j-api/2.0.18/slf4j-api-2.0.18.jar:/Users/kimwell/.m2/repository/org/springframework/spring-core/7.0.9/spring-core-7.0.9.jar:/Users/kimwell/.m2/repository/commons-logging/commons-logging/1.3.6/commons-logging-1.3.6.jar:/Users/kimwell/.m2/repository/org/jspecify/jspecify/1.0.1/jspecify-1.0.1.jar com.pet.platform.Application --spring.profiles.active=local\n"
+  },
+  {
+    "record": "backend-dev-r3.json",
+    "cwd": "/Users/kimwell/work/pet-platform/apps/backend",
+    "command": [
+      "./mvnw",
+      "spring-boot:run",
+      "-Dspring-boot.run.profiles=local"
+    ],
+    "pid": 8627,
+    "port": 8080,
+    "status": "PASS",
+    "exit_code": null,
+    "evidence": "backend-dev-r3.log",
+    "boundary": "长驻进程启动观察，不伪造命令退出码"
+  },
+  {
+    "record": "backend-dev.json",
+    "cwd": "/Users/kimwell/work/pet-platform/apps/backend",
+    "command": [
+      "./mvnw",
+      "spring-boot:run",
+      "-Dspring-boot.run.profiles=local"
+    ],
+    "pid": 478,
+    "port": 8080,
+    "status": "PASS",
+    "exit_code": null,
+    "evidence": "backend-dev.log",
+    "boundary": "长驻进程启动观察，不伪造命令退出码"
+  },
+  {
+    "record": "backend-invalid-origin.json",
+    "id": "backend-invalid-origin",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "java",
+      "-jar",
+      "/Users/kimwell/work/pet-platform/apps/backend/target/pet-platform-backend-0.0.0-SNAPSHOT.jar",
+      "--spring.profiles.active=local",
+      "--pet.public-origin=http://localhost:65536"
+    ],
+    "exit_code": 1,
+    "expected_exit_code": 1,
+    "status": "PASS",
+    "started_at": "2026-10-08T07:27:05.425115+08:00",
+    "duration_seconds": 0.975,
+    "evidence": "backend-invalid-origin.log",
+    "summary": "nd] [           main] com.pet.platform.Application             : The following 1 profile is active: \"local\"\n2026-10-08T07:27:05.336+08:00  INFO 1834 --- [pet-platform-backend] [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8080 (http)\n2026-10-08T07:27:05.347+08:00  INFO 1834 --- [pet-platform-backend] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]\n2026-10-08T07:27:05.347+08:00  INFO 1834 --- [pet-platform-backend] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.24]\n2026-10-08T07:27:05.361+08:00  INFO 1834 --- [pet-platform-backend] [           main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 384 ms\n2026-10-08T07:27:05.395+08:00  WARN 1834 --- [pet-platform-backend] [           main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.boot.context.properties.ConfigurationPropertiesBindException: Error creating bean with name 'pet-com.pet.platform.shared.config.EnvironmentSettings': Could not bind properties to 'EnvironmentSettings' : prefix=pet, ignoreInvalidFields=false, ignoreUnknownFields=true\n2026-10-08T07:27:05.396+08:00  INFO 1834 --- [pet-platform-backend] [           main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]\n2026-10-08T07:27:05.400+08:00  INFO 1834 --- [pet-platform-backend] [           main] .s.b.a.l.ConditionEvaluationReportLogger : \n\nError starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.\n2026-10-08T07:27:05.406+08:00 ERROR 1834 --- [pet-platform-backend] [           main] o.s.b.d.LoggingFailureAnalysisReporter   : \n\n***************************\nAPPLICATION FAILED TO START\n***************************\n\nDescription:\n\nFailed to bind properties under 'pet' to com.pet.platform.shared.config.EnvironmentSettings:\n\n    Reason: java.lang.IllegalArgumentException: pet.public-origin 必须是完整的公开 HTTP/HTTPS 来源，不包含凭据、路径或查询，端口须为 1～65535\n\nAction:\n\nUpdate your application's configuration\n\n"
+  },
+  {
+    "record": "backend-invalid-port.json",
+    "id": "backend-invalid-port",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "java",
+      "-jar",
+      "/Users/kimwell/work/pet-platform/apps/backend/target/pet-platform-backend-0.0.0-SNAPSHOT.jar",
+      "--spring.profiles.active=local",
+      "--server.port=not-a-port"
+    ],
+    "exit_code": 1,
+    "expected_exit_code": 1,
+    "status": "PASS",
+    "started_at": "2026-10-08T07:27:06.267358+08:00",
+    "duration_seconds": 0.842,
+    "evidence": "backend-invalid-port.log",
+    "summary": "\n  .   ____          _            __ _ _\n /\\\\ / ___'_ __ _ _(_)_ __  __ _ \\ \\ \\ \\\n( ( )\\___ | '_ | '_| | '_ \\/ _` | \\ \\ \\ \\\n \\\\/  ___)| |_)| | | | | || (_| |  ) ) ) )\n  '  |____| .__|_| |_|_| |_\\__, | / / / /\n =========|_|==============|___/=/_/_/_/\n\n :: Spring Boot ::                (v4.0.8)\n\n2026-10-08T07:27:05.928+08:00  INFO 1835 --- [pet-platform-backend] [           main] com.pet.platform.Application             : Starting Application v0.0.0-SNAPSHOT using Java 21.0.12.1 with PID 1835 (/Users/kimwell/work/pet-platform/apps/backend/target/pet-platform-backend-0.0.0-SNAPSHOT.jar started by kimwell in /Users/kimwell/work/pet-platform)\n2026-10-08T07:27:05.930+08:00  INFO 1835 --- [pet-platform-backend] [           main] com.pet.platform.Application             : The following 1 profile is active: \"local\"\n2026-10-08T07:27:06.237+08:00  WARN 1835 --- [pet-platform-backend] [           main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Unable to start web server\n2026-10-08T07:27:06.239+08:00  INFO 1835 --- [pet-platform-backend] [           main] .s.b.a.l.ConditionEvaluationReportLogger : \n\nError starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.\n2026-10-08T07:27:06.251+08:00 ERROR 1835 --- [pet-platform-backend] [           main] o.s.b.d.LoggingFailureAnalysisReporter   : \n\n***************************\nAPPLICATION FAILED TO START\n***************************\n\nDescription:\n\nFailed to bind properties under 'server.port' to java.lang.Integer:\n\n    Property: server.port\n    Value: \"not-a-port\"\n    Origin: \"server.port\" from property source \"commandLineArgs\"\n    Reason: failed to convert java.lang.String to java.lang.Integer (caused by java.lang.NumberFormatException: For input string: \"not-a-port\")\n\nAction:\n\nUpdate your application's configuration\n\n"
+  },
+  {
+    "record": "backend-missing-profile-r2.json",
+    "id": "backend-missing-profile-r2",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "java",
+      "-jar",
+      "/Users/kimwell/work/pet-platform/apps/backend/target/pet-platform-backend-0.0.0-SNAPSHOT.jar"
+    ],
+    "exit_code": 1,
+    "expected_exit_code": 1,
+    "status": "PASS",
+    "started_at": "2026-10-08T07:27:02.458807+08:00",
+    "duration_seconds": 1.066,
+    "evidence": "backend-missing-profile-r2.log",
+    "summary": "d] [           main] com.pet.platform.Application             : No active profile set, falling back to 1 default profile: \"default\"\n2026-10-08T07:27:02.347+08:00  INFO 1814 --- [pet-platform-backend] [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8080 (http)\n2026-10-08T07:27:02.359+08:00  INFO 1814 --- [pet-platform-backend] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]\n2026-10-08T07:27:02.359+08:00  INFO 1814 --- [pet-platform-backend] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.24]\n2026-10-08T07:27:02.375+08:00  INFO 1814 --- [pet-platform-backend] [           main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 450 ms\n2026-10-08T07:27:02.421+08:00  WARN 1814 --- [pet-platform-backend] [           main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.boot.context.properties.ConfigurationPropertiesBindException: Error creating bean with name 'pet-com.pet.platform.shared.config.EnvironmentSettings': Could not bind properties to 'EnvironmentSettings' : prefix=pet, ignoreInvalidFields=false, ignoreUnknownFields=true\n2026-10-08T07:27:02.423+08:00  INFO 1814 --- [pet-platform-backend] [           main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]\n2026-10-08T07:27:02.427+08:00  INFO 1814 --- [pet-platform-backend] [           main] .s.b.a.l.ConditionEvaluationReportLogger : \n\nError starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.\n2026-10-08T07:27:02.435+08:00 ERROR 1814 --- [pet-platform-backend] [           main] o.s.b.d.LoggingFailureAnalysisReporter   : \n\n***************************\nAPPLICATION FAILED TO START\n***************************\n\nDescription:\n\nFailed to bind properties under 'pet' to com.pet.platform.shared.config.EnvironmentSettings:\n\n    Reason: java.lang.IllegalArgumentException: pet.environment 必须显式设置为 local、test 或 prod\n\nAction:\n\nUpdate your application's configuration\n\n"
+  },
+  {
+    "record": "backend-missing-profile.json",
+    "id": "backend-missing-profile",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "java",
+      "-jar",
+      "/Users/kimwell/work/pet-platform/apps/backend/target/pet-platform-backend-0.0.0-SNAPSHOT.jar"
+    ],
+    "exit_code": 1,
+    "expected_exit_code": 1,
+    "status": "PASS",
+    "started_at": "2026-10-08T07:26:11.225725+08:00",
+    "duration_seconds": 1.128,
+    "evidence": "backend-missing-profile.log",
+    "summary": "rver          : Tomcat initialized with port 8080 (http)\n2026-10-08T07:26:11.124+08:00  INFO 1430 --- [pet-platform-backend] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]\n2026-10-08T07:26:11.125+08:00  INFO 1430 --- [pet-platform-backend] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.24]\n2026-10-08T07:26:11.139+08:00  INFO 1430 --- [pet-platform-backend] [           main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 422 ms\n2026-10-08T07:26:11.186+08:00  WARN 1430 --- [pet-platform-backend] [           main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.boot.context.properties.ConfigurationPropertiesBindException: Error creating bean with name 'pet-com.pet.platform.shared.config.EnvironmentSettings': Could not bind properties to 'EnvironmentSettings' : prefix=pet, ignoreInvalidFields=false, ignoreUnknownFields=true\n2026-10-08T07:26:11.187+08:00  INFO 1430 --- [pet-platform-backend] [           main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]\n2026-10-08T07:26:11.193+08:00  INFO 1430 --- [pet-platform-backend] [           main] .s.b.a.l.ConditionEvaluationReportLogger : \n\nError starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.\n2026-10-08T07:26:11.201+08:00 ERROR 1430 --- [pet-platform-backend] [           main] o.s.b.d.LoggingFailureAnalysisReporter   : \n\n***************************\nAPPLICATION FAILED TO START\n***************************\n\nDescription:\n\nFailed to bind properties under 'pet.public-origin' to java.net.URI:\n\n    Property: pet.public-origin\n    Value: \"${PET_PUBLIC_ORIGIN}\"\n    Origin: class path resource [application.yml] from pet-platform-backend-0.0.0-SNAPSHOT.jar - 11:18\n    Reason: failed to convert java.lang.String to java.net.URI (caused by java.lang.IllegalArgumentException: Invalid URI syntax: Illegal character in path at index 1: ${PET_PUBLIC_ORIGIN})\n\nAction:\n\nUpdate your application's configuration\n\n"
+  },
+  {
+    "record": "backend-port-occupied.json",
+    "id": "backend-port-occupied",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "java",
+      "-jar",
+      "/Users/kimwell/work/pet-platform/apps/backend/target/pet-platform-backend-0.0.0-SNAPSHOT.jar",
+      "--spring.profiles.active=local"
+    ],
+    "exit_code": 1,
+    "expected_exit_code": 1,
+    "status": "PASS",
+    "started_at": "2026-10-08T07:27:07.419401+08:00",
+    "duration_seconds": 1.152,
+    "evidence": "backend-port-occupied.log",
+    "summary": "\n2026-10-08T07:27:06.761+08:00  INFO 1844 --- [pet-platform-backend] [           main] com.pet.platform.Application             : Starting Application v0.0.0-SNAPSHOT using Java 21.0.12.1 with PID 1844 (/Users/kimwell/work/pet-platform/apps/backend/target/pet-platform-backend-0.0.0-SNAPSHOT.jar started by kimwell in /Users/kimwell/work/pet-platform)\n2026-10-08T07:27:06.762+08:00  INFO 1844 --- [pet-platform-backend] [           main] com.pet.platform.Application             : The following 1 profile is active: \"local\"\n2026-10-08T07:27:07.150+08:00  INFO 1844 --- [pet-platform-backend] [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8080 (http)\n2026-10-08T07:27:07.158+08:00  INFO 1844 --- [pet-platform-backend] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]\n2026-10-08T07:27:07.159+08:00  INFO 1844 --- [pet-platform-backend] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.24]\n2026-10-08T07:27:07.172+08:00  INFO 1844 --- [pet-platform-backend] [           main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 382 ms\n2026-10-08T07:27:07.386+08:00  WARN 1844 --- [pet-platform-backend] [           main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'\n2026-10-08T07:27:07.391+08:00  INFO 1844 --- [pet-platform-backend] [           main] .s.b.a.l.ConditionEvaluationReportLogger : \n\nError starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.\n2026-10-08T07:27:07.398+08:00 ERROR 1844 --- [pet-platform-backend] [           main] o.s.b.d.LoggingFailureAnalysisReporter   : \n\n***************************\nAPPLICATION FAILED TO START\n***************************\n\nDescription:\n\nWeb server failed to start. Port 8080 was already in use.\n\nAction:\n\nIdentify and stop the process that's listening on port 8080 or configure this application to listen on another port.\n\n"
+  },
+  {
+    "record": "backend-prod-http.json",
+    "id": "backend-prod-http",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "java",
+      "-jar",
+      "/Users/kimwell/work/pet-platform/apps/backend/target/pet-platform-backend-0.0.0-SNAPSHOT.jar",
+      "--spring.profiles.active=prod",
+      "--pet.public-origin=http://localhost"
+    ],
+    "exit_code": 1,
+    "expected_exit_code": 1,
+    "status": "PASS",
+    "started_at": "2026-10-08T07:27:04.449739+08:00",
+    "duration_seconds": 0.989,
+    "evidence": "backend-prod-http.log",
+    "summary": "  INFO 1824 --- [pet-platform-backend] [           main] com.pet.platform.Application             : The following 1 profile is active: \"prod\"\n2026-10-08T07:27:04.362+08:00  INFO 1824 --- [pet-platform-backend] [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8080 (http)\n2026-10-08T07:27:04.371+08:00  INFO 1824 --- [pet-platform-backend] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]\n2026-10-08T07:27:04.371+08:00  INFO 1824 --- [pet-platform-backend] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.24]\n2026-10-08T07:27:04.385+08:00  INFO 1824 --- [pet-platform-backend] [           main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 397 ms\n2026-10-08T07:27:04.430+08:00  WARN 1824 --- [pet-platform-backend] [           main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.boot.context.properties.ConfigurationPropertiesBindException: Error creating bean with name 'pet-com.pet.platform.shared.config.EnvironmentSettings': Could not bind properties to 'EnvironmentSettings' : prefix=pet, ignoreInvalidFields=false, ignoreUnknownFields=true\n2026-10-08T07:27:04.432+08:00  INFO 1824 --- [pet-platform-backend] [           main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]\n2026-10-08T07:27:04.436+08:00  INFO 1824 --- [pet-platform-backend] [           main] .s.b.a.l.ConditionEvaluationReportLogger : \n\nError starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.\n2026-10-08T07:27:04.442+08:00 ERROR 1824 --- [pet-platform-backend] [           main] o.s.b.d.LoggingFailureAnalysisReporter   : \n\n***************************\nAPPLICATION FAILED TO START\n***************************\n\nDescription:\n\nFailed to bind properties under 'pet' to com.pet.platform.shared.config.EnvironmentSettings:\n\n    Reason: java.lang.IllegalArgumentException: 生产 pet.public-origin 必须使用 HTTPS\n\nAction:\n\nUpdate your application's configuration\n\n"
+  },
+  {
+    "record": "backend-prod-missing-origin.json",
+    "id": "backend-prod-missing-origin",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "java",
+      "-jar",
+      "/Users/kimwell/work/pet-platform/apps/backend/target/pet-platform-backend-0.0.0-SNAPSHOT.jar",
+      "--spring.profiles.active=prod"
+    ],
+    "exit_code": 1,
+    "expected_exit_code": 1,
+    "status": "PASS",
+    "started_at": "2026-10-08T07:27:03.460132+08:00",
+    "duration_seconds": 1.001,
+    "evidence": "backend-prod-missing-origin.log",
+    "summary": "end] [           main] com.pet.platform.Application             : The following 1 profile is active: \"prod\"\n2026-10-08T07:27:03.370+08:00  INFO 1823 --- [pet-platform-backend] [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8080 (http)\n2026-10-08T07:27:03.379+08:00  INFO 1823 --- [pet-platform-backend] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]\n2026-10-08T07:27:03.379+08:00  INFO 1823 --- [pet-platform-backend] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.24]\n2026-10-08T07:27:03.392+08:00  INFO 1823 --- [pet-platform-backend] [           main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 410 ms\n2026-10-08T07:27:03.426+08:00  WARN 1823 --- [pet-platform-backend] [           main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.boot.context.properties.ConfigurationPropertiesBindException: Error creating bean with name 'pet-com.pet.platform.shared.config.EnvironmentSettings': Could not bind properties to 'EnvironmentSettings' : prefix=pet, ignoreInvalidFields=false, ignoreUnknownFields=true\n2026-10-08T07:27:03.427+08:00  INFO 1823 --- [pet-platform-backend] [           main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]\n2026-10-08T07:27:03.431+08:00  INFO 1823 --- [pet-platform-backend] [           main] .s.b.a.l.ConditionEvaluationReportLogger : \n\nError starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.\n2026-10-08T07:27:03.438+08:00 ERROR 1823 --- [pet-platform-backend] [           main] o.s.b.d.LoggingFailureAnalysisReporter   : \n\n***************************\nAPPLICATION FAILED TO START\n***************************\n\nDescription:\n\nFailed to bind properties under 'pet' to com.pet.platform.shared.config.EnvironmentSettings:\n\n    Reason: java.lang.IllegalArgumentException: pet.public-origin 必须是完整的公开 HTTP/HTTPS 来源，不包含凭据、路径或查询，端口须为 1～65535\n\nAction:\n\nUpdate your application's configuration\n\n"
+  },
+  {
+    "record": "backend-profile-mismatch-after.json",
+    "id": "backend-profile-mismatch-after",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "java",
+      "-jar",
+      "/Users/kimwell/work/pet-platform/apps/backend/target/pet-platform-backend-0.0.0-SNAPSHOT.jar",
+      "--spring.profiles.active=prod",
+      "--pet.environment=local",
+      "--pet.public-origin=http://localhost",
+      "--server.port=18080"
+    ],
+    "exit_code": 1,
+    "expected_exit_code": 1,
+    "status": "PASS",
+    "started_at": "2026-10-08T07:37:04.040672+08:00",
+    "duration_seconds": 1.066,
+    "evidence": "backend-profile-mismatch-after.log",
+    "summary": "nContext.java:621) ~[spring-context-7.0.9.jar!/:7.0.9]\n\tat org.springframework.boot.web.server.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:143) ~[spring-boot-web-server-4.0.8.jar!/:4.0.8]\n\tat org.springframework.boot.SpringApplication.refresh(SpringApplication.java:756) ~[spring-boot-4.0.8.jar!/:4.0.8]\n\tat org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:445) ~[spring-boot-4.0.8.jar!/:4.0.8]\n\tat org.springframework.boot.SpringApplication.run(SpringApplication.java:321) ~[spring-boot-4.0.8.jar!/:4.0.8]\n\tat org.springframework.boot.SpringApplication.run(SpringApplication.java:1365) ~[spring-boot-4.0.8.jar!/:4.0.8]\n\tat org.springframework.boot.SpringApplication.run(SpringApplication.java:1354) ~[spring-boot-4.0.8.jar!/:4.0.8]\n\tat com.pet.platform.Application.main(Application.java:20) ~[!/:0.0.0-SNAPSHOT]\n\tat java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]\n\tat java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]\n\tat org.springframework.boot.loader.launch.Launcher.launch(Launcher.java:106) ~[pet-platform-backend-0.0.0-SNAPSHOT.jar:0.0.0-SNAPSHOT]\n\tat org.springframework.boot.loader.launch.Launcher.launch(Launcher.java:64) ~[pet-platform-backend-0.0.0-SNAPSHOT.jar:0.0.0-SNAPSHOT]\n\tat org.springframework.boot.loader.launch.JarLauncher.main(JarLauncher.java:40) ~[pet-platform-backend-0.0.0-SNAPSHOT.jar:0.0.0-SNAPSHOT]\nCaused by: java.lang.IllegalArgumentException: 运行 profile 与 pet.environment 不一致，不能把本地配置用于生产\n\tat com.pet.platform.shared.config.EnvironmentSettings.verifyProfiles(EnvironmentSettings.java:37) ~[!/:0.0.0-SNAPSHOT]\n\tat com.pet.platform.Application.lambda$verifyRuntimeProfile$0(Application.java:16) ~[!/:0.0.0-SNAPSHOT]\n\tat org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1862) ~[spring-beans-7.0.9.jar!/:7.0.9]\n\tat org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1811) ~[spring-beans-7.0.9.jar!/:7.0.9]\n\t... 23 common frames omitted\n\n"
+  },
+  {
+    "record": "backend-profile-mix-after.json",
+    "id": "backend-profile-mix-after",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "java",
+      "-jar",
+      "/Users/kimwell/work/pet-platform/apps/backend/target/pet-platform-backend-0.0.0-SNAPSHOT.jar",
+      "--spring.profiles.active=prod,local",
+      "--server.port=18080"
+    ],
+    "exit_code": 1,
+    "expected_exit_code": 1,
+    "status": "PASS",
+    "started_at": "2026-10-08T07:37:02.974120+08:00",
+    "duration_seconds": 1.067,
+    "evidence": "backend-profile-mix-after.log",
+    "summary": "Context.java:621) ~[spring-context-7.0.9.jar!/:7.0.9]\n\tat org.springframework.boot.web.server.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:143) ~[spring-boot-web-server-4.0.8.jar!/:4.0.8]\n\tat org.springframework.boot.SpringApplication.refresh(SpringApplication.java:756) ~[spring-boot-4.0.8.jar!/:4.0.8]\n\tat org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:445) ~[spring-boot-4.0.8.jar!/:4.0.8]\n\tat org.springframework.boot.SpringApplication.run(SpringApplication.java:321) ~[spring-boot-4.0.8.jar!/:4.0.8]\n\tat org.springframework.boot.SpringApplication.run(SpringApplication.java:1365) ~[spring-boot-4.0.8.jar!/:4.0.8]\n\tat org.springframework.boot.SpringApplication.run(SpringApplication.java:1354) ~[spring-boot-4.0.8.jar!/:4.0.8]\n\tat com.pet.platform.Application.main(Application.java:20) ~[!/:0.0.0-SNAPSHOT]\n\tat java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]\n\tat java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]\n\tat org.springframework.boot.loader.launch.Launcher.launch(Launcher.java:106) ~[pet-platform-backend-0.0.0-SNAPSHOT.jar:0.0.0-SNAPSHOT]\n\tat org.springframework.boot.loader.launch.Launcher.launch(Launcher.java:64) ~[pet-platform-backend-0.0.0-SNAPSHOT.jar:0.0.0-SNAPSHOT]\n\tat org.springframework.boot.loader.launch.JarLauncher.main(JarLauncher.java:40) ~[pet-platform-backend-0.0.0-SNAPSHOT.jar:0.0.0-SNAPSHOT]\nCaused by: java.lang.IllegalArgumentException: local、test、prod 运行 profile 只能启用一个，不能混用本地与生产配置\n\tat com.pet.platform.shared.config.EnvironmentSettings.verifyProfiles(EnvironmentSettings.java:34) ~[!/:0.0.0-SNAPSHOT]\n\tat com.pet.platform.Application.lambda$verifyRuntimeProfile$0(Application.java:16) ~[!/:0.0.0-SNAPSHOT]\n\tat org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1862) ~[spring-beans-7.0.9.jar!/:7.0.9]\n\tat org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1811) ~[spring-beans-7.0.9.jar!/:7.0.9]\n\t... 23 common frames omitted\n\n"
+  },
+  {
+    "record": "backend-profile-mix-before-group-before.json",
+    "command": [
+      "ps",
+      "-o",
+      "pid=,pgid=,command=",
+      "-g",
+      "8328"
+    ],
+    "exit_code": 0,
+    "output": " 8328  8328 java -jar /Users/kimwell/work/pet-platform/apps/backend/target/pet-platform-backend-0.0.0-SNAPSHOT.jar --spring.profiles.active=prod,local --server.port=18080\n"
+  },
+  {
+    "record": "backend-profile-mix-before.json",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "java",
+      "-jar",
+      "/Users/kimwell/work/pet-platform/apps/backend/target/pet-platform-backend-0.0.0-SNAPSHOT.jar",
+      "--spring.profiles.active=prod,local",
+      "--server.port=18080"
+    ],
+    "pid": 8328,
+    "port": 18080,
+    "status": "PASS",
+    "exit_code": null,
+    "evidence": "backend-profile-mix-before.log",
+    "boundary": "长驻进程启动观察，不伪造命令退出码"
+  },
+  {
+    "record": "backend-verify-r2.json",
+    "id": "backend-verify-r2",
+    "cwd": "/Users/kimwell/work/pet-platform/apps/backend",
+    "command": [
+      "./mvnw",
+      "clean",
+      "verify"
+    ],
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "status": "PASS",
+    "started_at": "2026-10-08T07:26:47.492617+08:00",
+    "duration_seconds": 5.56,
+    "evidence": "backend-verify-r2.log",
+    "summary": "026-10-08T07:26:46.218+08:00  INFO 1751 --- [pet-platform-backend] [           main] com.pet.platform.ApplicationTest         : Started ApplicationTest in 0.695 seconds (process running for 1.206)\n2026-10-08T07:26:46.521+08:00  INFO 1751 --- [pet-platform-backend] [1-auto-1-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'\n2026-10-08T07:26:46.521+08:00  INFO 1751 --- [pet-platform-backend] [1-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'\n2026-10-08T07:26:46.522+08:00  INFO 1751 --- [pet-platform-backend] [1-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms\n[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.255 s -- in com.pet.platform.ApplicationTest\n[INFO] \n[INFO] Results:\n[INFO] \n[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0\n[INFO] \n[INFO] \n[INFO] --- jar:3.4.2:jar (default-jar) @ pet-platform-backend ---\n[INFO] Building jar: /Users/kimwell/work/pet-platform/apps/backend/target/pet-platform-backend-0.0.0-SNAPSHOT.jar\n[INFO] \n[INFO] --- spring-boot:4.0.8:repackage (repackage) @ pet-platform-backend ---\n[INFO] Replacing main artifact /Users/kimwell/work/pet-platform/apps/backend/target/pet-platform-backend-0.0.0-SNAPSHOT.jar with repackaged archive, adding nested dependencies in BOOT-INF/.\n[INFO] The original artifact has been renamed to /Users/kimwell/work/pet-platform/apps/backend/target/pet-platform-backend-0.0.0-SNAPSHOT.jar.original\n[INFO] \n[INFO] --- failsafe:3.5.6:integration-test (default) @ pet-platform-backend ---\n[INFO] \n[INFO] --- failsafe:3.5.6:verify (default) @ pet-platform-backend ---\n[INFO] No tests to run.\n[INFO] ------------------------------------------------------------------------\n[INFO] BUILD SUCCESS\n[INFO] ------------------------------------------------------------------------\n[INFO] Total time:  3.811 s\n[INFO] Finished at: 2026-10-08T07:26:47+08:00\n[INFO] ------------------------------------------------------------------------\nOpenJDK 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended\n"
+  },
+  {
+    "record": "backend-verify-r3.json",
+    "id": "backend-verify-r3",
+    "cwd": "/Users/kimwell/work/pet-platform/apps/backend",
+    "command": [
+      "./mvnw",
+      "clean",
+      "verify"
+    ],
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "status": "PASS",
+    "started_at": "2026-10-08T07:36:51.137191+08:00",
+    "duration_seconds": 5.896,
+    "evidence": "backend-verify-r3.log",
+    "summary": "2026-10-08T07:36:49.630+08:00  INFO 8544 --- [pet-platform-backend] [           main] com.pet.platform.ApplicationTest         : Started ApplicationTest in 0.764 seconds (process running for 1.32)\n2026-10-08T07:36:49.929+08:00  INFO 8544 --- [pet-platform-backend] [1-auto-1-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'\n2026-10-08T07:36:49.929+08:00  INFO 8544 --- [pet-platform-backend] [1-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'\n2026-10-08T07:36:49.930+08:00  INFO 8544 --- [pet-platform-backend] [1-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms\n[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.336 s -- in com.pet.platform.ApplicationTest\n[INFO] \n[INFO] Results:\n[INFO] \n[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0\n[INFO] \n[INFO] \n[INFO] --- jar:3.4.2:jar (default-jar) @ pet-platform-backend ---\n[INFO] Building jar: /Users/kimwell/work/pet-platform/apps/backend/target/pet-platform-backend-0.0.0-SNAPSHOT.jar\n[INFO] \n[INFO] --- spring-boot:4.0.8:repackage (repackage) @ pet-platform-backend ---\n[INFO] Replacing main artifact /Users/kimwell/work/pet-platform/apps/backend/target/pet-platform-backend-0.0.0-SNAPSHOT.jar with repackaged archive, adding nested dependencies in BOOT-INF/.\n[INFO] The original artifact has been renamed to /Users/kimwell/work/pet-platform/apps/backend/target/pet-platform-backend-0.0.0-SNAPSHOT.jar.original\n[INFO] \n[INFO] --- failsafe:3.5.6:integration-test (default) @ pet-platform-backend ---\n[INFO] \n[INFO] --- failsafe:3.5.6:verify (default) @ pet-platform-backend ---\n[INFO] No tests to run.\n[INFO] ------------------------------------------------------------------------\n[INFO] BUILD SUCCESS\n[INFO] ------------------------------------------------------------------------\n[INFO] Total time:  4.091 s\n[INFO] Finished at: 2026-10-08T07:36:51+08:00\n[INFO] ------------------------------------------------------------------------\nOpenJDK 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended\n"
+  },
+  {
+    "record": "backend-verify.json",
+    "id": "backend-verify",
+    "cwd": "/Users/kimwell/work/pet-platform/apps/backend",
+    "command": [
+      "./mvnw",
+      "clean",
+      "verify"
+    ],
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "status": "PASS",
+    "started_at": "2026-10-08T07:23:35.136415+08:00",
+    "duration_seconds": 6.792,
+    "evidence": "backend-verify.log",
+    "summary": "-10-08T07:23:33.796+08:00  INFO 99037 --- [pet-platform-backend] [           main] com.pet.platform.ApplicationTest         : Started ApplicationTest in 0.93 seconds (process running for 1.635)\n2026-10-08T07:23:34.119+08:00  INFO 99037 --- [pet-platform-backend] [1-auto-1-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'\n2026-10-08T07:23:34.120+08:00  INFO 99037 --- [pet-platform-backend] [1-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'\n2026-10-08T07:23:34.121+08:00  INFO 99037 --- [pet-platform-backend] [1-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms\n[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.592 s -- in com.pet.platform.ApplicationTest\n[INFO] \n[INFO] Results:\n[INFO] \n[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0\n[INFO] \n[INFO] \n[INFO] --- jar:3.4.2:jar (default-jar) @ pet-platform-backend ---\n[INFO] Building jar: /Users/kimwell/work/pet-platform/apps/backend/target/pet-platform-backend-0.0.0-SNAPSHOT.jar\n[INFO] \n[INFO] --- spring-boot:4.0.8:repackage (repackage) @ pet-platform-backend ---\n[INFO] Replacing main artifact /Users/kimwell/work/pet-platform/apps/backend/target/pet-platform-backend-0.0.0-SNAPSHOT.jar with repackaged archive, adding nested dependencies in BOOT-INF/.\n[INFO] The original artifact has been renamed to /Users/kimwell/work/pet-platform/apps/backend/target/pet-platform-backend-0.0.0-SNAPSHOT.jar.original\n[INFO] \n[INFO] --- failsafe:3.5.6:integration-test (default) @ pet-platform-backend ---\n[INFO] \n[INFO] --- failsafe:3.5.6:verify (default) @ pet-platform-backend ---\n[INFO] No tests to run.\n[INFO] ------------------------------------------------------------------------\n[INFO] BUILD SUCCESS\n[INFO] ------------------------------------------------------------------------\n[INFO] Total time:  4.517 s\n[INFO] Finished at: 2026-10-08T07:23:35+08:00\n[INFO] ------------------------------------------------------------------------\nOpenJDK 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended\n"
+  },
+  {
+    "record": "chunk-baseline-build.json",
+    "id": "chunk-baseline-build",
+    "cwd": "/Users/kimwell/work/pet-platform/apps/admin-web",
+    "command": [
+      "node",
+      "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/pet-platform-p02-02-_qb1x3n7/chunk-analysis.mjs"
+    ],
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "status": "PASS",
+    "started_at": "2026-10-08T07:22:26.974078+08:00",
+    "duration_seconds": 3.05,
+    "evidence": "chunk-baseline-build.log",
+    "summary": "/work/pet-platform/node_modules/.pnpm/@rc-component+form@1.8.6_react-dom@19.2.8_react@19.2.8__react@19.2.8/node_modules/@rc-component/form/es/hooks/useForm.js\",\"renderedLength\":25976},{\"id\":\"/Users/kimwell/work/pet-platform/node_modules/.pnpm/@tanstack+query-core@5.104.1/node_modules/@tanstack/query-core/build/modern/queryClient.js\",\"renderedLength\":23441},{\"id\":\"/Users/kimwell/work/pet-platform/node_modules/.pnpm/@rc-component+trigger@3.10.1_react-dom@19.2.8_react@19.2.8__react@19.2.8/node_modules/@rc-component/trigger/es/hooks/useAlign.js\",\"renderedLength\":19562},{\"id\":\"/Users/kimwell/work/pet-platform/node_modules/.pnpm/@tanstack+router-core@1.171.34/node_modules/@tanstack/router-core/dist/esm/new-process-route-tree.js\",\"renderedLength\":18970},{\"id\":\"/Users/kimwell/work/pet-platform/node_modules/.pnpm/react@19.2.8/node_modules/react/cjs/react.production.js\",\"renderedLength\":18321},{\"id\":\"/Users/kimwell/work/pet-platform/node_modules/.pnpm/antd@6.6.5_react-dom@19.2.8_react@19.2.8__react@19.2.8/node_modules/antd/es/input/style/index.js\",\"renderedLength\":16717},{\"id\":\"/Users/kimwell/work/pet-platform/node_modules/.pnpm/@tanstack+query-core@5.104.1/node_modules/@tanstack/query-core/build/modern/query.js\",\"renderedLength\":15432},{\"id\":\"/Users/kimwell/work/pet-platform/node_modules/.pnpm/@rc-component+form@1.8.6_react-dom@19.2.8_react@19.2.8__react@19.2.8/node_modules/@rc-component/form/es/Field.js\",\"renderedLength\":14548},{\"id\":\"/Users/kimwell/work/pet-platform/node_modules/.pnpm/@ant-design+fast-color@3.0.1/node_modules/@ant-design/fast-color/es/FastColor.js\",\"renderedLength\":14261},{\"id\":\"/Users/kimwell/work/pet-platform/node_modules/.pnpm/antd@6.6.5_react-dom@19.2.8_react@19.2.8__react@19.2.8/node_modules/antd/es/result/serverError.js\",\"renderedLength\":14043},{\"id\":\"/Users/kimwell/work/pet-platform/node_modules/.pnpm/@rc-component+trigger@3.10.1_react-dom@19.2.8_react@19.2.8__react@19.2.8/node_modules/@rc-component/trigger/es/index.js\",\"renderedLength\":13802},{\"id\":\"/Users/kimwell/work/pet-platform/node_modules/.pnpm/antd@6.6.5_react-dom@19.2.8_react@19.2.8__react@19.2.8/node_modules/antd/es/typography/Base/index.js\",\"renderedLength\":13432}]}]\n✓ built in 2.77s\n"
+  },
+  {
+    "record": "chunk-final-build.json",
+    "id": "chunk-final-build",
+    "cwd": "/Users/kimwell/work/pet-platform/apps/admin-web",
+    "command": [
+      "node",
+      "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/pet-platform-p02-02-_qb1x3n7/chunk-final.mjs"
+    ],
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "status": "PASS",
+    "started_at": "2026-10-08T07:27:31.405390+08:00",
+    "duration_seconds": 2.974,
+    "evidence": "chunk-final-build.log",
+    "summary": "/work/pet-platform/node_modules/.pnpm/@rc-component+form@1.8.6_react-dom@19.2.8_react@19.2.8__react@19.2.8/node_modules/@rc-component/form/es/hooks/useForm.js\",\"renderedLength\":25976},{\"id\":\"/Users/kimwell/work/pet-platform/node_modules/.pnpm/@tanstack+query-core@5.104.1/node_modules/@tanstack/query-core/build/modern/queryClient.js\",\"renderedLength\":23441},{\"id\":\"/Users/kimwell/work/pet-platform/node_modules/.pnpm/@rc-component+trigger@3.10.1_react-dom@19.2.8_react@19.2.8__react@19.2.8/node_modules/@rc-component/trigger/es/hooks/useAlign.js\",\"renderedLength\":19562},{\"id\":\"/Users/kimwell/work/pet-platform/node_modules/.pnpm/@tanstack+router-core@1.171.34/node_modules/@tanstack/router-core/dist/esm/new-process-route-tree.js\",\"renderedLength\":18970},{\"id\":\"/Users/kimwell/work/pet-platform/node_modules/.pnpm/react@19.2.8/node_modules/react/cjs/react.production.js\",\"renderedLength\":18321},{\"id\":\"/Users/kimwell/work/pet-platform/node_modules/.pnpm/antd@6.6.5_react-dom@19.2.8_react@19.2.8__react@19.2.8/node_modules/antd/es/input/style/index.js\",\"renderedLength\":16717},{\"id\":\"/Users/kimwell/work/pet-platform/node_modules/.pnpm/@tanstack+query-core@5.104.1/node_modules/@tanstack/query-core/build/modern/query.js\",\"renderedLength\":15432},{\"id\":\"/Users/kimwell/work/pet-platform/node_modules/.pnpm/@rc-component+form@1.8.6_react-dom@19.2.8_react@19.2.8__react@19.2.8/node_modules/@rc-component/form/es/Field.js\",\"renderedLength\":14548},{\"id\":\"/Users/kimwell/work/pet-platform/node_modules/.pnpm/@ant-design+fast-color@3.0.1/node_modules/@ant-design/fast-color/es/FastColor.js\",\"renderedLength\":14261},{\"id\":\"/Users/kimwell/work/pet-platform/node_modules/.pnpm/antd@6.6.5_react-dom@19.2.8_react@19.2.8__react@19.2.8/node_modules/antd/es/result/serverError.js\",\"renderedLength\":14043},{\"id\":\"/Users/kimwell/work/pet-platform/node_modules/.pnpm/@rc-component+trigger@3.10.1_react-dom@19.2.8_react@19.2.8__react@19.2.8/node_modules/@rc-component/trigger/es/index.js\",\"renderedLength\":13802},{\"id\":\"/Users/kimwell/work/pet-platform/node_modules/.pnpm/antd@6.6.5_react-dom@19.2.8_react@19.2.8__react@19.2.8/node_modules/antd/es/typography/Base/index.js\",\"renderedLength\":13432}]}]\n✓ built in 2.76s\n"
+  },
+  {
+    "record": "ci-check-final.json",
+    "id": "ci-check-final",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "python3",
+      "-B",
+      "docs/testing/evidence/P02-02/ci-check.py"
+    ],
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "status": "PASS",
+    "started_at": "2026-10-08T07:35:35.602978+08:00",
+    "duration_seconds": 0.467,
+    "evidence": "ci-check-final.log",
+    "summary": "{\"id\": \"ci-local-config-final\", \"exit_code\": 0, \"expected_exit_code\": 0, \"status\": \"PASS\", \"duration_seconds\": 0.41}\n"
+  },
+  {
+    "record": "ci-local-config-final.json",
+    "id": "ci-local-config-final",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "pnpm",
+      "check:infra",
+      "--env-file",
+      "infra/local/.env.example"
+    ],
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "status": "PASS",
+    "started_at": "2026-10-08T07:35:35.597296+08:00",
+    "duration_seconds": 0.41,
+    "evidence": "ci-local-config-final.log",
+    "summary": "\n> pet-platform@0.0.0 check:infra /Users/kimwell/work/pet-platform\n> node scripts/local-infra.mjs check --env-file infra/local/.env.example\n\n",
+    "environment_fixture": {
+      "POSTGRES_DB": "<公开反例输入>",
+      "POSTGRES_USER": "<公开反例输入>",
+      "POSTGRES_PASSWORD": "<公开反例输入>",
+      "REDIS_PASSWORD": "<公开反例输入>",
+      "RABBITMQ_DEFAULT_USER": "<公开反例输入>",
+      "RABBITMQ_DEFAULT_PASS": "<公开反例输入>"
+    }
+  },
+  {
+    "record": "ci-local-config.json",
+    "id": "ci-local-config",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "pnpm",
+      "check:infra",
+      "--env-file",
+      "infra/local/.env.example"
+    ],
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "status": "PASS",
+    "started_at": "2026-10-08T07:28:53.269586+08:00",
+    "duration_seconds": 0.411,
+    "evidence": "ci-local-config.log",
+    "summary": "\n> pet-platform@0.0.0 check:infra /Users/kimwell/work/pet-platform\n> node scripts/local-infra.mjs check --env-file infra/local/.env.example\n\n",
+    "environment_fixture": {
+      "POSTGRES_DB": "<公开反例输入>",
+      "POSTGRES_USER": "<公开反例输入>",
+      "POSTGRES_PASSWORD": "<公开反例输入>",
+      "REDIS_PASSWORD": "<公开反例输入>",
+      "RABBITMQ_DEFAULT_USER": "<公开反例输入>",
+      "RABBITMQ_DEFAULT_PASS": "<公开反例输入>"
+    }
+  },
+  {
+    "record": "ci-source-check-final.json",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "python3",
+      "docs/testing/evidence/P02-02/ci-check.py"
+    ],
+    "exit_code": 0,
+    "status": "PASS",
+    "summary": "YAML解析及根check/build/frozen install/infra配置/Wrapper工作目录一致",
+    "remote_ci": "NOT_EXECUTED",
+    "windows_linux_runtime": "NOT_EXECUTED"
+  },
+  {
+    "record": "compose-baseline.json",
+    "id": "compose-baseline",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "docker",
+      "compose",
+      "--env-file",
+      "/Users/kimwell/work/pet-platform/.local-data/p02-infra.env",
+      "-p",
+      "pet-platform-p02-validation",
+      "-f",
+      "/Users/kimwell/work/pet-platform/infra/local/docker-compose.yml",
+      "config",
+      "--quiet"
+    ],
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "status": "PASS",
+    "started_at": "2026-10-08T07:21:49.362935+08:00",
+    "duration_seconds": 0.065,
+    "evidence": "compose-baseline.log",
+    "summary": ""
+  },
+  {
+    "record": "compose-version.json",
+    "id": "compose-version",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "docker",
+      "compose",
+      "version"
+    ],
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "status": "PASS",
+    "started_at": "2026-10-08T07:21:49.260648+08:00",
+    "duration_seconds": 0.041,
+    "evidence": "compose-version.log",
+    "summary": "Docker Compose version v5.1.1\n"
+  },
+  {
+    "record": "configuration-negatives.json",
+    "id": "configuration-negatives",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "python3",
+      "docs/testing/evidence/P02-02/config-negatives.py"
+    ],
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "status": "PASS",
+    "started_at": "2026-10-08T07:27:11.400301+08:00",
+    "duration_seconds": 10.04,
+    "evidence": "configuration-negatives.log",
+    "summary": "5}\n{\"id\": \"backend-invalid-port\", \"exit_code\": 1, \"expected_exit_code\": 1, \"status\": \"PASS\", \"duration_seconds\": 0.842}\n{\"id\": \"backend-port-occupied\", \"exit_code\": 1, \"expected_exit_code\": 1, \"status\": \"PASS\", \"duration_seconds\": 1.152}\n{\"id\": \"web-empty-origin\", \"exit_code\": 1, \"expected_exit_code\": 1, \"status\": \"PASS\", \"duration_seconds\": 0.631}\n{\"id\": \"web-invalid-origin\", \"exit_code\": 1, \"expected_exit_code\": 1, \"status\": \"PASS\", \"duration_seconds\": 0.61}\n{\"id\": \"web-credential-origin\", \"exit_code\": 1, \"expected_exit_code\": 1, \"status\": \"PASS\", \"duration_seconds\": 0.605}\n{\"id\": \"web-port-occupied\", \"exit_code\": 1, \"expected_exit_code\": 1, \"status\": \"PASS\", \"duration_seconds\": 0.621}\n{\"id\": \"preview-port-occupied\", \"exit_code\": 1, \"expected_exit_code\": 1, \"status\": \"PASS\", \"duration_seconds\": 0.643}\n{\"id\": \"infra-no-env-file\", \"exit_code\": 1, \"expected_exit_code\": 1, \"status\": \"PASS\", \"duration_seconds\": 0.258}\n{\"id\": \"infra-missing-postgres_db\", \"exit_code\": 1, \"expected_exit_code\": 1, \"status\": \"PASS\", \"duration_seconds\": 0.168}\n{\"id\": \"infra-missing-postgres_user\", \"exit_code\": 1, \"expected_exit_code\": 1, \"status\": \"PASS\", \"duration_seconds\": 0.046}\n{\"id\": \"infra-missing-postgres_password\", \"exit_code\": 1, \"expected_exit_code\": 1, \"status\": \"PASS\", \"duration_seconds\": 0.048}\n{\"id\": \"infra-missing-redis_password\", \"exit_code\": 1, \"expected_exit_code\": 1, \"status\": \"PASS\", \"duration_seconds\": 0.046}\n{\"id\": \"infra-missing-rabbitmq_default_user\", \"exit_code\": 1, \"expected_exit_code\": 1, \"status\": \"PASS\", \"duration_seconds\": 0.045}\n{\"id\": \"infra-missing-rabbitmq_default_pass\", \"exit_code\": 1, \"expected_exit_code\": 1, \"status\": \"PASS\", \"duration_seconds\": 0.044}\n{\"id\": \"infra-invalid-postgres_port\", \"exit_code\": 1, \"expected_exit_code\": 15, \"status\": \"FAIL\", \"duration_seconds\": 0.052}\n{\"id\": \"infra-invalid-redis_port\", \"exit_code\": 1, \"expected_exit_code\": 15, \"status\": \"FAIL\", \"duration_seconds\": 0.051}\n{\"id\": \"infra-invalid-rabbitmq_port\", \"exit_code\": 1, \"expected_exit_code\": 15, \"status\": \"FAIL\", \"duration_seconds\": 0.052}\n{\"id\": \"infra-invalid-rabbitmq_management_port\", \"exit_code\": 1, \"expected_exit_code\": 15, \"status\": \"FAIL\", \"duration_seconds\": 0.052}\n"
+  },
+  {
+    "record": "container-baseline.json",
+    "id": "container-baseline",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{.Name}} {{json .State}} StopTimeout={{.Config.StopTimeout}} StopSignal={{.Config.StopSignal}} Memory={{.HostConfig.Memory}} {{json .HostConfig.PortBindings}} {{json .Mounts}}",
+      "pet-platform-p02-validation-postgres-1",
+      "pet-platform-p02-validation-redis-1",
+      "pet-platform-p02-validation-rabbitmq-1"
+    ],
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "status": "PASS",
+    "started_at": "2026-10-08T07:21:49.383155+08:00",
+    "duration_seconds": 0.02,
+    "evidence": "container-baseline.log",
+    "summary": "-07T14:21:56.290842587Z\",\"End\":\"2026-10-07T14:21:56.342444087Z\",\"ExitCode\":0,\"Output\":\"\"},{\"Start\":\"2026-10-07T14:22:01.343939172Z\",\"End\":\"2026-10-07T14:22:01.394875714Z\",\"ExitCode\":0,\"Output\":\"\"},{\"Start\":\"2026-10-07T14:22:06.402338675Z\",\"End\":\"2026-10-07T14:22:06.4527453Z\",\"ExitCode\":0,\"Output\":\"\"}]}} StopTimeout=1 StopSignal= Memory=0 {\"6379/tcp\":[{\"HostIp\":\"127.0.0.1\",\"HostPort\":\"26379\"}]} [{\"Type\":\"volume\",\"Name\":\"pet-platform-p02-validation_redis-data\",\"Source\":\"/var/lib/docker/volumes/pet-platform-p02-validation_redis-data/_data\",\"Destination\":\"/data\",\"Driver\":\"local\",\"Mode\":\"rw\",\"RW\":true,\"Propagation\":\"\"}]\n/pet-platform-p02-validation-rabbitmq-1 {\"Status\":\"exited\",\"Running\":false,\"Paused\":false,\"Restarting\":false,\"OOMKilled\":false,\"Dead\":false,\"Pid\":0,\"ExitCode\":0,\"Error\":\"\",\"StartedAt\":\"2026-10-07T14:24:15.141836637Z\",\"FinishedAt\":\"2026-10-07T14:24:34.489515757Z\",\"Health\":{\"Status\":\"unhealthy\",\"FailingStreak\":0,\"Log\":[{\"Start\":\"2026-10-07T14:21:39.415722801Z\",\"End\":\"2026-10-07T14:21:39.859961426Z\",\"ExitCode\":0,\"Output\":\"RabbitMQ on node rabbit@2ccb1a9559b8 is fully booted and running\\n\"},{\"Start\":\"2026-10-07T14:21:49.861803667Z\",\"End\":\"2026-10-07T14:21:50.261873875Z\",\"ExitCode\":0,\"Output\":\"RabbitMQ on node rabbit@2ccb1a9559b8 is fully booted and running\\n\"},{\"Start\":\"2026-10-07T14:22:00.263183464Z\",\"End\":\"2026-10-07T14:22:00.67773988Z\",\"ExitCode\":0,\"Output\":\"RabbitMQ on node rabbit@2ccb1a9559b8 is fully booted and running\\n\"},{\"Start\":\"2026-10-07T14:24:20.23013025Z\",\"End\":\"2026-10-07T14:24:20.679002834Z\",\"ExitCode\":0,\"Output\":\"RabbitMQ on node rabbit@2ccb1a9559b8 is fully booted and running\\n\"},{\"Start\":\"2026-10-07T14:24:30.689267547Z\",\"End\":\"2026-10-07T14:24:31.090390964Z\",\"ExitCode\":0,\"Output\":\"RabbitMQ on node rabbit@2ccb1a9559b8 is fully booted and running\\n\"}]}} StopTimeout=1 StopSignal= Memory=0 {\"15672/tcp\":[{\"HostIp\":\"127.0.0.1\",\"HostPort\":\"25673\"}],\"5672/tcp\":[{\"HostIp\":\"127.0.0.1\",\"HostPort\":\"25672\"}]} [{\"Type\":\"volume\",\"Name\":\"pet-platform-p02-validation_rabbitmq-data\",\"Source\":\"/var/lib/docker/volumes/pet-platform-p02-validation_rabbitmq-data/_data\",\"Destination\":\"/var/lib/rabbitmq\",\"Driver\":\"local\",\"Mode\":\"rw\",\"RW\":true,\"Propagation\":\"\"}]\n"
+  },
+  {
+    "record": "containers-before.json",
+    "id": "containers-before",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "docker",
+      "ps",
+      "-a",
+      "--format",
+      "{{.ID}} {{.Names}} {{.Status}} {{.Label \"com.docker.compose.project\"}}"
+    ],
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "status": "PASS",
+    "started_at": "2026-10-08T07:21:49.280064+08:00",
+    "duration_seconds": 0.019,
+    "evidence": "containers-before.log",
+    "summary": "220b713e01b2 pet-platform-p02-validation-postgres-1 Exited (0) 7 minutes ago pet-platform-p02-validation\nc32b316136a1 pet-platform-p02-validation-redis-1 Exited (0) 7 minutes ago pet-platform-p02-validation\n2ccb1a9559b8 pet-platform-p02-validation-rabbitmq-1 Exited (0) 5 minutes ago pet-platform-p02-validation\n"
+  },
+  {
+    "record": "containers-final-r2.json",
+    "id": "containers-final-r2",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{.Name}} Status={{.State.Status}} Exit={{.State.ExitCode}} OOM={{.State.OOMKilled}} Hostname={{.Config.Hostname}} StopTimeout={{.Config.StopTimeout}} {{json .Mounts}}",
+      "pet-platform-p02-validation-postgres-1",
+      "pet-platform-p02-validation-redis-1",
+      "pet-platform-p02-validation-rabbitmq-1"
+    ],
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "status": "PASS",
+    "started_at": "2026-10-08T07:31:52.683714+08:00",
+    "duration_seconds": 0.046,
+    "evidence": "containers-final-r2.log",
+    "summary": "/pet-platform-p02-validation-postgres-1 Status=exited Exit=0 OOM=false Hostname=220b713e01b2 StopTimeout=1 [{\"Type\":\"volume\",\"Name\":\"pet-platform-p02-validation_postgres-data\",\"Source\":\"/var/lib/docker/volumes/pet-platform-p02-validation_postgres-data/_data\",\"Destination\":\"/var/lib/postgresql/data\",\"Driver\":\"local\",\"Mode\":\"rw\",\"RW\":true,\"Propagation\":\"\"}]\n/pet-platform-p02-validation-redis-1 Status=exited Exit=0 OOM=false Hostname=c32b316136a1 StopTimeout=1 [{\"Type\":\"volume\",\"Name\":\"pet-platform-p02-validation_redis-data\",\"Source\":\"/var/lib/docker/volumes/pet-platform-p02-validation_redis-data/_data\",\"Destination\":\"/data\",\"Driver\":\"local\",\"Mode\":\"rw\",\"RW\":true,\"Propagation\":\"\"}]\n/pet-platform-p02-validation-rabbitmq-1 Status=exited Exit=0 OOM=false Hostname=rabbitmq StopTimeout=30 [{\"Type\":\"volume\",\"Name\":\"pet-platform-p02-validation_rabbitmq-data\",\"Source\":\"/var/lib/docker/volumes/pet-platform-p02-validation_rabbitmq-data/_data\",\"Destination\":\"/var/lib/rabbitmq\",\"Driver\":\"local\",\"Mode\":\"rw\",\"RW\":true,\"Propagation\":\"\"}]\n"
+  },
+  {
+    "record": "containers-final.json",
+    "id": "containers-final",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{.Name}} Status={{.State.Status}} Exit={{.State.ExitCode}} OOM={{.State.OOMKilled}} {{json .Mounts}}",
+      "pet-platform-p02-validation-postgres-1",
+      "pet-platform-p02-validation-redis-1",
+      "pet-platform-p02-validation-rabbitmq-1"
+    ],
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "status": "PASS",
+    "started_at": "2026-10-08T07:26:12.238714+08:00",
+    "duration_seconds": 0.039,
+    "evidence": "containers-final.log",
+    "summary": "/pet-platform-p02-validation-postgres-1 Status=exited Exit=0 OOM=false [{\"Type\":\"volume\",\"Name\":\"pet-platform-p02-validation_postgres-data\",\"Source\":\"/var/lib/docker/volumes/pet-platform-p02-validation_postgres-data/_data\",\"Destination\":\"/var/lib/postgresql/data\",\"Driver\":\"local\",\"Mode\":\"rw\",\"RW\":true,\"Propagation\":\"\"}]\n/pet-platform-p02-validation-redis-1 Status=exited Exit=0 OOM=false [{\"Type\":\"volume\",\"Name\":\"pet-platform-p02-validation_redis-data\",\"Source\":\"/var/lib/docker/volumes/pet-platform-p02-validation_redis-data/_data\",\"Destination\":\"/data\",\"Driver\":\"local\",\"Mode\":\"rw\",\"RW\":true,\"Propagation\":\"\"}]\n/pet-platform-p02-validation-rabbitmq-1 Status=exited Exit=0 OOM=false [{\"Type\":\"volume\",\"Name\":\"pet-platform-p02-validation_rabbitmq-data\",\"Source\":\"/var/lib/docker/volumes/pet-platform-p02-validation_rabbitmq-data/_data\",\"Destination\":\"/var/lib/rabbitmq\",\"Driver\":\"local\",\"Mode\":\"rw\",\"RW\":true,\"Propagation\":\"\"}]\n"
+  },
+  {
+    "record": "containers-stopped.json",
+    "id": "containers-stopped",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{.Name}} {{json .State}}",
+      "pet-platform-p02-validation-postgres-1",
+      "pet-platform-p02-validation-redis-1",
+      "pet-platform-p02-validation-rabbitmq-1"
+    ],
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "status": "PASS",
+    "started_at": "2026-10-08T07:23:57.095459+08:00",
+    "duration_seconds": 0.043,
+    "evidence": "containers-stopped.log",
+    "summary": "tart\":\"2026-10-07T23:23:38.604216344Z\",\"End\":\"2026-10-07T23:23:38.687430052Z\",\"ExitCode\":0,\"Output\":\"/var/run/postgresql:5432 - accepting connections\\n\"}]}}\n/pet-platform-p02-validation-redis-1 {\"Status\":\"exited\",\"Running\":false,\"Paused\":false,\"Restarting\":false,\"OOMKilled\":false,\"Dead\":false,\"Pid\":0,\"ExitCode\":0,\"Error\":\"\",\"StartedAt\":\"2026-10-07T23:22:17.296464334Z\",\"FinishedAt\":\"2026-10-07T23:23:43.269635846Z\",\"Health\":{\"Status\":\"unhealthy\",\"FailingStreak\":0,\"Log\":[{\"Start\":\"2026-10-07T23:23:18.042729001Z\",\"End\":\"2026-10-07T23:23:18.101795959Z\",\"ExitCode\":0,\"Output\":\"\"},{\"Start\":\"2026-10-07T23:23:23.108224545Z\",\"End\":\"2026-10-07T23:23:23.168793253Z\",\"ExitCode\":0,\"Output\":\"\"},{\"Start\":\"2026-10-07T23:23:28.169609922Z\",\"End\":\"2026-10-07T23:23:28.219351672Z\",\"ExitCode\":0,\"Output\":\"\"},{\"Start\":\"2026-10-07T23:23:33.225453883Z\",\"End\":\"2026-10-07T23:23:33.299163591Z\",\"ExitCode\":0,\"Output\":\"\"},{\"Start\":\"2026-10-07T23:23:38.301997136Z\",\"End\":\"2026-10-07T23:23:38.354177719Z\",\"ExitCode\":0,\"Output\":\"\"}]}}\n/pet-platform-p02-validation-rabbitmq-1 {\"Status\":\"exited\",\"Running\":false,\"Paused\":false,\"Restarting\":false,\"OOMKilled\":false,\"Dead\":false,\"Pid\":0,\"ExitCode\":137,\"Error\":\"\",\"StartedAt\":\"2026-10-07T23:22:17.297189876Z\",\"FinishedAt\":\"2026-10-07T23:23:44.282438638Z\",\"Health\":{\"Status\":\"unhealthy\",\"FailingStreak\":0,\"Log\":[{\"Start\":\"2026-10-07T23:22:53.677122254Z\",\"End\":\"2026-10-07T23:22:54.090011587Z\",\"ExitCode\":0,\"Output\":\"RabbitMQ on node rabbit@2ccb1a9559b8 is fully booted and running\\n\"},{\"Start\":\"2026-10-07T23:23:04.094004842Z\",\"End\":\"2026-10-07T23:23:04.547798509Z\",\"ExitCode\":0,\"Output\":\"RabbitMQ on node rabbit@2ccb1a9559b8 is fully booted and running\\n\"},{\"Start\":\"2026-10-07T23:23:14.551836889Z\",\"End\":\"2026-10-07T23:23:14.970581639Z\",\"ExitCode\":0,\"Output\":\"RabbitMQ on node rabbit@2ccb1a9559b8 is fully booted and running\\n\"},{\"Start\":\"2026-10-07T23:23:24.973651379Z\",\"End\":\"2026-10-07T23:23:25.390810921Z\",\"ExitCode\":0,\"Output\":\"RabbitMQ on node rabbit@2ccb1a9559b8 is fully booted and running\\n\"},{\"Start\":\"2026-10-07T23:23:35.395882801Z\",\"End\":\"2026-10-07T23:23:35.833933634Z\",\"ExitCode\":0,\"Output\":\"RabbitMQ on node rabbit@2ccb1a9559b8 is fully booted and running\\n\"}]}}\n"
+  },
+  {
+    "record": "docker-info.json",
+    "id": "docker-info",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "docker",
+      "info",
+      "--format",
+      "Server={{.ServerVersion}} CPUs={{.NCPU}} Memory={{.MemTotal}}"
+    ],
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "status": "PASS",
+    "started_at": "2026-10-08T07:21:49.219340+08:00",
+    "duration_seconds": 0.454,
+    "evidence": "docker-info.log",
+    "summary": "Server=29.4.0 CPUs=8 Memory=10419134464\n"
+  },
+  {
+    "record": "document-audit-final.json",
+    "id": "document-audit-final",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "python3",
+      "-B",
+      "docs/testing/evidence/P02-02/audit.py"
+    ],
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "status": "PASS",
+    "started_at": "2026-10-08T07:37:42.804900+08:00",
+    "duration_seconds": 0.437,
+    "evidence": "document-audit-final.log",
+    "summary": "{\"status\": \"PASS\", \"preserved_counts\": {\"ui\": 272, \"P01\": 129, \"P02-01\": 114, \"frozen\": 4}, \"volumes_before_count\": 12, \"volumes_after_count\": 12, \"ports_occupied\": {\"8080\": false, \"5173\": false, \"4173\": false, \"25432\": false, \"26379\": false, \"25672\": false, \"25673\": false}}\n"
+  },
+  {
+    "record": "document-audit.json",
+    "id": "document-audit",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "python3",
+      "-B",
+      "docs/testing/evidence/P02-02/audit.py"
+    ],
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "status": "PASS",
+    "started_at": "2026-10-08T07:35:36.044530+08:00",
+    "duration_seconds": 0.406,
+    "evidence": "document-audit.log",
+    "summary": "{\"status\": \"PASS\", \"preserved_counts\": {\"ui\": 272, \"P01\": 129, \"P02-01\": 114, \"frozen\": 4}, \"volumes_before_count\": 12, \"volumes_after_count\": 12, \"ports_occupied\": {\"8080\": false, \"5173\": false, \"4173\": false, \"25432\": false, \"26379\": false, \"25672\": false, \"25673\": false}}\n"
+  },
+  {
+    "record": "final-audit.json",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "python3",
+      "docs/testing/evidence/P02-02/audit.py"
+    ],
+    "exit_code": 0,
+    "status": "PASS",
+    "deleted": [],
+    "changed": [
+      ".github/workflows/check.yml",
+      "README.md",
+      "apps/admin-web/package.json",
+      "apps/admin-web/src/app/providers/AppProviders.tsx",
+      "apps/admin-web/vite.config.ts",
+      "apps/backend/src/main/java/com/pet/platform/Application.java",
+      "apps/backend/src/main/java/com/pet/platform/shared/config/EnvironmentSettings.java",
+      "apps/backend/src/main/resources/application-prod.yml",
+      "apps/backend/src/main/resources/application.yml",
+      "apps/backend/src/test/java/com/pet/platform/ApplicationTest.java",
+      "docs/architecture/CONFIGURATION.md",
+      "docs/architecture/PROJECT-STRUCTURE.md",
+      "docs/development/DECISION-LOG.md",
+      "docs/development/LOCAL-DEVELOPMENT.md",
+      "docs/development/ROADMAP.md",
+      "docs/testing/ACCEPTANCE-MATRIX.md",
+      "infra/local/README.md",
+      "infra/local/docker-compose.yml",
+      "package.json"
+    ],
+    "new": [
+      "apps/admin-web/dev-config.ts",
+      "apps/admin-web/src/app/router/dev-config.test.ts",
+      "docs/testing/P02-02-VERIFICATION.md",
+      "scripts/local-infra.mjs"
+    ],
+    "preserved_counts": {
+      "ui": 272,
+      "P01": 129,
+      "P02-01": 114,
+      "frozen": 4
+    },
+    "links_missing": [],
+    "volumes_before_count": 12,
+    "volumes_after_count": 12,
+    "containers": [
+      "pet-platform-p02-validation-rabbitmq-1 exited",
+      "pet-platform-p02-validation-postgres-1 exited",
+      "pet-platform-p02-validation-redis-1 exited"
+    ],
+    "ports_occupied": {
+      "8080": false,
+      "5173": false,
+      "4173": false,
+      "25432": false,
+      "26379": false,
+      "25672": false,
+      "25673": false
+    },
+    "private_paths_ignored": true,
+    "no_added_secret_files": true,
+    "final_rabbit_no_sigkill_oom": true,
+    "stable_rabbit_node": "rabbit@rabbitmq",
+    "scope": "工程配置与源码/证据保全；未实现业务/DB/认证/多租户；未执行微信工具/真机/远程CI/其他OS"
+  },
+  {
+    "record": "final-stop-chain.json",
+    "id": "final-stop-chain",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "python3",
+      "docs/testing/evidence/P02-02/infra-stop-capture.py"
+    ],
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "status": "PASS",
+    "started_at": "2026-10-08T07:31:52.720867+08:00",
+    "duration_seconds": 3.405,
+    "evidence": "final-stop-chain.log",
+    "summary": "{\"id\": \"infra-stop-final\", \"exit_code\": 0, \"expected_exit_code\": 0, \"status\": \"PASS\", \"duration_seconds\": 2.256}\n{\"id\": \"containers-final-r2\", \"exit_code\": 0, \"expected_exit_code\": 0, \"status\": \"PASS\", \"duration_seconds\": 0.046}\n{\"id\": \"volumes-final-r2\", \"exit_code\": 0, \"expected_exit_code\": 0, \"status\": \"PASS\", \"duration_seconds\": 0.029}\n"
+  },
+  {
+    "record": "git-before.json",
+    "id": "git-before",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "git",
+      "status",
+      "--short",
+      "--branch"
+    ],
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "status": "PASS",
+    "started_at": "2026-10-08T07:21:47.473595+08:00",
+    "duration_seconds": 0.013,
+    "evidence": "git-before.log",
+    "summary": "## No commits yet on main...origin/main [gone]\n?? .editorconfig\n?? .gitattributes\n?? .github/\n?? .gitignore\n?? .npmrc\n?? .nvmrc\n?? AGENTS.md\n?? README.md\n?? apps/\n?? docs/\n?? eslint.config.mjs\n?? infra/\n?? package.json\n?? packages/\n?? pnpm-lock.yaml\n?? pnpm-workspace.yaml\n?? scripts/\n?? ui/\n"
+  },
+  {
+    "record": "git-final.json",
+    "id": "git-final",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "git",
+      "status",
+      "--short",
+      "--branch"
+    ],
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "status": "PASS",
+    "started_at": "2026-10-08T07:37:42.849168+08:00",
+    "duration_seconds": 0.012,
+    "evidence": "git-final.log",
+    "summary": "## No commits yet on main...origin/main [gone]\n?? .editorconfig\n?? .gitattributes\n?? .github/\n?? .gitignore\n?? .npmrc\n?? .nvmrc\n?? AGENTS.md\n?? README.md\n?? apps/\n?? docs/\n?? eslint.config.mjs\n?? infra/\n?? package.json\n?? packages/\n?? pnpm-lock.yaml\n?? pnpm-workspace.yaml\n?? scripts/\n?? ui/\n"
+  },
+  {
+    "record": "historical-events-attempt.json",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "docker",
+      "events",
+      "--since",
+      "2026-10-07T14:21:55Z",
+      "--until",
+      "2026-10-07T14:22:15Z",
+      "--filter",
+      "container=2ccb1a9559b8",
+      "--format",
+      "{{json .}}"
+    ],
+    "exit_code": 143,
+    "status": "FAIL",
+    "reason": "旧时间窗口查询无事件输出且未及时结束；只终止本轮创建的查询进程。历史事件无法作为定位证据，改用当前完整启停的实时事件。"
+  },
+  {
+    "record": "infra-check-final.json",
+    "id": "infra-check-final",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "pnpm",
+      "check:infra",
+      "--env-file",
+      ".local-data/p02-infra.env",
+      "--project",
+      "pet-platform-p02-validation"
+    ],
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "status": "PASS",
+    "started_at": "2026-10-08T07:28:14.826469+08:00",
+    "duration_seconds": 0.284,
+    "evidence": "infra-check-final.log",
+    "summary": "\n> pet-platform@0.0.0 check:infra /Users/kimwell/work/pet-platform\n> node scripts/local-infra.mjs check --env-file .local-data/p02-infra.env --project pet-platform-p02-validation\n\n"
+  },
+  {
+    "record": "infra-config-r2.json",
+    "id": "infra-config-r2",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "pnpm",
+      "check:infra",
+      "--env-file",
+      ".local-data/p02-infra.env",
+      "--project",
+      "pet-platform-p02-validation"
+    ],
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "status": "PASS",
+    "started_at": "2026-10-08T07:24:42.422816+08:00",
+    "duration_seconds": 0.286,
+    "evidence": "infra-config-r2.log",
+    "summary": "\n> pet-platform@0.0.0 check:infra /Users/kimwell/work/pet-platform\n> node scripts/local-infra.mjs check --env-file .local-data/p02-infra.env --project pet-platform-p02-validation\n\n"
+  },
+  {
+    "record": "infra-healthy.json",
+    "id": "infra-healthy",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "docker",
+      "compose",
+      "--env-file",
+      "/Users/kimwell/work/pet-platform/.local-data/p02-infra.env",
+      "-p",
+      "pet-platform-p02-validation",
+      "-f",
+      "/Users/kimwell/work/pet-platform/infra/local/docker-compose.yml",
+      "ps",
+      "--format",
+      "json"
+    ],
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "status": "PASS",
+    "started_at": "2026-10-08T07:30:04.011398+08:00",
+    "duration_seconds": 0.06,
+    "evidence": "infra-healthy.log",
+    "summary": ".docker.compose.service=rabbitmq,com.docker.compose.version=5.1.1,desktop.docker.io/ports.scheme=v2\",\"LocalVolumes\":\"1\",\"Mounts\":\"pet-platform-p…\",\"Name\":\"pet-platform-p02-validation-rabbitmq-1\",\"Names\":\"pet-platform-p02-validation-rabbitmq-1\",\"Networks\":\"pet-platform-p02-validation_default\",\"Ports\":\"127.0.0.1:25672-\\u003e5672/tcp, 127.0.0.1:25673-\\u003e15672/tcp\",\"Project\":\"pet-platform-p02-validation\",\"Publishers\":[{\"URL\":\"127.0.0.1\",\"TargetPort\":5672,\"PublishedPort\":25672,\"Protocol\":\"tcp\"},{\"URL\":\"127.0.0.1\",\"TargetPort\":15672,\"PublishedPort\":25673,\"Protocol\":\"tcp\"}],\"RunningFor\":\"8 seconds ago\",\"Service\":\"rabbitmq\",\"Size\":\"0B\",\"State\":\"running\",\"Status\":\"Up 6 seconds (healthy)\"}\n{\"Command\":\"\\\"docker-entrypoint.s…\\\"\",\"CreatedAt\":\"2026-10-07 22:14:04 +0800 CST\",\"ExitCode\":0,\"Health\":\"healthy\",\"ID\":\"c32b316136a1\",\"Image\":\"redis:8.2.10-bookworm@sha256:47670742d7924adbcdb404d1288b6327815b23141969c0939b8e5d61f78c2634\",\"Labels\":\"com.docker.compose.project=pet-platform-p02-validation,com.docker.compose.project.config_files=/Users/kimwell/work/pet-platform/infra/local/docker-compose.yml,com.docker.compose.project.environment_file=/Users/kimwell/work/pet-platform/.local-data/p02-infra.env,com.docker.compose.version=5.1.1,desktop.docker.io/ports.scheme=v2,com.docker.compose.config-hash=a830fa6f50be0d93fbf4af63a95b3e5fc82ebd810339abec60795f4f438a0d72,com.docker.compose.container-number=1,com.docker.compose.depends_on=,com.docker.compose.project.working_dir=/Users/kimwell/work/pet-platform/infra/local,com.docker.compose.service=redis,desktop.docker.io/ports/6379/tcp=127.0.0.1:26379,com.docker.compose.image=sha256:24b9104084a234b37af6120cb58b2880262eab681ca8dc438f921f471f32f3f4,com.docker.compose.oneoff=False\",\"LocalVolumes\":\"1\",\"Mounts\":\"pet-platform-p…\",\"Name\":\"pet-platform-p02-validation-redis-1\",\"Names\":\"pet-platform-p02-validation-redis-1\",\"Networks\":\"pet-platform-p02-validation_default\",\"Ports\":\"127.0.0.1:26379-\\u003e6379/tcp\",\"Project\":\"pet-platform-p02-validation\",\"Publishers\":[{\"URL\":\"127.0.0.1\",\"TargetPort\":6379,\"PublishedPort\":26379,\"Protocol\":\"tcp\"}],\"RunningFor\":\"9 hours ago\",\"Service\":\"redis\",\"Size\":\"0B\",\"State\":\"running\",\"Status\":\"Up 13 seconds (healthy)\"}\n"
+  },
+  {
+    "record": "infra-invalid-postgres_port.json",
+    "id": "infra-invalid-postgres_port",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "docker",
+      "compose",
+      "--env-file",
+      "/Users/kimwell/work/pet-platform/.local-data/p02-infra.env",
+      "-p",
+      "pet-platform-p02-validation",
+      "-f",
+      "/Users/kimwell/work/pet-platform/infra/local/docker-compose.yml",
+      "config",
+      "--quiet"
+    ],
+    "exit_code": 1,
+    "expected_exit_code": 15,
+    "status": "FAIL",
+    "started_at": "2026-10-08T07:27:11.240073+08:00",
+    "duration_seconds": 0.052,
+    "evidence": "infra-invalid-postgres_port.log",
+    "summary": "invalid hostPort: not-a-port\n",
+    "environment_fixture": {
+      "POSTGRES_PORT": "<公开反例输入>"
+    }
+  },
+  {
+    "record": "infra-invalid-rabbitmq_management_port.json",
+    "id": "infra-invalid-rabbitmq_management_port",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "docker",
+      "compose",
+      "--env-file",
+      "/Users/kimwell/work/pet-platform/.local-data/p02-infra.env",
+      "-p",
+      "pet-platform-p02-validation",
+      "-f",
+      "/Users/kimwell/work/pet-platform/infra/local/docker-compose.yml",
+      "config",
+      "--quiet"
+    ],
+    "exit_code": 1,
+    "expected_exit_code": 15,
+    "status": "FAIL",
+    "started_at": "2026-10-08T07:27:11.395537+08:00",
+    "duration_seconds": 0.052,
+    "evidence": "infra-invalid-rabbitmq_management_port.log",
+    "summary": "invalid hostPort: not-a-port\n",
+    "environment_fixture": {
+      "RABBITMQ_MANAGEMENT_PORT": "<公开反例输入>"
+    }
+  },
+  {
+    "record": "infra-invalid-rabbitmq_port.json",
+    "id": "infra-invalid-rabbitmq_port",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "docker",
+      "compose",
+      "--env-file",
+      "/Users/kimwell/work/pet-platform/.local-data/p02-infra.env",
+      "-p",
+      "pet-platform-p02-validation",
+      "-f",
+      "/Users/kimwell/work/pet-platform/infra/local/docker-compose.yml",
+      "config",
+      "--quiet"
+    ],
+    "exit_code": 1,
+    "expected_exit_code": 15,
+    "status": "FAIL",
+    "started_at": "2026-10-08T07:27:11.343000+08:00",
+    "duration_seconds": 0.052,
+    "evidence": "infra-invalid-rabbitmq_port.log",
+    "summary": "invalid hostPort: not-a-port\n",
+    "environment_fixture": {
+      "RABBITMQ_PORT": "<公开反例输入>"
+    }
+  },
+  {
+    "record": "infra-invalid-redis_port.json",
+    "id": "infra-invalid-redis_port",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "docker",
+      "compose",
+      "--env-file",
+      "/Users/kimwell/work/pet-platform/.local-data/p02-infra.env",
+      "-p",
+      "pet-platform-p02-validation",
+      "-f",
+      "/Users/kimwell/work/pet-platform/infra/local/docker-compose.yml",
+      "config",
+      "--quiet"
+    ],
+    "exit_code": 1,
+    "expected_exit_code": 15,
+    "status": "FAIL",
+    "started_at": "2026-10-08T07:27:11.291303+08:00",
+    "duration_seconds": 0.051,
+    "evidence": "infra-invalid-redis_port.log",
+    "summary": "invalid hostPort: not-a-port\n",
+    "environment_fixture": {
+      "REDIS_PORT": "<公开反例输入>"
+    }
+  },
+  {
+    "record": "infra-missing-postgres_db.json",
+    "id": "infra-missing-postgres_db",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "docker",
+      "compose",
+      "--env-file",
+      "/Users/kimwell/work/pet-platform/.local-data/p02-infra.env",
+      "-p",
+      "pet-platform-p02-validation",
+      "-f",
+      "/Users/kimwell/work/pet-platform/infra/local/docker-compose.yml",
+      "config",
+      "--quiet"
+    ],
+    "exit_code": 1,
+    "expected_exit_code": 1,
+    "status": "PASS",
+    "started_at": "2026-10-08T07:27:10.957010+08:00",
+    "duration_seconds": 0.168,
+    "evidence": "infra-missing-postgres_db.log",
+    "summary": "error while interpolating services.postgres.environment.POSTGRES_DB: required variable POSTGRES_DB is missing a value: 请设置本地数据库名称\n",
+    "environment_fixture": {
+      "POSTGRES_DB": "<公开反例输入>"
+    }
+  },
+  {
+    "record": "infra-missing-postgres_password.json",
+    "id": "infra-missing-postgres_password",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "docker",
+      "compose",
+      "--env-file",
+      "/Users/kimwell/work/pet-platform/.local-data/p02-infra.env",
+      "-p",
+      "pet-platform-p02-validation",
+      "-f",
+      "/Users/kimwell/work/pet-platform/infra/local/docker-compose.yml",
+      "config",
+      "--quiet"
+    ],
+    "exit_code": 1,
+    "expected_exit_code": 1,
+    "status": "PASS",
+    "started_at": "2026-10-08T07:27:11.052007+08:00",
+    "duration_seconds": 0.048,
+    "evidence": "infra-missing-postgres_password.log",
+    "summary": "error while interpolating services.postgres.environment.POSTGRES_PASSWORD: required variable POSTGRES_PASSWORD is missing a value: 请设置本地专用数据库密码\n",
+    "environment_fixture": {
+      "POSTGRES_PASSWORD": "<公开反例输入>"
+    }
+  },
+  {
+    "record": "infra-missing-postgres_user.json",
+    "id": "infra-missing-postgres_user",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "docker",
+      "compose",
+      "--env-file",
+      "/Users/kimwell/work/pet-platform/.local-data/p02-infra.env",
+      "-p",
+      "pet-platform-p02-validation",
+      "-f",
+      "/Users/kimwell/work/pet-platform/infra/local/docker-compose.yml",
+      "config",
+      "--quiet"
+    ],
+    "exit_code": 1,
+    "expected_exit_code": 1,
+    "status": "PASS",
+    "started_at": "2026-10-08T07:27:11.003351+08:00",
+    "duration_seconds": 0.046,
+    "evidence": "infra-missing-postgres_user.log",
+    "summary": "error while interpolating services.postgres.environment.POSTGRES_USER: required variable POSTGRES_USER is missing a value: 请设置本地数据库用户\n",
+    "environment_fixture": {
+      "POSTGRES_USER": "<公开反例输入>"
+    }
+  },
+  {
+    "record": "infra-missing-rabbitmq_default_pass.json",
+    "id": "infra-missing-rabbitmq_default_pass",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "docker",
+      "compose",
+      "--env-file",
+      "/Users/kimwell/work/pet-platform/.local-data/p02-infra.env",
+      "-p",
+      "pet-platform-p02-validation",
+      "-f",
+      "/Users/kimwell/work/pet-platform/infra/local/docker-compose.yml",
+      "config",
+      "--quiet"
+    ],
+    "exit_code": 1,
+    "expected_exit_code": 1,
+    "status": "PASS",
+    "started_at": "2026-10-08T07:27:11.188046+08:00",
+    "duration_seconds": 0.044,
+    "evidence": "infra-missing-rabbitmq_default_pass.log",
+    "summary": "error while interpolating services.rabbitmq.environment.RABBITMQ_DEFAULT_PASS: required variable RABBITMQ_DEFAULT_PASS is missing a value: 请设置本地专用 RabbitMQ 密码\n",
+    "environment_fixture": {
+      "RABBITMQ_DEFAULT_PASS": "<公开反例输入>"
+    }
+  },
+  {
+    "record": "infra-missing-rabbitmq_default_user.json",
+    "id": "infra-missing-rabbitmq_default_user",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "docker",
+      "compose",
+      "--env-file",
+      "/Users/kimwell/work/pet-platform/.local-data/p02-infra.env",
+      "-p",
+      "pet-platform-p02-validation",
+      "-f",
+      "/Users/kimwell/work/pet-platform/infra/local/docker-compose.yml",
+      "config",
+      "--quiet"
+    ],
+    "exit_code": 1,
+    "expected_exit_code": 1,
+    "status": "PASS",
+    "started_at": "2026-10-08T07:27:11.143630+08:00",
+    "duration_seconds": 0.045,
+    "evidence": "infra-missing-rabbitmq_default_user.log",
+    "summary": "error while interpolating services.rabbitmq.environment.RABBITMQ_DEFAULT_USER: required variable RABBITMQ_DEFAULT_USER is missing a value: 请设置本地 RabbitMQ 用户\n",
+    "environment_fixture": {
+      "RABBITMQ_DEFAULT_USER": "<公开反例输入>"
+    }
+  },
+  {
+    "record": "infra-missing-redis_password.json",
+    "id": "infra-missing-redis_password",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "docker",
+      "compose",
+      "--env-file",
+      "/Users/kimwell/work/pet-platform/.local-data/p02-infra.env",
+      "-p",
+      "pet-platform-p02-validation",
+      "-f",
+      "/Users/kimwell/work/pet-platform/infra/local/docker-compose.yml",
+      "config",
+      "--quiet"
+    ],
+    "exit_code": 1,
+    "expected_exit_code": 1,
+    "status": "PASS",
+    "started_at": "2026-10-08T07:27:11.098217+08:00",
+    "duration_seconds": 0.046,
+    "evidence": "infra-missing-redis_password.log",
+    "summary": "error while interpolating services.redis.environment.REDIS_PASSWORD: required variable REDIS_PASSWORD is missing a value: 请设置本地专用 Redis 密码\n",
+    "environment_fixture": {
+      "REDIS_PASSWORD": "<公开反例输入>"
+    }
+  },
+  {
+    "record": "infra-no-env-file.json",
+    "id": "infra-no-env-file",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "pnpm",
+      "check:infra"
+    ],
+    "exit_code": 1,
+    "expected_exit_code": 1,
+    "status": "PASS",
+    "started_at": "2026-10-08T07:27:10.789204+08:00",
+    "duration_seconds": 0.258,
+    "evidence": "infra-no-env-file.log",
+    "summary": "\n> pet-platform@0.0.0 check:infra /Users/kimwell/work/pet-platform\n> node scripts/local-infra.mjs check\n\n ELIFECYCLE  Command failed with exit code 1.\n缺少本地基础设施环境文件；请复制 infra/local/.env.example 为 infra/local/.env 并填写专用凭据，或指定 --env-file。\n"
+  },
+  {
+    "record": "infra-port-named-postgres_port.json",
+    "id": "infra-port-named-postgres_port",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "pnpm",
+      "check:infra",
+      "--env-file",
+      ".local-data/p02-infra.env",
+      "--project",
+      "pet-platform-p02-validation"
+    ],
+    "exit_code": 1,
+    "expected_exit_code": 15,
+    "status": "FAIL",
+    "started_at": "2026-10-08T07:28:12.948165+08:00",
+    "duration_seconds": 0.762,
+    "evidence": "infra-port-named-postgres_port.log",
+    "summary": "\n> pet-platform@0.0.0 check:infra /Users/kimwell/work/pet-platform\n> node scripts/local-infra.mjs check --env-file .local-data/p02-infra.env --project pet-platform-p02-validation\n\n ELIFECYCLE  Command failed with exit code 1.\nPOSTGRES_PORT 格式错误；请设置合法宿主端口。\n",
+    "environment_fixture": {
+      "POSTGRES_PORT": "<公开反例输入>"
+    }
+  },
+  {
+    "record": "infra-port-named-r2-postgres_port.json",
+    "id": "infra-port-named-r2-postgres_port",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "pnpm",
+      "check:infra",
+      "--env-file",
+      ".local-data/p02-infra.env",
+      "--project",
+      "pet-platform-p02-validation"
+    ],
+    "exit_code": 1,
+    "expected_exit_code": 1,
+    "status": "PASS",
+    "started_at": "2026-10-08T07:28:27.533578+08:00",
+    "duration_seconds": 0.521,
+    "evidence": "infra-port-named-r2-postgres_port.log",
+    "summary": "\n> pet-platform@0.0.0 check:infra /Users/kimwell/work/pet-platform\n> node scripts/local-infra.mjs check --env-file .local-data/p02-infra.env --project pet-platform-p02-validation\n\n ELIFECYCLE  Command failed with exit code 1.\nPOSTGRES_PORT 格式错误；请设置合法宿主端口。\n",
+    "environment_fixture": {
+      "POSTGRES_PORT": "<公开反例输入>"
+    }
+  },
+  {
+    "record": "infra-port-named-r2-rabbitmq_management_port.json",
+    "id": "infra-port-named-r2-rabbitmq_management_port",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "pnpm",
+      "check:infra",
+      "--env-file",
+      ".local-data/p02-infra.env",
+      "--project",
+      "pet-platform-p02-validation"
+    ],
+    "exit_code": 1,
+    "expected_exit_code": 1,
+    "status": "PASS",
+    "started_at": "2026-10-08T07:28:29.120391+08:00",
+    "duration_seconds": 0.53,
+    "evidence": "infra-port-named-r2-rabbitmq_management_port.log",
+    "summary": "\n> pet-platform@0.0.0 check:infra /Users/kimwell/work/pet-platform\n> node scripts/local-infra.mjs check --env-file .local-data/p02-infra.env --project pet-platform-p02-validation\n\n ELIFECYCLE  Command failed with exit code 1.\nRABBITMQ_MANAGEMENT_PORT 格式错误；请设置合法宿主端口。\n",
+    "environment_fixture": {
+      "RABBITMQ_MANAGEMENT_PORT": "<公开反例输入>"
+    }
+  },
+  {
+    "record": "infra-port-named-r2-rabbitmq_port.json",
+    "id": "infra-port-named-r2-rabbitmq_port",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "pnpm",
+      "check:infra",
+      "--env-file",
+      ".local-data/p02-infra.env",
+      "--project",
+      "pet-platform-p02-validation"
+    ],
+    "exit_code": 1,
+    "expected_exit_code": 1,
+    "status": "PASS",
+    "started_at": "2026-10-08T07:28:28.590078+08:00",
+    "duration_seconds": 0.525,
+    "evidence": "infra-port-named-r2-rabbitmq_port.log",
+    "summary": "\n> pet-platform@0.0.0 check:infra /Users/kimwell/work/pet-platform\n> node scripts/local-infra.mjs check --env-file .local-data/p02-infra.env --project pet-platform-p02-validation\n\n ELIFECYCLE  Command failed with exit code 1.\nRABBITMQ_PORT 格式错误；请设置合法宿主端口。\n",
+    "environment_fixture": {
+      "RABBITMQ_PORT": "<公开反例输入>"
+    }
+  },
+  {
+    "record": "infra-port-named-r2-redis_port.json",
+    "id": "infra-port-named-r2-redis_port",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "pnpm",
+      "check:infra",
+      "--env-file",
+      ".local-data/p02-infra.env",
+      "--project",
+      "pet-platform-p02-validation"
+    ],
+    "exit_code": 1,
+    "expected_exit_code": 1,
+    "status": "PASS",
+    "started_at": "2026-10-08T07:28:28.064596+08:00",
+    "duration_seconds": 0.531,
+    "evidence": "infra-port-named-r2-redis_port.log",
+    "summary": "\n> pet-platform@0.0.0 check:infra /Users/kimwell/work/pet-platform\n> node scripts/local-infra.mjs check --env-file .local-data/p02-infra.env --project pet-platform-p02-validation\n\n ELIFECYCLE  Command failed with exit code 1.\nREDIS_PORT 格式错误；请设置合法宿主端口。\n",
+    "environment_fixture": {
+      "REDIS_PORT": "<公开反例输入>"
+    }
+  },
+  {
+    "record": "infra-port-named-rabbitmq_management_port.json",
+    "id": "infra-port-named-rabbitmq_management_port",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "pnpm",
+      "check:infra",
+      "--env-file",
+      ".local-data/p02-infra.env",
+      "--project",
+      "pet-platform-p02-validation"
+    ],
+    "exit_code": 1,
+    "expected_exit_code": 15,
+    "status": "FAIL",
+    "started_at": "2026-10-08T07:28:14.542397+08:00",
+    "duration_seconds": 0.535,
+    "evidence": "infra-port-named-rabbitmq_management_port.log",
+    "summary": "\n> pet-platform@0.0.0 check:infra /Users/kimwell/work/pet-platform\n> node scripts/local-infra.mjs check --env-file .local-data/p02-infra.env --project pet-platform-p02-validation\n\n ELIFECYCLE  Command failed with exit code 1.\nRABBITMQ_MANAGEMENT_PORT 格式错误；请设置合法宿主端口。\n",
+    "environment_fixture": {
+      "RABBITMQ_MANAGEMENT_PORT": "<公开反例输入>"
+    }
+  },
+  {
+    "record": "infra-port-named-rabbitmq_port.json",
+    "id": "infra-port-named-rabbitmq_port",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "pnpm",
+      "check:infra",
+      "--env-file",
+      ".local-data/p02-infra.env",
+      "--project",
+      "pet-platform-p02-validation"
+    ],
+    "exit_code": 1,
+    "expected_exit_code": 15,
+    "status": "FAIL",
+    "started_at": "2026-10-08T07:28:14.007467+08:00",
+    "duration_seconds": 0.529,
+    "evidence": "infra-port-named-rabbitmq_port.log",
+    "summary": "\n> pet-platform@0.0.0 check:infra /Users/kimwell/work/pet-platform\n> node scripts/local-infra.mjs check --env-file .local-data/p02-infra.env --project pet-platform-p02-validation\n\n ELIFECYCLE  Command failed with exit code 1.\nRABBITMQ_PORT 格式错误；请设置合法宿主端口。\n",
+    "environment_fixture": {
+      "RABBITMQ_PORT": "<公开反例输入>"
+    }
+  },
+  {
+    "record": "infra-port-named-redis_port.json",
+    "id": "infra-port-named-redis_port",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "pnpm",
+      "check:infra",
+      "--env-file",
+      ".local-data/p02-infra.env",
+      "--project",
+      "pet-platform-p02-validation"
+    ],
+    "exit_code": 1,
+    "expected_exit_code": 15,
+    "status": "FAIL",
+    "started_at": "2026-10-08T07:28:13.478340+08:00",
+    "duration_seconds": 0.53,
+    "evidence": "infra-port-named-redis_port.log",
+    "summary": "\n> pet-platform@0.0.0 check:infra /Users/kimwell/work/pet-platform\n> node scripts/local-infra.mjs check --env-file .local-data/p02-infra.env --project pet-platform-p02-validation\n\n ELIFECYCLE  Command failed with exit code 1.\nREDIS_PORT 格式错误；请设置合法宿主端口。\n",
+    "environment_fixture": {
+      "REDIS_PORT": "<公开反例输入>"
+    }
+  },
+  {
+    "record": "infra-smoke-hostname.json",
+    "id": "infra-smoke-hostname",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "python3",
+      "docs/testing/evidence/P02-02/infra-smoke.py"
+    ],
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "status": "PASS",
+    "started_at": "2026-10-08T07:30:05.373131+08:00",
+    "duration_seconds": 1.52,
+    "evidence": "infra-smoke-hostname.log",
+    "summary": "{\"id\": \"infra-healthy\", \"exit_code\": 0, \"expected_exit_code\": 0, \"status\": \"PASS\", \"duration_seconds\": 0.06}\n{\"id\": \"postgres-auth\", \"exit_code\": 0, \"expected_exit_code\": 0, \"status\": \"PASS\", \"duration_seconds\": 0.136}\n{\"id\": \"redis-auth\", \"exit_code\": 0, \"expected_exit_code\": 0, \"status\": \"PASS\", \"duration_seconds\": 0.102}\n{\"id\": \"redis-no-auth\", \"exit_code\": 0, \"expected_exit_code\": 0, \"status\": \"PASS\", \"duration_seconds\": 0.107}\n{\"id\": \"rabbit-node\", \"exit_code\": 0, \"expected_exit_code\": 0, \"status\": \"PASS\", \"duration_seconds\": 0.463}\n{\"id\": \"rabbit-auth\", \"exit_code\": 0, \"expected_exit_code\": 0, \"status\": \"PASS\", \"duration_seconds\": 0.46}\nAMQP 0-9-1 真实认证握手、打开 vhost /、正常关闭通过；未发布消息。\nRabbitMQ management authenticated=False HTTP 401\nRabbitMQ management authenticated=True HTTP 200\n"
+  },
+  {
+    "record": "infra-smoke-r2.json",
+    "id": "infra-smoke-r2",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "python3",
+      "docs/testing/evidence/P02-02/infra-smoke.py"
+    ],
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "status": "PASS",
+    "started_at": "2026-10-08T07:25:38.661911+08:00",
+    "duration_seconds": 1.879,
+    "evidence": "infra-smoke-r2.log",
+    "summary": "{\"id\": \"infra-healthy\", \"exit_code\": 0, \"expected_exit_code\": 0, \"status\": \"PASS\", \"duration_seconds\": 0.29}\n{\"id\": \"postgres-auth\", \"exit_code\": 0, \"expected_exit_code\": 0, \"status\": \"PASS\", \"duration_seconds\": 0.148}\n{\"id\": \"redis-auth\", \"exit_code\": 0, \"expected_exit_code\": 0, \"status\": \"PASS\", \"duration_seconds\": 0.116}\n{\"id\": \"redis-no-auth\", \"exit_code\": 0, \"expected_exit_code\": 0, \"status\": \"PASS\", \"duration_seconds\": 0.109}\n{\"id\": \"rabbit-node\", \"exit_code\": 0, \"expected_exit_code\": 0, \"status\": \"PASS\", \"duration_seconds\": 0.498}\n{\"id\": \"rabbit-auth\", \"exit_code\": 0, \"expected_exit_code\": 0, \"status\": \"PASS\", \"duration_seconds\": 0.499}\nAMQP 0-9-1 真实认证握手、打开 vhost /、正常关闭通过；未发布消息。\nRabbitMQ management authenticated=False HTTP 401\nRabbitMQ management authenticated=True HTTP 200\n"
+  },
+  {
+    "record": "infra-smoke.json",
+    "id": "infra-smoke",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "python3",
+      "docs/testing/evidence/P02-02/infra-smoke.py"
+    ],
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "status": "PASS",
+    "started_at": "2026-10-08T07:23:30.380840+08:00",
+    "duration_seconds": 2.036,
+    "evidence": "infra-smoke.log",
+    "summary": "{\"id\": \"infra-healthy\", \"exit_code\": 0, \"expected_exit_code\": 0, \"status\": \"PASS\", \"duration_seconds\": 0.299}\n{\"id\": \"postgres-auth\", \"exit_code\": 0, \"expected_exit_code\": 0, \"status\": \"PASS\", \"duration_seconds\": 0.161}\n{\"id\": \"redis-auth\", \"exit_code\": 0, \"expected_exit_code\": 0, \"status\": \"PASS\", \"duration_seconds\": 0.096}\n{\"id\": \"redis-no-auth\", \"exit_code\": 0, \"expected_exit_code\": 0, \"status\": \"PASS\", \"duration_seconds\": 0.103}\n{\"id\": \"rabbit-node\", \"exit_code\": 0, \"expected_exit_code\": 0, \"status\": \"PASS\", \"duration_seconds\": 0.489}\n{\"id\": \"rabbit-auth\", \"exit_code\": 0, \"expected_exit_code\": 0, \"status\": \"PASS\", \"duration_seconds\": 0.632}\nAMQP 0-9-1 真实认证握手、打开 vhost /、正常关闭通过；未发布消息。\nRabbitMQ management authenticated=False HTTP 401\nRabbitMQ management authenticated=True HTTP 200\n"
+  },
+  {
+    "record": "infra-start-hostname.json",
+    "id": "infra-start-hostname",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "pnpm",
+      "dev:infra",
+      "--env-file",
+      ".local-data/p02-infra.env",
+      "--project",
+      "pet-platform-p02-validation"
+    ],
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "status": "PASS",
+    "started_at": "2026-10-08T07:29:55.710738+08:00",
+    "duration_seconds": 6.13,
+    "evidence": "infra-start-hostname.log",
+    "summary": "\n> pet-platform@0.0.0 dev:infra /Users/kimwell/work/pet-platform\n> node scripts/local-infra.mjs start --env-file .local-data/p02-infra.env --project pet-platform-p02-validation\n\n Container pet-platform-p02-validation-rabbitmq-1 Recreate \n Container pet-platform-p02-validation-rabbitmq-1 Recreated \n Container pet-platform-p02-validation-redis-1 Starting \n Container pet-platform-p02-validation-postgres-1 Starting \n Container pet-platform-p02-validation-rabbitmq-1 Starting \n Container pet-platform-p02-validation-postgres-1 Started \n Container pet-platform-p02-validation-redis-1 Started \n Container pet-platform-p02-validation-rabbitmq-1 Started \n Container pet-platform-p02-validation-redis-1 Waiting \n Container pet-platform-p02-validation-rabbitmq-1 Waiting \n Container pet-platform-p02-validation-postgres-1 Waiting \n Container pet-platform-p02-validation-redis-1 Healthy \n Container pet-platform-p02-validation-postgres-1 Healthy \n Container pet-platform-p02-validation-rabbitmq-1 Healthy \n"
+  },
+  {
+    "record": "infra-start-r2.json",
+    "id": "infra-start-r2",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "pnpm",
+      "dev:infra",
+      "--env-file",
+      ".local-data/p02-infra.env",
+      "--project",
+      "pet-platform-p02-validation"
+    ],
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "status": "PASS",
+    "started_at": "2026-10-08T07:24:48.487069+08:00",
+    "duration_seconds": 6.064,
+    "evidence": "infra-start-r2.log",
+    "summary": "\n> pet-platform@0.0.0 dev:infra /Users/kimwell/work/pet-platform\n> node scripts/local-infra.mjs start --env-file .local-data/p02-infra.env --project pet-platform-p02-validation\n\n Container pet-platform-p02-validation-rabbitmq-1 Recreate \n Container pet-platform-p02-validation-rabbitmq-1 Recreated \n Container pet-platform-p02-validation-rabbitmq-1 Starting \n Container pet-platform-p02-validation-redis-1 Starting \n Container pet-platform-p02-validation-postgres-1 Starting \n Container pet-platform-p02-validation-redis-1 Started \n Container pet-platform-p02-validation-rabbitmq-1 Started \n Container pet-platform-p02-validation-postgres-1 Started \n Container pet-platform-p02-validation-postgres-1 Waiting \n Container pet-platform-p02-validation-redis-1 Waiting \n Container pet-platform-p02-validation-rabbitmq-1 Waiting \n Container pet-platform-p02-validation-postgres-1 Healthy \n Container pet-platform-p02-validation-redis-1 Healthy \n Container pet-platform-p02-validation-rabbitmq-1 Healthy \n"
+  },
+  {
+    "record": "infra-start.json",
+    "id": "infra-start",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "docker",
+      "compose",
+      "--env-file",
+      ".local-data/p02-infra.env",
+      "-p",
+      "pet-platform-p02-validation",
+      "-f",
+      "infra/local/docker-compose.yml",
+      "up",
+      "-d",
+      "--wait",
+      "--wait-timeout",
+      "180"
+    ],
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "status": "PASS",
+    "started_at": "2026-10-08T07:22:22.976349+08:00",
+    "duration_seconds": 9.013,
+    "evidence": "infra-start.log",
+    "summary": " Image redis:8.2.10-bookworm@sha256:47670742d7924adbcdb404d1288b6327815b23141969c0939b8e5d61f78c2634 Pulling \n Image postgres:17.11-bookworm@sha256:3645570cccdfa447589da9f57dd740faa29b30938e861289a5574b6ca6b03826 Pulling \n Image rabbitmq:4.3.6-management@sha256:8dd6e3570ddaa2ef82a6c3a8950e79c1f73893adfbdddbc374fc1f1ac8a0f5dd Pulling \n Image postgres:17.11-bookworm@sha256:3645570cccdfa447589da9f57dd740faa29b30938e861289a5574b6ca6b03826 Pulled \n Image rabbitmq:4.3.6-management@sha256:8dd6e3570ddaa2ef82a6c3a8950e79c1f73893adfbdddbc374fc1f1ac8a0f5dd Pulled \n Image redis:8.2.10-bookworm@sha256:47670742d7924adbcdb404d1288b6327815b23141969c0939b8e5d61f78c2634 Pulled \n Container pet-platform-p02-validation-redis-1 Starting \n Container pet-platform-p02-validation-postgres-1 Starting \n Container pet-platform-p02-validation-rabbitmq-1 Starting \n Container pet-platform-p02-validation-redis-1 Started \n Container pet-platform-p02-validation-postgres-1 Started \n Container pet-platform-p02-validation-rabbitmq-1 Started \n Container pet-platform-p02-validation-redis-1 Waiting \n Container pet-platform-p02-validation-rabbitmq-1 Waiting \n Container pet-platform-p02-validation-postgres-1 Waiting \n Container pet-platform-p02-validation-rabbitmq-1 Healthy \n Container pet-platform-p02-validation-redis-1 Healthy \n Container pet-platform-p02-validation-postgres-1 Healthy \n"
+  },
+  {
+    "record": "infra-stop-final.json",
+    "id": "infra-stop-final",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "pnpm",
+      "stop:infra",
+      "--env-file",
+      ".local-data/p02-infra.env",
+      "--project",
+      "pet-platform-p02-validation"
+    ],
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "status": "PASS",
+    "started_at": "2026-10-08T07:31:52.116354+08:00",
+    "duration_seconds": 2.256,
+    "evidence": "infra-stop-final.log",
+    "summary": "\n> pet-platform@0.0.0 stop:infra /Users/kimwell/work/pet-platform\n> node scripts/local-infra.mjs stop --env-file .local-data/p02-infra.env --project pet-platform-p02-validation\n\n/pet-platform-p02-validation-postgres-1 exited 0 false\n/pet-platform-p02-validation-rabbitmq-1 exited 0 false\n/pet-platform-p02-validation-redis-1 exited 0 false\n Container pet-platform-p02-validation-postgres-1 Stopping \n Container pet-platform-p02-validation-redis-1 Stopping \n Container pet-platform-p02-validation-rabbitmq-1 Stopping \n Container pet-platform-p02-validation-postgres-1 Stopped \n Container pet-platform-p02-validation-redis-1 Stopped \n Container pet-platform-p02-validation-rabbitmq-1 Stopped \n"
+  },
+  {
+    "record": "infra-stop-r2.json",
+    "id": "infra-stop-r2",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "pnpm",
+      "stop:infra",
+      "--env-file",
+      ".local-data/p02-infra.env",
+      "--project",
+      "pet-platform-p02-validation"
+    ],
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "status": "PASS",
+    "started_at": "2026-10-08T07:26:11.621759+08:00",
+    "duration_seconds": 2.087,
+    "evidence": "infra-stop-r2.log",
+    "summary": "\n> pet-platform@0.0.0 stop:infra /Users/kimwell/work/pet-platform\n> node scripts/local-infra.mjs stop --env-file .local-data/p02-infra.env --project pet-platform-p02-validation\n\n/pet-platform-p02-validation-postgres-1 exited 0 false\n/pet-platform-p02-validation-rabbitmq-1 exited 0 false\n/pet-platform-p02-validation-redis-1 exited 0 false\n Container pet-platform-p02-validation-rabbitmq-1 Stopping \n Container pet-platform-p02-validation-postgres-1 Stopping \n Container pet-platform-p02-validation-redis-1 Stopping \n Container pet-platform-p02-validation-postgres-1 Stopped \n Container pet-platform-p02-validation-redis-1 Stopped \n Container pet-platform-p02-validation-rabbitmq-1 Stopped \n"
+  },
+  {
+    "record": "infra-stop.json",
+    "id": "infra-stop",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "docker",
+      "compose",
+      "--env-file",
+      "/Users/kimwell/work/pet-platform/.local-data/p02-infra.env",
+      "-p",
+      "pet-platform-p02-validation",
+      "-f",
+      "/Users/kimwell/work/pet-platform/infra/local/docker-compose.yml",
+      "stop"
+    ],
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "status": "PASS",
+    "started_at": "2026-10-08T07:23:44.630469+08:00",
+    "duration_seconds": 1.472,
+    "evidence": "infra-stop.log",
+    "summary": " Container pet-platform-p02-validation-postgres-1 Stopping \n Container pet-platform-p02-validation-rabbitmq-1 Stopping \n Container pet-platform-p02-validation-redis-1 Stopping \n Container pet-platform-p02-validation-postgres-1 Stopped \n Container pet-platform-p02-validation-redis-1 Stopped \n Container pet-platform-p02-validation-rabbitmq-1 Stopped \n"
+  },
+  {
+    "record": "mini-offline-npm.json",
+    "id": "mini-offline-npm",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "node",
+      "docs/testing/evidence/P02-01/pack-api.cjs"
+    ],
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "status": "PASS",
+    "started_at": "2026-10-08T07:25:10.919556+08:00",
+    "duration_seconds": 2.068,
+    "evidence": "mini-offline-npm.log",
+    "summary": "[miniprogram-builder] initservices CI\n{\"miniProgramPackNum\":1,\"otherNpmPackNum\":0,\"warnList\":[]}\n"
+  },
+  {
+    "record": "postgres-auth.json",
+    "id": "postgres-auth",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "docker",
+      "compose",
+      "--env-file",
+      "/Users/kimwell/work/pet-platform/.local-data/p02-infra.env",
+      "-p",
+      "pet-platform-p02-validation",
+      "-f",
+      "/Users/kimwell/work/pet-platform/infra/local/docker-compose.yml",
+      "exec",
+      "-T",
+      "postgres",
+      "sh",
+      "-ec",
+      "PGPASSWORD=\"$POSTGRES_PASSWORD\" psql -h host.docker.internal -p 25432 -U \"$POSTGRES_USER\" -d \"$POSTGRES_DB\" -v ON_ERROR_STOP=1 -Atc \"SELECT current_database(), current_user, 1\""
+    ],
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "status": "PASS",
+    "started_at": "2026-10-08T07:30:04.147690+08:00",
+    "duration_seconds": 0.136,
+    "evidence": "postgres-auth.log",
+    "summary": "p02_fixture|p02_fixture|1\n"
+  },
+  {
+    "record": "preview-port-occupied.json",
+    "id": "preview-port-occupied",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "pnpm",
+      "preview:web"
+    ],
+    "exit_code": 1,
+    "expected_exit_code": 1,
+    "status": "PASS",
+    "started_at": "2026-10-08T07:27:10.530880+08:00",
+    "duration_seconds": 0.643,
+    "evidence": "preview-port-occupied.log",
+    "summary": "\n> pet-platform@0.0.0 preview:web /Users/kimwell/work/pet-platform\n> pnpm --filter @pet/admin-web preview\n\n\n> @pet/admin-web@0.0.0 preview /Users/kimwell/work/pet-platform/apps/admin-web\n> vite preview\n\n/Users/kimwell/work/pet-platform/apps/admin-web:\n ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL  @pet/admin-web@0.0.0 preview: `vite preview`\nExit status 1\n ELIFECYCLE  Command failed with exit code 1.\nerror when starting preview server:\nError: Port 4173 is already in use\n    at Server.onError$1 (file:///Users/kimwell/work/pet-platform/node_modules/.pnpm/vite@7.3.7_@types+node@24.19.1/node_modules/vite/dist/node/chunks/config.js:15174:28)\n    at Server.emit (node:events:514:28)\n    at emitErrorNT (node:net:2416:8)\n    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)\n"
+  },
+  {
+    "record": "production-assets-http.json",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "python3",
+      "urllib.request.urlopen",
+      "<浏览器实际引用的 JS/CSS>"
+    ],
+    "exit_code": 0,
+    "status": "PASS",
+    "checks": [
+      {
+        "url": "http://127.0.0.1:4173/assets/index-D9gzWvXX.js",
+        "status": 200,
+        "bytes": 621320,
+        "sha256": "fa7f8d89e31a95193e96e39790a42dfaf651862b25e5c979cc8bf0441c9eb28c"
+      },
+      {
+        "url": "http://127.0.0.1:4173/assets/index-CNdMMY7y.css",
+        "status": 200,
+        "bytes": 3235,
+        "sha256": "5b905fac3566e804881c14d2eea54050c7a82324cf916a49153a4458a806852d"
+      },
+      {
+        "file": "apps/admin-web/dist/assets/index-D9gzWvXX.js",
+        "raw_bytes": 621320,
+        "gzip_bytes": 205118
+      }
+    ],
+    "public_config_secret_scan": "PASS 限定检查：无 DEV 后端来源/基础设施凭据键/公开反例秘密特征"
+  },
+  {
+    "record": "rabbit-auth.json",
+    "id": "rabbit-auth",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "docker",
+      "compose",
+      "--env-file",
+      "/Users/kimwell/work/pet-platform/.local-data/p02-infra.env",
+      "-p",
+      "pet-platform-p02-validation",
+      "-f",
+      "/Users/kimwell/work/pet-platform/infra/local/docker-compose.yml",
+      "exec",
+      "-T",
+      "rabbitmq",
+      "sh",
+      "-ec",
+      "rabbitmqctl authenticate_user \"$RABBITMQ_DEFAULT_USER\" \"$RABBITMQ_DEFAULT_PASS\""
+    ],
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "status": "PASS",
+    "started_at": "2026-10-08T07:30:05.281508+08:00",
+    "duration_seconds": 0.46,
+    "evidence": "rabbit-auth.log",
+    "summary": "Authenticating user \"p02_fixture\" ...\nSuccess\n"
+  },
+  {
+    "record": "rabbit-identity-after.json",
+    "id": "rabbit-identity-after",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "ID={{.Id}} Hostname={{.Config.Hostname}} StopTimeout={{.Config.StopTimeout}} {{json .Mounts}}",
+      "pet-platform-p02-validation-rabbitmq-1"
+    ],
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "status": "PASS",
+    "started_at": "2026-10-08T07:30:03.381538+08:00",
+    "duration_seconds": 0.034,
+    "evidence": "rabbit-identity-after.log",
+    "summary": "ID=aaf4a5757d7b751d078727d63ff42303cbe9eb7429de9b9687202d3d9ae1dc6b Hostname=rabbitmq StopTimeout=30 [{\"Destination\":\"/var/lib/rabbitmq\",\"Driver\":\"local\",\"Mode\":\"rw\",\"Name\":\"pet-platform-p02-validation_rabbitmq-data\",\"Propagation\":\"\",\"RW\":true,\"Source\":\"/var/lib/docker/volumes/pet-platform-p02-validation_rabbitmq-data/_data\",\"Type\":\"volume\"}]\n"
+  },
+  {
+    "record": "rabbit-identity-before.json",
+    "id": "rabbit-identity-before",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "ID={{.Id}} Hostname={{.Config.Hostname}} StopTimeout={{.Config.StopTimeout}} {{json .Mounts}}",
+      "pet-platform-p02-validation-rabbitmq-1"
+    ],
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "status": "PASS",
+    "started_at": "2026-10-08T07:29:55.761360+08:00",
+    "duration_seconds": 0.05,
+    "evidence": "rabbit-identity-before.log",
+    "summary": "ID=570cf3d128763db21d40f2379504b2477fdebbe7f18f8cb4e6f0ff8278c57557 Hostname=rabbitmq StopTimeout=30 [{\"Destination\":\"/var/lib/rabbitmq\",\"Driver\":\"local\",\"Mode\":\"rw\",\"Name\":\"pet-platform-p02-validation_rabbitmq-data\",\"Propagation\":\"\",\"RW\":true,\"Source\":\"/var/lib/docker/volumes/pet-platform-p02-validation_rabbitmq-data/_data\",\"Type\":\"volume\"}]\n"
+  },
+  {
+    "record": "rabbit-node-name-after.json",
+    "id": "rabbit-node-name-after",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "docker",
+      "compose",
+      "--env-file",
+      "/Users/kimwell/work/pet-platform/.local-data/p02-infra.env",
+      "-p",
+      "pet-platform-p02-validation",
+      "-f",
+      "/Users/kimwell/work/pet-platform/infra/local/docker-compose.yml",
+      "exec",
+      "-T",
+      "rabbitmq",
+      "rabbitmqctl",
+      "eval",
+      "node()."
+    ],
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "status": "PASS",
+    "started_at": "2026-10-08T07:30:03.852678+08:00",
+    "duration_seconds": 0.471,
+    "evidence": "rabbit-node-name-after.log",
+    "summary": "rabbit@rabbitmq\n"
+  },
+  {
+    "record": "rabbit-node-name-before.json",
+    "id": "rabbit-node-name-before",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "docker",
+      "compose",
+      "--env-file",
+      "/Users/kimwell/work/pet-platform/.local-data/p02-infra.env",
+      "-p",
+      "pet-platform-p02-validation",
+      "-f",
+      "/Users/kimwell/work/pet-platform/infra/local/docker-compose.yml",
+      "exec",
+      "-T",
+      "rabbitmq",
+      "rabbitmqctl",
+      "eval",
+      "node()."
+    ],
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "status": "PASS",
+    "started_at": "2026-10-08T07:29:56.216046+08:00",
+    "duration_seconds": 0.454,
+    "evidence": "rabbit-node-name-before.log",
+    "summary": "rabbit@rabbitmq\n"
+  },
+  {
+    "record": "rabbit-node.json",
+    "id": "rabbit-node",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "docker",
+      "compose",
+      "--env-file",
+      "/Users/kimwell/work/pet-platform/.local-data/p02-infra.env",
+      "-p",
+      "pet-platform-p02-validation",
+      "-f",
+      "/Users/kimwell/work/pet-platform/infra/local/docker-compose.yml",
+      "exec",
+      "-T",
+      "rabbitmq",
+      "rabbitmq-diagnostics",
+      "-q",
+      "check_running"
+    ],
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "status": "PASS",
+    "started_at": "2026-10-08T07:30:04.820662+08:00",
+    "duration_seconds": 0.463,
+    "evidence": "rabbit-node.log",
+    "summary": "RabbitMQ on node rabbit@rabbitmq is fully booted and running\n"
+  },
+  {
+    "record": "rabbit-recreate-stable.json",
+    "id": "rabbit-recreate-stable",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "docker",
+      "compose",
+      "--env-file",
+      "/Users/kimwell/work/pet-platform/.local-data/p02-infra.env",
+      "-p",
+      "pet-platform-p02-validation",
+      "-f",
+      "/Users/kimwell/work/pet-platform/infra/local/docker-compose.yml",
+      "up",
+      "-d",
+      "--wait",
+      "--wait-timeout",
+      "180",
+      "--force-recreate",
+      "rabbitmq"
+    ],
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "status": "PASS",
+    "started_at": "2026-10-08T07:30:03.347298+08:00",
+    "duration_seconds": 7.131,
+    "evidence": "rabbit-recreate-stable.log",
+    "summary": " Container pet-platform-p02-validation-rabbitmq-1 Recreate \n Container pet-platform-p02-validation-rabbitmq-1 Recreated \n Container pet-platform-p02-validation-rabbitmq-1 Starting \n Container pet-platform-p02-validation-rabbitmq-1 Started \n Container pet-platform-p02-validation-rabbitmq-1 Waiting \n Container pet-platform-p02-validation-rabbitmq-1 Healthy \n"
+  },
+  {
+    "record": "rabbit-stop-events.json",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "docker",
+      "events",
+      "--since",
+      "1791415422",
+      "--until",
+      "1791415437",
+      "--filter",
+      "label=com.docker.compose.project=pet-platform-p02-validation",
+      "--filter",
+      "event=kill",
+      "--filter",
+      "event=die",
+      "--filter",
+      "event=stop",
+      "--filter",
+      "event=oom",
+      "--format",
+      "{{json .}}"
+    ],
+    "exit_code": 0,
+    "status": "PASS",
+    "evidence": "rabbit-stop-events.log"
+  },
+  {
+    "record": "rabbit-stop-final-events.json",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "docker",
+      "events",
+      "--filter",
+      "label=com.docker.compose.project=pet-platform-p02-validation",
+      "--filter",
+      "event=kill",
+      "--filter",
+      "event=die",
+      "--filter",
+      "event=stop",
+      "--filter",
+      "event=oom",
+      "--format",
+      "{{json .}}"
+    ],
+    "exit_code": 143,
+    "expected_exit_code": -15,
+    "status": "FAIL",
+    "evidence": "rabbit-stop-final-events.log",
+    "boundary": "只读事件观察器由本轮有意SIGTERM结束；与容器主进程退出码分别记录"
+  },
+  {
+    "record": "rabbit-stop-log-r2.json",
+    "id": "rabbit-stop-log-r2",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "docker",
+      "logs",
+      "--since",
+      "1791415569",
+      "pet-platform-p02-validation-rabbitmq-1"
+    ],
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "status": "PASS",
+    "started_at": "2026-10-08T07:26:12.199675+08:00",
+    "duration_seconds": 0.046,
+    "evidence": "rabbit-stop-log-r2.log",
+    "summary": "\u001b[38;5;87m2026-10-07 23:26:10.059027+00:00 [notice] <0.64.0> SIGTERM received - shutting down\u001b[0m\n\u001b[38;5;87m2026-10-07 23:26:10.059027+00:00 [notice] <0.64.0> \u001b[0m\n\u001b[38;5;214m2026-10-07 23:26:10.064956+00:00 [warning] <0.900.0> HTTP listener registry could not find context rabbitmq_prometheus_tls\u001b[0m\n\u001b[38;5;214m2026-10-07 23:26:10.072106+00:00 [warning] <0.900.0> HTTP listener registry could not find context rabbitmq_management_tls\u001b[0m\n2026-10-07 23:26:10.081531+00:00 [info] <0.1024.0> stopped TCP listener on [::]:5672\u001b[0m\n2026-10-07 23:26:10.082726+00:00 [info] <0.839.0> Virtual host '/' is stopping\u001b[0m\n2026-10-07 23:26:10.082904+00:00 [info] <0.1095.0> Closing all connections in vhost '/' on node 'rabbit@ded5f565fd15' because the vhost is stopping\u001b[0m\n2026-10-07 23:26:10.082954+00:00 [info] <0.852.0> Stopping message store for directory '/var/lib/rabbitmq/mnesia/rabbit@ded5f565fd15/msg_stores/vhosts/628WB79CIFDYO9LJI6DKMI09L/msg_store_persistent'\u001b[0m\n2026-10-07 23:26:10.087465+00:00 [info] <0.852.0> Message store for directory '/var/lib/rabbitmq/mnesia/rabbit@ded5f565fd15/msg_stores/vhosts/628WB79CIFDYO9LJI6DKMI09L/msg_store_persistent' is stopped\u001b[0m\n2026-10-07 23:26:10.087856+00:00 [info] <0.848.0> Stopping message store for directory '/var/lib/rabbitmq/mnesia/rabbit@ded5f565fd15/msg_stores/vhosts/628WB79CIFDYO9LJI6DKMI09L/msg_store_transient'\u001b[0m\n2026-10-07 23:26:10.092429+00:00 [info] <0.848.0> Message store for directory '/var/lib/rabbitmq/mnesia/rabbit@ded5f565fd15/msg_stores/vhosts/628WB79CIFDYO9LJI6DKMI09L/msg_store_transient' is stopped\u001b[0m\n\u001b[38;5;214m2026-10-07 23:26:10.098553+00:00 [warning] <0.532.0> RabbitMQ metadata store: worker exited with shutdown\u001b[0m\n"
+  },
+  {
+    "record": "rabbit-stop-log.json",
+    "id": "rabbit-stop-log",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "docker",
+      "logs",
+      "--since",
+      "1791415422",
+      "pet-platform-p02-validation-rabbitmq-1"
+    ],
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "status": "PASS",
+    "started_at": "2026-10-08T07:23:57.128301+08:00",
+    "duration_seconds": 0.033,
+    "evidence": "rabbit-stop-log.log",
+    "summary": "\u001b[38;5;87m2026-10-07 23:23:43.253347+00:00 [notice] <0.64.0> SIGTERM received - shutting down\u001b[0m\n\u001b[38;5;87m2026-10-07 23:23:43.253347+00:00 [notice] <0.64.0> \u001b[0m\n\u001b[38;5;214m2026-10-07 23:23:43.256061+00:00 [warning] <0.819.0> HTTP listener registry could not find context rabbitmq_prometheus_tls\u001b[0m\n\u001b[38;5;214m2026-10-07 23:23:43.259346+00:00 [warning] <0.819.0> HTTP listener registry could not find context rabbitmq_management_tls\u001b[0m\n2026-10-07 23:23:43.266213+00:00 [info] <0.943.0> stopped TCP listener on [::]:5672\u001b[0m\n2026-10-07 23:23:43.267219+00:00 [info] <0.765.0> Virtual host '/' is stopping\u001b[0m\n2026-10-07 23:23:43.267352+00:00 [info] <0.1014.0> Closing all connections in vhost '/' on node 'rabbit@2ccb1a9559b8' because the vhost is stopping\u001b[0m\n2026-10-07 23:23:43.267453+00:00 [info] <0.778.0> Stopping message store for directory '/var/lib/rabbitmq/mnesia/rabbit@2ccb1a9559b8/msg_stores/vhosts/628WB79CIFDYO9LJI6DKMI09L/msg_store_persistent'\u001b[0m\n2026-10-07 23:23:43.272145+00:00 [info] <0.778.0> Message store for directory '/var/lib/rabbitmq/mnesia/rabbit@2ccb1a9559b8/msg_stores/vhosts/628WB79CIFDYO9LJI6DKMI09L/msg_store_persistent' is stopped\u001b[0m\n2026-10-07 23:23:43.272280+00:00 [info] <0.774.0> Stopping message store for directory '/var/lib/rabbitmq/mnesia/rabbit@2ccb1a9559b8/msg_stores/vhosts/628WB79CIFDYO9LJI6DKMI09L/msg_store_transient'\u001b[0m\n2026-10-07 23:23:43.275854+00:00 [info] <0.774.0> Message store for directory '/var/lib/rabbitmq/mnesia/rabbit@2ccb1a9559b8/msg_stores/vhosts/628WB79CIFDYO9LJI6DKMI09L/msg_store_transient' is stopped\u001b[0m\n\u001b[38;5;214m2026-10-07 23:23:43.284131+00:00 [warning] <0.533.0> RabbitMQ metadata store: worker exited with shutdown\u001b[0m\n"
+  },
+  {
+    "record": "rabbit-stop-r2-events.json",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "docker",
+      "events",
+      "--filter",
+      "label=com.docker.compose.project=pet-platform-p02-validation",
+      "--filter",
+      "event=kill",
+      "--filter",
+      "event=die",
+      "--filter",
+      "event=stop",
+      "--filter",
+      "event=oom",
+      "--format",
+      "{{json .}}"
+    ],
+    "exit_code": 143,
+    "expected_exit_code": -15,
+    "status": "FAIL",
+    "evidence": "rabbit-stop-r2-events.log",
+    "boundary": "有意 SIGTERM 结束只读事件观察器；不是 RabbitMQ 进程退出码"
+  },
+  {
+    "record": "rabbit-stop-timeout-r2.json",
+    "id": "rabbit-stop-timeout-r2",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "StopTimeout={{.Config.StopTimeout}} Memory={{.HostConfig.Memory}}",
+      "pet-platform-p02-validation-rabbitmq-1"
+    ],
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "status": "PASS",
+    "started_at": "2026-10-08T07:26:09.534540+08:00",
+    "duration_seconds": 0.056,
+    "evidence": "rabbit-stop-timeout-r2.log",
+    "summary": "StopTimeout=30 Memory=0\n"
+  },
+  {
+    "record": "redis-auth.json",
+    "id": "redis-auth",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "docker",
+      "compose",
+      "--env-file",
+      "/Users/kimwell/work/pet-platform/.local-data/p02-infra.env",
+      "-p",
+      "pet-platform-p02-validation",
+      "-f",
+      "/Users/kimwell/work/pet-platform/infra/local/docker-compose.yml",
+      "exec",
+      "-T",
+      "redis",
+      "sh",
+      "-ec",
+      "REDISCLI_AUTH=\"$REDIS_PASSWORD\" redis-cli -h host.docker.internal -p 26379 ping"
+    ],
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "status": "PASS",
+    "started_at": "2026-10-08T07:30:04.250072+08:00",
+    "duration_seconds": 0.102,
+    "evidence": "redis-auth.log",
+    "summary": "PONG\n"
+  },
+  {
+    "record": "redis-no-auth.json",
+    "id": "redis-no-auth",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "docker",
+      "compose",
+      "--env-file",
+      "/Users/kimwell/work/pet-platform/.local-data/p02-infra.env",
+      "-p",
+      "pet-platform-p02-validation",
+      "-f",
+      "/Users/kimwell/work/pet-platform/infra/local/docker-compose.yml",
+      "exec",
+      "-T",
+      "redis",
+      "redis-cli",
+      "-h",
+      "host.docker.internal",
+      "-p",
+      "26379",
+      "ping"
+    ],
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "status": "PASS",
+    "started_at": "2026-10-08T07:30:04.357505+08:00",
+    "duration_seconds": 0.107,
+    "evidence": "redis-no-auth.log",
+    "summary": "NOAUTH Authentication required.\n\n"
+  },
+  {
+    "record": "root-check-final-r2.json",
+    "id": "root-check-final-r2",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "pnpm",
+      "check"
+    ],
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "status": "PASS",
+    "started_at": "2026-10-08T07:34:20.369523+08:00",
+    "duration_seconds": 6.094,
+    "evidence": "root-check-final-r2.log",
+    "summary": "\n> pet-platform@0.0.0 check /Users/kimwell/work/pet-platform\n> pnpm check:repo && pnpm check:web && pnpm check:miniprogram\n\n\n> pet-platform@0.0.0 check:repo /Users/kimwell/work/pet-platform\n> node scripts/check-repository.mjs && node scripts/check-miniprogram.mjs\n\n单锁、精确直接依赖、工具链、固定后端入口及秘密特征检查通过。秘密检查不输出匹配值。\n原生小程序结构、页面和官方组件引用检查通过；这不是开发者工具编译。\n\n> pet-platform@0.0.0 check:web /Users/kimwell/work/pet-platform\n> pnpm --filter @pet/admin-web typecheck && pnpm --filter @pet/admin-web lint && pnpm --filter @pet/admin-web test\n\n\n> @pet/admin-web@0.0.0 typecheck /Users/kimwell/work/pet-platform/apps/admin-web\n> tsc --noEmit\n\n\n> @pet/admin-web@0.0.0 lint /Users/kimwell/work/pet-platform/apps/admin-web\n> eslint src vite.config.ts dev-config.ts --max-warnings=0\n\n\n> @pet/admin-web@0.0.0 test /Users/kimwell/work/pet-platform/apps/admin-web\n> vitest run\n\n\n RUN  v4.1.11 /Users/kimwell/work/pet-platform/apps/admin-web\n\n\n Test Files  2 passed (2)\n      Tests  14 passed (14)\n   Start at  07:34:18\n   Duration  898ms (transform 59ms, setup 0ms, import 801ms, tests 37ms, environment 0ms)\n\n\n> pet-platform@0.0.0 check:miniprogram /Users/kimwell/work/pet-platform\n> pnpm --filter @pet/wechat-miniprogram typecheck && pnpm --filter @pet/wechat-miniprogram lint\n\n\n> @pet/wechat-miniprogram@0.0.0 typecheck /Users/kimwell/work/pet-platform/apps/wechat-miniprogram\n> tsc --noEmit\n\n\n> @pet/wechat-miniprogram@0.0.0 lint /Users/kimwell/work/pet-platform/apps/wechat-miniprogram\n> eslint miniprogram --max-warnings=0\n\n"
+  },
+  {
+    "record": "root-check-final.json",
+    "id": "root-check-final",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "pnpm",
+      "check"
+    ],
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "status": "PASS",
+    "started_at": "2026-10-08T07:31:59.020137+08:00",
+    "duration_seconds": 6.258,
+    "evidence": "root-check-final.log",
+    "summary": "\n> pet-platform@0.0.0 check /Users/kimwell/work/pet-platform\n> pnpm check:repo && pnpm check:web && pnpm check:miniprogram\n\n\n> pet-platform@0.0.0 check:repo /Users/kimwell/work/pet-platform\n> node scripts/check-repository.mjs && node scripts/check-miniprogram.mjs\n\n单锁、精确直接依赖、工具链、固定后端入口及秘密特征检查通过。秘密检查不输出匹配值。\n原生小程序结构、页面和官方组件引用检查通过；这不是开发者工具编译。\n\n> pet-platform@0.0.0 check:web /Users/kimwell/work/pet-platform\n> pnpm --filter @pet/admin-web typecheck && pnpm --filter @pet/admin-web lint && pnpm --filter @pet/admin-web test\n\n\n> @pet/admin-web@0.0.0 typecheck /Users/kimwell/work/pet-platform/apps/admin-web\n> tsc --noEmit\n\n\n> @pet/admin-web@0.0.0 lint /Users/kimwell/work/pet-platform/apps/admin-web\n> eslint src vite.config.ts dev-config.ts --max-warnings=0\n\n\n> @pet/admin-web@0.0.0 test /Users/kimwell/work/pet-platform/apps/admin-web\n> vitest run\n\n\n RUN  v4.1.11 /Users/kimwell/work/pet-platform/apps/admin-web\n\n\n Test Files  2 passed (2)\n      Tests  12 passed (12)\n   Start at  07:31:56\n   Duration  950ms (transform 69ms, setup 0ms, import 858ms, tests 36ms, environment 0ms)\n\n\n> pet-platform@0.0.0 check:miniprogram /Users/kimwell/work/pet-platform\n> pnpm --filter @pet/wechat-miniprogram typecheck && pnpm --filter @pet/wechat-miniprogram lint\n\n\n> @pet/wechat-miniprogram@0.0.0 typecheck /Users/kimwell/work/pet-platform/apps/wechat-miniprogram\n> tsc --noEmit\n\n\n> @pet/wechat-miniprogram@0.0.0 lint /Users/kimwell/work/pet-platform/apps/wechat-miniprogram\n> eslint miniprogram --max-warnings=0\n\n"
+  },
+  {
+    "record": "root-check-r2.json",
+    "id": "root-check-r2",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "pnpm",
+      "check"
+    ],
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "status": "PASS",
+    "started_at": "2026-10-08T07:23:54.912192+08:00",
+    "duration_seconds": 6.157,
+    "evidence": "root-check-r2.log",
+    "summary": "\n> pet-platform@0.0.0 check /Users/kimwell/work/pet-platform\n> pnpm check:repo && pnpm check:web && pnpm check:miniprogram\n\n\n> pet-platform@0.0.0 check:repo /Users/kimwell/work/pet-platform\n> node scripts/check-repository.mjs && node scripts/check-miniprogram.mjs\n\n单锁、精确直接依赖、工具链、固定后端入口及秘密特征检查通过。秘密检查不输出匹配值。\n原生小程序结构、页面和官方组件引用检查通过；这不是开发者工具编译。\n\n> pet-platform@0.0.0 check:web /Users/kimwell/work/pet-platform\n> pnpm --filter @pet/admin-web typecheck && pnpm --filter @pet/admin-web lint && pnpm --filter @pet/admin-web test\n\n\n> @pet/admin-web@0.0.0 typecheck /Users/kimwell/work/pet-platform/apps/admin-web\n> tsc --noEmit\n\n\n> @pet/admin-web@0.0.0 lint /Users/kimwell/work/pet-platform/apps/admin-web\n> eslint src vite.config.ts dev-config.ts --max-warnings=0\n\n\n> @pet/admin-web@0.0.0 test /Users/kimwell/work/pet-platform/apps/admin-web\n> vitest run\n\n\n RUN  v4.1.11 /Users/kimwell/work/pet-platform/apps/admin-web\n\n\n Test Files  2 passed (2)\n      Tests  12 passed (12)\n   Start at  07:23:52\n   Duration  958ms (transform 68ms, setup 0ms, import 868ms, tests 36ms, environment 0ms)\n\n\n> pet-platform@0.0.0 check:miniprogram /Users/kimwell/work/pet-platform\n> pnpm --filter @pet/wechat-miniprogram typecheck && pnpm --filter @pet/wechat-miniprogram lint\n\n\n> @pet/wechat-miniprogram@0.0.0 typecheck /Users/kimwell/work/pet-platform/apps/wechat-miniprogram\n> tsc --noEmit\n\n\n> @pet/wechat-miniprogram@0.0.0 lint /Users/kimwell/work/pet-platform/apps/wechat-miniprogram\n> eslint miniprogram --max-warnings=0\n\n"
+  },
+  {
+    "record": "root-check.json",
+    "id": "root-check",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "pnpm",
+      "check"
+    ],
+    "exit_code": 2,
+    "expected_exit_code": 0,
+    "status": "FAIL",
+    "started_at": "2026-10-08T07:23:31.543669+08:00",
+    "duration_seconds": 3.199,
+    "evidence": "root-check.log",
+    "summary": "iniprogram.mjs\n\n单锁、精确直接依赖、工具链、固定后端入口及秘密特征检查通过。秘密检查不输出匹配值。\n原生小程序结构、页面和官方组件引用检查通过；这不是开发者工具编译。\n\n> pet-platform@0.0.0 check:web /Users/kimwell/work/pet-platform\n> pnpm --filter @pet/admin-web typecheck && pnpm --filter @pet/admin-web lint && pnpm --filter @pet/admin-web test\n\n\n> @pet/admin-web@0.0.0 typecheck /Users/kimwell/work/pet-platform/apps/admin-web\n> tsc --noEmit\n\nvite.config.ts(5,29): error TS2769: No overload matches this call.\n  The last overload gave the following error.\n    Argument of type '({ mode, command, isPreview }: ConfigEnv) => { plugins: Plugin<any>[][]; server: { host: string; port: number; strictPort: true; proxy: { '/api': { target: string; changeOrigin: boolean; }; } | { '/api'?: undefined; }; }; preview: { ...; }; }' is not assignable to parameter of type 'UserConfigExport'.\n      Type '({ mode, command, isPreview }: ConfigEnv) => { plugins: Plugin<any>[][]; server: { host: string; port: number; strictPort: true; proxy: { '/api': { target: string; changeOrigin: boolean; }; } | { '/api'?: undefined; }; }; preview: { ...; }; }' is not assignable to type 'UserConfigFnObject'.\n        Call signature return types '{ plugins: Plugin<any>[][]; server: { host: string; port: number; strictPort: true; proxy: { '/api': { target: string; changeOrigin: boolean; }; } | { '/api'?: undefined; }; }; preview: { host: string; port: number; strictPort: true; proxy: {}; }; }' and 'UserConfig' are incompatible.\n          The types of 'server.proxy' are incompatible between these types.\n            Type '{ '/api': { target: string; changeOrigin: boolean; }; } | { '/api'?: undefined; }' is not assignable to type 'Record<string, string | ProxyOptions> | undefined'.\n              Type '{ '/api'?: undefined; }' is not assignable to type 'Record<string, string | ProxyOptions>'.\n                Property ''/api'' is incompatible with index signature.\n                  Type 'undefined' is not assignable to type 'string | ProxyOptions'.\n/Users/kimwell/work/pet-platform/apps/admin-web:\n ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL  @pet/admin-web@0.0.0 typecheck: `tsc --noEmit`\nExit status 2\n ELIFECYCLE  Command failed with exit code 2.\n ELIFECYCLE  Command failed with exit code 2.\n"
+  },
+  {
+    "record": "runtime-stop.json",
+    "id": "runtime-stop",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "python3",
+      "docs/testing/evidence/P02-02/runtime.py",
+      "stop"
+    ],
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "status": "PASS",
+    "started_at": "2026-10-08T07:28:52.539537+08:00",
+    "duration_seconds": 0.809,
+    "evidence": "runtime-stop.log",
+    "summary": "web-preview stopped\nweb-dev stopped\nbackend-dev stopped\n"
+  },
+  {
+    "record": "scripts-lint.json",
+    "id": "scripts-lint",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "pnpm",
+      "exec",
+      "eslint",
+      "scripts",
+      "eslint.config.mjs",
+      "--max-warnings=0"
+    ],
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "status": "PASS",
+    "started_at": "2026-10-08T07:28:15.949852+08:00",
+    "duration_seconds": 1.123,
+    "evidence": "scripts-lint.log",
+    "summary": ""
+  },
+  {
+    "record": "startup-http.json",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "python3",
+      "/Users/kimwell/work/pet-platform/docs/testing/evidence/P02-02/runtime.py",
+      "start"
+    ],
+    "exit_code": 0,
+    "status": "PASS",
+    "checks": [
+      {
+        "url": "http://127.0.0.1:8080/",
+        "status": 404,
+        "content_type": "application/json",
+        "body": "{\"timestamp\":\"2026-10-07T23:25:13.498Z\",\"status\":404,\"error\":\"Not Found\",\"path\":\"/\"}"
+      },
+      {
+        "url": "http://127.0.0.1:8080/missing",
+        "status": 404,
+        "content_type": "application/json",
+        "body": "{\"timestamp\":\"2026-10-07T23:25:13.517Z\",\"status\":404,\"error\":\"Not Found\",\"path\":\"/missing\"}"
+      },
+      {
+        "url": "http://127.0.0.1:5173/",
+        "status": 200,
+        "content_type": "text/html",
+        "body": "<!doctype html>\n<html lang=\"zh-CN\">\n  <head>\n    <script type=\"module\">import { injectIntoGlobalHook } from \"/@react-refresh\";\ninjectIntoGlobalHook(window);\nwindow.$RefreshReg$ = () => {};\nwindow.$RefreshSig$ = () => (type) => type;</script>\n\n    <script type=\"module\" src=\"/@vite/client\"></script>\n\n    <meta charset=\"UTF-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <title>企业应用工程入口</title>\n  </head>\n  <body>\n    <div id=\"root\"></div>\n    <script type=\"module\" src=\"/src/main.tsx\"></script>\n  </body>\n</html>\n"
+      },
+      {
+        "url": "http://127.0.0.1:5173/missing/deep",
+        "status": 200,
+        "content_type": "text/html",
+        "body": "<!doctype html>\n<html lang=\"zh-CN\">\n  <head>\n    <script type=\"module\">import { injectIntoGlobalHook } from \"/@react-refresh\";\ninjectIntoGlobalHook(window);\nwindow.$RefreshReg$ = () => {};\nwindow.$RefreshSig$ = () => (type) => type;</script>\n\n    <script type=\"module\" src=\"/@vite/client\"></script>\n\n    <meta charset=\"UTF-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <title>企业应用工程入口</title>\n  </head>\n  <body>\n    <div id=\"root\"></div>\n    <script type=\"module\" src=\"/src/main.tsx\"></script>\n  </body>\n</html>\n"
+      },
+      {
+        "url": "http://127.0.0.1:5173/api/p02-02-missing",
+        "status": 404,
+        "content_type": "application/json",
+        "body": "{\"timestamp\":\"2026-10-07T23:25:13.725Z\",\"status\":404,\"error\":\"Not Found\",\"path\":\"/api/p02-02-missing\"}"
+      },
+      {
+        "url": "http://127.0.0.1:4173/",
+        "status": 200,
+        "content_type": "text/html",
+        "body": "<!doctype html>\n<html lang=\"zh-CN\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <title>企业应用工程入口</title>\n    <script type=\"module\" crossorigin src=\"/assets/index-D9gzWvXX.js\"></script>\n    <link rel=\"stylesheet\" crossorigin href=\"/assets/index-CNdMMY7y.css\">\n  </head>\n  <body>\n    <div id=\"root\"></div>\n  </body>\n</html>\n"
+      },
+      {
+        "url": "http://127.0.0.1:4173/missing/deep",
+        "status": 200,
+        "content_type": "text/html",
+        "body": "<!doctype html>\n<html lang=\"zh-CN\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <title>企业应用工程入口</title>\n    <script type=\"module\" crossorigin src=\"/assets/index-D9gzWvXX.js\"></script>\n    <link rel=\"stylesheet\" crossorigin href=\"/assets/index-CNdMMY7y.css\">\n  </head>\n  <body>\n    <div id=\"root\"></div>\n  </body>\n</html>\n"
+      }
+    ],
+    "proxy_boundary": "/api/p02-02-missing 真实透传后端 404，没有正式业务接口"
+  },
+  {
+    "record": "startup.json",
+    "id": "startup",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "python3",
+      "docs/testing/evidence/P02-02/runtime.py",
+      "start"
+    ],
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "status": "PASS",
+    "started_at": "2026-10-08T07:25:13.751628+08:00",
+    "duration_seconds": 6.055,
+    "evidence": "startup.log",
+    "summary": "backend-dev started pid=478\nweb-dev started pid=692\nweb-preview started pid=822\n真实 HTTP 与开发代理检查通过\n"
+  },
+  {
+    "record": "stop-abnormal-detection.json",
+    "id": "stop-abnormal-detection",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "pnpm",
+      "stop:infra",
+      "--env-file",
+      ".local-data/p02-infra.env",
+      "--project",
+      "pet-platform-p02-validation"
+    ],
+    "exit_code": 1,
+    "expected_exit_code": 1,
+    "status": "PASS",
+    "started_at": "2026-10-08T07:24:42.136227+08:00",
+    "duration_seconds": 0.66,
+    "evidence": "stop-abnormal-detection.log",
+    "summary": "\n> pet-platform@0.0.0 stop:infra /Users/kimwell/work/pet-platform\n> node scripts/local-infra.mjs stop --env-file .local-data/p02-infra.env --project pet-platform-p02-validation\n\n/pet-platform-p02-validation-postgres-1 exited 0 false\n/pet-platform-p02-validation-rabbitmq-1 exited 137 false\n/pet-platform-p02-validation-redis-1 exited 0 false\n ELIFECYCLE  Command failed with exit code 1.\n Container pet-platform-p02-validation-postgres-1 Stopping \n Container pet-platform-p02-validation-redis-1 Stopping \n Container pet-platform-p02-validation-rabbitmq-1 Stopping \n Container pet-platform-p02-validation-redis-1 Stopped \n Container pet-platform-p02-validation-rabbitmq-1 Stopped \n Container pet-platform-p02-validation-postgres-1 Stopped \n基础设施停止未正常完成；请核对上述容器退出码及日志，数据卷已保留。\n"
+  },
+  {
+    "record": "tool-java-r2.json",
+    "id": "tool-java-r2",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "java",
+      "--version"
+    ],
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "status": "PASS",
+    "started_at": "2026-10-08T07:22:09.726046+08:00",
+    "duration_seconds": 0.731,
+    "evidence": "tool-java-r2.log",
+    "summary": "openjdk 21.0.12.1 2026-08-18 LTS\nOpenJDK Runtime Environment Temurin-21.0.12.1+1 (build 21.0.12.1+1-LTS)\nOpenJDK 64-Bit Server VM Temurin-21.0.12.1+1 (build 21.0.12.1+1-LTS, mixed mode, sharing)\n"
+  },
+  {
+    "record": "tool-java.json",
+    "id": "tool-java",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "java",
+      "--version"
+    ],
+    "exit_code": 1,
+    "expected_exit_code": 0,
+    "status": "FAIL",
+    "started_at": "2026-10-08T07:21:48.765185+08:00",
+    "duration_seconds": 0.008,
+    "evidence": "tool-java.log",
+    "summary": "Error: could not open `/private/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/tools/jdk-21.0.12.1+1/Contents/Home/lib/jvm.cfg'\n"
+  },
+  {
+    "record": "tool-node.json",
+    "id": "tool-node",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "node",
+      "--version"
+    ],
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "status": "PASS",
+    "started_at": "2026-10-08T07:21:47.540820+08:00",
+    "duration_seconds": 0.067,
+    "evidence": "tool-node.log",
+    "summary": "v24.21.0\n"
+  },
+  {
+    "record": "tool-pnpm-r2.json",
+    "id": "tool-pnpm-r2",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "pnpm",
+      "--version"
+    ],
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "status": "PASS",
+    "started_at": "2026-10-08T07:22:10.138340+08:00",
+    "duration_seconds": 0.377,
+    "evidence": "tool-pnpm-r2.log",
+    "summary": "10.34.6\n"
+  },
+  {
+    "record": "tool-pnpm.json",
+    "id": "tool-pnpm",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "pnpm",
+      "--version"
+    ],
+    "exit_code": 1,
+    "expected_exit_code": 0,
+    "status": "FAIL",
+    "started_at": "2026-10-08T07:21:48.757048+08:00",
+    "duration_seconds": 1.216,
+    "evidence": "tool-pnpm.log",
+    "summary": "node:internal/modules/cjs/loader:1568\n  throw err;\n  ^\n\nError: Cannot find module '../dist/pnpm.cjs'\nRequire stack:\n- /private/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/tools/pnpm/package/bin/pnpm.cjs\n    at Module._resolveFilename (node:internal/modules/cjs/loader:1564:15)\n    at wrapResolveFilename (node:internal/modules/cjs/loader:1118:27)\n    at defaultResolveImplForCJSLoading (node:internal/modules/cjs/loader:1142:10)\n    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1169:12)\n    at Module._load (node:internal/modules/cjs/loader:1341:5)\n    at wrapModuleLoad (node:internal/modules/cjs/loader:261:19)\n    at Module.require (node:internal/modules/cjs/loader:1674:12)\n    at require (node:internal/modules/helpers:157:16)\n    at Object.<anonymous> (/private/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/tools/pnpm/package/bin/pnpm.cjs:25:1)\n    at Module._compile (node:internal/modules/cjs/loader:1929:14) {\n  code: 'MODULE_NOT_FOUND',\n  requireStack: [\n    '/private/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/tools/pnpm/package/bin/pnpm.cjs'\n  ]\n}\n\nNode.js v24.21.0\n"
+  },
+  {
+    "record": "volumes-after-stop.json",
+    "id": "volumes-after-stop",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "docker",
+      "volume",
+      "ls",
+      "--format",
+      "{{.Name}} {{.Label \"com.docker.compose.project\"}}"
+    ],
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "status": "PASS",
+    "started_at": "2026-10-08T07:23:57.154246+08:00",
+    "duration_seconds": 0.026,
+    "evidence": "volumes-after-stop.log",
+    "summary": "2f0cb1b43942984d58c21106fc837a7bcd98b4dacbf44ec26a1e4a9a0148f17b \n5cb37b53c5928c8f4f737b744ac423a9de4cefb960877ac2393ec707ee5ae885 \n7e8a427e33b700123b7558bef3e44a3ecc2fffe9179fcee0569059d29023e012 \n8f6a61721226d88201ab5a33e7a19e7f491882c88211f40b1a8082ded1d10a55 \n40a6c79baa0f35024bf15c16dc1eb00aa47c394ca87a4be067560a34a87af6ad \n059c53c40bf888d6635045cc0b100dc072242b6f90831d34af2a5469b2a5e233 \n923b5bb0df8e2bb9a7a4a1da6e2b6fc4b15a8066bd954b9eabc2b6714fa0053b \nb174c4df1595b3857673ccfae1a93a488ce62fd4330122a513f08fdb44f26478 \nd84ff1d2cdc05ebaf6970d272c5c0d2f36348000fb1caebebfbad08748d6b36b \npet-platform-p02-validation_postgres-data pet-platform-p02-validation\npet-platform-p02-validation_rabbitmq-data pet-platform-p02-validation\npet-platform-p02-validation_redis-data pet-platform-p02-validation\n"
+  },
+  {
+    "record": "volumes-before.json",
+    "id": "volumes-before",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "docker",
+      "volume",
+      "ls",
+      "--format",
+      "{{.Name}} {{.Label \"com.docker.compose.project\"}}"
+    ],
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "status": "PASS",
+    "started_at": "2026-10-08T07:21:49.297663+08:00",
+    "duration_seconds": 0.017,
+    "evidence": "volumes-before.log",
+    "summary": "2f0cb1b43942984d58c21106fc837a7bcd98b4dacbf44ec26a1e4a9a0148f17b \n5cb37b53c5928c8f4f737b744ac423a9de4cefb960877ac2393ec707ee5ae885 \n7e8a427e33b700123b7558bef3e44a3ecc2fffe9179fcee0569059d29023e012 \n8f6a61721226d88201ab5a33e7a19e7f491882c88211f40b1a8082ded1d10a55 \n40a6c79baa0f35024bf15c16dc1eb00aa47c394ca87a4be067560a34a87af6ad \n059c53c40bf888d6635045cc0b100dc072242b6f90831d34af2a5469b2a5e233 \n923b5bb0df8e2bb9a7a4a1da6e2b6fc4b15a8066bd954b9eabc2b6714fa0053b \nb174c4df1595b3857673ccfae1a93a488ce62fd4330122a513f08fdb44f26478 \nd84ff1d2cdc05ebaf6970d272c5c0d2f36348000fb1caebebfbad08748d6b36b \npet-platform-p02-validation_postgres-data pet-platform-p02-validation\npet-platform-p02-validation_rabbitmq-data pet-platform-p02-validation\npet-platform-p02-validation_redis-data pet-platform-p02-validation\n"
+  },
+  {
+    "record": "volumes-final-r2.json",
+    "id": "volumes-final-r2",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "docker",
+      "volume",
+      "ls",
+      "--format",
+      "{{.Name}} {{.Label \"com.docker.compose.project\"}}"
+    ],
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "status": "PASS",
+    "started_at": "2026-10-08T07:31:52.713322+08:00",
+    "duration_seconds": 0.029,
+    "evidence": "volumes-final-r2.log",
+    "summary": "2f0cb1b43942984d58c21106fc837a7bcd98b4dacbf44ec26a1e4a9a0148f17b \n5cb37b53c5928c8f4f737b744ac423a9de4cefb960877ac2393ec707ee5ae885 \n7e8a427e33b700123b7558bef3e44a3ecc2fffe9179fcee0569059d29023e012 \n8f6a61721226d88201ab5a33e7a19e7f491882c88211f40b1a8082ded1d10a55 \n40a6c79baa0f35024bf15c16dc1eb00aa47c394ca87a4be067560a34a87af6ad \n059c53c40bf888d6635045cc0b100dc072242b6f90831d34af2a5469b2a5e233 \n923b5bb0df8e2bb9a7a4a1da6e2b6fc4b15a8066bd954b9eabc2b6714fa0053b \nb174c4df1595b3857673ccfae1a93a488ce62fd4330122a513f08fdb44f26478 \nd84ff1d2cdc05ebaf6970d272c5c0d2f36348000fb1caebebfbad08748d6b36b \npet-platform-p02-validation_postgres-data pet-platform-p02-validation\npet-platform-p02-validation_rabbitmq-data pet-platform-p02-validation\npet-platform-p02-validation_redis-data pet-platform-p02-validation\n"
+  },
+  {
+    "record": "volumes-final.json",
+    "id": "volumes-final",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "docker",
+      "volume",
+      "ls",
+      "--format",
+      "{{.Name}} {{.Label \"com.docker.compose.project\"}}"
+    ],
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "status": "PASS",
+    "started_at": "2026-10-08T07:26:12.264479+08:00",
+    "duration_seconds": 0.025,
+    "evidence": "volumes-final.log",
+    "summary": "2f0cb1b43942984d58c21106fc837a7bcd98b4dacbf44ec26a1e4a9a0148f17b \n5cb37b53c5928c8f4f737b744ac423a9de4cefb960877ac2393ec707ee5ae885 \n7e8a427e33b700123b7558bef3e44a3ecc2fffe9179fcee0569059d29023e012 \n8f6a61721226d88201ab5a33e7a19e7f491882c88211f40b1a8082ded1d10a55 \n40a6c79baa0f35024bf15c16dc1eb00aa47c394ca87a4be067560a34a87af6ad \n059c53c40bf888d6635045cc0b100dc072242b6f90831d34af2a5469b2a5e233 \n923b5bb0df8e2bb9a7a4a1da6e2b6fc4b15a8066bd954b9eabc2b6714fa0053b \nb174c4df1595b3857673ccfae1a93a488ce62fd4330122a513f08fdb44f26478 \nd84ff1d2cdc05ebaf6970d272c5c0d2f36348000fb1caebebfbad08748d6b36b \npet-platform-p02-validation_postgres-data pet-platform-p02-validation\npet-platform-p02-validation_rabbitmq-data pet-platform-p02-validation\npet-platform-p02-validation_redis-data pet-platform-p02-validation\n"
+  },
+  {
+    "record": "web-build-final.json",
+    "id": "web-build-final",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "pnpm",
+      "build:web"
+    ],
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "status": "PASS",
+    "started_at": "2026-10-08T07:34:24.724294+08:00",
+    "duration_seconds": 4.316,
+    "evidence": "web-build-final.log",
+    "summary": "\n> pet-platform@0.0.0 build:web /Users/kimwell/work/pet-platform\n> pnpm --filter @pet/admin-web build\n\n\n> @pet/admin-web@0.0.0 build /Users/kimwell/work/pet-platform/apps/admin-web\n> tsc --noEmit && vite build\n\nvite v7.3.7 building client environment for production...\ntransforming...\n✓ 1674 modules transformed.\nrendering chunks...\ncomputing gzip size...\ndist/index.html                   0.41 kB │ gzip:   0.31 kB\ndist/assets/index-CNdMMY7y.css    3.24 kB │ gzip:   1.30 kB\ndist/assets/index-D9gzWvXX.js   621.32 kB │ gzip: 206.36 kB\n✓ built in 2.66s\n\n(!) Some chunks are larger than 500 kB after minification. Consider:\n- Using dynamic import() to code-split the application\n- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks\n- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.\n"
+  },
+  {
+    "record": "web-build-r2.json",
+    "id": "web-build-r2",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "pnpm",
+      "build:web"
+    ],
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "status": "PASS",
+    "started_at": "2026-10-08T07:23:59.300842+08:00",
+    "duration_seconds": 4.35,
+    "evidence": "web-build-r2.log",
+    "summary": "\n> pet-platform@0.0.0 build:web /Users/kimwell/work/pet-platform\n> pnpm --filter @pet/admin-web build\n\n\n> @pet/admin-web@0.0.0 build /Users/kimwell/work/pet-platform/apps/admin-web\n> tsc --noEmit && vite build\n\nvite v7.3.7 building client environment for production...\ntransforming...\n✓ 1674 modules transformed.\nrendering chunks...\ncomputing gzip size...\ndist/index.html                   0.41 kB │ gzip:   0.31 kB\ndist/assets/index-CNdMMY7y.css    3.24 kB │ gzip:   1.30 kB\ndist/assets/index-D9gzWvXX.js   621.32 kB │ gzip: 206.36 kB\n✓ built in 2.66s\n\n(!) Some chunks are larger than 500 kB after minification. Consider:\n- Using dynamic import() to code-split the application\n- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks\n- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.\n"
+  },
+  {
+    "record": "web-build.json",
+    "id": "web-build",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "pnpm",
+      "build:web"
+    ],
+    "exit_code": 2,
+    "expected_exit_code": 0,
+    "status": "FAIL",
+    "started_at": "2026-10-08T07:23:33.498314+08:00",
+    "duration_seconds": 1.914,
+    "evidence": "web-build.log",
+    "summary": "\n> pet-platform@0.0.0 build:web /Users/kimwell/work/pet-platform\n> pnpm --filter @pet/admin-web build\n\n\n> @pet/admin-web@0.0.0 build /Users/kimwell/work/pet-platform/apps/admin-web\n> tsc --noEmit && vite build\n\nvite.config.ts(5,29): error TS2769: No overload matches this call.\n  The last overload gave the following error.\n    Argument of type '({ mode, command, isPreview }: ConfigEnv) => { plugins: Plugin<any>[][]; server: { host: string; port: number; strictPort: true; proxy: { '/api': { target: string; changeOrigin: boolean; }; } | { '/api'?: undefined; }; }; preview: { ...; }; }' is not assignable to parameter of type 'UserConfigExport'.\n      Type '({ mode, command, isPreview }: ConfigEnv) => { plugins: Plugin<any>[][]; server: { host: string; port: number; strictPort: true; proxy: { '/api': { target: string; changeOrigin: boolean; }; } | { '/api'?: undefined; }; }; preview: { ...; }; }' is not assignable to type 'UserConfigFnObject'.\n        Call signature return types '{ plugins: Plugin<any>[][]; server: { host: string; port: number; strictPort: true; proxy: { '/api': { target: string; changeOrigin: boolean; }; } | { '/api'?: undefined; }; }; preview: { host: string; port: number; strictPort: true; proxy: {}; }; }' and 'UserConfig' are incompatible.\n          The types of 'server.proxy' are incompatible between these types.\n            Type '{ '/api': { target: string; changeOrigin: boolean; }; } | { '/api'?: undefined; }' is not assignable to type 'Record<string, string | ProxyOptions> | undefined'.\n              Type '{ '/api'?: undefined; }' is not assignable to type 'Record<string, string | ProxyOptions>'.\n                Property ''/api'' is incompatible with index signature.\n                  Type 'undefined' is not assignable to type 'string | ProxyOptions'.\n/Users/kimwell/work/pet-platform/apps/admin-web:\n ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL  @pet/admin-web@0.0.0 build: `tsc --noEmit && vite build`\nExit status 2\n ELIFECYCLE  Command failed with exit code 2.\n"
+  },
+  {
+    "record": "web-credential-origin.json",
+    "id": "web-credential-origin",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "pnpm",
+      "dev:web"
+    ],
+    "exit_code": 1,
+    "expected_exit_code": 1,
+    "status": "PASS",
+    "started_at": "2026-10-08T07:27:09.266751+08:00",
+    "duration_seconds": 0.605,
+    "evidence": "web-credential-origin.log",
+    "summary": "\n> pet-platform@0.0.0 dev:web /Users/kimwell/work/pet-platform\n> pnpm --filter @pet/admin-web dev\n\n\n> @pet/admin-web@0.0.0 dev /Users/kimwell/work/pet-platform/apps/admin-web\n> vite\n\n/Users/kimwell/work/pet-platform/apps/admin-web:\n ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL  @pet/admin-web@0.0.0 dev: `vite`\nExit status 1\n ELIFECYCLE  Command failed with exit code 1.\nfailed to load config from /Users/kimwell/work/pet-platform/apps/admin-web/vite.config.ts\nerror when starting dev server:\nError: DEV_BACKEND_ORIGIN 必须是完整的 HTTP/HTTPS 来源，不包含凭据、路径、查询或片段，端口须为 1～65535\n    at resolveDevBackendOrigin (file:///Users/kimwell/work/pet-platform/apps/admin-web/node_modules/.vite-temp/vite.config.ts.timestamp-1791415629176-25a5d50703caf.mjs:16:11)\n    at file:///Users/kimwell/work/pet-platform/apps/admin-web/node_modules/.vite-temp/vite.config.ts.timestamp-1791415629176-25a5d50703caf.mjs:23:73\n    at loadConfigFromFile (file:///Users/kimwell/work/pet-platform/node_modules/.pnpm/vite@7.3.7_@types+node@24.19.1/node_modules/vite/dist/node/chunks/config.js:36024:64)\n    at async resolveConfig (file:///Users/kimwell/work/pet-platform/node_modules/.pnpm/vite@7.3.7_@types+node@24.19.1/node_modules/vite/dist/node/chunks/config.js:35671:22)\n    at async _createServer (file:///Users/kimwell/work/pet-platform/node_modules/.pnpm/vite@7.3.7_@types+node@24.19.1/node_modules/vite/dist/node/chunks/config.js:25612:67)\n    at async CAC.<anonymous> (file:///Users/kimwell/work/pet-platform/node_modules/.pnpm/vite@7.3.7_@types+node@24.19.1/node_modules/vite/dist/node/cli.js:572:18)\n",
+    "environment_fixture": {
+      "DEV_BACKEND_ORIGIN": "<公开反例输入>"
+    }
+  },
+  {
+    "record": "web-dev-group-before.json",
+    "command": [
+      "ps",
+      "-o",
+      "pid=,pgid=,command=",
+      "-g",
+      "692"
+    ],
+    "exit_code": 0,
+    "output": "  692   692 /var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/tools/node-v24.21.0-darwin-arm64/bin/node /var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/pet-platform-p02-02-_qb1x3n7/tools/pnpm/package/bin/pnpm.cjs dev:web\n  751   692 /var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/tools/node-v24.21.0-darwin-arm64/bin/node /var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/pet-platform-p02-02-_qb1x3n7/tools/pnpm/package/bin/pnpm.cjs --filter @pet/admin-web dev\n  809   692 node /Users/kimwell/work/pet-platform/apps/admin-web/node_modules/.bin/../vite/bin/vite.js\n  821   692 /Users/kimwell/work/pet-platform/node_modules/.pnpm/@esbuild+darwin-arm64@0.28.2/node_modules/@esbuild/darwin-arm64/bin/esbuild --service=0.28.2 --ping\n"
+  },
+  {
+    "record": "web-dev.json",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "pnpm",
+      "dev:web"
+    ],
+    "pid": 692,
+    "port": 5173,
+    "status": "PASS",
+    "exit_code": null,
+    "evidence": "web-dev.log",
+    "boundary": "长驻进程启动观察，不伪造命令退出码"
+  },
+  {
+    "record": "web-empty-origin.json",
+    "id": "web-empty-origin",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "pnpm",
+      "dev:web"
+    ],
+    "exit_code": 1,
+    "expected_exit_code": 1,
+    "status": "PASS",
+    "started_at": "2026-10-08T07:27:08.050852+08:00",
+    "duration_seconds": 0.631,
+    "evidence": "web-empty-origin.log",
+    "summary": "\n> pet-platform@0.0.0 dev:web /Users/kimwell/work/pet-platform\n> pnpm --filter @pet/admin-web dev\n\n\n> @pet/admin-web@0.0.0 dev /Users/kimwell/work/pet-platform/apps/admin-web\n> vite\n\n/Users/kimwell/work/pet-platform/apps/admin-web:\n ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL  @pet/admin-web@0.0.0 dev: `vite`\nExit status 1\n ELIFECYCLE  Command failed with exit code 1.\nfailed to load config from /Users/kimwell/work/pet-platform/apps/admin-web/vite.config.ts\nerror when starting dev server:\nError: DEV_BACKEND_ORIGIN 必须是完整的 HTTP/HTTPS 来源，不包含凭据、路径、查询或片段，端口须为 1～65535\n    at resolveDevBackendOrigin (file:///Users/kimwell/work/pet-platform/apps/admin-web/node_modules/.vite-temp/vite.config.ts.timestamp-1791415627963-7ac0ce061174d.mjs:13:11)\n    at file:///Users/kimwell/work/pet-platform/apps/admin-web/node_modules/.vite-temp/vite.config.ts.timestamp-1791415627963-7ac0ce061174d.mjs:23:73\n    at loadConfigFromFile (file:///Users/kimwell/work/pet-platform/node_modules/.pnpm/vite@7.3.7_@types+node@24.19.1/node_modules/vite/dist/node/chunks/config.js:36024:64)\n    at async resolveConfig (file:///Users/kimwell/work/pet-platform/node_modules/.pnpm/vite@7.3.7_@types+node@24.19.1/node_modules/vite/dist/node/chunks/config.js:35671:22)\n    at async _createServer (file:///Users/kimwell/work/pet-platform/node_modules/.pnpm/vite@7.3.7_@types+node@24.19.1/node_modules/vite/dist/node/chunks/config.js:25612:67)\n    at async CAC.<anonymous> (file:///Users/kimwell/work/pet-platform/node_modules/.pnpm/vite@7.3.7_@types+node@24.19.1/node_modules/vite/dist/node/cli.js:572:18)\n",
+    "environment_fixture": {
+      "DEV_BACKEND_ORIGIN": "<公开反例输入>"
+    }
+  },
+  {
+    "record": "web-invalid-origin.json",
+    "id": "web-invalid-origin",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "pnpm",
+      "dev:web"
+    ],
+    "exit_code": 1,
+    "expected_exit_code": 1,
+    "status": "PASS",
+    "started_at": "2026-10-08T07:27:08.661160+08:00",
+    "duration_seconds": 0.61,
+    "evidence": "web-invalid-origin.log",
+    "summary": "\n> pet-platform@0.0.0 dev:web /Users/kimwell/work/pet-platform\n> pnpm --filter @pet/admin-web dev\n\n\n> @pet/admin-web@0.0.0 dev /Users/kimwell/work/pet-platform/apps/admin-web\n> vite\n\n/Users/kimwell/work/pet-platform/apps/admin-web:\n ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL  @pet/admin-web@0.0.0 dev: `vite`\nExit status 1\n ELIFECYCLE  Command failed with exit code 1.\nfailed to load config from /Users/kimwell/work/pet-platform/apps/admin-web/vite.config.ts\nerror when starting dev server:\nError: DEV_BACKEND_ORIGIN 必须是完整的 HTTP/HTTPS 来源，不包含凭据、路径、查询或片段，端口须为 1～65535\n    at resolveDevBackendOrigin (file:///Users/kimwell/work/pet-platform/apps/admin-web/node_modules/.vite-temp/vite.config.ts.timestamp-1791415628578-65bee2c385d2b.mjs:13:11)\n    at file:///Users/kimwell/work/pet-platform/apps/admin-web/node_modules/.vite-temp/vite.config.ts.timestamp-1791415628578-65bee2c385d2b.mjs:23:73\n    at loadConfigFromFile (file:///Users/kimwell/work/pet-platform/node_modules/.pnpm/vite@7.3.7_@types+node@24.19.1/node_modules/vite/dist/node/chunks/config.js:36024:64)\n    at async resolveConfig (file:///Users/kimwell/work/pet-platform/node_modules/.pnpm/vite@7.3.7_@types+node@24.19.1/node_modules/vite/dist/node/chunks/config.js:35671:22)\n    at async _createServer (file:///Users/kimwell/work/pet-platform/node_modules/.pnpm/vite@7.3.7_@types+node@24.19.1/node_modules/vite/dist/node/chunks/config.js:25612:67)\n    at async CAC.<anonymous> (file:///Users/kimwell/work/pet-platform/node_modules/.pnpm/vite@7.3.7_@types+node@24.19.1/node_modules/vite/dist/node/cli.js:572:18)\n",
+    "environment_fixture": {
+      "DEV_BACKEND_ORIGIN": "<公开反例输入>"
+    }
+  },
+  {
+    "record": "web-port-occupied.json",
+    "id": "web-port-occupied",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "pnpm",
+      "dev:web"
+    ],
+    "exit_code": 1,
+    "expected_exit_code": 1,
+    "status": "PASS",
+    "started_at": "2026-10-08T07:27:09.887585+08:00",
+    "duration_seconds": 0.621,
+    "evidence": "web-port-occupied.log",
+    "summary": "\n> pet-platform@0.0.0 dev:web /Users/kimwell/work/pet-platform\n> pnpm --filter @pet/admin-web dev\n\n\n> @pet/admin-web@0.0.0 dev /Users/kimwell/work/pet-platform/apps/admin-web\n> vite\n\n/Users/kimwell/work/pet-platform/apps/admin-web:\n ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL  @pet/admin-web@0.0.0 dev: `vite`\nExit status 1\n ELIFECYCLE  Command failed with exit code 1.\nerror when starting dev server:\nError: Port 5173 is already in use\n    at Server.onError$1 (file:///Users/kimwell/work/pet-platform/node_modules/.pnpm/vite@7.3.7_@types+node@24.19.1/node_modules/vite/dist/node/chunks/config.js:15174:28)\n    at Server.emit (node:events:514:28)\n    at emitErrorNT (node:net:2416:8)\n    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)\n"
+  },
+  {
+    "record": "web-preview-group-before.json",
+    "command": [
+      "ps",
+      "-o",
+      "pid=,pgid=,command=",
+      "-g",
+      "822"
+    ],
+    "exit_code": 0,
+    "output": "  822   822 /var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/tools/node-v24.21.0-darwin-arm64/bin/node /var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/pet-platform-p02-02-_qb1x3n7/tools/pnpm/package/bin/pnpm.cjs preview:web\n  876   822 /var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/tools/node-v24.21.0-darwin-arm64/bin/node /var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/pet-platform-p02-02-_qb1x3n7/tools/pnpm/package/bin/pnpm.cjs --filter @pet/admin-web preview\n  927   822 node /Users/kimwell/work/pet-platform/apps/admin-web/node_modules/.bin/../vite/bin/vite.js preview\n  936   822 /Users/kimwell/work/pet-platform/node_modules/.pnpm/@esbuild+darwin-arm64@0.28.2/node_modules/@esbuild/darwin-arm64/bin/esbuild --service=0.28.2 --ping\n"
+  },
+  {
+    "record": "web-preview.json",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "pnpm",
+      "preview:web"
+    ],
+    "pid": 822,
+    "port": 4173,
+    "status": "PASS",
+    "exit_code": null,
+    "evidence": "web-preview.log",
+    "boundary": "长驻进程启动观察，不伪造命令退出码"
+  }
+]

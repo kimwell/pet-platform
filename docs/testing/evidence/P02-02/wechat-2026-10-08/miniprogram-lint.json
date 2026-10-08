@@ -1,0 +1,14 @@
+{
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "command": [
+    "pnpm",
+    "--filter",
+    "@pet/wechat-miniprogram",
+    "lint"
+  ],
+  "started_at": "2026-10-08T08:05:41.504435+08:00",
+  "duration_seconds": 1.885,
+  "exit_code": 0,
+  "log": "miniprogram-lint.log",
+  "summary": "\n> @pet/wechat-miniprogram@0.0.0 lint /Users/kimwell/work/pet-platform/apps/wechat-miniprogram\n> eslint miniprogram --max-warnings=0\n\n"
+}

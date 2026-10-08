@@ -1,0 +1,15 @@
+{
+  "id": "infra-no-env-file",
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "command": [
+    "pnpm",
+    "check:infra"
+  ],
+  "exit_code": 1,
+  "expected_exit_code": 1,
+  "status": "PASS",
+  "started_at": "2026-10-08T07:27:10.789204+08:00",
+  "duration_seconds": 0.258,
+  "evidence": "infra-no-env-file.log",
+  "summary": "\n> pet-platform@0.0.0 check:infra /Users/kimwell/work/pet-platform\n> node scripts/local-infra.mjs check\n\n ELIFECYCLE  Command failed with exit code 1.\n缺少本地基础设施环境文件；请复制 infra/local/.env.example 为 infra/local/.env 并填写专用凭据，或指定 --env-file。\n"
+}

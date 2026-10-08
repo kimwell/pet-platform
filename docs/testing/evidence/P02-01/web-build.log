@@ -1,0 +1,13 @@
+
+> pet-platform@0.0.0 build:web /Users/kimwell/work/pet-platform
+> pnpm --filter @pet/admin-web build
+
+
+> @pet/admin-web@0.0.0 build /Users/kimwell/work/pet-platform/apps/admin-web
+> tsc --noEmit && vite build
+
+src/app/router/router.test.tsx(15,32): error TS2339: Property 'statusCode' does not exist on type 'RouterState<Route<Register, any, "/", "/", string, "__root__", undefined, {}, {}, AnyContext, AnyContext, {}, undefined, readonly [Route<unknown, RootRoute<Register, ... 10 more ..., undefined>, ... 15 more ..., undefined>], unknown, unknown, unknown, undefined>, MakeRouteMatchUnion>'.
+/Users/kimwell/work/pet-platform/apps/admin-web:
+ ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL  @pet/admin-web@0.0.0 build: `tsc --noEmit && vite build`
+Exit status 2
+ ELIFECYCLE  Command failed with exit code 2.

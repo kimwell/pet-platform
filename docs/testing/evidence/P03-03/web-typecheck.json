@@ -1,0 +1,17 @@
+{
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "argv": [
+    "pnpm",
+    "--filter",
+    "@pet/admin-web",
+    "typecheck"
+  ],
+  "exitCode": 0,
+  "startedAtUTC": "2026-10-08T01:33:26.712604+00:00",
+  "finishedAtUTC": "2026-10-08T01:33:31.747743+00:00",
+  "toolchain": {
+    "JAVA_HOME": "/private/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/pet-platform-p02-02-_qb1x3n7/tools/jdk/jdk-21.0.12.1+1/Contents/Home"
+  },
+  "log": "web-typecheck.log",
+  "summary": "\n> @pet/admin-web@0.0.0 typecheck /Users/kimwell/work/pet-platform/apps/admin-web\n> tsc --noEmit\n\n"
+}

@@ -1,0 +1,732 @@
+[
+  {
+    "id": "target-node",
+    "cwd": "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm",
+    "command": [
+      "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/tools/node-v24.21.0-darwin-arm64/bin/node",
+      "--version"
+    ],
+    "exit_code": 0,
+    "result": "PASS",
+    "seconds": 3.57,
+    "log": "target-node.log"
+  },
+  {
+    "id": "target-pnpm",
+    "cwd": "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm",
+    "command": [
+      "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/tools/node-v24.21.0-darwin-arm64/bin/node",
+      "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/tools/pnpm/package/bin/pnpm.cjs",
+      "--version"
+    ],
+    "exit_code": 0,
+    "result": "PASS",
+    "seconds": 0.29,
+    "log": "target-pnpm.log"
+  },
+  {
+    "id": "probe-java",
+    "cwd": "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm",
+    "command": [
+      "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/tools/jdk-21.0.12.1+1/Contents/Home/bin/java",
+      "-version"
+    ],
+    "exit_code": 0,
+    "result": "PASS",
+    "seconds": 0.77,
+    "log": "probe-java.log"
+  },
+  {
+    "id": "wrapper-bootstrap",
+    "cwd": "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/backend-probe",
+    "command": [
+      "mvn",
+      "-B",
+      "-ntp",
+      "-s",
+      "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/settings.xml",
+      "-gs",
+      "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/settings.xml",
+      "-Dmaven.repo.local=/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/m2",
+      "org.apache.maven.plugins:maven-wrapper-plugin:3.3.4:wrapper",
+      "-Dmaven=3.9.16",
+      "-Dtype=only-script"
+    ],
+    "exit_code": 0,
+    "result": "PASS",
+    "seconds": 60.22,
+    "log": "wrapper-bootstrap.log"
+  },
+  {
+    "id": "wrapper-version",
+    "cwd": "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/backend-probe",
+    "command": [
+      "./mvnw",
+      "-B",
+      "-ntp",
+      "-s",
+      "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/settings.xml",
+      "-gs",
+      "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/settings.xml",
+      "-Dmaven.repo.local=/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/m2",
+      "--version"
+    ],
+    "exit_code": 0,
+    "result": "PASS",
+    "seconds": 23.69,
+    "log": "wrapper-version.log"
+  },
+  {
+    "id": "backend-resolve",
+    "cwd": "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/backend-probe",
+    "command": [
+      "./mvnw",
+      "-B",
+      "-ntp",
+      "-s",
+      "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/settings.xml",
+      "-gs",
+      "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/settings.xml",
+      "-Dmaven.repo.local=/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/m2",
+      "org.apache.maven.plugins:maven-dependency-plugin:3.9.0:tree",
+      "-Dverbose",
+      "-DoutputFile=/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/evidence/backend-dependency-tree.txt"
+    ],
+    "exit_code": 0,
+    "result": "PASS",
+    "seconds": 248.2,
+    "log": "backend-resolve.log"
+  },
+  {
+    "id": "backend-effective-pom",
+    "cwd": "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/backend-probe",
+    "command": [
+      "./mvnw",
+      "-B",
+      "-ntp",
+      "-s",
+      "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/settings.xml",
+      "-gs",
+      "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/settings.xml",
+      "-Dmaven.repo.local=/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/m2",
+      "help:effective-pom",
+      "-Doutput=/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/evidence/backend-effective-pom.xml"
+    ],
+    "exit_code": 0,
+    "result": "PASS",
+    "seconds": 35.38,
+    "log": "backend-effective-pom.log"
+  },
+  {
+    "id": "frontend-install",
+    "cwd": "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/frontend-probe",
+    "command": [
+      "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/tools/node-v24.21.0-darwin-arm64/bin/node",
+      "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/tools/pnpm/package/bin/pnpm.cjs",
+      "--store-dir",
+      "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/pnpm-store",
+      "install",
+      "--reporter=append-only"
+    ],
+    "exit_code": 1,
+    "result": "FAIL",
+    "seconds": 206.67,
+    "log": "frontend-install.log"
+  },
+  {
+    "id": "frontend-install-fixed",
+    "cwd": "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/frontend-probe",
+    "command": [
+      "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/tools/node-v24.21.0-darwin-arm64/bin/node",
+      "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/tools/pnpm/package/bin/pnpm.cjs",
+      "--store-dir",
+      "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/pnpm-store",
+      "install",
+      "--reporter=append-only"
+    ],
+    "exit_code": 0,
+    "result": "PASS",
+    "seconds": 1.63,
+    "log": "frontend-install-fixed.log"
+  },
+  {
+    "id": "frontend-lock-replay",
+    "cwd": "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/frontend-probe",
+    "command": [
+      "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/tools/node-v24.21.0-darwin-arm64/bin/node",
+      "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/tools/pnpm/package/bin/pnpm.cjs",
+      "--store-dir",
+      "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/pnpm-store",
+      "install",
+      "--frozen-lockfile",
+      "--reporter=append-only"
+    ],
+    "exit_code": 0,
+    "result": "PASS",
+    "seconds": 0.35,
+    "log": "frontend-lock-replay.log"
+  },
+  {
+    "id": "web-types",
+    "cwd": "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/frontend-probe",
+    "command": [
+      "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/tools/node-v24.21.0-darwin-arm64/bin/node",
+      "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/tools/pnpm/package/bin/pnpm.cjs",
+      "--store-dir",
+      "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/pnpm-store",
+      "exec",
+      "tsc",
+      "-p",
+      "web/tsconfig.json"
+    ],
+    "exit_code": 1,
+    "result": "FAIL",
+    "seconds": 0.19,
+    "log": "web-types.log",
+    "verification_result": "NOT_EXECUTED",
+    "reason": "驱动参数不适用于子命令，目标检查尚未运行；后续已修正并重验"
+  },
+  {
+    "id": "web-build",
+    "cwd": "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/frontend-probe",
+    "command": [
+      "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/tools/node-v24.21.0-darwin-arm64/bin/node",
+      "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/tools/pnpm/package/bin/pnpm.cjs",
+      "--store-dir",
+      "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/pnpm-store",
+      "--dir",
+      "web",
+      "exec",
+      "vite",
+      "build"
+    ],
+    "exit_code": 1,
+    "result": "FAIL",
+    "seconds": 0.19,
+    "log": "web-build.log",
+    "verification_result": "NOT_EXECUTED",
+    "reason": "驱动参数不适用于子命令，目标检查尚未运行；后续已修正并重验"
+  },
+  {
+    "id": "web-runtime",
+    "cwd": "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/frontend-probe",
+    "command": [
+      "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/tools/node-v24.21.0-darwin-arm64/bin/node",
+      "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/tools/pnpm/package/bin/pnpm.cjs",
+      "--store-dir",
+      "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/pnpm-store",
+      "exec",
+      "vitest",
+      "run",
+      "web/src/compatibility.test.tsx",
+      "--environment",
+      "node"
+    ],
+    "exit_code": 1,
+    "result": "FAIL",
+    "seconds": 0.18,
+    "log": "web-runtime.log",
+    "verification_result": "NOT_EXECUTED",
+    "reason": "驱动参数不适用于子命令，目标检查尚未运行；后续已修正并重验"
+  },
+  {
+    "id": "frontend-lint",
+    "cwd": "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/frontend-probe",
+    "command": [
+      "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/tools/node-v24.21.0-darwin-arm64/bin/node",
+      "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/tools/pnpm/package/bin/pnpm.cjs",
+      "--store-dir",
+      "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/pnpm-store",
+      "exec",
+      "eslint",
+      "web/src",
+      "mini/src",
+      "--max-warnings=0"
+    ],
+    "exit_code": 1,
+    "result": "FAIL",
+    "seconds": 0.18,
+    "log": "frontend-lint.log",
+    "verification_result": "NOT_EXECUTED",
+    "reason": "驱动参数不适用于子命令，目标检查尚未运行；后续已修正并重验"
+  },
+  {
+    "id": "mini-types",
+    "cwd": "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/frontend-probe",
+    "command": [
+      "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/tools/node-v24.21.0-darwin-arm64/bin/node",
+      "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/tools/pnpm/package/bin/pnpm.cjs",
+      "--store-dir",
+      "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/pnpm-store",
+      "exec",
+      "tsc",
+      "-p",
+      "mini/tsconfig.json"
+    ],
+    "exit_code": 1,
+    "result": "FAIL",
+    "seconds": 0.19,
+    "log": "mini-types.log",
+    "verification_result": "NOT_EXECUTED",
+    "reason": "驱动参数不适用于子命令，目标检查尚未运行；后续已修正并重验"
+  },
+  {
+    "id": "openapi-types",
+    "cwd": "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/frontend-probe",
+    "command": [
+      "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/tools/node-v24.21.0-darwin-arm64/bin/node",
+      "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/tools/pnpm/package/bin/pnpm.cjs",
+      "--store-dir",
+      "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/pnpm-store",
+      "exec",
+      "openapi-typescript",
+      "contract.json",
+      "-o",
+      "contract.generated.ts"
+    ],
+    "exit_code": 1,
+    "result": "FAIL",
+    "seconds": 0.19,
+    "log": "openapi-types.log",
+    "verification_result": "NOT_EXECUTED",
+    "reason": "驱动参数不适用于子命令，目标检查尚未运行；后续已修正并重验"
+  },
+  {
+    "id": "openapi-types-compile",
+    "cwd": "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/frontend-probe",
+    "command": [
+      "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/tools/node-v24.21.0-darwin-arm64/bin/node",
+      "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/tools/pnpm/package/bin/pnpm.cjs",
+      "--store-dir",
+      "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/pnpm-store",
+      "exec",
+      "tsc",
+      "--noEmit",
+      "--strict",
+      "--skipLibCheck",
+      "--target",
+      "ES2022",
+      "--moduleResolution",
+      "bundler",
+      "--module",
+      "ESNext",
+      "contract.generated.ts"
+    ],
+    "exit_code": 1,
+    "result": "FAIL",
+    "seconds": 0.19,
+    "log": "openapi-types-compile.log",
+    "verification_result": "NOT_EXECUTED",
+    "reason": "驱动参数不适用于子命令，目标检查尚未运行；后续已修正并重验"
+  },
+  {
+    "id": "frontend-direct-tree",
+    "cwd": "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/frontend-probe",
+    "command": [
+      "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/tools/node-v24.21.0-darwin-arm64/bin/node",
+      "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/tools/pnpm/package/bin/pnpm.cjs",
+      "--store-dir",
+      "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/pnpm-store",
+      "list",
+      "-r",
+      "--depth",
+      "0",
+      "--json"
+    ],
+    "exit_code": 1,
+    "result": "FAIL",
+    "seconds": 0.19,
+    "log": "frontend-direct-tree.log",
+    "verification_result": "NOT_EXECUTED",
+    "reason": "驱动参数不适用于子命令，目标检查尚未运行；后续已修正并重验"
+  },
+  {
+    "id": "frontend-install-fixed-r2",
+    "cwd": "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/frontend-probe",
+    "command": [
+      "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/tools/node-v24.21.0-darwin-arm64/bin/node",
+      "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/tools/pnpm/package/bin/pnpm.cjs",
+      "--config.store-dir=/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/pnpm-store",
+      "install",
+      "--reporter=append-only"
+    ],
+    "exit_code": 0,
+    "result": "PASS",
+    "seconds": 0.41,
+    "log": "frontend-install-fixed-r2.log"
+  },
+  {
+    "id": "frontend-lock-replay-r2",
+    "cwd": "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/frontend-probe",
+    "command": [
+      "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/tools/node-v24.21.0-darwin-arm64/bin/node",
+      "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/tools/pnpm/package/bin/pnpm.cjs",
+      "--config.store-dir=/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/pnpm-store",
+      "install",
+      "--frozen-lockfile",
+      "--reporter=append-only"
+    ],
+    "exit_code": 0,
+    "result": "PASS",
+    "seconds": 0.37,
+    "log": "frontend-lock-replay-r2.log"
+  },
+  {
+    "id": "web-types-r2",
+    "cwd": "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/frontend-probe",
+    "command": [
+      "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/tools/node-v24.21.0-darwin-arm64/bin/node",
+      "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/tools/pnpm/package/bin/pnpm.cjs",
+      "--config.store-dir=/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/pnpm-store",
+      "exec",
+      "tsc",
+      "-p",
+      "web/tsconfig.json"
+    ],
+    "exit_code": 2,
+    "result": "FAIL",
+    "seconds": 6.31,
+    "log": "web-types-r2.log"
+  },
+  {
+    "id": "web-build-r2",
+    "cwd": "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/frontend-probe",
+    "command": [
+      "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/tools/node-v24.21.0-darwin-arm64/bin/node",
+      "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/tools/pnpm/package/bin/pnpm.cjs",
+      "--config.store-dir=/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/pnpm-store",
+      "--dir",
+      "web",
+      "exec",
+      "vite",
+      "build"
+    ],
+    "exit_code": 0,
+    "result": "PASS",
+    "seconds": 5.54,
+    "log": "web-build-r2.log"
+  },
+  {
+    "id": "web-runtime-r2",
+    "cwd": "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/frontend-probe",
+    "command": [
+      "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/tools/node-v24.21.0-darwin-arm64/bin/node",
+      "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/tools/pnpm/package/bin/pnpm.cjs",
+      "--config.store-dir=/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/pnpm-store",
+      "exec",
+      "vitest",
+      "run",
+      "web/src/compatibility.test.tsx",
+      "--environment",
+      "node"
+    ],
+    "exit_code": 0,
+    "result": "PASS",
+    "seconds": 1.64,
+    "log": "web-runtime-r2.log"
+  },
+  {
+    "id": "frontend-lint-r2",
+    "cwd": "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/frontend-probe",
+    "command": [
+      "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/tools/node-v24.21.0-darwin-arm64/bin/node",
+      "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/tools/pnpm/package/bin/pnpm.cjs",
+      "--config.store-dir=/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/pnpm-store",
+      "exec",
+      "eslint",
+      "web/src",
+      "mini/src",
+      "--max-warnings=0"
+    ],
+    "exit_code": 1,
+    "result": "FAIL",
+    "seconds": 1.75,
+    "log": "frontend-lint-r2.log"
+  },
+  {
+    "id": "mini-types-r2",
+    "cwd": "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/frontend-probe",
+    "command": [
+      "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/tools/node-v24.21.0-darwin-arm64/bin/node",
+      "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/tools/pnpm/package/bin/pnpm.cjs",
+      "--config.store-dir=/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/pnpm-store",
+      "exec",
+      "tsc",
+      "-p",
+      "mini/tsconfig.json"
+    ],
+    "exit_code": 2,
+    "result": "FAIL",
+    "seconds": 0.81,
+    "log": "mini-types-r2.log"
+  },
+  {
+    "id": "openapi-types-r2",
+    "cwd": "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/frontend-probe",
+    "command": [
+      "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/tools/node-v24.21.0-darwin-arm64/bin/node",
+      "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/tools/pnpm/package/bin/pnpm.cjs",
+      "--config.store-dir=/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/pnpm-store",
+      "exec",
+      "openapi-typescript",
+      "contract.json",
+      "-o",
+      "contract.generated.ts"
+    ],
+    "exit_code": 0,
+    "result": "PASS",
+    "seconds": 0.85,
+    "log": "openapi-types-r2.log"
+  },
+  {
+    "id": "openapi-types-compile-r2",
+    "cwd": "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/frontend-probe",
+    "command": [
+      "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/tools/node-v24.21.0-darwin-arm64/bin/node",
+      "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/tools/pnpm/package/bin/pnpm.cjs",
+      "--config.store-dir=/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/pnpm-store",
+      "exec",
+      "tsc",
+      "--noEmit",
+      "--strict",
+      "--skipLibCheck",
+      "--target",
+      "ES2022",
+      "--moduleResolution",
+      "bundler",
+      "--module",
+      "ESNext",
+      "contract.generated.ts"
+    ],
+    "exit_code": 0,
+    "result": "PASS",
+    "seconds": 0.57,
+    "log": "openapi-types-compile-r2.log"
+  },
+  {
+    "id": "frontend-direct-tree-r2",
+    "cwd": "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/frontend-probe",
+    "command": [
+      "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/tools/node-v24.21.0-darwin-arm64/bin/node",
+      "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/tools/pnpm/package/bin/pnpm.cjs",
+      "--config.store-dir=/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/pnpm-store",
+      "list",
+      "-r",
+      "--depth",
+      "0",
+      "--json"
+    ],
+    "exit_code": 0,
+    "result": "PASS",
+    "seconds": 0.23,
+    "log": "frontend-direct-tree-r2.log"
+  },
+  {
+    "id": "mini-npm-pack-isolated-r2",
+    "cwd": "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/ci-probe",
+    "command": [
+      "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/tools/node-v24.21.0-darwin-arm64/bin/node",
+      "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/tools/pnpm/package/bin/pnpm.cjs",
+      "--config.store-dir=/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/pnpm-store",
+      "dlx",
+      "miniprogram-ci@2.1.48",
+      "pack-npm-manually",
+      "--pack-npm-manually-package-json-path",
+      "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/frontend-probe/mini/package.json",
+      "--pack-npm-manually-miniprogram-npm-dist-dir",
+      "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/frontend-probe/mini"
+    ],
+    "exit_code": 0,
+    "result": "FAIL",
+    "seconds": 51.25,
+    "log": "mini-npm-pack-isolated-r2.log",
+    "process_result": "PASS",
+    "postcondition": "CLI退出0，但预期根目录无npm产物；最终API及文件断言另行通过"
+  },
+  {
+    "id": "backend-tests",
+    "cwd": "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/backend-probe",
+    "command": [
+      "./mvnw",
+      "-B",
+      "-ntp",
+      "-s",
+      "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/settings.xml",
+      "-gs",
+      "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/settings.xml",
+      "-Dmaven.repo.local=/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/m2",
+      "test"
+    ],
+    "exit_code": 0,
+    "result": "PASS",
+    "seconds": 213.47,
+    "log": "backend-tests.log"
+  },
+  {
+    "id": "web-types-final",
+    "cwd": "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/frontend-probe",
+    "command": [
+      "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/tools/node-v24.21.0-darwin-arm64/bin/node",
+      "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/tools/pnpm/package/bin/pnpm.cjs",
+      "--config.store-dir=/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/pnpm-store",
+      "exec",
+      "tsc",
+      "-p",
+      "web/tsconfig.json"
+    ],
+    "exit_code": 0,
+    "result": "PASS",
+    "seconds": 1.8,
+    "log": "web-types-final.log"
+  },
+  {
+    "id": "frontend-lint-final",
+    "cwd": "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/frontend-probe",
+    "command": [
+      "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/tools/node-v24.21.0-darwin-arm64/bin/node",
+      "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/tools/pnpm/package/bin/pnpm.cjs",
+      "--config.store-dir=/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/pnpm-store",
+      "exec",
+      "eslint",
+      "web/src",
+      "mini/src",
+      "--max-warnings=0"
+    ],
+    "exit_code": 0,
+    "result": "PASS",
+    "seconds": 2.97,
+    "log": "frontend-lint-final.log"
+  },
+  {
+    "id": "mini-types-final",
+    "cwd": "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/frontend-probe",
+    "command": [
+      "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/tools/node-v24.21.0-darwin-arm64/bin/node",
+      "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/tools/pnpm/package/bin/pnpm.cjs",
+      "--config.store-dir=/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/pnpm-store",
+      "exec",
+      "tsc",
+      "-p",
+      "mini/tsconfig.json"
+    ],
+    "exit_code": 2,
+    "result": "FAIL",
+    "seconds": 1.65,
+    "log": "mini-types-final.log"
+  },
+  {
+    "id": "web-build-final",
+    "cwd": "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/frontend-probe",
+    "command": [
+      "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/tools/node-v24.21.0-darwin-arm64/bin/node",
+      "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/tools/pnpm/package/bin/pnpm.cjs",
+      "--config.store-dir=/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/pnpm-store",
+      "--dir",
+      "web",
+      "exec",
+      "vite",
+      "build"
+    ],
+    "exit_code": 0,
+    "result": "PASS",
+    "seconds": 5.03,
+    "log": "web-build-final.log"
+  },
+  {
+    "id": "web-runtime-final",
+    "cwd": "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/frontend-probe",
+    "command": [
+      "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/tools/node-v24.21.0-darwin-arm64/bin/node",
+      "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/tools/pnpm/package/bin/pnpm.cjs",
+      "--config.store-dir=/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/pnpm-store",
+      "exec",
+      "vitest",
+      "run",
+      "web/src/compatibility.test.tsx",
+      "--environment",
+      "node"
+    ],
+    "exit_code": 0,
+    "result": "PASS",
+    "seconds": 1.41,
+    "log": "web-runtime-final.log"
+  },
+  {
+    "id": "mini-types-baseline",
+    "cwd": "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/frontend-probe",
+    "command": [
+      "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/tools/node-v24.21.0-darwin-arm64/bin/node",
+      "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/tools/pnpm/package/bin/pnpm.cjs",
+      "--config.store-dir=/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/pnpm-store",
+      "exec",
+      "tsc",
+      "-p",
+      "mini/tsconfig.json"
+    ],
+    "exit_code": 0,
+    "result": "PASS",
+    "log": "mini-types-baseline.log"
+  },
+  {
+    "id": "mini-npm-pack-api",
+    "cwd": "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/ci-probe",
+    "command": [
+      "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/tools/node-v24.21.0-darwin-arm64/bin/node",
+      "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/ci-probe/pack-api.cjs"
+    ],
+    "exit_code": 1,
+    "result": "FAIL",
+    "log": "mini-npm-pack-api.log"
+  },
+  {
+    "id": "mini-npm-pack-api-final",
+    "cwd": "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/ci-probe",
+    "command": [
+      "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/tools/node-v24.21.0-darwin-arm64/bin/node",
+      "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/ci-probe/pack-api.cjs"
+    ],
+    "exit_code": 0,
+    "result": "PASS",
+    "log": "mini-npm-pack-api-final.log"
+  },
+  {
+    "id": "wrapper-with-checksum",
+    "cwd": "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/backend-probe",
+    "command": [
+      "./mvnw",
+      "--version"
+    ],
+    "environment": {
+      "JAVA_HOME": "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/tools/jdk-21.0.12.1+1/Contents/Home",
+      "MAVEN_USER_HOME": "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/wrapper-check",
+      "PATH": "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/tools/jdk-21.0.12.1+1/Contents/Home/bin:/usr/bin:/bin"
+    },
+    "exit_code": 0,
+    "result": "PASS",
+    "log": "wrapper-with-checksum.log"
+  },
+  {
+    "id": "mini-npm-pack-isolated",
+    "cwd": "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/ci-probe",
+    "command": [
+      "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/tools/node-v24.21.0-darwin-arm64/bin/node",
+      "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/tools/pnpm/package/bin/pnpm.cjs",
+      "--store-dir",
+      "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/pnpm-store",
+      "dlx",
+      "miniprogram-ci@2.1.48",
+      "pack-npm-manually",
+      "--pack-npm-manually-package-json-path",
+      "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/frontend-probe/mini/package.json",
+      "--pack-npm-manually-miniprogram-npm-dist-dir",
+      "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/frontend-probe/mini"
+    ],
+    "exit_code": 1,
+    "result": "FAIL",
+    "seconds": 0.24,
+    "log": "mini-npm-pack-isolated.log",
+    "record_source": "本轮工具返回记录补录；检查未执行",
+    "verification_result": "NOT_EXECUTED",
+    "reason": "驱动参数不适用于子命令，目标检查尚未运行；后续已修正并重验"
+  }
+]

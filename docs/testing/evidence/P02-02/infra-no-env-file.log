@@ -1,0 +1,6 @@
+
+> pet-platform@0.0.0 check:infra /Users/kimwell/work/pet-platform
+> node scripts/local-infra.mjs check
+
+ ELIFECYCLE  Command failed with exit code 1.
+缺少本地基础设施环境文件；请复制 infra/local/.env.example 为 infra/local/.env 并填写专用凭据，或指定 --env-file。

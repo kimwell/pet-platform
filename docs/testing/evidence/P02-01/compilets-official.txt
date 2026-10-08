@@ -1,0 +1,490 @@
+ 
+ 
+   
+     
+     
+     原生支持 TypeScript | 微信开放文档 
+     
+     
+   
+   
+   
+   
+   
+   
+(function () {
+  'use strict';
+
+  const SCRIPT_URLs = [
+      'https://dldir1.qq.com/WechatWebDev/devPlatform/px.min.js',
+      'https://dev.weixin.qq.com/platform-console/proxy/assets/tel/px.min.js',
+  ];
+  const param = {
+      maskMode: 'no-mask', // 隐私策略, all-mask 或 no-mask, 详见：https://dev.weixin.qq.com/docs/analysis/sdk/docs.html
+      recordCanvas: false,  // 若要采集canvas, 设为true
+      projectId: 'wxef34f91ddab0c534-0HLdQNKAk-dzsFsA', // 项目 ID，需替换为体验分析项目 ID
+      iframe: false, // 是否采集 iframe 页面
+      console: true, // 是否采集 console 输出的错误日志
+      network: true, // 是否采集网络错误
+  };
+  function loadScript(url) {
+      return new Promise((resolve, reject) => {
+          const scriptEle = document.createElement('script');
+          scriptEle.type = 'text/javascript';
+          scriptEle.async = true;
+          scriptEle.src = url;
+          scriptEle.onload = () => {
+              resolve(url);
+          };
+          scriptEle.onerror = () => {
+              reject(new Error('Script load error'));
+          };
+          document.head.appendChild(scriptEle);
+      });
+  }
+  async function main() {
+      try {
+          sessionStorage.setItem('wxobs_start_timestamp', String(Date.now()));
+          const fastestUrl = await Promise.race(SCRIPT_URLs.map(url => loadScript(url)));
+          window.__startPX && window.__startPX(param);
+      }
+      catch (error) {
+          console.error('Error loading scripts:', error);
+      }
+  }
+  main();
+
+})();
+         
+    
+       
+     
+   
+   
+                      小程序           
+  小程序
+      
+  小游戏
+      
+  公众号
+      
+  服务号
+      
+  开放平台
+      
+  企业微信
+      
+  微信支付
+      
+  视频号
+      
+  微信小店
+      
+  智能对话
+      
+  腾讯小微
+      
+  教育平台
+          
+  开发
+    
+  介绍
+    
+  设计
+    
+  运营
+    
+  数据
+    
+  安全
+         
+  社区
+    
+  学堂
+                      取消         查看更多        在小程序下暂无结果，查看其它业务相关内容 &gt;             
+          指南
+                    
+          框架
+                    
+          组件
+                    
+          API
+                    
+          服务端
+                    平台能力         
+            行业能力
+              
+            商业能力
+              
+            多端能力
+              
+            服务市场
+              
+            城市服务
+              
+            付费能力
+              
+            拓展能力
+                 
+          工具
+                    云服务         
+            云开发
+              
+            云托管
+                 
+          AI 能力
+                       开发        
+  开发
+    
+  介绍
+    
+  设计
+    
+  运营
+    
+  数据
+    
+  安全
+                       中文  EN     取消               工具              
+      概览
+                        
+      界面
+                   
+      启动页
+                 
+      主界面
+                 
+      菜单栏
+                 
+      工具栏
+                 
+      工具栏管理
+                 
+      模拟器
+                 
+      独立窗口
+                        
+      项目页卡
+                   
+      基本信息
+                 
+      本地设置
+                 
+      项目设置
+                              
+      设置
+                   
+      通用设置
+                 
+      外观设置
+                 
+      编辑设置
+                 
+      代理设置
+                 
+      安全设置
+                 
+      快捷键设置
+                 
+      云同步设置
+                 
+      项目配置文件
+                           
+      代码编辑
+                   
+      文件格式
+                 
+      文件类型
+                 
+      自动补全
+                 
+      TypeScript 支持
+                 
+      Git 状态展示
+                 
+      编辑器扩展
+                           
+      小程序调试
+                   
+      模拟器
+                 
+      自定义编译
+                 
+      自定义预处理
+                 
+      模拟操作
+                        
+      调试工具
+                   
+      Wxml Panel
+                 
+      Sources Panel
+                 
+      AppData Panel
+                 
+      Storage Panel
+                 
+      Network Panel
+                 
+      Console Panel
+                 
+      Sensor Panel
+                    
+      自动预览
+                     Source Map        
+      特殊场景调试
+                        
+      真机调试
+                   
+      真机调试2.0
+                 
+      真机调试性能工具
+                    
+      多账号调试
+                 
+      周期性数据调试
+                 
+      数据预拉取调试
+                 
+      事件模拟
+                           
+      开发模式
+                   
+      第三方平台代开发
+                 
+      小程序插件开发
+                 
+      企业微信小程序开发
+                 
+      PC 小程序开发
+                 
+      多端应用开发
+                           
+      开发辅助
+                   
+      测试号
+                 
+      小程序助手
+                 
+      版本管理
+                 
+      微信开发者·代码管理
+                 
+      工具 Skills
+                 
+      命令行调用
+                 
+      HTTP 调用
+                 
+      npm 支持
+                 
+      代码片段
+                 
+      代码编译
+                 
+      文档搜索
+                 
+      CPU Profile 支持
+                 
+      API Mock
+                 
+      miniprogram-ci
+                 
+      miniprogram-mp-ci
+                 
+      音视频处理
+                 
+      骨架屏
+                 
+      代码热重载
+                        
+      可视化编辑
+                   
+      可视化展示第三方组件库
+                    
+      代码静态依赖分析
+                 
+      局部编译
+                 
+      原生支持 TypeScript
+                 
+      其他开发资源
+                           
+      小程序自动化
+                   
+      快速开始
+                 
+      脚本示例
+                 
+      真机自动化
+                        
+      API
+                   
+      Automator
+                 
+      MiniProgram
+                 
+      Page
+                 
+      Element
+                    
+      常用示例
+                        
+      录制回放
+                   
+      快速开始
+                 
+      用例管理
+                 
+      命令行调用
+                    
+      FAQ
+                 
+      更新日志
+                           
+      工具插件
+                   
+      体验评分
+                 
+      代码质量扫描
+                 
+      搜索回调调试
+                 
+      sourceMap 匹配调试
+                 
+      代码加固
+                 
+      接口漏洞扫描
+                 
+      无障碍访问
+                        
+      小程序云测
+                   
+      小程序云测简介
+                 
+      快速开始
+                 
+      需要帮助
+                        
+      自动化测试
+                   
+      智能化Monkey
+                 
+      智能化Monkey扩展
+                 
+      快速Monkey
+                 
+      录制回放
+                 
+      自定义测试
+                 
+      上传自定义用例指引
+                 
+      图片对比能力
+                           
+      AI自动化测试
+                   
+      AIMonkey
+                 
+      AI自定义测试
+                           
+      性能测试
+                   
+      启动性能分析
+                 
+      运行时性能分析
+                    
+      小程序质检
+                 
+      压力测试
+                        
+      微信测试账号解决方案
+                   
+      使用虚拟账号测试
+                 
+      虚拟账号配置Mock信息
+                 
+      虚拟账号手机号Mock方案
+                 
+      使用真实账号测试
+                           
+      购买云测
+                   
+      购买额外时长
+                 
+      购买专有云
+                           
+      API接口文档
+                   
+      接口说明
+                 
+      测试账号
+                 
+      测试任务
+                 
+      质检任务
+                 
+      测试计划
+                 
+      测试用例
+                 
+      图片对比
+                 
+      上传SourceMap
+                 
+      获取机型列表
+                           
+      其他说明
+                   
+      使用开发中版提测指引
+                 
+      任务结束通知配置
+                 
+      每周免费测试
+                           
+      常见问题
+                   
+      云测常见问题
+                 
+      测试任务耗时说明
+                 
+      智能化Monkey常见问题
+                 
+      录制回放常见问题
+                    
+      更新日志
+                       
+      API 实现差异
+                        
+      下载
+                   
+      稳定版更新日志
+                 
+      预发布版更新日志
+                 
+      开发版更新日志
+                                 #  原生支持 TypeScript   小程序代码包要求代码文件为 wxml / wxss / js / json / wxs。   如果我们希望使用 TypeScript 或 less 去开发小程序，就需要将 ts 文件或 less 文件编译成对应的 js 文件 或 wxss 文件，这个编译过程以前是需要开发者在工具外自行配置。   从 开发者工具  1.05.2109101 以上开始，我们优化工具内置的编译模块，支持以编译插件的形式，扩展编译功能。   使用这种方式有两个好处：    项目内只需要创建 ts 文件即可，无需再生成同名的 js 文件。less 文件同理。   编译流程由开发者工具控制，按需编译，开发体验更好。     #  开始使用    #  旧项目   在 project.config.json 文件中，修改 setting 下的 useCompilerPlugins 字段为 [&quot;typescript&quot;]，即可开启工具内置的 typescript 编译插件。
+如需同时开启 less 编译插件，可将该字段修改为 [&quot;typescript&quot;, &quot;less&quot;]。
+目前支持三个编译插件：typescript、less、sass    #  新建项目   可在创建小程序项目时，选择对应的语言模板。
+目前支持的语言模板有    TypeScript   TypeScript + Less   TypeScript + Sass     #  TS声明文件更新   从  开发者工具  1.05.2203032 以上开始，如果是从上述的模板创建的TS项目，遇到小程序相关类型声明过时的情况，可以手动更新。   具体步骤是在编辑器目录树上，找到  typings/types/wx  目录，右键，点击「更新声明文件」即可：      #  功能说明    目前的 ts 代码转换成 js 代码的逻辑，是由 @babel/plugin-transform-typescript 插件进行处理的，因此在编译过程中，仅仅是移除了ts代码中类型声明等信息。类型错误这类信息，在编译过程是没有提示的，只在编辑器中给予提示的。   启用 typescript 编译插件后，js 文件也是支持的，如果存在同名的 ts 和 js 文件，则优先使用 ts 文件。   除了普通小程序，小程序插件开发也是支持的。   miniprogram-ci 从 1.6.1 版本开始，也支持此功能。     #  less 使用全局变量   从 开发者工具  1.06.2403132 以上开始，支持 less 直接引用  app.less  中声明的变量和方法，编译器会默认为所有的非  app.less  文件增加引用      @import   ( optional ,  reference )   '/app.less'  ; 
+     #  代码示例：      // app.less 
+ @redcolor :   red ; 
+
+ .blue   { 
+   color  :  blue ; 
+ } 
+       // 页面.less 
+ .red   { 
+   color  :   @redcolor  ;   // 直接使用 app.less 中定义的变量 
+ } 
+     在开发者工具中预览效果     #  sass 使用全局变量   从 开发者工具  1.06.2403132 以上开始，支持 sass 直接引用全局变量和方法，和 less 不同，我们需要新增一个  global.scss  文件放置在  app.scss  同级，将公共的变量和方法写在  global.scss  中，编译器会默认为所有的非  global.scss  文件增加引用。      @use   '/global.scss'  ; 
+     #  代码示例：      // global.scss 
+  $red   :  red ; 
+       // 其他.scss 
+ .red   { 
+   color  :  global. $red  ;   // 使用 global 中的变量 
+ } 
+     在开发者工具中预览效果     注意：尽量不要在  global.scss  写非变量定义和方法定义，否则可能增大代码体积。      The translations are provided by WeChat Translation and are for reference only. In case of any inconsistency and discrepancy between the Chinese version and the English version, the Chinese version shall prevail.Incorrect translation.  Tap to report.                      关于腾讯     文档中心     辟谣中心     客服中心     Copyright © 2012- 2026  Tencent. All Rights Reserved.              复制     问题反馈            反馈              
+        
+   
+ 

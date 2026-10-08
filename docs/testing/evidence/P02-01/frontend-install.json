@@ -1,0 +1,15 @@
+{
+  "id": "frontend-install",
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "command": [
+    "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/tools/node-v24.21.0-darwin-arm64/bin/node",
+    "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/tools/pnpm/package/bin/pnpm.cjs",
+    "install",
+    "--reporter=append-only"
+  ],
+  "exit_code": 0,
+  "status": "PASS",
+  "duration_seconds": 10.0,
+  "evidence": "frontend-install.log",
+  "summary": "Scope: all 4 workspace projects\nProgress: resolved 1, reused 0, downloaded 0, added 0\nProgress: resolved 45, reused 17, downloaded 13, added 0\nProgress: resolved 157, reused 84, downloaded 50, added 0\nProgress: resolved 272, reused 130, downloaded 80, added 0\nProgress: resolved 321, reused 149, downloaded 112, added 0\nProgress: resolved 322, reused 150, downloaded 119, added 0\nProgress: resolved 322, reused 150, downloaded 120, added 0\nPackages: +272\n++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++\nProgress: resolved 322, reused 150, downloaded 121, added 128\nProgress: resolved 322, reused 150, downloaded 121, added 270\nProgress: resolved 322, reused 150, downloaded 122, added 271\nProgress: resolved 322, reused 150, downloaded 122, added 272, done\n\ndevDependencies:\n+ @eslint/js 10.0.1\n+ eslint 10.12.0\n+ eslint-plugin-react-hooks 7.1.1\n+ eslint-plugin-react-refresh 0.5.7\n+ typescript 5.9.3 (7.0.2 is available)\n+ typescript-eslint 8.71.1\n\n╭ Warning ─────────────────────────────────────────────────────────────────────╮\n│                                                                              │\n│   Ignored build scripts: esbuild@0.28.2.                                     │\n│   Run \"pnpm approve-builds\" to pick which dependencies should be allowed     │\n│   to run scripts.                                                            │\n│                                                                              │\n╰──────────────────────────────────────────────────────────────────────────────╯\nDone in 9.8s using pnpm v10.34.6\n"
+}

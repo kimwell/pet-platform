@@ -1,0 +1,10 @@
+Browser tab: 1, Title: "企业应用工程入口", URL: "http://localhost:5173/missing".
+1 AXWebArea 企业应用工程入口, URL: localhost:5173/missing
+	2 container root
+		3 text 企业应用工程
+		4 container
+			5 image No Found
+			6 text 页面不存在 请检查访问地址。
+			7 link Description: 返回系统入口, Value: localhost:5173/
+
+The focused UI element is 1 AXWebArea 企业应用工程入口, URL: localhost:5173/missing

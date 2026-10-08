@@ -1,0 +1,19 @@
+{
+  "source": "https://devtools.wxqcloud.qq.com.cn/WechatWebDev/release/be1ec64cf6184b0fa64091919793f068/wechat_devtools_2.02.2608080_darwin_arm64.pkg",
+  "command": [
+    "curl",
+    "-fL",
+    "--max-time",
+    "300",
+    "--retry",
+    "1",
+    "-o",
+    "/tmp/wechat_devtools_2.02.2608080_darwin_arm64.pkg",
+    "官方冻结版本ARM64下载地址"
+  ],
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "exit_code": 0,
+  "bytes": 254560959,
+  "sha256": "faeb39e0c3496747e6b958c05452af389bdbe428e13885cd4fb191e6c7172840",
+  "verification": "pkgutil签名与公证检查见独立日志；未宣称上游提供SHA"
+}

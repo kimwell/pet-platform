@@ -1,0 +1,21 @@
+[
+  {
+    "id": "backend-tests",
+    "cwd": "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/backend-probe",
+    "command": [
+      "./mvnw",
+      "-B",
+      "-ntp",
+      "-s",
+      "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/settings.xml",
+      "-gs",
+      "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/settings.xml",
+      "-Dmaven.repo.local=/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/m2",
+      "test"
+    ],
+    "exit_code": 0,
+    "result": "PASS",
+    "seconds": 213.47,
+    "log": "backend-tests.log"
+  }
+]

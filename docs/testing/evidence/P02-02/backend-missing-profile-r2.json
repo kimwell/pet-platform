@@ -1,0 +1,16 @@
+{
+  "id": "backend-missing-profile-r2",
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "command": [
+    "java",
+    "-jar",
+    "/Users/kimwell/work/pet-platform/apps/backend/target/pet-platform-backend-0.0.0-SNAPSHOT.jar"
+  ],
+  "exit_code": 1,
+  "expected_exit_code": 1,
+  "status": "PASS",
+  "started_at": "2026-10-08T07:27:02.458807+08:00",
+  "duration_seconds": 1.066,
+  "evidence": "backend-missing-profile-r2.log",
+  "summary": "d] [           main] com.pet.platform.Application             : No active profile set, falling back to 1 default profile: \"default\"\n2026-10-08T07:27:02.347+08:00  INFO 1814 --- [pet-platform-backend] [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8080 (http)\n2026-10-08T07:27:02.359+08:00  INFO 1814 --- [pet-platform-backend] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]\n2026-10-08T07:27:02.359+08:00  INFO 1814 --- [pet-platform-backend] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.24]\n2026-10-08T07:27:02.375+08:00  INFO 1814 --- [pet-platform-backend] [           main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 450 ms\n2026-10-08T07:27:02.421+08:00  WARN 1814 --- [pet-platform-backend] [           main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.boot.context.properties.ConfigurationPropertiesBindException: Error creating bean with name 'pet-com.pet.platform.shared.config.EnvironmentSettings': Could not bind properties to 'EnvironmentSettings' : prefix=pet, ignoreInvalidFields=false, ignoreUnknownFields=true\n2026-10-08T07:27:02.423+08:00  INFO 1814 --- [pet-platform-backend] [           main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]\n2026-10-08T07:27:02.427+08:00  INFO 1814 --- [pet-platform-backend] [           main] .s.b.a.l.ConditionEvaluationReportLogger : \n\nError starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.\n2026-10-08T07:27:02.435+08:00 ERROR 1814 --- [pet-platform-backend] [           main] o.s.b.d.LoggingFailureAnalysisReporter   : \n\n***************************\nAPPLICATION FAILED TO START\n***************************\n\nDescription:\n\nFailed to bind properties under 'pet' to com.pet.platform.shared.config.EnvironmentSettings:\n\n    Reason: java.lang.IllegalArgumentException: pet.environment 必须显式设置为 local、test 或 prod\n\nAction:\n\nUpdate your application's configuration\n\n"
+}

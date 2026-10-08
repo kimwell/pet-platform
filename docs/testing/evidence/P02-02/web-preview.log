@@ -1,0 +1,10 @@
+
+> pet-platform@0.0.0 preview:web /Users/kimwell/work/pet-platform
+> pnpm --filter @pet/admin-web preview
+
+
+> @pet/admin-web@0.0.0 preview /Users/kimwell/work/pet-platform/apps/admin-web
+> vite preview
+
+  ➜  Local:   http://127.0.0.1:4173/
+ ELIFECYCLE  Command failed.

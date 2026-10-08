@@ -1,0 +1,15 @@
+{
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "argv": [
+    "pnpm",
+    "contracts:test"
+  ],
+  "exitCode": 0,
+  "startedAtUTC": "2026-10-08T01:33:26.712291+00:00",
+  "finishedAtUTC": "2026-10-08T01:33:27.374758+00:00",
+  "toolchain": {
+    "JAVA_HOME": "/private/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/pet-platform-p02-02-_qb1x3n7/tools/jdk/jdk-21.0.12.1+1/Contents/Home"
+  },
+  "log": "generator-tests-final.log",
+  "summary": "\n> pet-platform@0.0.0 contracts:test /Users/kimwell/work/pet-platform\n> node --test scripts/contracts.test.mjs\n\n✔ 稳定化只移除动态loopback地址，保留required、null、枚举及认证语义 (2.583125ms)\n✔ 漂移报告包含真实变化且check不覆盖文件；同步只删除带标识的旧生成类型 (27.917958ms)\n✔ 同步拒绝符号链接目录 (4.615375ms)\nℹ tests 3\nℹ suites 0\nℹ pass 3\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 136.643459\n"
+}

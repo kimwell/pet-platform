@@ -1,0 +1,226 @@
+[
+  {
+    "record": "continuation-audit.json",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "python3",
+      "docs/testing/evidence/P02-02/wechat-2026-10-08/audit-continuation.py"
+    ],
+    "exit_code": 0,
+    "summary": "{\n  \"checked_at\": \"2026-10-08T08:09:43.804860+08:00\",\n  \"cwd\": \"/Users/kimwell/work/pet-platform\",\n  \"preserved_file_count\": 516,\n  \"changed_preserved_files\": [],\n  \"historical_p02_02_manifest_file_count\": 273,\n  \"historical_p02_02_manifest_mismatch\": [],\n  \"broken_local_links\": [],\n  \"old_tool_version_unchanged\": true,\n  \"public_appid_empty\": true,\n  \"private_appid_matches\": true,\n  \"private_config_ignored\": true,\n  \"updated_documents\": [\n    \"docs/testing/P02-02-VERIFICATION.md\",\n    \"docs/testing/ACCEPTANCE-MATRIX.md\",\n    \"docs/development/LOCAL-DEVELOPMENT.md\",\n    \"docs/development/ROADMAP.md\"\n  ],\n  \"p02_02\": \"BLOCKED\",\n  \"p02\": \"IN_PROGRESS\",\n  \"p03\": \"NOT_STARTED\"\n}\n"
+  },
+  {
+    "record": "download.json",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "curl",
+      "-fL",
+      "--max-time",
+      "300",
+      "--retry",
+      "1",
+      "-o",
+      "/tmp/wechat_devtools_2.02.2608080_darwin_arm64.pkg",
+      "官方冻结版本ARM64下载地址"
+    ],
+    "exit_code": 0,
+    "summary": "pkgutil签名与公证检查见独立日志；未宣称上游提供SHA"
+  },
+  {
+    "record": "frozen-node.json",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "node",
+      "--version"
+    ],
+    "exit_code": 0,
+    "summary": "v24.21.0\n"
+  },
+  {
+    "record": "frozen-pnpm.json",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "pnpm",
+      "--version"
+    ],
+    "exit_code": 0,
+    "summary": "10.34.6\n"
+  },
+  {
+    "record": "miniprogram-config.json",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "node",
+      "scripts/check-miniprogram.mjs"
+    ],
+    "exit_code": 0,
+    "summary": "原生小程序结构、页面和官方组件引用检查通过；这不是开发者工具编译。\n"
+  },
+  {
+    "record": "miniprogram-lint.json",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "pnpm",
+      "--filter",
+      "@pet/wechat-miniprogram",
+      "lint"
+    ],
+    "exit_code": 0,
+    "summary": "\n> @pet/wechat-miniprogram@0.0.0 lint /Users/kimwell/work/pet-platform/apps/wechat-miniprogram\n> eslint miniprogram --max-warnings=0\n\n"
+  },
+  {
+    "record": "miniprogram-typecheck.json",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "pnpm",
+      "--filter",
+      "@pet/wechat-miniprogram",
+      "typecheck"
+    ],
+    "exit_code": 0,
+    "summary": "\n> @pet/wechat-miniprogram@0.0.0 typecheck /Users/kimwell/work/pet-platform/apps/wechat-miniprogram\n> tsc --noEmit\n\n"
+  },
+  {
+    "record": "old-cli-help.json",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "/Applications/wechatwebdevtools.app/Contents/MacOS/cli",
+      "--help"
+    ],
+    "exit_code": 0,
+    "summary": "index.js\n\nCommands:\n  index.js cloud            CloudBase commands\n  index.js open             Open IDE / IDE project\n  index.js login            re-login IDE\n  index.js islogin          #islogin-desc\n  index.js preview          preview\n  index.js auto-preview     Auto preview\n  index.js upload           Upload mini program\n  index.js build-npm        build NPM\n  index.js auto             Enable automation\n  index.js auto-replay      Enable automation\n  index.js reset-fileutils  #reset-fileutils-desc\n  index.js close            Close project\n  index.js quit             Quit IDE\n  index.js cache            clean cache\n  index.js engine           engine\n  index.js open-other       Open other project\n  index.js build-ipa        generate ipa\n  index.js build-apk        genreate apk\n\nProject options:\n  --project    project path\n  --appid      miniprogram appid or 3rd platform appid. Ignored when --project\n               is provided\n  --ext-appid  miniprogram appid to be developed by 3rd platform. Ignored when\n               --project is provided\n\nOther global options:\n  --port         Optional. IDE HTTP server port. If IDE hasn't been launched, it\n                 will be launched and start HTTP server at <port>. If IDE has\n                 launched with a HTTP server of different port, you must quit\n                 IDE before re-run the command.                         [number]\n  --lang         Optional. 'en' or 'zh'. Defaults to 'en'.\n  --debug        Optional. Turn on debug mode\n  --disable-gpu  Disable GPU Acceleration when launching IDE           [boolean]\n  -h, --help     Show help                                             [boolean]\n"
+  },
+  {
+    "record": "old-cli-islogin.json",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "/Applications/wechatwebdevtools.app/Contents/MacOS/cli",
+      "islogin"
+    ],
+    "exit_code": 0,
+    "summary": "- initialize\n\n✔ IDE server has started, listening on http://127.0.0.1:18530\n- preparing\n\n{\"login\":true}\n✔ islogin\n"
+  },
+  {
+    "record": "old-cli-quit.json",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "/Applications/wechatwebdevtools.app/Contents/MacOS/cli",
+      "quit"
+    ],
+    "exit_code": 0,
+    "summary": "- initialize\n\n✔ IDE server has started, listening on http://127.0.0.1:18530\n- preparing\n✔ quit\n"
+  },
+  {
+    "record": "package-expand.json",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "pkgutil",
+      "--expand-full",
+      "/tmp/wechat_devtools_2.02.2608080_darwin_arm64.pkg",
+      "/tmp/pet-wechat-2.02.2608080-expanded"
+    ],
+    "exit_code": 0,
+    "summary": ""
+  },
+  {
+    "record": "package-signature.json",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "pkgutil",
+      "--check-signature",
+      "/tmp/wechat_devtools_2.02.2608080_darwin_arm64.pkg"
+    ],
+    "exit_code": 0,
+    "summary": "Package \"wechat_devtools_2.02.2608080_darwin_arm64.pkg\":\n   Status: signed by a developer certificate issued by Apple for distribution\n   Notarization: trusted by the Apple notary service\n   Signed with a trusted timestamp on: 2026-09-29 14:05:44 +0000\n   Certificate Chain:\n    1. Developer ID Installer: Tencent Technology (Shanghai) Company Limited (FN2V63AD2J)\n       Expires: 2031-03-18 02:54:22 +0000\n       SHA256 Fingerprint:\n           16 38 06 91 18 DC D9 C3 E8 BA E2 7D C4 62 55 99 F0 79 96 4E 0E E1 \n           00 8F 2F 35 9E 73 91 F1 9E 19\n       ------------------------------------------------------------------------\n    2. Developer ID Certification Authority\n       Expires: 2031-09-17 00:00:00 +0000\n       SHA256 Fingerprint:\n           F1 6C D3 C5 4C 7F 83 CE A4 BF 1A 3E 6A 08 19 C8 AA A8 E4 A1 52 8F \n           D1 44 71 5F 35 06 43 D2 DF 3A\n       ------------------------------------------------------------------------\n    3. Apple Root CA\n       Expires: 2035-02-09 21:40:36 +0000\n       SHA256 Fingerprint:\n           B0 B1 73 0E CB C7 FF 45 05 14 2C 49 F1 29 5E 6E DA 6B CA ED 7E 2C \n           68 C5 BE 91 B5 A1 10 01 F0 24\n\n"
+  },
+  {
+    "record": "private-config-ignored.json",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "git",
+      "check-ignore",
+      "-v",
+      "apps/wechat-miniprogram/project.private.config.json"
+    ],
+    "exit_code": 0,
+    "summary": ".gitignore:11:project.private.config.json\tapps/wechat-miniprogram/project.private.config.json\n"
+  },
+  {
+    "record": "standalone-install.json",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "ditto",
+      "/tmp/pet-wechat-2.02.2608080-expanded/Payload/Applications/wechatwebdevtools.app",
+      "/Users/kimwell/Applications/WechatDevTools-2.02.2608080.app"
+    ],
+    "exit_code": 0,
+    "summary": ""
+  },
+  {
+    "record": "target-build-npm-help.json",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "/Users/kimwell/Applications/WechatDevTools-2.02.2608080.app/Contents/MacOS/cli",
+      "build-npm",
+      "--help"
+    ],
+    "exit_code": 0,
+    "summary": "cli build-npm\n\nbuild NPM\n\nProject options:\n  --project    project path\n  --appid      miniprogram appid or 3rd platform appid. Ignored when --project\n               is provided\n  --ext-appid  miniprogram appid to be developed by 3rd platform. Ignored when\n               --project is provided\n\nOther global options:\n  --port         Optional. IDE HTTP server port. If IDE hasn't been launched, it\n                 will be launched and start HTTP server at <port>. If IDE has\n                 launched with a HTTP server of different port, you must quit\n                 IDE before re-run the command.                         [number]\n  --token        Optional. CLI access token configured in IDE Security Settings.\n                 It can also be set with the WECHAT_DEVTOOLS_CLI_TOKEN\n                 environment variable.                                  [string]\n  --lang         Optional. 'en' or 'zh'. Defaults to 'en'.\n  --debug        Optional. Turn on debug mode\n  --disable-gpu  Disable GPU Acceleration when launching IDE           [boolean]\n  -h, --help     Show help                                             [boolean]\n\nOptions:\n  --compile-type  Optional. Override the compile type (\"miniprogram\" or\n                  \"plugin\") in project.config.json only for building NPM.\n                                                                        [string]\n"
+  },
+  {
+    "record": "target-cli-help.json",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "/Users/kimwell/Applications/WechatDevTools-2.02.2608080.app/Contents/MacOS/cli",
+      "--help"
+    ],
+    "exit_code": 0,
+    "summary": "cli\n\nCommands:\n  cli cloud            CloudBase commands\n  cli open             Open IDE / IDE project\n  cli login            re-login IDE\n  cli islogin          #islogin-desc\n  cli preview          preview\n  cli auto-preview     Auto preview\n  cli upload           Upload mini program\n  cli build-npm        build NPM\n  cli auto             Enable automation\n  cli auto-replay      Enable automation\n  cli agent            Agent commands\n  cli reset-fileutils  #reset-fileutils-desc\n  cli close            Close project\n  cli quit             Quit IDE\n  cli cache            clean cache\n  cli engine           engine\n  cli open-other       Open other project\n  cli build-ipa        generate ipa\n  cli build-apk        genreate apk\n\nProject options:\n  --project    project path\n  --appid      miniprogram appid or 3rd platform appid. Ignored when --project\n               is provided\n  --ext-appid  miniprogram appid to be developed by 3rd platform. Ignored when\n               --project is provided\n\nOther global options:\n  --port         Optional. IDE HTTP server port. If IDE hasn't been launched, it\n                 will be launched and start HTTP server at <port>. If IDE has\n                 launched with a HTTP server of different port, you must quit\n                 IDE before re-run the command.                         [number]\n  --token        Optional. CLI access token configured in IDE Security Settings.\n                 It can also be set with the WECHAT_DEVTOOLS_CLI_TOKEN\n                 environment variable.                                  [string]\n  --lang         Optional. 'en' or 'zh'. Defaults to 'en'.\n  --debug        Optional. Turn on debug mode\n  --disable-gpu  Disable GPU Acceleration when launching IDE           [boolean]\n  -h, --help     Show help                                             [boolean]\n"
+  },
+  {
+    "record": "target-cli-islogin-r2.json",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "/Users/kimwell/Applications/WechatDevTools-2.02.2608080.app/Contents/MacOS/cli",
+      "islogin"
+    ],
+    "exit_code": 246,
+    "summary": "- initialize\n\n(node:23669) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.\n(Use `Electron --trace-deprecation ...` to show where the warning was created)\n✖ initialize\n\n[error] IDE service port disabled. To use CLI Call, please enter y to confirm enabling CLI capability, or manually open IDE -> Settings -> Security Settings, and set Service Port On.\nFor more details see: https://developers.weixin.qq.com/miniprogram/en/dev/devtools/cli.html\n[error] 工具的服务端口已关闭。要使用命令行调用工具，请手动打开工具 -> 设置 -> 安全设置，将服务端口开启。\n详细信息: https://developers.weixin.qq.com/miniprogram/dev/devtools/cli.html\n\n[info] 退出\n"
+  },
+  {
+    "record": "target-cli-islogin.json",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "/Users/kimwell/Applications/WechatDevTools-2.02.2608080.app/Contents/MacOS/cli",
+      "islogin"
+    ],
+    "exit_code": 255,
+    "summary": "- initialize\n\n(node:22250) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.\n(Use `Electron --trace-deprecation ...` to show where the warning was created)\n[error] Please ensure that the IDE has been properly installed\n✖ initialize error: Error: ENOENT: no such file or directory, open '/Users/kimwell/Library/Application Support/微信开发者工具/b0dc668933a0edaedd558a9f59ae66b5/Default/.cli', Error: ENOENT: no such file or directory, open '/Users/kimwell/Library/Application Support/微信开发者工具/b0dc668933a0edaedd558a9f59ae66b5/Default/.cli'\n    at Object.writeFileSync (node:fs:2426:20)\n    at /Users/kimwell/Applications/WechatDevTools-2.02.2608080.app/Contents/Resources/app.asar.unpacked/js/common/cli/index.js:129:43070\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n"
+  },
+  {
+    "record": "target-code-signature.json",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "codesign",
+      "--verify",
+      "--deep",
+      "--strict",
+      "/Users/kimwell/Applications/WechatDevTools-2.02.2608080.app"
+    ],
+    "exit_code": 0,
+    "summary": ""
+  },
+  {
+    "record": "target-package-version.json",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "env",
+      "ELECTRON_RUN_AS_NODE=1",
+      "/Users/kimwell/Applications/WechatDevTools-2.02.2608080.app/Contents/MacOS/Electron",
+      "-e",
+      "const fs=require(\"fs\");const p=JSON.parse(fs.readFileSync(\"/Users/kimwell/Applications/WechatDevTools-2.02.2608080.app/Contents/Resources/app.asar/package.json\",\"utf8\"));console.log(JSON.stringify({name:p.name,version:p.version},null,2));"
+    ],
+    "exit_code": 0,
+    "summary": "{\n  \"name\": \"微信开发者工具\",\n  \"version\": \"2.02.2608080\"\n}\n"
+  }
+]

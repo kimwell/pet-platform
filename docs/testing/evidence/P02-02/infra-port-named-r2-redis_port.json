@@ -1,0 +1,22 @@
+{
+  "id": "infra-port-named-r2-redis_port",
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "command": [
+    "pnpm",
+    "check:infra",
+    "--env-file",
+    ".local-data/p02-infra.env",
+    "--project",
+    "pet-platform-p02-validation"
+  ],
+  "exit_code": 1,
+  "expected_exit_code": 1,
+  "status": "PASS",
+  "started_at": "2026-10-08T07:28:28.064596+08:00",
+  "duration_seconds": 0.531,
+  "evidence": "infra-port-named-r2-redis_port.log",
+  "summary": "\n> pet-platform@0.0.0 check:infra /Users/kimwell/work/pet-platform\n> node scripts/local-infra.mjs check --env-file .local-data/p02-infra.env --project pet-platform-p02-validation\n\n ELIFECYCLE  Command failed with exit code 1.\nREDIS_PORT 格式错误；请设置合法宿主端口。\n",
+  "environment_fixture": {
+    "REDIS_PORT": "<公开反例输入>"
+  }
+}

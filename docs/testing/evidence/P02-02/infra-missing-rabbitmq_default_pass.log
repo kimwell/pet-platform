@@ -1,0 +1,1 @@
+error while interpolating services.rabbitmq.environment.RABBITMQ_DEFAULT_PASS: required variable RABBITMQ_DEFAULT_PASS is missing a value: 请设置本地专用 RabbitMQ 密码

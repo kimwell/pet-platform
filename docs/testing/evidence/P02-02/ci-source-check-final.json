@@ -1,0 +1,12 @@
+{
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "command": [
+    "python3",
+    "docs/testing/evidence/P02-02/ci-check.py"
+  ],
+  "exit_code": 0,
+  "status": "PASS",
+  "summary": "YAML解析及根check/build/frozen install/infra配置/Wrapper工作目录一致",
+  "remote_ci": "NOT_EXECUTED",
+  "windows_linux_runtime": "NOT_EXECUTED"
+}

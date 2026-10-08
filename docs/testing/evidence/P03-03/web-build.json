@@ -1,0 +1,15 @@
+{
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "argv": [
+    "pnpm",
+    "build:web"
+  ],
+  "exitCode": 0,
+  "startedAtUTC": "2026-10-08T01:34:15.444750+00:00",
+  "finishedAtUTC": "2026-10-08T01:34:26.010983+00:00",
+  "toolchain": {
+    "JAVA_HOME": "/private/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/pet-platform-p02-02-_qb1x3n7/tools/jdk/jdk-21.0.12.1+1/Contents/Home"
+  },
+  "log": "web-build.log",
+  "summary": "\n> pet-platform@0.0.0 build:web /Users/kimwell/work/pet-platform\n> pnpm --filter @pet/admin-web build\n\n\n> @pet/admin-web@0.0.0 build /Users/kimwell/work/pet-platform/apps/admin-web\n> tsc --noEmit && vite build\n\nvite v7.3.7 building client environment for production...\ntransforming...\n✓ 1674 modules transformed.\nrendering chunks...\ncomputing gzip size...\ndist/index.html                   0.41 kB │ gzip:   0.31 kB\ndist/assets/index-CNdMMY7y.css    3.24 kB │ gzip:   1.30 kB\ndist/assets/index-D9gzWvXX.js   621.32 kB │ gzip: 206.36 kB\n\n(!) Some chunks are larger than 500 kB after minification. Consider:\n- Using dynamic import() to code-split the application\n- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks\n- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.\n✓ built in 5.19s\n"
+}

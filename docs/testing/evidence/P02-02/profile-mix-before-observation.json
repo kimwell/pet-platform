@@ -1,0 +1,16 @@
+{
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "steps": [
+    "prod,local 同时激活且未提供生产公开origin",
+    "应用仍监听18080且根路径HTTP404"
+  ],
+  "status": "FAIL",
+  "exit_code": null,
+  "check": {
+    "url": "http://127.0.0.1:18080/",
+    "status": 404,
+    "content_type": "application/json",
+    "body": "{\"timestamp\":\"2026-10-07T23:36:23.876Z\",\"status\":404,\"error\":\"Not Found\",\"path\":\"/\"}"
+  },
+  "reason": "local配置顺序覆盖了prod环境与公开origin，不能按生产边界接受"
+}

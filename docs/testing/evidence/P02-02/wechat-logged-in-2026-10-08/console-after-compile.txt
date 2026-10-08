@@ -1,0 +1,261 @@
+Window: "WeChat Web Devtools", App: 微信开发者工具.
+0 标准窗口 WeChat Web Devtools, Secondary Actions: Raise
+	1 HTML 内容 file:///Users/kimwell/Applications/WechatDevTools-2.02.2608080.app/Contents/Resources/app.asar/html/electron-project.html?projectpath=%2FUsers%2Fkimwell%2Fwork%2Fpet-platform%2Fapps%2Fwechat-miniprogram&projectname=pet-platform-miniprogram-local&projectid=%2FUsers%2Fkimwell%2Fwork%2Fpet-platform%2Fapps%2Fwechat-miniprogram&theme=dark&skeletonPath=%2FUsers%2Fkimwell%2FLibrary%2FApplication%20Support%2F%E5%BE%AE%E4%BF%A1%E5%BC%80%E5%8F%91%E8%80%85%E5%B7%A5%E5%85%B7%2Fb0dc668933a0edaedd558a9f59ae66b5%2FWeappCache%2FskeletonCache%2F1a347ab98c653c1ba55887dc4e81fa9a%2Fpageskeleton.html&appid=wx9bcab67d52e2ee04&frame=0&devid=s0&runtimeid=0&devtype=miniprogram&proxyPort=15681&userDataPath=%2FUsers%2Fkimwell%2FLibrary%2FApplication%2520Support%2F%25E5%25BE%25AE%25E4%25BF%25A1%25E5%25BC%2580%25E5%258F%2591%25E8%2580%2585%25E5%25B7%25A5%25E5%2585%25B7%2Fb0dc668933a0edaedd558a9f59ae66b5&appVersion=2.02.2608080&appVersionType=0
+		2 container
+			3 文本 微信开发者工具 Stable 2.02.2608080
+			4 container
+				5 text 小程序模式
+			6 文本 预览
+			7 文本 真机调试
+			8 文本 上传
+			9 未加标签的图片 要获取缺失的图片说明，请打开上下文菜单。
+			10 container
+				11 container
+					12 container
+						13 text 预览 编辑
+					14 container
+						15 text 普通编译
+					16 container
+						17 container
+							18 text 8 : 17
+						19 container
+							20 标题 系统工程入口, Value: 3
+								21 文本 系统工程入口
+							22 链接
+							23 链接
+						24 HTML 内容 Webview: pages/system/entry/index, URL: 127.0.0.1:55205/__pageframe__/pages/system/entry/index
+							25 文本 系统工程入口
+							26 文本 当前用于确认原生小程序页面与官方组件接入。
+							27 按钮 查看工程状态
+								28 文本 查看工程状态
+							29 文本 认证、客户与员工会话、租户隔离及正式业务尚未实现。
+						30 HTML 内容 小程序逻辑层, URL: 127.0.0.1:55205/appservice/s0/_sessionId/simulator-app-session-s0/mainframe?load
+							31 container
+								32 HTML 内容 小程序逻辑层, URL: 127.0.0.1:55205/appservice/instanceframe?s=1791418669428&autoload#id_1
+								33 HTML 内容 127.0.0.1:55205/appservice/appContext?contextName=app&id=ifr-1_2#id_1
+								34 HTML 内容 127.0.0.1:55205/appservice/app_xrframe_renderContext?contextName=app_xrframe_render&id=ifr-1_3&empty=true#id_1
+								35 HTML 内容 127.0.0.1:55205/appservice/app_sub_debugContext?contextName=app_sub_debug&id=ifr-1_4&empty=true#id_1
+								36 HTML 内容 小程序逻辑层, URL: 127.0.0.1:55205/appservice/instanceframe?s=1791418669428#id_2
+						37 container
+							38 链接
+							39 链接
+					40 container
+						41 文本 iPhone 12/13 (Pro) 71% 16
+					42 container
+						43 文本 页面路径
+					44 文本 pages/system/entry/index
+					45 链接 复制
+				46 container
+					47 container
+						48 container
+							49 container
+								50 文本 wechat-miniprogram
+								51 工具栏
+									52 按钮 Toggle Primary Side Bar (⌘K ⌘B)
+										53 文本 
+									54 按钮 切换面板 (⌘J)
+										55 文本 
+									56 按钮 Toggle Secondary Side Bar (⌥⌘B)
+										57 文本 
+							58 container
+								59 container
+									60 标签页组 活动视图切换器
+										61 标签 (selected) Description: 资源管理器 (⌘K ⇧⌘E), Value: 1
+											62 container 资源管理器 (⌘K ⇧⌘E)
+												63 文本 
+										64 标签 (settable, integer) Search (⇧⌘F), Value: 0
+											65 container Search (⇧⌘F)
+												66 文本 
+										67 标签 (settable, integer) Description: 源代码管理 (⌃⇧G) - 958 个挂起的更改, Value: 0
+											68 文本 
+										69 标签 (settable, integer) 扩展 (⇧⌘X), Value: 0
+											70 container 扩展 (⇧⌘X)
+												71 文本 
+										72 弹出式按钮 其他视图
+											73 文本 
+									74 container
+										75 标题 资源管理器, Help: 资源管理器 (⌘K ⇧⌘E), Value: 2
+											76 文本 资源管理器
+										77 内容列表 资源管理器操作
+											78 弹出式按钮 Views and More Actions...
+										79 container
+											80 container
+												81 按钮 文件资源管理器部分
+													82 文本 
+													83 标题 Description: 文件资源管理器部分, Help: wechat-miniprogram, Value: 3
+														84 文本 WECHAT-MINIPROGRAM
+												85 外框 树
+													86 container
+														87 row (selected) miniprogram
+															88 container
+																89 文本 
+																90 container ~/work/pet-platform/apps/wechat-miniprogram/miniprogram • 包含强调项
+																	91 文本 miniprogram
+																	92 文本 
+														93 row node_modules
+															94 container
+																95 文本 
+																96 文本 node_modules
+														97 row package.json
+															98 container
+																99 container ~/work/pet-platform/apps/wechat-miniprogram/package.json • Untracked
+																	100 文本 package.json
+																	101 文本 U
+														102 row project.config.json
+															103 container
+																104 container ~/work/pet-platform/apps/wechat-miniprogram/project.config.json • Untracked
+																	105 文本 project.config.json
+																	106 文本 U
+														107 row project.private.config.json
+															108 container
+																109 文本 project.private.config.json
+														110 row project.private.config.json.example
+															111 container
+																112 container ~/work/pet-platform/apps/wechat-miniprogram/project.private.config.json.example • Untracked
+																	113 文本 project.private.config.json.example
+																	114 文本 U
+														115 row tsconfig.json
+															116 container
+																117 container ~/work/pet-platform/apps/wechat-miniprogram/tsconfig.json • Untracked
+																	118 文本 tsconfig.json
+																	119 文本 U
+											120 按钮 大纲 Section
+												121 文本 
+												122 标题 大纲, Value: 3
+													123 文本 大纲
+											124 按钮 时间线 Section
+												125 文本 
+												126 标题 时间线, Value: 3
+													127 文本 时间线
+								128 container
+									129 container
+										130 标签页组 活动视图切换器
+											131 标签 (settable, integer) 构建 - Logs: 100 构建 - Logs: 100, Value: 0
+												132 container 构建 - Logs: 100
+													133 文本 构建
+												134 container 构建 - Logs: 100
+													135 文本 100
+											136 标签 (selected) 调试器 - Errors: 0, Warnings: 2 调试器 - Errors: 0, Warnings: 2, Value: 1
+												137 container 调试器 - Errors: 0, Warnings: 2
+													138 文本 调试器
+												139 container 调试器 - Errors: 0, Warnings: 2
+													140 文本 2
+											141 标签 (settable, integer) Description: 问题 (⌘K ⇧⌘M) - 总计 0 个问题, Value: 0
+												142 文本 问题
+											143 标签 (settable, integer) Description: 输出, Value: 0
+												144 文本 输出
+											145 标签 (settable, integer) Description: 调试控制台 (⇧⌘Y), Value: 0
+												146 文本 调试控制台
+											147 标签 (settable, integer) 终端 (⌃`), Value: 0
+												148 container 终端 (⌃`)
+													149 文本 终端
+											150 标签 (settable, integer) 代码质量, Value: 0
+												151 container 代码质量
+													152 文本 代码质量
+										153 工具栏 调试器操作
+										154 工具栏
+											155 按钮 恢复面板大小
+												156 文本 
+											157 按钮 关闭面板
+												158 文本 
+										159 container
+											160 container
+												161 HTML 内容 devtools://devtools/bundled/devtools_app.html?remoteBase=https://chrome-devtools-frontend.appspot.com/serve_file/@61dafe6541432a46304ba3c84a0a6135b7cddd69/&can_dock=&toolbarColor=rgba(223,223,223,1)&textColor=rgba(0,0,0,1)&experiments=true
+													162 container
+														163 container
+															164 切换按钮 Description: Select an element in the page to inspect it, Value: 0
+															165 标签页组 Panels
+																166 标签 (settable, integer) Description: Wxml, Value: 0
+																167 标签 (selected) Description: Console, Value: 1
+																168 标签 (settable, integer) Description: Sources, Value: 0
+																169 标签 (settable, integer) Description: Network, Value: 0
+																170 标签 (settable, integer) Description: Performance, Value: 0
+															171 弹出式按钮 More tabs
+															172 container
+																173 container 2 warnings
+															174 按钮 Settings
+															175 弹出式按钮 Customize and control DevTools
+															176 container Undock into separate window
+															177 container Console panel
+																178 container console
+																	179 container
+																		180 按钮 Show console sidebar
+																		181 按钮 Clear console
+																		182 按钮 JavaScript context: top
+																		183 按钮 Create live expression
+																		184 弹出式按钮 Log level: Default levels
+																			185 文本 Default levels
+																		186 切换按钮 Description: Console settings, Value: 0
+																		187 container
+																			188 container
+																				189 container
+																					190 链接 WAServiceMainContext…t=wechat&v=3.17.2:1
+																						191 文本 WAServiceMainContext
+																						192 文本 …
+																						193 文本 t=wechat&v=3.17.2:1
+																					194 text [system] WeChatLib: 3.17.2 (2026.9.22 14:40:14)
+																				195 container
+																					196 链接 WAServiceMainContext…t=wechat&v=3.17.2:1
+																						197 文本 WAServiceMainContext
+																						198 文本 …
+																						199 文本 t=wechat&v=3.17.2:1
+																					200 text [system] Subpackages: N/A
+																				201 container
+																					202 链接 WAServiceMainContext…t=wechat&v=3.17.2:1
+																						203 文本 WAServiceMainContext
+																						204 文本 …
+																						205 文本 t=wechat&v=3.17.2:1
+																					206 text [system] LazyCodeLoading: false
+																				207 container
+																					208 container Warning
+																					209 文本 The resource 
+																					210 链接 http://127.0.0.1:55205/__dev__/WAServiceMainContext.js?t=wechat&v=3.17.2
+																						211 文本 http://127.0.0.1:55205/__dev__/WAServiceMainContext.js?t=wechat&v=3.17.2
+																					212 文本  was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+																				213 container
+																					214 container Warning
+																					215 文本 The resource 
+																					216 链接 http://127.0.0.1:55205/__dev__/WAAutoService.js?t=wechat&v=3.17.2
+																						217 文本 http://127.0.0.1:55205/__dev__/WAAutoService.js?t=wechat&v=3.17.2
+																					218 文本  was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+																			219 container
+																				220 container
+																					221 文本输入区 (settable) Console prompt
+							222 container
+								223 container pet-platform (Git) - main*, Checkout Branch/Tag...
+									224 按钮 pet-platform (Git) - main*, Checkout Branch/Tag...
+										225 文本 
+										226 文本  main*
+								227 container pet-platform (Git)
+									228 按钮 pet-platform (Git)
+								229 container 没有问题
+									230 按钮 没有问题
+										231 文本 
+										232 文本  0 
+										233 文本 
+										234 文本  0
+								235 container 进度和简要通知
+								236 container 已为屏幕阅读器优化
+									237 按钮 已为屏幕阅读器优化
+								238 container undefined
+								239 文本 1
+						240 文本 信息: Signing in to github.com...
+						241 container 调试器 - Errors: 0, Warnings: 2
+							242 文本 调试器 - Errors: 0, Warnings: 2
+	243 关闭按钮
+	244 全屏幕按钮 Help: 此按钮也可以执行缩放窗口的操作, Secondary Actions: 缩放窗口
+	245 最小化按钮
+246 menu bar
+	247 微信开发者工具
+	248 项目
+	249 文件
+	250 编辑
+	251 工具
+	252 跳转
+	253 选择
+	254 界面
+	255 设置
+	256 插件
+	257 帮助
+
+The focused UI element is 46 container

@@ -1,0 +1,92 @@
+[
+  {
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "argv": [
+      "docker",
+      "run",
+      "-d",
+      "--name",
+      "pet-platform-p03-02-runtime-c557a978",
+      "--label",
+      "com.pet.platform.validation=P03-02",
+      "-p",
+      "127.0.0.1::5432",
+      "-e",
+      "POSTGRES_DB=p03_runtime_fixture",
+      "-e",
+      "POSTGRES_USER=p03_runtime_fixture",
+      "-e",
+      "POSTGRES_PASSWORD=p03_runtime_technical_fixture",
+      "postgres:17.11-bookworm@sha256:3645570cccdfa447589da9f57dd740faa29b30938e861289a5574b6ca6b03826"
+    ],
+    "exitCode": 0,
+    "expectedExitCode": 0,
+    "startedAtUTC": "2026-10-08T01:06:47.902161+00:00",
+    "finishedAtUTC": "2026-10-08T01:06:48.228580+00:00",
+    "summary": "d59a9e38c986b70eae8a7f8a9a32202229607ba6f94bec5c5c575ec90e2c951b\n",
+    "log": "runtime-postgres-create.log"
+  },
+  {
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "argv": [
+      "docker",
+      "inspect",
+      "--format",
+      "{{json .NetworkSettings.Ports}}",
+      "pet-platform-p03-02-runtime-c557a978"
+    ],
+    "exitCode": 0,
+    "expectedExitCode": 0,
+    "startedAtUTC": "2026-10-08T01:06:49.166365+00:00",
+    "finishedAtUTC": "2026-10-08T01:06:49.211483+00:00",
+    "summary": "{\"5432/tcp\":[{\"HostIp\":\"127.0.0.1\",\"HostPort\":\"59154\"}]}\n",
+    "log": "runtime-postgres-port.log"
+  },
+  {
+    "databaseReady": true,
+    "fixture": "公开技术容器凭据，不是业务或生产账号",
+    "databasePort": 59154
+  },
+  {
+    "url": "http://127.0.0.1:59158/actuator/health",
+    "status": 200,
+    "body": {
+      "groups": [
+        "liveness",
+        "readiness"
+      ],
+      "status": "UP"
+    }
+  },
+  {
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "argv": [
+      "docker",
+      "stop",
+      "--time",
+      "10",
+      "pet-platform-p03-02-runtime-c557a978"
+    ],
+    "exitCode": 0,
+    "expectedExitCode": 0,
+    "startedAtUTC": "2026-10-08T01:06:53.551094+00:00",
+    "finishedAtUTC": "2026-10-08T01:06:53.773505+00:00",
+    "summary": "Flag --time has been deprecated, use --timeout instead\npet-platform-p03-02-runtime-c557a978\n",
+    "log": "runtime-postgres-final-stop.log"
+  },
+  {
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "argv": [
+      "docker",
+      "rm",
+      "-v",
+      "pet-platform-p03-02-runtime-c557a978"
+    ],
+    "exitCode": 0,
+    "expectedExitCode": 0,
+    "startedAtUTC": "2026-10-08T01:06:53.773546+00:00",
+    "finishedAtUTC": "2026-10-08T01:06:53.812064+00:00",
+    "summary": "pet-platform-p03-02-runtime-c557a978\n",
+    "log": "runtime-postgres-cleanup.log"
+  }
+]

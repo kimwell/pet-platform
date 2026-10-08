@@ -1,0 +1,13 @@
+{
+  "id": "negative-config",
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "command": [
+    "python3",
+    "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/pet-platform-p02-01-s8g6tcc1/negative-config.py"
+  ],
+  "exit_code": 0,
+  "status": "PASS",
+  "duration_seconds": 1.72,
+  "evidence": "negative-config.log",
+  "summary": "{\"id\": \"backend-missing-environment\", \"cwd\": \"/Users/kimwell/work/pet-platform/apps/backend\", \"command\": [\"/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/tools/jdk-21.0.12.1+1/Contents/Home/bin/java\", \"-jar\", \"target/pet-platform-backend-0.0.0-SNAPSHOT.jar\", \"--server.port=18081\"], \"exit_code\": 1, \"expected_exit_code\": 1, \"status\": \"PASS\", \"evidence\": \"backend-missing-environment.log\"}\n{\"id\": \"compose-empty-password\", \"cwd\": \"/Users/kimwell/work/pet-platform\", \"command\": [\"docker\", \"compose\", \"--env-file\", \"infra/local/.env.example\", \"-f\", \"infra/local/docker-compose.yml\", \"config\", \"--quiet\"], \"exit_code\": 1, \"expected_exit_code\": 1, \"status\": \"PASS\", \"evidence\": \"compose-empty-password.log\"}\n"
+}

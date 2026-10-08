@@ -1,0 +1,13 @@
+node_modules/.pnpm/@rc-component+image@1.10.0_react-dom@19.2.8_react@19.2.8__react@19.2.8/node_modules/@rc-component/image/es/PreviewGroup.d.ts(6,18): error TS2430: Interface 'GroupPreviewConfig' incorrectly extends interface 'InternalPreviewConfig'.
+  Types of property 'imageRender' are incompatible.
+    Type '((originalNode: ReactElement<unknown, string | JSXElementConstructor<any>>, info: { transform: TransformType; current: number; image: ImgInfo; }) => ReactNode) | undefined' is not assignable to type '((originalNode: ReactElement<unknown, string | JSXElementConstructor<any>>, info: { transform: TransformType; current?: number | undefined; image: ImgInfo; }) => ReactNode) | undefined'.
+      Type '(originalNode: ReactElement<unknown, string | JSXElementConstructor<any>>, info: { transform: TransformType; current: number; image: ImgInfo; }) => ReactNode' is not assignable to type '(originalNode: ReactElement<unknown, string | JSXElementConstructor<any>>, info: { transform: TransformType; current?: number | undefined; image: ImgInfo; }) => ReactNode'.
+        Types of parameters 'info' and 'info' are incompatible.
+          Type '{ transform: TransformType; current?: number | undefined; image: ImgInfo; }' is not assignable to type '{ transform: TransformType; current: number; image: ImgInfo; }'.
+            Types of property 'current' are incompatible.
+              Type 'number | undefined' is not assignable to type 'number'.
+                Type 'undefined' is not assignable to type 'number'.
+node_modules/.pnpm/@rc-component+picker@1.12.2_dayjs@1.11.23_react-dom@19.2.8_react@19.2.8__react@19.2.8/node_modules/@rc-component/picker/es/PickerPanel/index.d.ts(40,18): error TS2430: Interface 'SinglePickerPanelProps<DateType>' incorrectly extends interface 'BasePickerPanelProps<DateType>'.
+  Types of property 'defaultValue' are incompatible.
+    Type 'DateType | null | undefined' is not assignable to type 'DateType | undefined'.
+      Type 'null' is not assignable to type 'DateType | undefined'.

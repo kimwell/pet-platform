@@ -1,0 +1,28 @@
+{
+  "id": "rabbit-recreate-stable",
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "command": [
+    "docker",
+    "compose",
+    "--env-file",
+    "/Users/kimwell/work/pet-platform/.local-data/p02-infra.env",
+    "-p",
+    "pet-platform-p02-validation",
+    "-f",
+    "/Users/kimwell/work/pet-platform/infra/local/docker-compose.yml",
+    "up",
+    "-d",
+    "--wait",
+    "--wait-timeout",
+    "180",
+    "--force-recreate",
+    "rabbitmq"
+  ],
+  "exit_code": 0,
+  "expected_exit_code": 0,
+  "status": "PASS",
+  "started_at": "2026-10-08T07:30:03.347298+08:00",
+  "duration_seconds": 7.131,
+  "evidence": "rabbit-recreate-stable.log",
+  "summary": " Container pet-platform-p02-validation-rabbitmq-1 Recreate \n Container pet-platform-p02-validation-rabbitmq-1 Recreated \n Container pet-platform-p02-validation-rabbitmq-1 Starting \n Container pet-platform-p02-validation-rabbitmq-1 Started \n Container pet-platform-p02-validation-rabbitmq-1 Waiting \n Container pet-platform-p02-validation-rabbitmq-1 Healthy \n"
+}

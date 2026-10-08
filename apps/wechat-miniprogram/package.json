@@ -1,0 +1,11 @@
+{
+  "name": "@pet/wechat-miniprogram",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint miniprogram --max-warnings=0"
+  },
+  "dependencies": { "tdesign-miniprogram": "1.17.0" },
+  "devDependencies": { "miniprogram-api-typings": "5.2.3" }
+}

@@ -1,0 +1,26 @@
+[
+  {
+    "name": "node-v24.21.0-darwin-arm64.tar.gz",
+    "url": "https://nodejs.org/dist/v24.21.0/node-v24.21.0-darwin-arm64.tar.gz",
+    "sha256": "bed7eea5325e1108f32ce5228ddd6a5f0f08a499ee42aa7442aea583702f6057",
+    "bytes": 52909993,
+    "result": "PASS",
+    "seconds": 17.63
+  },
+  {
+    "name": "pnpm.tgz",
+    "url": "https://registry.npmjs.org/pnpm/-/pnpm-10.34.6.tgz",
+    "sha256": "44d7db90fcbb2315b581f85989a913466765421fc656c28e80fac1b7ab5be456",
+    "bytes": 4884674,
+    "result": "PASS",
+    "seconds": 4.5
+  },
+  {
+    "name": "OpenJDK21U-jdk_aarch64_mac_hotspot_21.0.12.1_1.tar.gz",
+    "url": "https://github.com/adoptium/temurin21-binaries/releases/download/jdk-21.0.12.1%2B1/OpenJDK21U-jdk_aarch64_mac_hotspot_21.0.12.1_1.tar.gz",
+    "sha256": "3623232f33a9c3baadf304480b2535f9a3cba8a58d42ecbb438ba267315d9998",
+    "bytes": 200073404,
+    "result": "PASS",
+    "seconds": 84.25
+  }
+]

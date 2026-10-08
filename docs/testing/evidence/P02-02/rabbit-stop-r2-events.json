@@ -1,0 +1,24 @@
+{
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "command": [
+    "docker",
+    "events",
+    "--filter",
+    "label=com.docker.compose.project=pet-platform-p02-validation",
+    "--filter",
+    "event=kill",
+    "--filter",
+    "event=die",
+    "--filter",
+    "event=stop",
+    "--filter",
+    "event=oom",
+    "--format",
+    "{{json .}}"
+  ],
+  "exit_code": 143,
+  "expected_exit_code": -15,
+  "status": "FAIL",
+  "evidence": "rabbit-stop-r2-events.log",
+  "boundary": "有意 SIGTERM 结束只读事件观察器；不是 RabbitMQ 进程退出码"
+}

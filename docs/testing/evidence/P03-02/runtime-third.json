@@ -1,0 +1,15 @@
+{
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "argv": [
+    "python3",
+    "docs/testing/evidence/P03-02/runtime-audit.py"
+  ],
+  "exitCode": 0,
+  "startedAtUTC": "2026-10-08T01:08:58.634285+00:00",
+  "finishedAtUTC": "2026-10-08T01:10:05.795123+00:00",
+  "toolchain": {
+    "JAVA_HOME": "/private/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/pet-platform-p02-02-_qb1x3n7/tools/jdk/jdk-21.0.12.1+1/Contents/Home"
+  },
+  "log": "runtime-third.log",
+  "summary": "生产JAR、数据库健康/故障、配置反例、正常停止及临时资源清理通过\n"
+}

@@ -1,0 +1,12 @@
+{
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "command": [
+    "python3",
+    "docs/testing/evidence/P02-02/wechat-2026-10-08/audit-continuation.py"
+  ],
+  "started_at": "2026-10-08T08:09:43.437492+08:00",
+  "duration_seconds": 0.389,
+  "exit_code": 0,
+  "log": "continuation-audit.log",
+  "summary": "{\n  \"checked_at\": \"2026-10-08T08:09:43.804860+08:00\",\n  \"cwd\": \"/Users/kimwell/work/pet-platform\",\n  \"preserved_file_count\": 516,\n  \"changed_preserved_files\": [],\n  \"historical_p02_02_manifest_file_count\": 273,\n  \"historical_p02_02_manifest_mismatch\": [],\n  \"broken_local_links\": [],\n  \"old_tool_version_unchanged\": true,\n  \"public_appid_empty\": true,\n  \"private_appid_matches\": true,\n  \"private_config_ignored\": true,\n  \"updated_documents\": [\n    \"docs/testing/P02-02-VERIFICATION.md\",\n    \"docs/testing/ACCEPTANCE-MATRIX.md\",\n    \"docs/development/LOCAL-DEVELOPMENT.md\",\n    \"docs/development/ROADMAP.md\"\n  ],\n  \"p02_02\": \"BLOCKED\",\n  \"p02\": \"IN_PROGRESS\",\n  \"p03\": \"NOT_STARTED\"\n}\n"
+}

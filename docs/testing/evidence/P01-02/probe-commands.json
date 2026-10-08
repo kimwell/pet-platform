@@ -1,0 +1,97 @@
+[
+  {
+    "id": "openapi-generate",
+    "command": [
+      "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/tools/node-v24.21.0-darwin-arm64/bin/node",
+      "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/frontend-probe/node_modules/openapi-typescript/bin/cli.js",
+      "contract.json",
+      "--alphabetize",
+      "-o",
+      "contract.generated.d.ts"
+    ],
+    "cwd": "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/pet-platform-p01-02-bggvo377",
+    "exit_code": 0,
+    "summary": "✨ openapi-typescript 7.13.0\n🚀 contract.json → contract.generated.d.ts [37.3ms]\n",
+    "evidence": "openapi-generate.log"
+  },
+  {
+    "id": "openapi-check",
+    "command": [
+      "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/tools/node-v24.21.0-darwin-arm64/bin/node",
+      "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/frontend-probe/node_modules/openapi-typescript/bin/cli.js",
+      "contract.json",
+      "--alphabetize",
+      "-o",
+      "contract.generated.d.ts",
+      "--check"
+    ],
+    "cwd": "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/pet-platform-p01-02-bggvo377",
+    "exit_code": 0,
+    "summary": "✨ openapi-typescript 7.13.0\n",
+    "evidence": "openapi-check.log"
+  },
+  {
+    "id": "contract-types",
+    "command": [
+      "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/tools/node-v24.21.0-darwin-arm64/bin/node",
+      "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/frontend-probe/node_modules/typescript/bin/tsc",
+      "--noEmit",
+      "--strict",
+      "--skipLibCheck",
+      "false",
+      "--lib",
+      "es2023",
+      "contract.generated.d.ts",
+      "contract-check.ts"
+    ],
+    "cwd": "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/pet-platform-p01-02-bggvo377",
+    "exit_code": 0,
+    "summary": "",
+    "evidence": "contract-types.log"
+  },
+  {
+    "id": "password-api-compile",
+    "command": [
+      "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/tools/jdk-21.0.12.1+1/Contents/Home/bin/javac",
+      "--release",
+      "21",
+      "PasswordApiProbe.java"
+    ],
+    "cwd": "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/pet-platform-p01-02-bggvo377",
+    "exit_code": 0,
+    "summary": "",
+    "evidence": "password-api-compile.log"
+  },
+  {
+    "id": "password-api-runtime",
+    "command": [
+      "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/tools/jdk-21.0.12.1+1/Contents/Home/bin/java",
+      "-cp",
+      ".",
+      "PasswordApiProbe"
+    ],
+    "cwd": "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/pet-platform-p01-02-bggvo377",
+    "exit_code": 0,
+    "summary": "JDK PBKDF2算法、参数和Unicode技术断言通过；固定盐仅技术夹具，不是生产凭据\n",
+    "evidence": "password-api-runtime.log"
+  },
+  {
+    "id": "openapi-drift-negative",
+    "command": [
+      "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/tools/node-v24.21.0-darwin-arm64/bin/node",
+      "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/frontend-probe/node_modules/openapi-typescript/bin/cli.js",
+      "contract.json",
+      "--alphabetize",
+      "-o",
+      "contract.generated.d.ts",
+      "--check"
+    ],
+    "cwd": "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/pet-platform-p01-02-bggvo377",
+    "exit_code": 1,
+    "expected_exit_code": 1,
+    "result": "PASS",
+    "fixture": "仅临时生成声明追加无关类型，随后恢复；不修改正式产物",
+    "summary": "✨ openapi-typescript 7.13.0\n ✘  Generated types are not up-to-date!\n",
+    "evidence": "openapi-drift-negative.log"
+  }
+]

@@ -1,0 +1,16 @@
+{
+  "id": "web-typecheck",
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "command": [
+    "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/tools/node-v24.21.0-darwin-arm64/bin/node",
+    "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/tools/pnpm/package/bin/pnpm.cjs",
+    "--filter",
+    "@pet/admin-web",
+    "typecheck"
+  ],
+  "exit_code": 2,
+  "status": "FAIL",
+  "duration_seconds": 3.48,
+  "evidence": "web-typecheck.log",
+  "summary": "\n> @pet/admin-web@0.0.0 typecheck /Users/kimwell/work/pet-platform/apps/admin-web\n> tsc --noEmit\n\nsrc/app/router/router.test.tsx(14,86): error TS2339: Property 'globalNotFound' does not exist on type 'MakeRouteMatchUnion'.\n  Property 'globalNotFound' does not exist on type 'RouteMatch<\"/\", \"/\", ResolveParams<\"/\">, AnySchema, undefined, AnyContext, {}>'.\n/Users/kimwell/work/pet-platform/apps/admin-web:\n ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL  @pet/admin-web@0.0.0 typecheck: `tsc --noEmit`\nExit status 2\n"
+}

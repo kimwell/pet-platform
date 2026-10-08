@@ -1,0 +1,22 @@
+{
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "git": {
+    "command": [
+      "git",
+      "status",
+      "--short"
+    ],
+    "exit_code": 128,
+    "output": "fatal: not a git repository (or any of the parent directories): .git"
+  },
+  "top_level_names": [
+    ".DS_Store",
+    "AGENTS.md",
+    "README.md",
+    "docs",
+    "ui"
+  ],
+  "preexisting_files": 378,
+  "temporary_directory": "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/pet-platform-p01-02-bggvo377",
+  "scope": "P01-02 文档与必要临时探针；未读取治理状态"
+}

@@ -1,0 +1,7 @@
+{
+  "path": "apps/backend/target/pet-platform-backend-0.0.0-SNAPSHOT.jar",
+  "size": 19867938,
+  "sha256": "ab639a93f6d03bce3c084e4a493e4dfb072a062c3f2a098d5a10dc5530f32d0a",
+  "class_major": 65,
+  "manifest": "Manifest-Version: 1.0\r\nCreated-By: Maven JAR Plugin 3.4.2\r\nBuild-Jdk-Spec: 21\r\nImplementation-Title: pet-platform-backend\r\nImplementation-Version: 0.0.0-SNAPSHOT\r\nMain-Class: org.springframework.boot.loader.launch.JarLauncher\r\nStart-Class: com.pet.platform.Application\r\nSpring-Boot-Version: 4.0.8\r\nSpring-Boot-Classes: BOOT-INF/classes/\r\nSpring-Boot-Lib: BOOT-INF/lib/\r\nSpring-Boot-Classpath-Index: BOOT-INF/classpath.idx\r\nSpring-Boot-Layers-Index: BOOT-INF/layers.idx\r\n\r\n"
+}

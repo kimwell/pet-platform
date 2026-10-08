@@ -1,0 +1,15 @@
+{
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "argv": [
+    "pnpm",
+    "install"
+  ],
+  "exitCode": 0,
+  "startedAtUTC": "2026-10-08T01:27:37.779307+00:00",
+  "finishedAtUTC": "2026-10-08T01:27:40.283883+00:00",
+  "toolchain": {
+    "JAVA_HOME": "/private/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/pet-platform-p02-02-_qb1x3n7/tools/jdk/jdk-21.0.12.1+1/Contents/Home"
+  },
+  "log": "install.log",
+  "summary": "Scope: all 4 workspace projects\nProgress: resolved 0, reused 1, downloaded 0, added 0\nProgress: resolved 345, reused 284, downloaded 6, added 0\nPackages: +26 -1\n++++++++++++++++++++++++++-\nProgress: resolved 347, reused 285, downloaded 12, added 26, done\n\ndevDependencies:\n+ openapi-typescript 7.13.0\n\nDone in 2.2s using pnpm v10.34.6\n"
+}

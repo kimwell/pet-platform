@@ -1,0 +1,4 @@
+{
+  "desc": "工程入口不参与微信搜索",
+  "rules": [{ "action": "disallow", "page": "*" }]
+}

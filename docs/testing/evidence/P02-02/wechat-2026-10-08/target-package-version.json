@@ -1,0 +1,15 @@
+{
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "command": [
+    "env",
+    "ELECTRON_RUN_AS_NODE=1",
+    "/Users/kimwell/Applications/WechatDevTools-2.02.2608080.app/Contents/MacOS/Electron",
+    "-e",
+    "const fs=require(\"fs\");const p=JSON.parse(fs.readFileSync(\"/Users/kimwell/Applications/WechatDevTools-2.02.2608080.app/Contents/Resources/app.asar/package.json\",\"utf8\"));console.log(JSON.stringify({name:p.name,version:p.version},null,2));"
+  ],
+  "started_at": "2026-10-08T08:07:06.235560+08:00",
+  "duration_seconds": 0.184,
+  "exit_code": 0,
+  "log": "target-package-version.log",
+  "summary": "{\n  \"name\": \"微信开发者工具\",\n  \"version\": \"2.02.2608080\"\n}\n"
+}

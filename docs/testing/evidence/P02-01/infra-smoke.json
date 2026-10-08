@@ -1,0 +1,13 @@
+{
+  "id": "infra-smoke",
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "command": [
+    "python3",
+    "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/pet-platform-p02-01-s8g6tcc1/infra-smoke.py"
+  ],
+  "exit_code": 0,
+  "status": "PASS",
+  "duration_seconds": 1.2,
+  "evidence": "infra-smoke.log",
+  "summary": "ublishedPort\\\":26379,\\\"Protocol\\\":\\\"tcp\\\"}],\\\"RunningFor\\\":\\\"2 minutes ago\\\",\\\"Service\\\":\\\"redis\\\",\\\"Size\\\":\\\"0B\\\",\\\"State\\\":\\\"running\\\",\\\"Status\\\":\\\"Up About a minute (healthy)\\\"}\\n\"}\n{\"id\": \"postgres-io\", \"cwd\": \"/Users/kimwell/work/pet-platform\", \"command\": [\"docker\", \"compose\", \"--env-file\", \".local-data/p02-infra.env\", \"-p\", \"pet-platform-p02-validation\", \"-f\", \"infra/local/docker-compose.yml\", \"exec\", \"-T\", \"postgres\", \"sh\", \"-ec\", \"PGPASSWORD=\\\"$POSTGRES_PASSWORD\\\" psql -h 127.0.0.1 -U \\\"$POSTGRES_USER\\\" -d \\\"$POSTGRES_DB\\\" -v ON_ERROR_STOP=1 -Atc \\\"select version(); select 1;\\\"\"], \"exit_code\": 0, \"output\": \"PostgreSQL 17.11 (Debian 17.11-1.pgdg12+2) on aarch64-unknown-linux-gnu, compiled by gcc (Debian 12.2.0-14+deb12u1) 12.2.0, 64-bit\\n1\\n\"}\n{\"id\": \"redis-auth\", \"cwd\": \"/Users/kimwell/work/pet-platform\", \"command\": [\"docker\", \"compose\", \"--env-file\", \".local-data/p02-infra.env\", \"-p\", \"pet-platform-p02-validation\", \"-f\", \"infra/local/docker-compose.yml\", \"exec\", \"-T\", \"redis\", \"sh\", \"-ec\", \"REDISCLI_AUTH=\\\"$REDIS_PASSWORD\\\" redis-cli ping; redis-cli ping\"], \"exit_code\": 0, \"output\": \"PONG\\nNOAUTH Authentication required.\\n\\n\"}\n{\"id\": \"rabbit-node\", \"cwd\": \"/Users/kimwell/work/pet-platform\", \"command\": [\"docker\", \"compose\", \"--env-file\", \".local-data/p02-infra.env\", \"-p\", \"pet-platform-p02-validation\", \"-f\", \"infra/local/docker-compose.yml\", \"exec\", \"-T\", \"rabbitmq\", \"rabbitmq-diagnostics\", \"-q\", \"check_running\"], \"exit_code\": 0, \"output\": \"RabbitMQ on node rabbit@2ccb1a9559b8 is fully booted and running\\n\"}\nRabbitMQ management authenticated HTTP 200, version=4.3.6\n"
+}

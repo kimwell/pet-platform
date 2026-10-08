@@ -1,0 +1,241 @@
+{
+  "command": [
+    "python3",
+    "docs/testing/evidence/P01-01/audit-reproduction.py"
+  ],
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "root": "/Users/kimwell/work/pet-platform",
+  "date": "2026-10-07",
+  "exit_code": 0,
+  "results": [
+    {
+      "id": "required-documents",
+      "result": "PASS",
+      "details": {
+        "count": 10
+      }
+    },
+    {
+      "id": "exact-version-matrix",
+      "result": "PASS",
+      "details": {
+        "records": 53
+      }
+    },
+    {
+      "id": "npm-publish-date",
+      "result": "PASS",
+      "details": {
+        "future_or_unknown": [],
+        "source": "前轮实际官方注册信息，未冒充本次新查询"
+      }
+    },
+    {
+      "id": "existing-root-files-preserved",
+      "result": "PASS",
+      "details": {
+        "root": "/Users/kimwell/work/pet-platform",
+        "checked_existing_files": 273,
+        "same": true,
+        "missing": [],
+        "changed": []
+      }
+    },
+    {
+      "id": "prior-location-unchanged",
+      "result": "PASS",
+      "details": {
+        "root": "/Users/kimwell/work/enterprise-app-scaffold",
+        "checked_existing_files": 95,
+        "same": true,
+        "missing": [],
+        "changed": []
+      }
+    },
+    {
+      "id": "pre-write-conflict-check",
+      "result": "PASS",
+      "details": {
+        "root": "/Users/kimwell/work/pet-platform",
+        "root_entries": [
+          ".DS_Store",
+          "ui"
+        ],
+        "conflicts": [],
+        "applicable_agents_before": [
+          {
+            "path": "/AGENTS.md",
+            "exists": false
+          },
+          {
+            "path": "/Users/AGENTS.md",
+            "exists": false
+          },
+          {
+            "path": "/Users/kimwell/AGENTS.md",
+            "exists": false
+          },
+          {
+            "path": "/Users/kimwell/work/AGENTS.md",
+            "exists": false
+          },
+          {
+            "path": "/Users/kimwell/work/pet-platform/AGENTS.md",
+            "exists": false
+          }
+        ],
+        "required_files": [
+          "AGENTS.md",
+          "README.md",
+          "docs/product/SCAFFOLD-SCOPE.md",
+          "docs/architecture/TECHNICAL-BASELINE.md",
+          "docs/architecture/PROJECT-STRUCTURE.md",
+          "docs/contracts/CORE-CONTRACTS.md",
+          "docs/development/VERSION-MATRIX.md",
+          "docs/development/ROADMAP.md",
+          "docs/development/DECISION-LOG.md",
+          "docs/testing/P01-01-VERIFICATION.md"
+        ],
+        "no_formal_dirs_before": true
+      }
+    },
+    {
+      "id": "current-root-only",
+      "result": "PASS",
+      "details": {
+        "root": "/Users/kimwell/work/pet-platform",
+        "nested_scaffold_exists": false
+      }
+    },
+    {
+      "id": "no-formal-applications",
+      "result": "PASS",
+      "details": {
+        "actual_root": [
+          ".DS_Store",
+          "AGENTS.md",
+          "README.md",
+          "docs",
+          "ui"
+        ]
+      }
+    },
+    {
+      "id": "no-framework-or-git-created",
+      "result": "PASS",
+      "details": {
+        "framework_created": false,
+        "git_initialized": false
+      }
+    },
+    {
+      "id": "fixed-backend-package-consistency",
+      "result": "PASS",
+      "details": {
+        "fields": [
+          "com.pet.platform",
+          "apps/backend/src/main/java/com/pet/platform/",
+          "com.pet.platform.Application"
+        ],
+        "modules": [
+          "shared",
+          "platform",
+          "identity",
+          "customeridentity",
+          "attachment",
+          "audit",
+          "notification",
+          "modules"
+        ],
+        "wrong_docs": [],
+        "missing_modules": [],
+        "startup_class_created": false
+      }
+    },
+    {
+      "id": "original-evidence-preserved",
+      "result": "PASS",
+      "details": {
+        "unchanged_files": 83,
+        "mismatches": [],
+        "adapted_files": [
+          "audit-reproduction.py",
+          "PROBE-REPRODUCTION.md"
+        ]
+      }
+    },
+    {
+      "id": "current-environment-rechecked",
+      "result": "PASS",
+      "details": {
+        "commands": 11,
+        "git_exit_128_expected": true
+      }
+    },
+    {
+      "id": "secret-marker-scan",
+      "result": "PASS",
+      "details": {
+        "hits": [],
+        "scope": "仅本轮文档和证据标准私钥/API秘密标识扫描，不宣称完整安全审计"
+      }
+    },
+    {
+      "id": "probe-archive-boundary",
+      "result": "PASS",
+      "details": {
+        "entries": 34,
+        "archive": "测试证据，不是正式应用"
+      }
+    },
+    {
+      "id": "prior-necessary-probe-results",
+      "result": "PASS",
+      "details": {
+        "checks": 14,
+        "execution": "前轮实际探针结果保留，本次未重新执行兼容构建"
+      }
+    },
+    {
+      "id": "failed-attempts-preserved",
+      "result": "PASS",
+      "details": {
+        "count": 15,
+        "ids": [
+          "frontend-install",
+          "web-types",
+          "web-build",
+          "web-runtime",
+          "frontend-lint",
+          "mini-types",
+          "openapi-types",
+          "openapi-types-compile",
+          "frontend-direct-tree",
+          "web-types-r2",
+          "frontend-lint-r2",
+          "mini-types-r2",
+          "mini-types-final",
+          "mini-npm-pack-api",
+          "mini-npm-pack-isolated"
+        ]
+      }
+    },
+    {
+      "id": "mini-prior-artifact-manifest",
+      "result": "PASS",
+      "details": {
+        "file_count": 1177,
+        "execution": "前轮离线打包产物清单"
+      }
+    },
+    {
+      "id": "local-document-links",
+      "result": "PASS",
+      "details": {
+        "checked": 60,
+        "broken": [],
+        "scope": "本轮10份文档与证据说明，不改既有ui文档"
+      }
+    }
+  ]
+}

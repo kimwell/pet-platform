@@ -1,0 +1,3 @@
+const ci = require("/Users/kimwell/Library/Caches/pnpm/dlx/0a56cbdb52b276f5927506b8df0d8e96322f23f53f9776089c7d6c5ac4960cd7/1a11679fa4a-10010/node_modules/miniprogram-ci");
+const fs = require("node:fs");
+(async () => { const result = await ci.packNpmManually({packageJsonPath:"/Users/kimwell/work/pet-platform/apps/wechat-miniprogram/package.json",miniprogramNpmDistDir:"/Users/kimwell/work/pet-platform/apps/wechat-miniprogram/miniprogram"}); console.log(JSON.stringify(result)); if (!fs.existsSync("/Users/kimwell/work/pet-platform/apps/wechat-miniprogram/miniprogram/miniprogram_npm/tdesign-miniprogram/button/button.wxml")) throw new Error("npm 构建缺少实际组件输出"); })().catch(error => { console.error(error); process.exitCode = 1; });

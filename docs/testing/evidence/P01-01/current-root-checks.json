@@ -1,0 +1,128 @@
+[
+  {
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "pwd"
+    ],
+    "exit_code": 0,
+    "stdout": "/Users/kimwell/work/pet-platform\n",
+    "stderr": "",
+    "result": "PASS"
+  },
+  {
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "git",
+      "rev-parse",
+      "--show-toplevel"
+    ],
+    "exit_code": 128,
+    "stdout": "",
+    "stderr": "fatal: not a git repository (or any of the parent directories): .git\n",
+    "result": "EXPECTED_NON_GIT"
+  },
+  {
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "git",
+      "branch",
+      "--show-current"
+    ],
+    "exit_code": 128,
+    "stdout": "",
+    "stderr": "fatal: not a git repository (or any of the parent directories): .git\n",
+    "result": "EXPECTED_NON_GIT"
+  },
+  {
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "git",
+      "status",
+      "--short"
+    ],
+    "exit_code": 128,
+    "stdout": "",
+    "stderr": "fatal: not a git repository (or any of the parent directories): .git\n",
+    "result": "EXPECTED_NON_GIT"
+  },
+  {
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "java",
+      "-version"
+    ],
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": "openjdk version \"21.0.10\" 2026-01-20 LTS\nOpenJDK Runtime Environment Zulu21.48+17-CA (build 21.0.10+7-LTS)\nOpenJDK 64-Bit Server VM Zulu21.48+17-CA (build 21.0.10+7-LTS, mixed mode, sharing)\n",
+    "result": "PASS"
+  },
+  {
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "node",
+      "--version"
+    ],
+    "exit_code": 0,
+    "stdout": "v22.23.2\n",
+    "stderr": "",
+    "result": "PASS"
+  },
+  {
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "pnpm",
+      "--version"
+    ],
+    "exit_code": 0,
+    "stdout": "10.33.0\n",
+    "stderr": "",
+    "result": "PASS"
+  },
+  {
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "mvn",
+      "--version"
+    ],
+    "exit_code": 0,
+    "stdout": "Apache Maven 3.9.15 (98b2cdbfdb5f1ac8781f537ea9acccaed7922349)\nMaven home: /opt/homebrew/Cellar/maven/3.9.15/libexec\nJava version: 21.0.10, vendor: Azul Systems, Inc., runtime: /Users/kimwell/sdk/java/zulu-21.jdk/Contents/Home\nDefault locale: zh_CN_#Hans, platform encoding: UTF-8\nOS name: \"mac os x\", version: \"27.0.1\", arch: \"aarch64\", family: \"mac\"\n",
+    "stderr": "",
+    "result": "PASS"
+  },
+  {
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "docker",
+      "--version"
+    ],
+    "exit_code": 0,
+    "stdout": "Docker version 29.5.2, build 79eb04c7d8\n",
+    "stderr": "",
+    "result": "PASS"
+  },
+  {
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "docker",
+      "info",
+      "--format",
+      "{{.ServerVersion}}"
+    ],
+    "exit_code": 0,
+    "stdout": "29.4.0\n",
+    "stderr": "",
+    "result": "PASS"
+  },
+  {
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "docker",
+      "compose",
+      "version"
+    ],
+    "exit_code": 0,
+    "stdout": "Docker Compose version v5.1.1\n",
+    "stderr": "",
+    "result": "PASS"
+  }
+]

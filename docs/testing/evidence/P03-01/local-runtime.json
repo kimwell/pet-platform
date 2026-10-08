@@ -1,0 +1,80 @@
+{
+  "cwd": "/Users/kimwell/work/pet-platform/apps/backend",
+  "argv": [
+    "/private/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/pet-platform-p02-02-_qb1x3n7/tools/jdk/jdk-21.0.12.1+1/Contents/Home/bin/java",
+    "-jar",
+    "/Users/kimwell/work/pet-platform/apps/backend/target/pet-platform-backend-0.0.0-SNAPSHOT.jar",
+    "--spring.profiles.active=local",
+    "--server.port=0"
+  ],
+  "startupObserved": true,
+  "profile": "local",
+  "http": [
+    {
+      "path": "/",
+      "accept": "application/json",
+      "status": 404,
+      "headers": {
+        "X-Trace-Id": "0123456789abcdef0123456789abcdef",
+        "Cache-Control": "no-store",
+        "Content-Type": "application/json",
+        "Transfer-Encoding": "chunked",
+        "Date": "Thu, 08 Oct 2026 00:37:34 GMT",
+        "Connection": "close"
+      },
+      "body": {
+        "success": false,
+        "error": {
+          "code": "RESOURCE_NOT_FOUND",
+          "message": "资源不存在或不可访问"
+        },
+        "traceId": "0123456789abcdef0123456789abcdef"
+      }
+    },
+    {
+      "path": "/__protocol/success",
+      "accept": "application/json",
+      "status": 404,
+      "headers": {
+        "X-Trace-Id": "0123456789abcdef0123456789abcdef",
+        "Cache-Control": "no-store",
+        "Content-Type": "application/json",
+        "Transfer-Encoding": "chunked",
+        "Date": "Thu, 08 Oct 2026 00:37:34 GMT",
+        "Connection": "close"
+      },
+      "body": {
+        "success": false,
+        "error": {
+          "code": "RESOURCE_NOT_FOUND",
+          "message": "资源不存在或不可访问"
+        },
+        "traceId": "0123456789abcdef0123456789abcdef"
+      }
+    },
+    {
+      "path": "/error",
+      "accept": "text/html",
+      "status": 404,
+      "headers": {
+        "X-Trace-Id": "0123456789abcdef0123456789abcdef",
+        "Cache-Control": "no-store",
+        "Content-Type": "application/json",
+        "Transfer-Encoding": "chunked",
+        "Date": "Thu, 08 Oct 2026 00:37:34 GMT",
+        "Connection": "close"
+      },
+      "body": {
+        "success": false,
+        "error": {
+          "code": "RESOURCE_NOT_FOUND",
+          "message": "资源不存在或不可访问"
+        },
+        "traceId": "0123456789abcdef0123456789abcdef"
+      }
+    }
+  ],
+  "processExitAfterSIGTERM": 143,
+  "portClosed": true,
+  "log": "local-startup.log"
+}

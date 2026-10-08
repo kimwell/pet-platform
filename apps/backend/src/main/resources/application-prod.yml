@@ -1,0 +1,7 @@
+# 生产先由独立迁移任务更新结构，运行进程只校验；不代表生产部署已验收。
+spring:
+  flyway:
+    enabled: false
+pet:
+  environment: prod
+  public-origin: ${PET_PUBLIC_ORIGIN:}

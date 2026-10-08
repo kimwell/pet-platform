@@ -1,0 +1,15 @@
+{
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "argv": [
+    "python3",
+    "docs/testing/evidence/P03-02/final-audit.py"
+  ],
+  "exitCode": 0,
+  "startedAtUTC": "2026-10-08T01:12:28.550614+00:00",
+  "finishedAtUTC": "2026-10-08T01:12:30.885138+00:00",
+  "toolchain": {
+    "JAVA_HOME": "/private/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/pet-platform-p02-02-_qb1x3n7/tools/jdk/jdk-21.0.12.1+1/Contents/Home"
+  },
+  "log": "audit-final.log",
+  "summary": "{\n  \"deletedFiles\": [],\n  \"unexpectedChanges\": [],\n  \"protectedPaths\": [\n    \"apps/admin-web\",\n    \"apps/wechat-miniprogram\",\n    \"ui\",\n    \"pnpm-lock.yaml\",\n    \"packages\",\n    \"AGENTS.md\",\n    \"P01/P02/P03-01历史文档与证据\"\n  ],\n  \"missingBaselineVolumes\": [],\n  \"extraVolumes\": [],\n  \"baselineContainers\": [\n    {\n      \"id\": \"aaf4a5757d7b\",\n      \"name\": \"pet-platform-p02-validation-rabbitmq-1\",\n      \"state\": \"exited 0 false\"\n    },\n    {\n      \"id\": \"220b713e01b2\",\n      \"name\": \"pet-platform-p02-validation-postgres-1\",\n      \"state\": \"exited 0 false\"\n    },\n    {\n      \"id\": \"c32b316136a1\",\n      \"name\": \"pet-platform-p02-validation-redis-1\",\n      \"state\": \"exited 0 false\"\n    }\n  ],\n  \"taskResourcesCleaned\": true,\n  \"missingLinks\": [],\n  \"artifactSha256\": \"c89e5492587698e26f54debff1a22a8372eb0267ef4018a11c367645f4b7f818\",\n  \"remoteCI\": \"NOT_EXECUTED\",\n  \"multiOS\": \"NOT_EXECUTED\"\n}\n"
+}

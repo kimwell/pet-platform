@@ -1,0 +1,15 @@
+{
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "argv": [
+    "python3",
+    "docs/testing/evidence/P03-01/runtime-audit.py"
+  ],
+  "exitCode": 0,
+  "startedAtUTC": "2026-10-08T00:37:32.430539+00:00",
+  "finishedAtUTC": "2026-10-08T00:37:34.618142+00:00",
+  "toolchain": {
+    "JAVA_HOME": "/private/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/pet-platform-p02-02-_qb1x3n7/tools/jdk/jdk-21.0.12.1+1/Contents/Home"
+  },
+  "log": "runtime-audit.log",
+  "summary": "{\"artifactSHA256\": \"f6b5ba276d3af52183c29ff45147d198958530b945eb838673bc768c4f42b97f\", \"productionClasses\": 24, \"localHTTP\": [[\"/\", 404], [\"/__protocol/success\", 404], [\"/error\", 404]], \"processExitAfterSIGTERM\": 143, \"portClosed\": true}\n"
+}

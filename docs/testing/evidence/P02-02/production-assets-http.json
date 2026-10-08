@@ -1,0 +1,30 @@
+{
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "command": [
+    "python3",
+    "urllib.request.urlopen",
+    "<浏览器实际引用的 JS/CSS>"
+  ],
+  "exit_code": 0,
+  "status": "PASS",
+  "checks": [
+    {
+      "url": "http://127.0.0.1:4173/assets/index-D9gzWvXX.js",
+      "status": 200,
+      "bytes": 621320,
+      "sha256": "fa7f8d89e31a95193e96e39790a42dfaf651862b25e5c979cc8bf0441c9eb28c"
+    },
+    {
+      "url": "http://127.0.0.1:4173/assets/index-CNdMMY7y.css",
+      "status": 200,
+      "bytes": 3235,
+      "sha256": "5b905fac3566e804881c14d2eea54050c7a82324cf916a49153a4458a806852d"
+    },
+    {
+      "file": "apps/admin-web/dist/assets/index-D9gzWvXX.js",
+      "raw_bytes": 621320,
+      "gzip_bytes": 205118
+    }
+  ],
+  "public_config_secret_scan": "PASS 限定检查：无 DEV 后端来源/基础设施凭据键/公开反例秘密特征"
+}

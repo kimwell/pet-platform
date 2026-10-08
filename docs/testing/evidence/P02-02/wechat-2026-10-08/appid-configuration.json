@@ -1,0 +1,8 @@
+{
+  "path": "apps/wechat-miniprogram/project.private.config.json",
+  "appid": "wx9bcab67d52e2ee04",
+  "existed_before": false,
+  "previous_sha256": null,
+  "public_appid": "",
+  "rule": "官方私有配置同名字段优先；保留原有其他设置；AppSecret未提供或使用"
+}

@@ -1,0 +1,12 @@
+{
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "command": [
+    "python3",
+    "docs/testing/evidence/P02-02/wechat-logged-in-2026-10-08/audit-current.py"
+  ],
+  "started_at": "2026-10-08T08:26:30.483712+08:00",
+  "duration_seconds": 0.614,
+  "exit_code": 0,
+  "log": "final-audit.log",
+  "summary": "{\n  \"status\": \"PASS\",\n  \"scope\": \"保全与文档/配置/产物一致性；不替代真实编译和运行\",\n  \"preserved_files\": 864,\n  \"changed_preserved_files\": [],\n  \"public_config_sha256\": \"12d8d6de2bbad9006fa0f34720c9ffa8b223d401b31a0db8b429e4aa5f568c74\",\n  \"public_appid\": \"\",\n  \"private_appid\": \"wx9bcab67d52e2ee04\",\n  \"existing_private_settings_preserved\": true,\n  \"ignored_paths\": [\n    \"apps/wechat-miniprogram/project.private.config.json\",\n    \"apps/wechat-miniprogram/miniprogram/miniprogram_npm\",\n    \".local-data/p02-02-offline-npm-before-tool\"\n  ],\n  \"npm_output_files_sha_verified\": 1177,\n  \"local_document_links_checked\": 158,\n  \"business_sources\": \"本轮未修改后端/Web/infra；此SHA保全清单不覆盖其全部源码\"\n}\n"
+}

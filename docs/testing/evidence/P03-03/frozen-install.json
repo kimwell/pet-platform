@@ -1,0 +1,16 @@
+{
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "argv": [
+    "pnpm",
+    "install",
+    "--frozen-lockfile"
+  ],
+  "exitCode": 0,
+  "startedAtUTC": "2026-10-08T01:35:38.947641+00:00",
+  "finishedAtUTC": "2026-10-08T01:35:42.395303+00:00",
+  "toolchain": {
+    "JAVA_HOME": "/private/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/pet-platform-p02-02-_qb1x3n7/tools/jdk/jdk-21.0.12.1+1/Contents/Home"
+  },
+  "log": "frozen-install.log",
+  "summary": "Scope: all 4 workspace projects\nLockfile is up to date, resolution step is skipped\nAlready up to date\n\nDone in 1.4s using pnpm v10.34.6\n"
+}

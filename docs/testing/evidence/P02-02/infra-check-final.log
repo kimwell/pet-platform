@@ -1,0 +1,4 @@
+
+> pet-platform@0.0.0 check:infra /Users/kimwell/work/pet-platform
+> node scripts/local-infra.mjs check --env-file .local-data/p02-infra.env --project pet-platform-p02-validation
+

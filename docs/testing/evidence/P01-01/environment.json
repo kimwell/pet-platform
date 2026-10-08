@@ -1,0 +1,114 @@
+[
+  {
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "git",
+      "rev-parse",
+      "--show-toplevel"
+    ],
+    "exit_code": 128,
+    "output": "fatal: not a git repository (or any of the parent directories): .git\n"
+  },
+  {
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "git",
+      "branch",
+      "--show-current"
+    ],
+    "exit_code": 128,
+    "output": "fatal: not a git repository (or any of the parent directories): .git\n"
+  },
+  {
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "git",
+      "status",
+      "--short"
+    ],
+    "exit_code": 128,
+    "output": "fatal: not a git repository (or any of the parent directories): .git\n"
+  },
+  {
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "java",
+      "-version"
+    ],
+    "exit_code": 0,
+    "output": "openjdk version \"21.0.10\" 2026-01-20 LTS\nOpenJDK Runtime Environment Zulu21.48+17-CA (build 21.0.10+7-LTS)\nOpenJDK 64-Bit Server VM Zulu21.48+17-CA (build 21.0.10+7-LTS, mixed mode, sharing)\n"
+  },
+  {
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "/usr/libexec/java_home",
+      "-V"
+    ],
+    "exit_code": 0,
+    "output": "/Users/kimwell/Library/Java/JavaVirtualMachines/openjdk-21.0.1/Contents/Home\nMatching Java Virtual Machines (1):\n    21.0.1 (arm64) \"Oracle Corporation\" - \"OpenJDK 21.0.1\" /Users/kimwell/Library/Java/JavaVirtualMachines/openjdk-21.0.1/Contents/Home\n"
+  },
+  {
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "node",
+      "--version"
+    ],
+    "exit_code": 0,
+    "output": "v22.23.2\n"
+  },
+  {
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "pnpm",
+      "--version"
+    ],
+    "exit_code": 0,
+    "output": "10.33.0\n"
+  },
+  {
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "npm",
+      "--version"
+    ],
+    "exit_code": 0,
+    "output": "10.9.8\n"
+  },
+  {
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "corepack",
+      "--version"
+    ],
+    "exit_code": 0,
+    "output": "0.34.6\n"
+  },
+  {
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "mvn",
+      "--version"
+    ],
+    "exit_code": 0,
+    "output": "Apache Maven 3.9.15 (98b2cdbfdb5f1ac8781f537ea9acccaed7922349)\nMaven home: /opt/homebrew/Cellar/maven/3.9.15/libexec\nJava version: 21.0.10, vendor: Azul Systems, Inc., runtime: /Users/kimwell/sdk/java/zulu-21.jdk/Contents/Home\nDefault locale: zh_CN_#Hans, platform encoding: UTF-8\nOS name: \"mac os x\", version: \"27.0.1\", arch: \"aarch64\", family: \"mac\"\n"
+  },
+  {
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "docker",
+      "--version"
+    ],
+    "exit_code": 0,
+    "output": "Docker version 29.5.2, build 79eb04c7d8\n"
+  },
+  {
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "docker",
+      "compose",
+      "version"
+    ],
+    "exit_code": 0,
+    "output": "Docker Compose version v5.1.1\n"
+  }
+]

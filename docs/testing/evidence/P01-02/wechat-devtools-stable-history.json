@@ -1,0 +1,478 @@
+{
+  "history": [
+    {
+      "version": "2.02.2608080",
+      "date": "2026-09-30",
+      "type": "stable",
+      "log_file": "logs/stable_v2.02.2608080.json"
+    },
+    {
+      "version": "2.02.2608070",
+      "date": "2026-09-07",
+      "type": "stable",
+      "log_file": "logs/stable_v2.02.2608070.json"
+    },
+    {
+      "version": "2.02.2608060",
+      "date": "2026-08-25",
+      "type": "stable",
+      "log_file": "logs/stable_v2.02.2608060.json"
+    },
+    {
+      "version": "2.02.2608040",
+      "date": "2026-08-18",
+      "type": "stable",
+      "log_file": "logs/stable_v2.02.2608040.json"
+    },
+    {
+      "version": "2.01.2510290",
+      "date": "2026-03-25",
+      "type": "stable",
+      "log_file": "logs/stable_v2.01.2510290.json"
+    },
+    {
+      "version": "2.01.2510280",
+      "date": "2026-01-20",
+      "type": "stable",
+      "log_file": "logs/stable_v2.01.2510280.json"
+    },
+    {
+      "version": "2.01.2510270",
+      "date": "2026-01-19",
+      "type": "stable",
+      "log_file": "logs/stable_v2.01.2510270.json"
+    },
+    {
+      "version": "2.01.2510260",
+      "date": "2025-10-26",
+      "type": "stable",
+      "log_file": "logs/stable_v2.01.2510260.json"
+    },
+    {
+      "version": "2.01.2510250",
+      "date": "2025-10-25",
+      "type": "stable",
+      "log_file": "logs/stable_v2.01.2510250.json"
+    },
+    {
+      "version": "1.06.2504060",
+      "date": "2025-04-06",
+      "type": "stable",
+      "log_file": "logs/stable_v1.06.2504060.json"
+    },
+    {
+      "version": "1.06.2504050",
+      "date": "2025-04-05",
+      "type": "stable",
+      "log_file": "logs/stable_v1.06.2504050.json"
+    },
+    {
+      "version": "1.06.2504040",
+      "date": "2025-04-04",
+      "type": "stable",
+      "log_file": "logs/stable_v1.06.2504040.json"
+    },
+    {
+      "version": "1.06.2504030",
+      "date": "2025-04-03",
+      "type": "stable",
+      "log_file": "logs/stable_v1.06.2504030.json"
+    },
+    {
+      "version": "1.06.2504020",
+      "date": "2025-04-02",
+      "type": "stable",
+      "log_file": "logs/stable_v1.06.2504020.json"
+    },
+    {
+      "version": "1.06.2504010",
+      "date": "2025-04-01",
+      "type": "stable",
+      "log_file": "logs/stable_v1.06.2504010.json"
+    },
+    {
+      "version": "1.06.2503310",
+      "date": "2025-03-31",
+      "type": "stable",
+      "log_file": "logs/stable_v1.06.2503310.json"
+    },
+    {
+      "version": "1.06.2503300",
+      "date": "2025-03-30",
+      "type": "stable",
+      "log_file": "logs/stable_v1.06.2503300.json"
+    },
+    {
+      "version": "1.06.2503290",
+      "date": "2025-03-29",
+      "type": "stable",
+      "log_file": "logs/stable_v1.06.2503290.json"
+    },
+    {
+      "version": "1.06.2412050",
+      "date": "2024-12-05",
+      "type": "stable",
+      "log_file": "logs/stable_v1.06.2412050.json"
+    },
+    {
+      "version": "1.06.2412040",
+      "date": "2024-12-04",
+      "type": "stable",
+      "log_file": "logs/stable_v1.06.2412040.json"
+    },
+    {
+      "version": "1.06.2411280",
+      "date": "2024-11-28",
+      "type": "stable",
+      "log_file": "logs/stable_v1.06.2412050.json"
+    },
+    {
+      "version": "1.06.2409140",
+      "date": "2024-09-14",
+      "type": "stable",
+      "log_file": "logs/stable_v1.06.2409140.json"
+    },
+    {
+      "version": "1.06.2407120",
+      "date": "2024-07-12",
+      "type": "stable",
+      "log_file": "logs/stable_v1.06.2407120.json"
+    },
+    {
+      "version": "1.06.2407110",
+      "date": "2024-07-11",
+      "type": "stable",
+      "log_file": "logs/stable_v1.06.2407110.json"
+    },
+    {
+      "version": "1.06.2405020",
+      "date": "2024-05-02",
+      "type": "stable",
+      "log_file": "logs/stable_v1.06.2405020.json"
+    },
+    {
+      "version": "1.06.2405010",
+      "date": "2024-05-01",
+      "type": "stable",
+      "log_file": "logs/stable_v1.06.2405010.json"
+    },
+    {
+      "version": "1.06.2402040",
+      "date": "2024-02-04",
+      "type": "stable",
+      "log_file": "logs/stable_v1.06.2402040.json"
+    },
+    {
+      "version": "1.06.2402030",
+      "date": "2024-02-03",
+      "type": "stable",
+      "log_file": "logs/stable_v1.06.2402030.json"
+    },
+    {
+      "version": "1.06.2401020",
+      "date": "2024-01-02",
+      "type": "stable",
+      "log_file": "logs/stable_v1.06.2401020.json"
+    },
+    {
+      "version": "1.06.2310080",
+      "date": "2023-10-08",
+      "type": "stable",
+      "log_file": "logs/stable_v1.06.2310080.json"
+    },
+    {
+      "version": "1.06.2308310",
+      "date": "2023-08-31",
+      "type": "stable",
+      "log_file": "logs/stable_v1.06.2308310.json"
+    },
+    {
+      "version": "1.06.2308300",
+      "date": "2023-08-30",
+      "type": "stable",
+      "log_file": "logs/stable_v1.06.2308300.json"
+    },
+    {
+      "version": "1.06.2307260",
+      "date": "2023-07-26",
+      "type": "stable",
+      "log_file": "logs/stable_v1.06.2307260.json"
+    },
+    {
+      "version": "1.06.2307250",
+      "date": "2023-07-25",
+      "type": "stable",
+      "log_file": "logs/stable_v1.06.2307250.json"
+    },
+    {
+      "version": "1.06.2306020",
+      "date": "2023-06-02",
+      "type": "stable",
+      "log_file": "logs/stable_v1.06.2306020.json"
+    },
+    {
+      "version": "1.06.2306010",
+      "date": "2023-06-01",
+      "type": "stable",
+      "log_file": "logs/stable_v1.06.2306010.json"
+    },
+    {
+      "version": "1.06.2303220",
+      "date": "2023-03-22",
+      "type": "stable",
+      "log_file": "logs/stable_v1.06.2303220.json"
+    },
+    {
+      "version": "1.06.2303060",
+      "date": "2023-03-06",
+      "type": "stable",
+      "log_file": "logs/stable_v1.06.2303060.json"
+    },
+    {
+      "version": "1.06.2303020",
+      "date": "2023-03-02",
+      "type": "stable",
+      "log_file": "logs/stable_v1.06.2303020.json"
+    },
+    {
+      "version": "1.06.2301160",
+      "date": "2023-01-16",
+      "type": "stable",
+      "log_file": "logs/stable_v1.06.2301160.json"
+    },
+    {
+      "version": "1.06.2301040",
+      "date": "2023-01-04",
+      "type": "stable",
+      "log_file": "logs/stable_v1.06.2301040.json"
+    },
+    {
+      "version": "1.06.2210310",
+      "date": "2022-10-31",
+      "type": "stable",
+      "log_file": "logs/stable_v1.06.2210310.json"
+    },
+    {
+      "version": "1.06.2209190",
+      "date": "2022-09-19",
+      "type": "stable",
+      "log_file": "logs/stable_v1.06.2209190.json"
+    },
+    {
+      "version": "1.06.2209070",
+      "date": "2022-09-07",
+      "type": "stable",
+      "log_file": "logs/stable_v1.06.2209070.json"
+    },
+    {
+      "version": "1.06.2209060",
+      "date": "2022-09-06",
+      "type": "stable",
+      "log_file": "logs/stable_v1.06.2209060.json"
+    },
+    {
+      "version": "1.06.2208010",
+      "date": "2022-08-01",
+      "type": "stable",
+      "log_file": "logs/stable_v1.06.2208010.json"
+    },
+    {
+      "version": "1.06.2207210",
+      "date": "2022-07-21",
+      "type": "stable",
+      "log_file": "logs/stable_v1.06.2207210.json"
+    },
+    {
+      "version": "1.06.2206090",
+      "date": "2022-06-09",
+      "type": "stable",
+      "log_file": "logs/stable_v1.06.2206090.json"
+    },
+    {
+      "version": "1.06.2206020",
+      "date": "2022-06-02",
+      "type": "stable",
+      "log_file": "logs/stable_v1.06.2206020.json"
+    },
+    {
+      "version": "1.06.2204250",
+      "date": "2022-04-25",
+      "type": "stable",
+      "log_file": "logs/stable_v1.06.2204250.json"
+    },
+    {
+      "version": "1.06.2204180",
+      "date": "2022-04-18",
+      "type": "stable",
+      "log_file": "logs/stable_v1.06.2204180.json"
+    },
+    {
+      "version": "1.06.2203070",
+      "date": "2022-03-07",
+      "type": "stable",
+      "log_file": "logs/stable_v1.06.2203070.json"
+    },
+    {
+      "version": "1.06.2203030",
+      "date": "2022-03-03",
+      "type": "stable",
+      "log_file": "logs/stable_v1.06.2203030.json"
+    },
+    {
+      "version": "1.06.2201240",
+      "date": "2022-01-24",
+      "type": "stable",
+      "log_file": "logs/stable_v1.06.2201240.json"
+    },
+    {
+      "version": "1.06.2201210",
+      "date": "2022-01-21",
+      "type": "stable",
+      "log_file": "logs/stable_v1.06.2201210.json"
+    },
+    {
+      "version": "1.06.2111300",
+      "date": "2021-11-30",
+      "type": "stable",
+      "log_file": "logs/stable_v1.06.2111300.json"
+    },
+    {
+      "version": "2021.10.29",
+      "date": "2021-10-29",
+      "type": "stable",
+      "log_file": "logs/stable_v2021.10.29.json"
+    },
+    {
+      "version": "2021.10.11",
+      "date": "2021-10-11",
+      "type": "stable",
+      "log_file": "logs/stable_v2021.10.11.json"
+    },
+    {
+      "version": "2021.08.15",
+      "date": "2021-08-15",
+      "type": "stable",
+      "log_file": "logs/stable_v2021.08.15.json"
+    },
+    {
+      "version": "2021.08.13",
+      "date": "2021-08-13",
+      "type": "stable",
+      "log_file": "logs/stable_v2021.08.13.json"
+    },
+    {
+      "version": "2021.07.09",
+      "date": "2021-07-09",
+      "type": "stable",
+      "log_file": "logs/stable_v2021.07.09.json"
+    },
+    {
+      "version": "2021.06.30",
+      "date": "2021-06-30",
+      "type": "stable",
+      "log_file": "logs/stable_v2021.06.30.json"
+    },
+    {
+      "version": "2021.06.25",
+      "date": "2021-06-25",
+      "type": "stable",
+      "log_file": "logs/stable_v2021.06.25.json"
+    },
+    {
+      "version": "2021.05.17",
+      "date": "2021-05-17",
+      "type": "stable",
+      "log_file": "logs/stable_v2021.05.17.json"
+    },
+    {
+      "version": "2021.05.10",
+      "date": "2021-05-10",
+      "type": "stable",
+      "log_file": "logs/stable_v2021.05.10.json"
+    },
+    {
+      "version": "2021.04.16",
+      "date": "2021-04-16",
+      "type": "stable",
+      "log_file": "logs/stable_v2021.04.16.json"
+    },
+    {
+      "version": "2021.03.19",
+      "date": "2021-03-19",
+      "type": "stable",
+      "log_file": "logs/stable_v2021.03.19.json"
+    },
+    {
+      "version": "2021.02.22",
+      "date": "2021-02-22",
+      "type": "stable",
+      "log_file": "logs/stable_v2021.02.22.json"
+    },
+    {
+      "version": "2021.02.01",
+      "date": "2021-02-01",
+      "type": "stable",
+      "log_file": "logs/stable_v2021.02.01.json"
+    },
+    {
+      "version": "2021.01.15",
+      "date": "2021-01-15",
+      "type": "stable",
+      "log_file": "logs/stable_v2021.01.15.json"
+    },
+    {
+      "version": "2021.01.04",
+      "date": "2021-01-04",
+      "type": "stable",
+      "log_file": "logs/stable_v2021.01.04.json"
+    },
+    {
+      "version": "2020.11.26",
+      "date": "2020-11-26",
+      "type": "stable",
+      "log_file": "logs/stable_v2020.11.26.json"
+    },
+    {
+      "version": "2020.10.27",
+      "date": "2020-10-27",
+      "type": "stable",
+      "log_file": "logs/stable_v2020.10.27.json"
+    },
+    {
+      "version": "2020.09.15",
+      "date": "2020-09-15",
+      "type": "stable",
+      "log_file": "logs/stable_v2020.09.15.json"
+    },
+    {
+      "version": "2020.08.31",
+      "date": "2020-08-31",
+      "type": "stable",
+      "log_file": "logs/stable_v2020.08.31.json"
+    },
+    {
+      "version": "2020.06.19",
+      "date": "2020-06-19",
+      "type": "stable",
+      "log_file": "logs/stable_v2020.06.19.json"
+    },
+    {
+      "version": "2020.05.25",
+      "date": "2020-05-25",
+      "type": "stable",
+      "log_file": "logs/stable_v2020.05.25.json"
+    },
+    {
+      "version": "2020.04.02",
+      "date": "2020-04-02",
+      "type": "stable",
+      "log_file": "logs/stable_v2020.04.02.json"
+    },
+    {
+      "version": "2020.03.25",
+      "date": "2020-03-25",
+      "type": "stable",
+      "log_file": "logs/stable_v2020.03.25.json"
+    }
+  ]
+}

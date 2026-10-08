@@ -1,0 +1,13 @@
+{
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "command": [
+    "pnpm",
+    "dev:web"
+  ],
+  "pid": 692,
+  "port": 5173,
+  "status": "PASS",
+  "exit_code": null,
+  "evidence": "web-dev.log",
+  "boundary": "长驻进程启动观察，不伪造命令退出码"
+}

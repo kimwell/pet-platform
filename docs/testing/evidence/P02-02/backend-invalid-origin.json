@@ -1,0 +1,18 @@
+{
+  "id": "backend-invalid-origin",
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "command": [
+    "java",
+    "-jar",
+    "/Users/kimwell/work/pet-platform/apps/backend/target/pet-platform-backend-0.0.0-SNAPSHOT.jar",
+    "--spring.profiles.active=local",
+    "--pet.public-origin=http://localhost:65536"
+  ],
+  "exit_code": 1,
+  "expected_exit_code": 1,
+  "status": "PASS",
+  "started_at": "2026-10-08T07:27:05.425115+08:00",
+  "duration_seconds": 0.975,
+  "evidence": "backend-invalid-origin.log",
+  "summary": "nd] [           main] com.pet.platform.Application             : The following 1 profile is active: \"local\"\n2026-10-08T07:27:05.336+08:00  INFO 1834 --- [pet-platform-backend] [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8080 (http)\n2026-10-08T07:27:05.347+08:00  INFO 1834 --- [pet-platform-backend] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]\n2026-10-08T07:27:05.347+08:00  INFO 1834 --- [pet-platform-backend] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.24]\n2026-10-08T07:27:05.361+08:00  INFO 1834 --- [pet-platform-backend] [           main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 384 ms\n2026-10-08T07:27:05.395+08:00  WARN 1834 --- [pet-platform-backend] [           main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.boot.context.properties.ConfigurationPropertiesBindException: Error creating bean with name 'pet-com.pet.platform.shared.config.EnvironmentSettings': Could not bind properties to 'EnvironmentSettings' : prefix=pet, ignoreInvalidFields=false, ignoreUnknownFields=true\n2026-10-08T07:27:05.396+08:00  INFO 1834 --- [pet-platform-backend] [           main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]\n2026-10-08T07:27:05.400+08:00  INFO 1834 --- [pet-platform-backend] [           main] .s.b.a.l.ConditionEvaluationReportLogger : \n\nError starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.\n2026-10-08T07:27:05.406+08:00 ERROR 1834 --- [pet-platform-backend] [           main] o.s.b.d.LoggingFailureAnalysisReporter   : \n\n***************************\nAPPLICATION FAILED TO START\n***************************\n\nDescription:\n\nFailed to bind properties under 'pet' to com.pet.platform.shared.config.EnvironmentSettings:\n\n    Reason: java.lang.IllegalArgumentException: pet.public-origin 必须是完整的公开 HTTP/HTTPS 来源，不包含凭据、路径或查询，端口须为 1～65535\n\nAction:\n\nUpdate your application's configuration\n\n"
+}

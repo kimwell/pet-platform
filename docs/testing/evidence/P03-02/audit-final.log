@@ -1,0 +1,37 @@
+{
+  "deletedFiles": [],
+  "unexpectedChanges": [],
+  "protectedPaths": [
+    "apps/admin-web",
+    "apps/wechat-miniprogram",
+    "ui",
+    "pnpm-lock.yaml",
+    "packages",
+    "AGENTS.md",
+    "P01/P02/P03-01历史文档与证据"
+  ],
+  "missingBaselineVolumes": [],
+  "extraVolumes": [],
+  "baselineContainers": [
+    {
+      "id": "aaf4a5757d7b",
+      "name": "pet-platform-p02-validation-rabbitmq-1",
+      "state": "exited 0 false"
+    },
+    {
+      "id": "220b713e01b2",
+      "name": "pet-platform-p02-validation-postgres-1",
+      "state": "exited 0 false"
+    },
+    {
+      "id": "c32b316136a1",
+      "name": "pet-platform-p02-validation-redis-1",
+      "state": "exited 0 false"
+    }
+  ],
+  "taskResourcesCleaned": true,
+  "missingLinks": [],
+  "artifactSha256": "c89e5492587698e26f54debff1a22a8372eb0267ef4018a11c367645f4b7f818",
+  "remoteCI": "NOT_EXECUTED",
+  "multiOS": "NOT_EXECUTED"
+}

@@ -1,0 +1,19 @@
+{
+  "checked_at": "2026-10-08T08:07:24.169507+08:00",
+  "installed_target": "2.02.2608080",
+  "runtime_package_version": "2.02.2608080",
+  "app_path": "/Users/kimwell/Applications/WechatDevTools-2.02.2608080.app",
+  "original_app_preserved": true,
+  "global_install_scripts_executed": false,
+  "private_appid": "wx9bcab67d52e2ee04",
+  "appid_permission": "NOT_VERIFIED",
+  "login": "NOT_LOGGED_IN（界面显示二维码）",
+  "cli_help": "PASS / exit0",
+  "cli_status_probe": "exit246 / 服务端口关闭；首轮启动前探针exit255亦保留",
+  "automation": "NOT_EXECUTED；服务端口未开启，界面流程无需开启",
+  "npm_build": "NOT_EXECUTED",
+  "source_compile": "NOT_EXECUTED",
+  "simulator": "NOT_EXECUTED",
+  "device": "NOT_EXECUTED",
+  "reason": "冻结工具已就绪；等待用户扫码登录，登录后验证开发权限并通过工具界面构建/编译"
+}

@@ -1,0 +1,58 @@
+[
+  {
+    "repo": "actions/checkout",
+    "tag": "v4",
+    "sha": "11d5960a326750d5838078e36cf38b85af677262",
+    "command": [
+      "git",
+      "ls-remote",
+      "https://github.com/actions/checkout.git",
+      "refs/tags/v4",
+      "refs/tags/v4^{}"
+    ],
+    "exit_code": 0,
+    "output": "11d5960a326750d5838078e36cf38b85af677262\trefs/tags/v4\n"
+  },
+  {
+    "repo": "actions/setup-node",
+    "tag": "v4",
+    "sha": "49933ea5288caeca8642d1e84afbd3f7d6820020",
+    "command": [
+      "git",
+      "ls-remote",
+      "https://github.com/actions/setup-node.git",
+      "refs/tags/v4",
+      "refs/tags/v4^{}"
+    ],
+    "exit_code": 0,
+    "output": "49933ea5288caeca8642d1e84afbd3f7d6820020\trefs/tags/v4\n"
+  },
+  {
+    "repo": "actions/setup-java",
+    "tag": "v4",
+    "sha": "cf277c60eb25467037889841efdb72551f06f6c3",
+    "command": [
+      "git",
+      "ls-remote",
+      "https://github.com/actions/setup-java.git",
+      "refs/tags/v4",
+      "refs/tags/v4^{}"
+    ],
+    "exit_code": 0,
+    "output": "cf277c60eb25467037889841efdb72551f06f6c3\trefs/tags/v4\n"
+  },
+  {
+    "repo": "pnpm/action-setup",
+    "tag": "v4",
+    "sha": "b906affcce14559ad1aafd4ab0e942779e9f58b1",
+    "command": [
+      "git",
+      "ls-remote",
+      "https://github.com/pnpm/action-setup.git",
+      "refs/tags/v4",
+      "refs/tags/v4^{}"
+    ],
+    "exit_code": 0,
+    "output": "f40ffcd9367d9f12939873eb1018b921a783ffaa\trefs/tags/v4\nb906affcce14559ad1aafd4ab0e942779e9f58b1\trefs/tags/v4^{}\n"
+  }
+]

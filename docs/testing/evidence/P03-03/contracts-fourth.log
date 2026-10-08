@@ -1,0 +1,150 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ---------------< com.pet.platform:pet-platform-backend >----------------
+[INFO] Building pet-platform-backend 0.0.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- clean:3.5.0:clean (default-clean) @ pet-platform-backend ---
+[INFO] Deleting /Users/kimwell/work/pet-platform/apps/backend/target
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ pet-platform-backend ---
+[INFO] Copying 4 resources from src/main/resources to target/classes
+[INFO] Copying 1 resource from src/main/resources to target/classes
+[INFO] 
+[INFO] --- compiler:3.14.1:compile (default-compile) @ pet-platform-backend ---
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 30 source files with javac [debug parameters release 21] to target/classes
+[INFO] /Users/kimwell/work/pet-platform/apps/backend/src/main/java/com/pet/platform/shared/openapi/OpenApiConfiguration.java: /Users/kimwell/work/pet-platform/apps/backend/src/main/java/com/pet/platform/shared/openapi/OpenApiConfiguration.java使用了未经检查或不安全的操作。
+[INFO] /Users/kimwell/work/pet-platform/apps/backend/src/main/java/com/pet/platform/shared/openapi/OpenApiConfiguration.java: 有关详细信息, 请使用 -Xlint:unchecked 重新编译。
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ pet-platform-backend ---
+[INFO] Copying 1 resource from src/test/resources to target/test-classes
+[INFO] 
+[INFO] --- compiler:3.14.1:testCompile (default-testCompile) @ pet-platform-backend ---
+[INFO] Recompiling the module because of changed dependency.
+[INFO] Compiling 17 source files with javac [debug parameters release 21] to target/test-classes
+[INFO] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/platform/protocol/ApiProtocolIT.java: 某些输入文件使用或覆盖了已过时的 API。
+[INFO] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/platform/protocol/ApiProtocolIT.java: 有关详细信息, 请使用 -Xlint:deprecation 重新编译。
+[INFO] 
+[INFO] --- surefire:3.5.6:test (default-test) @ pet-platform-backend ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running com.pet.testing.contracts.ContractExportTest
+09:27:34.846 [main] INFO org.testcontainers.images.PullPolicy -- Image pull policy will be performed by: DefaultPullPolicy()
+09:27:34.849 [main] INFO org.testcontainers.utility.ImageNameSubstitutor -- Image name substitution will be performed by: DefaultImageNameSubstitutor (composite of 'ConfigurationFileImageNameSubstitutor' and 'PrefixingImageNameSubstitutor')
+09:27:34.864 [main] INFO org.testcontainers.DockerClientFactory -- Testcontainers version: 2.0.5
+09:27:35.025 [main] INFO org.testcontainers.dockerclient.DockerClientProviderStrategy -- Loaded org.testcontainers.dockerclient.UnixSocketClientProviderStrategy from ~/.testcontainers.properties, will try it first
+09:27:37.531 [main] INFO org.testcontainers.dockerclient.DockerClientProviderStrategy -- Found Docker environment with local Unix socket (unix:///var/run/docker.sock)
+09:27:37.532 [main] INFO org.testcontainers.DockerClientFactory -- Docker host IP address is localhost
+09:27:37.544 [main] INFO org.testcontainers.DockerClientFactory -- Connected to docker: 
+  Server Version: 29.4.0
+  API Version: 1.54
+  Operating System: Docker Desktop
+  Total Memory: 9936 MB
+  Labels: 
+    com.docker.desktop.address=unix:///Users/kimwell/Library/Containers/com.docker.docker/Data/docker-cli.sock
+09:27:37.563 [main] INFO tc.testcontainers/ryuk:0.14.0 -- Creating container for image: testcontainers/ryuk:0.14.0
+09:27:37.673 [main] INFO org.testcontainers.utility.RegistryAuthLocator -- Credential helper/store (docker-credential-desktop) does not have credentials for https://index.docker.io/v1/
+09:27:37.744 [main] INFO tc.testcontainers/ryuk:0.14.0 -- Container testcontainers/ryuk:0.14.0 is starting: aaa539e9c55e3d318c8c0b616510c174fc134ef03c18866b9b67857243f06db7
+09:27:38.029 [main] INFO tc.testcontainers/ryuk:0.14.0 -- Container testcontainers/ryuk:0.14.0 started in PT0.465615S
+09:27:38.036 [main] INFO org.testcontainers.utility.RyukResourceReaper -- Ryuk started - will monitor and terminate Testcontainers containers on JVM exit
+09:27:38.037 [main] INFO org.testcontainers.DockerClientFactory -- Checking the system...
+09:27:38.037 [main] INFO org.testcontainers.DockerClientFactory -- ✔︎ Docker server version should be at least 1.6.0
+09:27:38.044 [main] INFO tc.postgres:17.11-bookworm@sha256:364557... -- Creating container for image: postgres:17.11-bookworm@sha256:3645570cccdfa447589da9f57dd740faa29b30938e861289a5574b6ca6b03826
+09:27:38.082 [main] INFO tc.postgres:17.11-bookworm@sha256:364557... -- Container postgres:17.11-bookworm@sha256:3645570cccdfa447589da9f57dd740faa29b30938e861289a5574b6ca6b03826 is starting: 24427614de9f65240ce7960580a80769a4b9473902c88ec9fe8aca66df6d115e
+09:27:39.267 [main] INFO tc.postgres:17.11-bookworm@sha256:364557... -- Container postgres:17.11-bookworm@sha256:3645570cccdfa447589da9f57dd740faa29b30938e861289a5574b6ca6b03826 started in PT1.223487S
+09:27:39.268 [main] INFO tc.postgres:17.11-bookworm@sha256:364557... -- Container is started (JDBC URL: jdbc:postgresql://localhost:63518/p03_technical_fixture?loggerLevel=OFF)
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v4.0.8)
+
+2026-10-08T09:27:39.679+08:00  INFO 63585 --- [pet-platform-backend] [           main] c.p.t.contracts.ContractExportTest       : Starting ContractExportTest using Java 21.0.12.1 with PID 63585 (started by kimwell in /Users/kimwell/work/pet-platform/apps/backend)
+2026-10-08T09:27:39.680+08:00  INFO 63585 --- [pet-platform-backend] [           main] c.p.t.contracts.ContractExportTest       : The following 1 profile is active: "test"
+2026-10-08T09:27:40.393+08:00  INFO 63585 --- [pet-platform-backend] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-10-08T09:27:40.412+08:00  INFO 63585 --- [pet-platform-backend] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 13 ms. Found 0 JPA repository interfaces.
+2026-10-08T09:27:40.899+08:00  INFO 63585 --- [pet-platform-backend] [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 0 (http)
+2026-10-08T09:27:40.910+08:00  INFO 63585 --- [pet-platform-backend] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-10-08T09:27:40.910+08:00  INFO 63585 --- [pet-platform-backend] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.24]
+2026-10-08T09:27:40.936+08:00  INFO 63585 --- [pet-platform-backend] [           main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 1236 ms
+2026-10-08T09:27:41.203+08:00  INFO 63585 --- [pet-platform-backend] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-10-08T09:27:41.327+08:00  INFO 63585 --- [pet-platform-backend] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@7c9c7e7d
+2026-10-08T09:27:41.328+08:00  INFO 63585 --- [pet-platform-backend] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-10-08T09:27:41.344+08:00  INFO 63585 --- [pet-platform-backend] [           main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:postgresql://localhost:63518/p03_technical_fixture (PostgreSQL 17.11)
+2026-10-08T09:27:41.377+08:00  INFO 63585 --- [pet-platform-backend] [           main] o.f.c.i.s.JdbcTableSchemaHistory         : Schema history table "public"."flyway_schema_history" does not exist yet
+2026-10-08T09:27:41.378+08:00  INFO 63585 --- [pet-platform-backend] [           main] o.f.core.internal.command.DbValidate     : Successfully validated 0 migrations (execution time 00:00.007s)
+2026-10-08T09:27:41.378+08:00  WARN 63585 --- [pet-platform-backend] [           main] o.f.core.internal.command.DbValidate     : No migrations found. Are your locations set up correctly?
+2026-10-08T09:27:41.390+08:00  INFO 63585 --- [pet-platform-backend] [           main] o.f.c.i.s.JdbcTableSchemaHistory         : Creating Schema History table "public"."flyway_schema_history" ...
+2026-10-08T09:27:41.460+08:00  INFO 63585 --- [pet-platform-backend] [           main] o.f.core.internal.command.DbMigrate      : Current version of schema "public": << Empty Schema >>
+2026-10-08T09:27:41.463+08:00  INFO 63585 --- [pet-platform-backend] [           main] o.f.core.internal.command.DbMigrate      : Schema "public" is up to date. No migration necessary.
+2026-10-08T09:27:41.523+08:00  INFO 63585 --- [pet-platform-backend] [           main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-10-08T09:27:41.566+08:00  INFO 63585 --- [pet-platform-backend] [           main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.24.Final
+2026-10-08T09:27:41.823+08:00  INFO 63585 --- [pet-platform-backend] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-10-08T09:27:41.883+08:00  INFO 63585 --- [pet-platform-backend] [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:63518/p03_technical_fixture]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 17.11
+	Default catalog/schema: p03_technical_fixture/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-10-08T09:27:42.305+08:00  INFO 63585 --- [pet-platform-backend] [           main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-10-08T09:27:42.318+08:00  INFO 63585 --- [pet-platform-backend] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-10-08T09:27:42.995+08:00  INFO 63585 --- [pet-platform-backend] [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2026-10-08T09:27:43.032+08:00  INFO 63585 --- [pet-platform-backend] [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 63569 (http) with context path '/'
+2026-10-08T09:27:43.038+08:00  INFO 63585 --- [pet-platform-backend] [           main] c.p.t.contracts.ContractExportTest       : Started ContractExportTest in 3.685 seconds (process running for 8.857)
+OpenJDK 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
+2026-10-08T09:27:43.259+08:00  INFO 63585 --- [pet-platform-backend] [1-auto-1-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-10-08T09:27:43.260+08:00  INFO 63585 --- [pet-platform-backend] [1-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-10-08T09:27:43.261+08:00  INFO 63585 --- [pet-platform-backend] [1-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2026-10-08T09:27:43.500+08:00  INFO 63585 --- [pet-platform-backend] [1-auto-1-exec-4] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 86 ms
+[ERROR] Tests run: 8, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 9.032 s <<< FAILURE! -- in com.pet.testing.contracts.ContractExportTest
+[ERROR] com.pet.testing.contracts.ContractExportTest.exportsSeparateProductionAndTestDocumentsFromActualHttp -- Time elapsed: 0.108 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: {"openapi":"3.1.0","info":{"title":"企业应用公共接口契约","version":"0.0.0"},"servers":[{"url":"http://127.0.0.1:63569","description":"Generated server url"}],"paths":{},"components":{"schemas":{"ApiError":{"type":"object","properties":{"code":{"type":"string","enum":["BAD_REQUEST","PAGINATION_INVALID","SORT_INVALID","AUTH_CREDENTIAL_AMBIGUOUS","AUTH_REQUIRED","SESSION_EXPIRED","SESSION_REVOKED","AUTH_DOMAIN_MISMATCH","LOGIN_FAILED","PERMISSION_DENIED","CSRF_INVALID","RESOURCE_NOT_FOUND","METHOD_NOT_ALLOWED","NOT_ACCEPTABLE","BUSINESS_STATE_CONFLICT","DUPLICATE_RESOURCE","VERSION_CONFLICT","SESSION_LIMIT_REACHED","IDEMPOTENCY_CONFLICT","PAYLOAD_TOO_LARGE","UNSUPPORTED_MEDIA_TYPE","VALIDATION_FAILED","DATE_RANGE_INVALID","AMOUNT_INVALID","RESULT_TOO_LARGE","RATE_LIMITED","INTERNAL_ERROR","DEPENDENCY_UNAVAILABLE","CAPABILITY_DISABLED","REQUEST_REJECTED"]},"message":{"type":"string"},"fieldErrors":{"type":"array","items":{"$ref":"#/components/schemas/FieldErrorDetail"}}},"required":["code","message"]},"FieldErrorDetail":{"type":"object","properties":{"field":{"type":"string"},"code":{"type":"string"},"message":{"type":"string"}},"required":["code","field","message"]},"Failure":{"type":"object","properties":{"success":{"type":"boolean"},"error":{"$ref":"#/components/schemas/ApiError"},"traceId":{"type":"string","pattern":"^[0-9a-f]{32}$"}},"required":["error","success","traceId"]},"PageQuery":{"type":"object","properties":{"page":{"type":"integer","format":"int32","maximum":2147483647,"minimum":1},"pageSize":{"type":"integer","format":"int32","maximum":100,"minimum":1}},"required":["page","pageSize"]},"PageResponseFieldErrorDetail":{"type":"object","properties":{"items":{"type":"array","items":{"$ref":"#/components/schemas/FieldErrorDetail"}},"page":{"type":"integer","format":"int32","maximum":2147483647,"minimum":1},"pageSize":{"type":"integer","format":"int32","maximum":100,"minimum":1},"total":{"type":"string","pattern":"^(0|[1-9][0-9]*)$"}},"required":["items","page","pageSize","total"]},"SuccessFieldErrorDetail":{"type":"object","properties":{"success":{"type":"boolean"},"data":{"type":"null","$ref":"#/components/schemas/FieldErrorDetail"},"traceId":{"type":"string","pattern":"^[0-9a-f]{32}$"}},"required":["data","success","traceId"]},"SuccessVoid":{"type":"object","properties":{"success":{"type":"boolean"},"data":{"type":"null"},"traceId":{"type":"string","pattern":"^[0-9a-f]{32}$"}},"required":["data","success","traceId"]}}}} ==> expected: <4> but was: <0>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:158)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:139)
+	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:201)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:152)
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:590)
+	at com.pet.testing.contracts.ContractExportTest.exportsSeparateProductionAndTestDocumentsFromActualHttp(ContractExportTest.java:123)
+
+[INFO] Running com.pet.testing.architecture.StructureRulesTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.027 s -- in com.pet.testing.architecture.StructureRulesTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[ERROR] Failures: 
+[ERROR]   ContractExportTest.exportsSeparateProductionAndTestDocumentsFromActualHttp:123 {"openapi":"3.1.0","info":{"title":"企业应用公共接口契约","version":"0.0.0"},"servers":[{"url":"http://127.0.0.1:63569","description":"Generated server url"}],"paths":{},"components":{"schemas":{"ApiError":{"type":"object","properties":{"code":{"type":"string","enum":["BAD_REQUEST","PAGINATION_INVALID","SORT_INVALID","AUTH_CREDENTIAL_AMBIGUOUS","AUTH_REQUIRED","SESSION_EXPIRED","SESSION_REVOKED","AUTH_DOMAIN_MISMATCH","LOGIN_FAILED","PERMISSION_DENIED","CSRF_INVALID","RESOURCE_NOT_FOUND","METHOD_NOT_ALLOWED","NOT_ACCEPTABLE","BUSINESS_STATE_CONFLICT","DUPLICATE_RESOURCE","VERSION_CONFLICT","SESSION_LIMIT_REACHED","IDEMPOTENCY_CONFLICT","PAYLOAD_TOO_LARGE","UNSUPPORTED_MEDIA_TYPE","VALIDATION_FAILED","DATE_RANGE_INVALID","AMOUNT_INVALID","RESULT_TOO_LARGE","RATE_LIMITED","INTERNAL_ERROR","DEPENDENCY_UNAVAILABLE","CAPABILITY_DISABLED","REQUEST_REJECTED"]},"message":{"type":"string"},"fieldErrors":{"type":"array","items":{"$ref":"#/components/schemas/FieldErrorDetail"}}},"required":["code","message"]},"FieldErrorDetail":{"type":"object","properties":{"field":{"type":"string"},"code":{"type":"string"},"message":{"type":"string"}},"required":["code","field","message"]},"Failure":{"type":"object","properties":{"success":{"type":"boolean"},"error":{"$ref":"#/components/schemas/ApiError"},"traceId":{"type":"string","pattern":"^[0-9a-f]{32}$"}},"required":["error","success","traceId"]},"PageQuery":{"type":"object","properties":{"page":{"type":"integer","format":"int32","maximum":2147483647,"minimum":1},"pageSize":{"type":"integer","format":"int32","maximum":100,"minimum":1}},"required":["page","pageSize"]},"PageResponseFieldErrorDetail":{"type":"object","properties":{"items":{"type":"array","items":{"$ref":"#/components/schemas/FieldErrorDetail"}},"page":{"type":"integer","format":"int32","maximum":2147483647,"minimum":1},"pageSize":{"type":"integer","format":"int32","maximum":100,"minimum":1},"total":{"type":"string","pattern":"^(0|[1-9][0-9]*)$"}},"required":["items","page","pageSize","total"]},"SuccessFieldErrorDetail":{"type":"object","properties":{"success":{"type":"boolean"},"data":{"type":"null","$ref":"#/components/schemas/FieldErrorDetail"},"traceId":{"type":"string","pattern":"^[0-9a-f]{32}$"}},"required":["data","success","traceId"]},"SuccessVoid":{"type":"object","properties":{"success":{"type":"boolean"},"data":{"type":"null"},"traceId":{"type":"string","pattern":"^[0-9a-f]{32}$"}},"required":["data","success","traceId"]}}}} ==> expected: <4> but was: <0>
+[INFO] 
+[ERROR] Tests run: 11, Failures: 1, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  12.433 s
+[INFO] Finished at: 2026-10-08T09:27:44+08:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:3.5.6:test (default-test) on project pet-platform-backend: There are test failures.
+[ERROR] 
+[ERROR] See /Users/kimwell/work/pet-platform/apps/backend/target/surefire-reports for the individual test results.
+[ERROR] See dump files (if any exist) [date].dump, [date]-jvmRun[N].dump and [date].dumpstream.
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException

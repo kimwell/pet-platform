@@ -1,0 +1,11 @@
+{
+  "id": "mini-npm-pack-api",
+  "cwd": "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/ci-probe",
+  "command": [
+    "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/tools/node-v24.21.0-darwin-arm64/bin/node",
+    "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/ci-probe/pack-api.cjs"
+  ],
+  "exit_code": 1,
+  "result": "FAIL",
+  "log": "mini-npm-pack-api.log"
+}

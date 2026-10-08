@@ -1,0 +1,30 @@
+[
+  {
+    "id": "sa-token-api-compile",
+    "command": [
+      "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/tools/jdk-21.0.12.1+1/Contents/Home/bin/javac",
+      "--release",
+      "21",
+      "-cp",
+      "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/m2/cn/dev33/sa-token-core/1.46.0/sa-token-core-1.46.0.jar",
+      "SaTokenApiProbe.java"
+    ],
+    "cwd": "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/pet-platform-p01-02-bggvo377",
+    "exit_code": 0,
+    "summary": "",
+    "evidence": "sa-token-api-compile.log"
+  },
+  {
+    "id": "sa-token-api-runtime",
+    "command": [
+      "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/tools/jdk-21.0.12.1+1/Contents/Home/bin/java",
+      "-cp",
+      ".:/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/m2/cn/dev33/sa-token-core/1.46.0/sa-token-core-1.46.0.jar",
+      "SaTokenApiProbe"
+    ],
+    "cwd": "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/pet-platform-p01-02-bggvo377",
+    "exit_code": 0,
+    "summary": "Sa-Token精确版本API与内存技术断言通过；不证明Redis、HTTP、Cookie或CSRF运行能力\n",
+    "evidence": "sa-token-api-runtime.log"
+  }
+]

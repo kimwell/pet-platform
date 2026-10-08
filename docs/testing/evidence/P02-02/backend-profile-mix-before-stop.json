@@ -1,0 +1,13 @@
+{
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "steps": [
+    "向本轮进程组 8328 发送 SIGTERM",
+    "确认监听端口关闭",
+    "ps 确认进程组无活动进程"
+  ],
+  "status": "PASS",
+  "exit_code": null,
+  "process_group": 8328,
+  "port": 18080,
+  "remaining": ""
+}

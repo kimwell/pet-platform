@@ -1,0 +1,17 @@
+{
+  "id": "docker-info",
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "command": [
+    "docker",
+    "info",
+    "--format",
+    "Server={{.ServerVersion}} CPUs={{.NCPU}} Memory={{.MemTotal}}"
+  ],
+  "exit_code": 0,
+  "expected_exit_code": 0,
+  "status": "PASS",
+  "started_at": "2026-10-08T07:21:49.219340+08:00",
+  "duration_seconds": 0.454,
+  "evidence": "docker-info.log",
+  "summary": "Server=29.4.0 CPUs=8 Memory=10419134464\n"
+}

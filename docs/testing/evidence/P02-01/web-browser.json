@@ -1,0 +1,18 @@
+{
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "operations": [
+    "createBrowserTab(http://localhost:5173)",
+    "screenshot(entry)",
+    "goto(/missing)",
+    "getAXState(NotFound)",
+    "click(返回系统入口)",
+    "getAXState(entry)"
+  ],
+  "exit_code": null,
+  "status": "PASS",
+  "level": "RUNTIME_VERIFIED",
+  "entryState": "Browser tab: 1, Title: \"企业应用工程入口\", URL: \"http://localhost:5173/\".\n1 AXWebArea 企业应用工程入口, URL: localhost:5173/\n\t2 container root\n\t\t3 text 企业应用工程\n\t\t4 container\n\t\t\t5 heading 系统工程入口, Value: 1\n\t\t\t\t6 text 系统工程入口\n\t\t\t7 text 三端工程骨架正在建立，当前页面用于确认 Web 应用入口。\n\t\t\t8 image info-circle\n\t\t\t9 text 尚未接入正式功能\n\t\t\t10 text 认证、身份权限、租户隔离、附件和消息能力将在后续任务实现。\n\nThe focused UI element is 1 AXWebArea 企业应用工程入口, URL: localhost:5173/",
+  "notFoundState": "Browser tab: 1, Title: \"企业应用工程入口\", URL: \"http://localhost:5173/missing\".\n1 AXWebArea 企业应用工程入口, URL: localhost:5173/missing\n\t2 container root\n\t\t3 text 企业应用工程\n\t\t4 container\n\t\t\t5 image No Found\n\t\t\t6 text 页面不存在 请检查访问地址。\n\t\t\t7 link Description: 返回系统入口, Value: localhost:5173/\n\nThe focused UI element is 1 AXWebArea 企业应用工程入口, URL: localhost:5173/missing",
+  "browserLogs": [],
+  "summary": "真实浏览器入口、未知路径及返回入口已检查；没有业务端到端验收。"
+}

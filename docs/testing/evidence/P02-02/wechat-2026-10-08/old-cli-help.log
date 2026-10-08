@@ -1,0 +1,38 @@
+index.js
+
+Commands:
+  index.js cloud            CloudBase commands
+  index.js open             Open IDE / IDE project
+  index.js login            re-login IDE
+  index.js islogin          #islogin-desc
+  index.js preview          preview
+  index.js auto-preview     Auto preview
+  index.js upload           Upload mini program
+  index.js build-npm        build NPM
+  index.js auto             Enable automation
+  index.js auto-replay      Enable automation
+  index.js reset-fileutils  #reset-fileutils-desc
+  index.js close            Close project
+  index.js quit             Quit IDE
+  index.js cache            clean cache
+  index.js engine           engine
+  index.js open-other       Open other project
+  index.js build-ipa        generate ipa
+  index.js build-apk        genreate apk
+
+Project options:
+  --project    project path
+  --appid      miniprogram appid or 3rd platform appid. Ignored when --project
+               is provided
+  --ext-appid  miniprogram appid to be developed by 3rd platform. Ignored when
+               --project is provided
+
+Other global options:
+  --port         Optional. IDE HTTP server port. If IDE hasn't been launched, it
+                 will be launched and start HTTP server at <port>. If IDE has
+                 launched with a HTTP server of different port, you must quit
+                 IDE before re-run the command.                         [number]
+  --lang         Optional. 'en' or 'zh'. Defaults to 'en'.
+  --debug        Optional. Turn on debug mode
+  --disable-gpu  Disable GPU Acceleration when launching IDE           [boolean]
+  -h, --help     Show help                                             [boolean]

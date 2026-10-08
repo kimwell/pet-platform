@@ -1,0 +1,47 @@
+
+> pet-platform@0.0.0 check /Users/kimwell/work/pet-platform
+> pnpm check:repo && pnpm check:web && pnpm check:miniprogram
+
+
+> pet-platform@0.0.0 check:repo /Users/kimwell/work/pet-platform
+> node scripts/check-repository.mjs && node scripts/check-miniprogram.mjs
+
+单锁、精确直接依赖、工具链、固定后端入口及秘密特征检查通过。秘密检查不输出匹配值。
+原生小程序结构、页面和官方组件引用检查通过；这不是开发者工具编译。
+
+> pet-platform@0.0.0 check:web /Users/kimwell/work/pet-platform
+> pnpm --filter @pet/admin-web typecheck && pnpm --filter @pet/admin-web lint && pnpm --filter @pet/admin-web test
+
+
+> @pet/admin-web@0.0.0 typecheck /Users/kimwell/work/pet-platform/apps/admin-web
+> tsc --noEmit
+
+
+> @pet/admin-web@0.0.0 lint /Users/kimwell/work/pet-platform/apps/admin-web
+> eslint src vite.config.ts dev-config.ts --max-warnings=0
+
+
+> @pet/admin-web@0.0.0 test /Users/kimwell/work/pet-platform/apps/admin-web
+> vitest run
+
+
+ RUN  v4.1.11 /Users/kimwell/work/pet-platform/apps/admin-web
+
+
+ Test Files  2 passed (2)
+      Tests  14 passed (14)
+   Start at  07:34:18
+   Duration  898ms (transform 59ms, setup 0ms, import 801ms, tests 37ms, environment 0ms)
+
+
+> pet-platform@0.0.0 check:miniprogram /Users/kimwell/work/pet-platform
+> pnpm --filter @pet/wechat-miniprogram typecheck && pnpm --filter @pet/wechat-miniprogram lint
+
+
+> @pet/wechat-miniprogram@0.0.0 typecheck /Users/kimwell/work/pet-platform/apps/wechat-miniprogram
+> tsc --noEmit
+
+
+> @pet/wechat-miniprogram@0.0.0 lint /Users/kimwell/work/pet-platform/apps/wechat-miniprogram
+> eslint miniprogram --max-warnings=0
+

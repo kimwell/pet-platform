@@ -1,0 +1,22 @@
+[
+  {
+    "url": "https://developers.weixin.qq.com/miniprogram/dev/framework/release/",
+    "claim": "目标基础库选用已发布的3.17.2，发布日期2026-07-17",
+    "excerpt": "v3.17.2 (2026-07-17)     A  新增 API 跳转信贷代扣接口 wx.requestAutomaticRepayment   详情     A  新增 API wx.saveMediaToPhot"
+  },
+  {
+    "url": "https://developers.weixin.qq.com/miniprogram/dev/api/network/download/wx.downloadFile.html",
+    "claim": "downloadFile支持header和本地临时路径，不能设置Referer，单次200MB上限；项目限制更小",
+    "excerpt": "# DownloadTask wx.downloadFile(Object object) 以 Promise 风格 调用 ：不支持 小程序插件 ：支持，需要小程序基础库版本不低于 1.9.6 微信 Windows 版 ：支持 微信 Mac 版 ：支持 微信 鸿蒙 OS 版 ：支持 相关文档: 网络使用说明 、 局域网通信 # 功能描述 下载文件资源到本地。客户端直接发起一个 HTTPS GET 请求，返回文件的本地临时路径 (本地路径)，单次下载允许的最大文件为 200MB。使用前请注意阅读 相关说明 。 注意：请在服务端响应的 header 中指定合理的 Content-Type 字段，以保证客户端正确处理文件类型。 # 参数 # Object object 属性 类型 默认值 必填 说明 最低版本 url string 是 下载资源的 url header Object 否 HTTP 请求的 Header，Header 中不能设置 Referer timeout number 60000 否 超时时间，单位为毫秒，默认值为 60000 即一分钟。 2.10.0 filePath string 否 指定文件下载后存储的路径 (本地路径) 1.8.0 enableProfile boolean true 否 是否开启 profile。iOS 和 Android 端默认开启，其他端暂不支持。开启后可在接口回调的 res.profile 中查看性能调试信息。 enableHttp2 boolean false 否 是否开启 http2 2.10.4 enableQuic boolean false 否 是否开启 Quic/h3 协议（iOS 微信目前使用 gQUIC-Q43；Android 微信在 v8.0.54 前使用 gQUIC-Q"
+  },
+  {
+    "url": "https://developers.weixin.qq.com/miniprogram/dev/component/video.html",
+    "claim": "video src支持网络/本地临时路径；通用属性表没有header属性",
+    "excerpt": "# video 基础库 1.0.0 开始支持，低版本需做 兼容处理 。 微信 Windows 版 ：支持 微信 Mac 版 ：支持 微信 鸿蒙 OS 版 ：支持 相关文档: wx.createVideoContext 渲染框架支持情况：Skyline （使用最新 Nightly 工具调试）、WebView # 功能描述 视频（v2.4.0 起支持 同层渲染 ）。 # 通用属性 属性 类型 默认值 必填 说明 最低版本 src string 是 要播放视频的资源地址，支持网络路径、本地临时路径、云文件ID（ 2.3.0 ） 1.0.0 duration number 否 指定视频时长 1.1.0 controls boolean true 否 是否显示默认播放控件（播放/暂停按钮、播放进度、时间） 1.0.0 danmu-list Array.<object> 否 弹幕列表 1.0.0 danmu-btn boolean false 否 是否显示弹幕按钮，只在初始化时有效，不能动态变更 1.0.0 enable-danmu boolean false 否 是否展示弹幕，只在初始化时有效，不能动态变更 1.0.0 autoplay boolean false 否 是否自动播放 1.0.0 loop boolean false 否 是否循环播放 1.4.0 muted boolean false 否 是否静音播放 1.4.0 initial-time number 0 否 指定视频初始播放位置 1.6.0 page-gesture boolean false 否 在非全屏模式下，是否"
+  },
+  {
+    "url": "https://developers.weixin.qq.com/miniprogram/dev/component/image.html",
+    "claim": "image通过src加载；通用属性表没有header属性",
+    "excerpt": "# image 基础库 1.0.0 开始支持，低版本需做 兼容处理 。 微信 Windows 版 ：支持 微信 Mac 版 ：支持 微信 鸿蒙 OS 版 ：支持 渲染框架支持情况：Skyline （使用最新 Nightly 工具调试）、WebView # 功能描述 图片。支持 JPG、PNG、SVG、WEBP、GIF 等格式， 2.3.0 起支持云文件ID。 使用 svg 格式且 mode=scaleToFill 时，WebView 会居中（除非 svg 里加上 preserveAspectRatio=\"none\"），Skyline 则会撑满 svg 格式不支持百分比单位 svg 格式不支持 <style> element # 通用属性 属性 类型 默认值 必填 说明 最低版本 src string 否 图片资源地址 1.0.0 mode string scaleToFill 否 图片裁剪、缩放的模式 1.0.0 合法值 说明 最低版本 scaleToFill 缩放模式，不保持纵横比缩放图片，使图片的宽高完全拉伸至填满 image 元素 aspectFit 缩放模式，保持纵横比缩放图片，使图片的长边能完全显示出来。也就是说，可以完整地将图片显示出来。 aspectFill 缩放模式，"
+  }
+]

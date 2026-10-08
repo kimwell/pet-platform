@@ -1,0 +1,1 @@
+ID=aaf4a5757d7b751d078727d63ff42303cbe9eb7429de9b9687202d3d9ae1dc6b Hostname=rabbitmq StopTimeout=30 [{"Destination":"/var/lib/rabbitmq","Driver":"local","Mode":"rw","Name":"pet-platform-p02-validation_rabbitmq-data","Propagation":"","RW":true,"Source":"/var/lib/docker/volumes/pet-platform-p02-validation_rabbitmq-data/_data","Type":"volume"}]

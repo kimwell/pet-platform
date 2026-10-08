@@ -1,0 +1,84 @@
+{
+  "recorded_at": "2026-10-08T08:21:59.528560+08:00",
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "tool_path": "/Users/kimwell/Applications/WechatDevTools-2.02.2608080.app",
+  "tool_version": "Stable 2.02.2608080",
+  "library_version": "3.17.2",
+  "project_path": "/Users/kimwell/work/pet-platform/apps/wechat-miniprogram",
+  "appid": "wx9bcab67d52e2ee04",
+  "login": "PASS；用户扫码后GUI显示已登录资料，正常导入当前工程",
+  "effective_appid": "PASS；导入表单/基本信息/恢复公共配置后的复开URL一致",
+  "permission": "PASS（限定开发/预览）；当前账号成功获取应用基本信息并生成该AppID的开发版预览二维码，不推断管理员或发布权限",
+  "npm_build": {
+    "status": "PASS",
+    "verification_level": "COMPILED",
+    "operation": "工具菜单 → 构建 npm",
+    "exit_code": null,
+    "exit_code_reason": "GUI操作没有命令退出码",
+    "duration_ms_ui": 1569,
+    "output_file_count": 1177,
+    "root": "miniprogram/miniprogram_npm",
+    "evidence": [
+      "npm-build-complete.png",
+      "npm-build-ui.txt",
+      "npm-tool-output-manifest.json"
+    ],
+    "clean_start": "原历史离线输出移到.local-data保留，新输出由目标工具生成"
+  },
+  "source_compile": {
+    "status": "PASS",
+    "verification_level": "COMPILED",
+    "operation": "工具菜单 → 编译；恢复公共配置后重新打开此项目；工具菜单 → 清除缓存 → 清除文件缓存（触发复编）",
+    "exit_code": null,
+    "exit_code_reason": "GUI操作没有命令退出码",
+    "completion_observed": "【idle-compile】 all done",
+    "evidence": [
+      "source-compile-all-done.png",
+      "compile-invoked-ui.txt",
+      "reopened-private-appid.txt"
+    ],
+    "typescript": "源目录只有app.ts和页面index.ts，没有自建app.js；TypeScript插件由工具实际转换、运行",
+    "scope": "当前一个系统入口页面及引用的TDesign组件，不等于全组件/业务验收"
+  },
+  "simulator": {
+    "status": "PASS",
+    "verification_level": "RUNTIME_VERIFIED",
+    "page": "pages/system/entry/index",
+    "device": "iPhone 12/13 (Pro)",
+    "behavior": "标题/中文说明/TDesign Button渲染；点击后显示中文工程范围提示",
+    "errors": 0,
+    "warnings": 2,
+    "warning_summary": "微信模拟器内部WAServiceMainContext.js和WAAutoService.js资源preload未及时使用；未隐藏警告",
+    "evidence": [
+      "compile-entry.png",
+      "simulator-click.png",
+      "simulator-click.txt",
+      "console-after-compile.png",
+      "console-after-compile.txt"
+    ]
+  },
+  "preview": {
+    "status": "PASS",
+    "operation": "工具菜单 → 预览",
+    "evidence": [
+      "preview-qrcode.png",
+      "preview-result.txt"
+    ],
+    "ui_expiry": "2026-10-08 08:44 Asia/Shanghai",
+    "package_size_ui_kb": 214,
+    "compile_tips_ui_count": 756,
+    "limitations": "提示数量/代码质量建议不等同编译错误；未宣称全项代码质量通过；没有调用上传/发布子命令"
+  },
+  "device": {
+    "status": "PASS（用户反馈）",
+    "evidence": "device-user-feedback.json",
+    "scope": "页面打开、按钮正常；未采集真机截图/控制台，P09完整业务验收未执行"
+  },
+  "configuration_correction": "工具导入将AppID/默认值自动写入公共配置；留证后恢复原始SHA。私有AppID和工具新增其他本地设置保留，复开通过。",
+  "gates": {
+    "p02_02": "COMPLETE",
+    "p02": "COMPLETE",
+    "p03": "NOT_STARTED",
+    "other_p02_required_checks": "本轮未修改后端/Web/infra源码，复用此前真实PASS；冻结依赖、ui和旧证据SHA保全通过，未观察到新增必选失败"
+  }
+}

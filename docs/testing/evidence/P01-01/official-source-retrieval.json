@@ -1,0 +1,90 @@
+[
+  {
+    "name": "spring-support",
+    "url": "https://spring.io/projects/spring-boot/",
+    "result": "NOT_EXECUTED",
+    "reason": "HTTP Error 403: Forbidden"
+  },
+  {
+    "name": "java-support",
+    "url": "https://adoptium.net/support/",
+    "result": "NOT_EXECUTED",
+    "reason": "HTTP Error 403: Forbidden"
+  },
+  {
+    "name": "vite-support",
+    "url": "https://vite.dev/releases",
+    "result": "PASS",
+    "sha256": "0b9af35900c2176912bdcbd671e98e96b86d9b98aa647e5c30bd61f11963d52a"
+  },
+  {
+    "name": "postgres-policy",
+    "url": "https://www.postgresql.org/support/versioning/",
+    "result": "PASS",
+    "sha256": "3bd34fc19d0f2e84d52f2f17c288ec6e3d79b6e0646f1b7a560b84d8e92ea176"
+  },
+  {
+    "name": "redis-policy",
+    "url": "https://redis.io/docs/latest/operate/oss_and_stack/install/version-mgmt/",
+    "result": "NOT_EXECUTED",
+    "reason": "HTTP Error 403: Forbidden"
+  },
+  {
+    "name": "redis-releases",
+    "url": "https://download.redis.io/releases/",
+    "result": "NOT_EXECUTED",
+    "reason": "HTTP Error 403: Forbidden"
+  },
+  {
+    "name": "rabbit-releases",
+    "url": "https://www.rabbitmq.com/release-information",
+    "result": "NOT_EXECUTED",
+    "reason": "HTTP Error 403: Forbidden"
+  },
+  {
+    "name": "postgres-images",
+    "url": "https://raw.githubusercontent.com/docker-library/official-images/master/library/postgres",
+    "result": "PASS",
+    "sha256": "c10b563cfb1f49446de0d95d5767011dd19ad1b6e41342bd3833b957d862736c",
+    "selected_lines": [
+      "Tags: 17.11, 17, 17.11-trixie, 17-trixie",
+      "Tags: 17.11-bookworm, 17-bookworm",
+      "Tags: 17.11-alpine3.24, 17-alpine3.24, 17.11-alpine, 17-alpine",
+      "Tags: 17.11-alpine3.23, 17-alpine3.23"
+    ]
+  },
+  {
+    "name": "redis-images",
+    "url": "https://raw.githubusercontent.com/docker-library/official-images/master/library/redis",
+    "result": "PASS",
+    "sha256": "8f5992428c4fb1c6bff28d56c75efc890544e7c26b8583507c7b3fc4aa563579",
+    "selected_lines": [
+      "Tags: 8.2.10, 8.2, 8.2.10-bookworm, 8.2-bookworm, 8-bookworm, bookworm",
+      "Tags: 8.2.10-alpine, 8.2-alpine, 8.2.10-alpine3.22, 8.2-alpine3.22"
+    ]
+  },
+  {
+    "name": "rabbit-images",
+    "url": "https://raw.githubusercontent.com/docker-library/official-images/master/library/rabbitmq",
+    "result": "PASS",
+    "sha256": "fdb9b2b21f11f90356a22cae9df0fd769b6ef3896e564623fb2172f84bc2f259",
+    "selected_lines": [
+      "Tags: 4.3.6, 4.3, 4, latest",
+      "Tags: 4.3.6-management, 4.3-management, 4-management, management",
+      "Tags: 4.3.6-alpine, 4.3-alpine, 4-alpine, alpine",
+      "Tags: 4.3.6-management-alpine, 4.3-management-alpine, 4-management-alpine, management-alpine"
+    ]
+  },
+  {
+    "name": "mini-debug-skill",
+    "url": "https://cnb.cool/tencent/cloud/cloudbase/cloudbase-skills/-/git/raw/main/skills/cloudbase/references/references/devtools-debug-preview.md",
+    "result": "NOT_EXECUTED",
+    "reason": "HTTP Error 404: Not Found"
+  },
+  {
+    "name": "mini-ci-doc",
+    "url": "https://raw.githubusercontent.com/wechat-miniprogram/miniprogram-ci-dist/master/README.md",
+    "result": "PASS",
+    "sha256": "e1ee230c3fb2ad2da3bf95ddfb288ad960bdd74681aa1bbc5c39f0536287a2cf"
+  }
+]

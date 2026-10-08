@@ -1,0 +1,9 @@
+{
+  "query_date": "2026-10-07",
+  "notes": [
+    "部分官方网页和 Adoptium API 的 urllib 请求返回403；官方网页通过 web 工具读取，JDK通过官方GitHub发行资产及校验文件下载成功。",
+    "miniprogram skill 本地参考文件不存在，错误 fallback URL 返回404；正确官方参考URL读取成功，仅用于离线流程约束。",
+    "所有目标 npm 版本均检查实际存在及发布时间，未用 dist-tags/latest 当冻结值；实际 registry 元数据快照见 selected-npm-metadata.json。",
+    "miniprogram-ci CLI曾退出0而预期根目录无产物，未据此确认打包验收；最终调用官方API，检查1177个实际组件文件和哈希。"
+  ]
+}

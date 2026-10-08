@@ -1,0 +1,6 @@
+{
+  "source": "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/tools/pnpm.tgz",
+  "sha256": "44d7db90fcbb2315b581f85989a913466765421fc656c28e80fac1b7ab5be456",
+  "destination": "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/pet-platform-p02-02-_qb1x3n7/tools/pnpm",
+  "purpose": "既有隔离工具部分文件已缺失，使用冻结的原分发归档恢复到本轮临时目录"
+}

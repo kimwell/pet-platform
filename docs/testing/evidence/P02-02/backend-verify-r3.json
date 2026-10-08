@@ -1,0 +1,16 @@
+{
+  "id": "backend-verify-r3",
+  "cwd": "/Users/kimwell/work/pet-platform/apps/backend",
+  "command": [
+    "./mvnw",
+    "clean",
+    "verify"
+  ],
+  "exit_code": 0,
+  "expected_exit_code": 0,
+  "status": "PASS",
+  "started_at": "2026-10-08T07:36:51.137191+08:00",
+  "duration_seconds": 5.896,
+  "evidence": "backend-verify-r3.log",
+  "summary": "2026-10-08T07:36:49.630+08:00  INFO 8544 --- [pet-platform-backend] [           main] com.pet.platform.ApplicationTest         : Started ApplicationTest in 0.764 seconds (process running for 1.32)\n2026-10-08T07:36:49.929+08:00  INFO 8544 --- [pet-platform-backend] [1-auto-1-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'\n2026-10-08T07:36:49.929+08:00  INFO 8544 --- [pet-platform-backend] [1-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'\n2026-10-08T07:36:49.930+08:00  INFO 8544 --- [pet-platform-backend] [1-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms\n[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.336 s -- in com.pet.platform.ApplicationTest\n[INFO] \n[INFO] Results:\n[INFO] \n[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0\n[INFO] \n[INFO] \n[INFO] --- jar:3.4.2:jar (default-jar) @ pet-platform-backend ---\n[INFO] Building jar: /Users/kimwell/work/pet-platform/apps/backend/target/pet-platform-backend-0.0.0-SNAPSHOT.jar\n[INFO] \n[INFO] --- spring-boot:4.0.8:repackage (repackage) @ pet-platform-backend ---\n[INFO] Replacing main artifact /Users/kimwell/work/pet-platform/apps/backend/target/pet-platform-backend-0.0.0-SNAPSHOT.jar with repackaged archive, adding nested dependencies in BOOT-INF/.\n[INFO] The original artifact has been renamed to /Users/kimwell/work/pet-platform/apps/backend/target/pet-platform-backend-0.0.0-SNAPSHOT.jar.original\n[INFO] \n[INFO] --- failsafe:3.5.6:integration-test (default) @ pet-platform-backend ---\n[INFO] \n[INFO] --- failsafe:3.5.6:verify (default) @ pet-platform-backend ---\n[INFO] No tests to run.\n[INFO] ------------------------------------------------------------------------\n[INFO] BUILD SUCCESS\n[INFO] ------------------------------------------------------------------------\n[INFO] Total time:  4.091 s\n[INFO] Finished at: 2026-10-08T07:36:51+08:00\n[INFO] ------------------------------------------------------------------------\nOpenJDK 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended\n"
+}

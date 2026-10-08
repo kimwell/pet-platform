@@ -1,0 +1,12 @@
+{
+  "id": "web-dev",
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "command": [
+    "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/tools/node-v24.21.0-darwin-arm64/bin/node",
+    "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/tools/pnpm/package/bin/pnpm.cjs",
+    "dev:web"
+  ],
+  "pid": 90307,
+  "result": "RUNNING_PENDING_HTTP_CHECK",
+  "evidence": "web-dev.log"
+}

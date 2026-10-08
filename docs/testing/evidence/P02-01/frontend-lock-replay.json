@@ -1,0 +1,16 @@
+{
+  "id": "frontend-lock-replay",
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "command": [
+    "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/tools/node-v24.21.0-darwin-arm64/bin/node",
+    "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/tools/pnpm/package/bin/pnpm.cjs",
+    "install",
+    "--frozen-lockfile",
+    "--reporter=append-only"
+  ],
+  "exit_code": 0,
+  "status": "PASS",
+  "duration_seconds": 0.47,
+  "evidence": "frontend-lock-replay.log",
+  "summary": "Scope: all 4 workspace projects\nLockfile is up to date, resolution step is skipped\nAlready up to date\n\nDone in 424ms using pnpm v10.34.6\n"
+}

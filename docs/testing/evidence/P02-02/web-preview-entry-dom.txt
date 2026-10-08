@@ -1,0 +1,9 @@
+- banner:
+  - strong: 企业应用工程
+- main:
+  - heading "系统工程入口" [level=1]
+  - generic: 三端工程骨架正在建立，当前页面用于确认 Web 应用入口。
+  - alert:
+    - img "info-circle":
+    - generic: 尚未接入正式功能
+    - generic: 认证、身份权限、租户隔离、附件和消息能力将在后续任务实现。

@@ -1,0 +1,1 @@
+{"status": "PASS", "preserved_counts": {"ui": 272, "P01": 129, "P02-01": 114, "frozen": 4}, "volumes_before_count": 12, "volumes_after_count": 12, "ports_occupied": {"8080": false, "5173": false, "4173": false, "25432": false, "26379": false, "25672": false, "25673": false}}

@@ -1,0 +1,22 @@
+{
+  "id": "infra-stop",
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "command": [
+    "docker",
+    "compose",
+    "--env-file",
+    "/Users/kimwell/work/pet-platform/.local-data/p02-infra.env",
+    "-p",
+    "pet-platform-p02-validation",
+    "-f",
+    "/Users/kimwell/work/pet-platform/infra/local/docker-compose.yml",
+    "stop"
+  ],
+  "exit_code": 0,
+  "expected_exit_code": 0,
+  "status": "PASS",
+  "started_at": "2026-10-08T07:23:44.630469+08:00",
+  "duration_seconds": 1.472,
+  "evidence": "infra-stop.log",
+  "summary": " Container pet-platform-p02-validation-postgres-1 Stopping \n Container pet-platform-p02-validation-rabbitmq-1 Stopping \n Container pet-platform-p02-validation-redis-1 Stopping \n Container pet-platform-p02-validation-postgres-1 Stopped \n Container pet-platform-p02-validation-redis-1 Stopped \n Container pet-platform-p02-validation-rabbitmq-1 Stopped \n"
+}

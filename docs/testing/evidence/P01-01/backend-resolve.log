@@ -1,0 +1,15 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ---------------------< probe:compatibility-probe >----------------------
+[INFO] Building compatibility-probe 0.0.0
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- dependency:3.9.0:tree (default-cli) @ compatibility-probe ---
+[INFO] Wrote dependency tree to: /var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/evidence/backend-dependency-tree.txt
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  04:07 min
+[INFO] Finished at: 2026-10-07T21:07:21+08:00
+[INFO] ------------------------------------------------------------------------

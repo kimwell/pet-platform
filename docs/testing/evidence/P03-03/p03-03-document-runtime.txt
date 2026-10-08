@@ -1,0 +1,12 @@
+local /v3/api-docs 200
+local /swagger-ui/index.html 200
+local /v3/api-docs/test-contract 404
+local /__contracts/null 404
+local /__protocol/success 404
+local SIGTERM exit=143
+prod /v3/api-docs 404
+prod /swagger-ui/index.html 404
+prod /v3/api-docs/test-contract 404
+prod /__contracts/null 404
+prod /__protocol/success 404
+prod SIGTERM exit=143

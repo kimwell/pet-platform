@@ -1,0 +1,11 @@
+{
+  "plist": {
+    "CFBundleIdentifier": "com.tencent.webplusdevtools",
+    "CFBundleShortVersionString": "2.01.2510260",
+    "CFBundleVersion": "4240.111"
+  },
+  "package": {
+    "version": "2.01.2510260",
+    "name": "\u5fae\u4fe1\u5f00\u53d1\u8005\u5de5\u5177"
+  }
+}

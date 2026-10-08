@@ -1,0 +1,745 @@
+[
+  {
+    "id": "backend-dependencies",
+    "cwd": "/Users/kimwell/work/pet-platform/apps/backend",
+    "command": [
+      "./mvnw",
+      "--batch-mode",
+      "org.apache.maven.plugins:maven-dependency-plugin:3.9.0:tree",
+      "-DoutputFile=../../docs/testing/evidence/P02-01/backend-dependency-tree.txt"
+    ],
+    "exit_code": 0,
+    "status": "PASS",
+    "duration_seconds": 7.34,
+    "evidence": "backend-dependencies.log",
+    "summary": "/org/codehaus/plexus/plexus-i18n/1.0.0/plexus-i18n-1.0.0.jar (10 kB at 38 kB/s)\n[INFO] Downloading from mirror: https://maven.aliyun.com/nexus/content/groups/public/org/apache/velocity/velocity-engine-core/2.4.1/velocity-engine-core-2.4.1.jar\n[INFO] Downloaded from mirror: https://maven.aliyun.com/nexus/content/groups/public/org/codehaus/plexus/plexus-archiver/4.10.1/plexus-archiver-4.10.1.jar (230 kB at 850 kB/s)\n[INFO] Downloaded from mirror: https://maven.aliyun.com/nexus/content/groups/public/org/apache/velocity/velocity-engine-core/2.4.1/velocity-engine-core-2.4.1.jar (0 B at 0 B/s)\n[INFO] Downloaded from mirror: https://maven.aliyun.com/nexus/content/groups/public/org/apache/maven/shared/maven-dependency-analyzer/1.16.0/maven-dependency-analyzer-1.16.0.jar (45 kB at 146 kB/s)\n[INFO] Downloaded from mirror: https://maven.aliyun.com/nexus/content/groups/public/org/apache/maven/resolver/maven-resolver-util/1.9.24/maven-resolver-util-1.9.24.jar (196 kB at 532 kB/s)\n[INFO] Downloaded from mirror: https://maven.aliyun.com/nexus/content/groups/public/com/github/luben/zstd-jni/1.5.7-4/zstd-jni-1.5.7-4.jar (7.4 MB at 7.7 MB/s)\n[INFO] Wrote dependency tree to: /Users/kimwell/work/pet-platform/docs/testing/evidence/P02-01/backend-dependency-tree.txt\n[INFO] ------------------------------------------------------------------------\n[INFO] BUILD SUCCESS\n[INFO] ------------------------------------------------------------------------\n[INFO] Total time:  4.142 s\n[INFO] Finished at: 2026-10-07T22:12:38+08:00\n[INFO] ------------------------------------------------------------------------\n"
+  },
+  {
+    "id": "backend-missing-environment",
+    "cwd": "/Users/kimwell/work/pet-platform/apps/backend",
+    "command": [
+      "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/tools/jdk-21.0.12.1+1/Contents/Home/bin/java",
+      "-jar",
+      "target/pet-platform-backend-0.0.0-SNAPSHOT.jar",
+      "--server.port=18081"
+    ],
+    "exit_code": 1,
+    "expected_exit_code": 1,
+    "status": "PASS",
+    "evidence": "backend-missing-environment.log"
+  },
+  {
+    "id": "backend-start",
+    "cwd": "/Users/kimwell/work/pet-platform/apps/backend",
+    "command": [
+      "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/tools/jdk-21.0.12.1+1/Contents/Home/bin/java",
+      "-jar",
+      "target/pet-platform-backend-0.0.0-SNAPSHOT.jar",
+      "--spring.profiles.active=local",
+      "--server.port=18080"
+    ],
+    "pid": 90306,
+    "result": "RUNNING_PENDING_HTTP_CHECK",
+    "evidence": "backend-start.log"
+  },
+  {
+    "id": "backend-verify",
+    "cwd": "/Users/kimwell/work/pet-platform/apps/backend",
+    "command": [
+      "./mvnw",
+      "--batch-mode",
+      "clean",
+      "verify"
+    ],
+    "exit_code": 0,
+    "status": "PASS",
+    "duration_seconds": 32.05,
+    "evidence": "backend-verify.log",
+    "summary": "ps://maven.aliyun.com/nexus/content/groups/public/org/springframework/boot/spring-boot-buildpack-platform/4.0.8/spring-boot-buildpack-platform-4.0.8.jar\n[INFO] Downloaded from mirror: https://maven.aliyun.com/nexus/content/groups/public/org/springframework/boot/spring-boot-buildpack-platform/4.0.8/spring-boot-buildpack-platform-4.0.8.jar (333 kB at 1.4 MB/s)\n[INFO] Downloading from mirror: https://maven.aliyun.com/nexus/content/groups/public/org/springframework/boot/spring-boot-loader-tools/4.0.8/spring-boot-loader-tools-4.0.8.jar\n[INFO] Downloaded from mirror: https://maven.aliyun.com/nexus/content/groups/public/org/springframework/boot/spring-boot-loader-tools/4.0.8/spring-boot-loader-tools-4.0.8.jar (343 kB at 1.5 MB/s)\n[INFO] Replacing main artifact /Users/kimwell/work/pet-platform/apps/backend/target/pet-platform-backend-0.0.0-SNAPSHOT.jar with repackaged archive, adding nested dependencies in BOOT-INF/.\n[INFO] The original artifact has been renamed to /Users/kimwell/work/pet-platform/apps/backend/target/pet-platform-backend-0.0.0-SNAPSHOT.jar.original\n[INFO] \n[INFO] --- failsafe:3.5.6:integration-test (default) @ pet-platform-backend ---\n[INFO] \n[INFO] --- failsafe:3.5.6:verify (default) @ pet-platform-backend ---\n[INFO] No tests to run.\n[INFO] ------------------------------------------------------------------------\n[INFO] BUILD SUCCESS\n[INFO] ------------------------------------------------------------------------\n[INFO] Total time:  12.113 s\n[INFO] Finished at: 2026-10-07T22:11:21+08:00\n[INFO] ------------------------------------------------------------------------\n"
+  },
+  {
+    "id": "check-root-r2",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/tools/node-v24.21.0-darwin-arm64/bin/node",
+      "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/tools/pnpm/package/bin/pnpm.cjs",
+      "check"
+    ],
+    "exit_code": 2,
+    "status": "FAIL",
+    "duration_seconds": 3.59,
+    "evidence": "check-root-r2.log",
+    "summary": "\n> pet-platform@0.0.0 check /Users/kimwell/work/pet-platform\n> pnpm check:repo && pnpm check:web && pnpm check:miniprogram\n\n\n> pet-platform@0.0.0 check:repo /Users/kimwell/work/pet-platform\n> node scripts/check-repository.mjs && node scripts/check-miniprogram.mjs\n\n单锁、精确直接依赖、工具链、固定后端入口及秘密特征检查通过。秘密检查不输出匹配值。\n原生小程序结构、页面和官方组件引用检查通过；这不是开发者工具编译。\n\n> pet-platform@0.0.0 check:web /Users/kimwell/work/pet-platform\n> pnpm --filter @pet/admin-web typecheck && pnpm --filter @pet/admin-web lint && pnpm --filter @pet/admin-web test\n\n\n> @pet/admin-web@0.0.0 typecheck /Users/kimwell/work/pet-platform/apps/admin-web\n> tsc --noEmit\n\nsrc/app/router/router.test.tsx(15,32): error TS2339: Property 'statusCode' does not exist on type 'RouterState<Route<Register, any, \"/\", \"/\", string, \"__root__\", undefined, {}, {}, AnyContext, AnyContext, {}, undefined, readonly [Route<unknown, RootRoute<Register, ... 10 more ..., undefined>, ... 15 more ..., undefined>], unknown, unknown, unknown, undefined>, MakeRouteMatchUnion>'.\n/Users/kimwell/work/pet-platform/apps/admin-web:\n ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL  @pet/admin-web@0.0.0 typecheck: `tsc --noEmit`\nExit status 2\n ELIFECYCLE  Command failed with exit code 2.\n ELIFECYCLE  Command failed with exit code 2.\n"
+  },
+  {
+    "id": "check-root-r3",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/tools/node-v24.21.0-darwin-arm64/bin/node",
+      "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/tools/pnpm/package/bin/pnpm.cjs",
+      "check"
+    ],
+    "exit_code": 0,
+    "status": "PASS",
+    "duration_seconds": 7.95,
+    "evidence": "check-root-r3.log",
+    "summary": "\n> pet-platform@0.0.0 check /Users/kimwell/work/pet-platform\n> pnpm check:repo && pnpm check:web && pnpm check:miniprogram\n\n\n> pet-platform@0.0.0 check:repo /Users/kimwell/work/pet-platform\n> node scripts/check-repository.mjs && node scripts/check-miniprogram.mjs\n\n单锁、精确直接依赖、工具链、固定后端入口及秘密特征检查通过。秘密检查不输出匹配值。\n原生小程序结构、页面和官方组件引用检查通过；这不是开发者工具编译。\n\n> pet-platform@0.0.0 check:web /Users/kimwell/work/pet-platform\n> pnpm --filter @pet/admin-web typecheck && pnpm --filter @pet/admin-web lint && pnpm --filter @pet/admin-web test\n\n\n> @pet/admin-web@0.0.0 typecheck /Users/kimwell/work/pet-platform/apps/admin-web\n> tsc --noEmit\n\n\n> @pet/admin-web@0.0.0 lint /Users/kimwell/work/pet-platform/apps/admin-web\n> eslint src vite.config.ts --max-warnings=0\n\n\n> @pet/admin-web@0.0.0 test /Users/kimwell/work/pet-platform/apps/admin-web\n> vitest run\n\n\n RUN  v4.1.11 /Users/kimwell/work/pet-platform/apps/admin-web\n\n\n Test Files  1 passed (1)\n      Tests  2 passed (2)\n   Start at  22:13:56\n   Duration  1.01s (transform 48ms, setup 0ms, import 869ms, tests 38ms, environment 0ms)\n\n\n> pet-platform@0.0.0 check:miniprogram /Users/kimwell/work/pet-platform\n> pnpm --filter @pet/wechat-miniprogram typecheck && pnpm --filter @pet/wechat-miniprogram lint\n\n\n> @pet/wechat-miniprogram@0.0.0 typecheck /Users/kimwell/work/pet-platform/apps/wechat-miniprogram\n> tsc --noEmit\n\n\n> @pet/wechat-miniprogram@0.0.0 lint /Users/kimwell/work/pet-platform/apps/wechat-miniprogram\n> eslint miniprogram --max-warnings=0\n\n"
+  },
+  {
+    "id": "check-root",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/tools/node-v24.21.0-darwin-arm64/bin/node",
+      "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/tools/pnpm/package/bin/pnpm.cjs",
+      "check"
+    ],
+    "exit_code": 1,
+    "status": "FAIL",
+    "duration_seconds": 0.67,
+    "evidence": "check-root.log",
+    "summary": "\n> pet-platform@0.0.0 check /Users/kimwell/work/pet-platform\n> pnpm check:repo && pnpm check:web && pnpm check:miniprogram\n\n ERR_PNPM_UNSUPPORTED_ENGINE  Unsupported environment (bad pnpm and/or Node.js version)\n\nYour pnpm version is incompatible with \"/Users/kimwell/work/pet-platform\".\n\nExpected version: 10.34.6\nGot: 10.33.0\n\nThis is happening because the package's manifest has an engines.pnpm field specified.\nTo fix this issue, install the required pnpm version globally.\n\nTo install the latest version of pnpm, run \"pnpm i -g pnpm\".\nTo check your pnpm version, run \"pnpm -v\".\n ELIFECYCLE  Command failed with exit code 1.\n"
+  },
+  {
+    "id": "ci-source-check",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "python3",
+      "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/pet-platform-p02-01-s8g6tcc1/check-ci.py"
+    ],
+    "exit_code": 0,
+    "status": "PASS",
+    "duration_seconds": 0.07,
+    "evidence": "ci-source-check.log",
+    "summary": "{\"workflow_yaml\": \"valid\", \"commands\": [\"pnpm install --frozen-lockfile\", \"pnpm check\", \"pnpm build:web\", \"docker compose -f infra/local/docker-compose.yml config --quiet\", \"./mvnw --version\\n./mvnw --batch-mode clean verify\\n\"], \"remote_ci\": \"NOT_EXECUTED\"}\n"
+  },
+  {
+    "id": "compose-config",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "docker",
+      "compose",
+      "--env-file",
+      ".local-data/p02-infra.env",
+      "-p",
+      "pet-platform-p02-validation",
+      "-f",
+      "infra/local/docker-compose.yml",
+      "config",
+      "--quiet"
+    ],
+    "exit_code": 0,
+    "status": "PASS",
+    "duration_seconds": 0.11,
+    "evidence": "compose-config.log",
+    "summary": ""
+  },
+  {
+    "id": "compose-empty-password",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "docker",
+      "compose",
+      "--env-file",
+      "infra/local/.env.example",
+      "-f",
+      "infra/local/docker-compose.yml",
+      "config",
+      "--quiet"
+    ],
+    "exit_code": 1,
+    "expected_exit_code": 1,
+    "status": "PASS",
+    "evidence": "compose-empty-password.log"
+  },
+  {
+    "id": "documentation-audit-final",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "python3",
+      "docs/testing/evidence/P02-01/audit-reproduction.py"
+    ],
+    "exit_code": 0,
+    "status": "PASS",
+    "duration_seconds": 0.9,
+    "evidence": "documentation-audit-final.log",
+    "summary": "{\"cwd\": \"/Users/kimwell/work/pet-platform\", \"command\": [\"/Library/Frameworks/Python.framework/Versions/3.14/bin/python3\", \"/Users/kimwell/work/pet-platform/docs/testing/evidence/P02-01/audit-reproduction.py\"], \"exit_code\": 0, \"status\": \"PASS\", \"level\": \"DOCUMENTED\", \"baseline_files\": 430, \"unchanged_baseline_files\": 421, \"ui_files_unchanged\": 272, \"p01_evidence_files_unchanged\": 127, \"changed_baseline_files\": [\"AGENTS.md\", \"README.md\", \"docs/architecture/CONFIGURATION.md\", \"docs/architecture/PROJECT-STRUCTURE.md\", \"docs/architecture/TECHNICAL-BASELINE.md\", \"docs/development/DECISION-LOG.md\", \"docs/development/ROADMAP.md\", \"docs/development/VERSION-MATRIX.md\", \"docs/testing/ACCEPTANCE-MATRIX.md\"], \"deleted_files\": [], \"invalid_local_links\": [], \"secret_feature_findings\": [], \"new_file_count\": 168, \"business_scope\": \"无正式业务Controller/CRUD/迁移/会话/附件/Outbox/生成假DTO\", \"boundary\": \"源文件及文档审计，不替代运行或业务验收；秘密检查结合人工增量核对。\"}\n"
+  },
+  {
+    "id": "documentation-audit-r2",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "python3",
+      "docs/testing/evidence/P02-01/audit-reproduction.py"
+    ],
+    "exit_code": 0,
+    "status": "PASS",
+    "duration_seconds": 0.74,
+    "evidence": "documentation-audit-r2.log",
+    "summary": "{\"cwd\": \"/Users/kimwell/work/pet-platform\", \"command\": [\"/Library/Frameworks/Python.framework/Versions/3.14/bin/python3\", \"/Users/kimwell/work/pet-platform/docs/testing/evidence/P02-01/audit-reproduction.py\"], \"exit_code\": 0, \"status\": \"PASS\", \"level\": \"DOCUMENTED\", \"baseline_files\": 430, \"unchanged_baseline_files\": 421, \"ui_files_unchanged\": 272, \"p01_evidence_files_unchanged\": 127, \"changed_baseline_files\": [\"AGENTS.md\", \"README.md\", \"docs/architecture/CONFIGURATION.md\", \"docs/architecture/PROJECT-STRUCTURE.md\", \"docs/architecture/TECHNICAL-BASELINE.md\", \"docs/development/DECISION-LOG.md\", \"docs/development/ROADMAP.md\", \"docs/development/VERSION-MATRIX.md\", \"docs/testing/ACCEPTANCE-MATRIX.md\"], \"deleted_files\": [], \"invalid_local_links\": [], \"secret_feature_findings\": [], \"new_file_count\": 154, \"business_scope\": \"无正式业务Controller/CRUD/迁移/会话/附件/Outbox/生成假DTO\", \"boundary\": \"源文件及文档审计，不替代运行或业务验收；秘密检查结合人工增量核对。\"}\n"
+  },
+  {
+    "id": "documentation-audit",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "python3",
+      "docs/testing/evidence/P02-01/audit-reproduction.py"
+    ],
+    "exit_code": 1,
+    "status": "FAIL",
+    "duration_seconds": 0.36,
+    "evidence": "documentation-audit.log",
+    "summary": "Traceback (most recent call last):\n  File \"/Users/kimwell/work/pet-platform/docs/testing/evidence/P02-01/audit-reproduction.py\", line 51, in <module>\n    assert not bad_links, f\"失效本地引用：{bad_links}\"\n           ^^^^^^^^^^^^^\nAssertionError: 失效本地引用：[{'path': 'docs/testing/P02-01-VERIFICATION.md', 'target': 'evidence/P02-01/final-audit.json'}, {'path': 'docs/testing/P02-01-VERIFICATION.md', 'target': 'evidence/P02-01/change-summary.json'}, {'path': 'docs/testing/P02-01-VERIFICATION.md', 'target': 'evidence/P02-01/runtime-final.json'}, {'path': 'docs/testing/P02-01-VERIFICATION.md', 'target': 'evidence/P02-01/change-summary.json'}, {'path': 'docs/testing/P02-01-VERIFICATION.md', 'target': 'evidence/P02-01/final-audit.json'}]\n"
+  },
+  {
+    "id": "environment",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "python3",
+      "-c",
+      "import subprocess,json,plistlib,pathlib; commands=[[\"git\",\"branch\",\"--show-current\"],[\"git\",\"status\",\"--short\"],[\"java\",\"--version\"],[\"node\",\"--version\"],[\"docker\",\"--version\"],[\"docker\",\"compose\",\"version\"],[\"docker\",\"info\",\"--format\",\"{{.ServerVersion}}\"],[\"docker\",\"ps\",\"--format\",\"{{.Names}} {{.Ports}}\"]]; results=[]; [(results.append({\"command\":c,\"exit_code\":(r:=subprocess.run(c,capture_output=True,text=True)).returncode,\"output\":r.stdout+r.stderr})) for c in commands]; p=pathlib.Path(\"/Applications/wechatwebdevtools.app/Contents/Info.plist\"); results.append({\"devtools\":plistlib.loads(p.read_bytes()).get(\"CFBundleShortVersionString\")}); print(json.dumps(results,ensure_ascii=False,indent=2))"
+    ],
+    "exit_code": 0,
+    "status": "PASS",
+    "duration_seconds": 1.61,
+    "evidence": "environment.log",
+    "summary": "[\n  {\n    \"command\": [\n      \"git\",\n      \"branch\",\n      \"--show-current\"\n    ],\n    \"exit_code\": 0,\n    \"output\": \"main\\n\"\n  },\n  {\n    \"command\": [\n      \"git\",\n      \"status\",\n      \"--short\"\n    ],\n    \"exit_code\": 0,\n    \"output\": \"?? .editorconfig\\n?? .gitattributes\\n?? .github/\\n?? .gitignore\\n?? .npmrc\\n?? .nvmrc\\n?? AGENTS.md\\n?? README.md\\n?? apps/\\n?? docs/\\n?? eslint.config.mjs\\n?? infra/\\n?? package.json\\n?? packages/\\n?? pnpm-workspace.yaml\\n?? scripts/\\n?? ui/\\n\"\n  },\n  {\n    \"command\": [\n      \"java\",\n      \"--version\"\n    ],\n    \"exit_code\": 0,\n    \"output\": \"openjdk 21.0.12.1 2026-08-18 LTS\\nOpenJDK Runtime Environment Temurin-21.0.12.1+1 (build 21.0.12.1+1-LTS)\\nOpenJDK 64-Bit Server VM Temurin-21.0.12.1+1 (build 21.0.12.1+1-LTS, mixed mode, sharing)\\n\"\n  },\n  {\n    \"command\": [\n      \"node\",\n      \"--version\"\n    ],\n    \"exit_code\": 0,\n    \"output\": \"v24.21.0\\n\"\n  },\n  {\n    \"command\": [\n      \"docker\",\n      \"--version\"\n    ],\n    \"exit_code\": 0,\n    \"output\": \"Docker version 29.5.2, build 79eb04c7d8\\n\"\n  },\n  {\n    \"command\": [\n      \"docker\",\n      \"compose\",\n      \"version\"\n    ],\n    \"exit_code\": 0,\n    \"output\": \"Docker Compose version v5.1.1\\n\"\n  },\n  {\n    \"command\": [\n      \"docker\",\n      \"info\",\n      \"--format\",\n      \"{{.ServerVersion}}\"\n    ],\n    \"exit_code\": 0,\n    \"output\": \"29.4.0\\n\"\n  },\n  {\n    \"command\": [\n      \"docker\",\n      \"ps\",\n      \"--format\",\n      \"{{.Names}} {{.Ports}}\"\n    ],\n    \"exit_code\": 0,\n    \"output\": \"\"\n  },\n  {\n    \"devtools\": \"2.01.2510260\"\n  }\n]\n"
+  },
+  {
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "/Library/Frameworks/Python.framework/Versions/3.14/bin/python3",
+      "/Users/kimwell/work/pet-platform/docs/testing/evidence/P02-01/audit-reproduction.py"
+    ],
+    "exit_code": 0,
+    "status": "PASS",
+    "level": "DOCUMENTED",
+    "baseline_files": 430,
+    "unchanged_baseline_files": 421,
+    "ui_files_unchanged": 272,
+    "p01_evidence_files_unchanged": 127,
+    "changed_baseline_files": [
+      "AGENTS.md",
+      "README.md",
+      "docs/architecture/CONFIGURATION.md",
+      "docs/architecture/PROJECT-STRUCTURE.md",
+      "docs/architecture/TECHNICAL-BASELINE.md",
+      "docs/development/DECISION-LOG.md",
+      "docs/development/ROADMAP.md",
+      "docs/development/VERSION-MATRIX.md",
+      "docs/testing/ACCEPTANCE-MATRIX.md"
+    ],
+    "deleted_files": [],
+    "invalid_local_links": [],
+    "secret_feature_findings": [],
+    "new_file_count": 170,
+    "business_scope": "无正式业务Controller/CRUD/迁移/会话/附件/Outbox/生成假DTO",
+    "boundary": "源文件及文档审计，不替代运行或业务验收；秘密检查结合人工增量核对。"
+  },
+  {
+    "id": "frontend-clean-install",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "python3",
+      "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/pet-platform-p02-01-s8g6tcc1/clean-install.py"
+    ],
+    "exit_code": 0,
+    "status": "PASS",
+    "duration_seconds": 4.17,
+    "evidence": "frontend-clean-install.log",
+    "summary": "Scope: all 4 workspace projects\nLockfile is up to date, resolution step is skipped\nProgress: resolved 1, reused 0, downloaded 0, added 0\nPackages: +272\n++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++\nProgress: resolved 272, reused 272, downloaded 0, added 253\nProgress: resolved 272, reused 272, downloaded 0, added 270\nProgress: resolved 272, reused 272, downloaded 0, added 272, done\n.../esbuild@0.28.2/node_modules/esbuild postinstall$ node install.js\n.../esbuild@0.28.2/node_modules/esbuild postinstall: Done\n\ndevDependencies:\n+ @eslint/js 10.0.1\n+ eslint 10.12.0\n+ eslint-plugin-react-hooks 7.1.1\n+ eslint-plugin-react-refresh 0.5.7\n+ typescript 5.9.3\n+ typescript-eslint 8.71.1\n\nDone in 4s using pnpm v10.34.6\n\n{\"cwd\": \"/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/pet-platform-p02-01-s8g6tcc1/clean-workspace\", \"command\": [\"pnpm\", \"install\", \"--frozen-lockfile\", \"--reporter=append-only\"], \"exit_code\": 0, \"lock_unchanged\": true, \"lock_sha256\": \"d5b3d0d134487660a64a2e51504cef6dfe5f066abb599807c5226fbcf1d7ec72\"}\n"
+  },
+  {
+    "id": "frontend-direct-tree",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/tools/node-v24.21.0-darwin-arm64/bin/node",
+      "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/tools/pnpm/package/bin/pnpm.cjs",
+      "list",
+      "--depth",
+      "0",
+      "-r"
+    ],
+    "exit_code": 0,
+    "status": "PASS",
+    "duration_seconds": 0.3,
+    "evidence": "frontend-direct-tree.log",
+    "summary": "Legend: production dependency, optional only, dev only\n\npet-platform@0.0.0 /Users/kimwell/work/pet-platform (PRIVATE)\n│\n│   devDependencies:\n├── @eslint/js@10.0.1\n├── eslint@10.12.0\n├── eslint-plugin-react-hooks@7.1.1\n├── eslint-plugin-react-refresh@0.5.7\n├── typescript@5.9.3\n└── typescript-eslint@8.71.1\n\n@pet/admin-web@0.0.0 /Users/kimwell/work/pet-platform/apps/admin-web (PRIVATE)\n│\n│   dependencies:\n├── @tanstack/react-query@5.104.1\n├── @tanstack/react-router@1.170.41\n├── antd@6.6.5\n├── react@19.2.8\n├── react-dom@19.2.8\n├── zustand@5.0.15\n│\n│   devDependencies:\n├── @types/node@24.19.1\n├── @types/react@19.2.18\n├── @types/react-dom@19.2.7\n├── @vitejs/plugin-react@5.2.0\n├── vite@7.3.7\n└── vitest@4.1.11\n\n@pet/wechat-miniprogram@0.0.0 /Users/kimwell/work/pet-platform/apps/wechat-miniprogram (PRIVATE)\n│\n│   dependencies:\n├── tdesign-miniprogram@1.17.0\n│\n│   devDependencies:\n└── miniprogram-api-typings@5.2.3\n\n20 packages in 4 projects\n"
+  },
+  {
+    "id": "frontend-install",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/tools/node-v24.21.0-darwin-arm64/bin/node",
+      "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/tools/pnpm/package/bin/pnpm.cjs",
+      "install",
+      "--reporter=append-only"
+    ],
+    "exit_code": 0,
+    "status": "PASS",
+    "duration_seconds": 10.0,
+    "evidence": "frontend-install.log",
+    "summary": "Scope: all 4 workspace projects\nProgress: resolved 1, reused 0, downloaded 0, added 0\nProgress: resolved 45, reused 17, downloaded 13, added 0\nProgress: resolved 157, reused 84, downloaded 50, added 0\nProgress: resolved 272, reused 130, downloaded 80, added 0\nProgress: resolved 321, reused 149, downloaded 112, added 0\nProgress: resolved 322, reused 150, downloaded 119, added 0\nProgress: resolved 322, reused 150, downloaded 120, added 0\nPackages: +272\n++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++\nProgress: resolved 322, reused 150, downloaded 121, added 128\nProgress: resolved 322, reused 150, downloaded 121, added 270\nProgress: resolved 322, reused 150, downloaded 122, added 271\nProgress: resolved 322, reused 150, downloaded 122, added 272, done\n\ndevDependencies:\n+ @eslint/js 10.0.1\n+ eslint 10.12.0\n+ eslint-plugin-react-hooks 7.1.1\n+ eslint-plugin-react-refresh 0.5.7\n+ typescript 5.9.3 (7.0.2 is available)\n+ typescript-eslint 8.71.1\n\n╭ Warning ─────────────────────────────────────────────────────────────────────╮\n│                                                                              │\n│   Ignored build scripts: esbuild@0.28.2.                                     │\n│   Run \"pnpm approve-builds\" to pick which dependencies should be allowed     │\n│   to run scripts.                                                            │\n│                                                                              │\n╰──────────────────────────────────────────────────────────────────────────────╯\nDone in 9.8s using pnpm v10.34.6\n"
+  },
+  {
+    "id": "frontend-lock-replay",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/tools/node-v24.21.0-darwin-arm64/bin/node",
+      "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/tools/pnpm/package/bin/pnpm.cjs",
+      "install",
+      "--frozen-lockfile",
+      "--reporter=append-only"
+    ],
+    "exit_code": 0,
+    "status": "PASS",
+    "duration_seconds": 0.47,
+    "evidence": "frontend-lock-replay.log",
+    "summary": "Scope: all 4 workspace projects\nLockfile is up to date, resolution step is skipped\nAlready up to date\n\nDone in 424ms using pnpm v10.34.6\n"
+  },
+  {
+    "id": "frontend-rebuild",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/tools/node-v24.21.0-darwin-arm64/bin/node",
+      "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/tools/pnpm/package/bin/pnpm.cjs",
+      "rebuild",
+      "esbuild"
+    ],
+    "exit_code": 0,
+    "status": "PASS",
+    "duration_seconds": 0.21,
+    "evidence": "frontend-rebuild.log",
+    "summary": ""
+  },
+  {
+    "id": "infra-smoke",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "python3",
+      "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/pet-platform-p02-01-s8g6tcc1/infra-smoke.py"
+    ],
+    "exit_code": 0,
+    "status": "PASS",
+    "duration_seconds": 1.2,
+    "evidence": "infra-smoke.log",
+    "summary": "ublishedPort\\\":26379,\\\"Protocol\\\":\\\"tcp\\\"}],\\\"RunningFor\\\":\\\"2 minutes ago\\\",\\\"Service\\\":\\\"redis\\\",\\\"Size\\\":\\\"0B\\\",\\\"State\\\":\\\"running\\\",\\\"Status\\\":\\\"Up About a minute (healthy)\\\"}\\n\"}\n{\"id\": \"postgres-io\", \"cwd\": \"/Users/kimwell/work/pet-platform\", \"command\": [\"docker\", \"compose\", \"--env-file\", \".local-data/p02-infra.env\", \"-p\", \"pet-platform-p02-validation\", \"-f\", \"infra/local/docker-compose.yml\", \"exec\", \"-T\", \"postgres\", \"sh\", \"-ec\", \"PGPASSWORD=\\\"$POSTGRES_PASSWORD\\\" psql -h 127.0.0.1 -U \\\"$POSTGRES_USER\\\" -d \\\"$POSTGRES_DB\\\" -v ON_ERROR_STOP=1 -Atc \\\"select version(); select 1;\\\"\"], \"exit_code\": 0, \"output\": \"PostgreSQL 17.11 (Debian 17.11-1.pgdg12+2) on aarch64-unknown-linux-gnu, compiled by gcc (Debian 12.2.0-14+deb12u1) 12.2.0, 64-bit\\n1\\n\"}\n{\"id\": \"redis-auth\", \"cwd\": \"/Users/kimwell/work/pet-platform\", \"command\": [\"docker\", \"compose\", \"--env-file\", \".local-data/p02-infra.env\", \"-p\", \"pet-platform-p02-validation\", \"-f\", \"infra/local/docker-compose.yml\", \"exec\", \"-T\", \"redis\", \"sh\", \"-ec\", \"REDISCLI_AUTH=\\\"$REDIS_PASSWORD\\\" redis-cli ping; redis-cli ping\"], \"exit_code\": 0, \"output\": \"PONG\\nNOAUTH Authentication required.\\n\\n\"}\n{\"id\": \"rabbit-node\", \"cwd\": \"/Users/kimwell/work/pet-platform\", \"command\": [\"docker\", \"compose\", \"--env-file\", \".local-data/p02-infra.env\", \"-p\", \"pet-platform-p02-validation\", \"-f\", \"infra/local/docker-compose.yml\", \"exec\", \"-T\", \"rabbitmq\", \"rabbitmq-diagnostics\", \"-q\", \"check_running\"], \"exit_code\": 0, \"output\": \"RabbitMQ on node rabbit@2ccb1a9559b8 is fully booted and running\\n\"}\nRabbitMQ management authenticated HTTP 200, version=4.3.6\n"
+  },
+  {
+    "id": "infra-start",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "docker",
+      "compose",
+      "--env-file",
+      ".local-data/p02-infra.env",
+      "-p",
+      "pet-platform-p02-validation",
+      "-f",
+      "infra/local/docker-compose.yml",
+      "up",
+      "-d",
+      "--wait",
+      "--wait-timeout",
+      "180"
+    ],
+    "exit_code": 0,
+    "status": "PASS",
+    "duration_seconds": 174.22,
+    "evidence": "infra-start.log",
+    "summary": "-bookworm@sha256:3645570cccdfa447589da9f57dd740faa29b30938e861289a5574b6ca6b03826 Pulled \n Network pet-platform-p02-validation_default Creating \n Network pet-platform-p02-validation_default Created \n Volume pet-platform-p02-validation_rabbitmq-data Creating \n Volume pet-platform-p02-validation_rabbitmq-data Created \n Volume pet-platform-p02-validation_postgres-data Creating \n Volume pet-platform-p02-validation_postgres-data Created \n Volume pet-platform-p02-validation_redis-data Creating \n Volume pet-platform-p02-validation_redis-data Created \n Container pet-platform-p02-validation-rabbitmq-1 Creating \n Container pet-platform-p02-validation-redis-1 Creating \n Container pet-platform-p02-validation-postgres-1 Creating \n Container pet-platform-p02-validation-postgres-1 Created \n Container pet-platform-p02-validation-redis-1 Created \n Container pet-platform-p02-validation-rabbitmq-1 Created \n Container pet-platform-p02-validation-redis-1 Starting \n Container pet-platform-p02-validation-postgres-1 Starting \n Container pet-platform-p02-validation-rabbitmq-1 Starting \n Container pet-platform-p02-validation-postgres-1 Started \n Container pet-platform-p02-validation-rabbitmq-1 Started \n Container pet-platform-p02-validation-redis-1 Started \n Container pet-platform-p02-validation-redis-1 Waiting \n Container pet-platform-p02-validation-rabbitmq-1 Waiting \n Container pet-platform-p02-validation-postgres-1 Waiting \n Container pet-platform-p02-validation-rabbitmq-1 Healthy \n Container pet-platform-p02-validation-postgres-1 Healthy \n Container pet-platform-p02-validation-redis-1 Healthy \n"
+  },
+  {
+    "id": "infra-stop",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "docker",
+      "compose",
+      "--env-file",
+      ".local-data/p02-infra.env",
+      "-p",
+      "pet-platform-p02-validation",
+      "-f",
+      "infra/local/docker-compose.yml",
+      "stop"
+    ],
+    "exit_code": 0,
+    "status": "PASS",
+    "duration_seconds": 1.62,
+    "evidence": "infra-stop.log",
+    "summary": " Container pet-platform-p02-validation-redis-1 Stopping \n Container pet-platform-p02-validation-rabbitmq-1 Stopping \n Container pet-platform-p02-validation-postgres-1 Stopping \n Container pet-platform-p02-validation-postgres-1 Stopped \n Container pet-platform-p02-validation-redis-1 Stopped \n Container pet-platform-p02-validation-rabbitmq-1 Stopped \n"
+  },
+  {
+    "id": "mini-lint",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/tools/node-v24.21.0-darwin-arm64/bin/node",
+      "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/tools/pnpm/package/bin/pnpm.cjs",
+      "--filter",
+      "@pet/wechat-miniprogram",
+      "lint"
+    ],
+    "exit_code": 0,
+    "status": "PASS",
+    "duration_seconds": 0.79,
+    "evidence": "mini-lint.log",
+    "summary": "\n> @pet/wechat-miniprogram@0.0.0 lint /Users/kimwell/work/pet-platform/apps/wechat-miniprogram\n> eslint miniprogram --max-warnings=0\n\n"
+  },
+  {
+    "id": "mini-npm-pack",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "node",
+      "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/pet-platform-p02-01-s8g6tcc1/pack-api.cjs"
+    ],
+    "exit_code": 0,
+    "status": "PASS",
+    "duration_seconds": 2.35,
+    "evidence": "mini-npm-pack.log",
+    "summary": "[miniprogram-builder] initservices CI\n{\"miniProgramPackNum\":1,\"otherNpmPackNum\":0,\"warnList\":[]}\n"
+  },
+  {
+    "id": "mini-typecheck",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/tools/node-v24.21.0-darwin-arm64/bin/node",
+      "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/tools/pnpm/package/bin/pnpm.cjs",
+      "--filter",
+      "@pet/wechat-miniprogram",
+      "typecheck"
+    ],
+    "exit_code": 0,
+    "status": "PASS",
+    "duration_seconds": 2.47,
+    "evidence": "mini-typecheck.log",
+    "summary": "\n> @pet/wechat-miniprogram@0.0.0 typecheck /Users/kimwell/work/pet-platform/apps/wechat-miniprogram\n> tsc --noEmit\n\n"
+  },
+  {
+    "id": "negative-config",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "python3",
+      "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/pet-platform-p02-01-s8g6tcc1/negative-config.py"
+    ],
+    "exit_code": 0,
+    "status": "PASS",
+    "duration_seconds": 1.72,
+    "evidence": "negative-config.log",
+    "summary": "{\"id\": \"backend-missing-environment\", \"cwd\": \"/Users/kimwell/work/pet-platform/apps/backend\", \"command\": [\"/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/tools/jdk-21.0.12.1+1/Contents/Home/bin/java\", \"-jar\", \"target/pet-platform-backend-0.0.0-SNAPSHOT.jar\", \"--server.port=18081\"], \"exit_code\": 1, \"expected_exit_code\": 1, \"status\": \"PASS\", \"evidence\": \"backend-missing-environment.log\"}\n{\"id\": \"compose-empty-password\", \"cwd\": \"/Users/kimwell/work/pet-platform\", \"command\": [\"docker\", \"compose\", \"--env-file\", \"infra/local/.env.example\", \"-f\", \"infra/local/docker-compose.yml\", \"config\", \"--quiet\"], \"exit_code\": 1, \"expected_exit_code\": 1, \"status\": \"PASS\", \"evidence\": \"compose-empty-password.log\"}\n"
+  },
+  {
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": "本轮创建的进程组按记录PID发送SIGTERM并验证端口已释放",
+    "exit_code": 0,
+    "status": "PASS",
+    "processes": [
+      {
+        "id": "backend-start",
+        "pid": 90306,
+        "signal": "SIGTERM",
+        "command_matches_created_process": true
+      },
+      {
+        "id": "web-dev",
+        "pid": 90307,
+        "signal": "SIGTERM",
+        "command_matches_created_process": true
+      }
+    ],
+    "ports_released": [
+      18080,
+      5173
+    ]
+  },
+  {
+    "id": "rabbit-exit-final",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "ExitCode={{.State.ExitCode}} OOMKilled={{.State.OOMKilled}} Status={{.State.Status}}",
+      "pet-platform-p02-validation-rabbitmq-1"
+    ],
+    "exit_code": 0,
+    "status": "PASS",
+    "duration_seconds": 0.02,
+    "evidence": "rabbit-exit-final.log",
+    "summary": "ExitCode=0 OOMKilled=false Status=exited\n"
+  },
+  {
+    "id": "rabbit-final-log",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "docker",
+      "logs",
+      "--tail",
+      "35",
+      "pet-platform-p02-validation-rabbitmq-1"
+    ],
+    "exit_code": 0,
+    "status": "PASS",
+    "duration_seconds": 0.03,
+    "evidence": "rabbit-final-log.log",
+    "summary": "[38;5;87m2026-10-07 14:22:07.803151+00:00 [notice] <0.64.0> \u001b[0m\n\u001b[38;5;214m2026-10-07 14:22:07.805988+00:00 [warning] <0.900.0> HTTP listener registry could not find context rabbitmq_prometheus_tls\u001b[0m\n\u001b[38;5;214m2026-10-07 14:22:07.812842+00:00 [warning] <0.900.0> HTTP listener registry could not find context rabbitmq_management_tls\u001b[0m\n2026-10-07 14:22:07.819907+00:00 [info] <0.1024.0> stopped TCP listener on [::]:5672\u001b[0m\n2026-10-07 14:22:07.820768+00:00 [info] <0.839.0> Virtual host '/' is stopping\u001b[0m\n2026-10-07 14:22:07.820882+00:00 [info] <0.1261.0> Closing all connections in vhost '/' on node 'rabbit@2ccb1a9559b8' because the vhost is stopping\u001b[0m\n2026-10-07 14:22:07.820953+00:00 [info] <0.852.0> Stopping message store for directory '/var/lib/rabbitmq/mnesia/rabbit@2ccb1a9559b8/msg_stores/vhosts/628WB79CIFDYO9LJI6DKMI09L/msg_store_persistent'\u001b[0m\n2026-10-07 14:22:07.824957+00:00 [info] <0.852.0> Message store for directory '/var/lib/rabbitmq/mnesia/rabbit@2ccb1a9559b8/msg_stores/vhosts/628WB79CIFDYO9LJI6DKMI09L/msg_store_persistent' is stopped\u001b[0m\n2026-10-07 14:22:07.825141+00:00 [info] <0.848.0> Stopping message store for directory '/var/lib/rabbitmq/mnesia/rabbit@2ccb1a9559b8/msg_stores/vhosts/628WB79CIFDYO9LJI6DKMI09L/msg_store_transient'\u001b[0m\n2026-10-07 14:22:07.827435+00:00 [info] <0.848.0> Message store for directory '/var/lib/rabbitmq/mnesia/rabbit@2ccb1a9559b8/msg_stores/vhosts/628WB79CIFDYO9LJI6DKMI09L/msg_store_transient' is stopped\u001b[0m\n\u001b[38;5;214m2026-10-07 14:22:07.833946+00:00 [warning] <0.532.0> RabbitMQ metadata store: worker exited with shutdown\u001b[0m\n"
+  },
+  {
+    "id": "rabbit-graceful-shutdown",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "docker",
+      "compose",
+      "--env-file",
+      ".local-data/p02-infra.env",
+      "-p",
+      "pet-platform-p02-validation",
+      "-f",
+      "infra/local/docker-compose.yml",
+      "exec",
+      "-T",
+      "rabbitmq",
+      "rabbitmqctl",
+      "shutdown"
+    ],
+    "exit_code": 137,
+    "status": "FAIL",
+    "duration_seconds": 1.57,
+    "evidence": "rabbit-graceful-shutdown.log",
+    "summary": "Shutting down RabbitMQ node rabbit@2ccb1a9559b8 running at PID 1\nWaiting for PID 1 to terminate\n"
+  },
+  {
+    "id": "rabbit-restart",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "docker",
+      "compose",
+      "--env-file",
+      ".local-data/p02-infra.env",
+      "-p",
+      "pet-platform-p02-validation",
+      "-f",
+      "infra/local/docker-compose.yml",
+      "up",
+      "-d",
+      "--wait",
+      "--wait-timeout",
+      "90",
+      "rabbitmq"
+    ],
+    "exit_code": 0,
+    "status": "PASS",
+    "duration_seconds": 5.68,
+    "evidence": "rabbit-restart.log",
+    "summary": " Container pet-platform-p02-validation-rabbitmq-1 Starting \n Container pet-platform-p02-validation-rabbitmq-1 Started \n Container pet-platform-p02-validation-rabbitmq-1 Waiting \n Container pet-platform-p02-validation-rabbitmq-1 Healthy \n"
+  },
+  {
+    "id": "rabbit-stop-investigation",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "docker",
+      "inspect",
+      "--format",
+      "ExitCode={{.State.ExitCode}} OOMKilled={{.State.OOMKilled}} Error={{.State.Error}} FinishedAt={{.State.FinishedAt}} StopSignal={{.Config.StopSignal}}",
+      "pet-platform-p02-validation-rabbitmq-1"
+    ],
+    "exit_code": 0,
+    "status": "PASS",
+    "duration_seconds": 0.05,
+    "evidence": "rabbit-stop-investigation.log",
+    "summary": "ExitCode=137 OOMKilled=false Error= FinishedAt=2026-10-07T14:22:08.822068218Z StopSignal=\n"
+  },
+  {
+    "id": "repo-final",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/tools/node-v24.21.0-darwin-arm64/bin/node",
+      "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/tools/pnpm/package/bin/pnpm.cjs",
+      "check:repo"
+    ],
+    "exit_code": 0,
+    "status": "PASS",
+    "duration_seconds": 0.31,
+    "evidence": "repo-final.log",
+    "summary": "\n> pet-platform@0.0.0 check:repo /Users/kimwell/work/pet-platform\n> node scripts/check-repository.mjs && node scripts/check-miniprogram.mjs\n\n单锁、精确直接依赖、工具链、固定后端入口及秘密特征检查通过。秘密检查不输出匹配值。\n原生小程序结构、页面和官方组件引用检查通过；这不是开发者工具编译。\n"
+  },
+  {
+    "id": "repo-lint",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/tools/node-v24.21.0-darwin-arm64/bin/node",
+      "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/tools/pnpm/package/bin/pnpm.cjs",
+      "exec",
+      "eslint",
+      "scripts",
+      "eslint.config.mjs",
+      "--max-warnings=0"
+    ],
+    "exit_code": 0,
+    "status": "PASS",
+    "duration_seconds": 1.56,
+    "evidence": "repo-lint.log",
+    "summary": ""
+  },
+  {
+    "id": "runtime-final-r2",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "docker",
+      "compose",
+      "--env-file",
+      ".local-data/p02-infra.env",
+      "-p",
+      "pet-platform-p02-validation",
+      "-f",
+      "infra/local/docker-compose.yml",
+      "ps",
+      "-a",
+      "--format",
+      "json"
+    ],
+    "exit_code": 0,
+    "status": "PASS",
+    "duration_seconds": 0.06,
+    "evidence": "runtime-final-r2.log",
+    "summary": "idation_default\",\"Ports\":\"\",\"Project\":\"pet-platform-p02-validation\",\"Publishers\":[],\"RunningFor\":\"10 minutes ago\",\"Service\":\"rabbitmq\",\"Size\":\"0B\",\"State\":\"exited\",\"Status\":\"Exited (0) 20 seconds ago\"}\n{\"Command\":\"\\\"docker-entrypoint.s…\\\"\",\"CreatedAt\":\"2026-10-07 22:14:04 +0800 CST\",\"ExitCode\":0,\"Health\":\"\",\"ID\":\"c32b316136a1\",\"Image\":\"redis:8.2.10-bookworm@sha256:47670742d7924adbcdb404d1288b6327815b23141969c0939b8e5d61f78c2634\",\"Labels\":\"com.docker.compose.container-number=1,com.docker.compose.image=sha256:24b9104084a234b37af6120cb58b2880262eab681ca8dc438f921f471f32f3f4,com.docker.compose.oneoff=False,com.docker.compose.project=pet-platform-p02-validation,com.docker.compose.project.config_files=/Users/kimwell/work/pet-platform/infra/local/docker-compose.yml,com.docker.compose.project.environment_file=/Users/kimwell/work/pet-platform/.local-data/p02-infra.env,com.docker.compose.service=redis,com.docker.compose.version=5.1.1,com.docker.compose.config-hash=a830fa6f50be0d93fbf4af63a95b3e5fc82ebd810339abec60795f4f438a0d72,com.docker.compose.depends_on=,com.docker.compose.project.working_dir=/Users/kimwell/work/pet-platform/infra/local,desktop.docker.io/ports.scheme=v2,desktop.docker.io/ports/6379/tcp=127.0.0.1:26379\",\"LocalVolumes\":\"1\",\"Mounts\":\"pet-platform-p…\",\"Name\":\"pet-platform-p02-validation-redis-1\",\"Names\":\"pet-platform-p02-validation-redis-1\",\"Networks\":\"pet-platform-p02-validation_default\",\"Ports\":\"\",\"Project\":\"pet-platform-p02-validation\",\"Publishers\":[],\"RunningFor\":\"10 minutes ago\",\"Service\":\"redis\",\"Size\":\"0B\",\"State\":\"exited\",\"Status\":\"Exited (0) 2 minutes ago\"}\n"
+  },
+  {
+    "id": "runtime-final",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "docker",
+      "compose",
+      "--env-file",
+      ".local-data/p02-infra.env",
+      "-p",
+      "pet-platform-p02-validation",
+      "-f",
+      "infra/local/docker-compose.yml",
+      "ps",
+      "-a",
+      "--format",
+      "json"
+    ],
+    "exit_code": 0,
+    "status": "PASS",
+    "duration_seconds": 0.07,
+    "evidence": "runtime-final.log",
+    "summary": "efault\",\"Ports\":\"\",\"Project\":\"pet-platform-p02-validation\",\"Publishers\":[],\"RunningFor\":\"9 minutes ago\",\"Service\":\"rabbitmq\",\"Size\":\"0B\",\"State\":\"exited\",\"Status\":\"Exited (137) About a minute ago\"}\n{\"Command\":\"\\\"docker-entrypoint.s…\\\"\",\"CreatedAt\":\"2026-10-07 22:14:04 +0800 CST\",\"ExitCode\":0,\"Health\":\"\",\"ID\":\"c32b316136a1\",\"Image\":\"redis:8.2.10-bookworm@sha256:47670742d7924adbcdb404d1288b6327815b23141969c0939b8e5d61f78c2634\",\"Labels\":\"com.docker.compose.container-number=1,com.docker.compose.depends_on=,com.docker.compose.project=pet-platform-p02-validation,com.docker.compose.project.config_files=/Users/kimwell/work/pet-platform/infra/local/docker-compose.yml,com.docker.compose.version=5.1.1,desktop.docker.io/ports.scheme=v2,desktop.docker.io/ports/6379/tcp=127.0.0.1:26379,com.docker.compose.config-hash=a830fa6f50be0d93fbf4af63a95b3e5fc82ebd810339abec60795f4f438a0d72,com.docker.compose.image=sha256:24b9104084a234b37af6120cb58b2880262eab681ca8dc438f921f471f32f3f4,com.docker.compose.oneoff=False,com.docker.compose.project.environment_file=/Users/kimwell/work/pet-platform/.local-data/p02-infra.env,com.docker.compose.project.working_dir=/Users/kimwell/work/pet-platform/infra/local,com.docker.compose.service=redis\",\"LocalVolumes\":\"1\",\"Mounts\":\"pet-platform-p…\",\"Name\":\"pet-platform-p02-validation-redis-1\",\"Names\":\"pet-platform-p02-validation-redis-1\",\"Networks\":\"pet-platform-p02-validation_default\",\"Ports\":\"\",\"Project\":\"pet-platform-p02-validation\",\"Publishers\":[],\"RunningFor\":\"9 minutes ago\",\"Service\":\"redis\",\"Size\":\"0B\",\"State\":\"exited\",\"Status\":\"Exited (0) About a minute ago\"}\n"
+  },
+  {
+    "id": "startup-http",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "python3",
+      "-c",
+      "import urllib.request,urllib.error,json; results=[]; u=\"http://127.0.0.1:18080/\"; result=None; \ntry:\n urllib.request.urlopen(u,timeout=10)\nexcept urllib.error.HTTPError as e:\n assert e.code==404;results.append({\"url\":u,\"status\":e.code,\"result\":\"PASS\", \"meaning\":\"真实后端已启动，未实现业务端点\"})\nwith urllib.request.urlopen(\"http://127.0.0.1:5173/\",timeout=10) as r:\n assert r.status==200 and \"src/main.tsx\" in r.read().decode(); results.append({\"url\":\"http://127.0.0.1:5173/\",\"status\":200,\"result\":\"PASS\"})\nprint(json.dumps(results,ensure_ascii=False))"
+    ],
+    "exit_code": 0,
+    "status": "PASS",
+    "duration_seconds": 0.29,
+    "evidence": "startup-http.log",
+    "summary": "[{\"url\": \"http://127.0.0.1:18080/\", \"status\": 404, \"result\": \"PASS\", \"meaning\": \"真实后端已启动，未实现业务端点\"}, {\"url\": \"http://127.0.0.1:5173/\", \"status\": 200, \"result\": \"PASS\"}]\n"
+  },
+  {
+    "id": "web-build-r2",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/tools/node-v24.21.0-darwin-arm64/bin/node",
+      "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/tools/pnpm/package/bin/pnpm.cjs",
+      "build:web"
+    ],
+    "exit_code": 0,
+    "status": "PASS",
+    "duration_seconds": 5.77,
+    "evidence": "web-build-r2.log",
+    "summary": "\n> pet-platform@0.0.0 build:web /Users/kimwell/work/pet-platform\n> pnpm --filter @pet/admin-web build\n\n\n> @pet/admin-web@0.0.0 build /Users/kimwell/work/pet-platform/apps/admin-web\n> tsc --noEmit && vite build\n\nvite v7.3.7 building client environment for production...\ntransforming...\n✓ 1674 modules transformed.\nrendering chunks...\ncomputing gzip size...\ndist/index.html                   0.41 kB │ gzip:   0.30 kB\ndist/assets/index-CNdMMY7y.css    3.24 kB │ gzip:   1.30 kB\ndist/assets/index-CzwOihRg.js   689.22 kB │ gzip: 228.03 kB\n\n(!) Some chunks are larger than 500 kB after minification. Consider:\n- Using dynamic import() to code-split the application\n- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks\n- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.\n✓ built in 3.27s\n"
+  },
+  {
+    "id": "web-build",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/tools/node-v24.21.0-darwin-arm64/bin/node",
+      "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/tools/pnpm/package/bin/pnpm.cjs",
+      "build:web"
+    ],
+    "exit_code": 2,
+    "status": "FAIL",
+    "duration_seconds": 3.54,
+    "evidence": "web-build.log",
+    "summary": "\n> pet-platform@0.0.0 build:web /Users/kimwell/work/pet-platform\n> pnpm --filter @pet/admin-web build\n\n\n> @pet/admin-web@0.0.0 build /Users/kimwell/work/pet-platform/apps/admin-web\n> tsc --noEmit && vite build\n\nsrc/app/router/router.test.tsx(15,32): error TS2339: Property 'statusCode' does not exist on type 'RouterState<Route<Register, any, \"/\", \"/\", string, \"__root__\", undefined, {}, {}, AnyContext, AnyContext, {}, undefined, readonly [Route<unknown, RootRoute<Register, ... 10 more ..., undefined>, ... 15 more ..., undefined>], unknown, unknown, unknown, undefined>, MakeRouteMatchUnion>'.\n/Users/kimwell/work/pet-platform/apps/admin-web:\n ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL  @pet/admin-web@0.0.0 build: `tsc --noEmit && vite build`\nExit status 2\n ELIFECYCLE  Command failed with exit code 2.\n"
+  },
+  {
+    "id": "web-dev",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/tools/node-v24.21.0-darwin-arm64/bin/node",
+      "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/tools/pnpm/package/bin/pnpm.cjs",
+      "dev:web"
+    ],
+    "pid": 90307,
+    "result": "RUNNING_PENDING_HTTP_CHECK",
+    "evidence": "web-dev.log"
+  },
+  {
+    "id": "web-lint",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/tools/node-v24.21.0-darwin-arm64/bin/node",
+      "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/tools/pnpm/package/bin/pnpm.cjs",
+      "--filter",
+      "@pet/admin-web",
+      "lint"
+    ],
+    "exit_code": 0,
+    "status": "PASS",
+    "duration_seconds": 2.89,
+    "evidence": "web-lint.log",
+    "summary": "\n> @pet/admin-web@0.0.0 lint /Users/kimwell/work/pet-platform/apps/admin-web\n> eslint src vite.config.ts --max-warnings=0\n\n"
+  },
+  {
+    "id": "web-test",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/tools/node-v24.21.0-darwin-arm64/bin/node",
+      "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/tools/pnpm/package/bin/pnpm.cjs",
+      "--filter",
+      "@pet/admin-web",
+      "test"
+    ],
+    "exit_code": 1,
+    "status": "FAIL",
+    "duration_seconds": 5.44,
+    "evidence": "web-test.log",
+    "summary": "\n> @pet/admin-web@0.0.0 test /Users/kimwell/work/pet-platform/apps/admin-web\n> vitest run\n\n\n RUN  v4.1.11 /Users/kimwell/work/pet-platform/apps/admin-web\n\n ❯ src/app/router/router.test.tsx (2 tests | 1 failed) 31ms\n     × 匹配入口并把未知路径交给 NotFound 6ms\n\n⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯\n\n FAIL  src/app/router/router.test.tsx > 工程入口路由 > 匹配入口并把未知路径交给 NotFound\nAssertionError: expected false to be true // Object.is equality\n\n- Expected\n+ Received\n\n- true\n+ false\n\n ❯ src/app/router/router.test.tsx:14:103\n     12|     expect(router.state.matches.at(-1)?.routeId).toBe('/');\n     13|     await router.navigate({ to: '/missing' as '/' });\n     14|     expect(router.state.matches.some((match) => match.status === 'notF…\n       |                                                                                                       ^\n     15|   });\n     16|\n\n⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯\n\n\n Test Files  1 failed (1)\n      Tests  1 failed | 1 passed (2)\n   Start at  22:11:43\n   Duration  898ms (transform 39ms, setup 0ms, import 768ms, tests 31ms, environment 0ms)\n\n/Users/kimwell/work/pet-platform/apps/admin-web:\n ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL  @pet/admin-web@0.0.0 test: `vitest run`\nExit status 1\n"
+  },
+  {
+    "id": "web-typecheck",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/tools/node-v24.21.0-darwin-arm64/bin/node",
+      "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/tools/pnpm/package/bin/pnpm.cjs",
+      "--filter",
+      "@pet/admin-web",
+      "typecheck"
+    ],
+    "exit_code": 2,
+    "status": "FAIL",
+    "duration_seconds": 3.48,
+    "evidence": "web-typecheck.log",
+    "summary": "\n> @pet/admin-web@0.0.0 typecheck /Users/kimwell/work/pet-platform/apps/admin-web\n> tsc --noEmit\n\nsrc/app/router/router.test.tsx(14,86): error TS2339: Property 'globalNotFound' does not exist on type 'MakeRouteMatchUnion'.\n  Property 'globalNotFound' does not exist on type 'RouteMatch<\"/\", \"/\", ResolveParams<\"/\">, AnySchema, undefined, AnyContext, {}>'.\n/Users/kimwell/work/pet-platform/apps/admin-web:\n ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL  @pet/admin-web@0.0.0 typecheck: `tsc --noEmit`\nExit status 2\n"
+  },
+  {
+    "id": "wrapper-empty-cache",
+    "cwd": "/Users/kimwell/work/pet-platform/apps/backend",
+    "command": [
+      "env",
+      "MAVEN_USER_HOME=/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/pet-platform-p02-01-s8g6tcc1/wrapper-cache",
+      "./mvnw",
+      "--version"
+    ],
+    "exit_code": 0,
+    "status": "PASS",
+    "duration_seconds": 57.56,
+    "evidence": "wrapper-empty-cache.log",
+    "summary": "Apache Maven 3.9.16 (2bdd9fddda4b155ebf8000e807eb73fd829a51d5)\nMaven home: /var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/pet-platform-p02-01-s8g6tcc1/wrapper-cache/wrapper/dists/apache-maven-3.9.16/56ba1f9f\nJava version: 21.0.12.1, vendor: Eclipse Adoptium, runtime: /private/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/tools/jdk-21.0.12.1+1/Contents/Home\nDefault locale: zh_CN_#Hans, platform encoding: UTF-8\nOS name: \"mac os x\", version: \"27.0.1\", arch: \"aarch64\", family: \"mac\"\n"
+  }
+]

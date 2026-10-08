@@ -1,0 +1,15 @@
+{
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "argv": [
+    "pnpm",
+    "check"
+  ],
+  "exitCode": 0,
+  "startedAtUTC": "2026-10-08T01:34:15.406768+00:00",
+  "finishedAtUTC": "2026-10-08T01:34:28.468415+00:00",
+  "toolchain": {
+    "JAVA_HOME": "/private/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/pet-platform-p02-02-_qb1x3n7/tools/jdk/jdk-21.0.12.1+1/Contents/Home"
+  },
+  "log": "frontend-check.log",
+  "summary": "\n> pet-platform@0.0.0 check /Users/kimwell/work/pet-platform\n> pnpm check:repo && pnpm check:web && pnpm check:miniprogram\n\n\n> pet-platform@0.0.0 check:repo /Users/kimwell/work/pet-platform\n> node scripts/check-repository.mjs && node scripts/check-miniprogram.mjs\n\n单锁、精确直接依赖、工具链、固定后端入口及秘密特征检查通过。秘密检查不输出匹配值。\n原生小程序结构、页面和官方组件引用检查通过；这不是开发者工具编译。\n\n> pet-platform@0.0.0 check:web /Users/kimwell/work/pet-platform\n> pnpm --filter @pet/admin-web typecheck && pnpm --filter @pet/admin-web lint && pnpm --filter @pet/admin-web test\n\n\n> @pet/admin-web@0.0.0 typecheck /Users/kimwell/work/pet-platform/apps/admin-web\n> tsc --noEmit\n\n\n> @pet/admin-web@0.0.0 lint /Users/kimwell/work/pet-platform/apps/admin-web\n> eslint src vite.config.ts dev-config.ts --max-warnings=0\n\n\n> @pet/admin-web@0.0.0 test /Users/kimwell/work/pet-platform/apps/admin-web\n> vitest run\n\n\n RUN  v4.1.11 /Users/kimwell/work/pet-platform/apps/admin-web\n\n\n Test Files  2 passed (2)\n      Tests  14 passed (14)\n   Start at  09:34:24\n   Duration  1.66s (transform 156ms, setup 0ms, import 1.46s, tests 63ms, environment 0ms)\n\n\n> pet-platform@0.0.0 check:miniprogram /Users/kimwell/work/pet-platform\n> pnpm --filter @pet/wechat-miniprogram typecheck && pnpm --filter @pet/wechat-miniprogram lint\n\n\n> @pet/wechat-miniprogram@0.0.0 typecheck /Users/kimwell/work/pet-platform/apps/wechat-miniprogram\n> tsc --noEmit\n\n\n> @pet/wechat-miniprogram@0.0.0 lint /Users/kimwell/work/pet-platform/apps/wechat-miniprogram\n> eslint miniprogram --max-warnings=0\n\n"
+}

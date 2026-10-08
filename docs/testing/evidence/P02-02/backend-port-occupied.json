@@ -1,0 +1,17 @@
+{
+  "id": "backend-port-occupied",
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "command": [
+    "java",
+    "-jar",
+    "/Users/kimwell/work/pet-platform/apps/backend/target/pet-platform-backend-0.0.0-SNAPSHOT.jar",
+    "--spring.profiles.active=local"
+  ],
+  "exit_code": 1,
+  "expected_exit_code": 1,
+  "status": "PASS",
+  "started_at": "2026-10-08T07:27:07.419401+08:00",
+  "duration_seconds": 1.152,
+  "evidence": "backend-port-occupied.log",
+  "summary": "\n2026-10-08T07:27:06.761+08:00  INFO 1844 --- [pet-platform-backend] [           main] com.pet.platform.Application             : Starting Application v0.0.0-SNAPSHOT using Java 21.0.12.1 with PID 1844 (/Users/kimwell/work/pet-platform/apps/backend/target/pet-platform-backend-0.0.0-SNAPSHOT.jar started by kimwell in /Users/kimwell/work/pet-platform)\n2026-10-08T07:27:06.762+08:00  INFO 1844 --- [pet-platform-backend] [           main] com.pet.platform.Application             : The following 1 profile is active: \"local\"\n2026-10-08T07:27:07.150+08:00  INFO 1844 --- [pet-platform-backend] [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8080 (http)\n2026-10-08T07:27:07.158+08:00  INFO 1844 --- [pet-platform-backend] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]\n2026-10-08T07:27:07.159+08:00  INFO 1844 --- [pet-platform-backend] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.24]\n2026-10-08T07:27:07.172+08:00  INFO 1844 --- [pet-platform-backend] [           main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 382 ms\n2026-10-08T07:27:07.386+08:00  WARN 1844 --- [pet-platform-backend] [           main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'\n2026-10-08T07:27:07.391+08:00  INFO 1844 --- [pet-platform-backend] [           main] .s.b.a.l.ConditionEvaluationReportLogger : \n\nError starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.\n2026-10-08T07:27:07.398+08:00 ERROR 1844 --- [pet-platform-backend] [           main] o.s.b.d.LoggingFailureAnalysisReporter   : \n\n***************************\nAPPLICATION FAILED TO START\n***************************\n\nDescription:\n\nWeb server failed to start. Port 8080 was already in use.\n\nAction:\n\nIdentify and stop the process that's listening on port 8080 or configure this application to listen on another port.\n\n"
+}

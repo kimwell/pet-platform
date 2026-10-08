@@ -1,0 +1,22 @@
+Scope: all 4 workspace projects
+Lockfile is up to date, resolution step is skipped
+Progress: resolved 1, reused 0, downloaded 0, added 0
+Packages: +272
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Progress: resolved 272, reused 272, downloaded 0, added 253
+Progress: resolved 272, reused 272, downloaded 0, added 270
+Progress: resolved 272, reused 272, downloaded 0, added 272, done
+.../esbuild@0.28.2/node_modules/esbuild postinstall$ node install.js
+.../esbuild@0.28.2/node_modules/esbuild postinstall: Done
+
+devDependencies:
++ @eslint/js 10.0.1
++ eslint 10.12.0
++ eslint-plugin-react-hooks 7.1.1
++ eslint-plugin-react-refresh 0.5.7
++ typescript 5.9.3
++ typescript-eslint 8.71.1
+
+Done in 4s using pnpm v10.34.6
+
+{"cwd": "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/pet-platform-p02-01-s8g6tcc1/clean-workspace", "command": ["pnpm", "install", "--frozen-lockfile", "--reporter=append-only"], "exit_code": 0, "lock_unchanged": true, "lock_sha256": "d5b3d0d134487660a64a2e51504cef6dfe5f066abb599807c5226fbcf1d7ec72"}

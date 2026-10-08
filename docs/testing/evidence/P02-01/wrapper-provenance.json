@@ -1,0 +1,17 @@
+{
+  "source": "P01-01 verified Maven Wrapper 3.3.4 only-script, unchanged official scripts",
+  "files": [
+    {
+      "path": "apps/backend/mvnw",
+      "sha256": "cae96cef89ebea3531221f4ae17c23cf8edf67d00eae8306d4186ae1bbed4d02"
+    },
+    {
+      "path": "apps/backend/mvnw.cmd",
+      "sha256": "46eedb8419bd14fe70d5bb2916d7b6f51806e51b39d5b76a42610384ca929c1c"
+    },
+    {
+      "path": "apps/backend/.mvn/wrapper/maven-wrapper.properties",
+      "sha256": "9e702bcd7e68ba1cace0a3382a7082e6e1e1b321688a7a3fbf4d5ae7eb0af533"
+    }
+  ]
+}

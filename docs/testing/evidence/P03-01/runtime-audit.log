@@ -1,0 +1,1 @@
+{"artifactSHA256": "f6b5ba276d3af52183c29ff45147d198958530b945eb838673bc768c4f42b97f", "productionClasses": 24, "localHTTP": [["/", 404], ["/__protocol/success", 404], ["/error", 404]], "processExitAfterSIGTERM": 143, "portClosed": true}

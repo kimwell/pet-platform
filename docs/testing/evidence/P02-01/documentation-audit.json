@@ -1,0 +1,13 @@
+{
+  "id": "documentation-audit",
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "command": [
+    "python3",
+    "docs/testing/evidence/P02-01/audit-reproduction.py"
+  ],
+  "exit_code": 1,
+  "status": "FAIL",
+  "duration_seconds": 0.36,
+  "evidence": "documentation-audit.log",
+  "summary": "Traceback (most recent call last):\n  File \"/Users/kimwell/work/pet-platform/docs/testing/evidence/P02-01/audit-reproduction.py\", line 51, in <module>\n    assert not bad_links, f\"失效本地引用：{bad_links}\"\n           ^^^^^^^^^^^^^\nAssertionError: 失效本地引用：[{'path': 'docs/testing/P02-01-VERIFICATION.md', 'target': 'evidence/P02-01/final-audit.json'}, {'path': 'docs/testing/P02-01-VERIFICATION.md', 'target': 'evidence/P02-01/change-summary.json'}, {'path': 'docs/testing/P02-01-VERIFICATION.md', 'target': 'evidence/P02-01/runtime-final.json'}, {'path': 'docs/testing/P02-01-VERIFICATION.md', 'target': 'evidence/P02-01/change-summary.json'}, {'path': 'docs/testing/P02-01-VERIFICATION.md', 'target': 'evidence/P02-01/final-audit.json'}]\n"
+}

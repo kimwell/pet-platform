@@ -1,0 +1,15 @@
+{
+  "id": "tool-java",
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "command": [
+    "java",
+    "--version"
+  ],
+  "exit_code": 1,
+  "expected_exit_code": 0,
+  "status": "FAIL",
+  "started_at": "2026-10-08T07:21:48.765185+08:00",
+  "duration_seconds": 0.008,
+  "evidence": "tool-java.log",
+  "summary": "Error: could not open `/private/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/tools/jdk-21.0.12.1+1/Contents/Home/lib/jvm.cfg'\n"
+}

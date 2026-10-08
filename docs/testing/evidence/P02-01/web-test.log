@@ -1,0 +1,40 @@
+
+> @pet/admin-web@0.0.0 test /Users/kimwell/work/pet-platform/apps/admin-web
+> vitest run
+
+
+ RUN  v4.1.11 /Users/kimwell/work/pet-platform/apps/admin-web
+
+ ❯ src/app/router/router.test.tsx (2 tests | 1 failed) 31ms
+     × 匹配入口并把未知路径交给 NotFound 6ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/app/router/router.test.tsx > 工程入口路由 > 匹配入口并把未知路径交给 NotFound
+AssertionError: expected false to be true // Object.is equality
+
+- Expected
++ Received
+
+- true
++ false
+
+ ❯ src/app/router/router.test.tsx:14:103
+     12|     expect(router.state.matches.at(-1)?.routeId).toBe('/');
+     13|     await router.navigate({ to: '/missing' as '/' });
+     14|     expect(router.state.matches.some((match) => match.status === 'notF…
+       |                                                                                                       ^
+     15|   });
+     16|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 1 passed (2)
+   Start at  22:11:43
+   Duration  898ms (transform 39ms, setup 0ms, import 768ms, tests 31ms, environment 0ms)
+
+/Users/kimwell/work/pet-platform/apps/admin-web:
+ ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL  @pet/admin-web@0.0.0 test: `vitest run`
+Exit status 1

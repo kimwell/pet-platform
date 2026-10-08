@@ -1,0 +1,14 @@
+{
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "command": [
+    "git",
+    "check-ignore",
+    "-v",
+    "apps/wechat-miniprogram/project.private.config.json"
+  ],
+  "started_at": "2026-10-08T08:09:08.523425+08:00",
+  "duration_seconds": 0.022,
+  "exit_code": 0,
+  "log": "private-config-ignored.log",
+  "summary": ".gitignore:11:project.private.config.json\tapps/wechat-miniprogram/project.private.config.json\n"
+}

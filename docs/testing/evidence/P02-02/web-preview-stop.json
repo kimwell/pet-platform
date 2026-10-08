@@ -1,0 +1,13 @@
+{
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "steps": [
+    "向本轮进程组 822 发送 SIGTERM",
+    "确认监听端口关闭",
+    "ps 确认进程组无活动进程"
+  ],
+  "status": "PASS",
+  "exit_code": null,
+  "process_group": 822,
+  "port": 4173,
+  "remaining": ""
+}

@@ -1,0 +1,253 @@
+[
+  {
+    "name": "compatibility-probe",
+    "path": "/private/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/frontend-probe",
+    "private": true,
+    "devDependencies": {
+      "@eslint/js": {
+        "from": "@eslint/js",
+        "version": "10.0.1",
+        "resolved": "https://registry.npmjs.org/@eslint/js/-/js-10.0.1.tgz",
+        "path": "/private/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/frontend-probe/node_modules/.pnpm/@eslint+js@10.0.1_eslint@10.12.0/node_modules/@eslint/js"
+      },
+      "@types/node": {
+        "from": "@types/node",
+        "version": "24.19.1",
+        "resolved": "https://registry.npmjs.org/@types/node/-/node-24.19.1.tgz",
+        "path": "/private/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/frontend-probe/node_modules/.pnpm/@types+node@24.19.1/node_modules/@types/node"
+      },
+      "eslint": {
+        "from": "eslint",
+        "version": "10.12.0",
+        "resolved": "https://registry.npmjs.org/eslint/-/eslint-10.12.0.tgz",
+        "path": "/private/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/frontend-probe/node_modules/.pnpm/eslint@10.12.0/node_modules/eslint"
+      },
+      "eslint-plugin-react-hooks": {
+        "from": "eslint-plugin-react-hooks",
+        "version": "7.1.1",
+        "resolved": "https://registry.npmjs.org/eslint-plugin-react-hooks/-/eslint-plugin-react-hooks-7.1.1.tgz",
+        "path": "/private/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/frontend-probe/node_modules/.pnpm/eslint-plugin-react-hooks@7.1.1_eslint@10.12.0/node_modules/eslint-plugin-react-hooks"
+      },
+      "eslint-plugin-react-refresh": {
+        "from": "eslint-plugin-react-refresh",
+        "version": "0.5.7",
+        "resolved": "https://registry.npmjs.org/eslint-plugin-react-refresh/-/eslint-plugin-react-refresh-0.5.7.tgz",
+        "path": "/private/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/frontend-probe/node_modules/.pnpm/eslint-plugin-react-refresh@0.5.7_eslint@10.12.0/node_modules/eslint-plugin-react-refresh"
+      },
+      "openapi-typescript": {
+        "from": "openapi-typescript",
+        "version": "7.13.0",
+        "resolved": "https://registry.npmjs.org/openapi-typescript/-/openapi-typescript-7.13.0.tgz",
+        "path": "/private/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/frontend-probe/node_modules/.pnpm/openapi-typescript@7.13.0_typescript@5.9.3/node_modules/openapi-typescript"
+      },
+      "typescript": {
+        "from": "typescript",
+        "version": "5.9.3",
+        "resolved": "https://registry.npmjs.org/typescript/-/typescript-5.9.3.tgz",
+        "path": "/private/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/frontend-probe/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript"
+      },
+      "typescript-eslint": {
+        "from": "typescript-eslint",
+        "version": "8.71.1",
+        "resolved": "https://registry.npmjs.org/typescript-eslint/-/typescript-eslint-8.71.1.tgz",
+        "path": "/private/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/frontend-probe/node_modules/.pnpm/typescript-eslint@8.71.1_eslint@10.12.0_typescript@5.9.3/node_modules/typescript-eslint"
+      },
+      "vitest": {
+        "from": "vitest",
+        "version": "4.1.11",
+        "resolved": "https://registry.npmjs.org/vitest/-/vitest-4.1.11.tgz",
+        "path": "/private/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/frontend-probe/node_modules/.pnpm/vitest@4.1.11_@types+node@24.19.1/node_modules/vitest"
+      }
+    }
+  },
+  {
+    "name": "mini-probe",
+    "path": "/private/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/frontend-probe/mini",
+    "private": true,
+    "dependencies": {
+      "tdesign-miniprogram": {
+        "from": "tdesign-miniprogram",
+        "version": "1.17.0",
+        "resolved": "https://registry.npmjs.org/tdesign-miniprogram/-/tdesign-miniprogram-1.17.0.tgz",
+        "path": "/private/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/frontend-probe/node_modules/.pnpm/tdesign-miniprogram@1.17.0/node_modules/tdesign-miniprogram"
+      }
+    },
+    "devDependencies": {
+      "miniprogram-api-typings": {
+        "from": "miniprogram-api-typings",
+        "version": "5.2.3",
+        "resolved": "https://registry.npmjs.org/miniprogram-api-typings/-/miniprogram-api-typings-5.2.3.tgz",
+        "path": "/private/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/frontend-probe/node_modules/.pnpm/miniprogram-api-typings@5.2.3/node_modules/miniprogram-api-typings"
+      }
+    },
+    "unsavedDependencies": {
+      "eslint": {
+        "from": "eslint",
+        "version": "link:../node_modules/.pnpm/eslint@10.12.0/node_modules/eslint",
+        "path": "/private/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/frontend-probe/node_modules/.pnpm/eslint@10.12.0/node_modules/eslint"
+      },
+      "eslint-plugin-react-hooks": {
+        "from": "eslint-plugin-react-hooks",
+        "version": "link:../node_modules/.pnpm/eslint-plugin-react-hooks@7.1.1_eslint@10.12.0/node_modules/eslint-plugin-react-hooks",
+        "path": "/private/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/frontend-probe/node_modules/.pnpm/eslint-plugin-react-hooks@7.1.1_eslint@10.12.0/node_modules/eslint-plugin-react-hooks"
+      },
+      "eslint-plugin-react-refresh": {
+        "from": "eslint-plugin-react-refresh",
+        "version": "link:../node_modules/.pnpm/eslint-plugin-react-refresh@0.5.7_eslint@10.12.0/node_modules/eslint-plugin-react-refresh",
+        "path": "/private/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/frontend-probe/node_modules/.pnpm/eslint-plugin-react-refresh@0.5.7_eslint@10.12.0/node_modules/eslint-plugin-react-refresh"
+      },
+      "openapi-typescript": {
+        "from": "openapi-typescript",
+        "version": "link:../node_modules/.pnpm/openapi-typescript@7.13.0_typescript@5.9.3/node_modules/openapi-typescript",
+        "path": "/private/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/frontend-probe/node_modules/.pnpm/openapi-typescript@7.13.0_typescript@5.9.3/node_modules/openapi-typescript"
+      },
+      "typescript": {
+        "from": "typescript",
+        "version": "link:../node_modules/.pnpm/typescript@5.9.3/node_modules/typescript",
+        "path": "/private/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/frontend-probe/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript"
+      },
+      "typescript-eslint": {
+        "from": "typescript-eslint",
+        "version": "link:../node_modules/.pnpm/typescript-eslint@8.71.1_eslint@10.12.0_typescript@5.9.3/node_modules/typescript-eslint",
+        "path": "/private/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/frontend-probe/node_modules/.pnpm/typescript-eslint@8.71.1_eslint@10.12.0_typescript@5.9.3/node_modules/typescript-eslint"
+      },
+      "vitest": {
+        "from": "vitest",
+        "version": "link:../node_modules/.pnpm/vitest@4.1.11_@types+node@24.19.1/node_modules/vitest",
+        "path": "/private/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/frontend-probe/node_modules/.pnpm/vitest@4.1.11_@types+node@24.19.1/node_modules/vitest"
+      },
+      "@eslint/js": {
+        "from": "@eslint/js",
+        "version": "link:../node_modules/.pnpm/@eslint+js@10.0.1_eslint@10.12.0/node_modules/@eslint/js",
+        "path": "/private/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/frontend-probe/node_modules/.pnpm/@eslint+js@10.0.1_eslint@10.12.0/node_modules/@eslint/js"
+      },
+      "@types/node": {
+        "from": "@types/node",
+        "version": "link:../node_modules/.pnpm/@types+node@24.19.1/node_modules/@types/node",
+        "path": "/private/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/frontend-probe/node_modules/.pnpm/@types+node@24.19.1/node_modules/@types/node"
+      }
+    }
+  },
+  {
+    "name": "web-probe",
+    "path": "/private/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/frontend-probe/web",
+    "private": true,
+    "dependencies": {
+      "@ant-design/icons": {
+        "from": "@ant-design/icons",
+        "version": "6.3.4",
+        "resolved": "https://registry.npmjs.org/@ant-design/icons/-/icons-6.3.4.tgz",
+        "path": "/private/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/frontend-probe/node_modules/.pnpm/@ant-design+icons@6.3.4_react-dom@19.2.8_react@19.2.8__react@19.2.8/node_modules/@ant-design/icons"
+      },
+      "@tanstack/react-query": {
+        "from": "@tanstack/react-query",
+        "version": "5.104.1",
+        "resolved": "https://registry.npmjs.org/@tanstack/react-query/-/react-query-5.104.1.tgz",
+        "path": "/private/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/frontend-probe/node_modules/.pnpm/@tanstack+react-query@5.104.1_react@19.2.8/node_modules/@tanstack/react-query"
+      },
+      "@tanstack/react-router": {
+        "from": "@tanstack/react-router",
+        "version": "1.170.41",
+        "resolved": "https://registry.npmjs.org/@tanstack/react-router/-/react-router-1.170.41.tgz",
+        "path": "/private/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/frontend-probe/node_modules/.pnpm/@tanstack+react-router@1.170.41_react-dom@19.2.8_react@19.2.8__react@19.2.8/node_modules/@tanstack/react-router"
+      },
+      "antd": {
+        "from": "antd",
+        "version": "6.6.5",
+        "resolved": "https://registry.npmjs.org/antd/-/antd-6.6.5.tgz",
+        "path": "/private/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/frontend-probe/node_modules/.pnpm/antd@6.6.5_react-dom@19.2.8_react@19.2.8__react@19.2.8/node_modules/antd"
+      },
+      "react": {
+        "from": "react",
+        "version": "19.2.8",
+        "resolved": "https://registry.npmjs.org/react/-/react-19.2.8.tgz",
+        "path": "/private/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/frontend-probe/node_modules/.pnpm/react@19.2.8/node_modules/react"
+      },
+      "react-dom": {
+        "from": "react-dom",
+        "version": "19.2.8",
+        "resolved": "https://registry.npmjs.org/react-dom/-/react-dom-19.2.8.tgz",
+        "path": "/private/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/frontend-probe/node_modules/.pnpm/react-dom@19.2.8_react@19.2.8/node_modules/react-dom"
+      },
+      "zustand": {
+        "from": "zustand",
+        "version": "5.0.15",
+        "resolved": "https://registry.npmjs.org/zustand/-/zustand-5.0.15.tgz",
+        "path": "/private/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/frontend-probe/node_modules/.pnpm/zustand@5.0.15_@types+react@19.2.18_react@19.2.8_use-sync-external-store@1.7.0_react@19.2.8_/node_modules/zustand"
+      }
+    },
+    "devDependencies": {
+      "@types/react": {
+        "from": "@types/react",
+        "version": "19.2.18",
+        "resolved": "https://registry.npmjs.org/@types/react/-/react-19.2.18.tgz",
+        "path": "/private/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/frontend-probe/node_modules/.pnpm/@types+react@19.2.18/node_modules/@types/react"
+      },
+      "@types/react-dom": {
+        "from": "@types/react-dom",
+        "version": "19.2.7",
+        "resolved": "https://registry.npmjs.org/@types/react-dom/-/react-dom-19.2.7.tgz",
+        "path": "/private/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/frontend-probe/node_modules/.pnpm/@types+react-dom@19.2.7_@types+react@19.2.18/node_modules/@types/react-dom"
+      },
+      "@vitejs/plugin-react": {
+        "from": "@vitejs/plugin-react",
+        "version": "5.2.0",
+        "resolved": "https://registry.npmjs.org/@vitejs/plugin-react/-/plugin-react-5.2.0.tgz",
+        "path": "/private/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/frontend-probe/node_modules/.pnpm/@vitejs+plugin-react@5.2.0_vite@7.3.7_@types+node@24.19.1_/node_modules/@vitejs/plugin-react"
+      },
+      "vite": {
+        "from": "vite",
+        "version": "7.3.7",
+        "resolved": "https://registry.npmjs.org/vite/-/vite-7.3.7.tgz",
+        "path": "/private/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/frontend-probe/node_modules/.pnpm/vite@7.3.7_@types+node@24.19.1/node_modules/vite"
+      }
+    },
+    "unsavedDependencies": {
+      "eslint-plugin-react-refresh": {
+        "from": "eslint-plugin-react-refresh",
+        "version": "link:../node_modules/.pnpm/eslint-plugin-react-refresh@0.5.7_eslint@10.12.0/node_modules/eslint-plugin-react-refresh",
+        "path": "/private/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/frontend-probe/node_modules/.pnpm/eslint-plugin-react-refresh@0.5.7_eslint@10.12.0/node_modules/eslint-plugin-react-refresh"
+      },
+      "openapi-typescript": {
+        "from": "openapi-typescript",
+        "version": "link:../node_modules/.pnpm/openapi-typescript@7.13.0_typescript@5.9.3/node_modules/openapi-typescript",
+        "path": "/private/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/frontend-probe/node_modules/.pnpm/openapi-typescript@7.13.0_typescript@5.9.3/node_modules/openapi-typescript"
+      },
+      "eslint": {
+        "from": "eslint",
+        "version": "link:../node_modules/.pnpm/eslint@10.12.0/node_modules/eslint",
+        "path": "/private/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/frontend-probe/node_modules/.pnpm/eslint@10.12.0/node_modules/eslint"
+      },
+      "eslint-plugin-react-hooks": {
+        "from": "eslint-plugin-react-hooks",
+        "version": "link:../node_modules/.pnpm/eslint-plugin-react-hooks@7.1.1_eslint@10.12.0/node_modules/eslint-plugin-react-hooks",
+        "path": "/private/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/frontend-probe/node_modules/.pnpm/eslint-plugin-react-hooks@7.1.1_eslint@10.12.0/node_modules/eslint-plugin-react-hooks"
+      },
+      "typescript": {
+        "from": "typescript",
+        "version": "link:../node_modules/.pnpm/typescript@5.9.3/node_modules/typescript",
+        "path": "/private/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/frontend-probe/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript"
+      },
+      "typescript-eslint": {
+        "from": "typescript-eslint",
+        "version": "link:../node_modules/.pnpm/typescript-eslint@8.71.1_eslint@10.12.0_typescript@5.9.3/node_modules/typescript-eslint",
+        "path": "/private/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/frontend-probe/node_modules/.pnpm/typescript-eslint@8.71.1_eslint@10.12.0_typescript@5.9.3/node_modules/typescript-eslint"
+      },
+      "@types/node": {
+        "from": "@types/node",
+        "version": "link:../node_modules/.pnpm/@types+node@24.19.1/node_modules/@types/node",
+        "path": "/private/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/frontend-probe/node_modules/.pnpm/@types+node@24.19.1/node_modules/@types/node"
+      },
+      "@eslint/js": {
+        "from": "@eslint/js",
+        "version": "link:../node_modules/.pnpm/@eslint+js@10.0.1_eslint@10.12.0/node_modules/@eslint/js",
+        "path": "/private/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/frontend-probe/node_modules/.pnpm/@eslint+js@10.0.1_eslint@10.12.0/node_modules/@eslint/js"
+      },
+      "vitest": {
+        "from": "vitest",
+        "version": "link:../node_modules/.pnpm/vitest@4.1.11_@types+node@24.19.1/node_modules/vitest",
+        "path": "/private/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/frontend-probe/node_modules/.pnpm/vitest@4.1.11_@types+node@24.19.1/node_modules/vitest"
+      }
+    }
+  }
+]

@@ -1,0 +1,6 @@
+{
+  "status": "PASS",
+  "exit_code": 0,
+  "source": "../P01-01/downloads.json",
+  "boundary": "本轮恢复工具分发 SHA 与 P01 原始下载证据相同，无版本升级"
+}

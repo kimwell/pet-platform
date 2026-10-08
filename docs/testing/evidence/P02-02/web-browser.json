@@ -1,0 +1,22 @@
+{
+  "status": "PASS",
+  "exit_code": null,
+  "tool": "CUA In-app Browser",
+  "steps": [
+    "开发入口中文文本与样式正常",
+    "/missing/deep 页面不存在",
+    "深层未知路由刷新保持 NotFound",
+    "返回系统入口链接实际跳转",
+    "生产预览入口、深层路由刷新与返回",
+    "开发/预览 console warn/error 记录均为空"
+  ],
+  "evidence": [
+    "web-dev-entry.jpg",
+    "web-dev-not-found.jpg",
+    "web-preview-entry.jpg",
+    "web-preview-not-found.jpg",
+    "web-dev-console.json",
+    "web-preview-console.json"
+  ],
+  "boundary": "当前只有 / 有效入口；深层路径属于 NotFound，不添加业务页。中文 ConfigProvider 由源码核对，未挂载日期/分页控件。"
+}

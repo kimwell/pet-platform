@@ -1,0 +1,31 @@
+Scope: all 4 workspace projects
+Progress: resolved 1, reused 0, downloaded 0, added 0
+Progress: resolved 45, reused 17, downloaded 13, added 0
+Progress: resolved 157, reused 84, downloaded 50, added 0
+Progress: resolved 272, reused 130, downloaded 80, added 0
+Progress: resolved 321, reused 149, downloaded 112, added 0
+Progress: resolved 322, reused 150, downloaded 119, added 0
+Progress: resolved 322, reused 150, downloaded 120, added 0
+Packages: +272
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Progress: resolved 322, reused 150, downloaded 121, added 128
+Progress: resolved 322, reused 150, downloaded 121, added 270
+Progress: resolved 322, reused 150, downloaded 122, added 271
+Progress: resolved 322, reused 150, downloaded 122, added 272, done
+
+devDependencies:
++ @eslint/js 10.0.1
++ eslint 10.12.0
++ eslint-plugin-react-hooks 7.1.1
++ eslint-plugin-react-refresh 0.5.7
++ typescript 5.9.3 (7.0.2 is available)
++ typescript-eslint 8.71.1
+
+╭ Warning ─────────────────────────────────────────────────────────────────────╮
+│                                                                              │
+│   Ignored build scripts: esbuild@0.28.2.                                     │
+│   Run "pnpm approve-builds" to pick which dependencies should be allowed     │
+│   to run scripts.                                                            │
+│                                                                              │
+╰──────────────────────────────────────────────────────────────────────────────╯
+Done in 9.8s using pnpm v10.34.6

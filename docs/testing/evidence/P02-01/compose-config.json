@@ -1,0 +1,21 @@
+{
+  "id": "compose-config",
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "command": [
+    "docker",
+    "compose",
+    "--env-file",
+    ".local-data/p02-infra.env",
+    "-p",
+    "pet-platform-p02-validation",
+    "-f",
+    "infra/local/docker-compose.yml",
+    "config",
+    "--quiet"
+  ],
+  "exit_code": 0,
+  "status": "PASS",
+  "duration_seconds": 0.11,
+  "evidence": "compose-config.log",
+  "summary": ""
+}

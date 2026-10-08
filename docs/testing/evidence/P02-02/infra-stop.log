@@ -1,0 +1,6 @@
+ Container pet-platform-p02-validation-postgres-1 Stopping 
+ Container pet-platform-p02-validation-rabbitmq-1 Stopping 
+ Container pet-platform-p02-validation-redis-1 Stopping 
+ Container pet-platform-p02-validation-postgres-1 Stopped 
+ Container pet-platform-p02-validation-redis-1 Stopped 
+ Container pet-platform-p02-validation-rabbitmq-1 Stopped 

@@ -1,0 +1,23 @@
+{
+  "id": "runtime-final-r2",
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "command": [
+    "docker",
+    "compose",
+    "--env-file",
+    ".local-data/p02-infra.env",
+    "-p",
+    "pet-platform-p02-validation",
+    "-f",
+    "infra/local/docker-compose.yml",
+    "ps",
+    "-a",
+    "--format",
+    "json"
+  ],
+  "exit_code": 0,
+  "status": "PASS",
+  "duration_seconds": 0.06,
+  "evidence": "runtime-final-r2.log",
+  "summary": "idation_default\",\"Ports\":\"\",\"Project\":\"pet-platform-p02-validation\",\"Publishers\":[],\"RunningFor\":\"10 minutes ago\",\"Service\":\"rabbitmq\",\"Size\":\"0B\",\"State\":\"exited\",\"Status\":\"Exited (0) 20 seconds ago\"}\n{\"Command\":\"\\\"docker-entrypoint.s…\\\"\",\"CreatedAt\":\"2026-10-07 22:14:04 +0800 CST\",\"ExitCode\":0,\"Health\":\"\",\"ID\":\"c32b316136a1\",\"Image\":\"redis:8.2.10-bookworm@sha256:47670742d7924adbcdb404d1288b6327815b23141969c0939b8e5d61f78c2634\",\"Labels\":\"com.docker.compose.container-number=1,com.docker.compose.image=sha256:24b9104084a234b37af6120cb58b2880262eab681ca8dc438f921f471f32f3f4,com.docker.compose.oneoff=False,com.docker.compose.project=pet-platform-p02-validation,com.docker.compose.project.config_files=/Users/kimwell/work/pet-platform/infra/local/docker-compose.yml,com.docker.compose.project.environment_file=/Users/kimwell/work/pet-platform/.local-data/p02-infra.env,com.docker.compose.service=redis,com.docker.compose.version=5.1.1,com.docker.compose.config-hash=a830fa6f50be0d93fbf4af63a95b3e5fc82ebd810339abec60795f4f438a0d72,com.docker.compose.depends_on=,com.docker.compose.project.working_dir=/Users/kimwell/work/pet-platform/infra/local,desktop.docker.io/ports.scheme=v2,desktop.docker.io/ports/6379/tcp=127.0.0.1:26379\",\"LocalVolumes\":\"1\",\"Mounts\":\"pet-platform-p…\",\"Name\":\"pet-platform-p02-validation-redis-1\",\"Names\":\"pet-platform-p02-validation-redis-1\",\"Networks\":\"pet-platform-p02-validation_default\",\"Ports\":\"\",\"Project\":\"pet-platform-p02-validation\",\"Publishers\":[],\"RunningFor\":\"10 minutes ago\",\"Service\":\"redis\",\"Size\":\"0B\",\"State\":\"exited\",\"Status\":\"Exited (0) 2 minutes ago\"}\n"
+}

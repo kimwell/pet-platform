@@ -1,0 +1,35 @@
+2026-10-07 14:14:07.680478+00:00 [info] <0.209.0> Running boot step rabbit_management_load_definitions defined by app rabbitmq_management[0m
+2026-10-07 14:14:07.680528+00:00 [info] <0.888.0> Resetting node maintenance status[0m
+[38;5;214m2026-10-07 14:14:07.685775+00:00 [warning] <0.905.0> Deprecated features: `management_metrics_collection`: Feature `management_metrics_collection` is deprecated.[0m
+[38;5;214m2026-10-07 14:14:07.685775+00:00 [warning] <0.905.0> By default, this feature can still be used for now.[0m
+[38;5;214m2026-10-07 14:14:07.685775+00:00 [warning] <0.905.0> Its use will not be permitted by default in a future minor RabbitMQ version and the feature will be removed from a future major RabbitMQ version; actual versions to be determined.[0m
+[38;5;214m2026-10-07 14:14:07.685775+00:00 [warning] <0.905.0> To continue using this feature when it is not permitted by default, set the following parameter in your configuration:[0m
+[38;5;214m2026-10-07 14:14:07.685775+00:00 [warning] <0.905.0>     "deprecated_features.permit.management_metrics_collection = true"[0m
+[38;5;214m2026-10-07 14:14:07.685775+00:00 [warning] <0.905.0> To test RabbitMQ as if the feature was removed, set this in your configuration:[0m
+[38;5;214m2026-10-07 14:14:07.685775+00:00 [warning] <0.905.0>     "deprecated_features.permit.management_metrics_collection = false"[0m
+2026-10-07 14:14:07.703222+00:00 [info] <0.941.0> Management plugin: HTTP (non-TLS) listener started on port 15672[0m
+2026-10-07 14:14:07.703331+00:00 [info] <0.969.0> Statistics database started.[0m
+2026-10-07 14:14:07.703371+00:00 [info] <0.968.0> Starting worker pool 'management_worker_pool' with 3 processes in it[0m
+2026-10-07 14:14:07.711043+00:00 [info] <0.980.0> Prometheus metrics: HTTP (non-TLS) listener started on port 15692[0m
+2026-10-07 14:14:07.711116+00:00 [info] <0.888.0> Ready to start client connection listeners[0m
+2026-10-07 14:14:07.711882+00:00 [info] <0.1024.0> started TCP listener on [::]:5672[0m
+2026-10-07 14:14:07.773836+00:00 [info] <0.888.0> Server startup complete; 4 plugins started.[0m
+2026-10-07 14:14:07.773836+00:00 [info] <0.888.0>  * rabbitmq_prometheus[0m
+2026-10-07 14:14:07.773836+00:00 [info] <0.888.0>  * rabbitmq_management[0m
+2026-10-07 14:14:07.773836+00:00 [info] <0.888.0>  * rabbitmq_management_agent[0m
+2026-10-07 14:14:07.773836+00:00 [info] <0.888.0>  * rabbitmq_web_dispatch[0m
+ completed with 4 plugins.
+2026-10-07 14:14:07.889363+00:00 [info] <0.10.0> Time to start RabbitMQ: 2029 ms[0m
+2026-10-07 14:16:05.238008+00:00 [info] <0.1082.0> User 'p02_fixture' authenticated successfully[0m
+[38;5;87m2026-10-07 14:22:07.803151+00:00 [notice] <0.64.0> SIGTERM received - shutting down[0m
+[38;5;87m2026-10-07 14:22:07.803151+00:00 [notice] <0.64.0> [0m
+[38;5;214m2026-10-07 14:22:07.805988+00:00 [warning] <0.900.0> HTTP listener registry could not find context rabbitmq_prometheus_tls[0m
+[38;5;214m2026-10-07 14:22:07.812842+00:00 [warning] <0.900.0> HTTP listener registry could not find context rabbitmq_management_tls[0m
+2026-10-07 14:22:07.819907+00:00 [info] <0.1024.0> stopped TCP listener on [::]:5672[0m
+2026-10-07 14:22:07.820768+00:00 [info] <0.839.0> Virtual host '/' is stopping[0m
+2026-10-07 14:22:07.820882+00:00 [info] <0.1261.0> Closing all connections in vhost '/' on node 'rabbit@2ccb1a9559b8' because the vhost is stopping[0m
+2026-10-07 14:22:07.820953+00:00 [info] <0.852.0> Stopping message store for directory '/var/lib/rabbitmq/mnesia/rabbit@2ccb1a9559b8/msg_stores/vhosts/628WB79CIFDYO9LJI6DKMI09L/msg_store_persistent'[0m
+2026-10-07 14:22:07.824957+00:00 [info] <0.852.0> Message store for directory '/var/lib/rabbitmq/mnesia/rabbit@2ccb1a9559b8/msg_stores/vhosts/628WB79CIFDYO9LJI6DKMI09L/msg_store_persistent' is stopped[0m
+2026-10-07 14:22:07.825141+00:00 [info] <0.848.0> Stopping message store for directory '/var/lib/rabbitmq/mnesia/rabbit@2ccb1a9559b8/msg_stores/vhosts/628WB79CIFDYO9LJI6DKMI09L/msg_store_transient'[0m
+2026-10-07 14:22:07.827435+00:00 [info] <0.848.0> Message store for directory '/var/lib/rabbitmq/mnesia/rabbit@2ccb1a9559b8/msg_stores/vhosts/628WB79CIFDYO9LJI6DKMI09L/msg_store_transient' is stopped[0m
+[38;5;214m2026-10-07 14:22:07.833946+00:00 [warning] <0.532.0> RabbitMQ metadata store: worker exited with shutdown[0m

@@ -1,0 +1,1 @@
+node_modules/.pnpm/tdesign-miniprogram@1.17.0/node_modules/tdesign-miniprogram/miniprogram_dist/common/src/superComponent.d.ts(8,189): error TS2344: Type 'D' does not satisfy the constraint 'DataOption'.

@@ -1,0 +1,18 @@
+{
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "argv": [
+    "pnpm",
+    "exec",
+    "eslint",
+    "scripts",
+    "--max-warnings=0"
+  ],
+  "exitCode": 0,
+  "startedAtUTC": "2026-10-08T01:34:15.406609+00:00",
+  "finishedAtUTC": "2026-10-08T01:34:19.429343+00:00",
+  "toolchain": {
+    "JAVA_HOME": "/private/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/pet-platform-p02-02-_qb1x3n7/tools/jdk/jdk-21.0.12.1+1/Contents/Home"
+  },
+  "log": "scripts-lint.log",
+  "summary": ""
+}

@@ -1,0 +1,15 @@
+
+> pet-platform@0.0.0 stop:infra /Users/kimwell/work/pet-platform
+> node scripts/local-infra.mjs stop --env-file .local-data/p02-infra.env --project pet-platform-p02-validation
+
+/pet-platform-p02-validation-postgres-1 exited 0 false
+/pet-platform-p02-validation-rabbitmq-1 exited 137 false
+/pet-platform-p02-validation-redis-1 exited 0 false
+ ELIFECYCLE  Command failed with exit code 1.
+ Container pet-platform-p02-validation-postgres-1 Stopping 
+ Container pet-platform-p02-validation-redis-1 Stopping 
+ Container pet-platform-p02-validation-rabbitmq-1 Stopping 
+ Container pet-platform-p02-validation-redis-1 Stopped 
+ Container pet-platform-p02-validation-rabbitmq-1 Stopped 
+ Container pet-platform-p02-validation-postgres-1 Stopped 
+基础设施停止未正常完成；请核对上述容器退出码及日志，数据卷已保留。

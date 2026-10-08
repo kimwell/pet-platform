@@ -1,0 +1,1 @@
+{"workflow_yaml": "valid", "commands": ["pnpm install --frozen-lockfile", "pnpm check", "pnpm build:web", "docker compose -f infra/local/docker-compose.yml config --quiet", "./mvnw --version\n./mvnw --batch-mode clean verify\n"], "remote_ci": "NOT_EXECUTED"}

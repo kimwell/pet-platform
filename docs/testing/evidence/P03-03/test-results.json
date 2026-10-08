@@ -1,0 +1,229 @@
+{
+  "total": {
+    "tests": 79,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "classes": [
+    {
+      "class": "com.pet.platform.ApplicationTest",
+      "group": "surefire",
+      "tests": 3,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "testCases": [
+        "startsRealHttpServerWithoutBusinessEndpoints",
+        "rejectsMissingEnvironmentAndInsecureProductionOrigin",
+        "defaultApplicationScanDoesNotLoadTestEntities"
+      ]
+    },
+    {
+      "class": "com.pet.testing.contracts.DocumentPolicyTest",
+      "group": "surefire",
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "testCases": [
+        "environmentCannotEnableProductionDocumentsOrPublicBind"
+      ]
+    },
+    {
+      "class": "com.pet.testing.contracts.ProductionOpenApiExportTest",
+      "group": "surefire",
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "testCases": [
+        "exportsActualProductionModelsWithoutTestPaths"
+      ]
+    },
+    {
+      "class": "com.pet.platform.protocol.ApiProtocolTest",
+      "group": "surefire",
+      "tests": 30,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "testCases": [
+        "registeredBusinessMappingsAndSafeUnknownErrors",
+        "rejectsDuplicatePaginationAndPageSizeLimit",
+        "explicitSuccessNullAndResponseEntityKeepExactShape",
+        "fileBytesAndDispositionAreNotWrapped",
+        "rejectsIllegalPagination(String)[1]",
+        "rejectsIllegalPagination(String)[2]",
+        "rejectsIllegalPagination(String)[3]",
+        "rejectsIllegalPagination(String)[4]",
+        "rejectsIllegalPagination(String)[5]",
+        "rejectsIllegalPagination(String)[6]",
+        "rejectsIllegalPagination(String)[7]",
+        "rejectsIllegalPagination(String)[8]",
+        "rejectsIllegalPagination(String)[9]",
+        "rejectsIllegalPagination(String)[10]",
+        "traceIsGeneratedOrPassedAndContextRestoresOnlyOwnedKeys",
+        "parameterSyntaxAndMethodValidationHaveDifferentStatuses",
+        "bodyValidationHasStableNestedPathsAndMultipleCodes",
+        "rejectsMalformedUnknownDuplicateAndWrongTypesWithoutEcho(String)[1]",
+        "rejectsMalformedUnknownDuplicateAndWrongTypesWithoutEcho(String)[2]",
+        "rejectsMalformedUnknownDuplicateAndWrongTypesWithoutEcho(String)[3]",
+        "rejectsMalformedUnknownDuplicateAndWrongTypesWithoutEcho(String)[4]",
+        "rejectsMalformedUnknownDuplicateAndWrongTypesWithoutEcho(String)[5]",
+        "rejectsMalformedUnknownDuplicateAndWrongTypesWithoutEcho(String)[6]",
+        "rejectsMalformedUnknownDuplicateAndWrongTypesWithoutEcho(String)[7]",
+        "rejectsMalformedUnknownDuplicateAndWrongTypesWithoutEcho(String)[8]",
+        "rejectsMalformedUnknownDuplicateAndWrongTypesWithoutEcho(String)[9]",
+        "rejectsMalformedUnknownDuplicateAndWrongTypesWithoutEcho(String)[10]",
+        "framework404405415AndAllowHeaderArePreserved",
+        "paginationDefaultBoundaryEmptyAndTotalPrecision",
+        "sortWhitelistDefaultDirectionAndUniqueTieBreakAreStable"
+      ]
+    },
+    {
+      "class": "com.pet.testing.architecture.StructureRulesTest",
+      "group": "surefire",
+      "tests": 3,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "testCases": [
+        "actualProductionBytecodeObeysRules",
+        "rejectsEveryRequiredNegativeFixtureIncludingGenericOnlyReferences",
+        "rejectsTestClassesAndMigrationInArtifactFixture"
+      ]
+    },
+    {
+      "class": "com.pet.testing.contracts.ContractExportTest",
+      "group": "surefire",
+      "tests": 9,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "testCases": [
+        "dateTimeDoesNotShiftDateAndRejectsUnspecifiedPrecision",
+        "exportsSeparateProductionAndTestDocumentsFromActualHttp",
+        "actualHttpBodiesMatchConcreteOpenApiSchemas",
+        "moneyNeverUsesFloatingPointAndHasTwoOutputDecimals(String)[1]",
+        "moneyNeverUsesFloatingPointAndHasTwoOutputDecimals(String)[2]",
+        "moneyNeverUsesFloatingPointAndHasTwoOutputDecimals(String)[3]",
+        "moneyNeverUsesFloatingPointAndHasTwoOutputDecimals(String)[4]",
+        "malformedTypesAndValuesAreSafe400AndSemanticErrors422",
+        "actualHttpScalarsPreservePrecisionAndNullablePresence"
+      ]
+    },
+    {
+      "class": "com.pet.platform.shared.persistence.DatabaseConfigurationRulesTest",
+      "group": "surefire",
+      "tests": 5,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "testCases": [
+        "localAndProductionDefaultsHaveExplicitSafeStrategies",
+        "externalOverridesCannotEnableDangerousDefaults",
+        "missingConfigurationNamesAreReportedWithoutValues",
+        "refusesSecretsInUrlAndOtherDatabaseSystems",
+        "productionCannotRunStartupMigrations"
+      ]
+    },
+    {
+      "class": "com.pet.platform.shared.persistence.JpaPageAdapterTest",
+      "group": "surefire",
+      "tests": 5,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "testCases": [
+        "mapsEmptyOutOfRangePageWithoutChangingRequestedNumber",
+        "rejectsOffsetBeyondJpaIntWithoutOverflow",
+        "preservesLargeTotalAsStringAndExactResponseShape",
+        "mapsOnlyWhitelistedPropertiesAndDoesNotDuplicateUniqueSort",
+        "convertsOneBasedPageAndDefaultSize"
+      ]
+    },
+    {
+      "class": "com.pet.testing.architecture.ProductionArtifactIT",
+      "group": "failsafe",
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "testCases": [
+        "packagedJarContainsNoTestClassResourceMigrationOrDependency"
+      ]
+    },
+    {
+      "class": "com.pet.testing.persistence.JpaPersistenceIT",
+      "group": "failsafe",
+      "tests": 12,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "testCases": [
+        "runtimeFailureRollsBackAllWritesInSameServiceTransaction",
+        "runtimeFailureRollsBackFlushedWrite",
+        "migrationCompletedBeforeJpaValidationAndDoesNotRepeat",
+        "filtersComposeWithPageAndEmptyOrOutOfRangeResults",
+        "nullableSortUsesNullsLastForBothDirectionsAndSpecifications",
+        "databaseConstraintFailureAtFlushRollsBackEarlierWrite",
+        "directUniqueSortIsNotDuplicatedAndCountReflectsLaterChanges",
+        "auditUpdatesOnlyOnActualChangeAndKeepsCreatedAt",
+        "timestampHasMillisecondPrecisionAndUtcInstantAcrossSessionTimezone",
+        "applicationServiceCommitsOutsideTestTransaction",
+        "databasePagesKeepStableUniqueOrderAndActualTotal",
+        "uuidV4AndAuditingSurviveRealPostgresRoundTrip"
+      ]
+    },
+    {
+      "class": "com.pet.testing.contracts.PackagedDocumentPolicyIT",
+      "group": "failsafe",
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "testCases": [
+        "localAndProductionJarHaveActualDocumentAndUiPolicies"
+      ]
+    },
+    {
+      "class": "com.pet.platform.protocol.ApiProtocolIT",
+      "group": "failsafe",
+      "tests": 2,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "testCases": [
+        "realHttpMvcAndContainerErrorsKeepSafeEnvelopeAndTrace",
+        "realServerRejectsMultipleTraceHeadersAndKeepsFileBytes"
+      ]
+    },
+    {
+      "class": "com.pet.testing.persistence.MigrationSafetyIT",
+      "group": "failsafe",
+      "tests": 5,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "testCases": [
+        "checksumConflictFailsAgainstTemporaryCopy(Path)",
+        "nonEmptySchemaWithoutHistoryCannotBeAutomaticallyBaselined",
+        "mismatchedStructureFailsJpaValidation",
+        "cleanIsRefused",
+        "emptyDatabaseCreatesHistoryAndRepeatedMigrationIsIdempotent"
+      ]
+    },
+    {
+      "class": "com.pet.testing.contracts.ScalarPostgresIT",
+      "group": "failsafe",
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "testCases": [
+        "protocolScalarTypesSurvivePostgresWithoutFloatingPointOrTimezoneShift"
+      ]
+    }
+  ]
+}

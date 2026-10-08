@@ -1,0 +1,15 @@
+{
+  "cwd": "/Users/kimwell/work/pet-platform/apps/backend",
+  "argv": [
+    "./mvnw",
+    "--version"
+  ],
+  "exitCode": 0,
+  "startedAtUTC": "2026-10-08T00:37:32.430544+00:00",
+  "finishedAtUTC": "2026-10-08T00:37:33.435928+00:00",
+  "toolchain": {
+    "JAVA_HOME": "/private/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/pet-platform-p02-02-_qb1x3n7/tools/jdk/jdk-21.0.12.1+1/Contents/Home"
+  },
+  "log": "toolchain.log",
+  "summary": "Apache Maven 3.9.16 (2bdd9fddda4b155ebf8000e807eb73fd829a51d5)\nMaven home: /Users/kimwell/.m2/wrapper/dists/apache-maven-3.9.16/56ba1f9f\nJava version: 21.0.12.1, vendor: Eclipse Adoptium, runtime: /private/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/pet-platform-p02-02-_qb1x3n7/tools/jdk/jdk-21.0.12.1+1/Contents/Home\nDefault locale: zh_CN_#Hans, platform encoding: UTF-8\nOS name: \"mac os x\", version: \"27.0.1\", arch: \"aarch64\", family: \"mac\"\n"
+}

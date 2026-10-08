@@ -1,0 +1,124 @@
+{
+  "date": "2026-10-07",
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "command": [
+    "python3",
+    "docs/testing/evidence/P01-02/audit-reproduction.py"
+  ],
+  "exit_code": 0,
+  "results": [
+    {
+      "id": "required-documents",
+      "result": "PASS",
+      "details": {
+        "count": 22,
+        "missing": []
+      }
+    },
+    {
+      "id": "existing-files-preserved",
+      "result": "PASS",
+      "details": {
+        "before_files": 378,
+        "modified_authorized": [
+          "AGENTS.md",
+          "README.md",
+          "docs/architecture/PROJECT-STRUCTURE.md",
+          "docs/architecture/TECHNICAL-BASELINE.md",
+          "docs/contracts/CORE-CONTRACTS.md",
+          "docs/development/DECISION-LOG.md",
+          "docs/development/ROADMAP.md",
+          "docs/development/VERSION-MATRIX.md",
+          "docs/product/SCAFFOLD-SCOPE.md"
+        ],
+        "preserved_count": 369,
+        "missing": [],
+        "unauthorized_modified": []
+      }
+    },
+    {
+      "id": "ui-preserved",
+      "result": "PASS",
+      "details": {
+        "files": 272
+      }
+    },
+    {
+      "id": "no-formal-initialization",
+      "result": "PASS",
+      "details": {
+        "forbidden_present": [],
+        "top_level_names": [
+          ".DS_Store",
+          ".git",
+          "AGENTS.md",
+          "README.md",
+          "docs",
+          "ui"
+        ]
+      }
+    },
+    {
+      "id": "local-references",
+      "result": "PASS",
+      "details": {
+        "checked": 190,
+        "broken": []
+      }
+    },
+    {
+      "id": "single-version-source",
+      "result": "PASS",
+      "details": {
+        "matrix_rows": 56,
+        "historical_dependency_rows": 53,
+        "new_protocol_tool_rows": 3
+      }
+    },
+    {
+      "id": "index-no-competing-definitions",
+      "result": "PASS",
+      "details": {
+        "authority_index": true
+      }
+    },
+    {
+      "id": "acceptance-P02-P12",
+      "result": "PASS",
+      "details": {
+        "entries": 33,
+        "phases": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ]
+      }
+    },
+    {
+      "id": "secret-pattern-scan",
+      "result": "PASS",
+      "details": {
+        "hits": [],
+        "boundary": "特征扫描+人工检查；技术fixture非真实秘密，无Token输出"
+      }
+    },
+    {
+      "id": "actual-probe-results",
+      "result": "PASS",
+      "details": {
+        "records": 8,
+        "unexpected_failures": [],
+        "expected_drift_exit": 1
+      }
+    }
+  ],
+  "boundary": "文档审计，不是业务运行验收"
+}

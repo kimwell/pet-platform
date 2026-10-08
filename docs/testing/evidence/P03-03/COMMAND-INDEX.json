@@ -1,0 +1,279 @@
+{
+  "api-types.json": {
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "argv": [
+      "pnpm",
+      "contracts:typecheck"
+    ],
+    "exitCode": 0,
+    "log": "api-types.log"
+  },
+  "check-first.json": {
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "argv": [
+      "pnpm",
+      "contracts:check"
+    ],
+    "exitCode": 0,
+    "log": "check-first.log"
+  },
+  "compile-first.json": {
+    "cwd": "/Users/kimwell/work/pet-platform/apps/backend",
+    "argv": [
+      "./mvnw",
+      "-DskipTests",
+      "compile"
+    ],
+    "exitCode": 0,
+    "log": "compile-first.log"
+  },
+  "compile-openapi.json": {
+    "cwd": "/Users/kimwell/work/pet-platform/apps/backend",
+    "argv": [
+      "./mvnw",
+      "-DskipTests",
+      "compile"
+    ],
+    "exitCode": 0,
+    "log": "compile-openapi.log"
+  },
+  "contracts-fifth.json": {
+    "cwd": "/Users/kimwell/work/pet-platform/apps/backend",
+    "argv": [
+      "./mvnw",
+      "clean",
+      "-Dtest=ContractExportTest,ProductionOpenApiExportTest,StructureRulesTest",
+      "test"
+    ],
+    "exitCode": 0,
+    "log": "contracts-fifth.log"
+  },
+  "contracts-first.json": {
+    "cwd": "/Users/kimwell/work/pet-platform/apps/backend",
+    "argv": [
+      "./mvnw",
+      "-Dtest=ContractExportTest",
+      "test"
+    ],
+    "exitCode": 1,
+    "log": "contracts-first.log"
+  },
+  "contracts-fourth.json": {
+    "cwd": "/Users/kimwell/work/pet-platform/apps/backend",
+    "argv": [
+      "./mvnw",
+      "clean",
+      "-Dtest=ContractExportTest,StructureRulesTest",
+      "test"
+    ],
+    "exitCode": 1,
+    "log": "contracts-fourth.log"
+  },
+  "contracts-second.json": {
+    "cwd": "/Users/kimwell/work/pet-platform/apps/backend",
+    "argv": [
+      "./mvnw",
+      "-Dtest=StructureRulesTest,ContractExportTest",
+      "test"
+    ],
+    "exitCode": 1,
+    "log": "contracts-second.log"
+  },
+  "contracts-seventh.json": {
+    "cwd": "/Users/kimwell/work/pet-platform/apps/backend",
+    "argv": [
+      "./mvnw",
+      "clean",
+      "-Dtest=ContractExportTest,ProductionOpenApiExportTest",
+      "test"
+    ],
+    "exitCode": 0,
+    "log": "contracts-seventh.log"
+  },
+  "contracts-sixth.json": {
+    "cwd": "/Users/kimwell/work/pet-platform/apps/backend",
+    "argv": [
+      "./mvnw",
+      "clean",
+      "-Dtest=ContractExportTest,ProductionOpenApiExportTest",
+      "test"
+    ],
+    "exitCode": 1,
+    "log": "contracts-sixth.log"
+  },
+  "contracts-third.json": {
+    "cwd": "/Users/kimwell/work/pet-platform/apps/backend",
+    "argv": [
+      "./mvnw",
+      "-Dtest=ContractExportTest",
+      "test"
+    ],
+    "exitCode": 1,
+    "log": "contracts-third.log"
+  },
+  "dependencies.json": {
+    "cwd": "/Users/kimwell/work/pet-platform/apps/backend",
+    "argv": [
+      "./mvnw",
+      "dependency:tree",
+      "-DoutputFile=../../docs/testing/evidence/P03-03/backend-dependency-tree.txt"
+    ],
+    "exitCode": 0,
+    "log": "dependencies.log"
+  },
+  "drift-negative.json": {
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "argv": [
+      "pnpm",
+      "contracts:check"
+    ],
+    "exitCode": 1,
+    "log": "drift-negative.log"
+  },
+  "frontend-check.json": {
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "argv": [
+      "pnpm",
+      "check"
+    ],
+    "exitCode": 0,
+    "log": "frontend-check.log"
+  },
+  "frozen-install.json": {
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "argv": [
+      "pnpm",
+      "install",
+      "--frozen-lockfile"
+    ],
+    "exitCode": 0,
+    "log": "frozen-install.log"
+  },
+  "generate-first.json": {
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "argv": [
+      "pnpm",
+      "contracts:generate"
+    ],
+    "exitCode": 1,
+    "log": "generate-first.log"
+  },
+  "generate-second.json": {
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "argv": [
+      "pnpm",
+      "contracts:generate"
+    ],
+    "exitCode": 0,
+    "log": "generate-second.log"
+  },
+  "generator-tests-final.json": {
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "argv": [
+      "pnpm",
+      "contracts:test"
+    ],
+    "exitCode": 0,
+    "log": "generator-tests-final.log"
+  },
+  "generator-tests.json": {
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "argv": [
+      "pnpm",
+      "contracts:test"
+    ],
+    "exitCode": 0,
+    "log": "generator-tests.log"
+  },
+  "install.json": {
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "argv": [
+      "pnpm",
+      "install"
+    ],
+    "exitCode": 0,
+    "log": "install.log"
+  },
+  "mini-typecheck.json": {
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "argv": [
+      "pnpm",
+      "--filter",
+      "@pet/wechat-miniprogram",
+      "typecheck"
+    ],
+    "exitCode": 0,
+    "log": "mini-typecheck.log"
+  },
+  "repository-final.json": {
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "argv": [
+      "pnpm",
+      "check:repo"
+    ],
+    "exitCode": 0,
+    "log": "repository-final.log"
+  },
+  "scripts-lint.json": {
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "argv": [
+      "pnpm",
+      "exec",
+      "eslint",
+      "scripts",
+      "--max-warnings=0"
+    ],
+    "exitCode": 0,
+    "log": "scripts-lint.log"
+  },
+  "structure-first.json": {
+    "cwd": "/Users/kimwell/work/pet-platform/apps/backend",
+    "argv": [
+      "./mvnw",
+      "-Dtest=StructureRulesTest",
+      "test"
+    ],
+    "exitCode": 1,
+    "log": "structure-first.log"
+  },
+  "verify-first.json": {
+    "cwd": "/Users/kimwell/work/pet-platform/apps/backend",
+    "argv": [
+      "./mvnw",
+      "clean",
+      "verify"
+    ],
+    "exitCode": 1,
+    "log": "verify-first.log"
+  },
+  "verify-second.json": {
+    "cwd": "/Users/kimwell/work/pet-platform/apps/backend",
+    "argv": [
+      "./mvnw",
+      "clean",
+      "verify"
+    ],
+    "exitCode": 0,
+    "log": "verify-second.log"
+  },
+  "web-build.json": {
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "argv": [
+      "pnpm",
+      "build:web"
+    ],
+    "exitCode": 0,
+    "log": "web-build.log"
+  },
+  "web-typecheck.json": {
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "argv": [
+      "pnpm",
+      "--filter",
+      "@pet/admin-web",
+      "typecheck"
+    ],
+    "exitCode": 0,
+    "log": "web-typecheck.log"
+  }
+}

@@ -1,0 +1,55 @@
+[
+  {
+    "name": "wx-stable",
+    "url": "https://developers.weixin.qq.com/miniprogram/dev/devtools/stable.html",
+    "http_status": 200,
+    "bytes": 54567,
+    "sha256": "894038b7e5341ea32b5c1fce3cd33bfbc95ca03d17bad3f4069c96a19a749f4a",
+    "versions": []
+  },
+  {
+    "name": "wx-v3",
+    "url": "https://developers.weixin.qq.com/miniprogram/dev/framework/release/v3.html",
+    "http_status": 200,
+    "bytes": 138402,
+    "sha256": "cc16163ecd9d3d1e5b2715a2b27f9da9414fc37a6709d8c71b6ac7493705a099",
+    "versions": [
+      "3.0.0"
+    ]
+  },
+  {
+    "name": "wx-download",
+    "url": "https://developers.weixin.qq.com/miniprogram/dev/api/network/download/wx.downloadFile.html",
+    "http_status": 200,
+    "bytes": 460980,
+    "sha256": "4a63620144cf708525c93e27960cf438f5c8c65b5f2312878c45f6f2e9c5544d",
+    "versions": [
+      "3.8.10",
+      "3.8.9",
+      "3.3.4"
+    ]
+  },
+  {
+    "name": "wx-video",
+    "url": "https://developers.weixin.qq.com/miniprogram/dev/component/video.html",
+    "http_status": 200,
+    "bytes": 87258,
+    "sha256": "926108ea79510d83a847ab2135921973c2c37494daa041e3108f43dbfa8efeff",
+    "versions": [
+      "3.3.0",
+      "3.15.1",
+      "3.6.0"
+    ]
+  },
+  {
+    "name": "wx-image",
+    "url": "https://developers.weixin.qq.com/miniprogram/dev/component/image.html",
+    "http_status": 200,
+    "bytes": 71965,
+    "sha256": "549969c4744fcc12ebee9a2e0d6590fd4a33b3554a956591b926ba8a14b7d6fc",
+    "versions": [
+      "3.15.0",
+      "3.9.1"
+    ]
+  }
+]

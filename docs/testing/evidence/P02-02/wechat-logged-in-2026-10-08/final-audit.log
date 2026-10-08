@@ -1,0 +1,18 @@
+{
+  "status": "PASS",
+  "scope": "保全与文档/配置/产物一致性；不替代真实编译和运行",
+  "preserved_files": 864,
+  "changed_preserved_files": [],
+  "public_config_sha256": "12d8d6de2bbad9006fa0f34720c9ffa8b223d401b31a0db8b429e4aa5f568c74",
+  "public_appid": "",
+  "private_appid": "wx9bcab67d52e2ee04",
+  "existing_private_settings_preserved": true,
+  "ignored_paths": [
+    "apps/wechat-miniprogram/project.private.config.json",
+    "apps/wechat-miniprogram/miniprogram/miniprogram_npm",
+    ".local-data/p02-02-offline-npm-before-tool"
+  ],
+  "npm_output_files_sha_verified": 1177,
+  "local_document_links_checked": 158,
+  "business_sources": "本轮未修改后端/Web/infra；此SHA保全清单不覆盖其全部源码"
+}

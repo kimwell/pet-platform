@@ -1,0 +1,246 @@
+Window: "WeChat Web Devtools", App: 微信开发者工具.
+0 标准窗口 WeChat Web Devtools, Secondary Actions: Raise
+	1 HTML 内容 file:///Users/kimwell/Applications/WechatDevTools-2.02.2608080.app/Contents/Resources/app.asar/html/electron-project.html?projectpath=%2FUsers%2Fkimwell%2Fwork%2Fpet-platform%2Fapps%2Fwechat-miniprogram&projectname=pet-platform-miniprogram-local&projectid=%2FUsers%2Fkimwell%2Fwork%2Fpet-platform%2Fapps%2Fwechat-miniprogram&theme=dark&skeletonPath=%2FUsers%2Fkimwell%2FLibrary%2FApplication%20Support%2F%E5%BE%AE%E4%BF%A1%E5%BC%80%E5%8F%91%E8%80%85%E5%B7%A5%E5%85%B7%2Fb0dc668933a0edaedd558a9f59ae66b5%2FWeappCache%2FskeletonCache%2F1a347ab98c653c1ba55887dc4e81fa9a%2Fpageskeleton.html&appid=wx9bcab67d52e2ee04&frame=0&devid=s0&runtimeid=0&devtype=miniprogram&proxyPort=15681&userDataPath=%2FUsers%2Fkimwell%2FLibrary%2FApplication%2520Support%2F%25E5%25BE%25AE%25E4%25BF%25A1%25E5%25BC%2580%25E5%258F%2591%25E8%2580%2585%25E5%25B7%25A5%25E5%2585%25B7%2Fb0dc668933a0edaedd558a9f59ae66b5&appVersion=2.02.2608080&appVersionType=0
+		2 container
+			3 文本 微信开发者工具 Stable 2.02.2608080
+			4 container
+				5 text 小程序模式
+			6 文本 预览
+			7 文本 真机调试
+			8 文本 上传
+			9 未加标签的图片 要获取缺失的图片说明，请打开上下文菜单。
+			10 container
+				11 container
+					12 文本 二维码预览
+					13 文本 自动预览
+					14 链接 编译提示 756
+						15 text 编译提示 756
+					16 链接 代码包 214 KB
+						17 文本 代码包 214 KB
+					18 container
+						19 未加标签的图片 /
+						20 文本 将于 10/08 08:44 时失效
+						21 文本 可通过
+						22 链接 小程序助手
+							23 文本 小程序助手
+						24 文本 访问开发版
+					25 按钮 复制二维码
+					26 未加标签的图片 /kzN_uI7lWq_GNJnCmc17lGC84nc0DxAEr4PMlf1EbPg1moWR0fqxhlc6Wg99SQoHdrLMg6CWLM6goH_EnPo4Bw
+					27 文本 多端框架，可将小程序转为App
+					28 link Description: 去体验, Value: file:///Users/kimwell/Applications/WechatDevTools-2.02.2608080.app/Contents/Resources/app.asar/html/electron-project.html?projectpath=%2FUsers%2Fkimwell%2Fwork%2Fpet-platform%2Fapps%2Fwechat-miniprogram&projectname=pet-platform-miniprogram-local&projectid=%2FUsers%2Fkimwell%2Fwork%2Fpet-platform%2Fapps%2Fwechat-miniprogram&theme=dark&skeletonPath=%2FUsers%2Fkimwell%2FLibrary%2FApplication%20Support%2F%E5%BE%AE%E4%BF%A1%E5%BC%80%E5%8F%91%E8%80%85%E5%B7%A5%E5%85%B7%2Fb0dc668933a0edaedd558a9f59ae66b5%2FWeappCache%2FskeletonCache%2F1a347ab98c653c1ba55887dc4e81fa9a%2Fpageskeleton.html&appid=wx9bcab67d52e2ee04&frame=0&devid=s0&runtimeid=0&devtype=miniprogram&proxyPort=15681&userDataPath=%2FUsers%2Fkimwell%2FLibrary%2FApplication%2520Support%2F%25E5%25BE%25AE%25E4%25BF%25A1%25E5%25BC%2580%25E5%258F%2591%25E8%2580%2585%25E5%25B7%25A5%25E5%2585%25B7%2Fb0dc668933a0edaedd558a9f59ae66b5&appVersion=2.02.2608080&appVersionType=0#
+				29 container
+					30 container
+						31 text 预览 编辑
+					32 container
+						33 text 普通编译
+					34 container
+						35 container
+							36 text 8 : 18
+						37 container
+							38 标题 系统工程入口, Value: 3
+								39 文本 系统工程入口
+							40 链接
+							41 链接
+						42 HTML 内容 Webview: pages/system/entry/index, URL: 127.0.0.1:55205/__pageframe__/pages/system/entry/index
+							43 文本 系统工程入口
+							44 文本 当前用于确认原生小程序页面与官方组件接入。
+							45 按钮 查看工程状态
+								46 文本 查看工程状态
+							47 文本 认证、客户与员工会话、租户隔离及正式业务尚未实现。
+						48 HTML 内容 小程序逻辑层, URL: 127.0.0.1:55205/appservice/s0/_sessionId/simulator-app-session-s0/mainframe?load
+							49 container
+								50 HTML 内容 小程序逻辑层, URL: 127.0.0.1:55205/appservice/instanceframe?s=1791418669428&autoload#id_1
+								51 HTML 内容 127.0.0.1:55205/appservice/appContext?contextName=app&id=ifr-1_2#id_1
+								52 HTML 内容 127.0.0.1:55205/appservice/app_xrframe_renderContext?contextName=app_xrframe_render&id=ifr-1_3&empty=true#id_1
+								53 HTML 内容 127.0.0.1:55205/appservice/app_sub_debugContext?contextName=app_sub_debug&id=ifr-1_4&empty=true#id_1
+								54 HTML 内容 小程序逻辑层, URL: 127.0.0.1:55205/appservice/instanceframe?s=1791418669428#id_2
+						55 container
+							56 链接
+							57 链接
+					58 container
+						59 文本 iPhone 12/13 (Pro) 71% 16
+					60 container
+						61 文本 页面路径
+					62 文本 pages/system/entry/index
+					63 链接 复制
+				64 container
+					65 container
+						66 container
+							67 文本 wechat-miniprogram
+							68 工具栏
+								69 按钮 Toggle Primary Side Bar (⌘K ⌘B)
+									70 文本 
+								71 按钮 切换面板 (⌘J)
+									72 文本 
+								73 按钮 Toggle Secondary Side Bar (⌥⌘B)
+									74 文本 
+						75 container
+							76 container
+								77 标签页组 活动视图切换器
+									78 标签 (selected) Description: 资源管理器 (⌘K ⇧⌘E), Value: 1
+										79 container 资源管理器 (⌘K ⇧⌘E)
+											80 文本 
+									81 标签 (settable, integer) Search (⇧⌘F), Value: 0
+										82 container Search (⇧⌘F)
+											83 文本 
+									84 标签 (settable, integer) Description: 源代码管理 (⌃⇧G) - 964 个挂起的更改, Value: 0
+										85 文本 
+									86 标签 (settable, integer) 扩展 (⇧⌘X), Value: 0
+										87 container 扩展 (⇧⌘X)
+											88 文本 
+									89 弹出式按钮 其他视图
+										90 文本 
+								91 container
+									92 标题 资源管理器, Help: 资源管理器 (⌘K ⇧⌘E), Value: 2
+										93 文本 资源管理器
+									94 内容列表 资源管理器操作
+										95 弹出式按钮 Views and More Actions...
+									96 container
+										97 container
+											98 按钮 文件资源管理器部分
+												99 文本 
+												100 标题 Description: 文件资源管理器部分, Help: wechat-miniprogram, Value: 3
+													101 文本 WECHAT-MINIPROGRAM
+											102 外框 树
+												103 container
+													104 row (selected) miniprogram
+														105 container
+															106 文本 
+															107 container ~/work/pet-platform/apps/wechat-miniprogram/miniprogram • 包含强调项
+																108 文本 miniprogram
+																109 文本 
+													110 row node_modules
+														111 container
+															112 文本 
+															113 文本 node_modules
+													114 row package.json
+														115 container
+															116 container ~/work/pet-platform/apps/wechat-miniprogram/package.json • Untracked
+																117 文本 package.json
+																118 文本 U
+													119 row project.config.json
+														120 container
+															121 container ~/work/pet-platform/apps/wechat-miniprogram/project.config.json • Untracked
+																122 文本 project.config.json
+																123 文本 U
+													124 row project.private.config.json
+														125 container
+															126 文本 project.private.config.json
+													127 row project.private.config.json.example
+														128 container
+															129 container ~/work/pet-platform/apps/wechat-miniprogram/project.private.config.json.example • Untracked
+																130 文本 project.private.config.json.example
+																131 文本 U
+													132 row tsconfig.json
+														133 container
+															134 container ~/work/pet-platform/apps/wechat-miniprogram/tsconfig.json • Untracked
+																135 文本 tsconfig.json
+																136 文本 U
+										137 按钮 大纲 Section
+											138 文本 
+											139 标题 大纲, Value: 3
+												140 文本 大纲
+										141 按钮 时间线 Section
+											142 文本 
+											143 标题 时间线, Value: 3
+												144 文本 时间线
+							145 container
+								146 container
+									147 标签页组 活动视图切换器
+										148 标签 (settable, integer) Description: 构建 - Logs: 100, Value: 0
+											149 container 构建 - Logs: 100
+												150 文本 构建
+											151 container 构建 - Logs: 100
+												152 文本 100
+										153 标签 (settable, integer) Description: 调试器 - Errors: 0, Warnings: 2, Value: 0
+											154 文本 调试器
+											155 文本 2
+										156 标签 (settable, integer) Description: 问题 (⌘K ⇧⌘M) - 总计 0 个问题, Value: 0
+											157 文本 问题
+										158 标签 (settable, integer) Description: 输出, Value: 0
+											159 文本 输出
+										160 标签 (settable, integer) Description: 调试控制台 (⇧⌘Y), Value: 0
+											161 文本 调试控制台
+										162 标签 (settable, integer) 终端 (⌃`), Value: 0
+											163 container 终端 (⌃`)
+												164 文本 终端
+										165 标签 (selected) 代码质量, Value: 1
+											166 container 代码质量
+												167 文本 代码质量
+									168 工具栏 代码质量操作
+									169 工具栏
+										170 按钮 恢复面板大小
+											171 文本 
+										172 按钮 关闭面板
+											173 文本 
+									174 container
+										175 container
+											176 text 代码质量 重新扫描 2026/10/08 08:19
+											177 文本 代码压缩
+											178 container
+												179 text 3 项
+											180 text JS文件 对JS文件进行压缩
+											181 文本 查看教程
+											182 text 未通过 WXML文件 对WXML文件进行压缩
+											183 文本 查看教程
+											184 text 已通过 WXSS文件 对WXSS文件进行压缩
+											185 文本 查看教程
+											186 文本 已通过
+											187 文本 代码包
+											188 container
+												189 text 3 项
+											190 text 组件 启用组件按需注入
+											191 文本 查看教程
+											192 text 未通过 插件 不建议引用过大插件（大小超过 200 K）
+											193 文本 查看教程
+											194 text 已通过 图片和音频资源 图片和音频资源大小应不超过 200 K
+											195 文本 查看教程
+											196 文本 已通过
+											197 文本 主包
+											198 container
+												199 text 3 项
+											200 文本 无使用或无依赖文件
+											201 container
+												202 text 3 项
+											203 文本 敏感信息
+											204 container
+												205 text 1 项
+						206 container
+							207 container pet-platform (Git) - main*, Checkout Branch/Tag...
+								208 按钮 pet-platform (Git) - main*, Checkout Branch/Tag...
+									209 文本 
+									210 文本  main*
+							211 container pet-platform (Git)
+								212 按钮 pet-platform (Git)
+							213 container 没有问题
+								214 按钮 没有问题
+									215 文本 
+									216 文本  0 
+									217 文本 
+									218 文本  0
+							219 container 进度和简要通知
+							220 container 已为屏幕阅读器优化
+								221 按钮 已为屏幕阅读器优化
+							222 container undefined
+					223 文本 信息: Signing in to github.com...
+	224 关闭按钮
+	225 全屏幕按钮 Help: 此按钮也可以执行缩放窗口的操作, Secondary Actions: 缩放窗口
+	226 最小化按钮
+227 menu bar
+	228 微信开发者工具
+	229 项目
+	230 文件
+	231 编辑
+	232 工具
+	233 跳转
+	234 选择
+	235 界面
+	236 设置
+	237 插件
+	238 帮助
+
+Selected text: ```
+￼
+```
+
+Note: Pay special attention to the content selected by the user. If the user asks a question or refers to the content they are looking at on-screen, they might be referring to the selected content (but they might be referring to something else that's visible, too).

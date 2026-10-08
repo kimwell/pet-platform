@@ -1,0 +1,13 @@
+{
+  "id": "mini-npm-pack",
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "command": [
+    "node",
+    "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/pet-platform-p02-01-s8g6tcc1/pack-api.cjs"
+  ],
+  "exit_code": 0,
+  "status": "PASS",
+  "duration_seconds": 2.35,
+  "evidence": "mini-npm-pack.log",
+  "summary": "[miniprogram-builder] initservices CI\n{\"miniProgramPackNum\":1,\"otherNpmPackNum\":0,\"warnList\":[]}\n"
+}

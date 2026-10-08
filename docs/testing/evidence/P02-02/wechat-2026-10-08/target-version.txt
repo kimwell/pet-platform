@@ -1,0 +1,54 @@
+{
+  "version": "2.02.2608080",
+  "update_time": "2026-09-30",
+  "tags": [
+    {
+      "text": "Stable Build",
+      "color": "green"
+    }
+  ],
+  "link": "",
+  "downloads": [
+    {
+      "os": "Windows",
+      "arch": "64",
+      "url": "https://devtools.wxqcloud.qq.com.cn/WechatWebDev/release/be1ec64cf6184b0fa64091919793f068/wechat_devtools_2.02.2608080_win32_x64.exe"
+    },
+    {
+      "os": "macOS",
+      "arch": "x64",
+      "url": "https://devtools.wxqcloud.qq.com.cn/WechatWebDev/release/be1ec64cf6184b0fa64091919793f068/wechat_devtools_2.02.2608080_darwin_x64.pkg"
+    },
+    {
+      "os": "macOS",
+      "arch": "ARM64",
+      "url": "https://devtools.wxqcloud.qq.com.cn/WechatWebDev/release/be1ec64cf6184b0fa64091919793f068/wechat_devtools_2.02.2608080_darwin_arm64.pkg"
+    }
+  ],
+  "categories": [
+    {
+      "title": "🐛 问题修复",
+      "tag": {
+        "text": "Fix",
+        "color": "blue"
+      },
+      "items": [
+        "1. `F` 修复 游客模式下登录网络异常时提示问题",
+        "1. `F` 修复 部分场景报错堆栈无法正确映射到源码行号的问题",
+        "1. `F` 修复 第三方工具唤起时工具反馈打开项目异常的问题",
+        "1. `F` 修复 系列安全问题",
+        "1. `F` 修复 小程序体验评分（Audits）报告导出静默失败的问题",
+        "1. `F` 修复 Windows 下部分数据目录被错误写入系统盘的问题",
+        "1. `F` 修复 公众号调试断点时调试器无法点击的问题",
+        "1. `F` 修复 代码片段/插件项目因 AppID 为空时预览、真机调试按钮未禁用的问题",
+        "1. `F` 修复 多项目窗口下原生 tabbar 图标偶现串用/不展示的问题",
+        "1. `F` 修复 import_minicode 在已有同名目录时报错（EEXIST）导致导入失败的问题",
+        "1. `F` 修复 小游戏读取缓存大文件时 window.atob 抛 InvalidCharacterError 的问题",
+        "1. `F` 修复 小游戏 loadSubPackage 分包加载超时、回调不触发的问题",
+        "1. `F` 修复 在具体云函数目录下开启本地调试时调试窗口白屏的问题",
+        "1. `F` 修复 skyline 项目弹出独立模拟器窗口黑屏的问题",
+        "1. `F` 修复 可视化（Interface Builder）编辑页面内容后模拟器未自动更新的问题"
+      ]
+    }
+  ]
+}

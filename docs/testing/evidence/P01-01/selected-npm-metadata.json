@@ -1,0 +1,1016 @@
+[
+  {
+    "name": "pnpm",
+    "version": "10.34.6",
+    "query_date": "2026-10-07",
+    "published": "2026-09-28T19:46:40.367Z",
+    "engines": {
+      "node": ">=18.12"
+    },
+    "peerDependencies": null,
+    "peerDependenciesMeta": null,
+    "deprecated": null,
+    "dist": {
+      "shasum": "6a4d1b4d7b8f9b725b1ec3d1cba022e9c89c7102",
+      "tarball": "https://registry.npmjs.org/pnpm/-/pnpm-10.34.6.tgz",
+      "fileCount": 1072,
+      "integrity": "sha512-fhrmaoOpFDwRjMGUTzfMTyuKzd7aSwAc+niQj25G5F4VKSc5ymydAmQmzHV+kxjMmMVVHWoWwWUJewAouoe05g==",
+      "signatures": [
+        {
+          "sig": "MEUCIHciHKBHwqkH34yZb0OgAoHtoOSbngV7JfQN0/Qh+zJSAiEAxMhi3kN0i0bRrOSXAhDqi79UNwuqYuqdZkVFnn0a+CI=",
+          "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+        }
+      ],
+      "attestations": {
+        "url": "https://registry.npmjs.org/-/npm/v1/attestations/pnpm@10.34.6",
+        "provenance": {
+          "predicateType": "https://slsa.dev/provenance/v1"
+        }
+      },
+      "unpackedSize": 19940259
+    },
+    "repository": {
+      "url": "git+https://github.com/pnpm/pnpm.git",
+      "type": "git",
+      "directory": "pnpm"
+    },
+    "source": "https://registry.npmjs.org/pnpm/10.34.6"
+  },
+  {
+    "name": "react",
+    "version": "19.2.8",
+    "query_date": "2026-10-07",
+    "published": "2026-07-21T15:41:28.716Z",
+    "engines": {
+      "node": ">=0.10.0"
+    },
+    "peerDependencies": null,
+    "peerDependenciesMeta": null,
+    "deprecated": null,
+    "dist": {
+      "shasum": "a80663dbb58d69c6fe3fd291d3cb324e8a7dff2d",
+      "tarball": "https://registry.npmjs.org/react/-/react-19.2.8.tgz",
+      "fileCount": 27,
+      "integrity": "sha512-PWaYA1L/q9u2u7xYQi+Y3L3Yfnie7XyLeaJICV1MGD6LprsBxcAqGjYyr0eY3p+QdsA+x/Irkt4Qif8D63+Sbw==",
+      "signatures": [
+        {
+          "sig": "MEYCIQCCmnis0gzyZIp8pPdpFV387Lljmx4ah4Pjs3dgMujpiwIhAPzEs2mi+AlgkTXXTDLnSQ9wtZK8R7ywMKY/mkKjCwVi",
+          "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+        }
+      ],
+      "attestations": {
+        "url": "https://registry.npmjs.org/-/npm/v1/attestations/react@19.2.8",
+        "provenance": {
+          "predicateType": "https://slsa.dev/provenance/v1"
+        }
+      },
+      "unpackedSize": 171598
+    },
+    "repository": {
+      "url": "git+https://github.com/react/react.git",
+      "type": "git",
+      "directory": "packages/react"
+    },
+    "source": "https://registry.npmjs.org/react/19.2.8"
+  },
+  {
+    "name": "react-dom",
+    "version": "19.2.8",
+    "query_date": "2026-10-07",
+    "published": "2026-07-21T15:41:41.267Z",
+    "engines": null,
+    "peerDependencies": {
+      "react": "^19.2.8"
+    },
+    "peerDependenciesMeta": null,
+    "deprecated": null,
+    "dist": {
+      "shasum": "3b46b9eeda877cdff2cf13d2770fff4ae36c2ec2",
+      "tarball": "https://registry.npmjs.org/react-dom/-/react-dom-19.2.8.tgz",
+      "fileCount": 43,
+      "integrity": "sha512-rVprimfGBG3DR+Tq0IQG2DT5PxKth1WIGDmj5yPmlzr4YBe7uyE+Du4oVqTDXZSHGGGXRtTJEGSSePyQCMBglQ==",
+      "signatures": [
+        {
+          "sig": "MEUCIQCPmtf94IFkzqmoB7YuzdzCHLzlvRiMb8B+cW6Kx+UFcQIgLlRbtwvmh5S95mx+1iWuq0DjcFdyBkA4QVAgRqK9niQ=",
+          "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+        }
+      ],
+      "attestations": {
+        "url": "https://registry.npmjs.org/-/npm/v1/attestations/react-dom@19.2.8",
+        "provenance": {
+          "predicateType": "https://slsa.dev/provenance/v1"
+        }
+      },
+      "unpackedSize": 7319407
+    },
+    "repository": {
+      "url": "git+https://github.com/react/react.git",
+      "type": "git",
+      "directory": "packages/react-dom"
+    },
+    "source": "https://registry.npmjs.org/react-dom/19.2.8"
+  },
+  {
+    "name": "typescript",
+    "version": "5.9.3",
+    "query_date": "2026-10-07",
+    "published": "2025-09-30T21:19:38.784Z",
+    "engines": {
+      "node": ">=14.17"
+    },
+    "peerDependencies": null,
+    "peerDependenciesMeta": null,
+    "deprecated": null,
+    "dist": {
+      "shasum": "5b4f59e15310ab17a216f5d6cf53ee476ede670f",
+      "tarball": "https://registry.npmjs.org/typescript/-/typescript-5.9.3.tgz",
+      "fileCount": 132,
+      "integrity": "sha512-jl1vZzPDinLr9eUt3J/t7V6FgNEw9QjvBPdysz9KfQDD41fQrC2Y4vKQdiaUpFT4bXlb1RHhLpp8wtm6M5TgSw==",
+      "signatures": [
+        {
+          "sig": "MEYCIQC5ifNi1il+zAZC19ov+Q5oSrhOwlpOpghAaAAXYA0RpAIhAKdcZ6pMNZGuprpke8Zi3OPB1zol9c88KVW+apJNVjTy",
+          "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+        }
+      ],
+      "unpackedSize": 23625066
+    },
+    "repository": {
+      "url": "git+https://github.com/microsoft/TypeScript.git",
+      "type": "git"
+    },
+    "source": "https://registry.npmjs.org/typescript/5.9.3"
+  },
+  {
+    "name": "@vitejs/plugin-react",
+    "version": "5.2.0",
+    "query_date": "2026-10-07",
+    "published": "2026-03-12T14:27:45.817Z",
+    "engines": {
+      "node": "^20.19.0 || >=22.12.0"
+    },
+    "peerDependencies": {
+      "vite": "^4.2.0 || ^5.0.0 || ^6.0.0 || ^7.0.0 || ^8.0.0"
+    },
+    "peerDependenciesMeta": null,
+    "deprecated": null,
+    "dist": {
+      "shasum": "108bd0f566f288ce3566982df4eff137ded7b15f",
+      "tarball": "https://registry.npmjs.org/@vitejs/plugin-react/-/plugin-react-5.2.0.tgz",
+      "fileCount": 7,
+      "integrity": "sha512-YmKkfhOAi3wsB1PhJq5Scj3GXMn3WvtQ/JC0xoopuHoXSdmtdStOpFrYaT1kie2YgFBcIe64ROzMYRjCrYOdYw==",
+      "signatures": [
+        {
+          "sig": "MEYCIQDLaBEjKLv/w66FWCMRHoEsVy8Cmebw+H1RUbFJbYbgKgIhAMyhtXLesAQrSSYIfPFOJLvdi57bTVu1/P+sP3ZXczQ+",
+          "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+        }
+      ],
+      "attestations": {
+        "url": "https://registry.npmjs.org/-/npm/v1/attestations/@vitejs%2fplugin-react@5.2.0",
+        "provenance": {
+          "predicateType": "https://slsa.dev/provenance/v1"
+        }
+      },
+      "unpackedSize": 46248
+    },
+    "repository": {
+      "url": "git+https://github.com/vitejs/vite-plugin-react.git",
+      "type": "git",
+      "directory": "packages/plugin-react"
+    },
+    "source": "https://registry.npmjs.org/@vitejs%2fplugin-react/5.2.0"
+  },
+  {
+    "name": "antd",
+    "version": "6.6.5",
+    "query_date": "2026-10-07",
+    "published": "2026-09-20T09:10:07.567Z",
+    "engines": null,
+    "peerDependencies": {
+      "react": ">=18.0.0",
+      "react-dom": ">=18.0.0"
+    },
+    "peerDependenciesMeta": null,
+    "deprecated": null,
+    "dist": {
+      "shasum": "d171f920c4c75725b62d58712e2c9c47d194371d",
+      "tarball": "https://registry.npmjs.org/antd/-/antd-6.6.5.tgz",
+      "fileCount": 3998,
+      "integrity": "sha512-biJB/aORNU2lvZZCX783S/g8atfE8akrEKRjRrsXVttoMtJbSHLf/Z29niv0blzt6H3BgKvhkQgHoUn5MgCx7w==",
+      "signatures": [
+        {
+          "sig": "MEUCIQCacl0L7e5WwsP/ZVxyJpaXru0o3uFsSWuT0zOcB8AAoAIgN67BwGpXM5Hhn8zNUysHJk7SG983LgJ5qGoxsRMGlSk=",
+          "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+        },
+        {
+          "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U",
+          "sig": "MEUCIES/fx5kirgo/bwyHdqkvDyQkpFCuq50Jx/NtdhYv8/jAiEA1he2I6Qz6NoqMoqTLYMrl6QBjeWyscY0EMRrHdSFQzs="
+        }
+      ],
+      "unpackedSize": 48957741
+    },
+    "repository": {
+      "url": "git+https://github.com/ant-design/ant-design.git",
+      "type": "git"
+    },
+    "source": "https://registry.npmjs.org/antd/6.6.5"
+  },
+  {
+    "name": "@ant-design/icons",
+    "version": "6.3.4",
+    "query_date": "2026-10-07",
+    "published": "2026-08-31T09:51:03.406Z",
+    "engines": {
+      "node": ">=8"
+    },
+    "peerDependencies": {
+      "react": ">=16.0.0",
+      "react-dom": ">=16.0.0"
+    },
+    "peerDependenciesMeta": null,
+    "deprecated": null,
+    "dist": {
+      "shasum": "9a76f7b6b4554a65f25e3e5c439405b96c4ebd71",
+      "tarball": "https://registry.npmjs.org/@ant-design/icons/-/icons-6.3.4.tgz",
+      "fileCount": 5167,
+      "integrity": "sha512-kDoUlppczVyCUTFthF6cHmPzMBYqNZQhu9j6EyIX/YIdM9j9CZNZoJUjzVw7/1v1VO8WwVMmPp15r/uwIAS0AQ==",
+      "signatures": [
+        {
+          "sig": "MEQCICwTo1h8eFpeXBvhRrI0bzG/3v+8jRoDoiS0of5Y+5HyAiAREjErWwtAtlAQmxVV1tNi33sbTcjEJRZ6BLzwnEGprA==",
+          "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+        },
+        {
+          "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U",
+          "sig": "MEYCIQCwCErLJ0WIVVJ2ZxiJtZuaJbtGz5guT0e2W8ptXWhYaAIhALJwCfvsM6bO/8MzWLRsbhrJxCKSHEJZbtYlb5EBTnvg"
+        }
+      ],
+      "unpackedSize": 11065051
+    },
+    "repository": {
+      "url": "git+https://github.com/ant-design/ant-design-icons.git#master",
+      "type": "git"
+    },
+    "source": "https://registry.npmjs.org/@ant-design%2ficons/6.3.4"
+  },
+  {
+    "name": "@tanstack/react-router",
+    "version": "1.170.41",
+    "query_date": "2026-10-07",
+    "published": "2026-09-30T17:48:34.218Z",
+    "engines": {
+      "node": ">=20.19"
+    },
+    "peerDependencies": {
+      "react": ">=18.0.0 || >=19.0.0",
+      "react-dom": ">=18.0.0 || >=19.0.0"
+    },
+    "peerDependenciesMeta": null,
+    "deprecated": null,
+    "dist": {
+      "shasum": "331b26510a46c8da4a465c11fc2de3626dc3271a",
+      "tarball": "https://registry.npmjs.org/@tanstack/react-router/-/react-router-1.170.41.tgz",
+      "fileCount": 356,
+      "integrity": "sha512-Mpvw8Wm5MGDbTqI8Yc9flLKxbOHwoWocv0H2aGKcgw2a017oK5nZWqa954P+DrUx/8fI98YNywnHP5XcD3tQ9w==",
+      "signatures": [
+        {
+          "sig": "MEUCIHeSZHG7gaK/h/aWYoUwRbwBkC0uatfcqL0dt/mCAQPOAiEAtTZZ8kZjks1VL/KAHzuerNK901RN5g/TeZKU7kWIGxA=",
+          "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+        },
+        {
+          "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U",
+          "sig": "MEUCIFhhOXiOJMWfQld+XOBLbdarPUEwgIBIOijuiasJlMbiAiEA8p1UmjDYDBf+iBXDO2LhjZejktVIFbBPzVZNp/P8dQs="
+        }
+      ],
+      "attestations": {
+        "url": "https://registry.npmjs.org/-/npm/v1/attestations/@tanstack%2freact-router@1.170.41",
+        "provenance": {
+          "predicateType": "https://slsa.dev/provenance/v1"
+        }
+      },
+      "unpackedSize": 1016934
+    },
+    "repository": {
+      "url": "git+https://github.com/TanStack/router.git",
+      "type": "git",
+      "directory": "packages/react-router"
+    },
+    "source": "https://registry.npmjs.org/@tanstack%2freact-router/1.170.41"
+  },
+  {
+    "name": "@tanstack/react-query",
+    "version": "5.104.1",
+    "query_date": "2026-10-07",
+    "published": "2026-10-02T10:04:57.020Z",
+    "engines": null,
+    "peerDependencies": {
+      "react": "^18 || ^19"
+    },
+    "peerDependenciesMeta": null,
+    "deprecated": null,
+    "dist": {
+      "shasum": "c9c6b66ea96f8b5f73f4f3491b1776036a3c5456",
+      "tarball": "https://registry.npmjs.org/@tanstack/react-query/-/react-query-5.104.1.tgz",
+      "fileCount": 410,
+      "integrity": "sha512-Zz70EgjahNI7aCz8BZxM3vUGU44ycxEAzMuCUjLeA7SVhhOkg3ZgPjPJPvHjs6Rmky/dtmnu1WzjGHNHmhCoZQ==",
+      "signatures": [
+        {
+          "sig": "MEUCIQDD2rD2D153pFMYBA3V9dDjjFDBgp+Jb7i3HvMOsQvawQIgWWpacqcKvsHe7VblI8jUiW6EESC7VUCRIWBR9csQ5bk=",
+          "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+        },
+        {
+          "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U",
+          "sig": "MEYCIQDBrFTknkaiD293rKmbrZ9JdceUq71SBf0AebrmMpbUOAIhAIKjJXv2AxUmN7uFFCf+A3cO5f+aqlSV+gxEttWh9U+S"
+        }
+      ],
+      "attestations": {
+        "url": "https://registry.npmjs.org/-/npm/v1/attestations/@tanstack%2freact-query@5.104.1",
+        "provenance": {
+          "predicateType": "https://slsa.dev/provenance/v1"
+        }
+      },
+      "unpackedSize": 1731356
+    },
+    "repository": {
+      "url": "git+https://github.com/TanStack/query.git",
+      "type": "git",
+      "directory": "packages/react-query"
+    },
+    "source": "https://registry.npmjs.org/@tanstack%2freact-query/5.104.1"
+  },
+  {
+    "name": "zustand",
+    "version": "5.0.15",
+    "query_date": "2026-10-07",
+    "published": "2026-08-13T00:39:55.466Z",
+    "engines": {
+      "node": ">=12.20.0"
+    },
+    "peerDependencies": {
+      "immer": ">=9.0.6",
+      "react": ">=18.0.0",
+      "@types/react": ">=18.0.0",
+      "use-sync-external-store": ">=1.2.0"
+    },
+    "peerDependenciesMeta": {
+      "immer": {
+        "optional": true
+      },
+      "react": {
+        "optional": true
+      },
+      "@types/react": {
+        "optional": true
+      },
+      "use-sync-external-store": {
+        "optional": true
+      }
+    },
+    "deprecated": null,
+    "dist": {
+      "shasum": "42bddf35647cb80a818a8943a69f6618c126fcfe",
+      "tarball": "https://registry.npmjs.org/zustand/-/zustand-5.0.15.tgz",
+      "fileCount": 52,
+      "integrity": "sha512-MpSEjRiBkA9crSYeOUH32rJC7SVqAbm0Fqcqge/bUi2PPoLcBWKOsG+C8mevmpr8TwXHBVkChbbJiyvkE+i/3A==",
+      "signatures": [
+        {
+          "sig": "MEYCIQD/NvQg71lrpjFEE4P3/33nDnpvqoj7gzyDoDrb9w8KRgIhALLsbxPaUngtlFBu1hA7t85JuIpslalFoVZqiVtNTf08",
+          "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+        },
+        {
+          "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U",
+          "sig": "MEUCIH4Gk965cRuCEYaV0uqY3/Dx6bPXSO7FE3sw7cjiw2f7AiEA7Kw2+wVRx5r+25/gGK3zVwQGImKeNyz50Z5ZOKRsrIY="
+        }
+      ],
+      "attestations": {
+        "url": "https://registry.npmjs.org/-/npm/v1/attestations/zustand@5.0.15",
+        "provenance": {
+          "predicateType": "https://slsa.dev/provenance/v1"
+        }
+      },
+      "unpackedSize": 95173
+    },
+    "repository": {
+      "url": "git+https://github.com/pmndrs/zustand.git",
+      "type": "git"
+    },
+    "source": "https://registry.npmjs.org/zustand/5.0.15"
+  },
+  {
+    "name": "@types/react",
+    "version": "19.2.18",
+    "query_date": "2026-10-07",
+    "published": "2026-07-30T21:54:03.456Z",
+    "engines": null,
+    "peerDependencies": {},
+    "peerDependenciesMeta": null,
+    "deprecated": null,
+    "dist": {
+      "shasum": "eb0b6a1fb635d1a9692d5f84a3495bd8ad153707",
+      "tarball": "https://registry.npmjs.org/@types/react/-/react-19.2.18.tgz",
+      "fileCount": 18,
+      "integrity": "sha512-AnzbBERsrLKtk2XSfTbYRLjQPdy116Sty4q+T+Bp3IC4l6jNBvreVPAHmpq9qhXQM7CXZPjLVmGMw9sy+hxQ3w==",
+      "signatures": [
+        {
+          "sig": "MEUCIQC06rwtYwrTbroXM8/K/Ho6YJhoNJmdIFjoxFWeEj/j6gIgeockTz0xhiZ+AQJt29CbKYposjPSqDqD3Ql9EnIdV4c=",
+          "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+        },
+        {
+          "sig": "MEUCIQDofJg2wXkQsGS14VbFVWmM6wtYK4mjgyw14jKRI9oW9AIgHEU5FA1hbVIL8AcOLevbx/7fWtsVOqmJ95kBksT8YDw=",
+          "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+        }
+      ],
+      "unpackedSize": 408503
+    },
+    "repository": {
+      "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+      "type": "git",
+      "directory": "types/react"
+    },
+    "source": "https://registry.npmjs.org/@types%2freact/19.2.18"
+  },
+  {
+    "name": "@types/react-dom",
+    "version": "19.2.7",
+    "query_date": "2026-10-07",
+    "published": "2026-09-03T11:04:47.516Z",
+    "engines": null,
+    "peerDependencies": {
+      "@types/react": "^19.2.0"
+    },
+    "peerDependenciesMeta": null,
+    "deprecated": null,
+    "dist": {
+      "shasum": "eba78fc6201e564986ec40d56c86c8434593cace",
+      "tarball": "https://registry.npmjs.org/@types/react-dom/-/react-dom-19.2.7.tgz",
+      "fileCount": 19,
+      "integrity": "sha512-I8bPpDLcHBv1qiIiXDCy71Rt8eQDKJP0sMSWJphDdAcdqiJ1sGpZamavoEIRZmYzjia9LuEb2HlYdDpmoENpvQ==",
+      "signatures": [
+        {
+          "sig": "MEUCIQDCpzFmt7Z2BEQSrhqg3uCyOxYcGrIPN7amqXjf9hR9lAIgdLRgSbpjyYniEjYineB1jlStjMtckNjqeCYz0kjOtug=",
+          "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+        },
+        {
+          "sig": "MEQCIDGASbWIq5+f4ma48bl1zpZDJQDeB0zWSUvrHW4tMGL3AiAf5WIAAoamUmNV/WnI4u3U2HaC+zhVlnFLvoCI6y0eZQ==",
+          "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+        }
+      ],
+      "unpackedSize": 33574
+    },
+    "repository": {
+      "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+      "type": "git",
+      "directory": "types/react-dom"
+    },
+    "source": "https://registry.npmjs.org/@types%2freact-dom/19.2.7"
+  },
+  {
+    "name": "@types/node",
+    "version": "24.19.1",
+    "query_date": "2026-10-07",
+    "published": "2026-10-01T22:38:02.894Z",
+    "engines": null,
+    "peerDependencies": {},
+    "peerDependenciesMeta": null,
+    "deprecated": null,
+    "dist": {
+      "shasum": "3a1c3ed9e9fc94fe48d4a72d83dfd0bfcf379c62",
+      "tarball": "https://registry.npmjs.org/@types/node/-/node-24.19.1.tgz",
+      "fileCount": 88,
+      "integrity": "sha512-aS3/DG0oM05K0RIXXP+hKjinGG5IgSSVGzswZxW3O0sS3pH4/fycXundUC9XsszgKCk4gHXylTEK6hyFxVxnoQ==",
+      "signatures": [
+        {
+          "sig": "MEYCIQD+48ykmov9T0Rnzoihncc5ifqeYIbW81WS6kyoRo6TXgIhAO5tAL9r+d1M1nKOuX/xQxyWEMw4ASvexlK8cb4jkmJ6",
+          "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+        },
+        {
+          "sig": "MEYCIQCE7DgGRyKheaUKRNTFbtz1zCPHoaCG9aS8GjOICyO5KwIhAIIT8hMbSlUiy0nFQJ7nhbN884gU6D0GRH7zONUcStrt",
+          "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+        }
+      ],
+      "unpackedSize": 2613546
+    },
+    "repository": {
+      "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+      "type": "git",
+      "directory": "types/node"
+    },
+    "source": "https://registry.npmjs.org/@types%2fnode/24.19.1"
+  },
+  {
+    "name": "eslint",
+    "version": "10.12.0",
+    "query_date": "2026-10-07",
+    "published": "2026-10-02T20:08:19.213Z",
+    "engines": {
+      "node": "^20.19.0 || ^22.13.0 || >=24"
+    },
+    "peerDependencies": {
+      "jiti": "*"
+    },
+    "peerDependenciesMeta": {
+      "jiti": {
+        "optional": true
+      }
+    },
+    "deprecated": null,
+    "dist": {
+      "shasum": "4f2f7e679bdce9d71438c2900f2c8d4d297332b0",
+      "tarball": "https://registry.npmjs.org/eslint/-/eslint-10.12.0.tgz",
+      "fileCount": 421,
+      "integrity": "sha512-npHjrHb2o4ehH3mE+YuxABR+0gyb0aVWCIolgJDArwCiHEIsonBm3ZKjel5b0U5+a+MbEvIyRCGCzD3eKKK2NA==",
+      "signatures": [
+        {
+          "sig": "MEQCIACiuX8cuqJW7bxeMOsKGVHqdBXYfPXYBb5PuH973SL8AiAD6iWD4BwsFcJHHdhW6qixRf4sDVAEwqo3MQxHE3vd1g==",
+          "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+        },
+        {
+          "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U",
+          "sig": "MEQCICroNkqaTnX/nfg9Z2D39H7ZqDb5Z3h++5yIrobmmo9jAiByt7PnOjO2oa46qh6ejj4VqSxuvYCF1JOg6VrIhBxhhg=="
+        }
+      ],
+      "unpackedSize": 2947964
+    },
+    "repository": {
+      "url": "git+https://github.com/eslint/eslint.git",
+      "type": "git"
+    },
+    "source": "https://registry.npmjs.org/eslint/10.12.0"
+  },
+  {
+    "name": "@eslint/js",
+    "version": "10.0.1",
+    "query_date": "2026-10-07",
+    "published": "2026-02-06T22:34:56.290Z",
+    "engines": {
+      "node": "^20.19.0 || ^22.13.0 || >=24"
+    },
+    "peerDependencies": {
+      "eslint": "^10.0.0"
+    },
+    "peerDependenciesMeta": {
+      "eslint": {
+        "optional": true
+      }
+    },
+    "deprecated": null,
+    "dist": {
+      "shasum": "1e8a876f50117af8ab67e47d5ad94d38d6622583",
+      "tarball": "https://registry.npmjs.org/@eslint/js/-/js-10.0.1.tgz",
+      "fileCount": 7,
+      "integrity": "sha512-zeR9k5pd4gxjZ0abRoIaxdc7I3nDktoXZk2qOv9gCNWx3mVwEn32VRhyLaRsDiJjTs0xq/T8mfPtyuXu7GWBcA==",
+      "signatures": [
+        {
+          "sig": "MEUCIQC01PnD397TPFwX0F9HFSExrqR/ahZ/msR5jN0S2R716wIgJi3MsB6EmezIqYLGeLnGsuRmVAmSBUdcpNLONJnD71s=",
+          "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+        }
+      ],
+      "unpackedSize": 15687
+    },
+    "repository": {
+      "url": "git+https://github.com/eslint/eslint.git",
+      "type": "git",
+      "directory": "packages/js"
+    },
+    "source": "https://registry.npmjs.org/@eslint%2fjs/10.0.1"
+  },
+  {
+    "name": "typescript-eslint",
+    "version": "8.71.1",
+    "query_date": "2026-10-07",
+    "published": "2026-10-05T17:08:41.691Z",
+    "engines": {
+      "node": "^18.18.0 || ^20.9.0 || >=21.1.0"
+    },
+    "peerDependencies": {
+      "eslint": "^8.57.0 || ^9.0.0 || ^10.0.0",
+      "typescript": ">=4.8.4 <6.1.0"
+    },
+    "peerDependenciesMeta": null,
+    "deprecated": null,
+    "dist": {
+      "shasum": "dabf06af972d975ea25b27d73e161193ea41075d",
+      "tarball": "https://registry.npmjs.org/typescript-eslint/-/typescript-eslint-8.71.1.tgz",
+      "fileCount": 13,
+      "integrity": "sha512-oiNVPC3/NbV1FpaHU07l8O6ynqG9v4PAiW2WvTrAmZdR0f2HI/gE668ElMLCK7Xbsu5k2fK5C4fXNiq05j7/nQ==",
+      "signatures": [
+        {
+          "sig": "MEYCIQDwPC8MIiJtPwkBCpPeOzK81Jq/R22BNKlNR3e48CfLbgIhAKxWrj6J8hc8ZELC82FLO/VmKAhWG3agLXCTRaL9BibT",
+          "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+        },
+        {
+          "sig": "MEYCIQCu7RVjWUiF0lRGLcC6K6y6yMV0s7pkkYqYdgh6za/lFAIhAKYwqVjMjYmLxLTpu5G4xEEl4DJD3CkNI1k2+mEvtwzG",
+          "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+        }
+      ],
+      "attestations": {
+        "url": "https://registry.npmjs.org/-/npm/v1/attestations/typescript-eslint@8.71.1",
+        "provenance": {
+          "predicateType": "https://slsa.dev/provenance/v1"
+        }
+      },
+      "unpackedSize": 42688
+    },
+    "repository": {
+      "url": "https://github.com/typescript-eslint/typescript-eslint.git",
+      "type": "git",
+      "directory": "packages/typescript-eslint"
+    },
+    "source": "https://registry.npmjs.org/typescript-eslint/8.71.1"
+  },
+  {
+    "name": "eslint-plugin-react-hooks",
+    "version": "7.1.1",
+    "query_date": "2026-10-07",
+    "published": "2026-04-17T18:03:19.591Z",
+    "engines": {
+      "node": ">=18"
+    },
+    "peerDependencies": {
+      "eslint": "^3.0.0 || ^4.0.0 || ^5.0.0 || ^6.0.0 || ^7.0.0 || ^8.0.0-0 || ^9.0.0 || ^10.0.0"
+    },
+    "peerDependenciesMeta": null,
+    "deprecated": null,
+    "dist": {
+      "shasum": "e6742cad75d970c0a3f30d7d3fa80a4784f55927",
+      "tarball": "https://registry.npmjs.org/eslint-plugin-react-hooks/-/eslint-plugin-react-hooks-7.1.1.tgz",
+      "fileCount": 8,
+      "integrity": "sha512-f2I7Gw6JbvCexzIInuSbZpfdQ44D7iqdWX01FKLvrPgqxoE7oMj8clOfto8U6vYiz4yd5oKu39rRSVOe1zRu0g==",
+      "signatures": [
+        {
+          "sig": "MEYCIQCdi56UBcCdIG9KuraMEEC9DmLaBSwFdu3/FH8z6uwFlAIhAPKLC+VSc1yZGOqe0obrEL1J80GrzRndCFDhDWqVCZWw",
+          "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+        }
+      ],
+      "unpackedSize": 4095735
+    },
+    "repository": {
+      "url": "git+https://github.com/facebook/react.git",
+      "type": "git",
+      "directory": "packages/eslint-plugin-react-hooks"
+    },
+    "source": "https://registry.npmjs.org/eslint-plugin-react-hooks/7.1.1"
+  },
+  {
+    "name": "eslint-plugin-react-refresh",
+    "version": "0.5.7",
+    "query_date": "2026-10-07",
+    "published": "2026-09-14T16:12:50.394Z",
+    "engines": null,
+    "peerDependencies": {
+      "eslint": "^9 || ^10"
+    },
+    "peerDependenciesMeta": null,
+    "deprecated": null,
+    "dist": {
+      "shasum": "acff4138192efd299114c8f101de1088416054c2",
+      "tarball": "https://registry.npmjs.org/eslint-plugin-react-refresh/-/eslint-plugin-react-refresh-0.5.7.tgz",
+      "fileCount": 5,
+      "integrity": "sha512-XhJSzLljuYD4UjNuFGJu2v7aD3sqNVK12w5/DCUfrNfHWegZo2+TsavNx8MuxMwEquuFAzNbNfXKU0WoZ+YUIg==",
+      "signatures": [
+        {
+          "sig": "MEUCIQC333qmK+T5ydtj/pyasFURDvY9ZxK0TfGFo350oG4P7gIgMZcUptq5mPdaVk7jQTbX/rOkia1JSeEMVVJSpDzd0gc=",
+          "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+        },
+        {
+          "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U",
+          "sig": "MEUCIQCHoyI4Pc+Z7IPZbQkWMlKkQMeq3iDNtyEd7KaB6n2EiAIgS8ug8TVbnZhrOsd836c1b9hzWMGf3X292LAiEQRQxdM="
+        }
+      ],
+      "attestations": {
+        "url": "https://registry.npmjs.org/-/npm/v1/attestations/eslint-plugin-react-refresh@0.5.7",
+        "provenance": {
+          "predicateType": "https://slsa.dev/provenance/v1"
+        }
+      },
+      "unpackedSize": 24647
+    },
+    "repository": {
+      "url": "git+https://github.com/ArnaudBarre/eslint-plugin-react-refresh.git",
+      "type": "git"
+    },
+    "source": "https://registry.npmjs.org/eslint-plugin-react-refresh/0.5.7"
+  },
+  {
+    "name": "vitest",
+    "version": "4.1.11",
+    "query_date": "2026-10-07",
+    "published": "2026-08-18T14:27:07.240Z",
+    "engines": {
+      "node": "^20.0.0 || ^22.0.0 || >=24.0.0"
+    },
+    "peerDependencies": {
+      "vite": "^6.0.0 || ^7.0.0 || ^8.0.0",
+      "jsdom": "*",
+      "happy-dom": "*",
+      "@vitest/ui": "4.1.11",
+      "@types/node": "^20.0.0 || ^22.0.0 || >=24.0.0",
+      "@edge-runtime/vm": "*",
+      "@opentelemetry/api": "^1.9.0",
+      "@vitest/coverage-v8": "4.1.11",
+      "@vitest/browser-preview": "4.1.11",
+      "@vitest/coverage-istanbul": "4.1.11",
+      "@vitest/browser-playwright": "4.1.11",
+      "@vitest/browser-webdriverio": "4.1.11"
+    },
+    "peerDependenciesMeta": {
+      "vite": {
+        "optional": false
+      },
+      "jsdom": {
+        "optional": true
+      },
+      "happy-dom": {
+        "optional": true
+      },
+      "@vitest/ui": {
+        "optional": true
+      },
+      "@types/node": {
+        "optional": true
+      },
+      "@edge-runtime/vm": {
+        "optional": true
+      },
+      "@opentelemetry/api": {
+        "optional": true
+      },
+      "@vitest/coverage-v8": {
+        "optional": true
+      },
+      "@vitest/browser-preview": {
+        "optional": true
+      },
+      "@vitest/coverage-istanbul": {
+        "optional": true
+      },
+      "@vitest/browser-playwright": {
+        "optional": true
+      },
+      "@vitest/browser-webdriverio": {
+        "optional": true
+      }
+    },
+    "deprecated": null,
+    "dist": {
+      "shasum": "1653c1521ae917f960d9b21877797c47dfd8bf21",
+      "tarball": "https://registry.npmjs.org/vitest/-/vitest-4.1.11.tgz",
+      "fileCount": 114,
+      "integrity": "sha512-fhACrNXUidIbGSBr5FlbuBkO7VWC1ZyLl0DO4CU2DrQoAPxX84Ysxs+HeGQpii5lZWV1Q4gBZTTu49mF+A6Edw==",
+      "signatures": [
+        {
+          "sig": "MEUCIBSU996mnW6tNJuA1U7CRmR/Ukpn/bd/zIY/j5QMSIkrAiEA533Mf1NVfToeCZQA9EXozqd37DRbe6ZzDbSFdgHQNVo=",
+          "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+        }
+      ],
+      "attestations": {
+        "url": "https://registry.npmjs.org/-/npm/v1/attestations/vitest@4.1.11",
+        "provenance": {
+          "predicateType": "https://slsa.dev/provenance/v1"
+        }
+      },
+      "unpackedSize": 1909160
+    },
+    "repository": {
+      "url": "git+https://github.com/vitest-dev/vitest.git",
+      "type": "git",
+      "directory": "packages/vitest"
+    },
+    "source": "https://registry.npmjs.org/vitest/4.1.11"
+  },
+  {
+    "name": "openapi-typescript",
+    "version": "7.13.0",
+    "query_date": "2026-10-07",
+    "published": "2026-02-11T16:02:25.378Z",
+    "engines": null,
+    "peerDependencies": {
+      "typescript": "^5.x"
+    },
+    "peerDependenciesMeta": null,
+    "deprecated": null,
+    "dist": {
+      "shasum": "5d0dc5e95d648fba85b15351a0b91c5815d8360b",
+      "tarball": "https://registry.npmjs.org/openapi-typescript/-/openapi-typescript-7.13.0.tgz",
+      "fileCount": 105,
+      "integrity": "sha512-EFP392gcqXS7ntPvbhBzbF8TyBA+baIYEm791Hy5YkjDYKTnk/Tn5OQeKm5BIZvJihpp8Zzr4hzx0Irde1LNGQ==",
+      "signatures": [
+        {
+          "sig": "MEUCIQCDYOL27GnQ77WQxfUr0Mn7uSv4jntiiuFSzpdV64kvDgIgPh/OSHJp6s6mo5LwPzQE3yfGItLEwV2Bhvp86n3Ndfo=",
+          "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+        }
+      ],
+      "attestations": {
+        "url": "https://registry.npmjs.org/-/npm/v1/attestations/openapi-typescript@7.13.0",
+        "provenance": {
+          "predicateType": "https://slsa.dev/provenance/v1"
+        }
+      },
+      "unpackedSize": 878193
+    },
+    "repository": {
+      "url": "git+https://github.com/openapi-ts/openapi-typescript.git",
+      "type": "git",
+      "directory": "packages/openapi-typescript"
+    },
+    "source": "https://registry.npmjs.org/openapi-typescript/7.13.0"
+  },
+  {
+    "name": "tdesign-miniprogram",
+    "version": "1.17.0",
+    "query_date": "2026-10-07",
+    "published": "2026-09-23T08:54:16.702Z",
+    "engines": null,
+    "peerDependencies": null,
+    "peerDependenciesMeta": null,
+    "deprecated": null,
+    "dist": {
+      "shasum": "dd83ada1e1ce83d702a14a89255efdf7dba1a221",
+      "tarball": "https://registry.npmjs.org/tdesign-miniprogram/-/tdesign-miniprogram-1.17.0.tgz",
+      "fileCount": 1181,
+      "integrity": "sha512-r/MsvadJDq8OPLNE8prV/akEiOe9L6PGF0knjMHuqt/SmVJV+4P5bxq8o3HLs2H8GexEavE3TKVZPqqTEyvlUg==",
+      "signatures": [
+        {
+          "sig": "MEUCIAMUu4lD0MkZYj7wo/YXO32+eHjHGDeWemKLy8pIOKS/AiEA5IhGwg86eR1OrluOnwft2w6bncn6EEBDYBjw6wXesOc=",
+          "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+        },
+        {
+          "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U",
+          "sig": "MEQCIGE20it2Rv7JEkvHg2+l2spM3KzLj/4/YKSdogRlWV/2AiA+dd5gMj7AeW95VZSTGfVmiUAvPZUpnwWU7WsRuuWOAA=="
+        }
+      ],
+      "attestations": {
+        "url": "https://registry.npmjs.org/-/npm/v1/attestations/tdesign-miniprogram@1.17.0",
+        "provenance": {
+          "predicateType": "https://slsa.dev/provenance/v1"
+        }
+      },
+      "unpackedSize": 1656077
+    },
+    "repository": {
+      "url": "git+https://github.com/Tencent/tdesign-miniprogram.git",
+      "type": "git",
+      "directory": "packages/tdesign-miniprogram"
+    },
+    "source": "https://registry.npmjs.org/tdesign-miniprogram/1.17.0"
+  },
+  {
+    "name": "miniprogram-api-typings",
+    "version": "5.2.3",
+    "query_date": "2026-10-07",
+    "published": "2026-08-07T08:47:25.453Z",
+    "engines": null,
+    "peerDependencies": null,
+    "peerDependenciesMeta": null,
+    "deprecated": null,
+    "dist": {
+      "integrity": "sha512-KVcNSfR2VmRtz35rxkjLxE92HlsBnbT6NsKyTcDX3ebbTKAsAiTOFO1mRM82Xbe848dnEYqNGzaD48LMEvGytw==",
+      "shasum": "df5b8ceadd8863a8cefdea2e02b40420f8126072",
+      "tarball": "https://registry.npmjs.org/miniprogram-api-typings/-/miniprogram-api-typings-5.2.3.tgz",
+      "fileCount": 26,
+      "unpackedSize": 2522942,
+      "attestations": {
+        "url": "https://registry.npmjs.org/-/npm/v1/attestations/miniprogram-api-typings@5.2.3",
+        "provenance": {
+          "predicateType": "https://slsa.dev/provenance/v1"
+        }
+      },
+      "signatures": [
+        {
+          "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U",
+          "sig": "MEUCIE0RJk81dimGRzm+gl1DJvbf3aFQFgHcr7oD02PLAc++AiEAqQl6r2jQ4DMOytjBm+EKvTYM7HOUpEw57dCoEJ6Q4nA="
+        }
+      ]
+    },
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/wechat-miniprogram/api-typings.git"
+    },
+    "source": "https://registry.npmjs.org/miniprogram-api-typings/5.2.3"
+  },
+  {
+    "name": "miniprogram-ci",
+    "version": "2.1.48",
+    "query_date": "2026-10-07",
+    "published": "2026-09-30T04:03:27.042Z",
+    "engines": {
+      "node": ">=16.1.0"
+    },
+    "peerDependencies": null,
+    "peerDependenciesMeta": null,
+    "deprecated": null,
+    "dist": {
+      "shasum": "cc528bd5f44bd718afbfc1fc2c001b43b5f25d79",
+      "tarball": "https://registry.npmjs.org/miniprogram-ci/-/miniprogram-ci-2.1.48.tgz",
+      "fileCount": 1091,
+      "integrity": "sha512-GYc5tyLihWiwk/m79tGJeqY53PRlUMcaPuM1tn4m0jFRP9FEiv17syASKrv7wNIgQ4dzpgsDVTcxfyvOimzmew==",
+      "signatures": [
+        {
+          "sig": "MEUCIEqWW8u8Dgic7JLgSvPMOGEyEVdVqxvXCsYJpzOnUaYKAiEA9fD2sBFBbo0Gx5hoaxI6LVhR/LHhNSDNOXAkdsj1BJI=",
+          "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+        },
+        {
+          "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U",
+          "sig": "MEYCIQDr6LbZ5IksR5erqlMyr59WIRh2HJL6OpmJq3T6B4TiGwIhAL+vw2nLOrHr/LCYFJXCzCOhXPUTxN7U0SWkNRlUtRhs"
+        }
+      ],
+      "attestations": {
+        "url": "https://registry.npmjs.org/-/npm/v1/attestations/miniprogram-ci@2.1.48",
+        "provenance": {
+          "predicateType": "https://slsa.dev/provenance/v1"
+        }
+      },
+      "unpackedSize": 10597500
+    },
+    "repository": {
+      "url": "git+https://github.com/wechat-miniprogram/miniprogram-ci-dist.git",
+      "type": "git"
+    },
+    "source": "https://registry.npmjs.org/miniprogram-ci/2.1.48"
+  },
+  {
+    "name": "vite",
+    "version": "7.3.7",
+    "query_date": "2026-10-07",
+    "published": "2026-10-06T05:11:19.017Z",
+    "engines": {
+      "node": "^20.19.0 || >=22.12.0"
+    },
+    "peerDependencies": {
+      "tsx": "^4.8.1",
+      "jiti": ">=1.21.0",
+      "less": "^4.0.0",
+      "sass": "^1.70.0",
+      "yaml": "^2.4.2",
+      "stylus": ">=0.54.8",
+      "terser": "^5.16.0",
+      "sugarss": "^5.0.0",
+      "@types/node": "^20.19.0 || >=22.12.0",
+      "lightningcss": "^1.21.0",
+      "sass-embedded": "^1.70.0"
+    },
+    "peerDependenciesMeta": {
+      "tsx": {
+        "optional": true
+      },
+      "jiti": {
+        "optional": true
+      },
+      "less": {
+        "optional": true
+      },
+      "sass": {
+        "optional": true
+      },
+      "yaml": {
+        "optional": true
+      },
+      "stylus": {
+        "optional": true
+      },
+      "terser": {
+        "optional": true
+      },
+      "sugarss": {
+        "optional": true
+      },
+      "@types/node": {
+        "optional": true
+      },
+      "lightningcss": {
+        "optional": true
+      },
+      "sass-embedded": {
+        "optional": true
+      }
+    },
+    "deprecated": null,
+    "dist": {
+      "shasum": "017a80fdce051003a4aa290dddd0b159aa769282",
+      "tarball": "https://registry.npmjs.org/vite/-/vite-7.3.7.tgz",
+      "fileCount": 39,
+      "integrity": "sha512-AHEzTORMbi7/7aXp7w7KZ5+DCUdSeLsJz0grY8xHpc9DHdYb0vQu6DqJfm2tOw3gDExNgPgnJTXxM6syYFHaCA==",
+      "signatures": [
+        {
+          "sig": "MEUCIE7zq1k7RksYq5+WNotYAMAzXHuTUpNTOfagoX21zLsCAiEAipiLz1Jr0Pw0alELJgtnMK8hIUabyDK6dDwr2MP4kyk=",
+          "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+        },
+        {
+          "sig": "MEQCIAlbWM0p47ihel9W4BGvqJPllTi0cz+dCl0sep5ogYRJAiBmariJbeYJ8lso7O2VocXQQ2EFoDMiORhl6Fl9AzvuPg==",
+          "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+        }
+      ],
+      "attestations": {
+        "url": "https://registry.npmjs.org/-/npm/v1/attestations/vite@7.3.7",
+        "provenance": {
+          "predicateType": "https://slsa.dev/provenance/v1"
+        }
+      },
+      "unpackedSize": 2244268
+    },
+    "repository": {
+      "url": "git+https://github.com/vitejs/vite.git",
+      "type": "git",
+      "directory": "packages/vite"
+    },
+    "source": "https://registry.npmjs.org/vite/7.3.7"
+  }
+]

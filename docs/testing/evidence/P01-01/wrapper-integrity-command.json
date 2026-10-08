@@ -1,0 +1,16 @@
+{
+  "id": "wrapper-with-checksum",
+  "cwd": "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/backend-probe",
+  "command": [
+    "./mvnw",
+    "--version"
+  ],
+  "environment": {
+    "JAVA_HOME": "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/tools/jdk-21.0.12.1+1/Contents/Home",
+    "MAVEN_USER_HOME": "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/wrapper-check",
+    "PATH": "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/tools/jdk-21.0.12.1+1/Contents/Home/bin:/usr/bin:/bin"
+  },
+  "exit_code": 0,
+  "result": "PASS",
+  "log": "wrapper-with-checksum.log"
+}

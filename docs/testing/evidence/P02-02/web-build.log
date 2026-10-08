@@ -1,0 +1,22 @@
+
+> pet-platform@0.0.0 build:web /Users/kimwell/work/pet-platform
+> pnpm --filter @pet/admin-web build
+
+
+> @pet/admin-web@0.0.0 build /Users/kimwell/work/pet-platform/apps/admin-web
+> tsc --noEmit && vite build
+
+vite.config.ts(5,29): error TS2769: No overload matches this call.
+  The last overload gave the following error.
+    Argument of type '({ mode, command, isPreview }: ConfigEnv) => { plugins: Plugin<any>[][]; server: { host: string; port: number; strictPort: true; proxy: { '/api': { target: string; changeOrigin: boolean; }; } | { '/api'?: undefined; }; }; preview: { ...; }; }' is not assignable to parameter of type 'UserConfigExport'.
+      Type '({ mode, command, isPreview }: ConfigEnv) => { plugins: Plugin<any>[][]; server: { host: string; port: number; strictPort: true; proxy: { '/api': { target: string; changeOrigin: boolean; }; } | { '/api'?: undefined; }; }; preview: { ...; }; }' is not assignable to type 'UserConfigFnObject'.
+        Call signature return types '{ plugins: Plugin<any>[][]; server: { host: string; port: number; strictPort: true; proxy: { '/api': { target: string; changeOrigin: boolean; }; } | { '/api'?: undefined; }; }; preview: { host: string; port: number; strictPort: true; proxy: {}; }; }' and 'UserConfig' are incompatible.
+          The types of 'server.proxy' are incompatible between these types.
+            Type '{ '/api': { target: string; changeOrigin: boolean; }; } | { '/api'?: undefined; }' is not assignable to type 'Record<string, string | ProxyOptions> | undefined'.
+              Type '{ '/api'?: undefined; }' is not assignable to type 'Record<string, string | ProxyOptions>'.
+                Property ''/api'' is incompatible with index signature.
+                  Type 'undefined' is not assignable to type 'string | ProxyOptions'.
+/Users/kimwell/work/pet-platform/apps/admin-web:
+ ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL  @pet/admin-web@0.0.0 build: `tsc --noEmit && vite build`
+Exit status 2
+ ELIFECYCLE  Command failed with exit code 2.

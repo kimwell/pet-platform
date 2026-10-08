@@ -1,0 +1,15 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ---------------< com.pet.platform:pet-platform-backend >----------------
+[INFO] Building pet-platform-backend 0.0.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- dependency:3.9.0:tree (default-cli) @ pet-platform-backend ---
+[INFO] Wrote dependency tree to: /Users/kimwell/work/pet-platform/docs/testing/evidence/P03-01/backend-dependency-tree.txt
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  1.278 s
+[INFO] Finished at: 2026-10-08T08:31:40+08:00
+[INFO] ------------------------------------------------------------------------

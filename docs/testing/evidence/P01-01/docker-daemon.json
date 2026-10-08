@@ -1,0 +1,10 @@
+{
+  "command": [
+    "docker",
+    "info",
+    "--format",
+    "{{.ServerVersion}}"
+  ],
+  "exit_code": 0,
+  "output": "29.4.0\n"
+}

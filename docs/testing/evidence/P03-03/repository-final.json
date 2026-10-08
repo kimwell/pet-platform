@@ -1,0 +1,15 @@
+{
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "argv": [
+    "pnpm",
+    "check:repo"
+  ],
+  "exitCode": 0,
+  "startedAtUTC": "2026-10-08T01:42:12.542851+00:00",
+  "finishedAtUTC": "2026-10-08T01:42:13.023690+00:00",
+  "toolchain": {
+    "JAVA_HOME": "/private/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/pet-platform-p02-02-_qb1x3n7/tools/jdk/jdk-21.0.12.1+1/Contents/Home"
+  },
+  "log": "repository-final.log",
+  "summary": "\n> pet-platform@0.0.0 check:repo /Users/kimwell/work/pet-platform\n> node scripts/check-repository.mjs && node scripts/check-miniprogram.mjs\n\n单锁、精确直接依赖、工具链、固定后端入口及秘密特征检查通过。秘密检查不输出匹配值。\n原生小程序结构、页面和官方组件引用检查通过；这不是开发者工具编译。\n"
+}

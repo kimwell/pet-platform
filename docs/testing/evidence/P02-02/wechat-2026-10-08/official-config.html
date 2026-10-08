@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="cn">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>项目配置文件 | 微信开放文档</title>
+    <meta name="description" content="微信开发者平台文档">
+    <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="keywords" content="微信官方文档">
+  <link rel="shortcut icon" type="image/x-icon" href="https://res.wx.qq.com/a/wx_fed/assets/res/NTI4MWU5.ico">
+  <link rel="mask-icon" color="#4C4C4C" href="https://res.wx.qq.com/a/wx_fed/assets/res/MjliNWVm.svg">
+  <link rel="apple-touch-icon-precomposed" href="https://res.wx.qq.com/a/wx_fed/assets/res/OTE0YTAw.png">
+  <script>
+(function () {
+  'use strict';
+
+  const SCRIPT_URLs = [
+      'https://dldir1.qq.com/WechatWebDev/devPlatform/px.min.js',
+      'https://dev.weixin.qq.com/platform-console/proxy/assets/tel/px.min.js',
+  ];
+  const param = {
+      maskMode: 'no-mask', // 隐私策略, all-mask 或 no-mask, 详见：https://dev.weixin.qq.com/docs/analysis/sdk/docs.html
+      recordCanvas: false,  // 若要采集canvas, 设为true
+      projectId: 'wxef34f91ddab0c534-0HLdQNKAk-dzsFsA', // 项目 ID，需替换为体验分析项目 ID
+      iframe: false, // 是否采集 iframe 页面
+      console: true, // 是否采集 console 输出的错误日志
+      network: true, // 是否采集网络错误
+  };
+  function loadScript(url) {
+      return new Promise((resolve, reject) => {
+          const scriptEle = document.createElement('script');
+          scriptEle.type = 'text/javascript';
+          scriptEle.async = true;
+          scriptEle.src = url;
+          scriptEle.onload = () => {
+              resolve(url);
+          };
+          scriptEle.onerror = () => {
+              reject(new Error('Script load error'));
+          };
+          document.head.appendChild(scriptEle);
+      });
+  }
+  async function main() {
+      try {
+          sessionStorage.setItem('wxobs_start_timestamp', String(Date.now()));
+          const fastestUrl = await Promise.race(SCRIPT_URLs.map(url => loadScript(url)));
+          window.__startPX && window.__startPX(param);
+      }
+      catch (error) {
+          console.error('Error loading scripts:', error);
+      }
+  }
+  main();
+
+})();
+        </script>
+    
+    <link rel="preload" href="https://res.wx.qq.com/wxdoc/dist/assets/css/0.styles.a0bc5a85.css" as="style"><link rel="preload" href="https://res.wx.qq.com/wxdoc/dist/assets/js/app.867efb11.js" as="script"><link rel="preload" href="https://res.wx.qq.com/wxdoc/dist/assets/js/2360.97ebe703.js" as="script">
+    <link rel="stylesheet" href="https://res.wx.qq.com/wxdoc/dist/assets/css/0.styles.a0bc5a85.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><div class="theme-container"><header class="navbar navbar_with-link"><div class="navbar__left"><a href="/doc/" class="home-link"><div class="logo__wrp"><span class="logo__icon"></span></div></a> <span class="dot"></span> <div class="dropdown-wrapper"><a class="dropdown-title"><span class="title">小程序</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item selected"><!----> <a href="/miniprogram/dev/framework/" class="nav-link external">
+  小程序
+</a></li><li class="dropdown-item"><!----> <a href="/minigame/introduction/" class="nav-link external">
+  小游戏
+</a></li><li class="dropdown-item"><!----> <a href="/doc/subscription/guide/" class="nav-link external">
+  公众号
+</a></li><li class="dropdown-item"><!----> <a href="/doc/service/guide/" class="nav-link external">
+  服务号
+</a></li><li class="dropdown-item"><!----> <a href="/doc/oplatform/open/intro.html" class="nav-link external">
+  开放平台
+</a></li><li class="dropdown-item"><!----> <a href="https://work.weixin.qq.com/api/doc" class="nav-link external">
+  企业微信
+</a></li><li class="dropdown-item"><!----> <a href="https://pay.weixin.qq.com/doc/v3/merchant/4012062524" class="nav-link external">
+  微信支付
+</a></li><li class="dropdown-item"><!----> <a href="/doc/channels/" class="nav-link external">
+  视频号
+</a></li><li class="dropdown-item"><!----> <a href="/doc/store/shop/" class="nav-link external">
+  微信小店
+</a></li><li class="dropdown-item"><!----> <a href="/doc/aispeech/platform/INTRODUCTION.html" class="nav-link external">
+  智能对话
+</a></li><li class="dropdown-item"><!----> <a href="/doc/xwei/xiaowei-introduction/Introduction.html" class="nav-link external">
+  腾讯小微
+</a></li><li class="dropdown-item"><!----> <a href="/doc/edu/introduction.html" class="nav-link external">
+  教育平台
+</a></li></ul></div></div> <div class="navbar__center"><nav class="nav-links"><div class="nav-item selected"><a href="/miniprogram/dev/framework/" class="nav-link external">
+  开发
+</a></div><div class="nav-item"><a href="/miniprogram/introduction/" class="nav-link external">
+  介绍
+</a></div><div class="nav-item"><a href="/miniprogram/design/" class="nav-link external">
+  设计
+</a></div><div class="nav-item"><a href="/miniprogram/product/" class="nav-link external">
+  运营
+</a></div><div class="nav-item"><a href="/miniprogram/analysis/wedata/intro/" class="nav-link external">
+  数据
+</a></div><div class="nav-item"><a href="/miniprogram/security/basic/" class="nav-link external">
+  安全
+</a></div></nav></div> <div class="navbar__right"><nav class="nav-links"><div class="nav-item community-item"><a href="https://developers.weixin.qq.com/community/develop/mixflow" target="_blank" class="nav-link external">
+  社区
+</a></div><div class="nav-item community-item"><a href="https://developers.weixin.qq.com/community/business" target="_blank" class="nav-link external">
+  学堂
+</a></div></nav> <ul class="lang-tab"><li class="lang-tab__icon"><img src="https://res.wx.qq.com/t/components/icons/base/translate_regular.svg"></li></ul> <div class="search__wrp-flex"><div class="search__input"><div class="weui-desktop-search"><button class="weui-desktop-icon-btn weui-desktop-search__btn weui-desktop-icon-btn__width"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M15.4529 16.4014C14.2428 17.4001 12.6915 18 11 18C7.134 18 4 14.866 4 11C4 7.134 7.134 4 11 4C14.866 4 18 7.134 18 11C18 12.7425 17.3633 14.3363 16.3099 15.5614L20.4243 19.6757L19.5757 20.5243L15.4529 16.4014ZM16.8 11C16.8 14.2033 14.2033 16.8 11 16.8C7.79674 16.8 5.2 14.2033 5.2 11C5.2 7.79676 7.79674 5.20001 11 5.20001C14.2033 5.20001 16.8 7.79676 16.8 11Z" fill="black"></path></svg></button></div> <a href="javascript:;" class="search-back__btn">取消</a></div> <div class="reco-list__wrp" style="display:none;"><ul class="reco__list"></ul> <div class="show-more"><a href="/doc/search?source=more&amp;query=&amp;doc_type=miniprogram&amp;jumpbackUrl=%2Fdoc%2F" class="reco-item__link">查看更多 </a></div></div> <div class="reco-list__wrp" style="display:none;"><div class="show-more"><a href="/doc/search?source=more&amp;query=&amp;doc_type=miniprogram&amp;jumpbackUrl=%2Fdoc%2F" class="reco-item__link">在小程序下暂无结果，查看其它业务相关内容 &gt; </a></div></div></div></div></header> <div class="subnavbar"><ul class="subnavbar__list"><li class="subnavbar__item" style="display:;"><div class="dropdown-subnavbar-title"><a href="/miniprogram/dev/framework/" target="_self">
+          指南
+          </a> <!----></div> <!----></li><li class="subnavbar__item" style="display:;"><div class="dropdown-subnavbar-title"><a href="/miniprogram/dev/reference/" target="_self">
+          框架
+          </a> <!----></div> <!----></li><li class="subnavbar__item" style="display:;"><div class="dropdown-subnavbar-title"><a href="/miniprogram/dev/component/" target="_self">
+          组件
+          </a> <!----></div> <!----></li><li class="subnavbar__item" style="display:;"><div class="dropdown-subnavbar-title"><a href="/miniprogram/dev/api/" target="_self">
+          API
+          </a> <!----></div> <!----></li><li class="subnavbar__item" style="display:;"><div class="dropdown-subnavbar-title"><a href="/miniprogram/dev/server/API/" target="_self">
+          服务端
+          </a> <!----></div> <!----></li><li class="subnavbar__item dropdown-subnavbar" style="display:;"><div class="dropdown-subnavbar-title"><a>平台能力</a> <span class="arrow right dropdown-subnavbar-select"></span></div> <ul class="dropdown-subnavbar-ul"><li class="dropdown-item" style="display:;"><a href="/miniprogram/dev/platform-capabilities/industry/" target="_self" class="nav-link external">
+            行业能力
+          </a></li><li class="dropdown-item" style="display:;"><a href="/miniprogram/dev/platform-capabilities/business-capabilities/" target="_self" class="nav-link external">
+            商业能力
+          </a></li><li class="dropdown-item" style="display:;"><a href="/miniprogram/dev/platform-capabilities/miniapp/intro/intro" target="_self" class="nav-link external">
+            多端能力
+          </a></li><li class="dropdown-item" style="display:;"><a href="/miniprogram/dev/platform-capabilities/service-market/" target="_self" class="nav-link external">
+            服务市场
+          </a></li><li class="dropdown-item" style="display:;"><a href="/miniprogram/dev/platform-capabilities/cityservice/" target="_self" class="nav-link external">
+            城市服务
+          </a></li><li class="dropdown-item" style="display:;"><a href="/miniprogram/dev/platform-capabilities/charge/" target="_self" class="nav-link external">
+            付费能力
+          </a></li><li class="dropdown-item" style="display:;"><a href="/miniprogram/dev/platform-capabilities/extended/" target="_self" class="nav-link external">
+            拓展能力
+          </a></li></ul></li><li class="subnavbar__item selected" style="display:;"><div class="dropdown-subnavbar-title"><a href="/miniprogram/dev/devtools/devtools" target="_self">
+          工具
+          </a> <!----></div> <!----></li><li class="subnavbar__item dropdown-subnavbar" style="display:;"><div class="dropdown-subnavbar-title"><a>云服务</a> <span class="arrow right dropdown-subnavbar-select"></span></div> <ul class="dropdown-subnavbar-ul"><li class="dropdown-item" style="display:;"><a href="/miniprogram/dev/wxcloudservice/wxcloud/basis/getting-started" target="_self" class="nav-link external">
+            云开发
+          </a></li><li class="dropdown-item" style="display:;"><a href="/miniprogram/dev/wxcloudservice/wxcloudrun/src/" target="_self" class="nav-link external">
+            云托管
+          </a></li></ul></li><li class="subnavbar__item" style="display:;"><div class="dropdown-subnavbar-title"><a href="/miniprogram/dev/ai/guide" target="_self">
+          AI 能力
+          </a> <!----></div> <!----></li></ul></div> <div class="mobile-links__wrp"><div class="mobile-links_mobile"><a href="javascript:;" class="mobile-links__btn">开发</a></div> <div class="mobile-links__panel"><div class="links-panel__bd"><nav class="nav-links"><div class="nav-item selected"><a href="/miniprogram/dev/framework/" class="nav-link external">
+  开发
+</a></div><div class="nav-item"><a href="/miniprogram/introduction/" class="nav-link external">
+  介绍
+</a></div><div class="nav-item"><a href="/miniprogram/design/" class="nav-link external">
+  设计
+</a></div><div class="nav-item"><a href="/miniprogram/product/" class="nav-link external">
+  运营
+</a></div><div class="nav-item"><a href="/miniprogram/analysis/wedata/intro/" class="nav-link external">
+  数据
+</a></div><div class="nav-item"><a href="/miniprogram/security/basic/" class="nav-link external">
+  安全
+</a></div></nav></div> <div class="links-panel__ft"><ul class="lang-tab"><li class="lang-tab__icon"><img src="https://res.wx.qq.com/t/components/icons/base/translate_regular.svg"></li></ul></div></div> <div><div class="weui-mask" style="display:none;"></div> <div class="weui-actionsheet "><!----> <div class="weui-actionsheet__menu"><div class="weui-actionsheet__cell">中文</div><div class="weui-actionsheet__cell">EN</div></div> <div class="weui-actionsheet__action"><div class="weui-actionsheet__cell">取消</div></div></div></div></div> <a href="javascript:;" class="mobile-search-btn"></a> <div class="main-container" style="margin-top:144px;"><div class="main-contontaier__bd" style="min-height:0px;"><div class="sidebar__wrp"><div class="sidebar-cell_mobile"><li class="subnavbar__item selected"><a href="javascript:;" target="_self">工具</a></li></div> <aside class="sidebar" style="top:144px;"> <div class="TreeNavigation"><div class="NavigationLevel NavigationLevel--level-0"><ul><li><span class="NavigationItem"><!----> <a href="/miniprogram/dev/devtools/devtools.html" class="NavigationItem__router-link">
+      概览
+    <!----></a> <!----> <!----></span></li><li><div class="NavigationLevel NavigationLevel--closed NavigationLevel--level-1"><div class="NavigationLevel__parent"><span class="NavigationToggle NavigationToggle--closed"><span class="NavigationToggle__icon NavigationToggle__icon--closed"></span></span> <span class="NavigationItem"><!----> <a href="/miniprogram/dev/devtools/page.html" class="NavigationItem__router-link">
+      界面
+    <!----></a> <!----> <!----></span></div> <ul class="NavigationLevel__children"><li><span class="NavigationItem"><!----> <a href="/miniprogram/dev/devtools/page.html#启动页" class="NavigationItem__router-link">
+      启动页
+    <!----></a> <!----> <!----></span></li><li><span class="NavigationItem"><!----> <a href="/miniprogram/dev/devtools/page.html#主界面" class="NavigationItem__router-link">
+      主界面
+    <!----></a> <!----> <!----></span></li><li><span class="NavigationItem"><!----> <a href="/miniprogram/dev/devtools/page.html#菜单栏" class="NavigationItem__router-link">
+      菜单栏
+    <!----></a> <!----> <!----></span></li><li><span class="NavigationItem"><!----> <a href="/miniprogram/dev/devtools/page.html#工具栏" class="NavigationItem__router-link">
+      工具栏
+    <!----></a> <!----> <!----></span></li><li><span class="NavigationItem"><!----> <a href="/miniprogram/dev/devtools/page.html#工具栏管理" class="NavigationItem__router-link">
+      工具栏管理
+    <!----></a> <!----> <!----></span></li><li><span class="NavigationItem"><!----> <a href="/miniprogram/dev/devtools/page.html#模拟器" class="NavigationItem__router-link">
+      模拟器
+    <!----></a> <!----> <!----></span></li><li><span class="NavigationItem"><!----> <a href="/miniprogram/dev/devtools/page.html#独立窗口" class="NavigationItem__router-link">
+      独立窗口
+    <!----></a> <!----> <!----></span></li><li><div class="NavigationLevel NavigationLevel--closed NavigationLevel--level-2"><div class="NavigationLevel__parent"><span class="NavigationToggle NavigationToggle--closed"><span class="NavigationToggle__icon NavigationToggle__icon--closed"></span></span> <span class="NavigationItem"><!----> <a href="/miniprogram/dev/devtools/project.html" class="NavigationItem__router-link">
+      项目页卡
+    <!----></a> <!----> <!----></span></div> <ul class="NavigationLevel__children"><li><span class="NavigationItem"><!----> <a href="/miniprogram/dev/devtools/project.html#基本信息" class="NavigationItem__router-link">
+      基本信息
+    <!----></a> <!----> <!----></span></li><li><span class="NavigationItem"><!----> <a href="/miniprogram/dev/devtools/project.html#本地设置" class="NavigationItem__router-link">
+      本地设置
+    <!----></a> <!----> <!----></span></li><li><span class="NavigationItem"><!----> <a href="/miniprogram/dev/devtools/project.html#项目设置" class="NavigationItem__router-link">
+      项目设置
+    <!----></a> <!----> <!----></span></li></ul></div></li></ul></div></li><li><div class="NavigationLevel NavigationLevel--closed NavigationLevel--level-1"><div class="NavigationLevel__parent"><span class="NavigationToggle NavigationToggle--closed"><span class="NavigationToggle__icon NavigationToggle__icon--closed"></span></span> <span class="NavigationItem"><!----> <a href="/miniprogram/dev/devtools/settings.html" class="NavigationItem__router-link">
+      设置
+    <!----></a> <!----> <!----></span></div> <ul class="NavigationLevel__children"><li><span class="NavigationItem"><!----> <a href="/miniprogram/dev/devtools/settings.html#通用设置" class="NavigationItem__router-link">
+      通用设置
+    <!----></a> <!----> <!----></span></li><li><span class="NavigationItem"><!----> <a href="/miniprogram/dev/devtools/settings.html#外观设置" class="NavigationItem__router-link">
+      外观设置
+    <!----></a> <!----> <!----></span></li><li><span class="NavigationItem"><!----> <a href="/miniprogram/dev/devtools/settings.html#编辑设置" class="NavigationItem__router-link">
+      编辑设置
+    <!----></a> <!----> <!----></span></li><li><span class="NavigationItem"><!----> <a href="/miniprogram/dev/devtools/settings.html#代理设置" class="NavigationItem__router-link">
+      代理设置
+    <!----></a> <!----> <!----></span></li><li><span class="NavigationItem"><!----> <a href="/miniprogram/dev/devtools/settings.html#安全设置" class="NavigationItem__router-link">
+      安全设置
+    <!----></a> <!----> <!----></span></li><li><span class="NavigationItem"><!----> <a href="/miniprogram/dev/devtools/shortcut.html" class="NavigationItem__router-link">
+      快捷键设置
+    <!----></a> <!----> <!----></span></li><li><span class="NavigationItem"><!----> <a href="/miniprogram/dev/devtools/settings-sync.html" class="NavigationItem__router-link">
+      云同步设置
+    <!----></a> <!----> <!----></span></li><li><span class="NavigationItem"><!----> <a href="/miniprogram/dev/devtools/projectconfig.html" aria-current="page" class="NavigationItem__router-link router-link-exact-active router-link-active">
+      项目配置文件
+    <!----></a> <!----> <!----></span></li></ul></div></li><li><div class="NavigationLevel NavigationLevel--closed NavigationLevel--level-1"><div class="NavigationLevel__parent"><span class="NavigationToggle NavigationToggle--closed"><span class="NavigationToggle__icon NavigationToggle__icon--closed"></span></span> <span class="NavigationItem"><!----> <a href="/miniprogram/dev/devtools/edit.html" class="NavigationItem__router-link">
+      代码编辑
+    <!----></a> <!----> <!----></span></div> <ul class="NavigationLevel__children"><li><span class="NavigationItem"><!----> <a href="/miniprogram/dev/devtools/edit.html#文件格式" class="NavigationItem__router-link">
+      文件格式
+    <!----></a> <!----> <!----></span></li><li><span class="NavigationItem"><!----> <a href="/miniprogram/dev/devtools/edit.html#文件支持" class="NavigationItem__router-link">
+      文件类型
+    <!----></a> <!----> <!----></span></li><li><span class="NavigationItem"><!----> <a href="/miniprogram/dev/devtools/edit.html#自动补全" class="NavigationItem__router-link">
+      自动补全
+    <!----></a> <!----> <!----></span></li><li><span class="NavigationItem"><!----> <a href="/miniprogram/dev/devtools/edit.html#TypeScript-支持" class="NavigationItem__router-link">
+      TypeScript 支持
+    <!----></a> <!----> <!----></span></li><li><span class="NavigationItem"><!----> <a href="/miniprogram/dev/devtools/edit.html#Git-状态展示" class="NavigationItem__router-link">
+      Git 状态展示
+    <!----></a> <!----> <!----></span></li><li><span class="NavigationItem"><!----> <a href="/miniprogram/dev/devtools/editorextensions.html" class="NavigationItem__router-link">
+      编辑器扩展
+    <!----></a> <!----> <!----></span></li></ul></div></li><li><div class="NavigationLevel NavigationLevel--closed NavigationLevel--level-1"><div class="NavigationLevel__parent"><span class="NavigationToggle NavigationToggle--closed"><span class="NavigationToggle__icon NavigationToggle__icon--closed"></span></span> <span class="NavigationItem"><!----> <a href="/miniprogram/dev/devtools/debug.html" class="NavigationItem__router-link">
+      小程序调试
+    <!----></a> <!----> <!----></span></div> <ul class="NavigationLevel__children"><li><span class="NavigationItem"><!----> <a href="/miniprogram/dev/devtools/debug.html#模拟器" class="NavigationItem__router-link">
+      模拟器
+    <!----></a> <!----> <!----></span></li><li><span class="NavigationItem"><!----> <a href="/miniprogram/dev/devtools/debug.html#自定义编译" class="NavigationItem__router-link">
+      自定义编译
+    <!----></a> <!----> <!----></span></li><li><span class="NavigationItem"><!----> <a href="/miniprogram/dev/devtools/debug.html#自定义预处理" class="NavigationItem__router-link">
+      自定义预处理
+    <!----></a> <!----> <!----></span></li><li><span class="NavigationItem"><!----> <a href="/miniprogram/dev/devtools/debug.html#模拟操作" class="NavigationItem__router-link">
+      模拟操作
+    <!----></a> <!----> <!----></span></li><li><div class="NavigationLevel NavigationLevel--closed NavigationLevel--level-2"><div class="NavigationLevel__parent"><span class="NavigationToggle NavigationToggle--closed"><span class="NavigationToggle__icon NavigationToggle__icon--closed"></span></span> <span class="NavigationItem"><!----> <a href="/miniprogram/dev/devtools/debug.html#调试工具" class="NavigationItem__router-link">
+      调试工具
+    <!----></a> <!----> <!----></span></div> <ul class="NavigationLevel__children"><li><span class="NavigationItem"><!----> <a href="/miniprogram/dev/devtools/debug.html#Wxml-panel" class="NavigationItem__router-link">
+      Wxml Panel
+    <!----></a> <!----> <!----></span></li><li><span class="NavigationItem"><!----> <a href="/miniprogram/dev/devtools/debug.html#Sources-panel" class="NavigationItem__router-link">
+      Sources Panel
+    <!----></a> <!----> <!----></span></li><li><span class="NavigationItem"><!----> <a href="/miniprogram/dev/devtools/debug.html#AppData-panel" class="NavigationItem__router-link">
+      AppData Panel
+    <!----></a> <!----> <!----></span></li><li><span class="NavigationItem"><!----> <a href="/miniprogram/dev/devtools/debug.html#Storage-panel" class="NavigationItem__router-link">
+      Storage Panel
+    <!----></a> <!----> <!----></span></li><li><span class="NavigationItem"><!----> <a href="/miniprogram/dev/devtools/debug.html#Network-panel" class="NavigationItem__router-link">
+      Network Panel
+    <!----></a> <!----> <!----></span></li><li><span class="NavigationItem"><!----> <a href="/miniprogram/dev/devtools/debug.html#Console-panel" class="NavigationItem__router-link">
+      Console Panel
+    <!----></a> <!----> <!----></span></li><li><span class="NavigationItem"><!----> <a href="/miniprogram/dev/devtools/debug.html#Sensor-panel" class="NavigationItem__router-link">
+      Sensor Panel
+    <!----></a> <!----> <!----></span></li></ul></div></li><li><span class="NavigationItem"><!----> <a href="/miniprogram/dev/devtools/debug.html#自动预览" class="NavigationItem__router-link">
+      自动预览
+    <!----></a> <!----> <!----></span></li><li><span class="NavigationItem"><!----> <!----> <!----> <a href="https://developers.weixin.qq.com/miniprogram/dev/framework/usability/sourceMap.html" target="_blank" class="NavigationItem__external-link">Source Map</a></span></li><li><span class="NavigationItem"><!----> <a href="/miniprogram/dev/devtools/different.html" class="NavigationItem__router-link">
+      特殊场景调试
+    <!----></a> <!----> <!----></span></li><li><div class="NavigationLevel NavigationLevel--closed NavigationLevel--level-2"><div class="NavigationLevel__parent"><span class="NavigationToggle NavigationToggle--closed"><span class="NavigationToggle__icon NavigationToggle__icon--closed"></span></span> <span class="NavigationItem"><!----> <a href="/miniprogram/dev/devtools/remote-debug.html" class="NavigationItem__router-link">
+      真机调试
+    <!----></a> <!----> <!----></span></div> <ul class="NavigationLevel__children"><li><span class="NavigationItem"><!----> <a href="/miniprogram/dev/devtools/remote-debug-2.html" class="NavigationItem__router-link">
+      真机调试2.0
+    <!----></a> <!----> <!----></span></li><li><span class="NavigationItem"><!----> <a href="/miniprogram/dev/devtools/remote-debug-profiler.html" class="NavigationItem__router-link">
+      真机调试性能工具
+    <!----></a> <!----> <!----></span></li></ul></div></li><li><span class="NavigationItem"><!----> <a href="/miniprogram/dev/devtools/multiaccount.html" class="NavigationItem__router-link">
+      多账号调试
+    <!----></a> <!----> <!----></span></li><li><span class="NavigationItem"><!----> <a href="/miniprogram/dev/devtools/periodic-data.html" class="NavigationItem__router-link">
+      周期性数据调试
+    <!----></a> <!----> <!----></span></li><li><span class="NavigationItem"><!----> <a href="/miniprogram/dev/devtools/prefetch-data.html" class="NavigationItem__router-link">
+      数据预拉取调试
+    <!----></a> <!----> <!----></span></li><li><span class="NavigationItem"><!----> <a href="/miniprogram/dev/devtools/event-mock.html" class="NavigationItem__router-link">
+      事件模拟
+    <!----></a> <!----> <!----></span></li></ul></div></li><li><div class="NavigationLevel NavigationLevel--closed NavigationLevel--level-1"><div class="NavigationLevel__parent"><span class="NavigationToggle NavigationToggle--closed"><span class="NavigationToggle__icon NavigationToggle__icon--closed"></span></span> <span class="NavigationItem"><!----> <a href="/miniprogram/dev/devtools/ext.html" class="NavigationItem__router-link">
+      开发模式
+    <!----></a> <!----> <!----></span></div> <ul class="NavigationLevel__children"><li><span class="NavigationItem"><!----> <a href="/miniprogram/dev/devtools/ext.html" class="NavigationItem__router-link">
+      第三方平台代开发
+    <!----></a> <!----> <!----></span></li><li><span class="NavigationItem"><!----> <a href="/miniprogram/dev/devtools/plugin.html" class="NavigationItem__router-link">
+      小程序插件开发
+    <!----></a> <!----> <!----></span></li><li><span class="NavigationItem"><!----> <a href="/miniprogram/dev/devtools/qywx-dev.html" class="NavigationItem__router-link">
+      企业微信小程序开发
+    <!----></a> <!----> <!----></span></li><li><span class="NavigationItem"><!----> <a href="/miniprogram/dev/devtools/pc-dev.html" class="NavigationItem__router-link">
+      PC 小程序开发
+    <!----></a> <!----> <!----></span></li><li><span class="NavigationItem"><!----> <a href="/miniprogram/dev/devtools/miniapp.html" class="NavigationItem__router-link">
+      多端应用开发
+    <!----></a> <!----> <!----></span></li></ul></div></li><li><div class="NavigationLevel NavigationLevel--closed NavigationLevel--level-1"><div class="NavigationLevel__parent"><span class="NavigationToggle NavigationToggle--closed"><span class="NavigationToggle__icon NavigationToggle__icon--closed"></span></span> <span class="NavigationItem"><!----> <a href="/miniprogram/dev/devtools/sandbox.html" class="NavigationItem__router-link">
+      开发辅助
+    <!----></a> <!----> <!----></span></div> <ul class="NavigationLevel__children"><li><span class="NavigationItem"><!----> <a href="/miniprogram/dev/devtools/sandbox.html" class="NavigationItem__router-link">
+      测试号
+    <!----></a> <!----> <!----></span></li><li><span class="NavigationItem"><!----> <a href="/miniprogram/dev/devtools/mydev.html" class="NavigationItem__router-link">
+      小程序助手
+    <!----></a> <!----> <!----></span></li><li><span class="NavigationItem"><!----> <a href="/miniprogram/dev/devtools/git.html" class="NavigationItem__router-link">
+      版本管理
+    <!----></a> <!----> <!----></span></li><li><span class="NavigationItem"><!----> <a href="/miniprogram/dev/devtools/wechatvcs.html" class="NavigationItem__router-link">
+      微信开发者·代码管理
+    <!----></a> <!----> <!----></span></li><li><span class="NavigationItem"><!----> <a href="/miniprogram/dev/devtools/Skills.html" class="NavigationItem__router-link">
+      工具 Skills
+    <!----></a> <!----> <!----></span></li><li><span class="NavigationItem"><!----> <a href="/miniprogram/dev/devtools/cli.html" class="NavigationItem__router-link">
+      命令行调用
+    <!----></a> <!----> <!----></span></li><li><span class="NavigationItem"><!----> <a href="/miniprogram/dev/devtools/http.html" class="NavigationItem__router-link">
+      HTTP 调用
+    <!----></a> <!----> <!----></span></li><li><span class="NavigationItem"><!----> <a href="/miniprogram/dev/devtools/npm.html" class="NavigationItem__router-link">
+      npm 支持
+    <!----></a> <!----> <!----></span></li><li><span class="NavigationItem"><!----> <a href="/miniprogram/dev/devtools/minicode.html" class="NavigationItem__router-link">
+      代码片段
+    <!----></a> <!----> <!----></span></li><li><span class="NavigationItem"><!----> <a href="/miniprogram/dev/devtools/codecompile.html" class="NavigationItem__router-link">
+      代码编译
+    <!----></a> <!----> <!----></span></li><li><span class="NavigationItem"><!----> <a href="/miniprogram/dev/devtools/search.html" class="NavigationItem__router-link">
+      文档搜索
+    <!----></a> <!----> <!----></span></li><li><span class="NavigationItem"><!----> <a href="/miniprogram/dev/devtools/profile.html" class="NavigationItem__router-link">
+      CPU Profile 支持
+    <!----></a> <!----> <!----></span></li><li><span class="NavigationItem"><!----> <a href="/miniprogram/dev/devtools/api-mock.html" class="NavigationItem__router-link">
+      API Mock
+    <!----></a> <!----> <!----></span></li><li><span class="NavigationItem"><!----> <a href="/miniprogram/dev/devtools/ci.html" class="NavigationItem__router-link">
+      miniprogram-ci
+    <!----></a> <!----> <!----></span></li><li><span class="NavigationItem"><!----> <a href="/miniprogram/dev/devtools/miniprogram-mp-ci.html" class="NavigationItem__router-link">
+      miniprogram-mp-ci
+    <!----></a> <!----> <!----></span></li><li><span class="NavigationItem"><!----> <a href="/miniprogram/dev/devtools/ffmpeg.html" class="NavigationItem__router-link">
+      音视频处理
+    <!----></a> <!----> <!----></span></li><li><span class="NavigationItem"><!----> <a href="/miniprogram/dev/devtools/skeleton.html" class="NavigationItem__router-link">
+      骨架屏
+    <!----></a> <!----> <!----></span></li><li><span class="NavigationItem"><!----> <a href="/miniprogram/dev/devtools/hotreload.html" class="NavigationItem__router-link">
+      代码热重载
+    <!----></a> <!----> <!----></span></li><li><div class="NavigationLevel NavigationLevel--closed NavigationLevel--level-2"><div class="NavigationLevel__parent"><span class="NavigationToggle NavigationToggle--closed"><span class="NavigationToggle__icon NavigationToggle__icon--closed"></span></span> <span class="NavigationItem"><!----> <a href="/miniprogram/dev/devtools/visualedit.html" class="NavigationItem__router-link">
+      可视化编辑
+    <!----></a> <!----> <!----></span></div> <ul class="NavigationLevel__children"><li><span class="NavigationItem"><!----> <a href="/miniprogram/dev/devtools/visualedit-libs.html" class="NavigationItem__router-link">
+      可视化展示第三方组件库
+    <!----></a> <!----> <!----></span></li></ul></div></li><li><span class="NavigationItem"><!----> <a href="/miniprogram/dev/devtools/codeanalyse.html" class="NavigationItem__router-link">
+      代码静态依赖分析
+    <!----></a> <!----> <!----></span></li><li><span class="NavigationItem"><!----> <a href="/miniprogram/dev/devtools/partial-compile.html" class="NavigationItem__router-link">
+      局部编译
+    <!----></a> <!----> <!----></span></li><li><span class="NavigationItem"><!----> <a href="/miniprogram/dev/devtools/compilets.html" class="NavigationItem__router-link">
+      原生支持 TypeScript
+    <!----></a> <!----> <!----></span></li><li><span class="NavigationItem"><!----> <a href="/miniprogram/dev/devtools/other-resource.html" class="NavigationItem__router-link">
+      其他开发资源
+    <!----></a> <!----> <!----></span></li></ul></div></li><li><div class="NavigationLevel NavigationLevel--closed NavigationLevel--level-1"><div class="NavigationLevel__parent"><span class="NavigationToggle NavigationToggle--closed"><span class="NavigationToggle__icon NavigationToggle__icon--closed"></span></span> <span class="NavigationItem"><!----> <a href="/miniprogram/dev/devtools/auto/" class="NavigationItem__router-link">
+      小程序自动化
+    <!----></a> <!----> <!----></span></div> <ul class="NavigationLevel__children"><li><span class="NavigationItem"><!----> <a href="/miniprogram/dev/devtools/auto/quick-start.html" class="NavigationItem__router-link">
+      快速开始
+    <!----></a> <!----> <!----></span></li><li><span class="NavigationItem"><!----> <a href="/miniprogram/dev/devtools/auto/demo.html" class="NavigationItem__router-link">
+      脚本示例
+    <!----></a> <!----> <!----></span></li><li><span class="NavigationItem"><!----> <a href="/miniprogram/dev/devtools/auto/remote.html" class="NavigationItem__router-link">
+      真机自动化
+    <!----></a> <!----> <!----></span></li><li><div class="NavigationLevel NavigationLevel--closed NavigationLevel--level-2"><div class="NavigationLevel__parent"><span class="NavigationToggle NavigationToggle--closed"><span class="NavigationToggle__icon NavigationToggle__icon--closed"></span></span> <span class="NavigationItem"><!----> <a href="/miniprogram/dev/devtools/auto/automator.html" class="NavigationItem__router-link">
+      API
+    <!----></a> <!----> <!----></span></div> <ul class="NavigationLevel__children"><li><span class="NavigationItem"><!----> <a href="/miniprogram/dev/devtools/auto/automator.html" class="NavigationItem__router-link">
+      Automator
+    <!----></a> <!----> <!----></span></li><li><span class="NavigationItem"><!----> <a href="/miniprogram/dev/devtools/auto/miniprogram.html" class="NavigationItem__router-link">
+      MiniProgram
+    <!----></a> <!----> <!----></span></li><li><span class="NavigationItem"><!----> <a href="/miniprogram/dev/devtools/auto/page.html" class="NavigationItem__router-link">
+      Page
+    <!----></a> <!----> <!----></span></li><li><span class="NavigationItem"><!----> <a href="/miniprogram/dev/devtools/auto/element.html" class="NavigationItem__router-link">
+      Element
+    <!----></a> <!----> <!----></span></li></ul></div></li><li><span class="NavigationItem"><!----> <a href="/miniprogram/dev/devtools/auto/example.html" class="NavigationItem__router-link">
+      常用示例
+    <!----></a> <!----> <!----></span></li><li><div class="NavigationLevel NavigationLevel--closed NavigationLevel--level-2"><div class="NavigationLevel__parent"><span class="NavigationToggle NavigationToggle--closed"><span class="NavigationToggle__icon NavigationToggle__icon--closed"></span></span> <span class="NavigationItem"><!----> <a href="/miniprogram/dev/devtools/auto/record.html" class="NavigationItem__router-link">
+      录制回放
+    <!----></a> <!----> <!----></span></div> <ul class="NavigationLevel__children"><li><span class="NavigationItem"><!----> <a href="/miniprogram/dev/devtools/auto/record.html" class="NavigationItem__router-link">
+      快速开始
+    <!----></a> <!----> <!----></span></li><li><span class="NavigationItem"><!----> <a href="/miniprogram/dev/devtools/auto/record_module.html" class="NavigationItem__router-link">
+      用例管理
+    <!----></a> <!----> <!----></span></li><li><span class="NavigationItem"><!----> <a href="/miniprogram/dev/devtools/auto/record_cli.html" class="NavigationItem__router-link">
+      命令行调用
+    <!----></a> <!----> <!----></span></li></ul></div></li><li><span class="NavigationItem"><!----> <a href="/miniprogram/dev/devtools/auto/faq.html" class="NavigationItem__router-link">
+      FAQ
+    <!----></a> <!----> <!----></span></li><li><span class="NavigationItem"><!----> <a href="/miniprogram/dev/devtools/auto/changelog.html" class="NavigationItem__router-link">
+      更新日志
+    <!----></a> <!----> <!----></span></li></ul></div></li><li><div class="NavigationLevel NavigationLevel--closed NavigationLevel--level-1"><div class="NavigationLevel__parent"><span class="NavigationToggle NavigationToggle--closed"><span class="NavigationToggle__icon NavigationToggle__icon--closed"></span></span> <span class="NavigationItem"><!----> <a href="/miniprogram/dev/devtools/audits.html" class="NavigationItem__router-link">
+      工具插件
+    <!----></a> <!----> <!----></span></div> <ul class="NavigationLevel__children"><li><span class="NavigationItem"><!----> <a href="/miniprogram/dev/devtools/audits.html" class="NavigationItem__router-link">
+      体验评分
+    <!----></a> <!----> <!----></span></li><li><span class="NavigationItem"><!----> <a href="/miniprogram/dev/devtools/quality.html" class="NavigationItem__router-link">
+      代码质量扫描
+    <!----></a> <!----> <!----></span></li><li><span class="NavigationItem"><!----> <a href="/miniprogram/dev/devtools/merchant_callback.html" class="NavigationItem__router-link">
+      搜索回调调试
+    <!----></a> <!----> <!----></span></li><li><span class="NavigationItem"><!----> <a href="/miniprogram/dev/devtools/sourcemap.html" class="NavigationItem__router-link">
+      sourceMap 匹配调试
+    <!----></a> <!----> <!----></span></li><li><span class="NavigationItem"><!----> <a href="/miniprogram/dev/devtools/code_obfuscation.html" class="NavigationItem__router-link">
+      代码加固
+    <!----></a> <!----> <!----></span></li><li><span class="NavigationItem"><!----> <a href="/miniprogram/dev/devtools/vulnerability.html" class="NavigationItem__router-link">
+      接口漏洞扫描
+    <!----></a> <!----> <!----></span></li><li><span class="NavigationItem"><!----> <a href="/miniprogram/dev/devtools/aria.html" class="NavigationItem__router-link">
+      无障碍访问
+    <!----></a> <!----> <!----></span></li><li><div class="NavigationLevel NavigationLevel--closed NavigationLevel--level-2"><div class="NavigationLevel__parent"><span class="NavigationToggle NavigationToggle--closed"><span class="NavigationToggle__icon NavigationToggle__icon--closed"></span></span> <span class="NavigationItem"><!----> <a href="/miniprogram/dev/devtools/minitest/" class="NavigationItem__router-link">
+      小程序云测
+    <!----></a> <!----> <!----></span></div> <ul class="NavigationLevel__children"><li><span class="NavigationItem"><!----> <a href="/miniprogram/dev/devtools/minitest/" class="NavigationItem__router-link">
+      小程序云测简介
+    <!----></a> <!----> <!----></span></li><li><span class="NavigationItem"><!----> <a href="/miniprogram/dev/devtools/minitest/fast_start.html" class="NavigationItem__router-link">
+      快速开始
+    <!----></a> <!----> <!----></span></li><li><span class="NavigationItem"><!----> <a href="/miniprogram/dev/devtools/minitest/help.html" class="NavigationItem__router-link">
+      需要帮助
+    <!----></a> <!----> <!----></span></li><li><div class="NavigationLevel NavigationLevel--closed NavigationLevel--level-3"><div class="NavigationLevel__parent"><span class="NavigationToggle NavigationToggle--closed"><span class="NavigationToggle__icon NavigationToggle__icon--closed"></span></span> <span class="NavigationItem"><!----> <a href="/miniprogram/dev/devtools/minitest/autotest.html" class="NavigationItem__router-link">
+      自动化测试
+    <!----></a> <!----> <!----></span></div> <ul class="NavigationLevel__children"><li><span class="NavigationItem"><!----> <a href="/miniprogram/dev/devtools/minitest/monkey.html" class="NavigationItem__router-link">
+      智能化Monkey
+    <!----></a> <!----> <!----></span></li><li><span class="NavigationItem"><!----> <a href="/miniprogram/dev/devtools/minitest/customize_monkey.html" class="NavigationItem__router-link">
+      智能化Monkey扩展
+    <!----></a> <!----> <!----></span></li><li><span class="NavigationItem"><!----> <a href="/miniprogram/dev/devtools/minitest/fast_monkey.html" class="NavigationItem__router-link">
+      快速Monkey
+    <!----></a> <!----> <!----></span></li><li><span class="NavigationItem"><!----> <a href="/miniprogram/dev/devtools/minitest/replay.html" class="NavigationItem__router-link">
+      录制回放
+    <!----></a> <!----> <!----></span></li><li><span class="NavigationItem"><!----> <a href="/miniprogram/dev/devtools/minitest/minium.html" class="NavigationItem__router-link">
+      自定义测试
+    <!----></a> <!----> <!----></span></li><li><span class="NavigationItem"><!----> <a href="/miniprogram/dev/devtools/minitest/upload_case.html" class="NavigationItem__router-link">
+      上传自定义用例指引
+    <!----></a> <!----> <!----></span></li><li><span class="NavigationItem"><!----> <a href="/miniprogram/dev/devtools/minitest/image_diff.html" class="NavigationItem__router-link">
+      图片对比能力
+    <!----></a> <!----> <!----></span></li></ul></div></li><li><div class="NavigationLevel NavigationLevel--closed NavigationLevel--level-3"><div class="NavigationLevel__parent"><span class="NavigationToggle NavigationToggle--closed"><span class="NavigationToggle__icon NavigationToggle__icon--closed"></span></span> <span class="NavigationItem"><!----> <a href="/miniprogram/dev/devtools/minitest/ai_autotest.html" class="NavigationItem__router-link">
+      AI自动化测试
+    <!----></a> <!----> <!----></span></div> <ul class="NavigationLevel__children"><li><span class="NavigationItem"><!----> <a href="/miniprogram/dev/devtools/minitest/ai_monkey.html" class="NavigationItem__router-link">
+      AIMonkey
+    <!----></a> <!----> <!----></span></li><li><span class="NavigationItem"><!----> <a href="/miniprogram/dev/devtools/minitest/ai_plan.html" class="NavigationItem__router-link">
+      AI自定义测试
+    <!----></a> <!----> <!----></span></li></ul></div></li><li><div class="NavigationLevel NavigationLevel--closed NavigationLevel--level-3"><div class="NavigationLevel__parent"><span class="NavigationToggle NavigationToggle--closed"><span class="NavigationToggle__icon NavigationToggle__icon--closed"></span></span> <span class="NavigationItem"><!----> <a href="/miniprogram/dev/devtools/minitest/performance.html" class="NavigationItem__router-link">
+      性能测试
+    <!----></a> <!----> <!----></span></div> <ul class="NavigationLevel__children"><li><span class="NavigationItem"><!----> <a href="/miniprogram/dev/devtools/minitest/starttime.html" class="NavigationItem__router-link">
+      启动性能分析
+    <!----></a> <!----> <!----></span></li><li><span class="NavigationItem"><!----> <a href="/miniprogram/dev/devtools/minitest/audits.html" class="NavigationItem__router-link">
+      运行时性能分析
+    <!----></a> <!----> <!----></span></li></ul></div></li><li><span class="NavigationItem"><!----> <a href="/miniprogram/dev/devtools/minitest/quality.html" class="NavigationItem__router-link">
+      小程序质检
+    <!----></a> <!----> <!----></span></li><li><span class="NavigationItem"><!----> <a href="/miniprogram/dev/devtools/minitest/pressure_test.html" class="NavigationItem__router-link">
+      压力测试
+    <!----></a> <!----> <!----></span></li><li><div class="NavigationLevel NavigationLevel--closed NavigationLevel--level-3"><div class="NavigationLevel__parent"><span class="NavigationToggle NavigationToggle--closed"><span class="NavigationToggle__icon NavigationToggle__icon--closed"></span></span> <span class="NavigationItem"><!----> <a href="/miniprogram/dev/devtools/minitest/test_account.html" class="NavigationItem__router-link">
+      微信测试账号解决方案
+    <!----></a> <!----> <!----></span></div> <ul class="NavigationLevel__children"><li><span class="NavigationItem"><!----> <a href="/miniprogram/dev/devtools/minitest/virtual_test.html" class="NavigationItem__router-link">
+      使用虚拟账号测试
+    <!----></a> <!----> <!----></span></li><li><span class="NavigationItem"><!----> <a href="/miniprogram/dev/devtools/minitest/mock_account.html" class="NavigationItem__router-link">
+      虚拟账号配置Mock信息
+    <!----></a> <!----> <!----></span></li><li><span class="NavigationItem"><!----> <a href="/miniprogram/dev/devtools/minitest/phone_mock.html" class="NavigationItem__router-link">
+      虚拟账号手机号Mock方案
+    <!----></a> <!----> <!----></span></li><li><span class="NavigationItem"><!----> <a href="/miniprogram/dev/devtools/minitest/mock_real_account.html" class="NavigationItem__router-link">
+      使用真实账号测试
+    <!----></a> <!----> <!----></span></li></ul></div></li><li><div class="NavigationLevel NavigationLevel--closed NavigationLevel--level-3"><div class="NavigationLevel__parent"><span class="NavigationToggle NavigationToggle--closed"><span class="NavigationToggle__icon NavigationToggle__icon--closed"></span></span> <span class="NavigationItem"><!----> <a href="/miniprogram/dev/devtools/minitest/buyminitest.html" class="NavigationItem__router-link">
+      购买云测
+    <!----></a> <!----> <!----></span></div> <ul class="NavigationLevel__children"><li><span class="NavigationItem"><!----> <a href="/miniprogram/dev/devtools/minitest/buytime.html" class="NavigationItem__router-link">
+      购买额外时长
+    <!----></a> <!----> <!----></span></li><li><span class="NavigationItem"><!----> <a href="/miniprogram/dev/devtools/minitest/buyphone.html" class="NavigationItem__router-link">
+      购买专有云
+    <!----></a> <!----> <!----></span></li></ul></div></li><li><div class="NavigationLevel NavigationLevel--closed NavigationLevel--level-3"><div class="NavigationLevel__parent"><span class="NavigationToggle NavigationToggle--closed"><span class="NavigationToggle__icon NavigationToggle__icon--closed"></span></span> <span class="NavigationItem"><!----> <a href="/miniprogram/dev/devtools/minitest/api_exe.html" class="NavigationItem__router-link">
+      API接口文档
+    <!----></a> <!----> <!----></span></div> <ul class="NavigationLevel__children"><li><span class="NavigationItem"><!----> <a href="/miniprogram/dev/devtools/minitest/api_exe.html" class="NavigationItem__router-link">
+      接口说明
+    <!----></a> <!----> <!----></span></li><li><span class="NavigationItem"><!----> <a href="/miniprogram/dev/devtools/minitest/api_account.html" class="NavigationItem__router-link">
+      测试账号
+    <!----></a> <!----> <!----></span></li><li><span class="NavigationItem"><!----> <a href="/miniprogram/dev/devtools/minitest/api_plan.html" class="NavigationItem__router-link">
+      测试任务
+    <!----></a> <!----> <!----></span></li><li><span class="NavigationItem"><!----> <a href="/miniprogram/dev/devtools/minitest/api_union_plan.html" class="NavigationItem__router-link">
+      质检任务
+    <!----></a> <!----> <!----></span></li><li><span class="NavigationItem"><!----> <a href="/miniprogram/dev/devtools/minitest/api_test_plan.html" class="NavigationItem__router-link">
+      测试计划
+    <!----></a> <!----> <!----></span></li><li><span class="NavigationItem"><!----> <a href="/miniprogram/dev/devtools/minitest/api_case.html" class="NavigationItem__router-link">
+      测试用例
+    <!----></a> <!----> <!----></span></li><li><span class="NavigationItem"><!----> <a href="/miniprogram/dev/devtools/minitest/api_image_diff.html" class="NavigationItem__router-link">
+      图片对比
+    <!----></a> <!----> <!----></span></li><li><span class="NavigationItem"><!----> <a href="/miniprogram/dev/devtools/minitest/api_source.html" class="NavigationItem__router-link">
+      上传SourceMap
+    <!----></a> <!----> <!----></span></li><li><span class="NavigationItem"><!----> <a href="/miniprogram/dev/devtools/minitest/api_device.html" class="NavigationItem__router-link">
+      获取机型列表
+    <!----></a> <!----> <!----></span></li></ul></div></li><li><div class="NavigationLevel NavigationLevel--closed NavigationLevel--level-3"><div class="NavigationLevel__parent"><span class="NavigationToggle NavigationToggle--closed"><span class="NavigationToggle__icon NavigationToggle__icon--closed"></span></span> <span class="NavigationItem"><!----> <a href="/miniprogram/dev/devtools/minitest/preview_test.html" class="NavigationItem__router-link">
+      其他说明
+    <!----></a> <!----> <!----></span></div> <ul class="NavigationLevel__children"><li><span class="NavigationItem"><!----> <a href="/miniprogram/dev/devtools/minitest/preview_test.html" class="NavigationItem__router-link">
+      使用开发中版提测指引
+    <!----></a> <!----> <!----></span></li><li><span class="NavigationItem"><!----> <a href="/miniprogram/dev/devtools/minitest/notice.html" class="NavigationItem__router-link">
+      任务结束通知配置
+    <!----></a> <!----> <!----></span></li><li><span class="NavigationItem"><!----> <a href="/miniprogram/dev/devtools/minitest/test_time.html" class="NavigationItem__router-link">
+      每周免费测试
+    <!----></a> <!----> <!----></span></li></ul></div></li><li><div class="NavigationLevel NavigationLevel--closed NavigationLevel--level-3"><div class="NavigationLevel__parent"><span class="NavigationToggle NavigationToggle--closed"><span class="NavigationToggle__icon NavigationToggle__icon--closed"></span></span> <span class="NavigationItem"><!----> <a href="/miniprogram/dev/devtools/minitest/cloud_problem.html" class="NavigationItem__router-link">
+      常见问题
+    <!----></a> <!----> <!----></span></div> <ul class="NavigationLevel__children"><li><span class="NavigationItem"><!----> <a href="/miniprogram/dev/devtools/minitest/cloud_problem.html" class="NavigationItem__router-link">
+      云测常见问题
+    <!----></a> <!----> <!----></span></li><li><span class="NavigationItem"><!----> <a href="/miniprogram/dev/devtools/minitest/finish_time.html" class="NavigationItem__router-link">
+      测试任务耗时说明
+    <!----></a> <!----> <!----></span></li><li><span class="NavigationItem"><!----> <a href="/miniprogram/dev/devtools/minitest/monkey_problem.html" class="NavigationItem__router-link">
+      智能化Monkey常见问题
+    <!----></a> <!----> <!----></span></li><li><span class="NavigationItem"><!----> <a href="/miniprogram/dev/devtools/minitest/replay_problem.html" class="NavigationItem__router-link">
+      录制回放常见问题
+    <!----></a> <!----> <!----></span></li></ul></div></li><li><span class="NavigationItem"><!----> <a href="/miniprogram/dev/devtools/minitest/update.html" class="NavigationItem__router-link">
+      更新日志
+    <!----></a> <!----> <!----></span></li></ul></div></li></ul></div></li><li><span class="NavigationItem"><!----> <a href="/miniprogram/dev/devtools/notsupport.html" class="NavigationItem__router-link">
+      API 实现差异
+    <!----></a> <!----> <!----></span></li><li><div class="NavigationLevel NavigationLevel--closed NavigationLevel--level-1"><div class="NavigationLevel__parent"><span class="NavigationToggle NavigationToggle--closed"><span class="NavigationToggle__icon NavigationToggle__icon--closed"></span></span> <span class="NavigationItem"><!----> <a href="/miniprogram/dev/devtools/download.html" class="NavigationItem__router-link">
+      下载
+    <!----></a> <!----> <!----></span></div> <ul class="NavigationLevel__children"><li><span class="NavigationItem"><!----> <a href="/miniprogram/dev/devtools/log.html#stable" class="NavigationItem__router-link">
+      稳定版更新日志
+    <!----></a> <!----> <!----></span></li><li><span class="NavigationItem"><!----> <a href="/miniprogram/dev/devtools/log.html#rc" class="NavigationItem__router-link">
+      预发布版更新日志
+    <!----></a> <!----> <!----></span></li><li><span class="NavigationItem"><!----> <a href="/miniprogram/dev/devtools/log.html#nightly" class="NavigationItem__router-link">
+      开发版更新日志
+    <!----></a> <!----> <!----></span></li></ul></div></li></ul></div></div> </aside></div> <div class="page__wrp"><main class="page"><div class="page-inner" style="min-height:0px;"> <div id="docContent"><div class="Breadcrumb"></div> <div class="content custom"><h1 id="项目配置文件"><a href="#项目配置文件" class="header-anchor">#</a> 项目配置文件</h1> <ol><li>项目根目录中的 <code>project.config.json</code> 和 <code>project.private.config.json</code> 文件可以对项目进行配置，</li> <li><code>project.private.config.json</code> 中的相同设置优先级高于 <code>project.config.json</code></li> <li>可以在 <code>project.config.json</code> 文件中配置公共的配置，在 <code>project.private.config.json</code> 配置个人的配置，可以将 <code>project.private.config.json</code> 写到 <code>.gitignore</code> 避免版本管理的冲突。</li> <li><code>project.private.config.json</code> 中有的字段，开发者工具内的设置修改会优先覆盖 <code>project.private.config.json</code> 的内容。如在 <code>project.private.config.json</code> 有 <code>appid</code> 字段，那么在 详情-基本信息 中修改了 appid，会写到 <code>project.private.config.json</code> 中，不会覆盖掉  <code>project.config.json</code> 的 <code>appid</code> 字段的内容</li> <li>开发阶段相关的设置修改优先同步到 <code>project.private.config.json</code> 中，但与最终编译产物有关的设置无法在 <code>project.private.config.json</code> 中生效，界面上的改动也不会同步到 <code>project.private.config.json</code> 文件中。详见 <a href="#setting">表格</a> 是否允许私有设置。</li></ol> <h2 id="一级字段"><a href="#一级字段" class="header-anchor">#</a> 一级字段</h2> <p>可以在项目根目录使用 <code>project.config.json</code> 文件对项目进行配置。</p> <div class="table-wrp"><table><thead><tr><th>字段名</th> <th>类型</th> <th>说明</th></tr></thead> <tbody><tr><td>miniprogramRoot</td> <td>Path String</td> <td>指定小程序源码的目录(需为相对路径)</td></tr> <tr><td>qcloudRoot</td> <td>Path String</td> <td>指定腾讯云项目的目录(需为相对路径)</td></tr> <tr><td>pluginRoot</td> <td>Path String</td> <td>指定插件项目的目录(需为相对路径)</td></tr> <tr><td>cloudbaseRoot</td> <td>Path String</td> <td>云开发代码根目录(需为相对路径)</td></tr> <tr><td>cloudfunctionRoot</td> <td>Path String</td> <td>云函数代码根目录(需为相对路径)</td></tr> <tr><td>cloudfunctionTemplateRoot</td> <td>Path String</td> <td>云函数本地调试请求模板的根目录(需为相对路径)</td></tr> <tr><td>cloudcontainerRoot</td> <td>Path String</td> <td>云托管代码根目录(需为相对路径)</td></tr> <tr><td><a href="#compileType">compileType</a></td> <td>String</td> <td>编译类型</td></tr> <tr><td><a href="#setting">setting</a></td> <td>Object</td> <td>项目设置</td></tr> <tr><td><a href="#libVersion">libVersion</a></td> <td>String</td> <td>基础库版本</td></tr> <tr><td>appid</td> <td>String</td> <td>项目的 appid</td></tr> <tr><td>projectname</td> <td>String</td> <td>项目名字</td></tr> <tr><td><a href="#packOptions">packOptions</a></td> <td>Object</td> <td>打包配置选项</td></tr> <tr><td><a href="#debugOptions">debugOptions</a></td> <td>Object</td> <td>调试配置选项</td></tr> <tr><td><a href="#watchOptions">watchOptions</a></td> <td>Object</td> <td>文件监听配置设置</td></tr> <tr><td><a href="#scripts">scripts</a></td> <td>Object</td> <td>自定义预处理</td></tr> <tr><td><a href="https://developers.weixin.qq.com/minigame/dev/devtools/projectconfig#staticServerOptions" target="_blank">staticServerOptions</a></td> <td>Object</td> <td>仅在小游戏项目中有效</td></tr> <tr><td>editorSetting</td> <td>Object</td> <td>指定自动生成的文件的 tabIndent 和 tabSize</td></tr> <tr><td><a href="skeleton" target="_blank">skeletonConfig</a></td> <td>Object</td> <td>骨架屏相关设置</td></tr></tbody></table></div><h3 id="compileType"><a href="#compileType" class="header-anchor">#</a> compileType</h3> <p>编译类型作用于开发工具的以下设置
+<img src="https://res8.wxqcloud.qq.com.cn/wxdoc/aa935d99-3bf5-48e8-876c-747b980adc0d.png" alt="编译类型">
+有效值</p> <div class="table-wrp"><table><thead><tr><th>名字</th> <th>说明</th></tr></thead> <tbody><tr><td>miniprogram</td> <td>当前为普通小程序项目</td></tr> <tr><td>plugin</td> <td>当前为小程序插件项目</td></tr></tbody></table></div><h3 id="setting"><a href="#setting" class="header-anchor">#</a> setting</h3> <p>项目的编译设置，可以指定以下设置。部分设置无法在 <code>project.private.config.json</code> 中生效</p> <p>以下字段可以开发者工具-详情-本地设置可以对应上
+<img src="https://res8.wxqcloud.qq.com.cn/wxdoc/9620fa83-1512-4fc9-8be1-b0470d90d8bc.png" alt="详情-本地设置"></p> <div class="table-wrp"><table><thead><tr><th>字段名</th> <th>类型</th> <th>允许私有设置<sup>[1]</sup></th> <th>说明</th></tr></thead> <tbody><tr><td>condition</td> <td>Boolean</td> <td>否</td> <td>启用<a href="https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/miniapp/pre-read/condition-compile" target="_blank">条件编译</a></td></tr> <tr><td>es6</td> <td>Boolean</td> <td>否</td> <td>是否启用 es6 转 es5<sup>[2]</sup></td></tr> <tr><td>enhance</td> <td>Boolean</td> <td>否</td> <td>是否打开增强编译<sup>[2]</sup></td></tr> <tr><td>postcss</td> <td>Boolean</td> <td>否</td> <td>上传代码时样式是否自动补全</td></tr> <tr><td>minified</td> <td>Boolean</td> <td>否</td> <td>上传代码时是否自动压缩脚本文件</td></tr> <tr><td>minifyWXSS</td> <td>Boolean</td> <td>否</td> <td>上传代码时是否自动压缩样式文件</td></tr> <tr><td>minifyWXML</td> <td>Boolean</td> <td>否</td> <td>上传代码时是否自动压缩 WXML 文件</td></tr> <tr><td>swc</td> <td>Boolean</td> <td>否</td> <td>开启 swc 编译模式</td></tr> <tr><td>uglifyFileName</td> <td>Boolean</td> <td>否</td> <td>上传时进行代码保护</td></tr> <tr><td>ignoreUploadUnusedFiles</td> <td>Boolean</td> <td>否</td> <td>上传时是否过滤无依赖文件</td></tr> <tr><td>autoAudits</td> <td>Boolean</td> <td>是</td> <td>是否自动运行体验评分</td></tr> <tr><td>urlCheck</td> <td>Boolean</td> <td>是</td> <td>是否检查安全域名和 TLS 版本</td></tr> <tr><td>compileHotReLoad</td> <td>Boolean</td> <td>是</td> <td>是否开启文件保存后自动热重载</td></tr> <tr><td>preloadBackgroundData</td> <td>Boolean</td> <td>是</td> <td>小程序加载时是否数据预拉取</td></tr> <tr><td>lazyloadPlaceholderEnable</td> <td>Boolean</td> <td>是</td> <td>是否启用懒注入占位组件调试<sup>[3]</sup></td></tr> <tr><td>useStaticServer</td> <td>Boolean</td> <td>是</td> <td>仅在小游戏项目有效，是否开启静态资源服务器<sup>[4]</sup></td></tr> <tr><td>bigPackageSizeSupport</td> <td>Boolean</td> <td>是</td> <td>预览及真机调试的时主包、分包体积上限调整为4M（小程序）、8M（小游戏）</td></tr> <tr><td>skylineRenderEnable</td> <td>Boolean</td> <td>是</td> <td>是否开启 skyline 渲染调试</td></tr></tbody></table></div><p>以下字段是开发者工具的隐式设置</p> <div class="table-wrp"><table><thead><tr><th>字段名</th> <th>类型</th> <th>允许私有设置<sup>[1]</sup></th> <th>说明</th></tr></thead> <tbody><tr><td><a href="#babelSetting">babelSetting</a></td> <td>Object</td> <td>否</td> <td>增强编译下Babel的配置项</td></tr> <tr><td><a href="#minifyWXMLSetting">minifyWXMLSetting</a></td> <td>Object</td> <td>否</td> <td>压缩 wxml 的配置项</td></tr> <tr><td><a href="#useCompilerPlugins">useCompilerPlugins</a></td> <td>String[] 或 false</td> <td>否</td> <td>编译插件配置</td></tr> <tr><td>disableUseStrict</td> <td>Boolean</td> <td>否</td> <td>将 JS 编译成 ES5 时，是否禁用严格模式</td></tr> <tr><td>uploadWithSourceMap</td> <td>Boolean</td> <td>否</td> <td>上传时是否带上 sourcemap（默认为true）</td></tr> <tr><td>localPlugins</td> <td>Boolean</td> <td>否</td> <td>在小游戏插件项目中，是否启用 “以本地目录为插件资源来源”<sup>[5]</sup> 特性</td></tr> <tr><td>packNpmManually</td> <td>Boolean</td> <td>否</td> <td>是否手动配置构建 npm 的路径</td></tr> <tr><td>packNpmRelationList</td> <td>Array</td> <td>否</td> <td>仅 <code>packNpmManually</code> 为 true 时生效，详细参考<a href="npm" target="_blank">构建 npm 文档</a></td></tr> <tr><td>coverView</td> <td>Boolean</td> <td>是</td> <td>是否使用工具渲染 CoverView</td></tr> <tr><td>ignoreDevUnusedFiles</td> <td>Boolean</td> <td>是</td> <td>预览、真机调试和本地模拟器等开发阶段是否过滤无依赖文件（默认为true）</td></tr> <tr><td>ignoreCodeQuality</td> <td>Boolean</td> <td>是</td> <td>预览、真机调试上传等开发阶段是否不执行代码质量检测（默认为 false ）</td></tr> <tr><td>checkInvalidKey</td> <td>Boolean</td> <td>是</td> <td>是否展示 JSON 文件校验错误信息</td></tr> <tr><td>showShadowRootInWxmlPanel</td> <td>Boolean</td> <td>是</td> <td>是否开启调试器 WXML 面板展示 shadow-root</td></tr> <tr><td>useIsolateContext</td> <td>Boolean</td> <td>是</td> <td>是否开启小程序独立域调试特性<sup>[6]</sup></td></tr> <tr><td>useMultiFrameRuntime</td> <td>Boolean</td> <td>是</td> <td>是否开启模拟器预先载入小程序的某些资源<sup>[7]</sup>。此设定为 false 时会导致 <code>useIsolateContext</code> 失效</td></tr> <tr><td>useApiHook</td> <td>Boolean</td> <td>是</td> <td>是否启用 API Hook 功能<sup>[8]</sup></td></tr> <tr><td>useApiHostProcess</td> <td>Boolean</td> <td>是</td> <td>是否在额外的进程处理一些小程序 API<sup>[9]</sup></td></tr> <tr><td>useLanDebug</td> <td>Boolean</td> <td>是</td> <td>仅在小游戏有效，是否开启局域网调试服务器</td></tr> <tr><td>enableEngineNative</td> <td>Boolean</td> <td>是</td> <td>是否在游戏引擎项目中开启支持引用 node 原生模块的底层加速特性</td></tr> <tr><td>showES6CompileOption</td> <td>Boolean</td> <td>是</td> <td>是否在本地设置中展示传统的 ES6 转 ES5 开关（对应 es6），增强编译开关 （对应 enhance）</td></tr></tbody></table></div><p><strong>注 1</strong>: 开发阶段相关的设置修改优先同步到 <code>project.private.config.json</code> 中，但最终编译产物有关的设置无法在 <code>project.private.config.json</code> 中生效，界面上的改动也不会同步到 <code>project.private.config.json</code> 文件中。</p> <p><strong>注 2</strong>: <code>es6</code> 和 <code>enhance</code> 需同时为 true/false，对应于 <code>将 JS 编译成 ES5</code></p> <p><strong>注 3</strong>: (<strong>懒注入占位组件调试</strong>) 开启<a href="https://developers.weixin.qq.com/miniprogram/dev/framework/ability/lazyload" target="_blank">按需注入</a>后在项目设置面板中会出现对应的勾选项，开启之后，按需注入的组件将会停止注入，页面停止在占位组件状态，便于调试自定义占位组件。</p> <p><strong>注 4</strong>: (<strong>静态资源服务器</strong>) 可以托管项目本地的静态资源，主要用于在预览时测试小游戏真机资源加载的效果。</p> <p><strong>注 5</strong>: (<strong>以本地目录为插件资源来源</strong>) 启用此特性后，工具将停止从线上获取小游戏插件包内容，并将检验本地相应目录的文件完整性。仅对小游戏插件项目有效。要以本地磁盘目录作为插件的资源来源，需要同时在小游戏插件项目的 game.json 中配置相关的属性。</p> <p><strong>注 6</strong>: (<strong>小程序独立域调试</strong>) 一种新的小程序内部代码的执行方式，仅影响工具侧的调试过程。未来将取代传统的执行方式并成为默认选择。仅在  2.11.1 及以上基础库有效。关闭此特性可能有助于规避一些调试中遇到的未知报错。</p> <p><strong>注 7</strong>: (<strong>预先载入小程序的某些资源</strong>) 开启此内部特性后，调试时小程序的重新载入可能会更快一些。此设定不影响真机和实际运行效果。</p> <p><strong>注 8</strong>: (<strong>API Hook 功能</strong>) 关闭此内部特性可能导致工具的某些调试功能（例如 mock）失效。此设定不影响真机运行效果。</p> <p><strong>注 9</strong>: (<strong>额外进程</strong>) 开启此内部特性后，部分 API 的调用会被移到单独的进程以减轻工具主进程的负担。此设定不影响真机运行效果。</p> <h4 id="useCompilerPlugins"><a href="#useCompilerPlugins" class="header-anchor">#</a> useCompilerPlugins</h4> <p>编译插件配置，目前支持编译插件有 typescript、less、sass</p> <p>如</p> <div class="language-json extra-class"><pre class="language-json"><code v-pre><span class="token punctuation">{</span>
+  <span class="token property">&quot;setting&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">&quot;useCompilerPlugins&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+      <span class="token string">&quot;typescript&quot;</span><span class="token punctuation">,</span>
+      <span class="token string">&quot;less&quot;</span>
+    <span class="token punctuation">]</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>表示项目支持直接使用 typescript 和 less</p> <h4 id="babelSetting"><a href="#babelSetting" class="header-anchor">#</a> babelSetting</h4> <p><code>将 JS 编译为 ES5</code> 时 Babel 的配置项，其中可以指定以下设置</p> <div class="table-wrp"><table><thead><tr><th>字段名</th> <th>类型</th> <th>说明</th></tr></thead> <tbody><tr><td>outputPath</td> <td>String</td> <td>Babel 辅助函数的输出目录，默认为 <code>@babel/runtime</code></td></tr> <tr><td>ignore</td> <td>Array<code>&lt;String&gt;</code></td> <td>配置需要跳过Babel编译(包括代码压缩)处理的文件或目录</td></tr></tbody></table></div><p><strong>注 1</strong>: 指定文件路径外，还可以指定目录，详见下面项目配置示例</p> <h4 id="minifyWXMLSetting"><a href="#minifyWXMLSetting" class="header-anchor">#</a> minifyWXMLSetting</h4> <p>压缩 wxml 时的配置项，minifyWXMLSetting.global 是全局设置，minifyWXMLSetting[<code>pagePath.wxml</code>] 是具体页面 wxml 生效的配置，会和 minifyWXMLSetting.global 全局设置合并后生效，设置项如下：</p> <div class="table-wrp"><table><thead><tr><th>字段名</th> <th>类型</th> <th>说明</th></tr></thead> <tbody><tr><td>collapseWhitespace</td> <td>Boolean</td> <td>默认 true，标签内所有连续空白符会被压缩成 1 个空格，换行的情况按 preserveLineBreaks 处理</td></tr> <tr><td>conservativeCollapse</td> <td>Boolean</td> <td>默认 false: 标签前后不保留空格；true: 但标签前后会保留一个空格(当有时)</td></tr> <tr><td>preserveLineBreaks</td> <td>Boolean</td> <td>默认 false：按 collapseWhitespace 处理，true 所有换行都会被保留</td></tr></tbody></table></div><p>如代码：</p> <div class="language-xml extra-class"><pre class="language-xml"><code v-pre><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>view</span><span class="token punctuation">&gt;</span></span>
+  a    a
+
+  a    a
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>view</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><p>默认情况下会被压缩为</p> <div class="language-xml extra-class"><pre class="language-xml"><code v-pre><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>view</span><span class="token punctuation">&gt;</span></span>a a a a<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>view</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><p>如果设置了：</p> <div class="language-json extra-class"><pre class="language-json"><code v-pre><span class="token punctuation">{</span>
+  <span class="token property">&quot;setting&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">&quot;minifyWXMLSetting&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">&quot;global&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token property">&quot;collapseWhitespace&quot;</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;conservativeCollapse&quot;</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;preserveLineBreaks&quot;</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>则被压缩为：</p> <div class="language-xml extra-class"><pre class="language-xml"><code v-pre><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>view</span><span class="token punctuation">&gt;</span></span>
+a a
+
+a a
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>view</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><p>如果设置了：</p> <div class="language-json extra-class"><pre class="language-json"><code v-pre><span class="token punctuation">{</span>
+  <span class="token property">&quot;setting&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">&quot;minifyWXMLSetting&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">&quot;global&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token property">&quot;collapseWhitespace&quot;</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;conservativeCollapse&quot;</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;preserveLineBreaks&quot;</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>则被压缩为：</p> <div class="language-xml extra-class"><pre class="language-xml"><code v-pre><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>view</span><span class="token punctuation">&gt;</span></span> a a a a <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>view</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><p><strong>注 1</strong>: <code>text</code> 标签内所有的换行和空白符都会被保留</p> <h3 id="libVersion"><a href="#libVersion" class="header-anchor">#</a> libVersion</h3> <p>可以指定项目运行的基础库具体的版本号
+也可以 <code>project.config.json</code> 的 <code>libVersion</code> 指定以下值</p> <div class="table-wrp"><table><thead><tr><th>值</th> <th>说明</th></tr></thead> <tbody><tr><td>latest</td> <td>最新的非灰度中的基础库</td></tr> <tr><td>trial</td> <td>最新的基础库</td></tr> <tr><td>widelyUsed</td> <td>使用比例最高的基础库</td></tr></tbody></table></div><p>以上值在 <code>project.private.config.json</code> 文件中无效，因为手动在开发者工具-详情-本地设置中改变基础库的版本，会覆盖掉 <code>project.private.config.json</code> 的 <code>libVersion</code> 字段</p> <h3 id="scripts"><a href="#scripts" class="header-anchor">#</a> scripts</h3> <p>指定自定义预处理的命令</p> <div class="table-wrp"><table><thead><tr><th>名字</th> <th>说明</th></tr></thead> <tbody><tr><td>beforeCompile</td> <td>编译前预处理命令</td></tr> <tr><td>beforePreview</td> <td>预览前预处理命令</td></tr> <tr><td>beforeUpload</td> <td>上传前预处理命令</td></tr></tbody></table></div><h3 id="packOptions"><a href="#packOptions" class="header-anchor">#</a> packOptions</h3> <p><code>packOptions</code> 用以配置项目在打包过程中的选项。打包是预览、上传时对项目进行的必须步骤。</p> <p>目前可以指定 <code>packOptions.include</code> 字段，用以配置打包时需要强制带上的文件（<a href="https://developers.weixin.qq.com/miniprogram/dev/framework/structure#允许上传的文件" target="_blank">仅限后缀名白名单内</a>）或者文件夹，匹配的这些文件或文件夹将一定会出现在预览或上传的结果内。（该字段的优先级高于 <code>packOptions.ignore</code>）</p> <p>同时可以指定 <code>packOptions.ignore</code> 字段，用以配置打包时对符合指定规则的文件或文件夹进行忽略，以跳过打包的过程，这些文件或文件夹将不会出现在预览或上传的结果内。</p> <p><code>packOptions.ignore</code> 和 <code>packOptions.include</code> 为一对象数组，对象元素类型如下：</p> <div class="table-wrp"><table><thead><tr><th>字段名</th> <th>类型</th> <th>说明</th></tr></thead> <tbody><tr><td>value</td> <td>string</td> <td>路径<sup><small>1</small></sup>或取值</td></tr> <tr><td>type</td> <td>string</td> <td>类型</td></tr></tbody></table></div><p>其中，<code>type</code> 可以取的值为 <code>folder</code>、<code>file</code>、<code>suffix</code>、<code>prefix</code>、<code>regexp</code><sup><small>2</small></sup>、<code>glob</code><sup><small>2</small></sup>，分别对应文件夹、文件、后缀、前缀、正则表达式、Glob 规则。所有规则值都会自动忽略大小写。</p> <p><strong>注 1</strong>: <code>value</code> 字段的值若表示文件或文件夹路径，以小程序目录 (<code>miniprogramRoot</code>) 为根目录。</p> <p><strong>注 2</strong>: <code>regexp</code>、<code>glob</code> 仅 1.02.1809260 及以上版本工具支持。</p> <p>示例配置如下。</p> <div class="language-json extra-class"><pre class="language-json"><code v-pre><span class="token punctuation">{</span>
+  <span class="token property">&quot;packOptions&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">&quot;ignore&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">{</span>
+      <span class="token property">&quot;type&quot;</span><span class="token operator">:</span> <span class="token string">&quot;file&quot;</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;value&quot;</span><span class="token operator">:</span> <span class="token string">&quot;test/test.js&quot;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+      <span class="token property">&quot;type&quot;</span><span class="token operator">:</span> <span class="token string">&quot;folder&quot;</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;value&quot;</span><span class="token operator">:</span> <span class="token string">&quot;test&quot;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+      <span class="token property">&quot;type&quot;</span><span class="token operator">:</span> <span class="token string">&quot;suffix&quot;</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;value&quot;</span><span class="token operator">:</span> <span class="token string">&quot;.webp&quot;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+      <span class="token property">&quot;type&quot;</span><span class="token operator">:</span> <span class="token string">&quot;prefix&quot;</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;value&quot;</span><span class="token operator">:</span> <span class="token string">&quot;test-&quot;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+      <span class="token property">&quot;type&quot;</span><span class="token operator">:</span> <span class="token string">&quot;glob&quot;</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;value&quot;</span><span class="token operator">:</span> <span class="token string">&quot;test/**/*.js&quot;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+      <span class="token property">&quot;type&quot;</span><span class="token operator">:</span> <span class="token string">&quot;regexp&quot;</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;value&quot;</span><span class="token operator">:</span> <span class="token string">&quot;\\.jsx$&quot;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">]</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p><strong>注</strong>: 这部分设置的更改可能需要重新打开项目才能生效。</p> <h3 id="debugOptions"><a href="#debugOptions" class="header-anchor">#</a> debugOptions</h3> <p><code>debugOptions</code> 用以配置在对项目代码进行调试时的选项。</p> <p>目前可以指定 <code>debugOptions.hidedInDevtools</code> 字段，用以配置调试时于调试器 Sources 面板隐藏源代码的文件。</p> <p><code>hidedInDevtools</code> 的配置规则和 <code>packOptions.ignore</code> 是一致的。</p> <p>当某个 js 文件符合此规则时，调试器 Sources 面板中此文件源代码正文内容将被隐藏，显示为：</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code v-pre><span class="token comment">// xxx.js has been hided by project.config.json</span>
+</code></pre></div><blockquote><p>注：配置此规则后，可能需要关闭并重新打开项目才能看到效果。</p></blockquote> <p><strong>项目配置示例：</strong></p> <div class="language-json extra-class"><pre class="language-json"><code v-pre><span class="token punctuation">{</span>
+  <span class="token property">&quot;miniprogramRoot&quot;</span><span class="token operator">:</span> <span class="token string">&quot;./src&quot;</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;qcloudRoot&quot;</span><span class="token operator">:</span> <span class="token string">&quot;./svr&quot;</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;setting&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">&quot;postcss&quot;</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;es6&quot;</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;minified&quot;</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;urlCheck&quot;</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;checkSiteMap&quot;</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;enhance&quot;</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;babelSetting&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">&quot;ignore&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+        <span class="token string">&quot;utils/something_not_to_process.js&quot;</span><span class="token punctuation">,</span>
+        <span class="token string">&quot;miniprogram_npm/*&quot;</span><span class="token punctuation">,</span>
+        <span class="token string">&quot;utils/already_handle/*&quot;</span>
+      <span class="token punctuation">]</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;packOptions&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">&quot;ignore&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;debugOptions&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="watchOptions"><a href="#watchOptions" class="header-anchor">#</a> watchOptions</h3> <p><code>watchOptions</code> 用以配置项目中可以被忽略展示和监听文件变化的文件匹配规则。
+部分项目（如游戏项目）其项目文件可能成千上万，其中大部分可能是资源文件，并不是小程序和小游戏代码中关心展示的文件，这些文件在工具开发时可以不需要被开发者关注，因此工具可以增加一个配置去忽略指定的文件和目录，从而不对这些文件进行文件遍历获取和文件内容变更的监听（watch），从而提高开启工具的速度以及减少工具打开占用的内存。</p> <p>目前可以指定 <code>watchOptions.ignore</code> 字段，用以配置工具时对符合指定规则的文件或文件夹进行忽略(<code>忽略的文件将不展示在编辑器文件列表和对该文件进行监听</code>），以避免展示和监听项目中不必要的文件内容（这些文件或文件夹不需要去关心文件变化）</p> <p><code>watchOptions.ignore</code> 为 <code>glob pattern</code> 字符串数组,具体支持如下：</p> <ul><li><ul><li>匹配0到多个字符</li></ul></li> <li>? 匹配一个字符</li> <li>[...] 匹配一个字符列表，类似正则表达式的字符列表</li> <li>!(pattern|pattern|pattern) 反向匹配括号内的模式</li> <li>?(pattern|pattern|pattern) 匹配0或1个括号内的模式</li> <li>+(pattern|pattern|pattern) 匹配至少1个括号内的模式</li> <li>*(pattern|pattern|pattern) 匹配0到多个括号内的模式</li> <li>@(pattern|pat*|pat?erN) 精确匹配括号内的模式</li> <li>** 匹配0到多个子目录，递归匹配子目录</li></ul> <p>示例配置如下。</p> <p>如下所示</p> <div class="language-json extra-class"><pre class="language-json"><code v-pre><span class="token punctuation">{</span>
+  <span class="token property">&quot;description&quot;</span><span class="token operator">:</span> <span class="token string">&quot;项目配置文件&quot;</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;watchOptions&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+     <span class="token property">&quot;ignore&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+        <span class="token string">&quot;utils/util.js&quot;</span><span class="token punctuation">,</span>
+        <span class="token string">&quot;libs/**/**&quot;</span>
+     <span class="token punctuation">]</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p><strong>注 1</strong> : watchOptions.ignore 数组中的值若表示文件或文件夹路径，以项目根目录为基准目录。
+<strong>注 2</strong> : 由于文件遍历和 watch 都是在项目启动时执行，因此如果修改了 watchOptions 需要重新打开项目
+<strong>注 3</strong>: 该配置仅 1.02.1910220 及以上版本工具支持。</p></div> <div class="fixed-translate" style="display:none;"><span>The translations are provided by WeChat Translation and are for reference only. In case of any inconsistency and discrepancy between the Chinese version and the English version, the Chinese version shall prevail.Incorrect translation. <a href="javascript:;" class="fixed-translate-btn">Tap to report.</a></span></div></div> <!----> <div class="related"><!----> <!----></div> <footer class="page-edit"><!----></footer>  <footer class="footer"><ul class="footer-links"><li class="footer-link"><a href="http://www.tencent.com/zh-cn/index.shtml" target="_blank">关于腾讯</a></li> <li class="footer-link"><a href="https://mp.weixin.qq.com/debug/wxadoc/introduction/index.html?t=1484641676" target="_blank">文档中心</a></li> <li class="footer-link"><a href="https://kf.qq.com/faq/17030722muuu170307MFBny2.html" target="_blank">辟谣中心</a></li> <li class="footer-link"><a href="http://kf.qq.com/faq/120911VrYVrA1509086vyumm.html" target="_blank">客服中心</a></li></ul> <p class="copyright">Copyright © 2012-<span>2026</span> Tencent. All Rights Reserved.</p></footer></div></main></div> <!----></div></div> <div id="popoverWrapId" class="pop-links__wrp popover_hide"><ul class="pop-links__list"><li class="pop-links__item"><button class="pop-link">复制</button></li> <li class="pop-links__item"><button class="pop-link">问题反馈</button></li></ul></div> <div class="fixed-btns"><a href="javascript:;" class="fixed-btn fixed-btn__feedback"><div class="fixed-btn__inner"><span class="fixed-btn__icon"></span> <span class="fixed-btn__text">反馈</span></div></a> <a href="javascript:;" class="fixed-btn fixed-btn__top" style="display:none;"><div class="fixed-btn__inner"><span class="fixed-btn__icon"></span></div></a></div></div></div></div>
+    <script src="https://res.wx.qq.com/wxdoc/dist/assets/js/app.867efb11.js" defer></script><script src="https://res.wx.qq.com/wxdoc/dist/assets/js/2360.97ebe703.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,25 @@
+{
+  "id": "rabbit-restart",
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "command": [
+    "docker",
+    "compose",
+    "--env-file",
+    ".local-data/p02-infra.env",
+    "-p",
+    "pet-platform-p02-validation",
+    "-f",
+    "infra/local/docker-compose.yml",
+    "up",
+    "-d",
+    "--wait",
+    "--wait-timeout",
+    "90",
+    "rabbitmq"
+  ],
+  "exit_code": 0,
+  "status": "PASS",
+  "duration_seconds": 5.68,
+  "evidence": "rabbit-restart.log",
+  "summary": " Container pet-platform-p02-validation-rabbitmq-1 Starting \n Container pet-platform-p02-validation-rabbitmq-1 Started \n Container pet-platform-p02-validation-rabbitmq-1 Waiting \n Container pet-platform-p02-validation-rabbitmq-1 Healthy \n"
+}

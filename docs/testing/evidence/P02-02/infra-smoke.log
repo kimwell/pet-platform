@@ -1,0 +1,9 @@
+{"id": "infra-healthy", "exit_code": 0, "expected_exit_code": 0, "status": "PASS", "duration_seconds": 0.299}
+{"id": "postgres-auth", "exit_code": 0, "expected_exit_code": 0, "status": "PASS", "duration_seconds": 0.161}
+{"id": "redis-auth", "exit_code": 0, "expected_exit_code": 0, "status": "PASS", "duration_seconds": 0.096}
+{"id": "redis-no-auth", "exit_code": 0, "expected_exit_code": 0, "status": "PASS", "duration_seconds": 0.103}
+{"id": "rabbit-node", "exit_code": 0, "expected_exit_code": 0, "status": "PASS", "duration_seconds": 0.489}
+{"id": "rabbit-auth", "exit_code": 0, "expected_exit_code": 0, "status": "PASS", "duration_seconds": 0.632}
+AMQP 0-9-1 真实认证握手、打开 vhost /、正常关闭通过；未发布消息。
+RabbitMQ management authenticated=False HTTP 401
+RabbitMQ management authenticated=True HTTP 200

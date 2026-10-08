@@ -1,0 +1,119 @@
+{
+  "command": [
+    "python3",
+    "/tmp/enterprise-scaffold-p01-audit.py"
+  ],
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "exit_code": 0,
+  "results": [
+    {
+      "id": "required-documents",
+      "result": "PASS",
+      "details": {
+        "count": 10
+      }
+    },
+    {
+      "id": "local-document-links",
+      "result": "PASS",
+      "details": {
+        "checked": 54,
+        "broken": []
+      }
+    },
+    {
+      "id": "exact-version-matrix",
+      "result": "PASS",
+      "details": {
+        "records": 53
+      }
+    },
+    {
+      "id": "npm-publish-date",
+      "result": "PASS",
+      "details": {
+        "future_or_unknown": []
+      }
+    },
+    {
+      "id": "source-preservation",
+      "result": "PASS",
+      "details": {
+        "files": 273
+      }
+    },
+    {
+      "id": "no-formal-applications",
+      "result": "PASS",
+      "details": {
+        "actual_root": [
+          "docs",
+          "README.md",
+          "AGENTS.md"
+        ]
+      }
+    },
+    {
+      "id": "independent-project",
+      "result": "PASS",
+      "details": {
+        "framework_created": false,
+        "git_initialized": false
+      }
+    },
+    {
+      "id": "secret-marker-scan",
+      "result": "PASS",
+      "details": {
+        "hits": [],
+        "scope": "标准私钥/API秘密标识扫描；不宣称完整安全审计"
+      }
+    },
+    {
+      "id": "probe-archive-boundary",
+      "result": "PASS",
+      "details": {
+        "entries": 34,
+        "archive": "测试证据，不是正式应用"
+      }
+    },
+    {
+      "id": "necessary-probes",
+      "result": "PASS",
+      "details": {
+        "checks": 13
+      }
+    },
+    {
+      "id": "failed-attempts-preserved",
+      "result": "PASS",
+      "details": {
+        "count": 15,
+        "ids": [
+          "frontend-install",
+          "web-types",
+          "web-build",
+          "web-runtime",
+          "frontend-lint",
+          "mini-types",
+          "openapi-types",
+          "openapi-types-compile",
+          "frontend-direct-tree",
+          "web-types-r2",
+          "frontend-lint-r2",
+          "mini-types-r2",
+          "mini-types-final",
+          "mini-npm-pack-api",
+          "mini-npm-pack-isolated"
+        ]
+      }
+    },
+    {
+      "id": "mini-actual-artifacts",
+      "result": "PASS",
+      "details": {
+        "file_count": 1177
+      }
+    }
+  ]
+}

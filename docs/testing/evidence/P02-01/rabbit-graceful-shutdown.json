@@ -1,0 +1,24 @@
+{
+  "id": "rabbit-graceful-shutdown",
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "command": [
+    "docker",
+    "compose",
+    "--env-file",
+    ".local-data/p02-infra.env",
+    "-p",
+    "pet-platform-p02-validation",
+    "-f",
+    "infra/local/docker-compose.yml",
+    "exec",
+    "-T",
+    "rabbitmq",
+    "rabbitmqctl",
+    "shutdown"
+  ],
+  "exit_code": 137,
+  "status": "FAIL",
+  "duration_seconds": 1.57,
+  "evidence": "rabbit-graceful-shutdown.log",
+  "summary": "Shutting down RabbitMQ node rabbit@2ccb1a9559b8 running at PID 1\nWaiting for PID 1 to terminate\n"
+}

@@ -1,0 +1,15 @@
+{
+  "id": "backend-dependencies",
+  "cwd": "/Users/kimwell/work/pet-platform/apps/backend",
+  "command": [
+    "./mvnw",
+    "--batch-mode",
+    "org.apache.maven.plugins:maven-dependency-plugin:3.9.0:tree",
+    "-DoutputFile=../../docs/testing/evidence/P02-01/backend-dependency-tree.txt"
+  ],
+  "exit_code": 0,
+  "status": "PASS",
+  "duration_seconds": 7.34,
+  "evidence": "backend-dependencies.log",
+  "summary": "/org/codehaus/plexus/plexus-i18n/1.0.0/plexus-i18n-1.0.0.jar (10 kB at 38 kB/s)\n[INFO] Downloading from mirror: https://maven.aliyun.com/nexus/content/groups/public/org/apache/velocity/velocity-engine-core/2.4.1/velocity-engine-core-2.4.1.jar\n[INFO] Downloaded from mirror: https://maven.aliyun.com/nexus/content/groups/public/org/codehaus/plexus/plexus-archiver/4.10.1/plexus-archiver-4.10.1.jar (230 kB at 850 kB/s)\n[INFO] Downloaded from mirror: https://maven.aliyun.com/nexus/content/groups/public/org/apache/velocity/velocity-engine-core/2.4.1/velocity-engine-core-2.4.1.jar (0 B at 0 B/s)\n[INFO] Downloaded from mirror: https://maven.aliyun.com/nexus/content/groups/public/org/apache/maven/shared/maven-dependency-analyzer/1.16.0/maven-dependency-analyzer-1.16.0.jar (45 kB at 146 kB/s)\n[INFO] Downloaded from mirror: https://maven.aliyun.com/nexus/content/groups/public/org/apache/maven/resolver/maven-resolver-util/1.9.24/maven-resolver-util-1.9.24.jar (196 kB at 532 kB/s)\n[INFO] Downloaded from mirror: https://maven.aliyun.com/nexus/content/groups/public/com/github/luben/zstd-jni/1.5.7-4/zstd-jni-1.5.7-4.jar (7.4 MB at 7.7 MB/s)\n[INFO] Wrote dependency tree to: /Users/kimwell/work/pet-platform/docs/testing/evidence/P02-01/backend-dependency-tree.txt\n[INFO] ------------------------------------------------------------------------\n[INFO] BUILD SUCCESS\n[INFO] ------------------------------------------------------------------------\n[INFO] Total time:  4.142 s\n[INFO] Finished at: 2026-10-07T22:12:38+08:00\n[INFO] ------------------------------------------------------------------------\n"
+}

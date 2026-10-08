@@ -1,0 +1,27 @@
+{
+  "id": "rabbit-node",
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "command": [
+    "docker",
+    "compose",
+    "--env-file",
+    "/Users/kimwell/work/pet-platform/.local-data/p02-infra.env",
+    "-p",
+    "pet-platform-p02-validation",
+    "-f",
+    "/Users/kimwell/work/pet-platform/infra/local/docker-compose.yml",
+    "exec",
+    "-T",
+    "rabbitmq",
+    "rabbitmq-diagnostics",
+    "-q",
+    "check_running"
+  ],
+  "exit_code": 0,
+  "expected_exit_code": 0,
+  "status": "PASS",
+  "started_at": "2026-10-08T07:30:04.820662+08:00",
+  "duration_seconds": 0.463,
+  "evidence": "rabbit-node.log",
+  "summary": "RabbitMQ on node rabbit@rabbitmq is fully booted and running\n"
+}

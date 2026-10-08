@@ -1,0 +1,238 @@
+{
+  "AGENTS.md": {
+    "bytes": 5434,
+    "sha256": "59f64c082bb9c1970f08732cc15cf34bc2e53c1f6f0c8b7c2f363d5e020f568a"
+  },
+  "README.md": {
+    "bytes": 1792,
+    "sha256": "d36d9da870e9601b860f40542f193445d5e4be4179d9f693f254e6ab2dad92b8"
+  },
+  "docs/architecture/ASYNC-EVENTS.md": {
+    "bytes": 4900,
+    "sha256": "157845bef8b8e0d0e1a81ccce8b75cd124c9b7ae68584f8fce7e5ed3d55b59dd"
+  },
+  "docs/architecture/AUTHENTICATION.md": {
+    "bytes": 8083,
+    "sha256": "d8f3cc7a0adda6ac7cc2f24eb62b567d6fa1cf7b8c803cfca1e7b86dc007fb2d"
+  },
+  "docs/architecture/AUTHORIZATION.md": {
+    "bytes": 2616,
+    "sha256": "e13c2d1eda5ddeb7e397fafce6e8dba933ef0dbe063b4266366cb3460c3b533e"
+  },
+  "docs/architecture/CONFIGURATION.md": {
+    "bytes": 4342,
+    "sha256": "ce84f408a738a66396f109d2de78a504fd96997414fafb6f4cb1de67c2969985"
+  },
+  "docs/architecture/FILE-STORAGE.md": {
+    "bytes": 5132,
+    "sha256": "c80e5d33a50e0b8b2b2593ade69aae01666e8d4d0d6672768d84414c7d5831b2"
+  },
+  "docs/architecture/MODULE-BOUNDARIES.md": {
+    "bytes": 5268,
+    "sha256": "40c2fb714946315a3c8166c215ac5f8dabe18ca36299edfe254db63e1ecffe0d"
+  },
+  "docs/architecture/MULTI-TENANCY.md": {
+    "bytes": 7792,
+    "sha256": "3903742cf088929b79711fe1c1193e50ad59b571a649335343631193446d9c84"
+  },
+  "docs/architecture/PROJECT-STRUCTURE.md": {
+    "bytes": 4105,
+    "sha256": "5c03e6943e130f0dd5671dc1195ff9eecf66738fe41472cfec003cd2910e15ae"
+  },
+  "docs/architecture/TECHNICAL-BASELINE.md": {
+    "bytes": 6762,
+    "sha256": "3b1ab23c589718a7067e6e0906203975fc2e1e4e4497513c7267b8ed2d680485"
+  },
+  "docs/contracts/API.md": {
+    "bytes": 6933,
+    "sha256": "0704e2eb340034fa901004686d356bc7719f04e15491b20a738ba70eb8a4edb0"
+  },
+  "docs/contracts/ASYNC-TASKS.md": {
+    "bytes": 3248,
+    "sha256": "54ad35d5ad48a0c713e37945fc8e5db1e9a014dcc508a7f68ecea79faefb1dad"
+  },
+  "docs/contracts/ATTACHMENTS.md": {
+    "bytes": 3630,
+    "sha256": "8047dabaec2514474a044f28b649557f592cd26b5a28994f23b16ede07a386b3"
+  },
+  "docs/contracts/CORE-CONTRACTS.md": {
+    "bytes": 3156,
+    "sha256": "659fa2ef6d0484d8cca593765612c7849aaa13bf0565baa6858dc4d8563f0262"
+  },
+  "docs/contracts/DATA-TYPES.md": {
+    "bytes": 3328,
+    "sha256": "926a5af8253ee320a2d4106b46e4d7c65342a166350af977847881d42f293474"
+  },
+  "docs/contracts/IDENTITY.md": {
+    "bytes": 5942,
+    "sha256": "3528d069fda59b47345cba1addff47695e8d1c07351288319920f5ac5ae8d268"
+  },
+  "docs/contracts/OPENAPI-GENERATION.md": {
+    "bytes": 4979,
+    "sha256": "3dc2cbfa04b77c71a8c7be7993d123f791542052c1836ce7c5abb8f8d5004450"
+  },
+  "docs/contracts/PAGINATION.md": {
+    "bytes": 2156,
+    "sha256": "fbc155dcaf22bb6422c891b873a3f0461c8906446b1c505eda9a0b95d38fa89b"
+  },
+  "docs/conventions/BACKEND.md": {
+    "bytes": 2767,
+    "sha256": "3c55c18d8ce415c05c919ff95ae667c16430b8cd0e2ffa39a3bc6a678c5196b8"
+  },
+  "docs/conventions/MINIPROGRAM-PAGES.md": {
+    "bytes": 5915,
+    "sha256": "ab3e71a48a70dfbfa5bfdd32872c9689c9292068a12d1ff6259e339a37e8fa95"
+  },
+  "docs/conventions/WEB-PAGES.md": {
+    "bytes": 3815,
+    "sha256": "d66675f70745b35a351fdd9799710299053d655296e4f8616464bd40eb3f0c90"
+  },
+  "docs/conventions/WEB-STATE.md": {
+    "bytes": 4295,
+    "sha256": "f31ab5b02aca1263be783c623d875964034cd81b5cd196b9308a5d7f167fbc92"
+  },
+  "docs/development/DECISION-LOG.md": {
+    "bytes": 8215,
+    "sha256": "7edf7f1e9bb9d93464170fb8dd38be127576b00934472e1c2a87a18e6f0810a0"
+  },
+  "docs/development/ROADMAP.md": {
+    "bytes": 5637,
+    "sha256": "af72ad941697e5c34eb36761000e1ff8c8479f6bcfa03a4f43f10f6691e0aaeb"
+  },
+  "docs/development/VERSION-MATRIX.md": {
+    "bytes": 25609,
+    "sha256": "de362fc914d84e90debcf7b02d11d4502211e23e87b5fdf7468bc12e1c92f72b"
+  },
+  "docs/product/SCAFFOLD-SCOPE.md": {
+    "bytes": 2773,
+    "sha256": "181f11fa7493868375956d4c14e796eb6e31e924144d2073d08e5cae5643b7b1"
+  },
+  "docs/testing/ACCEPTANCE-MATRIX.md": {
+    "bytes": 7813,
+    "sha256": "1041917bcd8ee2ae7067180a0cd109a696eea822220e7473924aab91e0b46de8"
+  },
+  "docs/testing/P01-02-VERIFICATION.md": {
+    "bytes": 12340,
+    "sha256": "9d31bd5334523b04fc486c2b3ab0f748bbbdb3fb1cab20921339557b95288548"
+  },
+  "docs/testing/evidence/P01-02/PasswordApiProbe.java": {
+    "bytes": 881,
+    "sha256": "1391a103e7194f9cf4128b89281f4709efa5540f49457bec986197b71c5cf989"
+  },
+  "docs/testing/evidence/P01-02/SaTokenApiProbe.java": {
+    "bytes": 2131,
+    "sha256": "d409d0796928a3c70596bcc93cae65dc5e944e309ba45a5c3b254162475019b0"
+  },
+  "docs/testing/evidence/P01-02/audit-reproduction.py": {
+    "bytes": 6896,
+    "sha256": "543dab3713f3a5bf28061329964fbd0edc6bac53d895dc59a7286991b44ca460"
+  },
+  "docs/testing/evidence/P01-02/change-summary.json": {
+    "bytes": 3119,
+    "sha256": "4947a3f18718897be55deab485ed0145833cfdb59bb51dc01120cf3fe975dc06"
+  },
+  "docs/testing/evidence/P01-02/contract-check.ts": {
+    "bytes": 1265,
+    "sha256": "4c611a7535857cc055f2b20a5052af3c1d7e673e428392907d2da7e073f0ed3a"
+  },
+  "docs/testing/evidence/P01-02/contract-types.log": {
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "docs/testing/evidence/P01-02/contract.generated.d.ts": {
+    "bytes": 4985,
+    "sha256": "8f1a50fe6a9a75b5abc3e38ac6af9348556ec917deb351147295177b2997b33a"
+  },
+  "docs/testing/evidence/P01-02/contract.json": {
+    "bytes": 10369,
+    "sha256": "b4b5f7516d559dec62fda44066200cf4a1b81b5f70ef1d95f445040211c0e160"
+  },
+  "docs/testing/evidence/P01-02/document-audit.json": {
+    "bytes": 2641,
+    "sha256": "a864aa6ff8fe7d9dff9b4a38d26fd236592a983fc87a2d2bc7361d33d42f555c"
+  },
+  "docs/testing/evidence/P01-02/inventory-before.json": {
+    "bytes": 60052,
+    "sha256": "d93c0228f45fbf807d3aaf99a5a9ec1687fb3703db3794c01a6627af7fe74f60"
+  },
+  "docs/testing/evidence/P01-02/official-capability-notes.json": {
+    "bytes": 4636,
+    "sha256": "89518d29d3ffd22225ecd5f72e83510be740965413d9ca1c63f90c366ebeeb66"
+  },
+  "docs/testing/evidence/P01-02/openapi-check.log": {
+    "bytes": 30,
+    "sha256": "2fc64bac02ac4cf39207db106f663d18a74456f7927f87f437c2d041aa095a98"
+  },
+  "docs/testing/evidence/P01-02/openapi-drift-negative.log": {
+    "bytes": 72,
+    "sha256": "f01baa7c318d2494360fcc58a1fe6328b0e2a7f8ab3f1698b1d0bd5bad8d011d"
+  },
+  "docs/testing/evidence/P01-02/openapi-generate.log": {
+    "bytes": 86,
+    "sha256": "a908b858ecbb5760b4406e7d295776844cf07b9c91349b81e516a023ae019a4b"
+  },
+  "docs/testing/evidence/P01-02/password-api-compile.log": {
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "docs/testing/evidence/P01-02/password-api-runtime.log": {
+    "bytes": 102,
+    "sha256": "bdc5311757d7719105d98c5edf25d4c3938ff36c04f2d39e2f9b5f1153e521e2"
+  },
+  "docs/testing/evidence/P01-02/probe-commands.json": {
+    "bytes": 3862,
+    "sha256": "ee89f8e6dc7d1aec5ffd218f8ded8ba60f3f7243d0dcdda672c255feb5df17a4"
+  },
+  "docs/testing/evidence/P01-02/sa-token-api-compile.log": {
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "docs/testing/evidence/P01-02/sa-token-api-runtime-first-output.log": {
+    "bytes": 107,
+    "sha256": "d8ffac056ef5005983d0e1c1a9725f968ed831a6ac7a4ea18fdee54dda20196c"
+  },
+  "docs/testing/evidence/P01-02/sa-token-api-runtime.log": {
+    "bytes": 103,
+    "sha256": "487fe2c7794a5236703015f698cbd3ecb6925ed7e27d4ff2a4d7a8532ae955b0"
+  },
+  "docs/testing/evidence/P01-02/sa-token-probe-commands.json": {
+    "bytes": 1284,
+    "sha256": "f4332837697983f26bd610866596a8b39b8f8bc067408cbf9cb714f2e6202dce"
+  },
+  "docs/testing/evidence/P01-02/sa-token-source-record.json": {
+    "bytes": 506,
+    "sha256": "a7448c27f919ce0b58d645a32f01ef1945bbf67bdf8cdf3d94bd1ad4beaec342"
+  },
+  "docs/testing/evidence/P01-02/toolchain-current.json": {
+    "bytes": 1892,
+    "sha256": "1e8de9b1d032917a8ded6b17078dbb39e56c4814e89ef65404308be5e04c5584"
+  },
+  "docs/testing/evidence/P01-02/wechat-devtools-retrieval.json": {
+    "bytes": 485,
+    "sha256": "a119b1a1f62f124b53a5bd4b1740495d70f0d0231a890a3a589064e1fb61065e"
+  },
+  "docs/testing/evidence/P01-02/wechat-devtools-selected-log.json": {
+    "bytes": 2340,
+    "sha256": "33c7113241097677d4ae3eb91868ad049991a6b81918201718991c5dfca9a624"
+  },
+  "docs/testing/evidence/P01-02/wechat-devtools-stable-history.json": {
+    "bytes": 11700,
+    "sha256": "4b084e554a0f030bb38b5c3015001896fa1fa5367a82e00fbd12a0c1befa5a7e"
+  },
+  "docs/testing/evidence/P01-02/wechat-official-assets.json": {
+    "bytes": 414,
+    "sha256": "efd0a5d7896c94a910a2973a9190e8fa00f3e3836bd0f91dd5cbdc249b4681bc"
+  },
+  "docs/testing/evidence/P01-02/wechat-official-retrieval.json": {
+    "bytes": 1496,
+    "sha256": "67ca73949a9e85328bebed8c31f1950a389bdc30a6ea4052b8a776445d7e1865"
+  },
+  "docs/testing/evidence/P01-02/wechat-release-retrieval.json": {
+    "bytes": 185,
+    "sha256": "884be8354c9becde5d42488e5f31c4f2f27d47886d49f04eb6f076e1d6fa1fa0"
+  },
+  "docs/testing/evidence/P01-02/workspace-check.json": {
+    "bytes": 547,
+    "sha256": "7fe7f5b5ca9460f90d17c3b15d53f5385251e2edd59049640e82b641953e534f"
+  }
+}

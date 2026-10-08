@@ -1,0 +1,15 @@
+{
+  "id": "chunk-final-build",
+  "cwd": "/Users/kimwell/work/pet-platform/apps/admin-web",
+  "command": [
+    "node",
+    "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/pet-platform-p02-02-_qb1x3n7/chunk-final.mjs"
+  ],
+  "exit_code": 0,
+  "expected_exit_code": 0,
+  "status": "PASS",
+  "started_at": "2026-10-08T07:27:31.405390+08:00",
+  "duration_seconds": 2.974,
+  "evidence": "chunk-final-build.log",
+  "summary": "/work/pet-platform/node_modules/.pnpm/@rc-component+form@1.8.6_react-dom@19.2.8_react@19.2.8__react@19.2.8/node_modules/@rc-component/form/es/hooks/useForm.js\",\"renderedLength\":25976},{\"id\":\"/Users/kimwell/work/pet-platform/node_modules/.pnpm/@tanstack+query-core@5.104.1/node_modules/@tanstack/query-core/build/modern/queryClient.js\",\"renderedLength\":23441},{\"id\":\"/Users/kimwell/work/pet-platform/node_modules/.pnpm/@rc-component+trigger@3.10.1_react-dom@19.2.8_react@19.2.8__react@19.2.8/node_modules/@rc-component/trigger/es/hooks/useAlign.js\",\"renderedLength\":19562},{\"id\":\"/Users/kimwell/work/pet-platform/node_modules/.pnpm/@tanstack+router-core@1.171.34/node_modules/@tanstack/router-core/dist/esm/new-process-route-tree.js\",\"renderedLength\":18970},{\"id\":\"/Users/kimwell/work/pet-platform/node_modules/.pnpm/react@19.2.8/node_modules/react/cjs/react.production.js\",\"renderedLength\":18321},{\"id\":\"/Users/kimwell/work/pet-platform/node_modules/.pnpm/antd@6.6.5_react-dom@19.2.8_react@19.2.8__react@19.2.8/node_modules/antd/es/input/style/index.js\",\"renderedLength\":16717},{\"id\":\"/Users/kimwell/work/pet-platform/node_modules/.pnpm/@tanstack+query-core@5.104.1/node_modules/@tanstack/query-core/build/modern/query.js\",\"renderedLength\":15432},{\"id\":\"/Users/kimwell/work/pet-platform/node_modules/.pnpm/@rc-component+form@1.8.6_react-dom@19.2.8_react@19.2.8__react@19.2.8/node_modules/@rc-component/form/es/Field.js\",\"renderedLength\":14548},{\"id\":\"/Users/kimwell/work/pet-platform/node_modules/.pnpm/@ant-design+fast-color@3.0.1/node_modules/@ant-design/fast-color/es/FastColor.js\",\"renderedLength\":14261},{\"id\":\"/Users/kimwell/work/pet-platform/node_modules/.pnpm/antd@6.6.5_react-dom@19.2.8_react@19.2.8__react@19.2.8/node_modules/antd/es/result/serverError.js\",\"renderedLength\":14043},{\"id\":\"/Users/kimwell/work/pet-platform/node_modules/.pnpm/@rc-component+trigger@3.10.1_react-dom@19.2.8_react@19.2.8__react@19.2.8/node_modules/@rc-component/trigger/es/index.js\",\"renderedLength\":13802},{\"id\":\"/Users/kimwell/work/pet-platform/node_modules/.pnpm/antd@6.6.5_react-dom@19.2.8_react@19.2.8__react@19.2.8/node_modules/antd/es/typography/Base/index.js\",\"renderedLength\":13432}]}]\n✓ built in 2.76s\n"
+}

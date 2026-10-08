@@ -1,0 +1,16 @@
+{
+  "id": "rabbit-final-log",
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "command": [
+    "docker",
+    "logs",
+    "--tail",
+    "35",
+    "pet-platform-p02-validation-rabbitmq-1"
+  ],
+  "exit_code": 0,
+  "status": "PASS",
+  "duration_seconds": 0.03,
+  "evidence": "rabbit-final-log.log",
+  "summary": "[38;5;87m2026-10-07 14:22:07.803151+00:00 [notice] <0.64.0> \u001b[0m\n\u001b[38;5;214m2026-10-07 14:22:07.805988+00:00 [warning] <0.900.0> HTTP listener registry could not find context rabbitmq_prometheus_tls\u001b[0m\n\u001b[38;5;214m2026-10-07 14:22:07.812842+00:00 [warning] <0.900.0> HTTP listener registry could not find context rabbitmq_management_tls\u001b[0m\n2026-10-07 14:22:07.819907+00:00 [info] <0.1024.0> stopped TCP listener on [::]:5672\u001b[0m\n2026-10-07 14:22:07.820768+00:00 [info] <0.839.0> Virtual host '/' is stopping\u001b[0m\n2026-10-07 14:22:07.820882+00:00 [info] <0.1261.0> Closing all connections in vhost '/' on node 'rabbit@2ccb1a9559b8' because the vhost is stopping\u001b[0m\n2026-10-07 14:22:07.820953+00:00 [info] <0.852.0> Stopping message store for directory '/var/lib/rabbitmq/mnesia/rabbit@2ccb1a9559b8/msg_stores/vhosts/628WB79CIFDYO9LJI6DKMI09L/msg_store_persistent'\u001b[0m\n2026-10-07 14:22:07.824957+00:00 [info] <0.852.0> Message store for directory '/var/lib/rabbitmq/mnesia/rabbit@2ccb1a9559b8/msg_stores/vhosts/628WB79CIFDYO9LJI6DKMI09L/msg_store_persistent' is stopped\u001b[0m\n2026-10-07 14:22:07.825141+00:00 [info] <0.848.0> Stopping message store for directory '/var/lib/rabbitmq/mnesia/rabbit@2ccb1a9559b8/msg_stores/vhosts/628WB79CIFDYO9LJI6DKMI09L/msg_store_transient'\u001b[0m\n2026-10-07 14:22:07.827435+00:00 [info] <0.848.0> Message store for directory '/var/lib/rabbitmq/mnesia/rabbit@2ccb1a9559b8/msg_stores/vhosts/628WB79CIFDYO9LJI6DKMI09L/msg_store_transient' is stopped\u001b[0m\n\u001b[38;5;214m2026-10-07 14:22:07.833946+00:00 [warning] <0.532.0> RabbitMQ metadata store: worker exited with shutdown\u001b[0m\n"
+}

@@ -1,0 +1,3 @@
+{"id": "infra-stop-final", "exit_code": 0, "expected_exit_code": 0, "status": "PASS", "duration_seconds": 2.256}
+{"id": "containers-final-r2", "exit_code": 0, "expected_exit_code": 0, "status": "PASS", "duration_seconds": 0.046}
+{"id": "volumes-final-r2", "exit_code": 0, "expected_exit_code": 0, "status": "PASS", "duration_seconds": 0.029}

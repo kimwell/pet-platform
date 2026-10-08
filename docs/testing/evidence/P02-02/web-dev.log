@@ -1,0 +1,13 @@
+
+> pet-platform@0.0.0 dev:web /Users/kimwell/work/pet-platform
+> pnpm --filter @pet/admin-web dev
+
+
+> @pet/admin-web@0.0.0 dev /Users/kimwell/work/pet-platform/apps/admin-web
+> vite
+
+
+  VITE v7.3.7  ready in 158 ms
+
+  ➜  Local:   http://127.0.0.1:5173/
+ ELIFECYCLE  Command failed.

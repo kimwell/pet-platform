@@ -1,0 +1,26 @@
+{
+  "id": "infra-start",
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "command": [
+    "docker",
+    "compose",
+    "--env-file",
+    ".local-data/p02-infra.env",
+    "-p",
+    "pet-platform-p02-validation",
+    "-f",
+    "infra/local/docker-compose.yml",
+    "up",
+    "-d",
+    "--wait",
+    "--wait-timeout",
+    "180"
+  ],
+  "exit_code": 0,
+  "expected_exit_code": 0,
+  "status": "PASS",
+  "started_at": "2026-10-08T07:22:22.976349+08:00",
+  "duration_seconds": 9.013,
+  "evidence": "infra-start.log",
+  "summary": " Image redis:8.2.10-bookworm@sha256:47670742d7924adbcdb404d1288b6327815b23141969c0939b8e5d61f78c2634 Pulling \n Image postgres:17.11-bookworm@sha256:3645570cccdfa447589da9f57dd740faa29b30938e861289a5574b6ca6b03826 Pulling \n Image rabbitmq:4.3.6-management@sha256:8dd6e3570ddaa2ef82a6c3a8950e79c1f73893adfbdddbc374fc1f1ac8a0f5dd Pulling \n Image postgres:17.11-bookworm@sha256:3645570cccdfa447589da9f57dd740faa29b30938e861289a5574b6ca6b03826 Pulled \n Image rabbitmq:4.3.6-management@sha256:8dd6e3570ddaa2ef82a6c3a8950e79c1f73893adfbdddbc374fc1f1ac8a0f5dd Pulled \n Image redis:8.2.10-bookworm@sha256:47670742d7924adbcdb404d1288b6327815b23141969c0939b8e5d61f78c2634 Pulled \n Container pet-platform-p02-validation-redis-1 Starting \n Container pet-platform-p02-validation-postgres-1 Starting \n Container pet-platform-p02-validation-rabbitmq-1 Starting \n Container pet-platform-p02-validation-redis-1 Started \n Container pet-platform-p02-validation-postgres-1 Started \n Container pet-platform-p02-validation-rabbitmq-1 Started \n Container pet-platform-p02-validation-redis-1 Waiting \n Container pet-platform-p02-validation-rabbitmq-1 Waiting \n Container pet-platform-p02-validation-postgres-1 Waiting \n Container pet-platform-p02-validation-rabbitmq-1 Healthy \n Container pet-platform-p02-validation-redis-1 Healthy \n Container pet-platform-p02-validation-postgres-1 Healthy \n"
+}

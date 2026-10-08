@@ -1,0 +1,8 @@
+{
+  "path": "apps/wechat-miniprogram/project.config.json",
+  "restored_sha256": "12d8d6de2bbad9006fa0f34720c9ffa8b223d401b31a0db8b429e4aa5f568c74",
+  "matches_before": true,
+  "public_appid": "",
+  "private_appid": "wx9bcab67d52e2ee04",
+  "reason": "工具导入将AppID和默认配置写入公共文件，恢复原始模板；保留私有新增设置，不覆盖其他私有字段"
+}

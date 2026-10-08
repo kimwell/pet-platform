@@ -1,0 +1,453 @@
+{
+  "modified": [
+    {
+      "path": "AGENTS.md",
+      "size": 5538,
+      "sha256": "d173dc3e030d88ac7434bfdc8d902f6bc9b45a4503d837c4cdc7995558a72761"
+    },
+    {
+      "path": "README.md",
+      "size": 3969,
+      "sha256": "43e9be52b1bef2f00cfdbc5d495c50870a372c793a6a8f9ec4217fa5deaddfdc"
+    },
+    {
+      "path": "docs/architecture/CONFIGURATION.md",
+      "size": 4662,
+      "sha256": "4dc1eb8f402c1a14c643c08cc4fb99e467e684590d191d3296ceb16179c9b13e"
+    },
+    {
+      "path": "docs/architecture/PROJECT-STRUCTURE.md",
+      "size": 5923,
+      "sha256": "2b468df4d5b208ea4762a276bc12444914c868b8d588f213f8c3147af116e122"
+    },
+    {
+      "path": "docs/architecture/TECHNICAL-BASELINE.md",
+      "size": 6886,
+      "sha256": "bd6a50a6bb26a8971fc044eec6db7958db01d12bde0eaa5fa56f3309755cce8b"
+    },
+    {
+      "path": "docs/development/DECISION-LOG.md",
+      "size": 10716,
+      "sha256": "edd8e8aa4721a02a3f9adf7ada33c674ddc092c82aa83632b5d25abe7abfeab4"
+    },
+    {
+      "path": "docs/development/ROADMAP.md",
+      "size": 6227,
+      "sha256": "08ffb84ce36fb1fdc95505241497de86b03486ba5be5a6210d7b1c2241506ed7"
+    },
+    {
+      "path": "docs/development/VERSION-MATRIX.md",
+      "size": 27457,
+      "sha256": "6c3e82720a062693743f0401ccf59c44155489f31405156d51f356bfb558770b"
+    },
+    {
+      "path": "docs/testing/ACCEPTANCE-MATRIX.md",
+      "size": 8031,
+      "sha256": "d958817b4fd0300fdea173a3c2efe279d730b2ded31173b0f50c4f4790e9cf1e"
+    }
+  ],
+  "added": [
+    {
+      "path": ".editorconfig",
+      "size": 245,
+      "sha256": "954af083d0862eb3ce6960b0c7c0bab34ecd6c4edddc2c96cfc2db7727d8fe58"
+    },
+    {
+      "path": ".gitattributes",
+      "size": 69,
+      "sha256": "23f7a9b4779a530b704ba2dcfb7374732e55c7c2eb2c61ad5d9e25024ab73958"
+    },
+    {
+      "path": ".github/workflows/check.yml",
+      "size": 1751,
+      "sha256": "3462f115046b1eeee109c1c44dcb5d6827de3bfdb389c93db76149601f389854"
+    },
+    {
+      "path": ".gitignore",
+      "size": 305,
+      "sha256": "ef4fe142083212e6808c8289194bd2aa0892f6c0416cd49da44328a5b8659d3e"
+    },
+    {
+      "path": ".npmrc",
+      "size": 87,
+      "sha256": "2ad2ae45246b10f3c8952f88b7789dba7533a2e6ffb941db9c02ded1ae4b9219"
+    },
+    {
+      "path": ".nvmrc",
+      "size": 8,
+      "sha256": "73fb1b615e2043a933be1c0895cde4358036acc28d785692509b822aa53c761f"
+    },
+    {
+      "path": "apps/admin-web/.env.example",
+      "size": 192,
+      "sha256": "db6603b706e8af24905a1c96e79fa2a5f0f5c6cd4f1486192999166a69794aa7"
+    },
+    {
+      "path": "apps/admin-web/index.html",
+      "size": 314,
+      "sha256": "b5a39a23ac187683112878c1b53d24ed029fe149ef7be0980679ee77a9ffa434"
+    },
+    {
+      "path": "apps/admin-web/package.json",
+      "size": 696,
+      "sha256": "2a0ac0d25806ed0fb54d4e35db1298a0f77529f938266a355da6b70c118b8e04"
+    },
+    {
+      "path": "apps/admin-web/src/app/layout/SystemLayout.tsx",
+      "size": 398,
+      "sha256": "c8be614b7eac27ef0c97b510cf224418fc0220174c8fa6acab81e7f1c34f95d8"
+    },
+    {
+      "path": "apps/admin-web/src/app/providers/AppProviders.tsx",
+      "size": 634,
+      "sha256": "5c43c863dc35c1e279f8d0a8f3061123b79d4d8fcd5fe039934d127bd891f03b"
+    },
+    {
+      "path": "apps/admin-web/src/app/router/router.test.tsx",
+      "size": 1292,
+      "sha256": "7dbca2df5de4336c656148fba31cec74fd1fd66b202725eec86f12e91479cb10"
+    },
+    {
+      "path": "apps/admin-web/src/app/router/router.ts",
+      "size": 752,
+      "sha256": "90c3d85b0f081ee1d00031346d2163b621ae060f1730b62a83a73f14dea6364c"
+    },
+    {
+      "path": "apps/admin-web/src/main.tsx",
+      "size": 537,
+      "sha256": "c576981ac14150e6fe3c12adeb6444b03d153633c5d32eb27b5fdc19967827ad"
+    },
+    {
+      "path": "apps/admin-web/src/shared/SystemEntry.tsx",
+      "size": 559,
+      "sha256": "b3f646cc045dea0eb528f06388c2f9f84af52875fae67fdbea79849fc1cdd63f"
+    },
+    {
+      "path": "apps/admin-web/src/shared/SystemError.tsx",
+      "size": 351,
+      "sha256": "d563a34f5e4dd05a6bce21cc696277358475ee3c01524eb79a142b8dbb81383e"
+    },
+    {
+      "path": "apps/admin-web/src/shared/SystemNotFound.tsx",
+      "size": 257,
+      "sha256": "3d8347c2dce548a8b4c3af9d24f3a6cb933ebc3b25387406539a90d5f65058cc"
+    },
+    {
+      "path": "apps/admin-web/src/styles/global.css",
+      "size": 435,
+      "sha256": "f7b8122436cceb52e77e6b056d11395626b35bf7e1b6cdc76aeaf6fe42d3adb3"
+    },
+    {
+      "path": "apps/admin-web/tsconfig.json",
+      "size": 492,
+      "sha256": "5c622af73192e4a8b4aa5b00e632dfdf9b0e8bad98d2478219784c5d55b7fdf4"
+    },
+    {
+      "path": "apps/admin-web/vite.config.ts",
+      "size": 534,
+      "sha256": "1956d52ecb398e3a38118a101db55644d2cabcbaeb6497054a1435da680410fa"
+    },
+    {
+      "path": "apps/backend/.env.example",
+      "size": 269,
+      "sha256": "1ee179921b6c6f9940845cb4d1b0f1debc8bba35f1213efcd40743ef24fe75a8"
+    },
+    {
+      "path": "apps/backend/.mvn/wrapper/maven-wrapper.properties",
+      "size": 255,
+      "sha256": "9e702bcd7e68ba1cace0a3382a7082e6e1e1b321688a7a3fbf4d5ae7eb0af533"
+    },
+    {
+      "path": "apps/backend/mvnw",
+      "size": 11790,
+      "sha256": "cae96cef89ebea3531221f4ae17c23cf8edf67d00eae8306d4186ae1bbed4d02"
+    },
+    {
+      "path": "apps/backend/mvnw.cmd",
+      "size": 8481,
+      "sha256": "46eedb8419bd14fe70d5bb2916d7b6f51806e51b39d5b76a42610384ca929c1c"
+    },
+    {
+      "path": "apps/backend/pom.xml",
+      "size": 2304,
+      "sha256": "de220c68dc5787d27b43f3425798b872003aae089999e9cc5a0986809b3f30c7"
+    },
+    {
+      "path": "apps/backend/src/main/java/com/pet/platform/Application.java",
+      "size": 506,
+      "sha256": "8c2b9a29bbbc27cd6a389ea830c7834db57c174ad74a320df0f446ba27c12e0b"
+    },
+    {
+      "path": "apps/backend/src/main/java/com/pet/platform/shared/config/EnvironmentSettings.java",
+      "size": 1359,
+      "sha256": "8c067e0c8af84686704c02ec71396ef720e2ba3f96d3f6f24eb3476664696df8"
+    },
+    {
+      "path": "apps/backend/src/main/resources/application-local.yml",
+      "size": 170,
+      "sha256": "262c1f4013147fc789e15b7bb47d5dc37e1b2e9b41697efa6a9fe8a43bb9af8d"
+    },
+    {
+      "path": "apps/backend/src/main/resources/application-prod.yml",
+      "size": 138,
+      "sha256": "dcb1d8095e81429b20c5c610c9535770ea5b8a38c1e15a74d256cb6085ce1f64"
+    },
+    {
+      "path": "apps/backend/src/main/resources/application-test.yml",
+      "size": 98,
+      "sha256": "0f1764f68289d35be621e0f9670d1c3772096d558395cf8c321876ae03ab5779"
+    },
+    {
+      "path": "apps/backend/src/main/resources/application.yml",
+      "size": 380,
+      "sha256": "097ffbee6d13ed8e279e3fa6fc8a91cc25153d30877b7d4a1cb9787133e78790"
+    },
+    {
+      "path": "apps/backend/src/test/java/com/pet/platform/ApplicationTest.java",
+      "size": 1773,
+      "sha256": "41d541bbef26481f71da27369a313be23f801fdec41ef61dacc9c359a5d9b870"
+    },
+    {
+      "path": "apps/wechat-miniprogram/miniprogram/app.json",
+      "size": 288,
+      "sha256": "c68f09ccf00ef6ceefb23b1f9896e88687d38daef2758da414dc0bf2784a51b1"
+    },
+    {
+      "path": "apps/wechat-miniprogram/miniprogram/app.ts",
+      "size": 9,
+      "sha256": "1ab645c73bcea61604f9cc4805a752ab9ba8fb66813d8c57cad34328c0ce4109"
+    },
+    {
+      "path": "apps/wechat-miniprogram/miniprogram/app.wxss",
+      "size": 64,
+      "sha256": "9ebfef484f519a77b14a5f9424b26528e6bfc5d576f2ecebafcc2d9a9452be60"
+    },
+    {
+      "path": "apps/wechat-miniprogram/miniprogram/pages/system/entry/index.json",
+      "size": 127,
+      "sha256": "52edaf8292935a02800a208da5720c55639749753aa28ee5a0d064d15905c27c"
+    },
+    {
+      "path": "apps/wechat-miniprogram/miniprogram/pages/system/entry/index.ts",
+      "size": 108,
+      "sha256": "ab37f9c0fd0468fa3f3a383682a5caae715f75e0fda570f727201c1ced34ef99"
+    },
+    {
+      "path": "apps/wechat-miniprogram/miniprogram/pages/system/entry/index.wxml",
+      "size": 420,
+      "sha256": "af1c8e4d93617f81864efa90f889244af03c83943260ae514186d49da3e79bce"
+    },
+    {
+      "path": "apps/wechat-miniprogram/miniprogram/pages/system/entry/index.wxss",
+      "size": 298,
+      "sha256": "903e301d070fc6237f1a7731ef11a877235f3540e936345bcbfe654c2b5317c3"
+    },
+    {
+      "path": "apps/wechat-miniprogram/miniprogram/sitemap.json",
+      "size": 102,
+      "sha256": "1ef78b88ee0734f5b3b394001d6acc77f82756fa55fcfa1f63c1c1df5db63c18"
+    },
+    {
+      "path": "apps/wechat-miniprogram/package.json",
+      "size": 300,
+      "sha256": "de5fc3748ff2dd912751c571fadc5391a0cfcb1889aacf0c68717379659efd64"
+    },
+    {
+      "path": "apps/wechat-miniprogram/project.config.json",
+      "size": 569,
+      "sha256": "12d8d6de2bbad9006fa0f34720c9ffa8b223d401b31a0db8b429e4aa5f568c74"
+    },
+    {
+      "path": "apps/wechat-miniprogram/project.private.config.json.example",
+      "size": 104,
+      "sha256": "33143ea7cc06740d283afeb4568038fde6bab0179d52858163327012ec77751b"
+    },
+    {
+      "path": "apps/wechat-miniprogram/tsconfig.json",
+      "size": 387,
+      "sha256": "ce66ab6a8ad7b4a91553f438776e412a0f2ca91761f4de4ac704b545677dc7a7"
+    },
+    {
+      "path": "docs/development/LOCAL-DEVELOPMENT.md",
+      "size": 6554,
+      "sha256": "77e4d2fbfeac7a2fd8a1b0951dcfe9d233f9198af7f08cb352b6717bc0a36aab"
+    },
+    {
+      "path": "docs/testing/P02-01-VERIFICATION.md",
+      "size": 19112,
+      "sha256": "ec614d5cfb3e6f55f4236dab1c2e9a4cd1766b3fba76d499dc38f4fec0b075fd"
+    },
+    {
+      "path": "eslint.config.mjs",
+      "size": 989,
+      "sha256": "a926276f3c99a917a88b26b17063ce1af6245c3bc40e7c6778546e405dffcce6"
+    },
+    {
+      "path": "infra/local/.env.example",
+      "size": 395,
+      "sha256": "73c82a0e36aa612afe1cc45ea5aad1e6c3ab81360884d6264dfbfbdc10bc3363"
+    },
+    {
+      "path": "infra/local/README.md",
+      "size": 3548,
+      "sha256": "31f7ad09393c2a86176eeb3399e4ecc6d9038ab5576cf12642993f1d8b06452d"
+    },
+    {
+      "path": "infra/local/docker-compose.yml",
+      "size": 2384,
+      "sha256": "05d1d6cea0dad826c6a62a743c8678eef8d8f3398724333d5611ee48043203aa"
+    },
+    {
+      "path": "package.json",
+      "size": 1284,
+      "sha256": "a851b3671d00b0eadbea73c10ece9e50f8768c2d230dc2121d474d4afa44cd10"
+    },
+    {
+      "path": "packages/api-contracts/README.md",
+      "size": 483,
+      "sha256": "f102a2058d7fd50f1bfb300df79b3ed52c4fdfd11901e41c61e8baf57cba99d3"
+    },
+    {
+      "path": "packages/api-contracts/package.json",
+      "size": 96,
+      "sha256": "7f4ed194ef3a8aa358585d663bcba39fca9bb9d49f137ee89b69daaecb858c1b"
+    },
+    {
+      "path": "pnpm-lock.yaml",
+      "size": 115247,
+      "sha256": "d5b3d0d134487660a64a2e51504cef6dfe5f066abb599807c5226fbcf1d7ec72"
+    },
+    {
+      "path": "pnpm-workspace.yaml",
+      "size": 198,
+      "sha256": "2117ebe8a57eb5b7e24039b90183e512046cac3326a2af89764a2d6f730607db"
+    },
+    {
+      "path": "scripts/check-miniprogram.mjs",
+      "size": 1732,
+      "sha256": "a72b7b8ba52aec66a92e12b78718be85b02d76b06e89eebe9234bed2136fe008"
+    },
+    {
+      "path": "scripts/check-repository.mjs",
+      "size": 3689,
+      "sha256": "17778421a39f66ce2a0b5e1696159c9718de0da5266e808e87a166498d7899d7"
+    }
+  ],
+  "evidence_added": [
+    "docs/testing/evidence/P02-01/EVIDENCE-MANIFEST.json",
+    "docs/testing/evidence/P02-01/TEST-com.pet.platform.ApplicationTest.xml",
+    "docs/testing/evidence/P02-01/all-command-records.json",
+    "docs/testing/evidence/P02-01/audit-reproduction.py",
+    "docs/testing/evidence/P02-01/backend-artifact.json",
+    "docs/testing/evidence/P02-01/backend-dependencies.json",
+    "docs/testing/evidence/P02-01/backend-dependencies.log",
+    "docs/testing/evidence/P02-01/backend-dependency-tree.txt",
+    "docs/testing/evidence/P02-01/backend-missing-environment.json",
+    "docs/testing/evidence/P02-01/backend-missing-environment.log",
+    "docs/testing/evidence/P02-01/backend-start-process.json",
+    "docs/testing/evidence/P02-01/backend-start.log",
+    "docs/testing/evidence/P02-01/backend-verify.json",
+    "docs/testing/evidence/P02-01/backend-verify.log",
+    "docs/testing/evidence/P02-01/change-summary.json",
+    "docs/testing/evidence/P02-01/check-ci.py",
+    "docs/testing/evidence/P02-01/check-root-r2.json",
+    "docs/testing/evidence/P02-01/check-root-r2.log",
+    "docs/testing/evidence/P02-01/check-root-r3.json",
+    "docs/testing/evidence/P02-01/check-root-r3.log",
+    "docs/testing/evidence/P02-01/check-root.json",
+    "docs/testing/evidence/P02-01/check-root.log",
+    "docs/testing/evidence/P02-01/ci-actions.json",
+    "docs/testing/evidence/P02-01/ci-source-check.json",
+    "docs/testing/evidence/P02-01/ci-source-check.log",
+    "docs/testing/evidence/P02-01/clean-install.py",
+    "docs/testing/evidence/P02-01/compilets-official.txt",
+    "docs/testing/evidence/P02-01/compose-config.json",
+    "docs/testing/evidence/P02-01/compose-config.log",
+    "docs/testing/evidence/P02-01/compose-empty-password.json",
+    "docs/testing/evidence/P02-01/compose-empty-password.log",
+    "docs/testing/evidence/P02-01/documentation-audit-final.json",
+    "docs/testing/evidence/P02-01/documentation-audit-final.log",
+    "docs/testing/evidence/P02-01/documentation-audit-r2.json",
+    "docs/testing/evidence/P02-01/documentation-audit-r2.log",
+    "docs/testing/evidence/P02-01/documentation-audit.json",
+    "docs/testing/evidence/P02-01/documentation-audit.log",
+    "docs/testing/evidence/P02-01/environment.json",
+    "docs/testing/evidence/P02-01/environment.log",
+    "docs/testing/evidence/P02-01/final-audit.json",
+    "docs/testing/evidence/P02-01/frontend-clean-install.json",
+    "docs/testing/evidence/P02-01/frontend-clean-install.log",
+    "docs/testing/evidence/P02-01/frontend-direct-tree.json",
+    "docs/testing/evidence/P02-01/frontend-direct-tree.log",
+    "docs/testing/evidence/P02-01/frontend-install.json",
+    "docs/testing/evidence/P02-01/frontend-install.log",
+    "docs/testing/evidence/P02-01/frontend-lock-replay.json",
+    "docs/testing/evidence/P02-01/frontend-lock-replay.log",
+    "docs/testing/evidence/P02-01/frontend-rebuild.json",
+    "docs/testing/evidence/P02-01/frontend-rebuild.log",
+    "docs/testing/evidence/P02-01/infra-smoke.json",
+    "docs/testing/evidence/P02-01/infra-smoke.log",
+    "docs/testing/evidence/P02-01/infra-smoke.py",
+    "docs/testing/evidence/P02-01/infra-start.json",
+    "docs/testing/evidence/P02-01/infra-start.log",
+    "docs/testing/evidence/P02-01/infra-stop.json",
+    "docs/testing/evidence/P02-01/infra-stop.log",
+    "docs/testing/evidence/P02-01/inventory-before.json",
+    "docs/testing/evidence/P02-01/mini-lint.json",
+    "docs/testing/evidence/P02-01/mini-lint.log",
+    "docs/testing/evidence/P02-01/mini-npm-output-manifest.json",
+    "docs/testing/evidence/P02-01/mini-npm-pack.json",
+    "docs/testing/evidence/P02-01/mini-npm-pack.log",
+    "docs/testing/evidence/P02-01/mini-typecheck.json",
+    "docs/testing/evidence/P02-01/mini-typecheck.log",
+    "docs/testing/evidence/P02-01/negative-config.json",
+    "docs/testing/evidence/P02-01/negative-config.log",
+    "docs/testing/evidence/P02-01/negative-config.py",
+    "docs/testing/evidence/P02-01/npm-official.txt",
+    "docs/testing/evidence/P02-01/pack-api.cjs",
+    "docs/testing/evidence/P02-01/process-cleanup.json",
+    "docs/testing/evidence/P02-01/projectconfig-official.txt",
+    "docs/testing/evidence/P02-01/rabbit-exit-final.json",
+    "docs/testing/evidence/P02-01/rabbit-exit-final.log",
+    "docs/testing/evidence/P02-01/rabbit-final-log.json",
+    "docs/testing/evidence/P02-01/rabbit-final-log.log",
+    "docs/testing/evidence/P02-01/rabbit-graceful-shutdown.json",
+    "docs/testing/evidence/P02-01/rabbit-graceful-shutdown.log",
+    "docs/testing/evidence/P02-01/rabbit-restart.json",
+    "docs/testing/evidence/P02-01/rabbit-restart.log",
+    "docs/testing/evidence/P02-01/rabbit-stop-investigation.json",
+    "docs/testing/evidence/P02-01/rabbit-stop-investigation.log",
+    "docs/testing/evidence/P02-01/repo-final.json",
+    "docs/testing/evidence/P02-01/repo-final.log",
+    "docs/testing/evidence/P02-01/repo-lint.json",
+    "docs/testing/evidence/P02-01/repo-lint.log",
+    "docs/testing/evidence/P02-01/runtime-final-r2.json",
+    "docs/testing/evidence/P02-01/runtime-final-r2.log",
+    "docs/testing/evidence/P02-01/runtime-final.json",
+    "docs/testing/evidence/P02-01/runtime-final.log",
+    "docs/testing/evidence/P02-01/skill-devtools-official.txt",
+    "docs/testing/evidence/P02-01/startup-http.json",
+    "docs/testing/evidence/P02-01/startup-http.log",
+    "docs/testing/evidence/P02-01/verify.py",
+    "docs/testing/evidence/P02-01/web-browser.json",
+    "docs/testing/evidence/P02-01/web-build-r2.json",
+    "docs/testing/evidence/P02-01/web-build-r2.log",
+    "docs/testing/evidence/P02-01/web-build.json",
+    "docs/testing/evidence/P02-01/web-build.log",
+    "docs/testing/evidence/P02-01/web-dev-process.json",
+    "docs/testing/evidence/P02-01/web-dev.log",
+    "docs/testing/evidence/P02-01/web-entry.jpg",
+    "docs/testing/evidence/P02-01/web-lint.json",
+    "docs/testing/evidence/P02-01/web-lint.log",
+    "docs/testing/evidence/P02-01/web-not-found.jpg",
+    "docs/testing/evidence/P02-01/web-not-found.txt",
+    "docs/testing/evidence/P02-01/web-test.json",
+    "docs/testing/evidence/P02-01/web-test.log",
+    "docs/testing/evidence/P02-01/web-typecheck.json",
+    "docs/testing/evidence/P02-01/web-typecheck.log",
+    "docs/testing/evidence/P02-01/wrapper-empty-cache.json",
+    "docs/testing/evidence/P02-01/wrapper-empty-cache.log",
+    "docs/testing/evidence/P02-01/wrapper-provenance.json"
+  ],
+  "evidence_hashes": "EVIDENCE-MANIFEST.json 逐文件记录；避免递归自引用的过期哈希",
+  "deleted": []
+}

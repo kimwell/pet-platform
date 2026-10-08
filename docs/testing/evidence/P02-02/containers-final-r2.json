@@ -1,0 +1,20 @@
+{
+  "id": "containers-final-r2",
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "command": [
+    "docker",
+    "inspect",
+    "--format",
+    "{{.Name}} Status={{.State.Status}} Exit={{.State.ExitCode}} OOM={{.State.OOMKilled}} Hostname={{.Config.Hostname}} StopTimeout={{.Config.StopTimeout}} {{json .Mounts}}",
+    "pet-platform-p02-validation-postgres-1",
+    "pet-platform-p02-validation-redis-1",
+    "pet-platform-p02-validation-rabbitmq-1"
+  ],
+  "exit_code": 0,
+  "expected_exit_code": 0,
+  "status": "PASS",
+  "started_at": "2026-10-08T07:31:52.683714+08:00",
+  "duration_seconds": 0.046,
+  "evidence": "containers-final-r2.log",
+  "summary": "/pet-platform-p02-validation-postgres-1 Status=exited Exit=0 OOM=false Hostname=220b713e01b2 StopTimeout=1 [{\"Type\":\"volume\",\"Name\":\"pet-platform-p02-validation_postgres-data\",\"Source\":\"/var/lib/docker/volumes/pet-platform-p02-validation_postgres-data/_data\",\"Destination\":\"/var/lib/postgresql/data\",\"Driver\":\"local\",\"Mode\":\"rw\",\"RW\":true,\"Propagation\":\"\"}]\n/pet-platform-p02-validation-redis-1 Status=exited Exit=0 OOM=false Hostname=c32b316136a1 StopTimeout=1 [{\"Type\":\"volume\",\"Name\":\"pet-platform-p02-validation_redis-data\",\"Source\":\"/var/lib/docker/volumes/pet-platform-p02-validation_redis-data/_data\",\"Destination\":\"/data\",\"Driver\":\"local\",\"Mode\":\"rw\",\"RW\":true,\"Propagation\":\"\"}]\n/pet-platform-p02-validation-rabbitmq-1 Status=exited Exit=0 OOM=false Hostname=rabbitmq StopTimeout=30 [{\"Type\":\"volume\",\"Name\":\"pet-platform-p02-validation_rabbitmq-data\",\"Source\":\"/var/lib/docker/volumes/pet-platform-p02-validation_rabbitmq-data/_data\",\"Destination\":\"/var/lib/rabbitmq\",\"Driver\":\"local\",\"Mode\":\"rw\",\"RW\":true,\"Propagation\":\"\"}]\n"
+}

@@ -1,0 +1,10 @@
+{
+  "installed_version": "2.01.2510260",
+  "target_version": "2.02.2608080",
+  "private_config_present": false,
+  "public_appid_present": false,
+  "npm_build": "NOT_EXECUTED",
+  "compile": "NOT_EXECUTED",
+  "device": "NOT_EXECUTED",
+  "reason": "已安装工具低于冻结目标，未提供真实 AppID；不改全局工具、不伪造 AppID"
+}

@@ -1,0 +1,15 @@
+{
+  "id": "web-build",
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "command": [
+    "pnpm",
+    "build:web"
+  ],
+  "exit_code": 2,
+  "expected_exit_code": 0,
+  "status": "FAIL",
+  "started_at": "2026-10-08T07:23:33.498314+08:00",
+  "duration_seconds": 1.914,
+  "evidence": "web-build.log",
+  "summary": "\n> pet-platform@0.0.0 build:web /Users/kimwell/work/pet-platform\n> pnpm --filter @pet/admin-web build\n\n\n> @pet/admin-web@0.0.0 build /Users/kimwell/work/pet-platform/apps/admin-web\n> tsc --noEmit && vite build\n\nvite.config.ts(5,29): error TS2769: No overload matches this call.\n  The last overload gave the following error.\n    Argument of type '({ mode, command, isPreview }: ConfigEnv) => { plugins: Plugin<any>[][]; server: { host: string; port: number; strictPort: true; proxy: { '/api': { target: string; changeOrigin: boolean; }; } | { '/api'?: undefined; }; }; preview: { ...; }; }' is not assignable to parameter of type 'UserConfigExport'.\n      Type '({ mode, command, isPreview }: ConfigEnv) => { plugins: Plugin<any>[][]; server: { host: string; port: number; strictPort: true; proxy: { '/api': { target: string; changeOrigin: boolean; }; } | { '/api'?: undefined; }; }; preview: { ...; }; }' is not assignable to type 'UserConfigFnObject'.\n        Call signature return types '{ plugins: Plugin<any>[][]; server: { host: string; port: number; strictPort: true; proxy: { '/api': { target: string; changeOrigin: boolean; }; } | { '/api'?: undefined; }; }; preview: { host: string; port: number; strictPort: true; proxy: {}; }; }' and 'UserConfig' are incompatible.\n          The types of 'server.proxy' are incompatible between these types.\n            Type '{ '/api': { target: string; changeOrigin: boolean; }; } | { '/api'?: undefined; }' is not assignable to type 'Record<string, string | ProxyOptions> | undefined'.\n              Type '{ '/api'?: undefined; }' is not assignable to type 'Record<string, string | ProxyOptions>'.\n                Property ''/api'' is incompatible with index signature.\n                  Type 'undefined' is not assignable to type 'string | ProxyOptions'.\n/Users/kimwell/work/pet-platform/apps/admin-web:\n ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL  @pet/admin-web@0.0.0 build: `tsc --noEmit && vite build`\nExit status 2\n ELIFECYCLE  Command failed with exit code 2.\n"
+}

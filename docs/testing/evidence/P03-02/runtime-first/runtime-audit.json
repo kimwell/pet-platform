@@ -1,0 +1,15 @@
+{
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "argv": [
+    "python3",
+    "docs/testing/evidence/P03-02/runtime-audit.py"
+  ],
+  "exitCode": 1,
+  "startedAtUTC": "2026-10-08T01:06:47.669810+00:00",
+  "finishedAtUTC": "2026-10-08T01:06:53.838322+00:00",
+  "toolchain": {
+    "JAVA_HOME": "/private/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/pet-platform-p02-02-_qb1x3n7/tools/jdk/jdk-21.0.12.1+1/Contents/Home"
+  },
+  "log": "runtime-audit.log",
+  "summary": "Traceback (most recent call last):\n  File \"/Users/kimwell/work/pet-platform/docs/testing/evidence/P03-02/runtime-audit.py\", line 115, in <module>\n    assert result['status'] == 200 and result['body'] == {'status': 'UP'}\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n"
+}

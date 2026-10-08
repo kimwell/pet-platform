@@ -1,0 +1,14 @@
+{
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "command": [
+    "pkgutil",
+    "--expand-full",
+    "/tmp/wechat_devtools_2.02.2608080_darwin_arm64.pkg",
+    "/tmp/pet-wechat-2.02.2608080-expanded"
+  ],
+  "started_at": "2026-10-08T08:05:49.038409+08:00",
+  "duration_seconds": 6.211,
+  "exit_code": 0,
+  "log": "package-expand.log",
+  "summary": ""
+}

@@ -1,0 +1,13 @@
+{
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "steps": [
+    "PostgreSQL 经宿主映射端口 TCP 密码认证 SELECT",
+    "Redis 经宿主映射端口认证 PING / 无认证 NOAUTH",
+    "RabbitMQ diagnostics / authenticate_user",
+    "AMQP 实际认证握手 / vhost open / close",
+    "management 401 / 200"
+  ],
+  "status": "PASS",
+  "application_integration": "NOT_EXECUTED",
+  "message_publish": "NOT_EXECUTED"
+}

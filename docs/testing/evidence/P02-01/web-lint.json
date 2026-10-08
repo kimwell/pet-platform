@@ -1,0 +1,16 @@
+{
+  "id": "web-lint",
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "command": [
+    "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/tools/node-v24.21.0-darwin-arm64/bin/node",
+    "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/tools/pnpm/package/bin/pnpm.cjs",
+    "--filter",
+    "@pet/admin-web",
+    "lint"
+  ],
+  "exit_code": 0,
+  "status": "PASS",
+  "duration_seconds": 2.89,
+  "evidence": "web-lint.log",
+  "summary": "\n> @pet/admin-web@0.0.0 lint /Users/kimwell/work/pet-platform/apps/admin-web\n> eslint src vite.config.ts --max-warnings=0\n\n"
+}

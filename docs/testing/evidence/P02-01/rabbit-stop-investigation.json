@@ -1,0 +1,16 @@
+{
+  "id": "rabbit-stop-investigation",
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "command": [
+    "docker",
+    "inspect",
+    "--format",
+    "ExitCode={{.State.ExitCode}} OOMKilled={{.State.OOMKilled}} Error={{.State.Error}} FinishedAt={{.State.FinishedAt}} StopSignal={{.Config.StopSignal}}",
+    "pet-platform-p02-validation-rabbitmq-1"
+  ],
+  "exit_code": 0,
+  "status": "PASS",
+  "duration_seconds": 0.05,
+  "evidence": "rabbit-stop-investigation.log",
+  "summary": "ExitCode=137 OOMKilled=false Error= FinishedAt=2026-10-07T14:22:08.822068218Z StopSignal=\n"
+}

@@ -1,0 +1,29 @@
+{
+  "checked_at": "2026-10-08T08:06:44.073476+08:00",
+  "sources": [
+    {
+      "url": "https://developers.weixin.qq.com/miniprogram/dev/devtools/projectconfig.html",
+      "http_status": 200,
+      "snapshot": "official-config.html",
+      "finding": "同名私有设置优先；appid可私有配置；部分产物设置私有无效"
+    },
+    {
+      "url": "https://developers.weixin.qq.com/miniprogram/dev/devtools/cli.html",
+      "http_status": 200,
+      "snapshot": "official-cli.html",
+      "finding": "build-npm构建；open --project自动编译刷新并打开模拟器；没有独立compile子命令"
+    },
+    {
+      "url": "https://devtools.wxqcloud.qq.com.cn/WechatWebDev/nightly/versions/logs/stable_v2.02.2608080.json",
+      "http_status": 200,
+      "snapshot": "target-version.txt",
+      "finding": "目标Stable/ARM64官方分发与发布日期"
+    },
+    {
+      "url": "https://cnb.cool/tencent/cloud/cloudbase/cloudbase-skills/-/git/raw/main/skills/cloudbase/references/miniprogram-development/references/devtools-debug-preview.md",
+      "http_status": 200,
+      "snapshot": "skill-preview.html",
+      "finding": "本地skill缺失参考经声明的官方skill源恢复读取；用户冻结Stable要求优先，不另装Nightly/CI"
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+- banner:
+  - strong: 企业应用工程
+- main:
+  - img "No Found"
+  - generic: 页面不存在
+  - generic: 请检查访问地址。
+  - link "返回系统入口":
+    - /url: /

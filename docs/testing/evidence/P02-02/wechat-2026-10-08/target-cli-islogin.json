@@ -1,0 +1,12 @@
+{
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "command": [
+    "/Users/kimwell/Applications/WechatDevTools-2.02.2608080.app/Contents/MacOS/cli",
+    "islogin"
+  ],
+  "started_at": "2026-10-08T08:06:18.239333+08:00",
+  "duration_seconds": 0.238,
+  "exit_code": 255,
+  "log": "target-cli-islogin.log",
+  "summary": "- initialize\n\n(node:22250) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.\n(Use `Electron --trace-deprecation ...` to show where the warning was created)\n[error] Please ensure that the IDE has been properly installed\n✖ initialize error: Error: ENOENT: no such file or directory, open '/Users/kimwell/Library/Application Support/微信开发者工具/b0dc668933a0edaedd558a9f59ae66b5/Default/.cli', Error: ENOENT: no such file or directory, open '/Users/kimwell/Library/Application Support/微信开发者工具/b0dc668933a0edaedd558a9f59ae66b5/Default/.cli'\n    at Object.writeFileSync (node:fs:2426:20)\n    at /Users/kimwell/Applications/WechatDevTools-2.02.2608080.app/Contents/Resources/app.asar.unpacked/js/common/cli/index.js:129:43070\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n"
+}

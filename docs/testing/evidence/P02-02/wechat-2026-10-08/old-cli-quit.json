@@ -1,0 +1,12 @@
+{
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "command": [
+    "/Applications/wechatwebdevtools.app/Contents/MacOS/cli",
+    "quit"
+  ],
+  "started_at": "2026-10-08T08:06:13.409779+08:00",
+  "duration_seconds": 0.275,
+  "exit_code": 0,
+  "log": "old-cli-quit.log",
+  "summary": "- initialize\n\n✔ IDE server has started, listening on http://127.0.0.1:18530\n- preparing\n✔ quit\n"
+}

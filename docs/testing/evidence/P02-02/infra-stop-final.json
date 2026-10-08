@@ -1,0 +1,19 @@
+{
+  "id": "infra-stop-final",
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "command": [
+    "pnpm",
+    "stop:infra",
+    "--env-file",
+    ".local-data/p02-infra.env",
+    "--project",
+    "pet-platform-p02-validation"
+  ],
+  "exit_code": 0,
+  "expected_exit_code": 0,
+  "status": "PASS",
+  "started_at": "2026-10-08T07:31:52.116354+08:00",
+  "duration_seconds": 2.256,
+  "evidence": "infra-stop-final.log",
+  "summary": "\n> pet-platform@0.0.0 stop:infra /Users/kimwell/work/pet-platform\n> node scripts/local-infra.mjs stop --env-file .local-data/p02-infra.env --project pet-platform-p02-validation\n\n/pet-platform-p02-validation-postgres-1 exited 0 false\n/pet-platform-p02-validation-rabbitmq-1 exited 0 false\n/pet-platform-p02-validation-redis-1 exited 0 false\n Container pet-platform-p02-validation-postgres-1 Stopping \n Container pet-platform-p02-validation-redis-1 Stopping \n Container pet-platform-p02-validation-rabbitmq-1 Stopping \n Container pet-platform-p02-validation-postgres-1 Stopped \n Container pet-platform-p02-validation-redis-1 Stopped \n Container pet-platform-p02-validation-rabbitmq-1 Stopped \n"
+}
