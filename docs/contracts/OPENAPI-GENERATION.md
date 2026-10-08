@@ -76,3 +76,11 @@ Web以import type从@pet/api-contracts读取components；workspace依赖只有ty
 生产paths由历史空集变为STAFF五个实际接口（csrf、Web login、token/login、me、logout）；实际CurrentIdentity/Scope union/CsrfResult/TokenLoginResult及具体Success泛型由Controller导出，成功200与各错误信封显式声明。StaffCookie是生产Cookie名称，StaffToken是X-Staff-Token（Bearer格式），受保护端点为OR安全要求；Web登录Header CSRF和来源要求已声明。匿名端点不加假的全局认证。
 
 生成流程仍为独立后端导出、规范化、openapi-typescript、同步小程序声明和严格类型检查；原测试OpenAPI保留技术路径，只进入test/generated，不混入公共产物。命令、真实结果与SHA见[P05-02](../testing/P05-02-VERIFICATION.md)。本轮不实现前端请求层或页面。
+
+## P05-03 安全接口生成（2026-10-08）
+
+生产路径增至九个STAFF接口，新增ChangePasswordInput、ConfirmationInput、ResetPasswordInput、RevokeSessionsInput及CurrentIdentity.passwordChangeRequired必填布尔字段。密码字段writeOnly/password，管理员version为十进制字符串，成功data=null、X-Session-Cleanup为COMPLETE/PENDING，400/401/403/404/409/422/429/503均统一失败信封。Cookie/Token二选一及独立CSRF/Origin语义保留；测试故障/队列路径不进入生产schema或公共声明。按既有脚本从实际Controller生成三端纯类型，不新增页面或请求实现。
+
+## P05-04 双身份类型（2026-10-08）
+
+正式路径新增六项PLATFORM，合计15。原CurrentIdentity保持STAFF判别枚举、非空tenantId/ScopeData及passwordChangeRequired；平台独立PlatformCurrentIdentity为PLATFORM、tenantId/dataScope必填null、authorizedStoreIds空数组约束，没有无约束object或将STAFF tenant改可空。端点返回明确DTO，消费者用principalType判别联合。PlatformCookie只COOKIE，不提供平台Token安全方案或小程序签发接口。类型从实际Controller生成，平台密码复用原writeOnly安全输入，响应null与清理Header准确，不修改前端页面。

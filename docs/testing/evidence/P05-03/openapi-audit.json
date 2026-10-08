@@ -1,0 +1,161 @@
+{
+  "paths": 9,
+  "sensitivePaths": {
+    "/api/admin/auth/password": {
+      "method": "put",
+      "requestRequired": [
+        "currentPassword",
+        "newPassword"
+      ],
+      "passwordProperties": {
+        "currentPassword": {
+          "format": "password",
+          "maxLength": 256,
+          "minLength": 12,
+          "type": "string",
+          "writeOnly": true
+        },
+        "newPassword": {
+          "format": "password",
+          "maxLength": 256,
+          "minLength": 12,
+          "type": "string",
+          "writeOnly": true
+        }
+      },
+      "security": [
+        {
+          "StaffCookie": []
+        },
+        {
+          "StaffToken": []
+        }
+      ],
+      "cleanupHeader": {
+        "enum": [
+          "COMPLETE",
+          "PENDING"
+        ],
+        "type": "string"
+      }
+    },
+    "/api/admin/auth/logout-all": {
+      "method": "post",
+      "requestRequired": [
+        "currentPassword"
+      ],
+      "passwordProperties": {
+        "currentPassword": {
+          "format": "password",
+          "maxLength": 256,
+          "minLength": 12,
+          "type": "string",
+          "writeOnly": true
+        }
+      },
+      "security": [
+        {
+          "StaffCookie": []
+        },
+        {
+          "StaffToken": []
+        }
+      ],
+      "cleanupHeader": {
+        "enum": [
+          "COMPLETE",
+          "PENDING"
+        ],
+        "type": "string"
+      }
+    },
+    "/api/admin/identity/users/{employeeId}/password": {
+      "method": "put",
+      "requestRequired": [
+        "currentPassword",
+        "newPassword",
+        "version"
+      ],
+      "passwordProperties": {
+        "currentPassword": {
+          "format": "password",
+          "maxLength": 256,
+          "minLength": 12,
+          "type": "string",
+          "writeOnly": true
+        },
+        "newPassword": {
+          "description": "操作者通过安全人工渠道交付的临时密码；响应不回显",
+          "format": "password",
+          "maxLength": 256,
+          "minLength": 12,
+          "type": "string",
+          "writeOnly": true
+        }
+      },
+      "security": [
+        {
+          "StaffCookie": []
+        },
+        {
+          "StaffToken": []
+        }
+      ],
+      "cleanupHeader": {
+        "enum": [
+          "COMPLETE",
+          "PENDING"
+        ],
+        "type": "string"
+      }
+    },
+    "/api/admin/identity/users/{employeeId}/revoke-sessions": {
+      "method": "post",
+      "requestRequired": [
+        "currentPassword",
+        "version"
+      ],
+      "passwordProperties": {
+        "currentPassword": {
+          "format": "password",
+          "maxLength": 256,
+          "minLength": 12,
+          "type": "string",
+          "writeOnly": true
+        }
+      },
+      "security": [
+        {
+          "StaffCookie": []
+        },
+        {
+          "StaffToken": []
+        }
+      ],
+      "cleanupHeader": {
+        "enum": [
+          "COMPLETE",
+          "PENDING"
+        ],
+        "type": "string"
+      }
+    }
+  },
+  "currentIdentityRequired": [
+    "authorizationVersion",
+    "authorizedStoreIds",
+    "dataScope",
+    "displayName",
+    "expiresAt",
+    "idleTimeoutSeconds",
+    "passwordChangeRequired",
+    "permissionCodes",
+    "principalId",
+    "principalType",
+    "sessionId",
+    "tenantId"
+  ],
+  "passwordChangeRequired": {
+    "type": "boolean"
+  }
+}

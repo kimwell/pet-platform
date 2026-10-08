@@ -17,6 +17,9 @@ public interface StaffSessionPort {
     void touch(String token);
     void logout(String token);
     void limit(String ip,String normalizedAccount);
+    void limitSensitive(String ip,UUID tenant,UUID actor,UUID target);
+    void revokeBefore(UUID tenant,UUID employee,long cutoff);
+    boolean isActive(UUID tenant,UUID employee,UUID sessionId);
     String createPre(String csrf);
     String readPre(String pre);
     long preTtl(String pre);

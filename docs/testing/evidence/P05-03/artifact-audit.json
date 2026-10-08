@@ -1,0 +1,37 @@
+{
+  "path": "/Users/kimwell/work/pet-platform/apps/backend/target/pet-platform-backend-0.0.0-SNAPSHOT.jar",
+  "sha256": "fb55fb622c815ffb8078b64708fc34da89445940b25cca5f3dc0eef1197e3fb5",
+  "testIsolationViolations": [],
+  "encodedCredentialConstants": [],
+  "fixtureStrings": [],
+  "unresolvedCompileStubs": [],
+  "productionSql": [
+    "BOOT-INF/classes/db/migration/V2__staff_credential_security.sql",
+    "BOOT-INF/classes/db/migration/V1__platform_identity_foundation.sql"
+  ],
+  "migrationMatches": {
+    "V2__staff_credential_security.sql": true,
+    "V1__platform_identity_foundation.sql": true
+  },
+  "productionEntities": [
+    "BOOT-INF/classes/com/pet/platform/identity/domain/Role.class",
+    "BOOT-INF/classes/com/pet/platform/identity/domain/RolePermission.class",
+    "BOOT-INF/classes/com/pet/platform/identity/domain/EmployeeStore.class",
+    "BOOT-INF/classes/com/pet/platform/identity/domain/EmployeeRole.class",
+    "BOOT-INF/classes/com/pet/platform/identity/domain/Employee.class",
+    "BOOT-INF/classes/com/pet/platform/platform/domain/Tenant.class",
+    "BOOT-INF/classes/com/pet/platform/platform/domain/Store.class"
+  ],
+  "testClassesCompared": 92,
+  "testResourcesCompared": 3,
+  "productionProviderIncluded": true,
+  "saTokenModules": [
+    "BOOT-INF/lib/sa-token-spring-boot4-starter-1.46.0.jar",
+    "BOOT-INF/lib/sa-token-spring-boot-webmvc-v3v4-common-1.46.0.jar",
+    "BOOT-INF/lib/sa-token-jakarta-servlet-1.46.0.jar",
+    "BOOT-INF/lib/sa-token-spring-boot-webmvc-reactor-v2v3v4-common-1.46.0.jar",
+    "BOOT-INF/lib/sa-token-jackson3-1.46.0.jar",
+    "BOOT-INF/lib/sa-token-redis-template-1.46.0.jar",
+    "BOOT-INF/lib/sa-token-core-1.46.0.jar"
+  ]
+}

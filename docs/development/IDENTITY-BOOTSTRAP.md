@@ -114,3 +114,5 @@ PasswordService沿用[IDENTITY密码冻结](../contracts/IDENTITY.md)：PBKDF2Wi
 配置缺失只报告配置名；先核对正确目标、登录身份成员设置和角色脚本。迁移权限失败要区分history由迁移登录身份维护与正式表由pet_migrator拥有；不要提升runtime。迁移校验和/结构错误保留源SQL、history和目标，禁止自动repair/baseline/clean。初始化失败先检查正式迁移、bootstrap EXECUTE及角色状态，再核对七表独立事务状态；凭据/哈希/SQL参数不得粘贴进报告。
 
 现有租户或未知半成品不会被初始化命令修复。本轮不提供密码重置、账号/角色CRUD、数据删除、权限补授、半成品恢复命令；需要独立授权和可审查的恢复方案。完整登录HTTP、Sa-Token会话、Cookie/CSRF、限流、平台账号、客户微信身份、Organization、会话撤销及异步执行前重验尚未实现。后续合法任务以[路线图](ROADMAP.md)为准，P05-02只建议、不自动执行。
+
+P05-04补充：本文命令只创建租户/员工管理员。平台管理员使用独立账号表、初始化角色和`platform-bootstrap`入口，首次全库创建策略与部署/升级顺序见[PLATFORM-BOOTSTRAP](PLATFORM-BOOTSTRAP.md)。两种初始化凭据不得混用；普通启动均不创建或重置账号。

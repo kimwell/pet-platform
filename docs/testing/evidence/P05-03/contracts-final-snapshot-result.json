@@ -1,0 +1,35 @@
+{
+  "cwd": "/Users/kimwell/work/pet-platform/",
+  "argv": [
+    "node",
+    "docs/testing/evidence/P05-03/contracts-final-snapshot.mjs"
+  ],
+  "exitCode": 0,
+  "comparisons": [
+    {
+      "path": "packages/api-contracts/openapi/backend.openapi.json",
+      "matches": true,
+      "sha256": "08c95d109c1fc2b349cae0ad1afd92a262a6b8a4a0b6b26aeaf9fa0e60464391"
+    },
+    {
+      "path": "packages/api-contracts/src/generated/api.d.ts",
+      "matches": true,
+      "sha256": "2f6acbdbdb97385375d3da35dc1d45775f5cac5a80fe1f48e9b4d3a3d44773cb"
+    },
+    {
+      "path": "apps/wechat-miniprogram/miniprogram/types/generated/api.d.ts",
+      "matches": true,
+      "sha256": "4dee3f8cee72ff09a900d79c761379e7cbfaab1e20bd375d62b9972f6bdb86de"
+    },
+    {
+      "path": "packages/api-contracts/openapi/test-contract.openapi.json",
+      "matches": true,
+      "sha256": "909df1401b99574e25daa42590b5c5831dce25eba6d6862dd5381fdbe2955d79"
+    },
+    {
+      "path": "packages/api-contracts/test/generated/test-contract.d.ts",
+      "matches": true,
+      "sha256": "2231a8a2f87236453c1b844a0a5d547c15ff1348aeb00d223ca0d062b96d5a1f"
+    }
+  ]
+}

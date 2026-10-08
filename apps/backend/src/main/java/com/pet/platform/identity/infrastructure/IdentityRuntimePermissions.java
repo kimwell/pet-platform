@@ -21,11 +21,22 @@ public final class IdentityRuntimePermissions implements InitializingBean {
             and not pg_has_role(current_user,'pet_auth_owner','MEMBER')
             and not pg_has_role(current_user,'pet_bootstrap_owner','MEMBER')
             and not pg_has_role(current_user,'pet_bootstrap','MEMBER')
+            and not pg_has_role(current_user,'pet_platform_bootstrap','MEMBER')
+            and not pg_has_role(current_user,'pet_platform_auth_owner','MEMBER')
+            and not pg_has_role(current_user,'pet_platform_bootstrap_owner','MEMBER')
+            and not has_schema_privilege(current_user,'pet_control','CREATE')
+            and not has_table_privilege(current_user,'pet_control.platform_account','SELECT')
+            and not has_column_privilege(current_user,'pet_control.platform_account','password_hash','SELECT')
+            and not has_function_privilege(current_user,'pet_control.bootstrap_platform(uuid,text,text,text)','EXECUTE')
+            and not exists (select 1 from pg_catalog.pg_class c join pg_catalog.pg_namespace n on n.oid=c.relnamespace
+                where n.nspname='pet_control' and c.relkind='r'
+                and (pg_has_role(current_user,c.relowner,'MEMBER') or not c.relrowsecurity or not c.relforcerowsecurity or has_table_privilege(current_user,c.oid,'TRUNCATE')))
             and not has_schema_privilege(current_user,'public','CREATE')
             and not has_schema_privilege(current_user,'pet_identity','CREATE')
             and not has_column_privilege(current_user,'public.identity_employee','password_hash','SELECT')
+            and not has_column_privilege(current_user,'public.identity_employee','system_reserved','UPDATE')
             and not exists (select 1 from pg_catalog.pg_class c join pg_catalog.pg_namespace n on n.oid=c.relnamespace
-                where n.nspname='public' and c.relname in ('platform_tenant','platform_store','identity_employee','identity_role','identity_employee_role','identity_role_permission','identity_employee_store')
+                where n.nspname='public' and c.relname in ('platform_tenant','platform_store','identity_employee','identity_role','identity_employee_role','identity_role_permission','identity_employee_store','identity_security_event','identity_session_cleanup')
                 and (pg_has_role(current_user,c.relowner,'MEMBER') or not c.relrowsecurity or not c.relforcerowsecurity
                      or has_table_privilege(current_user,c.oid,'TRUNCATE')))
             from pg_catalog.pg_roles where rolname=current_user

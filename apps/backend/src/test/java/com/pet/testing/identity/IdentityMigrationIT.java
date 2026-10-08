@@ -24,7 +24,7 @@ class IdentityMigrationIT {
         assertEquals(0,empty.migrate().migrationsExecuted);
         var production=Flyway.configure().dataSource(POSTGRES.getJdbcUrl(),IdentityDatabaseSupport.MIGRATION,POSTGRES.getPassword())
             .locations("classpath:db/migration").cleanDisabled(true).baselineOnMigrate(false).validateOnMigrate(true).outOfOrder(false).ignoreMigrationPatterns(new String[0]).load();
-        assertEquals(1,production.migrate().migrationsExecuted);assertEquals(0,production.migrate().migrationsExecuted);
+        assertEquals(3,production.migrate().migrationsExecuted);assertEquals(0,production.migrate().migrationsExecuted);
         assertTrue(production.validateWithResult().validationSuccessful);
         try(var c=DriverManager.getConnection(POSTGRES.getJdbcUrl(),POSTGRES.getUsername(),POSTGRES.getPassword());var s=c.createStatement();var r=s.executeQuery("select count(*) from public.identity_employee")) {
             r.next();assertEquals(0,r.getInt(1));

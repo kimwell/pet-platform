@@ -149,9 +149,11 @@ class StructureRulesTest {
             boolean saAdapter = symbols.name().startsWith(ROOT + "identity/infrastructure/session/");
             boolean rawSa = target.startsWith("cn/dev33/satoken/");
             boolean restrictedSession = target.startsWith(ROOT + "identity/infrastructure/session/");
-            boolean restrictedAuthentication = target.startsWith(ROOT + "identity/application/authentication/") || target.equals(ROOT + "identity/infrastructure/AuthenticationJdbc");
+            boolean restrictedAuthentication = target.startsWith(ROOT + "identity/application/authentication/") || target.equals(ROOT + "identity/infrastructure/AuthenticationJdbc") || target.equals(ROOT+"identity/infrastructure/PlatformIdentityJdbc");
             boolean authenticationCaller = symbols.name().startsWith(ROOT + "identity/application/authentication/")
                     || symbols.name().equals(ROOT + "identity/infrastructure/AuthenticationJdbc")
+                    || symbols.name().equals(ROOT + "identity/infrastructure/StaffSecurityJdbc")
+                    || symbols.name().equals(ROOT+"identity/infrastructure/PlatformIdentityJdbc")
                     || symbols.name().startsWith(ROOT + "identity/api/authentication/")
                     || symbols.name().startsWith(ROOT + "identity/infrastructure/session/");
             boolean restrictedBootstrap = target.startsWith(ROOT + "identity/application/bootstrap/") || target.startsWith(ROOT + "identity/infrastructure/bootstrap/");
@@ -193,8 +195,8 @@ class StructureRulesTest {
             String calledOwner = call.substring(0, call.indexOf('#'));
             String calledMethod = call.substring(call.indexOf('#') + 1);
             boolean controlledImplementation = Set.of(ROOT + "shared/persistence/ScopedPersistence", ROOT + "shared/persistence/ScopedTransaction",
-                    ROOT + "identity/infrastructure/AuthenticationJdbc", ROOT + "identity/infrastructure/IdentityRuntimePermissions",
-                    ROOT + "identity/infrastructure/bootstrap/MigrationCommand", ROOT + "identity/infrastructure/bootstrap/CommandDatabase", ROOT + "identity/infrastructure/bootstrap/BootstrapJdbc").contains(symbols.name());
+                    ROOT + "identity/infrastructure/AuthenticationJdbc", ROOT + "identity/infrastructure/StaffSecurityJdbc", ROOT+"identity/infrastructure/PlatformIdentityJdbc", ROOT + "identity/infrastructure/IdentityRuntimePermissions",
+                    ROOT + "identity/infrastructure/bootstrap/MigrationCommand", ROOT + "identity/infrastructure/bootstrap/CommandDatabase", ROOT + "identity/infrastructure/bootstrap/BootstrapJdbc", ROOT+"identity/infrastructure/bootstrap/PlatformBootstrapJdbc").contains(symbols.name());
             boolean databaseCall = calledOwner.equals("jakarta/persistence/EntityManager") || calledOwner.equals("jakarta/persistence/Query")
                     || calledOwner.equals("jakarta/persistence/TypedQuery") || calledOwner.startsWith("org/hibernate/Session")
                     || calledOwner.startsWith("org/springframework/jdbc/") || calledOwner.startsWith("java/sql/")
@@ -244,7 +246,9 @@ class StructureRulesTest {
     @Test void restrictedIdentityAndBootstrapEntriesRejectOrdinaryBusinessAndControllers() {
         for(String target : List.of(ROOT+"identity/application/authentication/IdentityLookup",ROOT+"identity/application/authentication/AuthenticationCandidate",
                 ROOT+"identity/application/authentication/StaffAuthentication",ROOT+"identity/infrastructure/AuthenticationJdbc",
-                ROOT+"identity/application/bootstrap/IdentityBootstrap",ROOT+"identity/infrastructure/bootstrap/BootstrapJdbc")) {
+                ROOT+"identity/application/bootstrap/IdentityBootstrap",ROOT+"identity/infrastructure/bootstrap/BootstrapJdbc",
+                ROOT+"identity/application/authentication/PlatformIdentityStore",ROOT+"identity/application/authentication/PlatformCredential",
+                ROOT+"identity/infrastructure/PlatformIdentityJdbc",ROOT+"identity/infrastructure/bootstrap/PlatformBootstrapJdbc")) {
             for(String caller : List.of(ROOT+"identity/api/UserController",ROOT+"identity/application/StaffManagement",ROOT+"modules/alpha/application/Bad"))
                 assertFalse(violations(symbols(fixture(caller,target,true)),Set.of()).isEmpty());
         }

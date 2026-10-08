@@ -1,0 +1,15 @@
+-------------------------------------------------------------------------------
+Test set: com.pet.testing.authentication.PlatformAuthenticationIT
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 8.372 s <<< FAILURE! -- in com.pet.testing.authentication.PlatformAuthenticationIT
+com.pet.testing.authentication.PlatformAuthenticationIT.correctWebLoginReturnsPlatformIdentityWithoutTenantOrToken -- Time elapsed: 0.801 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: {"success":false,"error":{"code":"CSRF_INVALID","message":"请求校验失败，请刷新后重试"},"traceId":"e57f6e1ee526477393cb554ebaf6cdb1"} ==> expected: <200> but was: <403>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:158)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:139)
+	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:201)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:152)
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:590)
+	at com.pet.testing.authentication.PlatformAuthenticationIT.web(PlatformAuthenticationIT.java:77)
+	at com.pet.testing.authentication.PlatformAuthenticationIT.web(PlatformAuthenticationIT.java:78)
+	at com.pet.testing.authentication.PlatformAuthenticationIT.correctWebLoginReturnsPlatformIdentityWithoutTenantOrToken(PlatformAuthenticationIT.java:97)
+

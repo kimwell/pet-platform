@@ -14,6 +14,8 @@ public enum ErrorCode {
     AUTH_DOMAIN_MISMATCH(401, "登录身份不匹配"),
     LOGIN_FAILED(401, "登录失败，请检查登录信息"),
     PERMISSION_DENIED(403, "没有执行此操作的权限"),
+    SECURITY_CONFIRMATION_FAILED(403, "密码确认失败，请检查当前密码"),
+    PASSWORD_CHANGE_REQUIRED(403, "请先修改临时密码"),
     CSRF_INVALID(403, "请求校验失败，请刷新后重试"),
     RESOURCE_NOT_FOUND(404, "资源不存在或不可访问"),
     METHOD_NOT_ALLOWED(405, "请求方法不支持"),

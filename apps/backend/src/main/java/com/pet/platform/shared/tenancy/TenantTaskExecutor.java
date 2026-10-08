@@ -17,15 +17,19 @@ import org.springframework.transaction.support.TransactionSynchronizationManager
 public final class TenantTaskExecutor implements AutoCloseable {
     private static final Logger LOG = LoggerFactory.getLogger(TenantTaskExecutor.class);
     private final WorkerPool pool;
+    private com.pet.platform.shared.security.TaskAuthority authority;
     private final long maxAgeNanos;
     private final Duration shutdownWait;
     private final LongSupplier ticker;
     private final ThreadLocal<Boolean> quarantined = new ThreadLocal<>();
 
-    private record Snapshot(TenantContext context, TaskDeadline deadline) { }
+    private record Snapshot(TenantContext context, TaskDeadline deadline, com.pet.platform.shared.security.TaskAuthority.Proof proof) { }
 
     public TenantTaskExecutor(int threads, int capacity, Duration maxAge, Duration shutdownWait) {
         this(threads, capacity, maxAge, shutdownWait, System::nanoTime);
+    }
+    public TenantTaskExecutor(int threads,int capacity,Duration maxAge,Duration shutdownWait,com.pet.platform.shared.security.TaskAuthority authority) {
+        this(threads,capacity,maxAge,shutdownWait);this.authority=authority;
     }
     TenantTaskExecutor(int threads, int capacity, Duration maxAge, Duration shutdownWait, LongSupplier ticker) {
         if (threads < 1 || threads > 16 || capacity < 1 || capacity > 1024
@@ -47,13 +51,16 @@ public final class TenantTaskExecutor implements AutoCloseable {
         var c = TenantScopeGuard.requireBusiness();
         requireOutsideTransaction();
         Objects.requireNonNull(action);
+        var proof=TenantExecutionScope.sessionBacked()?(authority==null?missingAuthority():authority.capture(c)):null;
         var deadline = TenantExecutionScope.captureTaskDeadline(maxAgeNanos, ticker);
         // 用taskId替代调用方sessionId；只保存当前permission/range，不保存身份根的全部grants。
         var task = new TenantContext(c.tenantId(), c.principalType(), c.principalId(), UUID.randomUUID(),
                 c.authorizationVersion(), c.permissionCode(), c.dataScope(), c.authorizedStoreIds(),
                 c.currentStoreId(), c.traceId(), TenantPurpose.BUSINESS);
-        return enqueue(new Snapshot(task, deadline), action);
+        return enqueue(new Snapshot(task, deadline,proof), action);
     }
+
+    private static com.pet.platform.shared.security.TaskAuthority.Proof missingAuthority(){throw new com.pet.platform.shared.exception.PermissionDeniedException();}
 
     /** 仅供无身份技术工作；不能用于业务租户操作或从租户边界提交。 */
     public <T> Future<T> submitUnscoped(Callable<T> action) {
@@ -83,7 +90,8 @@ public final class TenantTaskExecutor implements AutoCloseable {
         requireCleanWorker();
         if (snapshot != null) snapshot.deadline().verify();
         try (var trace = TraceScope.open(snapshot == null ? null : snapshot.context().traceId())) {
-            var boundary = snapshot == null ? null : TenantExecutionScope.openTask(snapshot.context(), snapshot.deadline());
+            var validated=snapshot==null?null:snapshot.proof()==null?snapshot.context():authority.revalidate(snapshot.context(),snapshot.proof());
+            var boundary = snapshot == null ? null : TenantExecutionScope.openTask(validated, snapshot.deadline(),snapshot.proof()!=null);
             try {
                 T result = action.call();
                 if (snapshot != null) snapshot.deadline().verify();

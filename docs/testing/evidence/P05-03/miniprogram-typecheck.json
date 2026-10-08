@@ -1,0 +1,14 @@
+{
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "argv": [
+    "pnpm",
+    "--filter",
+    "@pet/wechat-miniprogram",
+    "typecheck"
+  ],
+  "exitCode": 0,
+  "startedAtUTC": "2026-10-08T06:39:10.348028+00:00",
+  "finishedAtUTC": "2026-10-08T06:39:11.875722+00:00",
+  "log": "miniprogram-typecheck.log",
+  "summary": "\n> @pet/wechat-miniprogram@0.0.0 typecheck /Users/kimwell/work/pet-platform/apps/wechat-miniprogram\n> tsc --noEmit\n\n"
+}

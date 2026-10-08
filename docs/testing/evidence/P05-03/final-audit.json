@@ -1,0 +1,86 @@
+{
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "argv": [
+    "python3",
+    "docs/testing/evidence/P05-03/final-audit.py"
+  ],
+  "exitCode": 0,
+  "createdAtUTC": "2026-10-08T06:52:24.116184+00:00",
+  "testCount": 328,
+  "baselineCount": 292,
+  "baselineRetainedUnchanged": 291,
+  "semanticReplacements": [
+    {
+      "before": [
+        "com.pet.testing.authentication.StaffAuthenticationIT",
+        "realUserAsyncSnapshotsAreExplicitlyForbidden"
+      ],
+      "after": [
+        "com.pet.testing.authentication.StaffAuthenticationIT",
+        "realUserAsyncSnapshotsAreRevalidatedBeforeExecution"
+      ]
+    }
+  ],
+  "unexplainedMissingBaselineCases": [],
+  "addedIncludingReplacement": 37,
+  "groups": {
+    "surefire": {
+      "tests": 132,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "failsafe": {
+      "tests": 196,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    }
+  },
+  "logCredentialHits": [],
+  "preservationChecked": 1478,
+  "preservationViolations": [],
+  "missingDocumentLinks": [],
+  "requiredCommandFailures": [],
+  "diffCheckExitCode": 0,
+  "diffCheckSummary": "",
+  "runningTestcontainers": [],
+  "openapiChecks": true,
+  "artifact": {
+    "path": "/Users/kimwell/work/pet-platform/apps/backend/target/pet-platform-backend-0.0.0-SNAPSHOT.jar",
+    "sha256": "fb55fb622c815ffb8078b64708fc34da89445940b25cca5f3dc0eef1197e3fb5",
+    "testIsolationViolations": [],
+    "encodedCredentialConstants": [],
+    "fixtureStrings": [],
+    "unresolvedCompileStubs": [],
+    "productionSql": [
+      "BOOT-INF/classes/db/migration/V2__staff_credential_security.sql",
+      "BOOT-INF/classes/db/migration/V1__platform_identity_foundation.sql"
+    ],
+    "migrationMatches": {
+      "V2__staff_credential_security.sql": true,
+      "V1__platform_identity_foundation.sql": true
+    },
+    "productionEntities": [
+      "BOOT-INF/classes/com/pet/platform/identity/domain/Role.class",
+      "BOOT-INF/classes/com/pet/platform/identity/domain/RolePermission.class",
+      "BOOT-INF/classes/com/pet/platform/identity/domain/EmployeeStore.class",
+      "BOOT-INF/classes/com/pet/platform/identity/domain/EmployeeRole.class",
+      "BOOT-INF/classes/com/pet/platform/identity/domain/Employee.class",
+      "BOOT-INF/classes/com/pet/platform/platform/domain/Tenant.class",
+      "BOOT-INF/classes/com/pet/platform/platform/domain/Store.class"
+    ],
+    "testClassesCompared": 92,
+    "testResourcesCompared": 3,
+    "productionProviderIncluded": true,
+    "saTokenModules": [
+      "BOOT-INF/lib/sa-token-spring-boot4-starter-1.46.0.jar",
+      "BOOT-INF/lib/sa-token-spring-boot-webmvc-v3v4-common-1.46.0.jar",
+      "BOOT-INF/lib/sa-token-jakarta-servlet-1.46.0.jar",
+      "BOOT-INF/lib/sa-token-spring-boot-webmvc-reactor-v2v3v4-common-1.46.0.jar",
+      "BOOT-INF/lib/sa-token-jackson3-1.46.0.jar",
+      "BOOT-INF/lib/sa-token-redis-template-1.46.0.jar",
+      "BOOT-INF/lib/sa-token-core-1.46.0.jar"
+    ]
+  }
+}

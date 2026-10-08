@@ -56,7 +56,7 @@ public final class AuthenticationRedis extends SaTokenDaoForRedisTemplate {
     private String encode(Object obj) {
         if(!(obj instanceof SaSession s) || s.getTerminalList().size()>5 || (s.getLoginId()!=null && !(s.getLoginId() instanceof String)))throw unavailable();
         Map<String,String> data=new TreeMap<>();s.getDataMap().forEach((k,v) -> {
-            if(!Set.of("tenant","employee","session","security","tenantSecurity","channel","expires","idle","csrf").contains(k) || !(v instanceof String))throw unavailable();
+            if(!Set.of("tenant","employee","principal","session","security","tenantSecurity","channel","expires","idle","csrf").contains(k) || !(v instanceof String))throw unavailable();
             data.put(k,(String)v);
         });
         var terminals=s.getTerminalList().stream().map(t -> {
@@ -68,25 +68,36 @@ public final class AuthenticationRedis extends SaTokenDaoForRedisTemplate {
     @Override public void setObject(String key,Object obj,long timeout) { set(key,encode(obj),timeout); }
     @Override public void updateObject(String key,Object obj) { update(key,encode(obj)); }
     // 以下方法仅接收服务端安全摘要，认证前不制造TenantContext。
-    private String auxiliary(String suffix) { if(!suffix.matches("[a-z]+:[a-f0-9]{64}"))throw unavailable();return prefix+"auth:staff:"+suffix; }
-    public void reserveAttempt(String ipDigest,String accountDigest) {
+    private String auxiliary(String domain,String suffix) { if(!Set.of("staff","platform").contains(domain))throw unavailable(); if(!suffix.matches("[a-z]+:[a-f0-9]{64}"))throw unavailable();return prefix+"auth:"+domain+":"+suffix; }
+    public void reserveAttempt(String domain,String ipDigest,String accountDigest) {
         var script=new DefaultRedisScript<List>("local a=redis.call('INCR',KEYS[1]); if a==1 then redis.call('EXPIRE',KEYS[1],300) end; local b=redis.call('INCR',KEYS[2]); if b==1 then redis.call('EXPIRE',KEYS[2],900) end; return {a,b,redis.call('TTL',KEYS[1]),redis.call('TTL',KEYS[2])}",List.class);
-        List<?> r=safe(() -> stringRedisTemplate.execute(script,List.of(auxiliary("ip:"+ipDigest),auxiliary("account:"+accountDigest))));
+        List<?> r=safe(() -> stringRedisTemplate.execute(script,List.of(auxiliary(domain,"ip:"+ipDigest),auxiliary(domain,"account:"+accountDigest))));
         if(r==null || r.size()!=4)throw unavailable();
         if(((Number)r.get(0)).longValue()>60 || ((Number)r.get(1)).longValue()>10)
             throw BusinessException.rateLimited(Math.max(1,((Number)r.get(((Number)r.get(0)).longValue()>60?2:3)).longValue()));
     }
-    public String preSession(String digest) { return safe(() -> stringRedisTemplate.opsForValue().get(auxiliary("pre:"+digest))); }
-    public void createPreSession(String digest,String csrf) { safe(() -> {stringRedisTemplate.opsForValue().set(auxiliary("pre:"+digest),csrf,Duration.ofMinutes(10));return true;}); }
-    public long preTtl(String digest) { return safe(() -> stringRedisTemplate.getExpire(auxiliary("pre:"+digest))); }
-    public void deletePreSession(String digest) { safe(() -> stringRedisTemplate.delete(auxiliary("pre:"+digest))); }
-    public <T> T accountLock(String digest,Supplier<T> action) {
-        String key=auxiliary("lock:"+digest),owner=UUID.randomUUID().toString();
-        if(!Boolean.TRUE.equals(safe(() -> stringRedisTemplate.opsForValue().setIfAbsent(key,owner,Duration.ofSeconds(30)))))throw BusinessException.rateLimited(1);
-        try {return action.get();}
-        finally {
+    public void reserveSensitive(String domain,String ip,String actor,String target) {
+        var script=new DefaultRedisScript<List>("local result={}; for i=1,3 do local n=redis.call('INCR',KEYS[i]); if n==1 then redis.call('EXPIRE',KEYS[i],300) end; result[i]=n; result[i+3]=redis.call('TTL',KEYS[i]); end; return result",List.class);
+        List<?> counts=safe(() -> stringRedisTemplate.execute(script,List.of(auxiliary(domain,"sip:"+ip),auxiliary(domain,"actor:"+actor),auxiliary(domain,"target:"+target))));
+        if(counts==null || counts.size()!=6)throw unavailable();
+        int[] maximum={60,8,8};
+        for(int i=0;i<3;i++)if(((Number)counts.get(i)).longValue()>maximum[i])throw BusinessException.rateLimited(Math.max(1,((Number)counts.get(i+3)).longValue()));
+    }
+    public String preSession(String domain,String digest) { return safe(() -> stringRedisTemplate.opsForValue().get(auxiliary(domain,"pre:"+digest))); }
+    public void createPreSession(String domain,String digest,String csrf) { safe(() -> {stringRedisTemplate.opsForValue().set(auxiliary(domain,"pre:"+digest),csrf,Duration.ofMinutes(10));return true;}); }
+    public long preTtl(String domain,String digest) { return safe(() -> stringRedisTemplate.getExpire(auxiliary(domain,"pre:"+digest))); }
+    public void deletePreSession(String domain,String digest) { safe(() -> stringRedisTemplate.delete(auxiliary(domain,"pre:"+digest))); }
+    public <T> T accountLock(String domain,String digest,Supplier<T> action) {
+        String key=auxiliary(domain,"lock:"+digest),owner=UUID.randomUUID().toString();
+        boolean acquired=false;
+        try {
+            if(!Boolean.TRUE.equals(safe(() -> stringRedisTemplate.opsForValue().setIfAbsent(key,owner,Duration.ofSeconds(30)))))throw BusinessException.rateLimited(1);
+            acquired=true;
+            return action.get();
+        } finally {
+            // SET NX超时可能已经执行；仍按随机owner尝试释放，绝不删除其他持有者。
             Long result=safe(() -> stringRedisTemplate.execute(new DefaultRedisScript<>("if redis.call('GET',KEYS[1])==ARGV[1] then return redis.call('DEL',KEYS[1]) else return 0 end",Long.class),List.of(key),owner));
-            if(result==null || result!=1)throw unavailable();
+            if(result==null || (acquired && result!=1))throw unavailable();
         }
     }
 }

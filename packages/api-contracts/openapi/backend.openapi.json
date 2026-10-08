@@ -16,6 +16,8 @@
               "AUTH_DOMAIN_MISMATCH",
               "LOGIN_FAILED",
               "PERMISSION_DENIED",
+              "SECURITY_CONFIRMATION_FAILED",
+              "PASSWORD_CHANGE_REQUIRED",
               "CSRF_INVALID",
               "RESOURCE_NOT_FOUND",
               "METHOD_NOT_ALLOWED",
@@ -53,6 +55,46 @@
         "required": [
           "code",
           "message"
+        ],
+        "type": "object"
+      },
+      "ChangePasswordInput": {
+        "additionalProperties": false,
+        "properties": {
+          "currentPassword": {
+            "format": "password",
+            "maxLength": 256,
+            "minLength": 12,
+            "type": "string",
+            "writeOnly": true
+          },
+          "newPassword": {
+            "format": "password",
+            "maxLength": 256,
+            "minLength": 12,
+            "type": "string",
+            "writeOnly": true
+          }
+        },
+        "required": [
+          "currentPassword",
+          "newPassword"
+        ],
+        "type": "object"
+      },
+      "ConfirmationInput": {
+        "additionalProperties": false,
+        "properties": {
+          "currentPassword": {
+            "format": "password",
+            "maxLength": 256,
+            "minLength": 12,
+            "type": "string",
+            "writeOnly": true
+          }
+        },
+        "required": [
+          "currentPassword"
         ],
         "type": "object"
       },
@@ -107,6 +149,9 @@
             "minimum": 1,
             "type": "integer"
           },
+          "passwordChangeRequired": {
+            "type": "boolean"
+          },
           "permissionCodes": {
             "items": {
               "type": "string"
@@ -142,6 +187,7 @@
           "displayName",
           "expiresAt",
           "idleTimeoutSeconds",
+          "passwordChangeRequired",
           "permissionCodes",
           "principalId",
           "principalType",
@@ -292,6 +338,153 @@
           "page",
           "pageSize",
           "total"
+        ],
+        "type": "object"
+      },
+      "PlatformCurrentIdentity": {
+        "additionalProperties": false,
+        "properties": {
+          "authorizationVersion": {
+            "pattern": "^(0|[1-9][0-9]*)$",
+            "type": "string"
+          },
+          "authorizedStoreIds": {
+            "items": {
+              "format": "uuid",
+              "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$",
+              "type": "string"
+            },
+            "maxItems": 0,
+            "type": "array"
+          },
+          "dataScope": {
+            "type": "null"
+          },
+          "displayName": {
+            "type": "string"
+          },
+          "expiresAt": {
+            "description": "输入必须带Z或offset、最多3位小数；输出UTC且固定3位毫秒",
+            "format": "date-time",
+            "type": "string"
+          },
+          "idleTimeoutSeconds": {
+            "format": "int32",
+            "maximum": 1800,
+            "minimum": 1,
+            "type": "integer"
+          },
+          "permissionCodes": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "principalId": {
+            "format": "uuid",
+            "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$",
+            "type": "string"
+          },
+          "principalType": {
+            "enum": [
+              "PLATFORM"
+            ],
+            "type": "string"
+          },
+          "sessionId": {
+            "format": "uuid",
+            "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$",
+            "type": "string"
+          },
+          "tenantId": {
+            "type": "null"
+          }
+        },
+        "required": [
+          "authorizationVersion",
+          "authorizedStoreIds",
+          "dataScope",
+          "displayName",
+          "expiresAt",
+          "idleTimeoutSeconds",
+          "permissionCodes",
+          "principalId",
+          "principalType",
+          "sessionId",
+          "tenantId"
+        ],
+        "type": "object"
+      },
+      "PlatformLoginInput": {
+        "additionalProperties": false,
+        "properties": {
+          "loginName": {
+            "maxLength": 128,
+            "minLength": 0,
+            "type": "string"
+          },
+          "password": {
+            "format": "password",
+            "maxLength": 256,
+            "minLength": 12,
+            "type": "string",
+            "writeOnly": true
+          }
+        },
+        "required": [
+          "loginName",
+          "password"
+        ],
+        "type": "object"
+      },
+      "ResetPasswordInput": {
+        "additionalProperties": false,
+        "properties": {
+          "currentPassword": {
+            "format": "password",
+            "maxLength": 256,
+            "minLength": 12,
+            "type": "string",
+            "writeOnly": true
+          },
+          "newPassword": {
+            "description": "操作者通过安全人工渠道交付的临时密码；响应不回显",
+            "format": "password",
+            "maxLength": 256,
+            "minLength": 12,
+            "type": "string",
+            "writeOnly": true
+          },
+          "version": {
+            "pattern": "^(0|[1-9][0-9]{0,18})$",
+            "type": "string"
+          }
+        },
+        "required": [
+          "currentPassword",
+          "newPassword",
+          "version"
+        ],
+        "type": "object"
+      },
+      "RevokeSessionsInput": {
+        "additionalProperties": false,
+        "properties": {
+          "currentPassword": {
+            "format": "password",
+            "maxLength": 256,
+            "minLength": 12,
+            "type": "string",
+            "writeOnly": true
+          },
+          "version": {
+            "pattern": "^(0|[1-9][0-9]{0,18})$",
+            "type": "string"
+          }
+        },
+        "required": [
+          "currentPassword",
+          "version"
         ],
         "type": "object"
       },
@@ -449,6 +642,35 @@
         ],
         "type": "object"
       },
+      "SuccessPlatformCurrentIdentity": {
+        "additionalProperties": false,
+        "properties": {
+          "data": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/PlatformCurrentIdentity"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "success": {
+            "const": true,
+            "type": "boolean"
+          },
+          "traceId": {
+            "pattern": "^[0-9a-f]{32}$",
+            "type": "string"
+          }
+        },
+        "required": [
+          "data",
+          "success",
+          "traceId"
+        ],
+        "type": "object"
+      },
       "SuccessTokenLoginResult": {
         "additionalProperties": false,
         "properties": {
@@ -555,6 +777,12 @@
       }
     },
     "securitySchemes": {
+      "PlatformCookie": {
+        "description": "仅PLATFORM WEB；写请求必须独立CSRF及同源来源",
+        "in": "cookie",
+        "name": "__Secure-pet_platform_sid",
+        "type": "apiKey"
+      },
       "StaffCookie": {
         "description": "生产Cookie；local HTTP使用pet_dev_staff_sid，写请求另需X-CSRF-Token及固定Origin/Referer",
         "in": "cookie",
@@ -578,7 +806,7 @@
     "/api/admin/auth/csrf": {
       "get": {
         "description": "匿名创建10分钟服务器预会话；已登录绑定当前WEB设备；no-store，不续闲置期限",
-        "operationId": "csrf",
+        "operationId": "csrf_1",
         "responses": {
           "200": {
             "content": {
@@ -775,7 +1003,7 @@
     "/api/admin/auth/logout": {
       "post": {
         "description": "Cookie需CSRF与来源校验，Token渠道无需浏览器CSRF。只撤销当前设备并删除对应Cookie/CSRF；重复无有效凭据返回401。",
-        "operationId": "logout",
+        "operationId": "logout_1",
         "responses": {
           "200": {
             "content": {
@@ -862,10 +1090,154 @@
         ]
       }
     },
+    "/api/admin/auth/logout-all": {
+      "post": {
+        "description": "当前密码重新确认；数据库安全版本递增；WEB和小程序设备全部失效，重复旧会话401",
+        "operationId": "logoutAll_1",
+        "parameters": [
+          {
+            "description": "WEB Cookie写入必须；MINIPROGRAM Token无需浏览器CSRF",
+            "in": "header",
+            "name": "X-CSRF-Token"
+          },
+          {
+            "description": "WEB必须匹配固定来源，缺失时提供同源Referer",
+            "in": "header",
+            "name": "Origin"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ConfirmationInput"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SuccessVoid"
+                }
+              }
+            },
+            "description": "数据库变更与记录成功；X-Session-Cleanup为COMPLETE或PENDING，data=null",
+            "headers": {
+              "X-Session-Cleanup": {
+                "schema": {
+                  "enum": [
+                    "COMPLETE",
+                    "PENDING"
+                  ],
+                  "type": "string"
+                },
+                "style": "simple"
+              }
+            }
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Failure"
+                }
+              }
+            },
+            "description": "输入格式或载体错误"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Failure"
+                }
+              }
+            },
+            "description": "未登录或旧会话已失效"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Failure"
+                }
+              }
+            },
+            "description": "权限、目标保护、重新确认或CSRF失败"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Failure"
+                }
+              }
+            },
+            "description": "目标不存在或超出管理范围"
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Failure"
+                }
+              }
+            },
+            "description": "目标版本竞争或状态冲突"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Failure"
+                }
+              }
+            },
+            "description": "输入校验失败或新旧密码相同"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Failure"
+                }
+              }
+            },
+            "description": "频控，响应Retry-After"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Failure"
+                }
+              }
+            },
+            "description": "变更未确认成功；依赖不可用，禁止自动重试"
+          }
+        },
+        "security": [
+          {
+            "StaffCookie": []
+          },
+          {
+            "StaffToken": []
+          }
+        ],
+        "summary": "本人退出全部员工会话",
+        "tags": [
+          "staff-security-controller"
+        ]
+      }
+    },
     "/api/admin/auth/me": {
       "get": {
         "description": "每请求读取正式有效租户、员工、角色、权限和门店授权；不续闲置期限",
-        "operationId": "me",
+        "operationId": "me_1",
         "responses": {
           "200": {
             "content": {
@@ -949,6 +1321,150 @@
         "summary": "当前员工身份",
         "tags": [
           "staff-authentication-controller"
+        ]
+      }
+    },
+    "/api/admin/auth/password": {
+      "put": {
+        "description": "当前密码重新确认；不接受employeeId；成功含当前设备的全部STAFF会话失效，清WEB Cookie与CSRF，必须重新登录",
+        "operationId": "change",
+        "parameters": [
+          {
+            "description": "WEB Cookie写入必须；MINIPROGRAM Token无需浏览器CSRF",
+            "in": "header",
+            "name": "X-CSRF-Token"
+          },
+          {
+            "description": "WEB必须匹配固定来源，缺失时提供同源Referer",
+            "in": "header",
+            "name": "Origin"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ChangePasswordInput"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SuccessVoid"
+                }
+              }
+            },
+            "description": "数据库变更与记录成功；X-Session-Cleanup为COMPLETE或PENDING，data=null",
+            "headers": {
+              "X-Session-Cleanup": {
+                "schema": {
+                  "enum": [
+                    "COMPLETE",
+                    "PENDING"
+                  ],
+                  "type": "string"
+                },
+                "style": "simple"
+              }
+            }
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Failure"
+                }
+              }
+            },
+            "description": "输入格式或载体错误"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Failure"
+                }
+              }
+            },
+            "description": "未登录或旧会话已失效"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Failure"
+                }
+              }
+            },
+            "description": "权限、目标保护、重新确认或CSRF失败"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Failure"
+                }
+              }
+            },
+            "description": "目标不存在或超出管理范围"
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Failure"
+                }
+              }
+            },
+            "description": "目标版本竞争或状态冲突"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Failure"
+                }
+              }
+            },
+            "description": "输入校验失败或新旧密码相同"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Failure"
+                }
+              }
+            },
+            "description": "频控，响应Retry-After"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Failure"
+                }
+              }
+            },
+            "description": "变更未确认成功；依赖不可用，禁止自动重试"
+          }
+        },
+        "security": [
+          {
+            "StaffCookie": []
+          },
+          {
+            "StaffToken": []
+          }
+        ],
+        "summary": "本人修改员工密码",
+        "tags": [
+          "staff-security-controller"
         ]
       }
     },
@@ -1051,6 +1567,952 @@
         "summary": "员工小程序账号密码登录",
         "tags": [
           "staff-authentication-controller"
+        ]
+      }
+    },
+    "/api/admin/identity/users/{employeeId}/password": {
+      "put": {
+        "description": "identity:user:reset-password及独立目标管理策略；version为目标资源版本；禁止本人、系统保留和tenant-admin账号；同事务强制改密并撤销目标全部设备",
+        "operationId": "reset",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "employeeId",
+            "required": true,
+            "schema": {
+              "format": "uuid",
+              "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$",
+              "type": "string"
+            }
+          },
+          {
+            "description": "WEB Cookie写入必须；MINIPROGRAM Token无需浏览器CSRF",
+            "in": "header",
+            "name": "X-CSRF-Token"
+          },
+          {
+            "description": "WEB必须匹配固定来源，缺失时提供同源Referer",
+            "in": "header",
+            "name": "Origin"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ResetPasswordInput"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SuccessVoid"
+                }
+              }
+            },
+            "description": "数据库变更与记录成功；X-Session-Cleanup为COMPLETE或PENDING，data=null",
+            "headers": {
+              "X-Session-Cleanup": {
+                "schema": {
+                  "enum": [
+                    "COMPLETE",
+                    "PENDING"
+                  ],
+                  "type": "string"
+                },
+                "style": "simple"
+              }
+            }
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Failure"
+                }
+              }
+            },
+            "description": "输入格式或载体错误"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Failure"
+                }
+              }
+            },
+            "description": "未登录或旧会话已失效"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Failure"
+                }
+              }
+            },
+            "description": "权限、目标保护、重新确认或CSRF失败"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Failure"
+                }
+              }
+            },
+            "description": "目标不存在或超出管理范围"
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Failure"
+                }
+              }
+            },
+            "description": "目标版本竞争或状态冲突"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Failure"
+                }
+              }
+            },
+            "description": "输入校验失败或新旧密码相同"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Failure"
+                }
+              }
+            },
+            "description": "频控，响应Retry-After"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Failure"
+                }
+              }
+            },
+            "description": "变更未确认成功；依赖不可用，禁止自动重试"
+          }
+        },
+        "security": [
+          {
+            "StaffCookie": []
+          },
+          {
+            "StaffToken": []
+          }
+        ],
+        "summary": "授权管理员重置员工临时密码",
+        "tags": [
+          "staff-security-controller"
+        ]
+      }
+    },
+    "/api/admin/identity/users/{employeeId}/revoke-sessions": {
+      "post": {
+        "description": "独立identity:user:revoke-sessions权限及目标管理范围；操作者当前密码确认；不改密码/角色/归属；version防止并发与旧请求重放",
+        "operationId": "revoke",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "employeeId",
+            "required": true,
+            "schema": {
+              "format": "uuid",
+              "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$",
+              "type": "string"
+            }
+          },
+          {
+            "description": "WEB Cookie写入必须；MINIPROGRAM Token无需浏览器CSRF",
+            "in": "header",
+            "name": "X-CSRF-Token"
+          },
+          {
+            "description": "WEB必须匹配固定来源，缺失时提供同源Referer",
+            "in": "header",
+            "name": "Origin"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RevokeSessionsInput"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SuccessVoid"
+                }
+              }
+            },
+            "description": "数据库变更与记录成功；X-Session-Cleanup为COMPLETE或PENDING，data=null",
+            "headers": {
+              "X-Session-Cleanup": {
+                "schema": {
+                  "enum": [
+                    "COMPLETE",
+                    "PENDING"
+                  ],
+                  "type": "string"
+                },
+                "style": "simple"
+              }
+            }
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Failure"
+                }
+              }
+            },
+            "description": "输入格式或载体错误"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Failure"
+                }
+              }
+            },
+            "description": "未登录或旧会话已失效"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Failure"
+                }
+              }
+            },
+            "description": "权限、目标保护、重新确认或CSRF失败"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Failure"
+                }
+              }
+            },
+            "description": "目标不存在或超出管理范围"
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Failure"
+                }
+              }
+            },
+            "description": "目标版本竞争或状态冲突"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Failure"
+                }
+              }
+            },
+            "description": "输入校验失败或新旧密码相同"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Failure"
+                }
+              }
+            },
+            "description": "频控，响应Retry-After"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Failure"
+                }
+              }
+            },
+            "description": "变更未确认成功；依赖不可用，禁止自动重试"
+          }
+        },
+        "security": [
+          {
+            "StaffCookie": []
+          },
+          {
+            "StaffToken": []
+          }
+        ],
+        "summary": "授权管理员撤销目标员工全部会话",
+        "tags": [
+          "staff-security-controller"
+        ]
+      }
+    },
+    "/api/platform/auth/csrf": {
+      "get": {
+        "description": "匿名10分钟独立服务器预会话；已登录取当前设备绑定值，不续闲置",
+        "operationId": "csrf",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SuccessCsrfResult"
+                }
+              }
+            },
+            "description": "成功"
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Failure"
+                }
+              }
+            },
+            "description": "格式或载体冲突"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Failure"
+                }
+              }
+            },
+            "description": "未登录、失效或统一登录失败"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Failure"
+                }
+              }
+            },
+            "description": "平台权限、CSRF或密码确认失败"
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Failure"
+                }
+              }
+            },
+            "description": "设备数上限"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Failure"
+                }
+              }
+            },
+            "description": "校验失败"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Failure"
+                }
+              }
+            },
+            "description": "频控，Retry-After"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Failure"
+                }
+              }
+            },
+            "description": "依赖不可用；不自动重试写入"
+          }
+        },
+        "summary": "获取平台Web CSRF",
+        "tags": [
+          "platform-authentication-controller"
+        ]
+      }
+    },
+    "/api/platform/auth/login": {
+      "post": {
+        "description": "先取平台pre Cookie和CSRF；登录成功销毁pre，轮换Token/CSRF，只Set-Cookie，不签发小程序Token",
+        "operationId": "login",
+        "parameters": [
+          {
+            "in": "header",
+            "name": "X-CSRF-Token",
+            "required": true
+          },
+          {
+            "description": "固定同源，缺失时同源Referer",
+            "in": "header",
+            "name": "Origin"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PlatformLoginInput"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SuccessPlatformCurrentIdentity"
+                }
+              }
+            },
+            "description": "成功"
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Failure"
+                }
+              }
+            },
+            "description": "格式或载体冲突"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Failure"
+                }
+              }
+            },
+            "description": "未登录、失效或统一登录失败"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Failure"
+                }
+              }
+            },
+            "description": "平台权限、CSRF或密码确认失败"
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Failure"
+                }
+              }
+            },
+            "description": "设备数上限"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Failure"
+                }
+              }
+            },
+            "description": "校验失败"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Failure"
+                }
+              }
+            },
+            "description": "频控，Retry-After"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Failure"
+                }
+              }
+            },
+            "description": "依赖不可用；不自动重试写入"
+          }
+        },
+        "summary": "平台Web登录",
+        "tags": [
+          "platform-authentication-controller"
+        ]
+      }
+    },
+    "/api/platform/auth/logout": {
+      "post": {
+        "description": "platform:session:manage；独立CSRF与同源来源；只退出当前平台设备",
+        "operationId": "logout",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SuccessVoid"
+                }
+              }
+            },
+            "description": "成功"
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Failure"
+                }
+              }
+            },
+            "description": "格式或载体冲突"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Failure"
+                }
+              }
+            },
+            "description": "未登录、失效或统一登录失败"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Failure"
+                }
+              }
+            },
+            "description": "平台权限、CSRF或密码确认失败"
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Failure"
+                }
+              }
+            },
+            "description": "设备数上限"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Failure"
+                }
+              }
+            },
+            "description": "校验失败"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Failure"
+                }
+              }
+            },
+            "description": "频控，Retry-After"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Failure"
+                }
+              }
+            },
+            "description": "依赖不可用；不自动重试写入"
+          }
+        },
+        "security": [
+          {
+            "PlatformCookie": []
+          }
+        ],
+        "summary": "退出当前平台会话",
+        "tags": [
+          "platform-authentication-controller"
+        ]
+      }
+    },
+    "/api/platform/auth/logout-all": {
+      "post": {
+        "description": "platform:session:manage；当前密码确认，递增数据库安全代际，不改变密码或STAFF会话",
+        "operationId": "logoutAll",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ConfirmationInput"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SuccessVoid"
+                }
+              }
+            },
+            "description": "data=null；数据库已提交，物理清理状态在Header",
+            "headers": {
+              "X-Session-Cleanup": {
+                "schema": {
+                  "enum": [
+                    "COMPLETE",
+                    "PENDING"
+                  ],
+                  "type": "string"
+                },
+                "style": "simple"
+              }
+            }
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Failure"
+                }
+              }
+            },
+            "description": "格式或载体冲突"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Failure"
+                }
+              }
+            },
+            "description": "未登录、失效或统一登录失败"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Failure"
+                }
+              }
+            },
+            "description": "平台权限、CSRF或密码确认失败"
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Failure"
+                }
+              }
+            },
+            "description": "设备数上限"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Failure"
+                }
+              }
+            },
+            "description": "校验失败"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Failure"
+                }
+              }
+            },
+            "description": "频控，Retry-After"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Failure"
+                }
+              }
+            },
+            "description": "依赖不可用；不自动重试写入"
+          }
+        },
+        "security": [
+          {
+            "PlatformCookie": []
+          }
+        ],
+        "summary": "本人退出全部平台会话",
+        "tags": [
+          "platform-authentication-controller"
+        ]
+      }
+    },
+    "/api/platform/auth/me": {
+      "get": {
+        "description": "platform:session:manage；每请求DB重验，tenantId/dataScope=null，不建立TenantContext",
+        "operationId": "me",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SuccessPlatformCurrentIdentity"
+                }
+              }
+            },
+            "description": "成功"
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Failure"
+                }
+              }
+            },
+            "description": "格式或载体冲突"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Failure"
+                }
+              }
+            },
+            "description": "未登录、失效或统一登录失败"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Failure"
+                }
+              }
+            },
+            "description": "平台权限、CSRF或密码确认失败"
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Failure"
+                }
+              }
+            },
+            "description": "设备数上限"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Failure"
+                }
+              }
+            },
+            "description": "校验失败"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Failure"
+                }
+              }
+            },
+            "description": "频控，Retry-After"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Failure"
+                }
+              }
+            },
+            "description": "依赖不可用；不自动重试写入"
+          }
+        },
+        "security": [
+          {
+            "PlatformCookie": []
+          }
+        ],
+        "summary": "当前平台身份",
+        "tags": [
+          "platform-authentication-controller"
+        ]
+      }
+    },
+    "/api/platform/auth/password": {
+      "put": {
+        "description": "platform:credential:change；旧密码确认，同事务改密/代际/记录/撤销意图；全部旧平台会话失效，员工不受影响",
+        "operationId": "password",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ChangePasswordInput"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SuccessVoid"
+                }
+              }
+            },
+            "description": "data=null；数据库已提交，物理清理状态在Header",
+            "headers": {
+              "X-Session-Cleanup": {
+                "schema": {
+                  "enum": [
+                    "COMPLETE",
+                    "PENDING"
+                  ],
+                  "type": "string"
+                },
+                "style": "simple"
+              }
+            }
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Failure"
+                }
+              }
+            },
+            "description": "格式或载体冲突"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Failure"
+                }
+              }
+            },
+            "description": "未登录、失效或统一登录失败"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Failure"
+                }
+              }
+            },
+            "description": "平台权限、CSRF或密码确认失败"
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Failure"
+                }
+              }
+            },
+            "description": "设备数上限"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Failure"
+                }
+              }
+            },
+            "description": "校验失败"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Failure"
+                }
+              }
+            },
+            "description": "频控，Retry-After"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Failure"
+                }
+              }
+            },
+            "description": "依赖不可用；不自动重试写入"
+          }
+        },
+        "security": [
+          {
+            "PlatformCookie": []
+          }
+        ],
+        "summary": "本人修改平台密码",
+        "tags": [
+          "platform-authentication-controller"
         ]
       }
     }

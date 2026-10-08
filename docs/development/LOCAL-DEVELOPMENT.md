@@ -1,6 +1,6 @@
 # 本地开发与检查
 
-当前实施状态见本文P05-01章节及[P05-01验证](../testing/P05-01-VERIFICATION.md)。旧阶段“尚未实现”描述保留为历史范围；冻结安全契约不变。
+当前实施状态见本文最新P05章节及[P05-03验证](../testing/P05-03-VERIFICATION.md)。旧阶段“尚未实现”描述保留为历史范围；冻结安全契约不变。
 日期：2026-10-08。精确版本以 [VERSION-MATRIX](VERSION-MATRIX.md) 为唯一文档事实源。历史初始化见 [P02-01](../testing/P02-01-VERIFICATION.md)，本轮实际启停与限制见 [P02-02](../testing/P02-02-VERIFICATION.md)。以下命令从项目根执行，后端命令单独进入 apps/backend。ui 保留原位，不加入工程构建。
 
 ## 工具与安装
@@ -187,3 +187,19 @@ Web接入顺序：GET /api/admin/auth/csrf（同源credentials，csrfToken只保
 生产数值不能为开发方便覆盖；仅独立test环境允许短期限配置用于验收。server.forward-headers-strategy必须none，转发头不用于IP频控；生产可信代理接入未验收。测试全部用独立容器并在结束清理，不删除日常数据库卷。证据见[P05-02](../testing/P05-02-VERIFICATION.md)。
 
 WEB收到SESSION_EXPIRED/REVOKED时服务器同属性清Cookie，下一次获取匿名CSRF再登录；不静默重放。503保留Cookie，恢复后可继续验证原会话。
+
+## P05-03 员工安全操作与补偿（2026-10-08）
+
+环境/版本/独立迁移输入保持既有路线，不新增开关、真实账号或默认密码。独立数据库先执行既有`./scripts/backend-identity.sh migrate`应用追加V2；普通生产启动仍只validate，本轮未操作用户开发库/生产库。新权限identity:user:revoke-sessions只有代码声明，初始化与启动不会授予，需后续正式授权管理操作明确赋予。
+
+四个安全接口、JSON字段、Cookie/CSRF及临时密码状态以[身份契约](../contracts/IDENTITY.md#p05-03-员工凭据与会话安全接口2026-10-08)为唯一公开定义。管理员version来自合法的目标初始化/管理资料；没有员工CRUD或普通密码查询。不要把密码放进curl URL、命令参数、日志或示例固定值；使用本地受保护输入工具向JSON Body提交。
+
+200的X-Session-Cleanup=PENDING表示DB已成功、逻辑会话已失效、Redis物理清理仍待重试，禁止把它作为重放密码请求的理由。服务端保留identity_session_cleanup，目标以后合法登录调用me将重试；同目标后续安全操作也补偿。目标不再活动时没有自动调度，本轮不建设MQ/Outbox。运维可通过受控数据库只读查询核对未完成记录及固定trace日志，不清理或修改用户数据冒充完成。
+
+Web本人改密/全部退出成功即清客户端CSRF/身份与缓存并重新登录，小程序清STAFF槽位与旧回调；管理员成功保留操作者身份。网络异常/503不代表确定回滚或失效，禁止自动重试，先验证登录/管理版本和追溯记录。构建命令及独立PG/Redis结果见[P05-03验证](../testing/P05-03-VERIFICATION.md)；没有前端页面/请求实现。
+
+## P05-04 平台身份与独立初始化（2026-10-08）
+
+平台与STAFF租户管理员是两个身份域，真实平台初始化值未提供，本轮没有操作日常库或创建实际本地平台管理员。构建后使用scripts/backend-identity.sh platform-bootstrap，单独PET_PLATFORM_BOOTSTRAP_DATABASE_*和受控stdin/Console；完整参数、追加角色脚本及V2→V3顺序见[PLATFORM-BOOTSTRAP](PLATFORM-BOOTSTRAP.md)。不能重复全量旧角色脚本、用应用/租户bootstrap身份或环境开关重置。
+
+六平台接口、Cookie/CSRF、权限与PENDING含义见[IDENTITY](../contracts/IDENTITY.md#p05-04-平台正式接口2026-10-08)。安全表/意图在pet_control，日志不得含密码/哈希/Token/CSRF；PENDING后通过合法本人me/后续安全操作补偿，运维用受控只读连接复核account_id/revoke_before/completed，不向普通业务开放SQL。没有定时补偿/平台账号页面/租户管理CRUD。部署前置及未验证条件以[P05-04](../testing/P05-04-VERIFICATION.md)为准。

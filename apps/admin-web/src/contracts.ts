@@ -11,3 +11,21 @@ export type WebContractChecks = [
   Assert<NullSuccess['data'] extends null ? true : false>,
   Assert<ProtocolError['success'] extends false ? true : false>
 ];
+
+// P05-03只消费生成的敏感操作类型，无请求或页面实现。
+export type StaffPasswordChange = components['schemas']['ChangePasswordInput'];
+export type StaffSecurityConfirmation = components['schemas']['ConfirmationInput'];
+export type StaffPasswordReset = components['schemas']['ResetPasswordInput'];
+export type StaffSessionRevocation = components['schemas']['RevokeSessionsInput'];
+export type WebStaffSecurityChecks = [
+  Assert<StaffPasswordReset['version'] extends string ? true : false>,
+  Assert<components['schemas']['CurrentIdentity']['passwordChangeRequired'] extends boolean ? true : false>
+];
+
+// P05-04仅类型消费，平台/员工按principalType分支，不添加登录页面。
+export type { AuthenticatedIdentity } from '@pet/api-contracts';
+export type PlatformIdentity = components['schemas']['PlatformCurrentIdentity'];
+export type WebPlatformChecks = [
+  Assert<PlatformIdentity['tenantId'] extends null ? true : false>,
+  Assert<components['schemas']['CurrentIdentity']['tenantId'] extends string ? true : false>
+];

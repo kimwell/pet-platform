@@ -1,0 +1,22 @@
+[
+  {
+    "path": "packages/api-contracts/openapi/backend.openapi.json",
+    "equal": true
+  },
+  {
+    "path": "packages/api-contracts/src/generated/api.d.ts",
+    "equal": true
+  },
+  {
+    "path": "apps/wechat-miniprogram/miniprogram/types/generated/api.d.ts",
+    "equal": true
+  },
+  {
+    "path": "packages/api-contracts/openapi/test-contract.openapi.json",
+    "equal": true
+  },
+  {
+    "path": "packages/api-contracts/test/generated/test-contract.d.ts",
+    "equal": true
+  }
+]

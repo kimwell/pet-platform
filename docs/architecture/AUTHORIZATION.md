@@ -1,6 +1,6 @@
 # 权限与授权执行
 
-当前STAFF认证实施见本文P05-02章节及[P05-02验证](../testing/P05-02-VERIFICATION.md)。旧阶段叙述保留为历史范围；本轮渠道/输入细化见当前章节。
+当前STAFF认证及敏感操作实施见本文P05-02/P05-03章节及[P05-03验证](../testing/P05-03-VERIFICATION.md)。旧阶段叙述保留为历史范围；本轮渠道/输入细化见当前章节。
 冻结日期：2026-10-07，P01-02。本文拥有权限注册、范围组合、授权顺序；字段见 [身份契约](../contracts/IDENTITY.md)，隔离执行见 [多租户](MULTI-TENANCY.md)。
 
 代码固定 `模块:资源:动作`，正则 `^[a-z][a-z0-9-]*:[a-z][a-z0-9-]*:[a-z][a-z0-9-]*$`；例如 identity:user:list/create/update/disable/export 分别独立。代码声明权限注册表：身份域、中文名、动作及支持范围。DB 仅保存角色、主体和授权关系及范围参数，不提供任意权限脚本或隐含 * 全权。
@@ -61,3 +61,19 @@ Employee.authorization_version是实际持久化字段，初始化0；所有未�
 STAFF真实会话先验证期限、设备渠道与可信主体，再通过P05-01窄范围函数读取当前租户/员工、角色、每权限范围及有效门店。CurrentPrincipal来自当前查询，TenantContextFilter继续建立AUTHORITY_READ根，业务仍forPermission/Guard/ScopedTransaction/RLS。客户或平台Token不借员工权限。每请求重载策略不依赖授权版本字段独自保证撤销；角色停用、权限/角色关系/门店关系及门店状态变化在提交后的新权威查询中生效，securityVersion/Tenant securityVersion变化拒绝旧会话。
 
 已在执行的请求保留当次授权快照；本轮没有管理写API，未实现未来敏感写提交前重验，不能声称撤回已提交操作。未来修改服务仍须按冻结事务责任递增安全/授权版本并记录撤销意图。真实会话异步快照禁止提交，内部技术任务保持原边界。[P05-02验证](../testing/P05-02-VERIFICATION.md)覆盖正式HTTP/PG/Redis，完整CRUD与审计留待后续。
+
+## P05-03 敏感员工管理策略（2026-10-08）
+
+本人改密/全部退出使用经过验证的STAFF本人能力，不接受目标ID；currentPassword确认当前账号，成功含当前设备全部失效。管理员重置复用既有identity:user:reset-password；管理员撤销声明独立identity:user:revoke-sessions，支持TENANT/STORES，不靠角色名称放行。代码目录声明新权限，既有ADMIN_PERMISSIONS和V1初始化仍为原九项，不在启动时扩大角色授权。
+
+操作权限和目标管理是独立条件：跨租户/不存在/超范围404；STORES须覆盖目标所有门店关联且目标不能无门店，多店任一范围外就拒绝；SELF不能管理另一个员工。目标有效权限及每权限范围不能超出操作者可覆盖的能力，不能把能查看员工等同能接管账号。全部检查在行锁事务重载当前事实后执行，并在提交前重验操作者当前状态、安全/授权版本及权限/门店集合。
+
+system_reserved是真实员工受保护标志，无HTTP修改接口，管理员重置/撤销均拒绝。tenant-admin是已有初始化保留角色的明确代码，任何该角色关联（包括暂时停用角色）使账号受到重置保护，不比较角色中文名称或所谓角色级别。管理员本人不允许走管理重置/撤销，分别走本人改密/全退出。tenant-admin目标的密码重置一律禁止；会话撤销只允许同样持保留角色且具有TENANT撤销权限的操作者。撤销不改密码，最后管理员仍能正确凭据登录，不引入无意义数量门禁。未建设遗失管理员密码的离线恢复/审批流程。
+
+管理员命令必须带目标Employee.version，旧资源版本409；不自动覆盖或重放。重置临时密码后仅开放本人改密/身份/CSRF/退出最小路径，管理权限即使仍在me中也不能用于受限之外路径；任务提交也拒绝。具体接口、输送及客户端状态处理以[IDENTITY](../contracts/IDENTITY.md#p05-03-员工凭据与会话安全接口2026-10-08)为准。
+
+## P05-04 控制面权限（2026-10-08）
+
+identity的PlatformPermissions只声明platform:session:manage、platform:credential:change、platform:redis:operate，分别对应本人会话、本人凭据及P04受限平台Redis。PlatformScopeGuard验证真实PLATFORM和明确代码，不能只isLogin或比较角色名；没有平台角色管理/通配符/租户业务权限。每请求从pet_control.authorization重载有效账号与权限，未登记代码失败关闭。敏感事务行锁后再查当前权限，授权变动不沿用请求旧快照。
+
+平台tenantId=null不是全租户访问；不建立TenantContext，租户持久化和任务入口默认拒绝，STAFF也不能调用平台接口/Redis能力。没有跨租户管理、impersonate/runAsTenant或管理员重置其他平台账号。当前范围与验证见[平台初始化](../development/PLATFORM-BOOTSTRAP.md)、[P05-04](../testing/P05-04-VERIFICATION.md)。

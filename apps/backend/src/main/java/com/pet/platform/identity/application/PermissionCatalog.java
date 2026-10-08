@@ -24,12 +24,14 @@ public final class PermissionCatalog {
         var names=Map.of("identity:user:list","查看员工","identity:user:create","创建员工","identity:user:update","修改员工",
                 "identity:user:disable","停用员工","identity:user:reset-password","重置员工密码","identity:role:list","查看角色",
                 "identity:role:update","修改角色授权","platform:store:list","查看门店","platform:store:update","修改门店");
+        codes.add("identity:user:revoke-sessions");
         DECLARED = codes.stream().collect(Collectors.toUnmodifiableMap(c -> c, c -> {
             Set<DataScopeType> scopes;
             if (c.equals("identity:user:create") || c.startsWith("identity:role:")) scopes=Set.of(DataScopeType.TENANT);
+            else if (c.equals("identity:user:revoke-sessions")) scopes=Set.of(DataScopeType.TENANT,DataScopeType.STORES);
             else if (c.startsWith("platform:store:")) scopes=Set.of(DataScopeType.TENANT,DataScopeType.STORES);
             else scopes=Set.of(DataScopeType.TENANT,DataScopeType.STORES,DataScopeType.SELF);
-            return new Permission(c,PrincipalType.STAFF,names.get(c),c.substring(c.lastIndexOf(':')+1),scopes);
+            return new Permission(c,PrincipalType.STAFF,c.equals("identity:user:revoke-sessions")?"撤销员工全部会话":names.get(c),c.substring(c.lastIndexOf(':')+1),scopes);
         }));
     }
     public static boolean supports(String code, DataScopeType type) { return DECLARED.containsKey(code) && DECLARED.get(code).scopes().contains(type); }

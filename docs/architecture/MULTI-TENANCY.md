@@ -1,6 +1,6 @@
 # 租户、门店与持久化隔离
 
-当前实施状态见本文P05-01章节及[P05-01验证](../testing/P05-01-VERIFICATION.md)。旧阶段“尚未实现”描述保留为历史范围；冻结安全契约不变。
+当前实施状态见本文最新P05章节及[P05-03验证](../testing/P05-03-VERIFICATION.md)。旧阶段“尚未实现”描述保留为历史范围；冻结安全契约不变。
 冻结日期：2026-10-07，P01-02。本文拥有数据范围执行和运行入口上下文；P01冻结设计，P04-02当前实现及限制见文末。
 
 Tenant 是经营主体/客户组织；Store 为可选经营门店；Organization 为内部组织。后两者归 Tenant，不能互相替代。单租户仍有真实 tenantId 并走相同机制。身份固定一个 Tenant；tenantCode 仅用于登录/入口找候选，校验凭据与关系后才建可信 tenantId。业务 DTO 不接收 tenantId，未知字段拒绝。storeId 只表达意图，必须属于当前 Tenant、状态有效且在本操作范围。跨实体使用同租户引用查询与复合外键。
@@ -125,3 +125,16 @@ P04-01/02/03工程基础总体验收见[P04-ACCEPTANCE](../testing/P04-ACCEPTANC
 正式StoreOwnershipReader沿用ScopedPersistence中唯一登记的固定事实投影和ScopedTransaction同JPA连接绑定，必须当前BUSINESS；WHERE含当前tenant、id与ACTIVE状态，不递归Guard。事实读取不授操作权限，Guard继续校验门店上限/本权限范围，不存在/他租户/停用/未授权统一404；依赖异常503。不是第二套租户上下文或Repository框架。
 
 正式角色/函数/容器边界见[P05-01](../testing/P05-01-VERIFICATION.md)。当前仍依赖可信应用控制GUC，不能防持有数据库凭据的恶意SQL代码；结构反例与RLS运行反例分别留证。生产部署角色、独立实际生产迁移/初始化、会话/异步撤销与未来业务仍NOT_VERIFIED或未实现。
+
+
+## P05-03 凭据写与安全记录隔离（2026-10-08）
+
+本人目标来自当前STAFF主体；管理员目标必须当前租户、明确操作权限、全门店归属覆盖及目标授权保护策略，详见[授权](AUTHORIZATION.md)。StaffSecurityJdbc必须在可信STAFF根内开独立数据库事务，设置事务局部tenant GUC；受限凭据锁函数只按该GUC查员工，两个新表采用同租户FORCE RLS。运行角色仅新增必要密码/版本写列、安全记录INSERT、清理状态写列，仍不能直接SELECT密码/修改tenant或system_reserved、查询或删除安全记录。
+
+安全记录target_employee_id保留提交的UUID而无员工FK，用于记录不存在/跨租户目标的拒绝尝试；该值不授予访问，不读取对方姓名/凭据。operator外键仍强制同租户。清理意图具有同租户员工复合FK。排队真实会话任务执行前从数据库重验状态/安全代际并检查实际设备，当前权限不得扩大原捕获上限；不强行回滚已完成授权检查的在途请求。
+
+## P05-04 控制面与租户面双向隔离（2026-10-08）
+
+pet_control仅平台账号/权限/首次创建标记/最小记录/清理意图，没有tenantId。身份凭据owner为identity；普通租户Repository不能引用平台候选/固定SQL入口。平台CurrentPrincipal.tenantId=null、grants/门店为空，TenantContextFilter不建租户根范围，客户端tenantId/角色/Header无法改变。TenantScopeGuard/受控持久化/同步租户Executor/租户任务保持默认拒绝；本轮没有任何平台租户业务旁路。
+
+五表FORCE RLS，runtime没有表读取/DML，仅受限函数；函数owner无数据库超级权限、无任何新增租户表特权。平台安全事务仅pet.platform_id局部GUC，事务结束清除；不设置pet.tenant_id，不关闭旧RLS。平台事件独立schema、PLATFORM类型/可识别actor/target、无虚构tenant，不开放租户查询。独立角色/函数清单与真实反例见[平台初始化](../development/PLATFORM-BOOTSTRAP.md)、[P05-04验证](../testing/P05-04-VERIFICATION.md)。

@@ -1,0 +1,12 @@
+{
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "argv": [
+    "pnpm",
+    "--version"
+  ],
+  "exitCode": 0,
+  "startedAtUTC": "2026-10-08T07:41:06.569164+00:00",
+  "finishedAtUTC": "2026-10-08T07:41:07.003245+00:00",
+  "log": "pnpm-version.log",
+  "summary": "10.34.6\n"
+}

@@ -16,6 +16,8 @@
               "AUTH_DOMAIN_MISMATCH",
               "LOGIN_FAILED",
               "PERMISSION_DENIED",
+              "SECURITY_CONFIRMATION_FAILED",
+              "PASSWORD_CHANGE_REQUIRED",
               "CSRF_INVALID",
               "RESOURCE_NOT_FOUND",
               "METHOD_NOT_ALLOWED",
@@ -473,6 +475,12 @@
       }
     },
     "securitySchemes": {
+      "PlatformCookie": {
+        "description": "仅PLATFORM WEB；写请求必须独立CSRF及同源来源",
+        "in": "cookie",
+        "name": "__Secure-pet_platform_sid",
+        "type": "apiKey"
+      },
       "StaffCookie": {
         "description": "生产Cookie；local HTTP使用pet_dev_staff_sid，写请求另需X-CSRF-Token及固定Origin/Referer",
         "in": "cookie",

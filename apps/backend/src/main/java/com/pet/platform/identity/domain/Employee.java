@@ -18,6 +18,10 @@ public class Employee extends TenantScopedEntity {
     @Column(name = "password_hash", nullable = false, length = 256) private String passwordHash;
     @Column(name = "security_version", nullable = false) private long securityVersion;
     @Column(name = "authorization_version", nullable = false) private long authorizationVersion;
+    @Column(name="password_change_required",nullable=false) private boolean passwordChangeRequired;
+    @Column(name="system_reserved",nullable=false) private boolean systemReserved;
+    public boolean isPasswordChangeRequired(){return passwordChangeRequired;}
+    public boolean isSystemReserved(){return systemReserved;}
     public String getLoginName() { return loginName; }
     public String getDisplayName() { return displayName; }
     public String getStatus() { return status; }

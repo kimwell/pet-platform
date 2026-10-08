@@ -80,19 +80,20 @@ public final class TenantExecutionScope implements AutoCloseable {
         return new TenantExecutionScope(new TenantContext(c.tenantId(), c.principalType(), c.principalId(), c.sessionId(),
                 c.authorizationVersion(), permission, scope, c.authorizedStoreIds(), store, c.traceId(), TenantPurpose.BUSINESS), outer.grants);
     }
-    static TenantExecutionScope openTask(TenantContext context, TaskDeadline deadline) {
+    static TenantExecutionScope openTask(TenantContext context, TaskDeadline deadline,boolean sessionBacked) {
         if (hasWorkerContext()) throw new TenantAccessDeniedException();
         deadline.verify();
-        return new TenantExecutionScope(context, Map.of(context.permissionCode(), context.dataScope()), deadline);
+        var frame=new TenantExecutionScope(context, Map.of(context.permissionCode(), context.dataScope()), deadline);frame.sessionBacked=sessionBacked;return frame;
     }
 
     static TaskDeadline captureTaskDeadline(long maxAgeNanos, java.util.function.LongSupplier ticker) {
         var frame = TenantContextHolder.frame(); TenantScopeGuard.requireBusiness();
-        if(frame.sessionBacked) throw new PermissionDeniedException();
+
         long remaining = frame.deadline == null ? maxAgeNanos : Math.min(maxAgeNanos, frame.deadline.remaining());
         var result = new TaskDeadline(ticker.getAsLong(), remaining, ticker);
         result.verify(); return result;
     }
+    static boolean sessionBacked(){return TenantContextHolder.frame()!=null && TenantContextHolder.frame().sessionBacked;}
     static boolean hasWorkerContext() { return TenantContextHolder.frame() != null; }
 
     TenantContext context() { if (deadline != null) deadline.verify(); return context; }

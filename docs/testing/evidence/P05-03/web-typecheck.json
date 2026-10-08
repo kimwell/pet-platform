@@ -1,0 +1,14 @@
+{
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "argv": [
+    "pnpm",
+    "--filter",
+    "@pet/admin-web",
+    "typecheck"
+  ],
+  "exitCode": 0,
+  "startedAtUTC": "2026-10-08T06:39:10.342398+00:00",
+  "finishedAtUTC": "2026-10-08T06:39:13.148318+00:00",
+  "log": "web-typecheck.log",
+  "summary": "\n> @pet/admin-web@0.0.0 typecheck /Users/kimwell/work/pet-platform/apps/admin-web\n> tsc --noEmit\n\n"
+}

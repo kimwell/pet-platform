@@ -27,27 +27,24 @@ public final class StaffHttpAuthentication {
     private final StaffAuthentication identities;
     private final StaffSessionPort sessions;
     private final PasswordService passwords;
-    private final String cookie,preCookie,origin;
-    private final boolean secure;
+    private final String cookie,preCookie;
+    private final WebCookieSecurity web;
     public StaffHttpAuthentication(StaffAuthentication identities,StaffSessionPort sessions,PasswordService passwords,Environment env) {
         this.identities=identities;this.sessions=sessions;this.passwords=passwords;
-        secure=env.getProperty("pet.auth.cookie-secure",Boolean.class,true);
-        boolean prod="prod".equals(env.getRequiredProperty("pet.environment"));
-        if(prod && !secure)throw new IllegalStateException("生产pet.auth.cookie-secure必须为true");
-        cookie=secure?"__Secure-pet_staff_sid":"pet_dev_staff_sid";preCookie=secure?"__Secure-pet_staff_pre":"pet_dev_staff_pre";
-        origin=canonicalOrigin(env.getRequiredProperty("pet.public-origin"));
+        web=new WebCookieSecurity("staff","/api/admin/",env);cookie=web.cookieName();preCookie=web.preCookieName();
     }
     public String cookieName(){return cookie;}
     public String preCookieName(){return preCookie;}
     public static Authenticated current(HttpServletRequest request) {return (Authenticated)request.getAttribute(ATTRIBUTE);}
     public void clear(HttpServletRequest request){request.removeAttribute(ATTRIBUTE);}
     public void authenticateRequest(HttpServletRequest request,HttpServletResponse response) {
-        String path=request.getRequestURI();
+        String path=WebCookieSecurity.requestPath(request);
         if(!path.startsWith("/api/admin/"))return;
         response.setHeader("Cache-Control","no-store");response.setHeader("Pragma","no-cache");
         // 禁止URL凭据；其他客户端tenantId参数不会参与可信身份构造。
-        for(String name:List.of("token","access_token","X-Staff-Token","satoken"))if(request.getParameterMap().containsKey(name))throw error(ErrorCode.BAD_REQUEST);
+        for(String name:List.of("token","access_token","X-Staff-Token","satoken","password","currentPassword","newPassword","loginType"))if(request.getParameterMap().containsKey(name))throw error(ErrorCode.BAD_REQUEST);
         String staff=oneHeader(request,"X-Staff-Token"),customer=oneHeader(request,"X-Customer-Token"),platform=oneHeader(request,"X-Platform-Token"),authorization=oneHeader(request,"Authorization");
+        if(oneHeader(request,"X-Login-Type")!=null)throw error(ErrorCode.AUTH_DOMAIN_MISMATCH);
         String sid=readCookie(request,cookie);
         int headers=(staff==null?0:1)+(customer==null?0:1)+(platform==null?0:1)+(authorization==null?0:1);
         if(headers>1 || (sid!=null && headers>0))throw error(ErrorCode.AUTH_CREDENTIAL_AMBIGUOUS);
@@ -80,6 +77,8 @@ public final class StaffHttpAuthentication {
         if(!webLogin && !csrf && current==null)throw error(ErrorCode.AUTH_REQUIRED);
         boolean unsafe=!Set.of("GET","HEAD","OPTIONS").contains(request.getMethod());
         if(unsafe && (webLogin || channel==StaffSessionPort.Channel.WEB))validateCsrf(request);
+        if(current!=null && current.identity().passwordChangeRequired()
+            && !Set.of("/api/admin/auth/me","/api/admin/auth/csrf","/api/admin/auth/password","/api/admin/auth/logout","/api/admin/auth/logout-all").contains(path))throw error(ErrorCode.PASSWORD_CHANGE_REQUIRED);
         // me、csrf及auth维护端点不续闲置期限；后续业务请求才更新活跃时间。
         if(current!=null && !path.startsWith("/api/admin/auth/"))sessions.touch(token);
     }
@@ -113,25 +112,18 @@ public final class StaffHttpAuthentication {
         sessions.logout(current.token());
         if(current.session().channel()==StaffSessionPort.Channel.WEB){setCookie(response,cookie,"",true);setCookie(response,preCookie,"",true);}
     }
-    private void validateCsrf(HttpServletRequest request) {
-        String source=oneHeader(request,"Origin");
-        if(source!=null) {if(!source.equals(origin))throw error(ErrorCode.CSRF_INVALID);}
-        else {String referer=oneHeader(request,"Referer");if(referer==null || !origin.equals(canonicalOrigin(referer)))throw error(ErrorCode.CSRF_INVALID);}
-        String content=request.getContentType();
-        if(request.getContentLengthLong()>0 && (content==null || !content.split(";",2)[0].equalsIgnoreCase("application/json")))throw error(ErrorCode.CSRF_INVALID);
-        String supplied=oneHeader(request,"X-CSRF-Token"),expected;
-        var current=current(request);
-        if(current!=null)expected=current.session().csrfToken();
-        else {String pre=readCookie(request,preCookie);expected=pre==null?null:sessions.readPre(pre);}
-        if(expected==null || supplied==null || !supplied.matches("[A-Za-z0-9_-]{43}")
-            || !MessageDigest.isEqual(hash(expected),hash(supplied)))throw error(ErrorCode.CSRF_INVALID);
+    public void clearCurrentCookies(HttpServletRequest request,HttpServletResponse response) {
+        if(current(request).session().channel()==StaffSessionPort.Channel.WEB){setCookie(response,cookie,"",true);setCookie(response,preCookie,"",true);}
     }
-    private static byte[] hash(String s) {try{return MessageDigest.getInstance("SHA-256").digest(s.getBytes(StandardCharsets.UTF_8));}catch(NoSuchAlgorithmException e){throw new IllegalStateException("安全摘要算法不可用");}}
-    private static String random(){byte[] b=new byte[32];new SecureRandom().nextBytes(b);return Base64.getUrlEncoder().withoutPadding().encodeToString(b);}
-    private static String canonicalOrigin(String value) {try{URI u=URI.create(value);if(u.getHost()==null || u.getUserInfo()!=null || !Set.of("http","https").contains(u.getScheme()))return "INVALID";int p=u.getPort();return u.getScheme()+"://"+u.getHost()+(p==-1 || (p==80 && u.getScheme().equals("http")) || (p==443 && u.getScheme().equals("https"))?"":":"+p);}catch(IllegalArgumentException e){return "INVALID";}}
-    private static String oneHeader(HttpServletRequest r,String name){var values=Collections.list(r.getHeaders(name));if(values.size()>1)throw error(ErrorCode.AUTH_CREDENTIAL_AMBIGUOUS);return values.isEmpty()?null:values.getFirst();}
+    private void validateCsrf(HttpServletRequest request){
+        var current=current(request);String expected;
+        if(current!=null)expected=current.session().csrfToken();else{String pre=readCookie(request,preCookie);expected=pre==null?null:sessions.readPre(pre);}
+        web.validate(request,expected);
+    }
+    private static String random(){return WebCookieSecurity.random();}
+    private static String oneHeader(HttpServletRequest r,String name){return WebCookieSecurity.oneHeader(r,name);}
     private static String parseBearer(String raw){if(!raw.matches("Bearer [A-Za-z0-9_-]{16,256}"))throw error(ErrorCode.BAD_REQUEST);return raw.substring(7);}
-    private static String readCookie(HttpServletRequest r,String name){String result=null;if(r.getCookies()!=null)for(Cookie c:r.getCookies())if(c.getName().equals(name)){if(result!=null)throw error(ErrorCode.AUTH_CREDENTIAL_AMBIGUOUS);result=c.getValue();}if(result!=null && !result.matches("[A-Za-z0-9_-]{16,256}"))throw error(ErrorCode.BAD_REQUEST);return result;}
-    private void setCookie(HttpServletResponse r,String name,String value,boolean delete){var b=ResponseCookie.from(name,value).path("/api/admin/").httpOnly(true).secure(secure).sameSite("Lax");if(delete)b.maxAge(0);r.addHeader("Set-Cookie",b.build().toString());}
+    private static String readCookie(HttpServletRequest r,String name){return WebCookieSecurity.readCookie(r,name);}
+    private void setCookie(HttpServletResponse r,String name,String value,boolean delete){web.setCookie(r,name,value,delete);}
     private static BusinessException error(ErrorCode code){return new BusinessException(code);}
 }

@@ -1,0 +1,38 @@
+{
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "argv": [
+    "python3",
+    "docs/testing/evidence/P05-04/final-audit.py"
+  ],
+  "exitCode": 0,
+  "createdAtUTC": "2026-10-08T07:58:08.659415+00:00",
+  "testCount": 366,
+  "baselineCount": 328,
+  "missingBaselineCases": [],
+  "addedCases": 38,
+  "groups": {
+    "surefire": {
+      "tests": 132,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "failsafe": {
+      "tests": 234,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    }
+  },
+  "logCredentialHits": [],
+  "preservationChecked": 5022,
+  "preservationViolations": [],
+  "deletedFiles": [],
+  "missingDocumentLinks": [],
+  "requiredCommandFailures": [],
+  "diffCheckExitCode": 0,
+  "diffCheckSummary": "",
+  "runningTestcontainers": [],
+  "openapiChecks": true,
+  "browserChecks": true
+}

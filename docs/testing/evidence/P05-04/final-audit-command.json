@@ -1,0 +1,12 @@
+{
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "argv": [
+    "python3",
+    "docs/testing/evidence/P05-04/final-audit.py"
+  ],
+  "exitCode": 0,
+  "startedAtUTC": "2026-10-08T07:58:05.295663+00:00",
+  "finishedAtUTC": "2026-10-08T07:58:08.668792+00:00",
+  "log": "final-audit-command.log",
+  "summary": "{\n  \"cwd\": \"/Users/kimwell/work/pet-platform\",\n  \"argv\": [\n    \"python3\",\n    \"docs/testing/evidence/P05-04/final-audit.py\"\n  ],\n  \"exitCode\": 0,\n  \"createdAtUTC\": \"2026-10-08T07:58:08.659415+00:00\",\n  \"testCount\": 366,\n  \"baselineCount\": 328,\n  \"missingBaselineCases\": [],\n  \"addedCases\": 38,\n  \"groups\": {\n    \"surefire\": {\n      \"tests\": 132,\n      \"failures\": 0,\n      \"errors\": 0,\n      \"skipped\": 0\n    },\n    \"failsafe\": {\n      \"tests\": 234,\n      \"failures\": 0,\n      \"errors\": 0,\n      \"skipped\": 0\n    }\n  },\n  \"logCredentialHits\": [],\n  \"preservationChecked\": 5022,\n  \"preservationViolations\": [],\n  \"deletedFiles\": [],\n  \"missingDocumentLinks\": [],\n  \"requiredCommandFailures\": [],\n  \"diffCheckExitCode\": 0,\n  \"diffCheckSummary\": \"\",\n  \"runningTestcontainers\": [],\n  \"openapiChecks\": true,\n  \"browserChecks\": true\n}\n"
+}

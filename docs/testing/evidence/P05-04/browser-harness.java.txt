@@ -1,0 +1,64 @@
+import com.pet.testing.*;
+import com.pet.platform.Application;
+import com.pet.platform.identity.application.PasswordService;
+import com.pet.platform.identity.application.bootstrap.*;
+import com.pet.platform.identity.infrastructure.bootstrap.BootstrapJdbc;
+import java.net.*;
+import java.nio.file.*;
+import java.util.*;
+import java.util.concurrent.*;
+import org.springframework.boot.SpringApplication;
+import org.springframework.context.annotation.*;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.http.MediaType;
+
+public class P05PlatformBrowserHarness extends PostgresIntegrationSupport {
+    static String body;
+    static CompletableFuture<String> completion=new CompletableFuture<>();
+    @Configuration(proxyBeanMethods=false) static class Config {@Bean Page page(){return new Page();}}
+    @RestController static class Page {
+        @GetMapping(value="/api/platform/auth/login",produces=MediaType.TEXT_HTML_VALUE) String html(){return """
+<!doctype html><html lang="zh"><meta charset="utf-8"><title>P05-04 临时浏览器验收</title><body><h1>P05-04 Cookie / CSRF 实际浏览器链路</h1><p>独立测试容器和正式初始化服务；结果不含凭据。</p><button id="run">执行浏览器验收</button><pre id="result">待执行</pre><script>
+const input=BODY;
+async function send(domain,path,options={}){return fetch('/api/'+domain+'/auth/'+path,{...options,credentials:'same-origin'});}
+async function read(domain,path){const r=await send(domain,path);return {status:r.status,data:(await r.json()).data};}
+async function login(domain,body){const pre=await read(domain,'csrf');const r=await send(domain,'login',{method:'POST',headers:{'Content-Type':'application/json','X-CSRF-Token':pre.data.csrfToken},body:JSON.stringify(body)});const result=await r.json();const c=await read(domain,'csrf');return {status:r.status,type:result.data?.principalType,csrf:c.data.csrfToken,tokenInBody:!!result.data?.token};}
+document.querySelector('#run').onclick=async()=>{try{
+ const missing=await send('platform','login',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(input.platform)});
+ const staff=await login('admin',input.staff);const platform=await login('platform',input.platform);
+ const p=await read('platform','me');const s=await read('admin','me');
+ const httpOnlyHidden=!document.cookie.includes('pet_dev_platform_sid')&&!document.cookie.includes('pet_dev_platform_pre');
+ const wrongPlatform=await send('platform','logout',{method:'POST',headers:{'X-CSRF-Token':staff.csrf}});
+ const wrongStaff=await send('admin','logout',{method:'POST',headers:{'X-CSRF-Token':platform.csrf}});
+ const valid=await send('platform','logout',{method:'POST',headers:{'X-CSRF-Token':platform.csrf}});
+ const pAfter=await read('platform','me');const sAfter=await read('admin','me');
+ const staffOut=await send('admin','logout',{method:'POST',headers:{'X-CSRF-Token':staff.csrf}});
+ const result={missingCsrf:missing.status,platformLogin:platform.status,staffLogin:staff.status,platformMe:p.status,staffMe:s.status,platformType:p.data?.principalType,staffType:s.data?.principalType,platformTenantNull:p.data?.tenantId===null,staffTenantPresent:typeof s.data?.tenantId==='string',crossPlatformCsrf:wrongPlatform.status,crossStaffCsrf:wrongStaff.status,platformLogout:valid.status,platformAfterLogout:pAfter.status,staffAfterPlatformLogout:sAfter.status,staffLogout:staffOut.status,httpOnlyHidden,webBodyHasToken:platform.tokenInBody||staff.tokenInBody};
+ const ok=result.missingCsrf===403&&result.platformLogin===200&&result.staffLogin===200&&result.platformMe===200&&result.staffMe===200&&result.platformType==='PLATFORM'&&result.staffType==='STAFF'&&result.platformTenantNull&&result.staffTenantPresent&&result.crossPlatformCsrf===403&&result.crossStaffCsrf===403&&result.platformLogout===200&&result.platformAfterLogout===401&&result.staffAfterPlatformLogout===200&&result.staffLogout===200&&result.httpOnlyHidden&&!result.webBodyHasToken;
+ document.querySelector('#result').textContent=(ok?'PASS':'FAIL')+' / '+JSON.stringify(result,null,2);
+ await fetch('/__p05-platform-browser/result',{method:'POST',headers:{'Content-Type':'text/plain'},body:JSON.stringify({ok,...result})});
+}catch(e){document.querySelector('#result').textContent='FAIL '+e.name;}};
+</script></body></html>
+""".replace("BODY",body);}
+        @PostMapping("/__p05-platform-browser/result") void result(@RequestBody String report){completion.complete(report);}
+    }
+    public static void main(String[] args)throws Exception {
+        String password=UUID.randomUUID()+"临时浏览器😀",code="browser"+UUID.randomUUID().toString().substring(0,12);
+        try(var input=new BootstrapRequest(code,"临时浏览器租户","admin",password.toCharArray(),null,null)){
+            org.flywaydb.core.Flyway.configure().dataSource(POSTGRES.getJdbcUrl(),IdentityDatabaseSupport.MIGRATION,POSTGRES.getPassword()).locations("classpath:db/migration").load().migrate();
+            new IdentityBootstrap(new BootstrapJdbc(Map.of("PET_BOOTSTRAP_DATABASE_URL",POSTGRES.getJdbcUrl().split("\\?",2)[0],"PET_BOOTSTRAP_DATABASE_USERNAME",IdentityDatabaseSupport.BOOTSTRAP,"PET_BOOTSTRAP_DATABASE_PASSWORD",POSTGRES.getPassword())),new PasswordService()).initialize(input);
+        }
+        String platformPassword=UUID.randomUUID()+"临时平台浏览器😀";
+        new PlatformBootstrap(new com.pet.platform.identity.infrastructure.bootstrap.PlatformBootstrapJdbc(Map.of("PET_PLATFORM_BOOTSTRAP_DATABASE_URL",POSTGRES.getJdbcUrl().split("\\?",2)[0],"PET_PLATFORM_BOOTSTRAP_DATABASE_USERNAME",IdentityDatabaseSupport.PLATFORM_BOOTSTRAP,"PET_PLATFORM_BOOTSTRAP_DATABASE_PASSWORD",POSTGRES.getPassword())),new PasswordService()).initialize("platform-browser","平台浏览器技术管理员",platformPassword.toCharArray());
+        body=tools.jackson.databind.json.JsonMapper.builder().build().writeValueAsString(Map.of("staff",Map.of("tenantCode",code,"loginName","admin","password",password),"platform",Map.of("loginName","platform-browser","password",platformPassword)));
+        int port;try(var s=new ServerSocket(0,0,InetAddress.getLoopbackAddress())){port=s.getLocalPort();}
+        var app=new SpringApplication(Application.class,Config.class);
+        try(var context=app.run("--spring.profiles.active=test","--server.port="+port,"--pet.public-origin=http://127.0.0.1:"+port,
+            "--spring.datasource.url="+POSTGRES.getJdbcUrl().split("\\?",2)[0],"--spring.datasource.username="+IdentityDatabaseSupport.RUNTIME,"--spring.datasource.password="+POSTGRES.getPassword(),
+            "--spring.flyway.enabled=false","--spring.data.redis.host="+RedisTestSupport.REDIS.getHost(),"--spring.data.redis.port="+RedisTestSupport.REDIS.getMappedPort(6379),"--spring.data.redis.password="+RedisTestSupport.password())){
+            Files.writeString(Path.of("/tmp/pet-p05-04-browser-url"),"http://127.0.0.1:"+port+"/api/platform/auth/login");
+            String report=completion.get(10,TimeUnit.MINUTES);Files.writeString(Path.of("../../docs/testing/evidence/P05-04/browser-result.json"),report);
+            if(!report.contains("\"ok\":true"))throw new IllegalStateException("浏览器验收失败");
+        } finally {POSTGRES.stop();RedisTestSupport.REDIS.stop();body=null;}
+    }
+}

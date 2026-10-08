@@ -1,0 +1,1 @@
+{"test":"perPermissionRoleUnionDoesNotEnlargeOtherPermissions","serverVersion":"17.11 (Debian 17.11-1.pgdg12+2)","runtime":"p05_probe_runtime","counts":{"identity_employee":1,"identity_employee_role":3,"identity_employee_store":1,"identity_role":4,"identity_role_permission":13,"platform_store":1,"platform_tenant":1},"outsideTransactionTenant":"EMPTY"}

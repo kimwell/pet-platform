@@ -1,0 +1,1 @@
+{"ok":true,"missingCsrf":403,"platformLogin":200,"staffLogin":200,"platformMe":200,"staffMe":200,"platformType":"PLATFORM","staffType":"STAFF","platformTenantNull":true,"staffTenantPresent":true,"crossPlatformCsrf":403,"crossStaffCsrf":403,"platformLogout":200,"platformAfterLogout":401,"staffAfterPlatformLogout":200,"staffLogout":200,"httpOnlyHidden":true,"webBodyHasToken":false}

@@ -1,0 +1,8 @@
+-------------------------------------------------------------------------------
+Test set: com.pet.testing.contracts.ProductionOpenApiExportTest
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 1.036 s <<< FAILURE! -- in com.pet.testing.contracts.ProductionOpenApiExportTest
+com.pet.testing.contracts.ProductionOpenApiExportTest.exportsActualProductionModelsWithoutTestPaths -- Time elapsed: 0.372 s <<< ERROR!
+java.lang.NullPointerException: Cannot invoke "tools.jackson.databind.JsonNode.asText()" because the return value of "tools.jackson.databind.JsonNode.get(int)" is null
+	at com.pet.testing.contracts.ProductionOpenApiExportTest.exportsActualProductionModelsWithoutTestPaths(ProductionOpenApiExportTest.java:40)
+

@@ -1,0 +1,15 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ---------------< com.pet.platform:pet-platform-backend >----------------
+[INFO] Building pet-platform-backend 0.0.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- dependency:3.9.0:build-classpath (default-cli) @ pet-platform-backend ---
+[INFO] Wrote classpath file '/tmp/pet-p05-04-classpath'.
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  1.304 s
+[INFO] Finished at: 2026-10-08T15:29:10+08:00
+[INFO] ------------------------------------------------------------------------

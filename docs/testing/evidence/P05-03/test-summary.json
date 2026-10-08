@@ -1,0 +1,393 @@
+{
+  "cases": 328,
+  "baseline": 292,
+  "groups": {
+    "surefire": {
+      "tests": 132,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "failsafe": {
+      "tests": 196,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    }
+  },
+  "suites": [
+    {
+      "name": "com.pet.platform.ApplicationTest",
+      "tests": 3,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.pet.platform.protocol.ApiProtocolTest",
+      "tests": 30,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.pet.platform.shared.persistence.DatabaseConfigurationRulesTest",
+      "tests": 6,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.pet.platform.shared.persistence.JpaPageAdapterTest",
+      "tests": 5,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.pet.platform.shared.redis.RedisConfigurationTest",
+      "tests": 2,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.pet.platform.shared.tenancy.TenantTaskExecutorTest",
+      "tests": 23,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.pet.testing.architecture.StructureRulesTest",
+      "tests": 14,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.pet.testing.contracts.ContractExportTest",
+      "tests": 9,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.pet.testing.contracts.DocumentPolicyTest",
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.pet.testing.contracts.ProductionOpenApiExportTest",
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.pet.testing.identity.PasswordServiceTest",
+      "tests": 6,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.pet.testing.tenancy.TenantExecutionTest",
+      "tests": 19,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.pet.testing.tenancy.TenantMvcTest",
+      "tests": 13,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.pet.platform.protocol.ApiProtocolIT",
+      "tests": 2,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.pet.platform.shared.redis.RedisIsolationIT",
+      "tests": 17,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.pet.testing.RedisHealthIT",
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.pet.testing.architecture.ProductionArtifactIT",
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.pet.testing.authentication.StaffAuthenticationIT",
+      "tests": 31,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.pet.testing.authentication.StaffCredentialSecurityIT",
+      "tests": 34,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.pet.testing.authentication.StaffSessionRuntimeIT",
+      "tests": 4,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.pet.testing.contracts.PackagedDocumentPolicyIT",
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.pet.testing.contracts.ScalarPostgresIT",
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.pet.testing.identity.IdentityFoundationIT",
+      "tests": 27,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.pet.testing.identity.IdentityMigrationIT",
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.pet.testing.identity.StaffSecurityMigrationIT",
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.pet.testing.persistence.JpaPersistenceIT",
+      "tests": 12,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.pet.testing.persistence.MigrationSafetyIT",
+      "tests": 5,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.pet.testing.tenancy.TenantHttpIT",
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.pet.testing.tenantpersistence.AsyncTenantPersistenceIT",
+      "tests": 9,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.pet.testing.tenantpersistence.TenantPersistenceIT",
+      "tests": 48,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    }
+  ],
+  "addedCases": [
+    [
+      "com.pet.testing.authentication.StaffAuthenticationIT",
+      "realUserAsyncSnapshotsAreRevalidatedBeforeExecution"
+    ],
+    [
+      "com.pet.testing.authentication.StaffCredentialSecurityIT",
+      "adminReconfirmationFailureHasNoChange"
+    ],
+    [
+      "com.pet.testing.authentication.StaffCredentialSecurityIT",
+      "adminResetCompetesWithSelfChangeWithoutLosingEitherVersionRule"
+    ],
+    [
+      "com.pet.testing.authentication.StaffCredentialSecurityIT",
+      "adminResetForcesChangeAndInvalidatesAllTargetDevicesWithoutChangingActor"
+    ],
+    [
+      "com.pet.testing.authentication.StaffCredentialSecurityIT",
+      "adminRevokeLeavesPasswordAndMustChangeFlagAndActorIntactAndOldVersionCannotRepeat"
+    ],
+    [
+      "com.pet.testing.authentication.StaffCredentialSecurityIT",
+      "concurrentPasswordChangesCannotBothOverwriteSuccessfully"
+    ],
+    [
+      "com.pet.testing.authentication.StaffCredentialSecurityIT",
+      "concurrentSensitiveLimitsAreAtomicAndFailuresDoNotLockEmployeePermanently"
+    ],
+    [
+      "com.pet.testing.authentication.StaffCredentialSecurityIT",
+      "correctPasswordChangesAndAllChannelsAndCsrfArePhysicallyRemoved"
+    ],
+    [
+      "com.pet.testing.authentication.StaffCredentialSecurityIT",
+      "crossTenantUnknownAndStoreOutsideTargetsAreHidden"
+    ],
+    [
+      "com.pet.testing.authentication.StaffCredentialSecurityIT",
+      "databaseCommitSurvivesActualRedisOutageDuringPhysicalCleanup"
+    ],
+    [
+      "com.pet.testing.authentication.StaffCredentialSecurityIT",
+      "databaseFailureAfterPasswordVersionAndIntentRollsEverythingBack"
+    ],
+    [
+      "com.pet.testing.authentication.StaffCredentialSecurityIT",
+      "independentPermissionsAreRequiredAndOrdinaryStartupDoesNotGrantNewCode"
+    ],
+    [
+      "com.pet.testing.authentication.StaffCredentialSecurityIT",
+      "invalidSameAndOversizedPasswordsAndUnknownFieldsAreRejectedWithoutSecrets"
+    ],
+    [
+      "com.pet.testing.authentication.StaffCredentialSecurityIT",
+      "loginCheckedOldPasswordCannotAcquireNewVersionDuringPasswordChange"
+    ],
+    [
+      "com.pet.testing.authentication.StaffCredentialSecurityIT",
+      "loginCompetingWithLogoutAllRejectsOldGenerationAndFreshLoginRemains"
+    ],
+    [
+      "com.pet.testing.authentication.StaffCredentialSecurityIT",
+      "mandatoryAuditInsertFailureRollsBackCredentialAndIntent"
+    ],
+    [
+      "com.pet.testing.authentication.StaffCredentialSecurityIT",
+      "missingWrongCsrfAndSourcesDoNotMutate"
+    ],
+    [
+      "com.pet.testing.authentication.StaffCredentialSecurityIT",
+      "oldCleanupRunningAfterFreshLoginNeverDeletesFreshSession"
+    ],
+    [
+      "com.pet.testing.authentication.StaffCredentialSecurityIT",
+      "partiallyDeletedTokenIndexStillCleansOrphanSessionAndTerminal"
+    ],
+    [
+      "com.pet.testing.authentication.StaffCredentialSecurityIT",
+      "passwordsPreserveSpacesCaseUnicodeAndAreNotReadFromQuery"
+    ],
+    [
+      "com.pet.testing.authentication.StaffCredentialSecurityIT",
+      "queuedAuthorityQueryFailureRefusesActionInsteadOfAssumingVersionIsUnchanged"
+    ],
+    [
+      "com.pet.testing.authentication.StaffCredentialSecurityIT",
+      "queuedTasksCannotExpandCapturedScopeAndCurrentRevokedPermissionRejects"
+    ],
+    [
+      "com.pet.testing.authentication.StaffCredentialSecurityIT",
+      "queuedTasksRecheckDatabaseGenerationAfterLogoutAll"
+    ],
+    [
+      "com.pet.testing.authentication.StaffCredentialSecurityIT",
+      "queuedTasksRecheckDatabaseGenerationAfterPasswordChange"
+    ],
+    [
+      "com.pet.testing.authentication.StaffCredentialSecurityIT",
+      "realRedisFrequencyFailureNeverSilentlyAllowsChange"
+    ],
+    [
+      "com.pet.testing.authentication.StaffCredentialSecurityIT",
+      "redisCleanupFailurePreservesLogicalRevocationAndLazyCompensationRemovesOnlyOldVersions"
+    ],
+    [
+      "com.pet.testing.authentication.StaffCredentialSecurityIT",
+      "revokedCurrentDeviceAlsoRejectsQueuedTasksAndDatabaseFailureIsClosed"
+    ],
+    [
+      "com.pet.testing.authentication.StaffCredentialSecurityIT",
+      "selfLogoutAllRequiresConfirmationAndReplaysWithOldSessionFail"
+    ],
+    [
+      "com.pet.testing.authentication.StaffCredentialSecurityIT",
+      "selfTenantAdminSystemAccountsCannotBeResetButAdminSessionsCanBeRevoked"
+    ],
+    [
+      "com.pet.testing.authentication.StaffCredentialSecurityIT",
+      "sensitiveWriteRechecksCurrentAuthorityBeforeCommit"
+    ],
+    [
+      "com.pet.testing.authentication.StaffCredentialSecurityIT",
+      "storeManagerCanManageOnlyTargetsWhoseEntireStoreAndAuthorityAreCovered"
+    ],
+    [
+      "com.pet.testing.authentication.StaffCredentialSecurityIT",
+      "successfulAndFailedRecordsContainOnlyAllowlistedFieldsAndRlsRemainsForced"
+    ],
+    [
+      "com.pet.testing.authentication.StaffCredentialSecurityIT",
+      "temporaryPasswordCannotUseManagementEvenIfPermissionsAreGrantedAndCanLogout"
+    ],
+    [
+      "com.pet.testing.authentication.StaffCredentialSecurityIT",
+      "twoAdminsUsingSameResourceVersionHaveOneWinner"
+    ],
+    [
+      "com.pet.testing.authentication.StaffCredentialSecurityIT",
+      "wrongConfirmationDoesNotChangeCredentialVersionOrSessionsAndHasIndependentFailureRecord"
+    ],
+    [
+      "com.pet.testing.authentication.StaffSessionRuntimeIT",
+      "twoProductionInstancesObservePasswordChangeAndOldWebMiniSessionsCannotReturn"
+    ],
+    [
+      "com.pet.testing.identity.StaffSecurityMigrationIT",
+      "versionOneDataAndChecksumSurviveUpgradeAndNewTablesKeepRestrictedRls"
+    ]
+  ],
+  "semanticReplacements": [
+    {
+      "before": [
+        "com.pet.testing.authentication.StaffAuthenticationIT",
+        "realUserAsyncSnapshotsAreExplicitlyForbidden"
+      ],
+      "after": [
+        "com.pet.testing.authentication.StaffAuthenticationIT",
+        "realUserAsyncSnapshotsAreRevalidatedBeforeExecution"
+      ]
+    }
+  ],
+  "unexplainedMissing": []
+}

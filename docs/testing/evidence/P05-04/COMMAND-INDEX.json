@@ -1,0 +1,437 @@
+[
+  {
+    "file": "browser-before-path-hardening-harness.json",
+    "cwd": "/Users/kimwell/work/pet-platform/apps/backend",
+    "command": "java --class-path <冻结测试依赖与编译类> /tmp/P05PlatformBrowserHarness.java",
+    "exitCode": 0,
+    "startedAtUTC": "2026-10-08T07:45:10.335734+00:00",
+    "finishedAtUTC": "2026-10-08T07:45:38.945205+00:00",
+    "log": "browser-before-path-hardening-harness.log"
+  },
+  {
+    "file": "browser-classpath.json",
+    "cwd": "/Users/kimwell/work/pet-platform/apps/backend",
+    "argv": [
+      "./mvnw",
+      "dependency:build-classpath",
+      "-Dmdep.outputFile=/tmp/pet-p05-04-classpath"
+    ],
+    "exitCode": 0,
+    "startedAtUTC": "2026-10-08T07:29:07.057526+00:00",
+    "finishedAtUTC": "2026-10-08T07:29:10.739243+00:00",
+    "log": "browser-classpath.log"
+  },
+  {
+    "file": "browser-harness-first.json",
+    "cwd": "/Users/kimwell/work/pet-platform/apps/backend",
+    "command": "java --class-path <冻结测试依赖与编译类> /tmp/P05PlatformBrowserHarness.java",
+    "exitCode": 1,
+    "startedAtUTC": "2026-10-08T07:29:48.473086+00:00",
+    "finishedAtUTC": "2026-10-08T07:29:54.839314+00:00",
+    "log": "browser-harness-first.log"
+  },
+  {
+    "file": "browser-harness.json",
+    "cwd": "/Users/kimwell/work/pet-platform/apps/backend",
+    "command": "java --class-path <冻结测试依赖与编译类> /tmp/P05PlatformBrowserHarness.java",
+    "exitCode": 0,
+    "startedAtUTC": "2026-10-08T07:54:21.222898+00:00",
+    "finishedAtUTC": "2026-10-08T07:55:49.769434+00:00",
+    "log": "browser-harness.log"
+  },
+  {
+    "file": "browser-in-scope-preliminary-harness.json",
+    "cwd": "/Users/kimwell/work/pet-platform/apps/backend",
+    "command": "java --class-path <冻结测试依赖与编译类> /tmp/P05PlatformBrowserHarness.java",
+    "exitCode": 143,
+    "startedAtUTC": "2026-10-08T07:42:30.296014+00:00",
+    "finishedAtUTC": "2026-10-08T07:45:02.022565+00:00",
+    "log": "browser-in-scope-preliminary-harness.log"
+  },
+  {
+    "file": "browser-outside-path-harness.json",
+    "cwd": "/Users/kimwell/work/pet-platform/apps/backend",
+    "command": "java --class-path <冻结测试依赖与编译类> /tmp/P05PlatformBrowserHarness.java",
+    "exitCode": 0,
+    "startedAtUTC": "2026-10-08T07:31:29.619391+00:00",
+    "finishedAtUTC": "2026-10-08T07:35:22.075078+00:00",
+    "log": "browser-outside-path-harness.log"
+  },
+  {
+    "file": "compile-first.json",
+    "cwd": "/Users/kimwell/work/pet-platform/apps/backend",
+    "argv": [
+      "./mvnw",
+      "-DskipTests",
+      "test-compile"
+    ],
+    "exitCode": 0,
+    "startedAtUTC": "2026-10-08T07:24:21.274225+00:00",
+    "finishedAtUTC": "2026-10-08T07:24:28.666669+00:00",
+    "log": "compile-first.log"
+  },
+  {
+    "file": "contracts-check-final.json",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "argv": [
+      "pnpm",
+      "contracts:check"
+    ],
+    "exitCode": 0,
+    "startedAtUTC": "2026-10-08T07:55:51.459841+00:00",
+    "finishedAtUTC": "2026-10-08T07:56:09.484531+00:00",
+    "log": "contracts-check-final.log"
+  },
+  {
+    "file": "contracts-check.json",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "argv": [
+      "pnpm",
+      "contracts:check"
+    ],
+    "exitCode": 0,
+    "startedAtUTC": "2026-10-08T07:41:33.024436+00:00",
+    "finishedAtUTC": "2026-10-08T07:41:58.388376+00:00",
+    "log": "contracts-check.log"
+  },
+  {
+    "file": "contracts-final-snapshot.json",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "argv": [
+      "node",
+      "docs/testing/evidence/P05-04/contracts-final-snapshot.mjs"
+    ],
+    "exitCode": 0,
+    "startedAtUTC": "2026-10-08T07:57:21.590652+00:00",
+    "finishedAtUTC": "2026-10-08T07:57:21.961571+00:00",
+    "log": "contracts-final-snapshot.log"
+  },
+  {
+    "file": "contracts-generate-final.json",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "argv": [
+      "pnpm",
+      "contracts:generate"
+    ],
+    "exitCode": 0,
+    "startedAtUTC": "2026-10-08T07:54:20.459375+00:00",
+    "finishedAtUTC": "2026-10-08T07:54:39.261159+00:00",
+    "log": "contracts-generate-final.log"
+  },
+  {
+    "file": "contracts-generate.json",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "argv": [
+      "pnpm",
+      "contracts:generate"
+    ],
+    "exitCode": 0,
+    "startedAtUTC": "2026-10-08T07:40:57.227866+00:00",
+    "finishedAtUTC": "2026-10-08T07:41:17.832865+00:00",
+    "log": "contracts-generate.log"
+  },
+  {
+    "file": "contracts-typecheck.json",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "argv": [
+      "pnpm",
+      "contracts:typecheck"
+    ],
+    "exitCode": 0,
+    "startedAtUTC": "2026-10-08T07:41:40.067902+00:00",
+    "finishedAtUTC": "2026-10-08T07:41:43.353893+00:00",
+    "log": "contracts-typecheck.log"
+  },
+  {
+    "file": "encoded-path-fixed.json",
+    "cwd": "/Users/kimwell/work/pet-platform/apps/backend",
+    "argv": [
+      "./mvnw",
+      "-Dtest=StructureRulesTest",
+      "-Dit.test=PlatformAuthenticationIT#csrfOriginAndBodyUnknownFieldsFailClosed",
+      "verify"
+    ],
+    "exitCode": 0,
+    "startedAtUTC": "2026-10-08T07:49:25.380905+00:00",
+    "finishedAtUTC": "2026-10-08T07:49:40.764576+00:00",
+    "log": "encoded-path-fixed.log"
+  },
+  {
+    "file": "encoded-path-probe.json",
+    "cwd": "/Users/kimwell/work/pet-platform/apps/backend",
+    "argv": [
+      "./mvnw",
+      "-Dtest=StructureRulesTest",
+      "-Dit.test=PlatformAuthenticationIT#csrfOriginAndBodyUnknownFieldsFailClosed",
+      "verify"
+    ],
+    "exitCode": 1,
+    "startedAtUTC": "2026-10-08T07:48:12.981969+00:00",
+    "finishedAtUTC": "2026-10-08T07:48:28.008647+00:00",
+    "log": "encoded-path-probe.log"
+  },
+  {
+    "file": "final-audit-command.json",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "argv": [
+      "python3",
+      "docs/testing/evidence/P05-04/final-audit.py"
+    ],
+    "exitCode": 0,
+    "startedAtUTC": "2026-10-08T07:58:05.295663+00:00",
+    "finishedAtUTC": "2026-10-08T07:58:08.668792+00:00",
+    "log": "final-audit-command.log"
+  },
+  {
+    "file": "final-audit-first-command.json",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "argv": [
+      "python3",
+      "docs/testing/evidence/P05-04/final-audit.py"
+    ],
+    "exitCode": 1,
+    "startedAtUTC": "2026-10-08T07:47:25.845179+00:00",
+    "finishedAtUTC": "2026-10-08T07:47:28.956027+00:00",
+    "log": "final-audit-first-command.log"
+  },
+  {
+    "file": "final-audit-first.json",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "argv": [
+      "python3",
+      "docs/testing/evidence/P05-04/final-audit.py"
+    ],
+    "exitCode": 1
+  },
+  {
+    "file": "final-audit.json",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "argv": [
+      "python3",
+      "docs/testing/evidence/P05-04/final-audit.py"
+    ],
+    "exitCode": 0
+  },
+  {
+    "file": "java-version.json",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "argv": [
+      "/private/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/pet-platform-p02-02-_qb1x3n7/tools/jdk/jdk-21.0.12.1+1/Contents/Home/bin/java",
+      "-version"
+    ],
+    "exitCode": 0,
+    "startedAtUTC": "2026-10-08T07:41:17.030246+00:00",
+    "finishedAtUTC": "2026-10-08T07:41:17.075010+00:00",
+    "log": "java-version.log"
+  },
+  {
+    "file": "maven-version.json",
+    "cwd": "/Users/kimwell/work/pet-platform/apps/backend",
+    "argv": [
+      "./mvnw",
+      "-v"
+    ],
+    "exitCode": 0,
+    "startedAtUTC": "2026-10-08T07:41:17.204826+00:00",
+    "finishedAtUTC": "2026-10-08T07:41:17.783126+00:00",
+    "log": "maven-version.log"
+  },
+  {
+    "file": "miniprogram-typecheck.json",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "argv": [
+      "pnpm",
+      "--filter",
+      "@pet/wechat-miniprogram",
+      "typecheck"
+    ],
+    "exitCode": 0,
+    "startedAtUTC": "2026-10-08T07:41:40.089485+00:00",
+    "finishedAtUTC": "2026-10-08T07:41:43.051337+00:00",
+    "log": "miniprogram-typecheck.log"
+  },
+  {
+    "file": "node-version.json",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "argv": [
+      "node",
+      "--version"
+    ],
+    "exitCode": 0,
+    "startedAtUTC": "2026-10-08T07:41:06.477141+00:00",
+    "finishedAtUTC": "2026-10-08T07:41:06.563751+00:00",
+    "log": "node-version.log"
+  },
+  {
+    "file": "platform-diagnostic.json",
+    "cwd": "/Users/kimwell/work/pet-platform/apps/backend",
+    "argv": [
+      "./mvnw",
+      "-Dtest=StructureRulesTest",
+      "-Dit.test=PlatformAuthenticationIT#correctWebLoginReturnsPlatformIdentityWithoutTenantOrToken",
+      "verify"
+    ],
+    "exitCode": 1,
+    "startedAtUTC": "2026-10-08T07:27:48.491307+00:00",
+    "finishedAtUTC": "2026-10-08T07:28:06.540513+00:00",
+    "log": "platform-diagnostic.log"
+  },
+  {
+    "file": "platform-first.json",
+    "cwd": "/Users/kimwell/work/pet-platform/apps/backend",
+    "argv": [
+      "./mvnw",
+      "-Dtest=StructureRulesTest",
+      "-Dit.test=PlatformAuthenticationIT",
+      "verify"
+    ],
+    "exitCode": 1,
+    "startedAtUTC": "2026-10-08T07:26:42.385269+00:00",
+    "finishedAtUTC": "2026-10-08T07:26:49.772048+00:00",
+    "log": "platform-first.log"
+  },
+  {
+    "file": "platform-second.json",
+    "cwd": "/Users/kimwell/work/pet-platform/apps/backend",
+    "argv": [
+      "./mvnw",
+      "-Dtest=StructureRulesTest",
+      "-Dit.test=PlatformAuthenticationIT",
+      "verify"
+    ],
+    "exitCode": 1,
+    "startedAtUTC": "2026-10-08T07:26:57.799091+00:00",
+    "finishedAtUTC": "2026-10-08T07:27:25.335847+00:00",
+    "log": "platform-second.log"
+  },
+  {
+    "file": "platform-third.json",
+    "cwd": "/Users/kimwell/work/pet-platform/apps/backend",
+    "argv": [
+      "./mvnw",
+      "clean",
+      "-Dtest=StructureRulesTest",
+      "-Dit.test=PlatformAuthenticationIT,PlatformMigrationIT",
+      "verify"
+    ],
+    "exitCode": 0,
+    "startedAtUTC": "2026-10-08T07:28:29.576857+00:00",
+    "finishedAtUTC": "2026-10-08T07:29:14.166644+00:00",
+    "log": "platform-third.log"
+  },
+  {
+    "file": "pnpm-version.json",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "argv": [
+      "pnpm",
+      "--version"
+    ],
+    "exitCode": 0,
+    "startedAtUTC": "2026-10-08T07:41:06.569164+00:00",
+    "finishedAtUTC": "2026-10-08T07:41:07.003245+00:00",
+    "log": "pnpm-version.log"
+  },
+  {
+    "file": "repo-check.json",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "argv": [
+      "pnpm",
+      "check:repo"
+    ],
+    "exitCode": 0,
+    "startedAtUTC": "2026-10-08T07:41:40.075745+00:00",
+    "finishedAtUTC": "2026-10-08T07:41:42.187234+00:00",
+    "log": "repo-check.log"
+  },
+  {
+    "file": "smoke-first.json",
+    "cwd": "/Users/kimwell/work/pet-platform/apps/backend",
+    "argv": [
+      "./mvnw",
+      "-Dtest=ApplicationTest,StructureRulesTest",
+      "test"
+    ],
+    "exitCode": 0,
+    "startedAtUTC": "2026-10-08T07:24:54.843064+00:00",
+    "finishedAtUTC": "2026-10-08T07:25:15.400833+00:00",
+    "log": "smoke-first.log"
+  },
+  {
+    "file": "system-java-version.json",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "argv": [
+      "java",
+      "-version"
+    ],
+    "exitCode": 0,
+    "startedAtUTC": "2026-10-08T07:41:06.475227+00:00",
+    "finishedAtUTC": "2026-10-08T07:41:06.731706+00:00",
+    "log": "system-java-version.log"
+  },
+  {
+    "file": "verify-final.json",
+    "cwd": "/Users/kimwell/work/pet-platform/apps/backend",
+    "argv": [
+      "./mvnw",
+      "clean",
+      "verify"
+    ],
+    "exitCode": 1,
+    "startedAtUTC": "2026-10-08T07:36:26.238161+00:00",
+    "finishedAtUTC": "2026-10-08T07:36:45.868516+00:00",
+    "log": "verify-final.log"
+  },
+  {
+    "file": "verify-first.json",
+    "cwd": "/Users/kimwell/work/pet-platform/apps/backend",
+    "argv": [
+      "./mvnw",
+      "clean",
+      "verify"
+    ],
+    "exitCode": 0,
+    "startedAtUTC": "2026-10-08T07:29:49.651460+00:00",
+    "finishedAtUTC": "2026-10-08T07:32:58.840033+00:00",
+    "log": "verify-first.log"
+  },
+  {
+    "file": "verify-second.json",
+    "cwd": "/Users/kimwell/work/pet-platform/apps/backend",
+    "argv": [
+      "./mvnw",
+      "clean",
+      "verify"
+    ],
+    "exitCode": 0,
+    "startedAtUTC": "2026-10-08T07:37:10.932220+00:00",
+    "finishedAtUTC": "2026-10-08T07:40:43.834483+00:00",
+    "log": "verify-second.log"
+  },
+  {
+    "file": "verify-third.json",
+    "cwd": "/Users/kimwell/work/pet-platform/apps/backend",
+    "argv": [
+      "./mvnw",
+      "clean",
+      "verify"
+    ],
+    "exitCode": 0,
+    "startedAtUTC": "2026-10-08T07:50:08.185543+00:00",
+    "finishedAtUTC": "2026-10-08T07:53:05.513115+00:00",
+    "log": "verify-third.log"
+  },
+  {
+    "file": "web-typecheck.json",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "argv": [
+      "pnpm",
+      "--filter",
+      "@pet/admin-web",
+      "typecheck"
+    ],
+    "exitCode": 0,
+    "startedAtUTC": "2026-10-08T07:41:40.083825+00:00",
+    "finishedAtUTC": "2026-10-08T07:41:45.141001+00:00",
+    "log": "web-typecheck.log"
+  }
+]

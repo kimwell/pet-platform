@@ -69,6 +69,11 @@ public class OpenApiConfiguration {
                     properties.put("data", new Schema<>().anyOf(List.of(data, new Schema<>().types(Set.of("null")))));
                 }
             }
+            if (name.equals("PlatformCurrentIdentity")) {
+                properties.put("tenantId",new Schema<>().types(Set.of("null")));
+                properties.put("dataScope",new Schema<>().types(Set.of("null")));
+                ((Schema<?>)properties.get("authorizedStoreIds")).setMaxItems(0);
+            }
             if (name.equals("Failure")) {
                 schema.setRequired(List.of("success", "error", "traceId"));
                 properties.put("success", new Schema<>().types(Set.of("boolean"))._const(false));

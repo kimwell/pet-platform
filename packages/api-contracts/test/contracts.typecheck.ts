@@ -26,3 +26,22 @@ export type ContractAssertions = [
 ];
 // @ts-expect-error 错误分支不拥有data字段。
 export type FailureHasNoData = Production['schemas']['Failure']['data'];
+
+export type StaffSecurityAssertions = [
+  Assert<Equal<Production['schemas']['CurrentIdentity']['passwordChangeRequired'], boolean>>,
+  Assert<Equal<Production['schemas']['ResetPasswordInput']['version'], string>>,
+  Assert<Equal<Production['schemas']['RevokeSessionsInput']['version'], string>>,
+  Assert<Equal<Production['schemas']['ChangePasswordInput']['currentPassword'], string>>,
+  Assert<Equal<Production['schemas']['ChangePasswordInput']['newPassword'], string>>
+];
+
+import type { AuthenticatedIdentity } from '../src/index';
+export type PlatformIdentityAssertions = [
+  Assert<Equal<Production['schemas']['PlatformCurrentIdentity']['principalType'], 'PLATFORM'>>,
+  Assert<Equal<Production['schemas']['PlatformCurrentIdentity']['tenantId'], null>>,
+  Assert<Equal<Production['schemas']['PlatformCurrentIdentity']['dataScope'], null>>,
+  Assert<Equal<Production['schemas']['CurrentIdentity']['principalType'], 'STAFF'>>,
+  Assert<Equal<Production['schemas']['CurrentIdentity']['tenantId'], string>>,
+  Assert<Equal<Extract<AuthenticatedIdentity, { principalType: 'STAFF' }>['dataScope'], Production['schemas']['ScopeData']>>,
+  Assert<Equal<Extract<AuthenticatedIdentity, { principalType: 'PLATFORM' }>['tenantId'], null>>
+];

@@ -1,6 +1,6 @@
 # 后端模块边界
 
-当前实施状态见本文P05-01章节及[P05-01验证](../testing/P05-01-VERIFICATION.md)。旧阶段“尚未实现”描述保留为历史范围；冻结安全契约不变。
+当前实施状态见本文最新P05章节及[P05-03验证](../testing/P05-03-VERIFICATION.md)。旧阶段“尚未实现”描述保留为历史范围；冻结安全契约不变。
 冻结日期：2026-10-07，P01-02。本文拥有职责、数据归属、依赖和事务边界。一个 Spring Boot 应用、一个 Maven Module、一个 PostgreSQL 主库；使用 JPA/Flyway，不增加服务或独立数据库。包及目录见 [工程结构](PROJECT-STRUCTURE.md)。
 
 接口名均是拟定契约名，不代表已有 Java 类型；只在真实用例需要时创建，输出稳定 DTO，不泄露 Entity/Repository/凭据或 SDK 对象。
@@ -8,8 +8,8 @@
 | 模块 | 职责及拥有的数据 | 公开应用/查询接口 | 允许编译依赖 | 禁止依赖/访问 | 事务边界 / 阶段 |
 | --- | --- | --- | --- | --- | --- |
 | shared | 响应、异常、上下文、范围事务入口、技术配置；Outbox/任务调度技术记录 | TenantExecution、ScopedPersistence、CurrentPrincipal、任务/消息/存储端口 | JDK、冻结基础库，不依赖具体模块 | 全部具体模块、行业实体；不拥有员工/客户/租户业务 Repository | 仅技术事务入口；P03/P04/P10 |
-| platform | 平台管理员、Tenant、Store、能力安装记录、平台控制面 | TenantDirectory、StoreDirectory、PlatformAccountService、InstalledModuleQuery | shared、audit.application | 其他身份内部数据；任意租户业务 Repository | 平台控制面或一个租户目录事务；P04/P05/P10 |
-| identity | 员工、密码凭据、角色、授权、Organization、员工门店关系 | StaffAuthentication、StaffAuthorizationQuery、StaffDirectory、StaffManagement | shared、platform.application、audit.application | 客户/平台认证内部数据、微信 SDK、其他 Repository | 员工/角色授权与版本同事务；P05/P07 |
+| platform | Tenant、Store、能力安装记录、平台控制面目录；平台凭据见P05-04 identity归属 | TenantDirectory、StoreDirectory、PlatformAccountService、InstalledModuleQuery | shared、audit.application | 其他身份内部数据；任意租户业务 Repository | 平台控制面或一个租户目录事务；P04/P05/P10 |
+| identity | 员工与平台管理员凭据/认证、角色、授权、Organization、员工门店关系 | StaffAuthentication、StaffAuthorizationQuery、StaffDirectory、StaffManagement | shared、platform.application、audit.application | 客户/平台认证内部数据、微信 SDK、其他 Repository | 员工/角色授权与版本同事务；P05/P07 |
 | customeridentity | 客户、AppID/OpenID 映射、手机号关联 | CustomerAuthentication、CustomerDirectory、CustomerAuthorizationQuery | shared、platform.application、audit.application | identity 内部数据；客户不能继承员工角色 | 身份映射/手机号补充各自事务；微信 HTTP 在事务外；P05/P09/P10 |
 | attachment | 元数据、临时状态、单资源绑定、访问票据、文件补偿记录 | AttachmentApplication、AttachmentQuery、AttachmentAccessPolicy 注册接口 | shared、audit.application | modules 实现/Repository；不自行定义业务所有权 | 绑定与业务同一 DB 事务；文件 I/O 补偿；P08 |
 | audit | 追加审计、身份/租户/trace 关联、受限查询 | AuditAppender、AuditQuery | shared | 其他 Repository、业务写回调；不存请求秘密 | 成功审计随用例提交；失败事件独立短事务；P08，P05 先接端口 |
@@ -77,3 +77,16 @@ identity.application.authentication公开StaffAuthentication/StaffIdentity及内
 ## P05-02 真实认证边界（2026-10-08）
 
 identity/api/authentication暴露五项正式STAFF接口；identity/application/authentication定义HTTP安全用例和StaffSessionPort，身份查找复用P05-01窄范围函数。只有identity/infrastructure/session可以调用Sa-Token、官方Redis DAO及原始认证Redis，装配Application仅排除未受限官方DAO自动Bean；业务不直接调用StpUtil/SaHolder或认证存储。StaffAuthenticationFilter是唯一生产CurrentPrincipalProvider，shared通过现有端口消费，不反向依赖identity。SessionPrincipalProvider标记会话来源，TenantExecutionScope禁止捕获其异步任务；不创建第二套Provider或放宽RLS。生产JAR不包含测试Probe或临时浏览器页面。
+
+
+## P05-03 固定安全适配与任务重验（2026-10-08）
+
+四个公开DTO/Controller仅调用StaffSecurityOperations，application通过StaffSecurityStore端口使用固定安全SQL。StaffSecurityJdbc作为唯一新增登记SQL调用方，负责可信STAFF同租户GUC、行锁及原子变更/记录/清理意图；没有放行整个infrastructure或普通业务native/JDBC。AuthenticationJdbc读取V2授权投影新增强制改密字段，密码哈希仍仅受限内部类型，不公开查询。runtime权限核验扩展两张FORCE RLS表与受限列权限。
+
+shared.security.TaskAuthority是无具体模块依赖的内部端口，StaffTaskAuthority在identity实现私有真实会话证明和执行前重验，TenantTaskExecutor不直接引用identity/Sa/Redis；按原范围与当前授权取交集。测试故障注入/屏障仅在src/test，生产无测试开关。生产接口总计九条路径；不实现平台/客户认证与完整audit模块。
+
+## P05-04 平台凭据owner与受限装配（2026-10-08）
+
+本任务明确允许平台账号归identity，故集中由identity拥有PlatformAccount、初始化和PLATFORM认证/安全事务；platform继续拥有Tenant/Store控制面目录。此为原表“平台管理员”职责的具体凭据归属细化，不增加platform对identity内部实现的依赖，不放宽shared/模块图。shared只消费原CurrentPrincipalProvider/PlatformScopeGuard；两域路由复用唯一生产Provider。
+
+PlatformIdentityJdbc只登记七个固定运行函数调用/局部本人事务；PlatformBootstrapJdbc只登记专用首次创建，普通业务/Controller/租户适配器不能引用平台候选或底层SQL、选择认证空间。SaIdentitySessions和WebCookieSecurity只共享已验证的设备与传输安全语义，不建通用认证框架。结构规则精确追加两个SQL适配器，并增加平台凭据/bootstrap负例；不开放全部infrastructure。没有平台账号列表/通用Repository/HTTP bootstrap/租户冒用。

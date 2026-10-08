@@ -1,0 +1,12 @@
+{
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "argv": [
+    "node",
+    "--version"
+  ],
+  "exitCode": 0,
+  "startedAtUTC": "2026-10-08T06:43:13.639851+00:00",
+  "finishedAtUTC": "2026-10-08T06:43:13.711814+00:00",
+  "log": "node-version.log",
+  "summary": "v24.21.0\n"
+}

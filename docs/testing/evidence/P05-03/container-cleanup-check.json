@@ -1,0 +1,16 @@
+{
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "argv": [
+    "docker",
+    "ps",
+    "--filter",
+    "label=org.testcontainers=true",
+    "--format",
+    "{{.ID}} {{.Image}}"
+  ],
+  "exitCode": 0,
+  "startedAtUTC": "2026-10-08T06:49:52.112085+00:00",
+  "finishedAtUTC": "2026-10-08T06:49:52.286121+00:00",
+  "log": "container-cleanup-check.log",
+  "summary": ""
+}

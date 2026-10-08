@@ -1,0 +1,47 @@
+{
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "argv": [
+    "python3",
+    "docs/testing/evidence/P05-04/final-audit.py"
+  ],
+  "exitCode": 1,
+  "createdAtUTC": "2026-10-08T07:47:28.946458+00:00",
+  "testCount": 366,
+  "baselineCount": 328,
+  "missingBaselineCases": [],
+  "addedCases": 38,
+  "groups": {
+    "surefire": {
+      "tests": 132,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "failsafe": {
+      "tests": 234,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    }
+  },
+  "logCredentialHits": [],
+  "preservationChecked": 5022,
+  "preservationViolations": [],
+  "deletedFiles": [],
+  "missingDocumentLinks": [
+    {
+      "file": "docs/testing/P05-04-VERIFICATION.md",
+      "target": "evidence/P05-04/final-audit.json"
+    },
+    {
+      "file": "docs/testing/P05-04-VERIFICATION.md",
+      "target": "evidence/P05-04/final-audit.json"
+    }
+  ],
+  "requiredCommandFailures": [],
+  "diffCheckExitCode": 0,
+  "diffCheckSummary": "",
+  "runningTestcontainers": [],
+  "openapiChecks": true,
+  "browserChecks": true
+}

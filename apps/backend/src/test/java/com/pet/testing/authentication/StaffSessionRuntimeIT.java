@@ -56,6 +56,19 @@ class StaffSessionRuntimeIT extends PostgresIntegrationSupport {
             Files.writeString(Path.of("target/p05-02-two-instances.txt"),"两个独立JVM：登录A→me B 200→退出B→me A 401；生产Cookie属性与跨实例CSRF/退出通过。HTTP属性检查不等于生产TLS浏览器验收。\n");
         }
     }
+    @Test void twoProductionInstancesObservePasswordChangeAndOldWebMiniSessionsCannotReturn()throws Exception {
+        String password=UUID.randomUUID()+" 容器原秘密 ",next=UUID.randomUUID()+" 容器新秘密 ";String code=setup(password);
+        try(var first=start("prod",false,"credential-first");var second=start("prod",false,"credential-second")){
+            ready(first);ready(second);String a=login(first,code,password),b=login(second,code,password);
+            var pre=call(first,"GET","/api/admin/auth/csrf",null);
+            var web=call(first,"POST","/api/admin/auth/login",body(code,password),"Cookie",cookie(pre,"__Secure-pet_staff_pre"),"X-CSRF-Token",data(pre).path("csrfToken").asText(),"Origin","https://authentication.example.invalid");assertEquals(200,web.statusCode());String sid=cookie(web,"__Secure-pet_staff_sid");
+            var changed=call(second,"PUT","/api/admin/auth/password",json.writeValueAsString(Map.of("currentPassword",password,"newPassword",next)),"X-Staff-Token","Bearer "+a);
+            assertEquals(200,changed.statusCode());assertEquals("COMPLETE",changed.headers().firstValue("X-Session-Cleanup").orElseThrow());
+            assertEquals(401,call(first,"GET","/api/admin/auth/me",null,"X-Staff-Token","Bearer "+a).statusCode());assertEquals(401,call(second,"GET","/api/admin/auth/me",null,"X-Staff-Token","Bearer "+b).statusCode());assertEquals(401,call(second,"GET","/api/admin/auth/me",null,"Cookie",sid).statusCode());
+            assertEquals(401,call(first,"POST","/api/admin/auth/token/login",body(code,password)).statusCode());String fresh=login(second,code,next);assertEquals(200,call(first,"GET","/api/admin/auth/me",null,"X-Staff-Token","Bearer "+fresh).statusCode());
+            Files.writeString(Path.of("target/p05-03-two-instances.txt"),"两个独立生产JAR JVM共享正式PG/Redis：B改密→A/B旧小程序和WEB会话401；旧密码失败、新密码登录B→me A 200。\n");
+        }
+    }
     @Test void productionJarRejectsInsecureCookieAndUntrustedForwardingConfiguration()throws Exception {
         setup(UUID.randomUUID()+"临时配置");
         for(String setting:List.of("--pet.auth.cookie-secure=false","--server.forward-headers-strategy=framework")) {

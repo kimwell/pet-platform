@@ -59,3 +59,9 @@ Redis 连接、超时、错误类型、损坏值/未知线版本都返回既有 
 ## P05-02 认证专属存储例外（2026-10-08）
 
 认证会话只由identity/infrastructure/session/AuthenticationRedis适配冻结官方DAO，不经过普通租户资源Redis API；业务原TTL/大小/类型限制未扩大。认证空间pet:<env>:<domain>:<domain>:，辅助空间pet:<env>:auth:staff:<kind>:<安全摘要>；独立应用pet与身份域隔离。认证TTL最多7天、值最多128KiB，不允许永久存储/SCAN；固定SessionWire及String数据/有限终端线模型、无多态反序列化或Java原生序列化。原始Token只存在必要服务端索引/会话值，禁止日志。频控/预会话/账号锁方法固定，业务不得直接依赖该实现；结构门禁仅批准认证适配器和装配配置使用原始Redis类型。真实失败均503，不能降为未登录或调用内存备份。详见[认证](../architecture/AUTHENTICATION.md#p05-02-staff-实施2026-10-08)。
+
+## P05-03 敏感频控与按代际清理（2026-10-08）
+
+复用AuthenticationRedis的固定辅助空间，敏感操作只新增sip/actor/target摘要维度和一次原子Lua，策略见[认证P05-03](../architecture/AUTHENTICATION.md#p05-03-凭据与撤销的当前实施2026-10-08)。账号锁与正式STAFF Account-Session终端索引用于有限设备清理；截止代际来自PostgreSQL持久意图，旧清理只精确删除旧代际的Token映射、TokenSession/CSRF、last-active和对应终端。其他租户/员工/身份域及新代际设备保留，不SCAN/KEYS整个Redis空间。Redis失败不回滚已提交凭据，也不产生有效旧身份；物理完成与逻辑失效独立报告。
+
+账号索引锁复用P05-02的30秒租约；SET NX超时存在执行结果不确定性，finally仍以随机owner比较删除，不能删其他持有者。Redis完全不可达/进程退出时释放可能失败，锁自然到期前登录/清理可429/503，按Retry-After重试，不宣称立即恢复；不改变数据库权威失效与已提交密码。当前实现没有分布式租约续期/HA fencing保证，长进程暂停与Redis故障切换仍待相应生产验证。

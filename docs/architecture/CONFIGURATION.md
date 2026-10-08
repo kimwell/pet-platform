@@ -71,3 +71,12 @@ TenantTaskExecutor只有显式Bean，线程/队列/快照期限/停止等待有�
 Sa-Token STAFF真实Redis会话是必需安全基础设施，AuthenticationRedis使用已配置的受限单节点Redis连接，独立命名空间/固定JSON线模型；没有内存回退。`pet.auth.cookie-secure`基础默认true，local显式false、prod拒绝false；生产名称由Secure决定，不接受任意Cookie名称覆盖。`server.forward-headers-strategy=none`且启动校验，当前不支持启用转发Header，来源以固定pet.public-origin校验。
 
 会话数值由代码冻结；`pet.auth.web-absolute-seconds/web-idle-seconds/mini-absolute-seconds/mini-idle-seconds`仅test环境可作短期限验收，其他环境拒绝覆盖冻结值。生产部署仍须HTTPS、受限代理网络、Redis TLS/ACL与日志屏蔽专项验收。实际值和行为不在本表重复，以[认证](AUTHENTICATION.md)、[本地开发](../development/LOCAL-DEVELOPMENT.md)和[P05-02](../testing/P05-02-VERIFICATION.md)为准。跨源CORS仍关闭。
+
+
+## P05-03 配置与迁移边界（2026-10-08）
+
+本轮沿用现有身份/数据库/Redis配置与冻结版本，不增加二次认证服务、可信代理开关、故障注入开关或自动补偿调度。追加正式V2，不更改V1和已有迁移checksum。空库及V1已初始化结构升级由真实测试验证；未对用户日常库执行迁移。安全补偿由目标员工合法me/后续安全操作触发，持久化PENDING便于运维复核；Redis异常不改变已提交的密码/代际。接口、事务和频控边界见[认证](AUTHENTICATION.md)、[本地开发](../development/LOCAL-DEVELOPMENT.md)。
+
+## P05-04 独立控制面输入（2026-10-08）
+
+追加V3及独立NOLOGIN角色预配置脚本，既有V1/V2和冻结依赖不改。平台bootstrap只在独立main读取PET_PLATFORM_BOOTSTRAP_DATABASE_URL/USERNAME/PASSWORD，账号密码通过Console/显式stdin；普通启动没有重置开关。完整顺序及部署条件见[PLATFORM-BOOTSTRAP](../development/PLATFORM-BOOTSTRAP.md)。PLATFORM沿用已有固定来源、Secure/期限/Redis配置，不新增平台小程序、可信代理或跨源开关。runtime权限启动核对扩展pet_control；生产只validate及原独立迁移命令。

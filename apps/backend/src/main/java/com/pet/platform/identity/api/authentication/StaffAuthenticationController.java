@@ -31,7 +31,8 @@ public class StaffAuthenticationController {
     @Schema(requiredProperties={"identity","token"}) public record TokenLoginResult(CurrentIdentity identity,TokenResult token) { }
     @Schema(requiredProperties={"headerName","value","expiresAt"}) public record TokenResult(String headerName,String value,Instant expiresAt) { @Override public String toString(){return "TokenResult[受限凭据]";} }
     private final StaffHttpAuthentication auth;
-    public StaffAuthenticationController(StaffHttpAuthentication auth){this.auth=auth;}
+    private final StaffSecurityOperations security;
+    public StaffAuthenticationController(StaffHttpAuthentication auth,StaffSecurityOperations security){this.auth=auth;this.security=security;}
     @GetMapping("/csrf") @Operation(summary="获取员工Web CSRF凭据",description="匿名创建10分钟服务器预会话；已登录绑定当前WEB设备；no-store，不续闲置期限")
     public com.pet.platform.shared.api.ApiResponse.Success<CsrfResult> csrf(HttpServletRequest request,HttpServletResponse response){var c=auth.csrf(request,response);return com.pet.platform.shared.api.ApiResponse.success(new CsrfResult(c.csrfToken(),c.expiresAt()));}
     @Parameters({@Parameter(name="X-CSRF-Token",in=ParameterIn.HEADER,required=true,description="GET csrf取得的服务器绑定凭据"),@Parameter(name="Origin",in=ParameterIn.HEADER,description="必须匹配固定来源；缺失时必须提供同源Referer")})
@@ -42,7 +43,7 @@ public class StaffAuthenticationController {
     @ApiResponse(responseCode="409",description="设备数上限",content=@Content(schema=@Schema(implementation=com.pet.platform.shared.api.ApiResponse.Failure.class)))
     public com.pet.platform.shared.api.ApiResponse.Success<TokenLoginResult> mini(@Valid @RequestBody LoginInput input,HttpServletRequest request,HttpServletResponse response){var issued=auth.login(new StaffHttpAuthentication.Login(input.tenantCode(),input.loginName(),input.password()),StaffSessionPort.Channel.MINIPROGRAM,request,response);return com.pet.platform.shared.api.ApiResponse.success(new TokenLoginResult(CurrentIdentity.of(issued.identity(),issued.session()),new TokenResult("X-Staff-Token",issued.token(),issued.session().expiresAt())));}
     @GetMapping("/me") @Operation(summary="当前员工身份",description="每请求读取正式有效租户、员工、角色、权限和门店授权；不续闲置期限",security={@SecurityRequirement(name="StaffCookie"),@SecurityRequirement(name="StaffToken")})
-    public com.pet.platform.shared.api.ApiResponse.Success<CurrentIdentity> me(HttpServletRequest request){var c=StaffHttpAuthentication.current(request);return com.pet.platform.shared.api.ApiResponse.success(CurrentIdentity.of(c.identity(),c.session()));}
+    public com.pet.platform.shared.api.ApiResponse.Success<CurrentIdentity> me(HttpServletRequest request){var c=StaffHttpAuthentication.current(request);security.cleanup(c.identity().tenantId(),c.identity().employeeId());return com.pet.platform.shared.api.ApiResponse.success(CurrentIdentity.of(c.identity(),c.session()));}
     @PostMapping("/logout") @Operation(summary="退出当前员工设备",description="Cookie需CSRF与来源校验，Token渠道无需浏览器CSRF。只撤销当前设备并删除对应Cookie/CSRF；重复无有效凭据返回401。",security={@SecurityRequirement(name="StaffCookie"),@SecurityRequirement(name="StaffToken")})
     public com.pet.platform.shared.api.ApiResponse.Success<Void> logout(HttpServletRequest request,HttpServletResponse response){auth.logout(request,response);return com.pet.platform.shared.api.ApiResponse.success(null);}
 }

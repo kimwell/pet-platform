@@ -6,11 +6,11 @@ import io.swagger.v3.oas.annotations.media.Schema;
 import java.time.Instant;
 import java.util.*;
 
-@Schema(requiredProperties={"principalId","principalType","tenantId","displayName","sessionId","permissionCodes","dataScope","authorizedStoreIds","authorizationVersion","expiresAt","idleTimeoutSeconds"})
+@Schema(requiredProperties={"principalId","principalType","tenantId","displayName","sessionId","permissionCodes","dataScope","authorizedStoreIds","authorizationVersion","expiresAt","idleTimeoutSeconds","passwordChangeRequired"})
 public record CurrentIdentity(UUID principalId,StaffType principalType,UUID tenantId,String displayName,UUID sessionId,
         List<String> permissionCodes,ScopeData dataScope,List<UUID> authorizedStoreIds,
         @Schema(pattern="^(0|[1-9][0-9]*)$",description="当前数据库授权版本；每请求重载授权，不仅依赖版本") String authorizationVersion,
-        Instant expiresAt,@Schema(minimum="1",maximum="86400") int idleTimeoutSeconds) {
+        Instant expiresAt,@Schema(minimum="1",maximum="86400") int idleTimeoutSeconds,boolean passwordChangeRequired) {
     public enum StaffType { STAFF }
     @Schema(requiredProperties={"grants"}) public record ScopeData(List<Grant> grants) { }
     @Schema(requiredProperties={"permissionCode","scopes"}) public record Grant(String permissionCode,List<Scope> scopes) { }
@@ -25,6 +25,6 @@ public record CurrentIdentity(UUID principalId,StaffType principalType,UUID tena
             else {if(d.types().contains(DataScopeType.STORES))scopes.add(new StoresScope("STORES",d.storeIds().stream().sorted().toList()));if(d.types().contains(DataScopeType.SELF))scopes.add(new SelfScope("SELF"));}
             return new Grant(e.getKey(),scopes);
         }).toList();
-        return new CurrentIdentity(staff.employeeId(),StaffType.STAFF,staff.tenantId(),staff.displayName(),session.sessionId(),staff.grants().keySet().stream().sorted().toList(),new ScopeData(grants),staff.authorizedStoreIds().stream().sorted().toList(),Long.toString(staff.authorizationVersion()),session.expiresAt(),session.idleTimeoutSeconds());
+        return new CurrentIdentity(staff.employeeId(),StaffType.STAFF,staff.tenantId(),staff.displayName(),session.sessionId(),staff.grants().keySet().stream().sorted().toList(),new ScopeData(grants),staff.authorizedStoreIds().stream().sorted().toList(),Long.toString(staff.authorizationVersion()),session.expiresAt(),session.idleTimeoutSeconds(),staff.passwordChangeRequired());
     }
 }

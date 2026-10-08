@@ -1,0 +1,406 @@
+{
+  "cases": 366,
+  "baseline": 328,
+  "groups": {
+    "surefire": {
+      "tests": 132,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "failsafe": {
+      "tests": 234,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    }
+  },
+  "suites": [
+    {
+      "name": "com.pet.platform.ApplicationTest",
+      "tests": 3,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.pet.platform.protocol.ApiProtocolTest",
+      "tests": 30,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.pet.platform.shared.persistence.DatabaseConfigurationRulesTest",
+      "tests": 6,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.pet.platform.shared.persistence.JpaPageAdapterTest",
+      "tests": 5,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.pet.platform.shared.redis.RedisConfigurationTest",
+      "tests": 2,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.pet.platform.shared.tenancy.TenantTaskExecutorTest",
+      "tests": 23,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.pet.testing.architecture.StructureRulesTest",
+      "tests": 14,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.pet.testing.contracts.ContractExportTest",
+      "tests": 9,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.pet.testing.contracts.DocumentPolicyTest",
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.pet.testing.contracts.ProductionOpenApiExportTest",
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.pet.testing.identity.PasswordServiceTest",
+      "tests": 6,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.pet.testing.tenancy.TenantExecutionTest",
+      "tests": 19,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.pet.testing.tenancy.TenantMvcTest",
+      "tests": 13,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.pet.platform.protocol.ApiProtocolIT",
+      "tests": 2,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.pet.platform.shared.redis.RedisIsolationIT",
+      "tests": 17,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.pet.testing.RedisHealthIT",
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.pet.testing.architecture.ProductionArtifactIT",
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.pet.testing.authentication.PlatformAuthenticationIT",
+      "tests": 36,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.pet.testing.authentication.StaffAuthenticationIT",
+      "tests": 31,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.pet.testing.authentication.StaffCredentialSecurityIT",
+      "tests": 34,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.pet.testing.authentication.StaffSessionRuntimeIT",
+      "tests": 4,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.pet.testing.contracts.PackagedDocumentPolicyIT",
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.pet.testing.contracts.ScalarPostgresIT",
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.pet.testing.identity.IdentityFoundationIT",
+      "tests": 27,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.pet.testing.identity.IdentityMigrationIT",
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.pet.testing.identity.PlatformBootstrapRuntimeIT",
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.pet.testing.identity.PlatformMigrationIT",
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.pet.testing.identity.StaffSecurityMigrationIT",
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.pet.testing.persistence.JpaPersistenceIT",
+      "tests": 12,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.pet.testing.persistence.MigrationSafetyIT",
+      "tests": 5,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.pet.testing.tenancy.TenantHttpIT",
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.pet.testing.tenantpersistence.AsyncTenantPersistenceIT",
+      "tests": 9,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.pet.testing.tenantpersistence.TenantPersistenceIT",
+      "tests": 48,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    }
+  ],
+  "addedCases": [
+    [
+      "com.pet.testing.authentication.PlatformAuthenticationIT",
+      "bootstrapFailureRollsBackAccountPermissionsAndMarker"
+    ],
+    [
+      "com.pet.testing.authentication.PlatformAuthenticationIT",
+      "changePasswordRevokesEveryPlatformSessionButLeavesStaff"
+    ],
+    [
+      "com.pet.testing.authentication.PlatformAuthenticationIT",
+      "concurrentBootstrapHasOneCompleteWinner"
+    ],
+    [
+      "com.pet.testing.authentication.PlatformAuthenticationIT",
+      "concurrentChangesCommitExactlyOnce"
+    ],
+    [
+      "com.pet.testing.authentication.PlatformAuthenticationIT",
+      "cookiesCsrfRotationAndSessionFixationDefenseAreReal"
+    ],
+    [
+      "com.pet.testing.authentication.PlatformAuthenticationIT",
+      "correctWebLoginReturnsPlatformIdentityWithoutTenantOrToken"
+    ],
+    [
+      "com.pet.testing.authentication.PlatformAuthenticationIT",
+      "csrfOriginAndBodyUnknownFieldsFailClosed"
+    ],
+    [
+      "com.pet.testing.authentication.PlatformAuthenticationIT",
+      "currentLogoutInvalidatesOnlyCurrentPlatformSession"
+    ],
+    [
+      "com.pet.testing.authentication.PlatformAuthenticationIT",
+      "delayedCleanupDoesNotDeleteNewGeneration"
+    ],
+    [
+      "com.pet.testing.authentication.PlatformAuthenticationIT",
+      "duplicatePlatformCookieAndHeaderSelectionAreRejected"
+    ],
+    [
+      "com.pet.testing.authentication.PlatformAuthenticationIT",
+      "initializerCreatesOnlyIndependentCanonicalAccountAndExplicitPermissions"
+    ],
+    [
+      "com.pet.testing.authentication.PlatformAuthenticationIT",
+      "initializerRejectsParameterPasswordAndMalformedInput"
+    ],
+    [
+      "com.pet.testing.authentication.PlatformAuthenticationIT",
+      "loginRateLimitIsIndependentFromStaffAndHasRetryAfter"
+    ],
+    [
+      "com.pet.testing.authentication.PlatformAuthenticationIT",
+      "loginWithPreviouslyVerifiedOldPasswordCannotIssueNewGeneration"
+    ],
+    [
+      "com.pet.testing.authentication.PlatformAuthenticationIT",
+      "oldPasswordConfirmationNewRulesAndSamePasswordAreRejected"
+    ],
+    [
+      "com.pet.testing.authentication.PlatformAuthenticationIT",
+      "permissionsAreRequiredRatherThanIsLogin"
+    ],
+    [
+      "com.pet.testing.authentication.PlatformAuthenticationIT",
+      "platformCookieAndClientTenantCannotEnterTenantPersistence"
+    ],
+    [
+      "com.pet.testing.authentication.PlatformAuthenticationIT",
+      "platformRedisEntryAcceptsOnlyRealAuthorizedPlatformAndAsyncRejects"
+    ],
+    [
+      "com.pet.testing.authentication.PlatformAuthenticationIT",
+      "realDatabaseFaultIs503RatherThanWrongPassword"
+    ],
+    [
+      "com.pet.testing.authentication.PlatformAuthenticationIT",
+      "realRedisCleanupPauseLeavesCommittedPasswordAndOldGenerationInvalid"
+    ],
+    [
+      "com.pet.testing.authentication.PlatformAuthenticationIT",
+      "realRedisFaultFailsClosedAndRetainsCookie"
+    ],
+    [
+      "com.pet.testing.authentication.PlatformAuthenticationIT",
+      "recordsHaveExplicitPlatformScopeAndNoSecrets"
+    ],
+    [
+      "com.pet.testing.authentication.PlatformAuthenticationIT",
+      "redisCleanupFailureKeepsOldSessionsLogicallyInvalidAndCompensates"
+    ],
+    [
+      "com.pet.testing.authentication.PlatformAuthenticationIT",
+      "reloginRotatesCurrentPlatformSessionAndPreservesStaff"
+    ],
+    [
+      "com.pet.testing.authentication.PlatformAuthenticationIT",
+      "repeatedBootstrapNeverResetsOrAddsAnotherAccount"
+    ],
+    [
+      "com.pet.testing.authentication.PlatformAuthenticationIT",
+      "requestExceptionsLeaveNoContextOrMdcOnReusedThread"
+    ],
+    [
+      "com.pet.testing.authentication.PlatformAuthenticationIT",
+      "runtimeCannotReadHashBootstrapOrElevateDatabaseRole"
+    ],
+    [
+      "com.pet.testing.authentication.PlatformAuthenticationIT",
+      "sameUuidInStaffAndPlatformHasIndependentPermissionsAndRevocation"
+    ],
+    [
+      "com.pet.testing.authentication.PlatformAuthenticationIT",
+      "secureCookiePolicyIsSharedAndInsecureProductionIsRejected"
+    ],
+    [
+      "com.pet.testing.authentication.PlatformAuthenticationIT",
+      "securityRecordFailureRollsBackCredentialGenerationAndIntent"
+    ],
+    [
+      "com.pet.testing.authentication.PlatformAuthenticationIT",
+      "sensitiveAttemptsUseAtomicIndependentPlatformFrequencyControl"
+    ],
+    [
+      "com.pet.testing.authentication.PlatformAuthenticationIT",
+      "staffTokenAndCookieCannotAccessPlatform"
+    ],
+    [
+      "com.pet.testing.authentication.PlatformAuthenticationIT",
+      "tenantBootstrapIdentityCannotInitializePlatform"
+    ],
+    [
+      "com.pet.testing.authentication.PlatformAuthenticationIT",
+      "twoCsrfDomainsCannotBeInterchanged"
+    ],
+    [
+      "com.pet.testing.authentication.PlatformAuthenticationIT",
+      "twoValidDomainCookiesRouteIndependentlyInEitherOrder"
+    ],
+    [
+      "com.pet.testing.authentication.PlatformAuthenticationIT",
+      "wrongMissingAndDisabledCredentialsHaveSamePublicFailure"
+    ],
+    [
+      "com.pet.testing.identity.PlatformBootstrapRuntimeIT",
+      "packagedPlatformBootstrapUsesStdinAndDistinctCapabilityAndIsNotRepeatableCreation"
+    ],
+    [
+      "com.pet.testing.identity.PlatformMigrationIT",
+      "previousVersionTwoUpgradesWithoutTouchingTenantDataAndDoesNotBootstrap"
+    ]
+  ],
+  "missingBaselineCases": []
+}

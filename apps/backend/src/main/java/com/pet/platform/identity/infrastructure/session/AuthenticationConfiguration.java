@@ -32,7 +32,8 @@ public class AuthenticationConfiguration {
         if(!"none".equals(env.getProperty("server.forward-headers-strategy","none")))throw new IllegalStateException("当前认证仅支持直接对端地址，server.forward-headers-strategy必须为none");
         return new SaStaffSessions(redis,auth,env.getRequiredProperty("pet.environment"),wa,wi,ma,mi);
     }
+    @Bean PlatformSessionPort platformSessionPort(AuthenticationRedis redis,PlatformAuthentication auth,Environment env){return new SaPlatformSessions(redis,auth,env.getRequiredProperty("pet.environment"),number(env,"web-absolute-seconds",28800),number(env,"web-idle-seconds",1800));}
     private int number(Environment env,String name,int fallback){int n=env.getProperty("pet.auth."+name,Integer.class,fallback);if(n<1 || n>604800)throw new IllegalStateException("会话期限配置超出允许范围");return n;}
-    @Bean StaffAuthenticationFilter staffPrincipalProvider(StaffHttpAuthentication auth,@Qualifier("handlerExceptionResolver") HandlerExceptionResolver resolver){return new StaffAuthenticationFilter(auth,resolver);}
+    @Bean StaffAuthenticationFilter staffPrincipalProvider(StaffHttpAuthentication auth,PlatformHttpAuthentication platform,@Qualifier("handlerExceptionResolver") HandlerExceptionResolver resolver){return new StaffAuthenticationFilter(auth,platform,resolver);}
     @Bean FilterRegistrationBean<StaffAuthenticationFilter> staffAuthenticationRegistration(StaffAuthenticationFilter filter){var r=new FilterRegistrationBean<>(filter);r.setOrder(Ordered.HIGHEST_PRECEDENCE+5);r.setDispatcherTypes(DispatcherType.REQUEST);return r;}
 }

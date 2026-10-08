@@ -1,0 +1,12 @@
+{
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "argv": [
+    "node",
+    "docs/testing/evidence/P05-04/contracts-final-snapshot.mjs"
+  ],
+  "exitCode": 0,
+  "startedAtUTC": "2026-10-08T07:57:21.590652+00:00",
+  "finishedAtUTC": "2026-10-08T07:57:21.961571+00:00",
+  "log": "contracts-final-snapshot.log",
+  "summary": "[\n  {\n    \"path\": \"packages/api-contracts/openapi/backend.openapi.json\",\n    \"equal\": true\n  },\n  {\n    \"path\": \"packages/api-contracts/src/generated/api.d.ts\",\n    \"equal\": true\n  },\n  {\n    \"path\": \"apps/wechat-miniprogram/miniprogram/types/generated/api.d.ts\",\n    \"equal\": true\n  },\n  {\n    \"path\": \"packages/api-contracts/openapi/test-contract.openapi.json\",\n    \"equal\": true\n  },\n  {\n    \"path\": \"packages/api-contracts/test/generated/test-contract.d.ts\",\n    \"equal\": true\n  }\n]\n"
+}

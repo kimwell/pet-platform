@@ -1,0 +1,37 @@
+{
+  "path": "/tmp/pet-p05-04-final.jar",
+  "sha256": "507be332d20b79b966f205a555578c8641da334b675c9492333c97df4f540c32",
+  "testIsolationViolations": [],
+  "credentialConstants": [],
+  "fixtureStrings": [],
+  "unresolvedCompileStubs": [],
+  "productionSql": [
+    "BOOT-INF/classes/db/migration/V2__staff_credential_security.sql",
+    "BOOT-INF/classes/db/migration/V1__platform_identity_foundation.sql",
+    "BOOT-INF/classes/db/migration/V3__platform_administrator.sql"
+  ],
+  "migrationMatches": {
+    "V2__staff_credential_security.sql": true,
+    "V1__platform_identity_foundation.sql": true,
+    "V3__platform_administrator.sql": true
+  },
+  "productionEntities": [
+    "BOOT-INF/classes/com/pet/platform/identity/domain/Role.class",
+    "BOOT-INF/classes/com/pet/platform/identity/domain/RolePermission.class",
+    "BOOT-INF/classes/com/pet/platform/identity/domain/PlatformAccount.class",
+    "BOOT-INF/classes/com/pet/platform/identity/domain/EmployeeStore.class",
+    "BOOT-INF/classes/com/pet/platform/identity/domain/EmployeeRole.class",
+    "BOOT-INF/classes/com/pet/platform/identity/domain/Employee.class",
+    "BOOT-INF/classes/com/pet/platform/platform/domain/Tenant.class",
+    "BOOT-INF/classes/com/pet/platform/platform/domain/Store.class"
+  ],
+  "saTokenModules": [
+    "BOOT-INF/lib/sa-token-spring-boot4-starter-1.46.0.jar",
+    "BOOT-INF/lib/sa-token-spring-boot-webmvc-v3v4-common-1.46.0.jar",
+    "BOOT-INF/lib/sa-token-jakarta-servlet-1.46.0.jar",
+    "BOOT-INF/lib/sa-token-spring-boot-webmvc-reactor-v2v3v4-common-1.46.0.jar",
+    "BOOT-INF/lib/sa-token-jackson3-1.46.0.jar",
+    "BOOT-INF/lib/sa-token-redis-template-1.46.0.jar",
+    "BOOT-INF/lib/sa-token-core-1.46.0.jar"
+  ]
+}

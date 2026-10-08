@@ -1,0 +1,12 @@
+{
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "argv": [
+    "python3",
+    "docs/testing/evidence/P05-03/final-audit.py"
+  ],
+  "exitCode": 0,
+  "startedAtUTC": "2026-10-08T06:52:06.826030+00:00",
+  "finishedAtUTC": "2026-10-08T06:52:24.130607+00:00",
+  "log": "final-audit-command.log",
+  "summary": "{\n  \"cwd\": \"/Users/kimwell/work/pet-platform\",\n  \"argv\": [\n    \"python3\",\n    \"docs/testing/evidence/P05-03/final-audit.py\"\n  ],\n  \"exitCode\": 0,\n  \"createdAtUTC\": \"2026-10-08T06:52:24.116184+00:00\",\n  \"testCount\": 328,\n  \"baselineCount\": 292,\n  \"baselineRetainedUnchanged\": 291,\n  \"semanticReplacements\": [\n    {\n      \"before\": [\n        \"com.pet.testing.authentication.StaffAuthenticationIT\",\n        \"realUserAsyncSnapshotsAreExplicitlyForbidden\"\n      ],\n      \"after\": [\n        \"com.pet.testing.authentication.StaffAuthenticationIT\",\n        \"realUserAsyncSnapshotsAreRevalidatedBeforeExecution\"\n      ]\n    }\n  ],\n  \"unexplainedMissingBaselineCases\": [],\n  \"addedIncludingReplacement\": 37,\n  \"groups\": {\n    \"surefire\": {\n      \"tests\": 132,\n      \"failures\": 0,\n      \"errors\": 0,\n      \"skipped\": 0\n    },\n    \"failsafe\": {\n      \"tests\": 196,\n      \"failures\": 0,\n      \"errors\": 0,\n      \"skipped\": 0\n    }\n  },\n  \"logCredentialHits\": [],\n  \"preservationChecked\": 1478,\n  \"preservationViolations\": [],\n  \"missingDocumentLinks\": [],\n  \"requiredCommandFailures\": [],\n  \"diffCheckExitCode\": 0,\n  \"diffCheckSummary\": \"\",\n  \"runningTestcontainers\": [],\n  \"openapiChecks\": true\n}\n"
+}

@@ -30,11 +30,12 @@ class ApplicationTest extends PostgresIntegrationSupport {
 
     @Test
     void defaultApplicationScanDoesNotLoadTestEntities() {
-        assertEquals(7, entityManagerFactory.getMetamodel().getEntities().size());
+        assertEquals(8, entityManagerFactory.getMetamodel().getEntities().size());
         org.junit.jupiter.api.Assertions.assertTrue(entityManagerFactory.getMetamodel().getEntities().stream()
                 .noneMatch(entity -> entity.getJavaType().getName().startsWith("com.pet.testing.")));
         try(var c=java.sql.DriverManager.getConnection(POSTGRES.getJdbcUrl(),POSTGRES.getUsername(),POSTGRES.getPassword());var statement=c.createStatement();var result=statement.executeQuery("select count(*) from public.identity_employee")) {
             result.next();assertEquals(0,result.getInt(1),"普通启动不自动创建管理员");
+            try(var q=statement.executeQuery("select count(*) from pet_control.platform_account")){q.next();assertEquals(0,q.getInt(1),"普通启动不自动初始化平台管理员");}
         } catch(java.sql.SQLException failure) { throw new IllegalStateException("无法核查独立测试数据库",failure); }
     }
 

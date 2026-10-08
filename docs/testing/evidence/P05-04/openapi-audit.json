@@ -1,0 +1,105 @@
+{
+  "paths": 15,
+  "platform": {
+    "additionalProperties": false,
+    "properties": {
+      "authorizationVersion": {
+        "pattern": "^(0|[1-9][0-9]*)$",
+        "type": "string"
+      },
+      "authorizedStoreIds": {
+        "items": {
+          "format": "uuid",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$",
+          "type": "string"
+        },
+        "maxItems": 0,
+        "type": "array"
+      },
+      "dataScope": {
+        "type": "null"
+      },
+      "displayName": {
+        "type": "string"
+      },
+      "expiresAt": {
+        "description": "输入必须带Z或offset、最多3位小数；输出UTC且固定3位毫秒",
+        "format": "date-time",
+        "type": "string"
+      },
+      "idleTimeoutSeconds": {
+        "format": "int32",
+        "maximum": 1800,
+        "minimum": 1,
+        "type": "integer"
+      },
+      "permissionCodes": {
+        "items": {
+          "type": "string"
+        },
+        "type": "array"
+      },
+      "principalId": {
+        "format": "uuid",
+        "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$",
+        "type": "string"
+      },
+      "principalType": {
+        "enum": [
+          "PLATFORM"
+        ],
+        "type": "string"
+      },
+      "sessionId": {
+        "format": "uuid",
+        "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$",
+        "type": "string"
+      },
+      "tenantId": {
+        "type": "null"
+      }
+    },
+    "required": [
+      "authorizationVersion",
+      "authorizedStoreIds",
+      "dataScope",
+      "displayName",
+      "expiresAt",
+      "idleTimeoutSeconds",
+      "permissionCodes",
+      "principalId",
+      "principalType",
+      "sessionId",
+      "tenantId"
+    ],
+    "type": "object"
+  },
+  "staffTenant": {
+    "format": "uuid",
+    "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$",
+    "type": "string"
+  },
+  "staffScope": {
+    "$ref": "#/components/schemas/ScopeData"
+  },
+  "cookies": {
+    "PlatformCookie": {
+      "description": "仅PLATFORM WEB；写请求必须独立CSRF及同源来源",
+      "in": "cookie",
+      "name": "__Secure-pet_platform_sid",
+      "type": "apiKey"
+    },
+    "StaffCookie": {
+      "description": "生产Cookie；local HTTP使用pet_dev_staff_sid，写请求另需X-CSRF-Token及固定Origin/Referer",
+      "in": "cookie",
+      "name": "__Secure-pet_staff_sid",
+      "type": "apiKey"
+    },
+    "StaffToken": {
+      "description": "Bearer加一个空格再加原始opaque Token；与Cookie不能并存",
+      "in": "header",
+      "name": "X-Staff-Token",
+      "type": "apiKey"
+    }
+  }
+}

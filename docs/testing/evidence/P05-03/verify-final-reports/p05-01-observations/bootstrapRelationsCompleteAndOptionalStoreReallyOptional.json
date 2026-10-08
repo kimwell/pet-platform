@@ -1,0 +1,1 @@
+{"test":"bootstrapRelationsCompleteAndOptionalStoreReallyOptional","serverVersion":"17.11 (Debian 17.11-1.pgdg12+2)","runtime":"p05_probe_runtime","counts":{"identity_employee":2,"identity_employee_role":2,"identity_employee_store":1,"identity_role":2,"identity_role_permission":18,"platform_store":1,"platform_tenant":2},"outsideTransactionTenant":"EMPTY"}

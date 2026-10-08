@@ -45,7 +45,7 @@ public final class BootstrapCommand {
         for(var required:List.of("tenant-code","tenant-name","admin-login")) if(!options.containsKey(required)) throw new IllegalArgumentException("缺少初始化选项："+required);
         return options;
     }
-    private static char[] readPassword(InputStream input) throws IOException {
+    static char[] readPassword(InputStream input) throws IOException {
         var reader=new InputStreamReader(input,StandardCharsets.UTF_8.newDecoder().onMalformedInput(java.nio.charset.CodingErrorAction.REPORT).onUnmappableCharacter(java.nio.charset.CodingErrorAction.REPORT));
         char[] buffer=new char[258];int length=0;
         try {

@@ -1,0 +1,8 @@
+{
+  "cwd": "/Users/kimwell/work/pet-platform/apps/backend",
+  "command": "java --class-path <冻结测试依赖与编译类> /tmp/P05PlatformBrowserHarness.java",
+  "exitCode": 0,
+  "startedAtUTC": "2026-10-08T07:31:29.619391+00:00",
+  "finishedAtUTC": "2026-10-08T07:35:22.075078+00:00",
+  "log": "browser-outside-path-harness.log"
+}

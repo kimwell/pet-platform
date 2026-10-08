@@ -1,0 +1,328 @@
+[
+  {
+    "file": "compile-first.json",
+    "cwd": "/Users/kimwell/work/pet-platform/apps/backend",
+    "argv": [
+      "./mvnw",
+      "-DskipTests",
+      "compile"
+    ],
+    "exitCode": 1,
+    "startedAtUTC": "2026-10-08T06:19:32.516235+00:00",
+    "finishedAtUTC": "2026-10-08T06:19:37.778337+00:00",
+    "log": "compile-first.log"
+  },
+  {
+    "file": "container-cleanup-check.json",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "argv": [
+      "docker",
+      "ps",
+      "--filter",
+      "label=org.testcontainers=true",
+      "--format",
+      "{{.ID}} {{.Image}}"
+    ],
+    "exitCode": 0,
+    "startedAtUTC": "2026-10-08T06:49:52.112085+00:00",
+    "finishedAtUTC": "2026-10-08T06:49:52.286121+00:00",
+    "log": "container-cleanup-check.log"
+  },
+  {
+    "file": "contracts-check.json",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "argv": [
+      "pnpm",
+      "contracts:check"
+    ],
+    "exitCode": 0,
+    "startedAtUTC": "2026-10-08T06:39:10.342396+00:00",
+    "finishedAtUTC": "2026-10-08T06:39:27.829905+00:00",
+    "log": "contracts-check.log"
+  },
+  {
+    "file": "contracts-final-snapshot-result.json",
+    "cwd": "/Users/kimwell/work/pet-platform/",
+    "argv": [
+      "node",
+      "docs/testing/evidence/P05-03/contracts-final-snapshot.mjs"
+    ],
+    "exitCode": 0
+  },
+  {
+    "file": "contracts-final-snapshot.json",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "argv": [
+      "node",
+      "docs/testing/evidence/P05-03/contracts-final-snapshot.mjs"
+    ],
+    "exitCode": 0,
+    "startedAtUTC": "2026-10-08T06:49:52.112084+00:00",
+    "finishedAtUTC": "2026-10-08T06:49:52.756943+00:00",
+    "log": "contracts-final-snapshot.log"
+  },
+  {
+    "file": "contracts-generate-second.json",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "argv": [
+      "pnpm",
+      "contracts:generate"
+    ],
+    "exitCode": 0,
+    "startedAtUTC": "2026-10-08T06:36:48.038542+00:00",
+    "finishedAtUTC": "2026-10-08T06:37:03.293153+00:00",
+    "log": "contracts-generate-second.log"
+  },
+  {
+    "file": "contracts-generate.json",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "argv": [
+      "pnpm",
+      "contracts:generate"
+    ],
+    "exitCode": 1,
+    "startedAtUTC": "2026-10-08T06:32:53.180269+00:00",
+    "finishedAtUTC": "2026-10-08T06:33:10.113080+00:00",
+    "log": "contracts-generate.log"
+  },
+  {
+    "file": "contracts-typecheck.json",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "argv": [
+      "pnpm",
+      "contracts:typecheck"
+    ],
+    "exitCode": 0,
+    "startedAtUTC": "2026-10-08T06:39:10.342397+00:00",
+    "finishedAtUTC": "2026-10-08T06:39:12.082889+00:00",
+    "log": "contracts-typecheck.log"
+  },
+  {
+    "file": "final-audit-command.json",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "argv": [
+      "python3",
+      "docs/testing/evidence/P05-03/final-audit.py"
+    ],
+    "exitCode": 0,
+    "startedAtUTC": "2026-10-08T06:52:06.826030+00:00",
+    "finishedAtUTC": "2026-10-08T06:52:24.130607+00:00",
+    "log": "final-audit-command.log"
+  },
+  {
+    "file": "final-audit.json",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "argv": [
+      "python3",
+      "docs/testing/evidence/P05-03/final-audit.py"
+    ],
+    "exitCode": 0
+  },
+  {
+    "file": "java-version.json",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "argv": [
+      "/private/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/pet-platform-p02-02-_qb1x3n7/tools/jdk/jdk-21.0.12.1+1/Contents/Home/bin/java",
+      "-version"
+    ],
+    "exitCode": 0,
+    "startedAtUTC": "2026-10-08T06:43:13.639853+00:00",
+    "finishedAtUTC": "2026-10-08T06:43:13.680728+00:00",
+    "log": "java-version.log"
+  },
+  {
+    "file": "miniprogram-typecheck.json",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "argv": [
+      "pnpm",
+      "--filter",
+      "@pet/wechat-miniprogram",
+      "typecheck"
+    ],
+    "exitCode": 0,
+    "startedAtUTC": "2026-10-08T06:39:10.348028+00:00",
+    "finishedAtUTC": "2026-10-08T06:39:11.875722+00:00",
+    "log": "miniprogram-typecheck.log"
+  },
+  {
+    "file": "node-version.json",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "argv": [
+      "node",
+      "--version"
+    ],
+    "exitCode": 0,
+    "startedAtUTC": "2026-10-08T06:43:13.639851+00:00",
+    "finishedAtUTC": "2026-10-08T06:43:13.711814+00:00",
+    "log": "node-version.log"
+  },
+  {
+    "file": "pnpm-version.json",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "argv": [
+      "pnpm",
+      "--version"
+    ],
+    "exitCode": 0,
+    "startedAtUTC": "2026-10-08T06:43:13.639852+00:00",
+    "finishedAtUTC": "2026-10-08T06:43:13.965364+00:00",
+    "log": "pnpm-version.log"
+  },
+  {
+    "file": "repo-check.json",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "argv": [
+      "pnpm",
+      "check:repo"
+    ],
+    "exitCode": 0,
+    "startedAtUTC": "2026-10-08T06:39:10.350711+00:00",
+    "finishedAtUTC": "2026-10-08T06:39:11.464988+00:00",
+    "log": "repo-check.log"
+  },
+  {
+    "file": "response-diagnostic-second.json",
+    "cwd": "/Users/kimwell/work/pet-platform/apps/backend",
+    "argv": [
+      "./mvnw",
+      "-Dtest=StructureRulesTest",
+      "-Dit.test=StaffCredentialSecurityIT#correctPasswordChangesAndAllChannelsAndCsrfArePhysicallyRemoved",
+      "-DfailIfNoTests=false",
+      "verify"
+    ],
+    "exitCode": 1,
+    "startedAtUTC": "2026-10-08T06:26:32.131533+00:00",
+    "finishedAtUTC": "2026-10-08T06:26:46.762619+00:00",
+    "log": "response-diagnostic-second.log"
+  },
+  {
+    "file": "response-diagnostic.json",
+    "cwd": "/Users/kimwell/work/pet-platform/apps/backend",
+    "argv": [
+      "./mvnw",
+      "-Dtest=StructureRulesTest",
+      "-Dit.test=StaffCredentialSecurityIT#correctPasswordChangesAndAllChannelsAndCsrfArePhysicallyRemoved",
+      "-DfailIfNoTests=false",
+      "verify"
+    ],
+    "exitCode": 1,
+    "startedAtUTC": "2026-10-08T06:25:46.008521+00:00",
+    "finishedAtUTC": "2026-10-08T06:26:02.069172+00:00",
+    "log": "response-diagnostic.log"
+  },
+  {
+    "file": "schema-diagnostic.json",
+    "cwd": "/Users/kimwell/work/pet-platform/apps/backend",
+    "argv": [
+      "./mvnw",
+      "clean",
+      "-Dtest=ProductionOpenApiExportTest",
+      "-DfailIfNoTests=false",
+      "test"
+    ],
+    "exitCode": 0,
+    "startedAtUTC": "2026-10-08T06:35:05.572370+00:00",
+    "finishedAtUTC": "2026-10-08T06:35:20.130990+00:00",
+    "log": "schema-diagnostic.log"
+  },
+  {
+    "file": "security-it-first.json",
+    "cwd": "/Users/kimwell/work/pet-platform/apps/backend",
+    "argv": [
+      "./mvnw",
+      "-Dtest=StructureRulesTest",
+      "-Dit.test=StaffCredentialSecurityIT",
+      "-DfailIfNoTests=false",
+      "verify"
+    ],
+    "exitCode": 1,
+    "startedAtUTC": "2026-10-08T06:23:20.027621+00:00",
+    "finishedAtUTC": "2026-10-08T06:23:29.164221+00:00",
+    "log": "security-it-first.log"
+  },
+  {
+    "file": "security-it-second.json",
+    "cwd": "/Users/kimwell/work/pet-platform/apps/backend",
+    "argv": [
+      "./mvnw",
+      "-Dtest=StructureRulesTest",
+      "-Dit.test=StaffCredentialSecurityIT",
+      "-DfailIfNoTests=false",
+      "verify"
+    ],
+    "exitCode": 1,
+    "startedAtUTC": "2026-10-08T06:24:39.759094+00:00",
+    "finishedAtUTC": "2026-10-08T06:25:18.788759+00:00",
+    "log": "security-it-second.log"
+  },
+  {
+    "file": "security-it-third.json",
+    "cwd": "/Users/kimwell/work/pet-platform/apps/backend",
+    "argv": [
+      "./mvnw",
+      "clean",
+      "-Dtest=StructureRulesTest",
+      "-Dit.test=StaffCredentialSecurityIT,StaffSecurityMigrationIT",
+      "-DfailIfNoTests=false",
+      "verify"
+    ],
+    "exitCode": 0,
+    "startedAtUTC": "2026-10-08T06:27:52.530291+00:00",
+    "finishedAtUTC": "2026-10-08T06:28:42.053329+00:00",
+    "log": "security-it-third.log"
+  },
+  {
+    "file": "smoke-first.json",
+    "cwd": "/Users/kimwell/work/pet-platform/apps/backend",
+    "argv": [
+      "./mvnw",
+      "-Dtest=StructureRulesTest,ApplicationTest",
+      "-DfailIfNoTests=false",
+      "test"
+    ],
+    "exitCode": 1,
+    "startedAtUTC": "2026-10-08T06:20:40.116761+00:00",
+    "finishedAtUTC": "2026-10-08T06:20:54.407031+00:00",
+    "log": "smoke-first.log"
+  },
+  {
+    "file": "verify-first.json",
+    "cwd": "/Users/kimwell/work/pet-platform/apps/backend",
+    "argv": [
+      "./mvnw",
+      "clean",
+      "verify"
+    ],
+    "exitCode": 1,
+    "startedAtUTC": "2026-10-08T06:41:39.223083+00:00",
+    "finishedAtUTC": "2026-10-08T06:43:55.182943+00:00",
+    "log": "verify-final.log"
+  },
+  {
+    "file": "verify-second.json",
+    "cwd": "/Users/kimwell/work/pet-platform/apps/backend",
+    "argv": [
+      "./mvnw",
+      "clean",
+      "verify"
+    ],
+    "exitCode": 0,
+    "startedAtUTC": "2026-10-08T06:45:16.430065+00:00",
+    "finishedAtUTC": "2026-10-08T06:47:31.952474+00:00",
+    "log": "verify-second.log"
+  },
+  {
+    "file": "web-typecheck.json",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "argv": [
+      "pnpm",
+      "--filter",
+      "@pet/admin-web",
+      "typecheck"
+    ],
+    "exitCode": 0,
+    "startedAtUTC": "2026-10-08T06:39:10.342398+00:00",
+    "finishedAtUTC": "2026-10-08T06:39:13.148318+00:00",
+    "log": "web-typecheck.log"
+  }
+]

@@ -30,6 +30,7 @@ public class AuthenticationJdbc implements IdentityLookup {
                 String displayName=rs.getString(1);long security=rs.getLong(2),authorization=rs.getLong(3),tenantSecurity=rs.getLong(4);
                 var array=rs.getArray(5);Set<UUID> stores;
                 try { stores=Set.copyOf(Arrays.asList((UUID[])array.getArray())); } finally { array.free(); }
+                boolean mustChange=rs.getBoolean(8);
                 var roles=new HashMap<String,List<ScopeGrant>>();
                 do {
                     String code=rs.getString(6);
@@ -41,7 +42,7 @@ public class AuthenticationJdbc implements IdentityLookup {
                 } while (rs.next());
                 var grants=new HashMap<String,DataScope>();
                 roles.forEach((code,list) -> grants.put(code,ScopeGrant.mergeForPermission(code,list,stores).dataScope()));
-                return Optional.of(new StaffIdentity(tenant,employee,displayName,security,authorization,tenantSecurity,stores,grants));
+                return Optional.of(new StaffIdentity(tenant,employee,displayName,security,authorization,tenantSecurity,stores,grants,mustChange));
             },tenant,employee);
         } catch (DataAccessException | IllegalArgumentException failure) { throw new BusinessException(ErrorCode.DEPENDENCY_UNAVAILABLE); }
     }
