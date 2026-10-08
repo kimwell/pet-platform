@@ -1,0 +1,12 @@
+{
+  "cwd": "/Users/kimwell/work/pet-platform/apps/backend",
+  "argv": [
+    "./mvnw",
+    "-DskipTests",
+    "compile"
+  ],
+  "exitCode": 0,
+  "startedAtUTC": "2026-10-08T05:20:39.284288+00:00",
+  "finishedAtUTC": "2026-10-08T05:20:43.866529+00:00",
+  "log": "compile-second.log"
+}

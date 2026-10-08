@@ -2,7 +2,7 @@
 
 项目直接在 `/Users/kimwell/work/pet-platform` 建设，既有ui保留原位，不创建enterprise-app-scaffold子目录，不使用Product Delivery OS。后端固定 `com.pet.platform`，三端结构见文档；模板不包含宠物/订单等行业业务。
 
-P05-01 COMPLETE，P05整体IN_PROGRESS；最新实施与限定验证见文末及[P05-01](docs/testing/P05-01-VERIFICATION.md)。以下P01～P04记录为阶段历史。P01 整体 COMPLETE，P02-01 COMPLETE；P02-02 已完成，工程基础验收见 [P02-02 验证报告](docs/testing/P02-02-VERIFICATION.md)。P02-02 COMPLETE，P02整体COMPLETE：后端、Web、基础设施真实启停及冻结微信工具npm/源码编译/模拟器入口通过；基础真机预览有用户反馈，完整P09验收尚未执行。P03-01 已 COMPLETE，公共响应/错误/trace/分页排序见 [P03-01 验证报告](docs/testing/P03-01-VERIFICATION.md)，P03-02、P03-03及P03整体 COMPLETE，完整标量/OpenAPI/类型与结构结果见 [P03-03](docs/testing/P03-03-VERIFICATION.md)。历史初始化结论见 [P02-01](docs/testing/P02-01-VERIFICATION.md)。三端最小工程、单锁、Wrapper、配置、CI 和本地 Compose 已建立；P03-02 已接入 PostgreSQL/JPA/Flyway 与持久化基础；完整认证、用户/角色/租户 CRUD、附件和消息业务尚未实现，P04隔离基础已完成。当前是Git仓库，P04-01启动时已有提交且工作区干净；本轮不自动提交/推送/发布/部署。
+P05-02 COMPLETE，P05整体IN_PROGRESS；最新真实认证与限定验证见[P05-02](docs/testing/P05-02-VERIFICATION.md)，P05-01及前期证据保留。以下P01～P04记录为阶段历史。P01 整体 COMPLETE，P02-01 COMPLETE；P02-02 已完成，工程基础验收见 [P02-02 验证报告](docs/testing/P02-02-VERIFICATION.md)。P02-02 COMPLETE，P02整体COMPLETE：后端、Web、基础设施真实启停及冻结微信工具npm/源码编译/模拟器入口通过；基础真机预览有用户反馈，完整P09验收尚未执行。P03-01 已 COMPLETE，公共响应/错误/trace/分页排序见 [P03-01 验证报告](docs/testing/P03-01-VERIFICATION.md)，P03-02、P03-03及P03整体 COMPLETE，完整标量/OpenAPI/类型与结构结果见 [P03-03](docs/testing/P03-03-VERIFICATION.md)。历史初始化结论见 [P02-01](docs/testing/P02-01-VERIFICATION.md)。三端最小工程、单锁、Wrapper、配置、CI 和本地 Compose 已建立；P03-02 已接入 PostgreSQL/JPA/Flyway 与持久化基础；完整认证、用户/角色/租户 CRUD、附件和消息业务尚未实现，P04隔离基础已完成。当前是Git仓库，P04-01启动时已有提交且工作区干净；本轮不自动提交/推送/发布/部署。
 
 ## 阅读入口
 
@@ -36,7 +36,7 @@ cd apps/backend
 ./mvnw spring-boot:run -Dspring-boot.run.profiles=local
 ```
 
-Windows 使用 mvnw.cmd。无需全局 Maven，首次下载需网络；默认回环监听。后端当前没有业务 Controller，访问 / 返回标准错误信封404；/error仅为框架错误兜底。P03-02 已暴露 /actuator/health、/liveness、/readiness 工具格式健康端点，完整路径见本地开发；local 启动需要真实 PostgreSQL 和必填数据源配置。协议测试端点不会进入生产JAR。Java 不自动加载 .env；通过进程环境/外部 Spring 配置设置，prod 模板不提供开发回退或秘密值。
+Windows 使用 mvnw.cmd。无需全局 Maven，首次下载需网络；默认回环监听。后端已提供五项STAFF认证接口，其他企业业务Controller尚未开发；访问 / 返回标准错误信封404；/error仅为框架错误兜底。P03-02 已暴露 /actuator/health、/liveness、/readiness 工具格式健康端点，完整路径见本地开发；local 启动需要真实 PostgreSQL 和必填数据源配置。协议测试端点不会进入生产JAR。Java 不自动加载 .env；通过进程环境/外部 Spring 配置设置，prod 模板不提供开发回退或秘密值。
 
 小程序在根执行 `pnpm check:miniprogram`，然后用矩阵中的微信开发者工具导入 apps/wechat-miniprogram，复制私有配置示例、填写实际 AppID，执行“工具 → 构建 npm”，再编译。依赖统一由根 pnpm 安装，产物为 miniprogram/miniprogram_npm；TypeScript 转换由工具插件负责，typecheck 不是小程序真实编译。没有实际 AppID或目标工具时，工具编译/预览不能声明 PASS。
 
@@ -60,3 +60,9 @@ P04-03与P04整体 COMPLETE，当前范围与限制见[P04-03验证](docs/testin
 最新范围为正式身份数据基础：七表及首次正式V1、受限认证前函数、PBKDF2、权威员工权限加载、正式Store事实Provider和独立初始化命令。前述各阶段“没有正式表/默认Store事实”的陈述保留为历史；当前准确状态见[P05-01验证](docs/testing/P05-01-VERIFICATION.md)。登录HTTP、Sa-Token会话、Cookie/CSRF仍未实现，Provider无会话仍empty，租户管理员不是平台管理员。
 
 正式模型启动需要受限运行身份，local启用迁移另需PET_MIGRATION_DATABASE_*；不能继续用Compose管理员作为应用运行账号。管理员角色预配置、实际独立迁移/初始化命令及密码安全输入见[身份初始化](docs/development/IDENTITY-BOOTSTRAP.md)。本轮没有操作日常/生产库或创建真实管理员。P05整体IN_PROGRESS，下一P05-02只建议、不自动执行；不提交、推送或部署。
+
+## P05-02 当前认证（2026-10-08）
+
+正式STAFF Sa-Token/Redis会话、员工账号密码登录、生产CurrentPrincipalProvider已接入，GET csrf、POST login/token/login、GET me、POST logout实际路径见[身份契约](docs/contracts/IDENTITY.md#p05-02-正式staff接口清单2026-10-08)。Web为同源HttpOnly Cookie+服务器同步CSRF，小程序为独立设备Header Token；权限/门店每请求从正式数据库重载，身份/RLS链路复用已有范围与受限函数，客户端不能提供可信tenantId。真实身份异步任务目前禁止提交。
+
+292项后端测试、实际本地浏览器、跨JVM共享Redis会话、生产安全配置反例及OpenAPI/三端类型通过；全部命令、失败历史、门禁、产物和限制见[P05-02验证](docs/testing/P05-02-VERIFICATION.md)。前期“登录尚未实现/默认Provider无身份/生产paths为空”为历史状态。没有Web登录页、小程序页面/请求层、平台/客户登录或完整管理CRUD；生产TLS/代理/ACL/HA、远程CI/部署与完整设备验收未验证。P05仍IN_PROGRESS；下一建议P05-03需后续授权，不自动执行、不提交/推送/部署。

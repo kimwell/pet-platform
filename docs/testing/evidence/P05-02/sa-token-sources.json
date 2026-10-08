@@ -1,0 +1,30 @@
+[
+  {
+    "url": "https://repo.maven.apache.org/maven2/cn/dev33/sa-token-jackson3/1.46.0/sa-token-jackson3-1.46.0-sources.jar",
+    "sha256": "a88a06a4a4a112ed918fd33c240f9ab6f0b3d44b81cff0b0ef30bd3d88128e01"
+  },
+  {
+    "url": "https://repo.maven.apache.org/maven2/cn/dev33/sa-token-jakarta-servlet/1.46.0/sa-token-jakarta-servlet-1.46.0-sources.jar",
+    "sha256": "dad353997ef5f469e723ba9a18f7a3db5902939a87c1d5eb7cac2517ebf2bf03"
+  },
+  {
+    "url": "https://repo.maven.apache.org/maven2/cn/dev33/sa-token-spring-boot-webmvc-reactor-v2v3v4-common/1.46.0/sa-token-spring-boot-webmvc-reactor-v2v3v4-common-1.46.0-sources.jar",
+    "sha256": "556e64190484e245e5698fa10408b183112fbeff5f087c61bd0342b95cacaacd"
+  },
+  {
+    "url": "https://repo.maven.apache.org/maven2/cn/dev33/sa-token-spring-boot-webmvc-v3v4-common/1.46.0/sa-token-spring-boot-webmvc-v3v4-common-1.46.0-sources.jar",
+    "sha256": "d0449341cfd2fc63e875c64669601b91a851c31154ae8e48a6dcc11242c093a5"
+  },
+  {
+    "url": "https://repo.maven.apache.org/maven2/cn/dev33/sa-token-core/1.46.0/sa-token-core-1.46.0-sources.jar",
+    "sha256": "2d59b0f44c3062fb481adc923224ccde0491eda1502189a76e29da2846b08ba5"
+  },
+  {
+    "url": "https://repo.maven.apache.org/maven2/cn/dev33/sa-token-redis-template/1.46.0/sa-token-redis-template-1.46.0-sources.jar",
+    "sha256": "63a4ddd021a02f9291b4c2f617c47114e0177d5ebdbe6f2260a42b65c450e917"
+  },
+  {
+    "url": "https://repo.maven.apache.org/maven2/cn/dev33/sa-token-spring-boot4-starter/1.46.0/sa-token-spring-boot4-starter-1.46.0-sources.jar",
+    "sha256": "7311ff5e7db5e031428c501d163995dd05a9676afab0ae661cf8dd58777da31b"
+  }
+]

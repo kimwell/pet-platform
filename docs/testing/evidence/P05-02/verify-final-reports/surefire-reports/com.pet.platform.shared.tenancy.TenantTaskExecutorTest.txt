@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.pet.platform.shared.tenancy.TenantTaskExecutorTest
+-------------------------------------------------------------------------------
+Tests run: 23, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.107 s -- in com.pet.platform.shared.tenancy.TenantTaskExecutorTest

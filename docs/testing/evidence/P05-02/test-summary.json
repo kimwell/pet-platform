@@ -1,0 +1,364 @@
+{
+  "unit": {
+    "tests": 132,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "integration": {
+    "tests": 160,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "total": {
+    "tests": 292,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "baselineP0501": {
+    "tests": 258,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "baselineRetained": 258,
+  "baselineMissing": [],
+  "newTests": [
+    [
+      "com.pet.testing.authentication.StaffAuthenticationIT",
+      "absentTenantAndAccountHaveSameSafeFailure"
+    ],
+    [
+      "com.pet.testing.authentication.StaffAuthenticationIT",
+      "clientTenantFieldsCannotOverrideTrustedIdentity"
+    ],
+    [
+      "com.pet.testing.authentication.StaffAuthenticationIT",
+      "concurrentAttemptCountersAreAtomicAndNormalizationShared"
+    ],
+    [
+      "com.pet.testing.authentication.StaffAuthenticationIT",
+      "cookieAttributesAndWebBodyContainNoToken"
+    ],
+    [
+      "com.pet.testing.authentication.StaffAuthenticationIT",
+      "credentialAmbiguityDomainAndHeaderGrammar"
+    ],
+    [
+      "com.pet.testing.authentication.StaffAuthenticationIT",
+      "credentialVersionChangeInvalidatesSession"
+    ],
+    [
+      "com.pet.testing.authentication.StaffAuthenticationIT",
+      "csrfRotationAndSessionFixationProtection"
+    ],
+    [
+      "com.pet.testing.authentication.StaffAuthenticationIT",
+      "databaseFailureIs503AndDoesNotDeleteValidSession"
+    ],
+    [
+      "com.pet.testing.authentication.StaffAuthenticationIT",
+      "disabledEmployeeLoginRejected"
+    ],
+    [
+      "com.pet.testing.authentication.StaffAuthenticationIT",
+      "disabledTenantLoginRejected"
+    ],
+    [
+      "com.pet.testing.authentication.StaffAuthenticationIT",
+      "expiredAnonymousCsrfRejected"
+    ],
+    [
+      "com.pet.testing.authentication.StaffAuthenticationIT",
+      "formalStoreUsesProviderTenantTransactionAndRls"
+    ],
+    [
+      "com.pet.testing.authentication.StaffAuthenticationIT",
+      "forwardedHeadersCannotBypassIpLimit"
+    ],
+    [
+      "com.pet.testing.authentication.StaffAuthenticationIT",
+      "invalidSerializationAndNamespaceRejected"
+    ],
+    [
+      "com.pet.testing.authentication.StaffAuthenticationIT",
+      "invalidWebCookieCanRecoverButDependencyFailureKeepsCookie"
+    ],
+    [
+      "com.pet.testing.authentication.StaffAuthenticationIT",
+      "maximumFiveDevicesDoesNotSilentlyEvict"
+    ],
+    [
+      "com.pet.testing.authentication.StaffAuthenticationIT",
+      "miniRejectsWebCookiesAndWebRejectsMiniToken"
+    ],
+    [
+      "com.pet.testing.authentication.StaffAuthenticationIT",
+      "missingAndWrongCsrfRejected"
+    ],
+    [
+      "com.pet.testing.authentication.StaffAuthenticationIT",
+      "otherSaSpacesCannotResolveStaffToken"
+    ],
+    [
+      "com.pet.testing.authentication.StaffAuthenticationIT",
+      "publicEndpointIgnoresCredentialsAndUrlTokenRejected"
+    ],
+    [
+      "com.pet.testing.authentication.StaffAuthenticationIT",
+      "realLoginAndCurrentIdentityAreFormalDatabaseFacts"
+    ],
+    [
+      "com.pet.testing.authentication.StaffAuthenticationIT",
+      "realUserAsyncSnapshotsAreExplicitlyForbidden"
+    ],
+    [
+      "com.pet.testing.authentication.StaffAuthenticationIT",
+      "redisFailureIs503AndDoesNotBecomeAuthenticationFailure"
+    ],
+    [
+      "com.pet.testing.authentication.StaffAuthenticationIT",
+      "requestFailureAndAnonymousReuseDoNotLeakIdentity"
+    ],
+    [
+      "com.pet.testing.authentication.StaffAuthenticationIT",
+      "rolePermissionAndAssignmentsReloadEvenWithoutVersionBump"
+    ],
+    [
+      "com.pet.testing.authentication.StaffAuthenticationIT",
+      "sourceRequiredAndExactRefererFallback"
+    ],
+    [
+      "com.pet.testing.authentication.StaffAuthenticationIT",
+      "storeAssignmentsAndPermissionScopesReload"
+    ],
+    [
+      "com.pet.testing.authentication.StaffAuthenticationIT",
+      "tenantAndEmployeeDisableInvalidateExistingSessions"
+    ],
+    [
+      "com.pet.testing.authentication.StaffAuthenticationIT",
+      "webAndMiniLogoutAreDeviceIsolated"
+    ],
+    [
+      "com.pet.testing.authentication.StaffAuthenticationIT",
+      "webLogoutInvalidatesCookieAndCsrf"
+    ],
+    [
+      "com.pet.testing.authentication.StaffAuthenticationIT",
+      "wrongPasswordDoesNotCreateSession"
+    ],
+    [
+      "com.pet.testing.authentication.StaffSessionRuntimeIT",
+      "idleExpiryDoesNotRenewOnMeAndAbsoluteExpiryCannotSlide"
+    ],
+    [
+      "com.pet.testing.authentication.StaffSessionRuntimeIT",
+      "productionJarRejectsInsecureCookieAndUntrustedForwardingConfiguration"
+    ],
+    [
+      "com.pet.testing.authentication.StaffSessionRuntimeIT",
+      "twoProductionInstancesShareAndRevokeTheSameRedisSessionAndSecureCookie"
+    ]
+  ],
+  "suites": [
+    {
+      "class": "com.pet.platform.ApplicationTest",
+      "tests": 3,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "class": "com.pet.platform.protocol.ApiProtocolTest",
+      "tests": 30,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "class": "com.pet.platform.shared.persistence.DatabaseConfigurationRulesTest",
+      "tests": 6,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "class": "com.pet.platform.shared.persistence.JpaPageAdapterTest",
+      "tests": 5,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "class": "com.pet.platform.shared.redis.RedisConfigurationTest",
+      "tests": 2,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "class": "com.pet.platform.shared.tenancy.TenantTaskExecutorTest",
+      "tests": 23,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "class": "com.pet.testing.architecture.StructureRulesTest",
+      "tests": 14,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "class": "com.pet.testing.contracts.ContractExportTest",
+      "tests": 9,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "class": "com.pet.testing.contracts.DocumentPolicyTest",
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "class": "com.pet.testing.contracts.ProductionOpenApiExportTest",
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "class": "com.pet.testing.identity.PasswordServiceTest",
+      "tests": 6,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "class": "com.pet.testing.tenancy.TenantExecutionTest",
+      "tests": 19,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "class": "com.pet.testing.tenancy.TenantMvcTest",
+      "tests": 13,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "class": "com.pet.platform.protocol.ApiProtocolIT",
+      "tests": 2,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "class": "com.pet.platform.shared.redis.RedisIsolationIT",
+      "tests": 17,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "class": "com.pet.testing.RedisHealthIT",
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "class": "com.pet.testing.architecture.ProductionArtifactIT",
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "class": "com.pet.testing.authentication.StaffAuthenticationIT",
+      "tests": 31,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "class": "com.pet.testing.authentication.StaffSessionRuntimeIT",
+      "tests": 3,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "class": "com.pet.testing.contracts.PackagedDocumentPolicyIT",
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "class": "com.pet.testing.contracts.ScalarPostgresIT",
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "class": "com.pet.testing.identity.IdentityFoundationIT",
+      "tests": 27,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "class": "com.pet.testing.identity.IdentityMigrationIT",
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "class": "com.pet.testing.persistence.JpaPersistenceIT",
+      "tests": 12,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "class": "com.pet.testing.persistence.MigrationSafetyIT",
+      "tests": 5,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "class": "com.pet.testing.tenancy.TenantHttpIT",
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "class": "com.pet.testing.tenantpersistence.AsyncTenantPersistenceIT",
+      "tests": 9,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "class": "com.pet.testing.tenantpersistence.TenantPersistenceIT",
+      "tests": 48,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    }
+  ]
+}

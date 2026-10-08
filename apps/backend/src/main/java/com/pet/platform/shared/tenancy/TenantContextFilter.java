@@ -36,7 +36,7 @@ public final class TenantContextFilter extends OncePerRequestFilter {
             if (principal == null || principal.principalType() == PrincipalType.PLATFORM) {
                 chain.doFilter(request, response);
             } else {
-                var boundary = TenantExecutionScope.openIdentity(principal);
+                var boundary = (provider instanceof com.pet.platform.shared.security.SessionPrincipalProvider ? TenantExecutionScope.openSessionIdentity(principal) : TenantExecutionScope.openIdentity(principal));
                 try { chain.doFilter(request, response); }
                 finally { boundary.finishBoundary(); }
             }

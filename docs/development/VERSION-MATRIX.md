@@ -150,3 +150,9 @@ setup-java 更新到上表的固定官方 SHA，移除旧 v4 的弃用警告；�
 新增有实际资源读写/隔离/健康用途的 `spring-boot-starter-data-redis`，由原parent/BOM管理，不重复指定版本，不升级任何冻结值。实际Spring Data Redis、Lettuce与既有矩阵一致，完整解析见[依赖树](../testing/evidence/P04-03/backend-dependency-tree.txt)，实际命令与退出码见[解析元数据](../testing/evidence/P04-03/dependencies.json)。只增starter，未接入Sa-Token Redis DAO、AMQP或其他测试框架；Awaitility/GenericContainer均复用现有测试传递依赖。
 
 新增COMPILED/RUNTIME_VERIFIED限[P04-03](../testing/P04-03-VERIFICATION.md)中的独立认证Redis真实CRUD/TTL/命名空间/故障与HTTP健康、受限PostgreSQL异步/事务/GUC及确定性线程生命周期。原P01未执行记录保留，不外推会话持久性、Cluster、生产ACL/TLS/角色部署或真实业务。
+
+## P05-02 认证接入与运行记录（2026-10-08）
+
+正式加入后端表已冻结的Sa-Token Boot 4 starter及Redis Template模块，所有Sa-Token解析模块与矩阵版本一致；未覆盖Spring Boot BOM或改变其他依赖。实际传递模块含core、Jakarta Servlet、Boot WebMVC common与Jackson 3适配；[依赖树](../testing/evidence/P05-02/backend-dependency-tree.txt)记录解析事实，[官方同版源码URL/SHA](../testing/evidence/P05-02/sa-token-sources.json)核对配置、显式Token载体、设备、绝对/闲置期限、当前退出和Redis DAO API。
+
+COMPILED / RUNTIME_VERIFIED范围仅[P05-02](../testing/P05-02-VERIFICATION.md)的正式数据、真实PostgreSQL/Redis/HTTP、跨JVM共享会话、同源浏览器Cookie/CSRF及生成类型；平台/客户登录、生产TLS/代理/Redis ACL/HA、跨OS和远程CI仍未验证。历史阶段未执行记录不改写。

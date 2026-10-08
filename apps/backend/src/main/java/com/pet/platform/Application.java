@@ -8,7 +8,7 @@ import org.springframework.beans.factory.InitializingBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.core.env.Environment;
 
-@SpringBootApplication
+@SpringBootApplication(exclude = cn.dev33.satoken.dao.SaTokenDaoForRedisTemplate.class)
 @EnableConfigurationProperties(EnvironmentSettings.class)
 public class Application {
     @Bean

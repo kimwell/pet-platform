@@ -139,7 +139,7 @@ class ContractExportTest extends PostgresIntegrationSupport {
         for (var entry : Map.of("test-contract.openapi.json", "/v3/api-docs/test-contract").entrySet()) {
             var response = get(entry.getValue()); assertEquals(200, response.statusCode(), response.body());
             var doc = mapper.readTree(response.body()); assertEquals("3.1.0", doc.path("openapi").asText());
-            if (entry.getKey().startsWith("backend")) assertEquals(0, doc.path("paths").size(), response.body());
+            if (entry.getKey().startsWith("backend")) assertEquals(5, doc.path("paths").size(), response.body());
             else {
                 assertEquals(4, doc.path("paths").size(), response.body());
                 assertTrue(doc.path("paths").has("/__contracts/scalars"));

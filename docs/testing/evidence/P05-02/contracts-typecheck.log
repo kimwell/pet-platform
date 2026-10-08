@@ -1,0 +1,8 @@
+
+> pet-platform@0.0.0 contracts:typecheck /Users/kimwell/work/pet-platform
+> pnpm --filter @pet/api-contracts typecheck
+
+
+> @pet/api-contracts@0.0.0 typecheck /Users/kimwell/work/pet-platform/packages/api-contracts
+> tsc --noEmit
+

@@ -1,0 +1,12 @@
+{
+  "cwd": "/Users/kimwell/work/pet-platform/apps/backend",
+  "argv": [
+    "./mvnw",
+    "dependency:build-classpath",
+    "-Dmdep.outputFile=/tmp/pet-p05-02-classpath"
+  ],
+  "exitCode": 0,
+  "startedAtUTC": "2026-10-08T05:26:21.239104+00:00",
+  "finishedAtUTC": "2026-10-08T05:26:25.146275+00:00",
+  "log": "browser-classpath.log"
+}

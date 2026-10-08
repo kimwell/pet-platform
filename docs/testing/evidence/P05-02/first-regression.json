@@ -1,0 +1,12 @@
+{
+  "cwd": "/Users/kimwell/work/pet-platform/apps/backend",
+  "argv": [
+    "./mvnw",
+    "clean",
+    "verify"
+  ],
+  "exitCode": 1,
+  "startedAtUTC": "2026-10-08T05:20:56.004101+00:00",
+  "finishedAtUTC": "2026-10-08T05:21:22.788381+00:00",
+  "log": "first-regression.log"
+}

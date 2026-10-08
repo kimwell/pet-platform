@@ -1,0 +1,11 @@
+{
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "argv": [
+    "python3",
+    "docs/testing/evidence/P05-02/final-audit.py"
+  ],
+  "exitCode": 0,
+  "startedAtUTC": "2026-10-08T05:49:15.765801+00:00",
+  "finishedAtUTC": "2026-10-08T05:49:28.609372+00:00",
+  "log": "final-audit-command.log"
+}

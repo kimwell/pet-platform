@@ -1,0 +1,486 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ---------------< com.pet.platform:pet-platform-backend >----------------
+[INFO] Building pet-platform-backend 0.0.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- clean:3.5.0:clean (default-clean) @ pet-platform-backend ---
+[INFO] Deleting /Users/kimwell/work/pet-platform/apps/backend/target
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ pet-platform-backend ---
+[INFO] Copying 3 resources from src/main/resources to target/classes
+[INFO] Copying 2 resources from src/main/resources to target/classes
+[INFO] 
+[INFO] --- compiler:3.14.1:compile (default-compile) @ pet-platform-backend ---
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 97 source files with javac [debug parameters release 21] to target/classes
+[INFO] /Users/kimwell/work/pet-platform/apps/backend/src/main/java/com/pet/platform/identity/api/authentication/StaffAuthenticationController.java: /Users/kimwell/work/pet-platform/apps/backend/src/main/java/com/pet/platform/identity/api/authentication/StaffAuthenticationController.java使用或覆盖了已过时的 API。
+[INFO] /Users/kimwell/work/pet-platform/apps/backend/src/main/java/com/pet/platform/identity/api/authentication/StaffAuthenticationController.java: 有关详细信息, 请使用 -Xlint:deprecation 重新编译。
+[INFO] /Users/kimwell/work/pet-platform/apps/backend/src/main/java/com/pet/platform/shared/openapi/OpenApiConfiguration.java: /Users/kimwell/work/pet-platform/apps/backend/src/main/java/com/pet/platform/shared/openapi/OpenApiConfiguration.java使用了未经检查或不安全的操作。
+[INFO] /Users/kimwell/work/pet-platform/apps/backend/src/main/java/com/pet/platform/shared/openapi/OpenApiConfiguration.java: 有关详细信息, 请使用 -Xlint:unchecked 重新编译。
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ pet-platform-backend ---
+[INFO] Copying 3 resources from src/test/resources to target/test-classes
+[INFO] 
+[INFO] --- compiler:3.14.1:testCompile (default-testCompile) @ pet-platform-backend ---
+[INFO] Recompiling the module because of changed dependency.
+[INFO] Compiling 46 source files with javac [debug parameters release 21] to target/test-classes
+[INFO] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/platform/protocol/ApiProtocolIT.java: 某些输入文件使用或覆盖了已过时的 API。
+[INFO] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/platform/protocol/ApiProtocolIT.java: 有关详细信息, 请使用 -Xlint:deprecation 重新编译。
+[INFO] 
+[INFO] --- surefire:3.5.6:test (default-test) @ pet-platform-backend ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running com.pet.platform.shared.redis.RedisConfigurationTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.208 s -- in com.pet.platform.shared.redis.RedisConfigurationTest
+[INFO] Running com.pet.platform.shared.tenancy.TenantTaskExecutorTest
+13:21:06.995 [pet-tenant-task-1] ERROR com.pet.platform.shared.tenancy.TenantTaskExecutor -- 受控任务检测到工作线程状态残留，拒绝并废弃该线程
+13:21:06.997 [pet-tenant-task-1] WARN com.pet.platform.shared.tenancy.TenantTaskExecutor -- 受控任务执行失败，任务=无身份技术任务，异常类型=IllegalStateException
+13:21:06.997 [pet-tenant-task-1] ERROR com.pet.platform.shared.tenancy.TenantTaskExecutor -- 受控任务工作线程因状态残留退出
+13:21:07.016 [pet-tenant-task-1] WARN com.pet.platform.shared.tenancy.TenantTaskExecutor -- 受控任务执行失败，任务=1ab5e510-aa56-42ed-b3e9-56c9391444dc，异常类型=IllegalArgumentException
+13:21:07.018 [pet-tenant-task-1] WARN com.pet.platform.shared.tenancy.TenantTaskExecutor -- 受控任务执行失败，任务=43043613-e7d1-4853-8285-dd3cf653e6fc，异常类型=RejectedExecutionException
+13:21:07.018 [pet-tenant-task-1] WARN com.pet.platform.shared.tenancy.TenantTaskExecutor -- 受控任务执行失败，任务=29d4d0c5-e4c4-478b-ae17-78b2caf4f92d，异常类型=RejectedExecutionException
+13:21:07.027 [pet-tenant-task-1] ERROR com.pet.platform.shared.tenancy.TenantTaskExecutor -- 受控任务检测到工作线程状态残留，拒绝并废弃该线程
+13:21:07.027 [pet-tenant-task-1] WARN com.pet.platform.shared.tenancy.TenantTaskExecutor -- 受控任务执行失败，任务=dcef9884-fd23-4425-810b-d175249994de，异常类型=IllegalStateException
+13:21:07.027 [pet-tenant-task-1] ERROR com.pet.platform.shared.tenancy.TenantTaskExecutor -- 受控任务工作线程因状态残留退出
+13:21:07.030 [pet-tenant-task-1] WARN com.pet.platform.shared.tenancy.TenantTaskExecutor -- 受控任务执行失败，任务=6f2430cb-b127-4568-a18a-802d9f473c36，异常类型=RejectedExecutionException
+13:21:07.037 [pet-tenant-task-1] WARN com.pet.platform.shared.tenancy.TenantTaskExecutor -- 受控任务执行失败，任务=cd037da6-5890-4a7f-9f6c-3062d16ebc97，异常类型=IllegalStateException
+[INFO] Tests run: 23, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.138 s -- in com.pet.platform.shared.tenancy.TenantTaskExecutorTest
+[INFO] Running com.pet.platform.shared.persistence.DatabaseConfigurationRulesTest
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.112 s -- in com.pet.platform.shared.persistence.DatabaseConfigurationRulesTest
+[INFO] Running com.pet.platform.shared.persistence.JpaPageAdapterTest
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.149 s -- in com.pet.platform.shared.persistence.JpaPageAdapterTest
+[INFO] Running com.pet.platform.protocol.ApiProtocolTest
+13:21:07.409 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.pet.platform.protocol.ApiProtocolTest]: ApiProtocolTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+13:21:07.514 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.pet.platform.Application for test class com.pet.platform.protocol.ApiProtocolTest
+13:21:07.547 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.pet.platform.protocol.ApiProtocolTest]: ApiProtocolTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+13:21:07.548 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.pet.testing.PostgresIntegrationSupport]: PostgresIntegrationSupport does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+13:21:07.549 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.pet.platform.Application for test class com.pet.platform.protocol.ApiProtocolTest
+13:21:07.591 [main] INFO org.testcontainers.images.PullPolicy -- Image pull policy will be performed by: DefaultPullPolicy()
+13:21:07.592 [main] INFO org.testcontainers.utility.ImageNameSubstitutor -- Image name substitution will be performed by: DefaultImageNameSubstitutor (composite of 'ConfigurationFileImageNameSubstitutor' and 'PrefixingImageNameSubstitutor')
+13:21:07.598 [main] INFO org.testcontainers.DockerClientFactory -- Testcontainers version: 2.0.5
+13:21:07.756 [main] INFO org.testcontainers.dockerclient.DockerClientProviderStrategy -- Loaded org.testcontainers.dockerclient.UnixSocketClientProviderStrategy from ~/.testcontainers.properties, will try it first
+13:21:10.865 [main] INFO org.testcontainers.dockerclient.DockerClientProviderStrategy -- Found Docker environment with local Unix socket (unix:///var/run/docker.sock)
+13:21:10.867 [main] INFO org.testcontainers.DockerClientFactory -- Docker host IP address is localhost
+13:21:10.882 [main] INFO org.testcontainers.DockerClientFactory -- Connected to docker: 
+  Server Version: 29.4.0
+  API Version: 1.54
+  Operating System: Docker Desktop
+  Total Memory: 9936 MB
+  Labels: 
+    com.docker.desktop.address=unix:///Users/kimwell/Library/Containers/com.docker.docker/Data/docker-cli.sock
+13:21:10.900 [main] INFO tc.testcontainers/ryuk:0.14.0 -- Creating container for image: testcontainers/ryuk:0.14.0
+13:21:11.007 [main] INFO org.testcontainers.utility.RegistryAuthLocator -- Credential helper/store (docker-credential-desktop) does not have credentials for https://index.docker.io/v1/
+13:21:11.123 [main] INFO tc.testcontainers/ryuk:0.14.0 -- Container testcontainers/ryuk:0.14.0 is starting: f72f9bc86692e660291bc65b86040f1f53025926f3d2201b26c7c55d13601ed2
+13:21:11.402 [main] INFO tc.testcontainers/ryuk:0.14.0 -- Container testcontainers/ryuk:0.14.0 started in PT0.501403S
+13:21:11.411 [main] INFO org.testcontainers.utility.RyukResourceReaper -- Ryuk started - will monitor and terminate Testcontainers containers on JVM exit
+13:21:11.411 [main] INFO org.testcontainers.DockerClientFactory -- Checking the system...
+13:21:11.411 [main] INFO org.testcontainers.DockerClientFactory -- ✔︎ Docker server version should be at least 1.6.0
+13:21:11.419 [main] INFO tc.postgres:17.11-bookworm@sha256:364557... -- Creating container for image: postgres:17.11-bookworm@sha256:3645570cccdfa447589da9f57dd740faa29b30938e861289a5574b6ca6b03826
+13:21:11.459 [main] INFO tc.postgres:17.11-bookworm@sha256:364557... -- Container postgres:17.11-bookworm@sha256:3645570cccdfa447589da9f57dd740faa29b30938e861289a5574b6ca6b03826 is starting: 112cb5c4ca3a4d618b1868b3d4dabf49a5e914630ce364969de817a01a4bead5
+13:21:12.507 [main] INFO tc.postgres:17.11-bookworm@sha256:364557... -- Container postgres:17.11-bookworm@sha256:3645570cccdfa447589da9f57dd740faa29b30938e861289a5574b6ca6b03826 started in PT1.087442S
+13:21:12.508 [main] INFO tc.postgres:17.11-bookworm@sha256:364557... -- Container is started (JDBC URL: jdbc:postgresql://localhost:52534/p03_technical_fixture?loggerLevel=OFF)
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v4.0.8)
+
+2026-10-08T13:21:12.833+08:00  INFO 74853 --- [pet-platform-backend] [           main] t.r.2.10-bookworm@sha256:476707...       : Creating container for image: redis:8.2.10-bookworm@sha256:47670742d7924adbcdb404d1288b6327815b23141969c0939b8e5d61f78c2634
+2026-10-08T13:21:12.925+08:00  INFO 74853 --- [pet-platform-backend] [           main] t.r.2.10-bookworm@sha256:476707...       : Container redis:8.2.10-bookworm@sha256:47670742d7924adbcdb404d1288b6327815b23141969c0939b8e5d61f78c2634 is starting: 46d8882f9822fc30c423e8da222a867539f3d630292d8e33ad4611ad93c29666
+2026-10-08T13:21:13.356+08:00  INFO 74853 --- [pet-platform-backend] [           main] t.r.2.10-bookworm@sha256:476707...       : Container redis:8.2.10-bookworm@sha256:47670742d7924adbcdb404d1288b6327815b23141969c0939b8e5d61f78c2634 started in PT0.523084S
+2026-10-08T13:21:13.365+08:00  INFO 74853 --- [pet-platform-backend] [           main] c.pet.platform.protocol.ApiProtocolTest  : Starting ApiProtocolTest using Java 21.0.12.1 with PID 74853 (started by kimwell in /Users/kimwell/work/pet-platform/apps/backend)
+2026-10-08T13:21:13.366+08:00  INFO 74853 --- [pet-platform-backend] [           main] c.pet.platform.protocol.ApiProtocolTest  : The following 1 profile is active: "test"
+2026-10-08T13:21:13.869+08:00  INFO 74853 --- [pet-platform-backend] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2026-10-08T13:21:13.869+08:00  INFO 74853 --- [pet-platform-backend] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-10-08T13:21:13.895+08:00  INFO 74853 --- [pet-platform-backend] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 19 ms. Found 0 JPA repository interfaces.
+2026-10-08T13:21:14.397+08:00  INFO 74853 --- [pet-platform-backend] [           main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:postgresql://localhost:52534/p03_technical_fixture (PostgreSQL 17.11)
+2026-10-08T13:21:14.430+08:00  INFO 74853 --- [pet-platform-backend] [           main] o.f.c.i.s.JdbcTableSchemaHistory         : Schema history table "public"."flyway_schema_history" does not exist yet
+2026-10-08T13:21:14.433+08:00  INFO 74853 --- [pet-platform-backend] [           main] o.f.core.internal.command.DbValidate     : Successfully validated 1 migration (execution time 00:00.011s)
+2026-10-08T13:21:14.445+08:00  INFO 74853 --- [pet-platform-backend] [           main] o.f.c.i.s.JdbcTableSchemaHistory         : Creating Schema History table "public"."flyway_schema_history" ...
+2026-10-08T13:21:14.496+08:00  INFO 74853 --- [pet-platform-backend] [           main] o.f.core.internal.command.DbMigrate      : Current version of schema "public": << Empty Schema >>
+2026-10-08T13:21:14.520+08:00  INFO 74853 --- [pet-platform-backend] [           main] o.f.core.internal.command.DbMigrate      : Migrating schema "public" to version "1 - platform identity foundation"
+2026-10-08T13:21:14.528+08:00  WARN 74853 --- [pet-platform-backend] [           main] o.f.c.i.s.DefaultSqlScriptExecutor       : DB: no privileges were granted for "public" (SQL State: 01007 - Error Code: 0)
+2026-10-08T13:21:14.608+08:00  INFO 74853 --- [pet-platform-backend] [           main] o.f.core.internal.command.DbMigrate      : Successfully applied 1 migration to schema "public", now at version v1 (execution time 00:00.078s)
+2026-10-08T13:21:14.672+08:00  INFO 74853 --- [pet-platform-backend] [           main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-10-08T13:21:14.710+08:00  INFO 74853 --- [pet-platform-backend] [           main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.24.Final
+2026-10-08T13:21:14.950+08:00  INFO 74853 --- [pet-platform-backend] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-10-08T13:21:14.979+08:00  INFO 74853 --- [pet-platform-backend] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-10-08T13:21:14.994+08:00  INFO 74853 --- [pet-platform-backend] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@574ffd63
+2026-10-08T13:21:14.995+08:00  INFO 74853 --- [pet-platform-backend] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-10-08T13:21:15.041+08:00  INFO 74853 --- [pet-platform-backend] [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:52534/p03_technical_fixture]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 17.11
+	Default catalog/schema: p03_technical_fixture/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-10-08T13:21:15.954+08:00  INFO 74853 --- [pet-platform-backend] [           main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-10-08T13:21:15.995+08:00  INFO 74853 --- [pet-platform-backend] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-10-08T13:21:16.378+08:00  WARN 74853 --- [pet-platform-backend] [           main] i.n.r.d.DnsServerAddressStreamProviders  : Can not find io.netty.resolver.dns.macos.MacOSDnsServerAddressStreamProvider in the classpath, fallback to system defaults. This may result in incorrect DNS resolutions on MacOS. Check whether you have a dependency on 'io.netty:netty-resolver-dns-native-macos'
+2026-10-08T13:21:17.206+08:00  INFO 74853 --- [pet-platform-backend] [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2026-10-08T13:21:17.247+08:00  INFO 74853 --- [pet-platform-backend] [           main] c.pet.platform.protocol.ApiProtocolTest  : Started ApiProtocolTest in 4.586 seconds (process running for 11.285)
+OpenJDK 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
+2026-10-08T13:21:17.382+08:00  INFO 74853 --- [pet-platform-backend] [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2026-10-08T13:21:17.382+08:00  INFO 74853 --- [pet-platform-backend] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-10-08T13:21:17.383+08:00  INFO 74853 --- [pet-platform-backend] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2026-10-08T13:21:17.456+08:00 ERROR 74853 --- [pet-platform-backend] [           main] c.p.p.s.e.GlobalExceptionHandler         : 请求处理失败，traceId=bec9b61de29e484182afae059549e225，异常类型=java.lang.IllegalArgumentException
+2026-10-08T13:21:17.464+08:00  INFO 74853 --- [pet-platform-backend] [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2026-10-08T13:21:17.464+08:00  INFO 74853 --- [pet-platform-backend] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-10-08T13:21:17.465+08:00  INFO 74853 --- [pet-platform-backend] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2026-10-08T13:21:17.472+08:00  INFO 74853 --- [pet-platform-backend] [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2026-10-08T13:21:17.472+08:00  INFO 74853 --- [pet-platform-backend] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-10-08T13:21:17.472+08:00  INFO 74853 --- [pet-platform-backend] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2026-10-08T13:21:17.528+08:00  INFO 74853 --- [pet-platform-backend] [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2026-10-08T13:21:17.528+08:00  INFO 74853 --- [pet-platform-backend] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-10-08T13:21:17.529+08:00  INFO 74853 --- [pet-platform-backend] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2026-10-08T13:21:17.552+08:00  INFO 74853 --- [pet-platform-backend] [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2026-10-08T13:21:17.552+08:00  INFO 74853 --- [pet-platform-backend] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-10-08T13:21:17.553+08:00  INFO 74853 --- [pet-platform-backend] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2026-10-08T13:21:17.562+08:00  INFO 74853 --- [pet-platform-backend] [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2026-10-08T13:21:17.562+08:00  INFO 74853 --- [pet-platform-backend] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-10-08T13:21:17.563+08:00  INFO 74853 --- [pet-platform-backend] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2026-10-08T13:21:17.568+08:00  INFO 74853 --- [pet-platform-backend] [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2026-10-08T13:21:17.569+08:00  INFO 74853 --- [pet-platform-backend] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-10-08T13:21:17.569+08:00  INFO 74853 --- [pet-platform-backend] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2026-10-08T13:21:17.574+08:00  INFO 74853 --- [pet-platform-backend] [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2026-10-08T13:21:17.575+08:00  INFO 74853 --- [pet-platform-backend] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-10-08T13:21:17.576+08:00  INFO 74853 --- [pet-platform-backend] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2026-10-08T13:21:17.580+08:00  INFO 74853 --- [pet-platform-backend] [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2026-10-08T13:21:17.580+08:00  INFO 74853 --- [pet-platform-backend] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-10-08T13:21:17.581+08:00  INFO 74853 --- [pet-platform-backend] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2026-10-08T13:21:17.587+08:00  INFO 74853 --- [pet-platform-backend] [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2026-10-08T13:21:17.587+08:00  INFO 74853 --- [pet-platform-backend] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-10-08T13:21:17.588+08:00  INFO 74853 --- [pet-platform-backend] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2026-10-08T13:21:17.593+08:00  INFO 74853 --- [pet-platform-backend] [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2026-10-08T13:21:17.594+08:00  INFO 74853 --- [pet-platform-backend] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-10-08T13:21:17.596+08:00  INFO 74853 --- [pet-platform-backend] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 2 ms
+2026-10-08T13:21:17.601+08:00  INFO 74853 --- [pet-platform-backend] [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2026-10-08T13:21:17.601+08:00  INFO 74853 --- [pet-platform-backend] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-10-08T13:21:17.603+08:00  INFO 74853 --- [pet-platform-backend] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 2 ms
+2026-10-08T13:21:17.610+08:00  INFO 74853 --- [pet-platform-backend] [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2026-10-08T13:21:17.610+08:00  INFO 74853 --- [pet-platform-backend] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-10-08T13:21:17.612+08:00  INFO 74853 --- [pet-platform-backend] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 2 ms
+2026-10-08T13:21:17.616+08:00  INFO 74853 --- [pet-platform-backend] [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2026-10-08T13:21:17.616+08:00  INFO 74853 --- [pet-platform-backend] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-10-08T13:21:17.618+08:00  INFO 74853 --- [pet-platform-backend] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2026-10-08T13:21:17.625+08:00  INFO 74853 --- [pet-platform-backend] [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2026-10-08T13:21:17.625+08:00  INFO 74853 --- [pet-platform-backend] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-10-08T13:21:17.626+08:00  INFO 74853 --- [pet-platform-backend] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2026-10-08T13:21:17.635+08:00 ERROR 74853 --- [pet-platform-backend] [           main] c.p.p.s.e.GlobalExceptionHandler         : 请求处理失败，traceId=0123456789abcdef0123456789abcdef，异常类型=java.lang.IllegalArgumentException
+2026-10-08T13:21:17.641+08:00  INFO 74853 --- [pet-platform-backend] [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2026-10-08T13:21:17.641+08:00  INFO 74853 --- [pet-platform-backend] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-10-08T13:21:17.641+08:00  INFO 74853 --- [pet-platform-backend] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2026-10-08T13:21:17.666+08:00 ERROR 74853 --- [pet-platform-backend] [           main] c.p.p.s.e.GlobalExceptionHandler         : 请求处理失败，traceId=ae6ae437002545eeb4f63c174203c281，异常类型=org.springframework.web.method.annotation.HandlerMethodValidationException
+2026-10-08T13:21:17.676+08:00  INFO 74853 --- [pet-platform-backend] [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2026-10-08T13:21:17.676+08:00  INFO 74853 --- [pet-platform-backend] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-10-08T13:21:17.676+08:00  INFO 74853 --- [pet-platform-backend] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2026-10-08T13:21:17.703+08:00  INFO 74853 --- [pet-platform-backend] [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2026-10-08T13:21:17.703+08:00  INFO 74853 --- [pet-platform-backend] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-10-08T13:21:17.703+08:00  INFO 74853 --- [pet-platform-backend] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2026-10-08T13:21:17.709+08:00  INFO 74853 --- [pet-platform-backend] [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2026-10-08T13:21:17.709+08:00  INFO 74853 --- [pet-platform-backend] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-10-08T13:21:17.710+08:00  INFO 74853 --- [pet-platform-backend] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2026-10-08T13:21:17.715+08:00  INFO 74853 --- [pet-platform-backend] [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2026-10-08T13:21:17.715+08:00  INFO 74853 --- [pet-platform-backend] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-10-08T13:21:17.716+08:00  INFO 74853 --- [pet-platform-backend] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2026-10-08T13:21:17.726+08:00  INFO 74853 --- [pet-platform-backend] [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2026-10-08T13:21:17.726+08:00  INFO 74853 --- [pet-platform-backend] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-10-08T13:21:17.726+08:00  INFO 74853 --- [pet-platform-backend] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2026-10-08T13:21:17.733+08:00  INFO 74853 --- [pet-platform-backend] [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2026-10-08T13:21:17.733+08:00  INFO 74853 --- [pet-platform-backend] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-10-08T13:21:17.734+08:00  INFO 74853 --- [pet-platform-backend] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2026-10-08T13:21:17.738+08:00  INFO 74853 --- [pet-platform-backend] [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2026-10-08T13:21:17.738+08:00  INFO 74853 --- [pet-platform-backend] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-10-08T13:21:17.739+08:00  INFO 74853 --- [pet-platform-backend] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2026-10-08T13:21:17.745+08:00  INFO 74853 --- [pet-platform-backend] [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2026-10-08T13:21:17.745+08:00  INFO 74853 --- [pet-platform-backend] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-10-08T13:21:17.747+08:00  INFO 74853 --- [pet-platform-backend] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 2 ms
+2026-10-08T13:21:17.753+08:00  INFO 74853 --- [pet-platform-backend] [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2026-10-08T13:21:17.753+08:00  INFO 74853 --- [pet-platform-backend] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-10-08T13:21:17.753+08:00  INFO 74853 --- [pet-platform-backend] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2026-10-08T13:21:17.761+08:00  INFO 74853 --- [pet-platform-backend] [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2026-10-08T13:21:17.761+08:00  INFO 74853 --- [pet-platform-backend] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-10-08T13:21:17.762+08:00  INFO 74853 --- [pet-platform-backend] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2026-10-08T13:21:17.765+08:00  INFO 74853 --- [pet-platform-backend] [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2026-10-08T13:21:17.765+08:00  INFO 74853 --- [pet-platform-backend] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-10-08T13:21:17.766+08:00  INFO 74853 --- [pet-platform-backend] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2026-10-08T13:21:17.769+08:00  INFO 74853 --- [pet-platform-backend] [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2026-10-08T13:21:17.769+08:00  INFO 74853 --- [pet-platform-backend] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-10-08T13:21:17.770+08:00  INFO 74853 --- [pet-platform-backend] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2026-10-08T13:21:17.775+08:00  WARN 74853 --- [pet-platform-backend] [           main] o.s.web.servlet.PageNotFound             : Request method 'POST' is not supported
+2026-10-08T13:21:17.781+08:00  INFO 74853 --- [pet-platform-backend] [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2026-10-08T13:21:17.781+08:00  INFO 74853 --- [pet-platform-backend] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-10-08T13:21:17.782+08:00  INFO 74853 --- [pet-platform-backend] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2026-10-08T13:21:17.789+08:00  INFO 74853 --- [pet-platform-backend] [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2026-10-08T13:21:17.790+08:00  INFO 74853 --- [pet-platform-backend] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-10-08T13:21:17.790+08:00  INFO 74853 --- [pet-platform-backend] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+[INFO] Tests run: 30, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 10.44 s -- in com.pet.platform.protocol.ApiProtocolTest
+[INFO] Running com.pet.platform.ApplicationTest
+2026-10-08T13:21:17.805+08:00  INFO 74853 --- [pet-platform-backend] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.pet.platform.ApplicationTest]: ApplicationTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-10-08T13:21:17.811+08:00  INFO 74853 --- [pet-platform-backend] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.pet.platform.Application for test class com.pet.platform.ApplicationTest
+2026-10-08T13:21:17.812+08:00  INFO 74853 --- [pet-platform-backend] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.pet.platform.ApplicationTest]: ApplicationTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-10-08T13:21:17.813+08:00  INFO 74853 --- [pet-platform-backend] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.pet.testing.PostgresIntegrationSupport]: PostgresIntegrationSupport does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-10-08T13:21:17.813+08:00  INFO 74853 --- [pet-platform-backend] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.pet.platform.Application for test class com.pet.platform.ApplicationTest
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v4.0.8)
+
+2026-10-08T13:21:17.839+08:00  INFO 74853 --- [pet-platform-backend] [           main] com.pet.platform.ApplicationTest         : Starting ApplicationTest using Java 21.0.12.1 with PID 74853 (started by kimwell in /Users/kimwell/work/pet-platform/apps/backend)
+2026-10-08T13:21:17.839+08:00  INFO 74853 --- [pet-platform-backend] [           main] com.pet.platform.ApplicationTest         : The following 1 profile is active: "test"
+2026-10-08T13:21:17.983+08:00  INFO 74853 --- [pet-platform-backend] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2026-10-08T13:21:17.983+08:00  INFO 74853 --- [pet-platform-backend] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-10-08T13:21:17.990+08:00  INFO 74853 --- [pet-platform-backend] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 6 ms. Found 0 JPA repository interfaces.
+2026-10-08T13:21:18.114+08:00  INFO 74853 --- [pet-platform-backend] [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 0 (http)
+2026-10-08T13:21:18.125+08:00  INFO 74853 --- [pet-platform-backend] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-10-08T13:21:18.125+08:00  INFO 74853 --- [pet-platform-backend] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.24]
+2026-10-08T13:21:18.155+08:00  INFO 74853 --- [pet-platform-backend] [           main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 315 ms
+2026-10-08T13:21:18.209+08:00  INFO 74853 --- [pet-platform-backend] [           main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:postgresql://localhost:52534/p03_technical_fixture (PostgreSQL 17.11)
+2026-10-08T13:21:18.220+08:00  INFO 74853 --- [pet-platform-backend] [           main] o.f.core.internal.command.DbValidate     : Successfully validated 1 migration (execution time 00:00.003s)
+2026-10-08T13:21:18.234+08:00  INFO 74853 --- [pet-platform-backend] [           main] o.f.core.internal.command.DbMigrate      : Current version of schema "public": 1
+2026-10-08T13:21:18.234+08:00  INFO 74853 --- [pet-platform-backend] [           main] o.f.core.internal.command.DbMigrate      : Schema "public" is up to date. No migration necessary.
+2026-10-08T13:21:18.416+08:00  INFO 74853 --- [pet-platform-backend] [           main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-10-08T13:21:18.431+08:00  INFO 74853 --- [pet-platform-backend] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-10-08T13:21:18.431+08:00  INFO 74853 --- [pet-platform-backend] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2026-10-08T13:21:18.445+08:00  INFO 74853 --- [pet-platform-backend] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Added connection org.postgresql.jdbc.PgConnection@77ed1878
+2026-10-08T13:21:18.445+08:00  INFO 74853 --- [pet-platform-backend] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2026-10-08T13:21:18.449+08:00  INFO 74853 --- [pet-platform-backend] [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:52534/p03_technical_fixture]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 17.11
+	Default catalog/schema: p03_technical_fixture/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-10-08T13:21:18.493+08:00  INFO 74853 --- [pet-platform-backend] [           main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-10-08T13:21:18.511+08:00  INFO 74853 --- [pet-platform-backend] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-10-08T13:21:18.590+08:00  INFO 74853 --- [pet-platform-backend] [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2026-10-08T13:21:18.613+08:00  INFO 74853 --- [pet-platform-backend] [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 52589 (http) with context path '/'
+2026-10-08T13:21:18.616+08:00  INFO 74853 --- [pet-platform-backend] [           main] com.pet.platform.ApplicationTest         : Started ApplicationTest in 0.797 seconds (process running for 12.655)
+2026-10-08T13:21:18.713+08:00  INFO 74853 --- [pet-platform-backend] [1-auto-1-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-10-08T13:21:18.714+08:00  INFO 74853 --- [pet-platform-backend] [1-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-10-08T13:21:18.714+08:00  INFO 74853 --- [pet-platform-backend] [1-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.959 s -- in com.pet.platform.ApplicationTest
+[INFO] Running com.pet.testing.identity.PasswordServiceTest
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.938 s -- in com.pet.testing.identity.PasswordServiceTest
+[INFO] Running com.pet.testing.tenancy.TenantMvcTest
+2026-10-08T13:21:19.728+08:00  INFO 74853 --- [pet-platform-backend] [           main] o.s.mock.web.MockServletContext          : Initializing Spring TestDispatcherServlet ''
+2026-10-08T13:21:19.728+08:00  INFO 74853 --- [pet-platform-backend] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-10-08T13:21:19.728+08:00  INFO 74853 --- [pet-platform-backend] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2026-10-08T13:21:19.753+08:00  INFO 74853 --- [pet-platform-backend] [           main] o.s.mock.web.MockServletContext          : Initializing Spring TestDispatcherServlet ''
+2026-10-08T13:21:19.753+08:00  INFO 74853 --- [pet-platform-backend] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-10-08T13:21:19.753+08:00  INFO 74853 --- [pet-platform-backend] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2026-10-08T13:21:19.774+08:00  INFO 74853 --- [pet-platform-backend] [           main] o.s.mock.web.MockServletContext          : Initializing Spring TestDispatcherServlet ''
+2026-10-08T13:21:19.774+08:00  INFO 74853 --- [pet-platform-backend] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-10-08T13:21:19.774+08:00  INFO 74853 --- [pet-platform-backend] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2026-10-08T13:21:19.789+08:00  INFO 74853 --- [pet-platform-backend] [           main] o.s.mock.web.MockServletContext          : Initializing Spring TestDispatcherServlet ''
+2026-10-08T13:21:19.789+08:00  INFO 74853 --- [pet-platform-backend] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-10-08T13:21:19.790+08:00  INFO 74853 --- [pet-platform-backend] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2026-10-08T13:21:19.804+08:00  INFO 74853 --- [pet-platform-backend] [           main] o.s.mock.web.MockServletContext          : Initializing Spring TestDispatcherServlet ''
+2026-10-08T13:21:19.804+08:00  INFO 74853 --- [pet-platform-backend] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-10-08T13:21:19.804+08:00  INFO 74853 --- [pet-platform-backend] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2026-10-08T13:21:19.805+08:00 ERROR 74853 --- [pet-platform-backend] [           main] c.p.p.s.e.GlobalExceptionHandler         : 请求处理失败，traceId=0123456789abcdef0123456789abcdef，异常类型=java.lang.IllegalStateException
+2026-10-08T13:21:19.824+08:00  INFO 74853 --- [pet-platform-backend] [           main] o.s.mock.web.MockServletContext          : Initializing Spring TestDispatcherServlet ''
+2026-10-08T13:21:19.825+08:00  INFO 74853 --- [pet-platform-backend] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-10-08T13:21:19.825+08:00  INFO 74853 --- [pet-platform-backend] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2026-10-08T13:21:19.843+08:00  INFO 74853 --- [pet-platform-backend] [           main] o.s.mock.web.MockServletContext          : Initializing Spring TestDispatcherServlet ''
+2026-10-08T13:21:19.843+08:00  INFO 74853 --- [pet-platform-backend] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-10-08T13:21:19.844+08:00  INFO 74853 --- [pet-platform-backend] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2026-10-08T13:21:19.856+08:00  INFO 74853 --- [pet-platform-backend] [           main] o.s.mock.web.MockServletContext          : Initializing Spring TestDispatcherServlet ''
+2026-10-08T13:21:19.856+08:00  INFO 74853 --- [pet-platform-backend] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-10-08T13:21:19.857+08:00  INFO 74853 --- [pet-platform-backend] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2026-10-08T13:21:19.858+08:00 ERROR 74853 --- [pet-platform-backend] [           main] c.p.p.s.e.GlobalExceptionHandler         : 请求处理失败，traceId=0eb422ecf09c47979745d847c452bd07，异常类型=java.lang.IllegalStateException
+2026-10-08T13:21:19.874+08:00  INFO 74853 --- [pet-platform-backend] [           main] o.s.mock.web.MockServletContext          : Initializing Spring TestDispatcherServlet ''
+2026-10-08T13:21:19.874+08:00  INFO 74853 --- [pet-platform-backend] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-10-08T13:21:19.874+08:00  INFO 74853 --- [pet-platform-backend] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2026-10-08T13:21:19.888+08:00  INFO 74853 --- [pet-platform-backend] [           main] o.s.mock.web.MockServletContext          : Initializing Spring TestDispatcherServlet ''
+2026-10-08T13:21:19.888+08:00  INFO 74853 --- [pet-platform-backend] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-10-08T13:21:19.888+08:00  INFO 74853 --- [pet-platform-backend] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2026-10-08T13:21:19.904+08:00  INFO 74853 --- [pet-platform-backend] [           main] o.s.mock.web.MockServletContext          : Initializing Spring TestDispatcherServlet ''
+2026-10-08T13:21:19.904+08:00  INFO 74853 --- [pet-platform-backend] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-10-08T13:21:19.904+08:00  INFO 74853 --- [pet-platform-backend] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2026-10-08T13:21:19.923+08:00  INFO 74853 --- [pet-platform-backend] [           main] o.s.mock.web.MockServletContext          : Initializing Spring TestDispatcherServlet ''
+2026-10-08T13:21:19.923+08:00  INFO 74853 --- [pet-platform-backend] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-10-08T13:21:19.924+08:00  INFO 74853 --- [pet-platform-backend] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2026-10-08T13:21:19.926+08:00 ERROR 74853 --- [pet-platform-backend] [           main] c.p.p.s.e.GlobalExceptionHandler         : 请求处理失败，traceId=a4caf25a130d420288f81071bea2bdfb，异常类型=java.lang.IllegalStateException
+2026-10-08T13:21:19.938+08:00  INFO 74853 --- [pet-platform-backend] [           main] o.s.mock.web.MockServletContext          : Initializing Spring TestDispatcherServlet ''
+2026-10-08T13:21:19.939+08:00  INFO 74853 --- [pet-platform-backend] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-10-08T13:21:19.939+08:00  INFO 74853 --- [pet-platform-backend] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+[INFO] Tests run: 13, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.240 s -- in com.pet.testing.tenancy.TenantMvcTest
+[INFO] Running com.pet.testing.tenancy.TenantExecutionTest
+[INFO] Tests run: 19, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.022 s -- in com.pet.testing.tenancy.TenantExecutionTest
+[INFO] Running com.pet.testing.contracts.ContractExportTest
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v4.0.8)
+
+2026-10-08T13:21:19.987+08:00  INFO 74853 --- [pet-platform-backend] [           main] c.p.t.contracts.ContractExportTest       : Starting ContractExportTest using Java 21.0.12.1 with PID 74853 (started by kimwell in /Users/kimwell/work/pet-platform/apps/backend)
+2026-10-08T13:21:19.987+08:00  INFO 74853 --- [pet-platform-backend] [           main] c.p.t.contracts.ContractExportTest       : The following 1 profile is active: "test"
+2026-10-08T13:21:20.149+08:00  INFO 74853 --- [pet-platform-backend] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2026-10-08T13:21:20.149+08:00  INFO 74853 --- [pet-platform-backend] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-10-08T13:21:20.156+08:00  INFO 74853 --- [pet-platform-backend] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 5 ms. Found 0 JPA repository interfaces.
+2026-10-08T13:21:20.202+08:00  INFO 74853 --- [pet-platform-backend] [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 0 (http)
+2026-10-08T13:21:20.202+08:00  INFO 74853 --- [pet-platform-backend] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-10-08T13:21:20.202+08:00  INFO 74853 --- [pet-platform-backend] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.24]
+2026-10-08T13:21:20.213+08:00  INFO 74853 --- [pet-platform-backend] [           main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 225 ms
+2026-10-08T13:21:20.246+08:00  INFO 74853 --- [pet-platform-backend] [           main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:postgresql://localhost:52534/p03_technical_fixture (PostgreSQL 17.11)
+2026-10-08T13:21:20.257+08:00  INFO 74853 --- [pet-platform-backend] [           main] o.f.core.internal.command.DbValidate     : Successfully validated 1 migration (execution time 00:00.005s)
+2026-10-08T13:21:20.273+08:00  INFO 74853 --- [pet-platform-backend] [           main] o.f.core.internal.command.DbMigrate      : Current version of schema "public": 1
+2026-10-08T13:21:20.273+08:00  INFO 74853 --- [pet-platform-backend] [           main] o.f.core.internal.command.DbMigrate      : Schema "public" is up to date. No migration necessary.
+2026-10-08T13:21:20.459+08:00  INFO 74853 --- [pet-platform-backend] [           main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-10-08T13:21:20.470+08:00  INFO 74853 --- [pet-platform-backend] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-10-08T13:21:20.470+08:00  INFO 74853 --- [pet-platform-backend] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
+2026-10-08T13:21:20.482+08:00  INFO 74853 --- [pet-platform-backend] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-3 - Added connection org.postgresql.jdbc.PgConnection@4a3b95b
+2026-10-08T13:21:20.482+08:00  INFO 74853 --- [pet-platform-backend] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Start completed.
+2026-10-08T13:21:20.488+08:00  INFO 74853 --- [pet-platform-backend] [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:52534/p03_technical_fixture]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 17.11
+	Default catalog/schema: p03_technical_fixture/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-10-08T13:21:20.529+08:00  INFO 74853 --- [pet-platform-backend] [           main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-10-08T13:21:20.546+08:00  INFO 74853 --- [pet-platform-backend] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-10-08T13:21:20.707+08:00  INFO 74853 --- [pet-platform-backend] [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2026-10-08T13:21:20.718+08:00  INFO 74853 --- [pet-platform-backend] [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 52599 (http) with context path '/'
+2026-10-08T13:21:20.722+08:00  INFO 74853 --- [pet-platform-backend] [           main] c.p.t.contracts.ContractExportTest       : Started ContractExportTest in 0.746 seconds (process running for 14.76)
+2026-10-08T13:21:20.729+08:00  INFO 74853 --- [pet-platform-backend] [1-auto-2-exec-1] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-10-08T13:21:20.729+08:00  INFO 74853 --- [pet-platform-backend] [1-auto-2-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-10-08T13:21:20.729+08:00  INFO 74853 --- [pet-platform-backend] [1-auto-2-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2026-10-08T13:21:20.944+08:00  INFO 74853 --- [pet-platform-backend] [1-auto-2-exec-4] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 173 ms
+[INFO] Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.479 s -- in com.pet.testing.contracts.ContractExportTest
+[INFO] Running com.pet.testing.contracts.ProductionOpenApiExportTest
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v4.0.8)
+
+2026-10-08T13:21:21.473+08:00  INFO 74853 --- [pet-platform-backend] [           main] c.p.t.c.ProductionOpenApiExportTest      : Starting ProductionOpenApiExportTest using Java 21.0.12.1 with PID 74853 (started by kimwell in /Users/kimwell/work/pet-platform/apps/backend)
+2026-10-08T13:21:21.473+08:00  INFO 74853 --- [pet-platform-backend] [           main] c.p.t.c.ProductionOpenApiExportTest      : The following 1 profile is active: "test"
+2026-10-08T13:21:21.574+08:00  INFO 74853 --- [pet-platform-backend] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2026-10-08T13:21:21.574+08:00  INFO 74853 --- [pet-platform-backend] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-10-08T13:21:21.581+08:00  INFO 74853 --- [pet-platform-backend] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 5 ms. Found 0 JPA repository interfaces.
+2026-10-08T13:21:21.632+08:00  INFO 74853 --- [pet-platform-backend] [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 0 (http)
+2026-10-08T13:21:21.633+08:00  INFO 74853 --- [pet-platform-backend] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-10-08T13:21:21.633+08:00  INFO 74853 --- [pet-platform-backend] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.24]
+2026-10-08T13:21:21.643+08:00  INFO 74853 --- [pet-platform-backend] [           main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 169 ms
+2026-10-08T13:21:21.673+08:00  INFO 74853 --- [pet-platform-backend] [           main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:postgresql://localhost:52534/p03_technical_fixture (PostgreSQL 17.11)
+2026-10-08T13:21:21.687+08:00  INFO 74853 --- [pet-platform-backend] [           main] o.f.core.internal.command.DbValidate     : Successfully validated 1 migration (execution time 00:00.004s)
+2026-10-08T13:21:21.699+08:00  INFO 74853 --- [pet-platform-backend] [           main] o.f.core.internal.command.DbMigrate      : Current version of schema "public": 1
+2026-10-08T13:21:21.700+08:00  INFO 74853 --- [pet-platform-backend] [           main] o.f.core.internal.command.DbMigrate      : Schema "public" is up to date. No migration necessary.
+2026-10-08T13:21:21.865+08:00  INFO 74853 --- [pet-platform-backend] [           main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-10-08T13:21:21.875+08:00  INFO 74853 --- [pet-platform-backend] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-10-08T13:21:21.875+08:00  INFO 74853 --- [pet-platform-backend] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Starting...
+2026-10-08T13:21:21.889+08:00  INFO 74853 --- [pet-platform-backend] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-4 - Added connection org.postgresql.jdbc.PgConnection@4a687cba
+2026-10-08T13:21:21.889+08:00  INFO 74853 --- [pet-platform-backend] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Start completed.
+2026-10-08T13:21:21.894+08:00  INFO 74853 --- [pet-platform-backend] [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:52534/p03_technical_fixture]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 17.11
+	Default catalog/schema: p03_technical_fixture/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-10-08T13:21:21.931+08:00  INFO 74853 --- [pet-platform-backend] [           main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-10-08T13:21:21.951+08:00  INFO 74853 --- [pet-platform-backend] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-10-08T13:21:22.025+08:00  INFO 74853 --- [pet-platform-backend] [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2026-10-08T13:21:22.032+08:00  INFO 74853 --- [pet-platform-backend] [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 52640 (http) with context path '/'
+2026-10-08T13:21:22.034+08:00  INFO 74853 --- [pet-platform-backend] [           main] c.p.t.c.ProductionOpenApiExportTest      : Started ProductionOpenApiExportTest in 0.573 seconds (process running for 16.073)
+2026-10-08T13:21:22.038+08:00  INFO 74853 --- [pet-platform-backend] [1-auto-3-exec-1] o.a.c.c.C.[Tomcat-2].[localhost].[/]     : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-10-08T13:21:22.038+08:00  INFO 74853 --- [pet-platform-backend] [1-auto-3-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-10-08T13:21:22.046+08:00  INFO 74853 --- [pet-platform-backend] [1-auto-3-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 8 ms
+2026-10-08T13:21:22.234+08:00  INFO 74853 --- [pet-platform-backend] [1-auto-3-exec-1] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 184 ms
+[ERROR] Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.796 s <<< FAILURE! -- in com.pet.testing.contracts.ProductionOpenApiExportTest
+[ERROR] com.pet.testing.contracts.ProductionOpenApiExportTest.exportsActualProductionModelsWithoutTestPaths -- Time elapsed: 0.207 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <0> but was: <5>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:158)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:139)
+	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:201)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:152)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:147)
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:558)
+	at com.pet.testing.contracts.ProductionOpenApiExportTest.exportsActualProductionModelsWithoutTestPaths(ProductionOpenApiExportTest.java:30)
+
+[INFO] Running com.pet.testing.contracts.DocumentPolicyTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in com.pet.testing.contracts.DocumentPolicyTest
+[INFO] Running com.pet.testing.architecture.StructureRulesTest
+[ERROR] Tests run: 14, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.146 s <<< FAILURE! -- in com.pet.testing.architecture.StructureRulesTest
+[ERROR] com.pet.testing.architecture.StructureRulesTest.actualProductionBytecodeObeysRules -- Time elapsed: 0.108 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <[]> but was: <[绕过可信身份入口：com/pet/platform/shared/tenancy/TenantExecutionScope]>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:158)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:139)
+	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:201)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:184)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:179)
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1188)
+	at com.pet.testing.architecture.StructureRulesTest.actualProductionBytecodeObeysRules(StructureRulesTest.java:266)
+
+[INFO] 
+[INFO] Results:
+[INFO] 
+[ERROR] Failures: 
+[ERROR]   StructureRulesTest.actualProductionBytecodeObeysRules:266 expected: <[]> but was: <[绕过可信身份入口：com/pet/platform/shared/tenancy/TenantExecutionScope]>
+[ERROR]   ProductionOpenApiExportTest.exportsActualProductionModelsWithoutTestPaths:30 expected: <0> but was: <5>
+[INFO] 
+[ERROR] Tests run: 132, Failures: 2, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  24.625 s
+[INFO] Finished at: 2026-10-08T13:21:22+08:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:3.5.6:test (default-test) on project pet-platform-backend: There are test failures.
+[ERROR] 
+[ERROR] See /Users/kimwell/work/pet-platform/apps/backend/target/surefire-reports for the individual test results.
+[ERROR] See dump files (if any exist) [date].dump, [date]-jvmRun[N].dump and [date].dumpstream.
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException

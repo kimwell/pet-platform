@@ -6,7 +6,7 @@
 
 ```text
 packages/api-contracts/
-├── openapi/backend.openapi.json           # 实际生产应用：当前paths={}
+├── openapi/backend.openapi.json           # 实际生产应用：P05-02有五个STAFF认证路径
 ├── openapi/test-contract.openapi.json     # 测试专用Controller：仅生成器验收
 ├── src/generated/api.d.ts                 # 生产公共模型
 ├── src/index.ts                           # 只export type
@@ -15,7 +15,7 @@ packages/api-contracts/
 └── package.json / tsconfig.json
 ```
 
-生产文档没有正式业务路径。OpenApiConfiguration通过生成器显式注册实际 ApiError/FieldErrorDetail/Failure/PageQuery，以及实际PageResponse与Success的具体FieldErrorDetail/Void特化；字段仍来自Java类型。这些特化是公共泛型验收模型，不表示存在分页字段错误业务接口。没有CurrentIdentity类型/认证实现，因此本轮不伪造它们或security schemes；未来身份阶段按冻结契约接入，不设假的全局security。
+以下为空paths的P03历史；P05-02当前五个认证路径见文末。生产文档当时没有正式业务路径。OpenApiConfiguration通过生成器显式注册实际 ApiError/FieldErrorDetail/Failure/PageQuery，以及实际PageResponse与Success的具体FieldErrorDetail/Void特化；字段仍来自Java类型。这些特化是公共泛型验收模型，不表示存在分页字段错误业务接口。没有CurrentIdentity类型/认证实现，因此本轮不伪造它们或security schemes；未来身份阶段按冻结契约接入，不设假的全局security。
 
 测试契约来自src/test的ContractFixtures，只有`/__contracts/**`技术路径。独立的ProductionOpenApiExportTest没有导入测试Controller；ContractExportTest单独启动测试文档上下文。冻结组件的全局扫描条件先于分组，测试上下文显式限定测试包；生产上下文仅扫描com.pet.platform。测试文档不发布为业务API清单，不进入公共包导出或小程序同步。
 
@@ -70,3 +70,9 @@ check在临时目录重新生成，比对两份OpenAPI、两份声明和小程�
 Web以import type从@pet/api-contracts读取components；workspace依赖只有types出口，不含fetch/DOM/wx/状态/请求实现。小程序将同份公共声明同步到`miniprogram/types/generated/api.d.ts`，首行含来源SHA；import type使用本地相对路径，微信运行时无需解析workspace包。手写消费文件位于生成目录外。同步只清理固定生成目录中带生成标识的旧文件，拒绝子目录、符号链接及未标记源码；check发现旧生成文件直接失败。脚本反例验证不覆盖手写文件，也不保留已删除生成类型。
 
 本轮类型接入不实现HTTP Client/业务页面，tsc不代替微信工具或真机运行。完整破坏性分析、远程CI及多OS运行未验证；[验收矩阵](../testing/ACCEPTANCE-MATRIX.md)保留各后续阶段owner。
+
+## P05-02 正式认证文档（2026-10-08）
+
+生产paths由历史空集变为STAFF五个实际接口（csrf、Web login、token/login、me、logout）；实际CurrentIdentity/Scope union/CsrfResult/TokenLoginResult及具体Success泛型由Controller导出，成功200与各错误信封显式声明。StaffCookie是生产Cookie名称，StaffToken是X-Staff-Token（Bearer格式），受保护端点为OR安全要求；Web登录Header CSRF和来源要求已声明。匿名端点不加假的全局认证。
+
+生成流程仍为独立后端导出、规范化、openapi-typescript、同步小程序声明和严格类型检查；原测试OpenAPI保留技术路径，只进入test/generated，不混入公共产物。命令、真实结果与SHA见[P05-02](../testing/P05-02-VERIFICATION.md)。本轮不实现前端请求层或页面。

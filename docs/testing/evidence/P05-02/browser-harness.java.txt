@@ -1,0 +1,58 @@
+import com.pet.testing.*;
+import com.pet.platform.Application;
+import com.pet.platform.identity.application.PasswordService;
+import com.pet.platform.identity.application.bootstrap.*;
+import com.pet.platform.identity.infrastructure.bootstrap.BootstrapJdbc;
+import java.net.*;
+import java.nio.file.*;
+import java.util.*;
+import java.util.concurrent.*;
+import org.springframework.boot.SpringApplication;
+import org.springframework.context.annotation.*;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.http.MediaType;
+
+public class P05BrowserHarness extends PostgresIntegrationSupport {
+    static String body;
+    static CompletableFuture<String> completion=new CompletableFuture<>();
+    @Configuration(proxyBeanMethods=false) static class Config {@Bean Page page(){return new Page();}}
+    @RestController static class Page {
+        @GetMapping(value="/__p05-browser",produces=MediaType.TEXT_HTML_VALUE) String html(){return """
+<!doctype html><html lang="zh"><meta charset="utf-8"><title>P05-02 临时浏览器验收</title><body><h1>P05-02 Cookie / CSRF 实际浏览器链路</h1><p>独立测试容器和正式初始化服务；结果不含凭据。</p><button id="run">执行浏览器验收</button><pre id="result">待执行</pre><script>
+const input=BODY;
+async function send(path, options={}) {return fetch('/api/admin/auth/'+path, {...options,credentials:'same-origin'});}
+document.querySelector('#run').onclick=async()=>{try{
+ const pre=await send('csrf');const c=(await pre.json()).data;
+ const missing=await send('login',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(input)});
+ const login=await send('login',{method:'POST',headers:{'Content-Type':'application/json','X-CSRF-Token':c.csrfToken},body:JSON.stringify(input)});const identity=(await login.json()).data;
+ const me=await send('me');const next=await send('csrf');const csrf=(await next.json()).data;
+ const invalid=await send('logout',{method:'POST',headers:{'X-CSRF-Token':c.csrfToken}});
+ const logout=await send('logout',{method:'POST',headers:{'X-CSRF-Token':csrf.csrfToken}});
+ const after=await send('me');
+ const result={pre:pre.status,missingCsrf:missing.status,login:login.status,webBodyHasToken:!!identity.token,httpOnlyHidden:!document.cookie.includes('pet_dev_staff_'),me:me.status,rotatedCsrf:invalid.status,logout:logout.status,afterLogout:after.status};
+ const ok=result.pre===200&&result.missingCsrf===403&&result.login===200&&!result.webBodyHasToken&&result.httpOnlyHidden&&result.me===200&&result.rotatedCsrf===403&&result.logout===200&&result.afterLogout===401;
+ document.querySelector('#result').textContent=(ok?'PASS':'FAIL')+' / '+JSON.stringify(result,null,2);
+ await fetch('/__p05-browser/result',{method:'POST',headers:{'Content-Type':'text/plain'},body:JSON.stringify({ok,...result})});
+}catch(e){document.querySelector('#result').textContent='FAIL '+e.name;}};
+</script></body></html>
+""".replace("BODY",body);}
+        @PostMapping("/__p05-browser/result") void result(@RequestBody String report){completion.complete(report);}
+    }
+    public static void main(String[] args)throws Exception {
+        String password=UUID.randomUUID()+"临时浏览器😀",code="browser"+UUID.randomUUID().toString().substring(0,12);
+        try(var input=new BootstrapRequest(code,"临时浏览器租户","admin",password.toCharArray(),null,null)){
+            org.flywaydb.core.Flyway.configure().dataSource(POSTGRES.getJdbcUrl(),IdentityDatabaseSupport.MIGRATION,POSTGRES.getPassword()).locations("classpath:db/migration").load().migrate();
+            new IdentityBootstrap(new BootstrapJdbc(Map.of("PET_BOOTSTRAP_DATABASE_URL",POSTGRES.getJdbcUrl().split("\\?",2)[0],"PET_BOOTSTRAP_DATABASE_USERNAME",IdentityDatabaseSupport.BOOTSTRAP,"PET_BOOTSTRAP_DATABASE_PASSWORD",POSTGRES.getPassword())),new PasswordService()).initialize(input);
+        }
+        body=tools.jackson.databind.json.JsonMapper.builder().build().writeValueAsString(Map.of("tenantCode",code,"loginName","admin","password",password));
+        int port;try(var s=new ServerSocket(0,0,InetAddress.getLoopbackAddress())){port=s.getLocalPort();}
+        var app=new SpringApplication(Application.class,Config.class);
+        try(var context=app.run("--spring.profiles.active=test","--server.port="+port,"--pet.public-origin=http://127.0.0.1:"+port,
+            "--spring.datasource.url="+POSTGRES.getJdbcUrl().split("\\?",2)[0],"--spring.datasource.username="+IdentityDatabaseSupport.RUNTIME,"--spring.datasource.password="+POSTGRES.getPassword(),
+            "--spring.flyway.enabled=false","--spring.data.redis.host="+RedisTestSupport.REDIS.getHost(),"--spring.data.redis.port="+RedisTestSupport.REDIS.getMappedPort(6379),"--spring.data.redis.password="+RedisTestSupport.password())){
+            Files.writeString(Path.of("/tmp/pet-p05-02-browser-url"),"http://127.0.0.1:"+port+"/__p05-browser");
+            String report=completion.get(5,TimeUnit.MINUTES);Files.writeString(Path.of("../../docs/testing/evidence/P05-02/browser-result.json"),report);
+            if(!report.contains("\"ok\":true"))throw new IllegalStateException("浏览器验收失败");
+        } finally {POSTGRES.stop();RedisTestSupport.REDIS.stop();body=null;}
+    }
+}

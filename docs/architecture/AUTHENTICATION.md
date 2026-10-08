@@ -1,13 +1,13 @@
 # 认证、设备会话与传输安全
 
-当前实施状态见本文P05-01章节及[P05-01验证](../testing/P05-01-VERIFICATION.md)。旧阶段“尚未实现”描述保留为历史范围；冻结安全契约不变。
-冻结日期：2026-10-07，P01-02。本文拥有认证空间、Cookie/Token、CSRF、期限与撤销。接口及字段见 [身份契约](../contracts/IDENTITY.md)，权限见 [授权](AUTHORIZATION.md)。当前未实现正式认证。
+当前STAFF认证实施见本文P05-02章节及[P05-02验证](../testing/P05-02-VERIFICATION.md)。旧阶段叙述保留为历史范围；本轮渠道/输入细化见当前章节。
+冻结日期：2026-10-07，P01-02。本文拥有认证空间、Cookie/Token、CSRF、期限与撤销。接口及字段见 [身份契约](../contracts/IDENTITY.md)，权限见 [授权](AUTHORIZATION.md)。冻结时未实现正式认证；当前STAFF实施见文末P05-02。
 
 ## 精确版本集成依据
 
 Sa-Token 使用 [版本矩阵](../development/VERSION-MATRIX.md) 的 starter/Redis 组合。已读取官方 [多账号](https://sa-token.com/up/many-account.html)、[配置](https://sa-token.com/use/config.html) 和 [精确版本源码](../testing/evidence/P01-02/sa-token-source-record.json)。源码及临时编译探针确认 StpLogic(String)、setConfig、createLoginSession、createSaLoginParameter、setTokenValueToStorage、getLoginIdByToken、logoutByTokenValue、kickout 的真实 API；不猜测新版调用。
 
-三类身份各一个 StpLogic：loginType=`platform/staff/customer`；tokenName=`pet:<environment>:platform/staff/customer`。实际键以 `<tokenName>:<loginType>:` 开始，后缀 token/session/token-session/last-active 等。辅助 CSRF 键为 `pet:<environment>:csrf:<domain>:`。environment 必填、启动校验，不同部署不共用前缀。
+三类身份各一个 StpLogic：loginType=`platform/staff/customer`；tokenName=`pet:<environment>:platform/staff/customer`。实际键以 `<tokenName>:<loginType>:` 开始，后缀 token/session/token-session/last-active 等。辅助预会话CSRF键当前为 `pet:<environment>:auth:staff:pre:<安全摘要>`，其他域尚未实现。environment 必填、启动校验，不同部署不共用前缀。
 
 三个逻辑均关闭 `isReadBody/isReadHeader/isReadCookie/isWriteHeader`，tokenPrefix 不配置。项目适配器按端点声明严格解析载体，移除 Bearer 后以 `setTokenValueToStorage(rawToken)` 注入对应逻辑的**当前请求**存储，不写 Cookie/响应 Header；随后调用对应逻辑checkLogin并执行权威安全/授权查询，getLoginIdByToken不能单独代替期限/活跃检查。登录用 createLoginSession，响应适配器显式发送 Cookie/Token。禁止默认 StpUtil、Query/Body Token、框架默认载体优先顺序。P05 验证多逻辑注册、注解 loginType、拦截顺序与请求清理。
 
@@ -71,3 +71,27 @@ TLS 可在可信代理终止；代理删除用户 Forwarded/X-Forwarded-* 后重
 密码匹配后重新读取当前状态与真实版本/角色范围，哈希期间版本变化则失败；无候选用随机运行时dummy编码执行比较。StaffIdentity不是CurrentPrincipal/会话，CurrentPrincipalProvider默认仍empty。后续P05-02必须接真实Sa-Token、载体解析/身份域、Cookie/CSRF、会话频控与统一LOGIN_FAILED，签发/每次请求复核权威状态版本。平台账号和客户微信身份本轮不建表，租户管理员仍STAFF。
 
 Tenant/Employee停用、密码变化、角色/门店授权变化有权威字段/加载契约，但对应修改事务、撤销意图、会话撤销与敏感提交前校验尚未实现。异步执行前权威重验也未接入，不将字段存在或短期快照称为撤销已生效。本页上文所有HTTP接口仍是冻结计划。
+
+## P05-02 STAFF 实施（2026-10-08）
+
+本节为当前实现，上文P01/P04/P05-01“未实现”叙述是历史。Sa-Token Boot4 starter与Redis template沿用[版本矩阵](../development/VERSION-MATRIX.md)；实际解析、官方源码SHA、命令及门禁见[P05-02验证](../testing/P05-02-VERIFICATION.md)。只开放STAFF五个接口；PLATFORM/CUSTOMER有隔离StpLogic但没有登录入口或真实账号，不能使用STAFF凭据获得身份。
+
+认证专属AuthenticationRedis继承官方SaTokenDaoForRedisTemplate；显式排除官方默认自动注册，仅安装此受限替代Bean，不作内存降级。官方1.46.0的servlet上下文Filter默认晚于本项目租户Filter，因此将其移动到Trace之后、STAFF认证之前，并只注册REQUEST；其finally清理官方ThreadLocal。顺序为Trace → Sa-Token servlet上下文 → STAFF载体识别/期限检查 → 受限staff_authorization权威查询 → CurrentPrincipal → TenantContextFilter的AUTHORITY_READ根范围 → 用例forPermission → ScopedTransaction同连接事务局部GUC → PostgreSQL RLS。受限查询不需要业务上下文，不关闭RLS、不建平台旁路。同步ERROR复用本请求可信快照；Servlet ASYNC不传播用户身份。
+
+会话键沿用`pet:<environment>:staff:staff:*`，未来空间分别platform/customer；业务`pet:<environment>:v1:*`不混用。认证辅助键为`pet:<environment>:auth:staff:ip/account/pre/lock:<SHA-256摘要>`。独立DAO允许最长7天、128KiB固定JSON会话，未扩大业务Redis的24h/64KiB约束。线格式v1只接受SaSession固定投影、固定终端字段和字符串安全元数据；没有Java原生反序列化、类名/default typing、权限快照或任意对象。其他类型、未知格式、解析/Redis错误均503。Redis ACL、TLS、持久化和生产容量仍需部署验收。
+
+会话保存可信Tenant/Employee ID、安全版本、非凭据sessionId、WEB/MINIPROGRAM、绝对到期、闲置期限和随机CSRF。角色/权限/门店/显示名每请求从正式数据库重载，绝不长期缓存授权。有效状态与Employee/Tenant securityVersion必须匹配；停用或版本变化返回401 SESSION_REVOKED，不依赖Redis删除成功。权限下降保留合法会话，当前me显示新授权；authorizationVersion保留数据库当前值。未来管理事务仍负责递增版本，当前每请求查询对角色停用/权限/关系/门店变动即使漏增授权版本也不复用旧授权。
+
+Web生产`__Secure-pet_staff_sid/pre`，local HTTP为`pet_dev_staff_sid/pre`；同Path=/api/admin/、无Domain、HttpOnly、生产Secure、SameSite=Lax、会话Cookie无Max-Age/Expires。prod强制Secure；local显式false，HTTPS local可覆盖true。匿名GET csrf建立10分钟服务器预会话并返回256-bit随机凭据；CSRF采用[OWASP synchronizer token模式](https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html)，摘要用MessageDigest.isEqual比较，不以可控Cookie自身作为信任根。Cookie写请求必须X-CSRF-Token及固定Origin；缺Origin必须同源Referer，两者都缺拒绝。登录销毁预会话，独立新Token/new sessionId/new CSRF，不将旧Cookie作为新Token；已登录重新登录撤销原当前设备。登录后GET csrf取新值；同会话多次获取稳定、不续闲置；退出删除对应服务端TokenSession与CSRF及同属性Cookie。CSRF缺失、错误、预会话过期403；会话到期401；不自动重放。当前只支持同源，未开放跨源CORS。
+
+小程序POST token/login不接受STAFF会话Cookie、预会话Cookie或身份Header；成功仅该响应返回原始opaque Token，后续`X-Staff-Token: Bearer <原始值>`。Header Token必须匹配MINIPROGRAM设备，Cookie必须WEB；渠道不能切换或提升权限。Cookie/Header并存400 AUTH_CREDENTIAL_AMBIGUOUS，不比较或选择；多个/重复身份Header拒绝，其他身份或通用Authorization为401 AUTH_DOMAIN_MISMATCH（与Cookie并存仍400）。其他域Cookie忽略；Query/Body Token不认证。
+
+Web绝对8h/闲置30min；小程序绝对7d/闲置24h；isConcurrent=true、isShare=false、autoRenew=false、dynamicActiveTimeout=true。me/CSRF/auth维护端点不续闲置，已识别的非auth业务请求才更新活跃时间，绝对期不滑动。相同员工跨渠道最多5个有效设备；按账号摘要分布式锁清理失效终端、到限409 SESSION_LIMIT_REACHED，禁止框架自动挤出。锁竞争429 Retry-After=1，30s租约失效或Redis失败503；不输出新凭据。退出只撤销当前设备，其他设备保留；过期/已退出重复退出401 SESSION_EXPIRED，无凭据401 AUTH_REQUIRED。logout-all/改密与完整设备管理尚未实施。
+
+登录先422输入/规范化（密码保持原输入、Unicode码点沿用密码服务）→频控→受限候选→PBKDF2验证（缺候选使用随机运行时dummy哈希）→当前有效租户/员工/授权→创建会话。统一LOGIN_FAILED与既有中文错误注册表，不区分不存在/密码/停用；数据库/Redis错误503，不能当账号错误或删除会话。dummy仅减少明显差异，不承诺绝对恒定时间。tenantId/角色/权限等Body未知字段400，不作为认证输入。
+
+频控为所有合法登录尝试的固定窗口：直接对端IP 60次/5min，规范化tenantCode+loginName摘要10次/15min；成功也计数且不清零，防成功流量绕过与并发清零竞争。Redis Lua一次原子递增并首次设TTL；阈值后429携带窗口剩余Retry-After，窗口自然恢复，不永久锁账号。没有可信租户时使用独立认证基础设施空间。server.forward-headers-strategy必须none，X-Forwarded-For/Forwarded不影响IP；当前未实现可信代理网段配置，生产通过固定公开Origin和网络约束部署，不能直接打开Boot转发处理。Redis故障关闭登录和认证，保留Cookie，不把503当401。
+
+新请求在权威读SQL开始时看到已提交变化（READ COMMITTED）；已经验证并执行中的请求保持本次快照，不能撤回已完成操作，后续敏感写提交前重验仍需专门用例。当前真实会话来源的TenantTaskExecutor提交全部403禁止；旧30秒快照不证明撤销安全。纯内部技术边界仍保留，详见[异步约定](../conventions/ASYNC-EXECUTION.md)。
+
+确认WEB Cookie会话过期/安全撤销时返回401并按同名/Path/安全属性清sid/pre Cookie，下一次可获取匿名CSRF并重新登录；不会在同一请求静默转成匿名成功。503数据库/Redis故障和载体冲突不清Cookie。恢复反例已由正式HTTP验证。

@@ -175,3 +175,15 @@ local `/v3/api-docs`与`/swagger-ui/index.html`开启，文档开启时仅允许
 打包后的scripts/backend-identity.sh migrate与bootstrap已存在。bootstrap仅使用PET_BOOTSTRAP_DATABASE_URL/USERNAME/PASSWORD，初始密码通过不回显Console或显式--password-stdin；不使用参数、默认值或普通启动环境变量重置。命令、角色、可选首店、重跑冲突/回滚、故障与无法自动恢复事项见[身份初始化说明](IDENTITY-BOOTSTRAP.md)。
 
 本轮只在临时PostgreSQL/Testcontainers验证，没有对开发者日常数据库预配置角色、迁移或创建管理员；实际目标/初始化值未由用户提供，不擅自执行。原local启动若使用管理员凭据须先按新模型配置受限身份，不能以提升运行角色解决启动。登录HTTP、Sa-Token会话、平台/客户身份与管理页面仍未实现。
+
+## P05-02 员工认证本地联调（2026-10-08）
+
+复用[正式身份初始化](IDENTITY-BOOTSTRAP.md)中的独立迁移/初始化路径；没有默认员工或登录时自动创建租户。必须明确自己的本地目标和初始化值，不能使用容器测试账号。后端local默认`pet.auth.cookie-secure=false`，生产默认true且禁止false；同源Vite代理/api，PET_PUBLIC_ORIGIN必须是实际浏览器来源（默认http://localhost:5173），不能按Host动态放行。后端直连浏览器联调需显式设置对应来源，scheme/host/port精确一致。Redis不可用会503，恢复依赖后使用原合法会话，不把503自动清成未登录。
+
+Web接入顺序：GET /api/admin/auth/csrf（同源credentials，csrfToken只保存在内存）→ POST /api/admin/auth/login提交tenantCode/loginName/password及X-CSRF-Token → GET csrf取得登录后新凭据 → GET me → Cookie状态改变请求携带CSRF与来源 → POST logout。Web只依赖HttpOnly Cookie，JSON不提供可用Token；退出后重新获取匿名凭据，403不能静默重放。
+
+员工小程序服务端协议：无Cookie/身份Header调用POST /api/admin/auth/token/login；读取TokenLoginResult.token.value（原始值）及headerName；后续`X-Staff-Token: Bearer <运行时值>`，POST logout只退该设备。员工/客户槽位独立，不能把STAFF值写入客户槽位。本轮不修改页面或请求层。
+
+生产数值不能为开发方便覆盖；仅独立test环境允许短期限配置用于验收。server.forward-headers-strategy必须none，转发头不用于IP频控；生产可信代理接入未验收。测试全部用独立容器并在结束清理，不删除日常数据库卷。证据见[P05-02](../testing/P05-02-VERIFICATION.md)。
+
+WEB收到SESSION_EXPIRED/REVOKED时服务器同属性清Cookie，下一次获取匿名CSRF再登录；不静默重放。503保留Cookie，恢复后可继续验证原会话。

@@ -55,3 +55,7 @@ redis.delete(key);
 Redis 连接、超时、错误类型、损坏值/未知线版本都返回既有 `DEPENDENCY_UNAVAILABLE` 基础设施错误，不能静默视为 miss；删除返回真实存在与否。未提供查询降级、自动重试、缓存填充或 DB/Redis 原子事务。以后是否允许特定只读查询降级由业务明确决定；会话、安全版本、CSRF 等安全业务另行实现，不用本端口假定已完成。
 
 不开放任意 Lua、KEYS、SCAN/删前缀、FLUSHDB、批量删除或通用 RedisUtil。Redis 权限/网络/ACL 仍需部署验证，应用命名空间不能隔离持有服务器凭据的恶意直接客户端。非 Java 原生格式的依据见 [冻结 Spring Data Redis 官方说明](https://docs.spring.io/spring-data/redis/reference/4.0/redis/template.html)。
+
+## P05-02 认证专属存储例外（2026-10-08）
+
+认证会话只由identity/infrastructure/session/AuthenticationRedis适配冻结官方DAO，不经过普通租户资源Redis API；业务原TTL/大小/类型限制未扩大。认证空间pet:<env>:<domain>:<domain>:，辅助空间pet:<env>:auth:staff:<kind>:<安全摘要>；独立应用pet与身份域隔离。认证TTL最多7天、值最多128KiB，不允许永久存储/SCAN；固定SessionWire及String数据/有限终端线模型、无多态反序列化或Java原生序列化。原始Token只存在必要服务端索引/会话值，禁止日志。频控/预会话/账号锁方法固定，业务不得直接依赖该实现；结构门禁仅批准认证适配器和装配配置使用原始Redis类型。真实失败均503，不能降为未登录或调用内存备份。详见[认证](../architecture/AUTHENTICATION.md#p05-02-staff-实施2026-10-08)。

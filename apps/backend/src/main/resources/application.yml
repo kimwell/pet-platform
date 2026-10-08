@@ -80,6 +80,7 @@ management:
     redis:
       enabled: true
 server:
+  forward-headers-strategy: none
   # 当前没有认证能力；默认只在本机监听，不隐式开放公网。
   address: ${SERVER_ADDRESS:127.0.0.1}
   port: ${SERVER_PORT:8080}
@@ -96,6 +97,8 @@ springdoc:
   remove-broken-reference-definitions: false
   override-with-generic-response: false
 pet:
+  auth:
+    cookie-secure: ${PET_AUTH_COOKIE_SECURE:true}
   redis:
     prefix: ${PET_REDIS_PREFIX:pet}
   async:
@@ -109,3 +112,11 @@ pet:
   # 不设置默认环境，开发者须显式选 local/test/prod 或提供外部配置。
   environment: ${PET_ENVIRONMENT:}
   public-origin: ${PET_PUBLIC_ORIGIN:}
+
+sa-token:
+  is-print: false
+  is-log: false
+  is-read-body: false
+  is-read-header: false
+  is-read-cookie: false
+  is-write-header: false

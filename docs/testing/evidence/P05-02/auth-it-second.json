@@ -1,0 +1,13 @@
+{
+  "cwd": "/Users/kimwell/work/pet-platform/apps/backend",
+  "argv": [
+    "./mvnw",
+    "-Dtest=StructureRulesTest",
+    "-Dit.test=StaffAuthenticationIT",
+    "verify"
+  ],
+  "exitCode": 0,
+  "startedAtUTC": "2026-10-08T05:24:01.779055+00:00",
+  "finishedAtUTC": "2026-10-08T05:24:30.999368+00:00",
+  "log": "auth-it-second.log"
+}

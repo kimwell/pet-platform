@@ -1,4 +1,6 @@
 pet:
+  auth:
+    cookie-secure: false
   environment: test
   public-origin: http://localhost
 server:

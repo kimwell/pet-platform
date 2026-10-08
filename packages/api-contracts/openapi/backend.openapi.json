@@ -56,6 +56,100 @@
         ],
         "type": "object"
       },
+      "CsrfResult": {
+        "additionalProperties": false,
+        "properties": {
+          "csrfToken": {
+            "type": "string"
+          },
+          "expiresAt": {
+            "description": "输入必须带Z或offset、最多3位小数；输出UTC且固定3位毫秒",
+            "format": "date-time",
+            "type": "string"
+          }
+        },
+        "required": [
+          "csrfToken",
+          "expiresAt"
+        ],
+        "type": "object"
+      },
+      "CurrentIdentity": {
+        "additionalProperties": false,
+        "properties": {
+          "authorizationVersion": {
+            "description": "当前数据库授权版本；每请求重载授权，不仅依赖版本",
+            "pattern": "^(0|[1-9][0-9]*)$",
+            "type": "string"
+          },
+          "authorizedStoreIds": {
+            "items": {
+              "format": "uuid",
+              "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$",
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "dataScope": {
+            "$ref": "#/components/schemas/ScopeData"
+          },
+          "displayName": {
+            "type": "string"
+          },
+          "expiresAt": {
+            "description": "输入必须带Z或offset、最多3位小数；输出UTC且固定3位毫秒",
+            "format": "date-time",
+            "type": "string"
+          },
+          "idleTimeoutSeconds": {
+            "format": "int32",
+            "maximum": 86400,
+            "minimum": 1,
+            "type": "integer"
+          },
+          "permissionCodes": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "principalId": {
+            "format": "uuid",
+            "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$",
+            "type": "string"
+          },
+          "principalType": {
+            "enum": [
+              "STAFF"
+            ],
+            "type": "string"
+          },
+          "sessionId": {
+            "format": "uuid",
+            "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$",
+            "type": "string"
+          },
+          "tenantId": {
+            "format": "uuid",
+            "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$",
+            "type": "string"
+          }
+        },
+        "required": [
+          "authorizationVersion",
+          "authorizedStoreIds",
+          "dataScope",
+          "displayName",
+          "expiresAt",
+          "idleTimeoutSeconds",
+          "permissionCodes",
+          "principalId",
+          "principalType",
+          "sessionId",
+          "tenantId"
+        ],
+        "type": "object"
+      },
       "Failure": {
         "additionalProperties": false,
         "properties": {
@@ -95,6 +189,53 @@
           "code",
           "field",
           "message"
+        ],
+        "type": "object"
+      },
+      "Grant": {
+        "additionalProperties": false,
+        "properties": {
+          "permissionCode": {
+            "type": "string"
+          },
+          "scopes": {
+            "items": {
+              "$ref": "#/components/schemas/Scope"
+            },
+            "type": "array"
+          }
+        },
+        "required": [
+          "permissionCode",
+          "scopes"
+        ],
+        "type": "object"
+      },
+      "LoginInput": {
+        "additionalProperties": false,
+        "properties": {
+          "loginName": {
+            "maxLength": 128,
+            "minLength": 0,
+            "type": "string"
+          },
+          "password": {
+            "format": "password",
+            "maxLength": 256,
+            "minLength": 12,
+            "type": "string",
+            "writeOnly": true
+          },
+          "tenantCode": {
+            "maxLength": 64,
+            "minLength": 0,
+            "type": "string"
+          }
+        },
+        "required": [
+          "loginName",
+          "password",
+          "tenantCode"
         ],
         "type": "object"
       },
@@ -154,6 +295,131 @@
         ],
         "type": "object"
       },
+      "Scope": {
+        "oneOf": [
+          {
+            "$ref": "#/components/schemas/TenantScope"
+          },
+          {
+            "$ref": "#/components/schemas/StoresScope"
+          },
+          {
+            "$ref": "#/components/schemas/SelfScope"
+          }
+        ]
+      },
+      "ScopeData": {
+        "additionalProperties": false,
+        "properties": {
+          "grants": {
+            "items": {
+              "$ref": "#/components/schemas/Grant"
+            },
+            "type": "array"
+          }
+        },
+        "required": [
+          "grants"
+        ],
+        "type": "object"
+      },
+      "SelfScope": {
+        "additionalProperties": false,
+        "properties": {
+          "type": {
+            "enum": [
+              "SELF"
+            ],
+            "type": "string"
+          }
+        },
+        "required": [
+          "type"
+        ],
+        "type": "object"
+      },
+      "StoresScope": {
+        "additionalProperties": false,
+        "properties": {
+          "storeIds": {
+            "items": {
+              "format": "uuid",
+              "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$",
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "type": {
+            "enum": [
+              "STORES"
+            ],
+            "type": "string"
+          }
+        },
+        "required": [
+          "storeIds",
+          "type"
+        ],
+        "type": "object"
+      },
+      "SuccessCsrfResult": {
+        "additionalProperties": false,
+        "properties": {
+          "data": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/CsrfResult"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "success": {
+            "const": true,
+            "type": "boolean"
+          },
+          "traceId": {
+            "pattern": "^[0-9a-f]{32}$",
+            "type": "string"
+          }
+        },
+        "required": [
+          "data",
+          "success",
+          "traceId"
+        ],
+        "type": "object"
+      },
+      "SuccessCurrentIdentity": {
+        "additionalProperties": false,
+        "properties": {
+          "data": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/CurrentIdentity"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "success": {
+            "const": true,
+            "type": "boolean"
+          },
+          "traceId": {
+            "pattern": "^[0-9a-f]{32}$",
+            "type": "string"
+          }
+        },
+        "required": [
+          "data",
+          "success",
+          "traceId"
+        ],
+        "type": "object"
+      },
       "SuccessFieldErrorDetail": {
         "additionalProperties": false,
         "properties": {
@@ -161,6 +427,35 @@
             "anyOf": [
               {
                 "$ref": "#/components/schemas/FieldErrorDetail"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "success": {
+            "const": true,
+            "type": "boolean"
+          },
+          "traceId": {
+            "pattern": "^[0-9a-f]{32}$",
+            "type": "string"
+          }
+        },
+        "required": [
+          "data",
+          "success",
+          "traceId"
+        ],
+        "type": "object"
+      },
+      "SuccessTokenLoginResult": {
+        "additionalProperties": false,
+        "properties": {
+          "data": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/TokenLoginResult"
               },
               {
                 "type": "null"
@@ -204,6 +499,73 @@
           "traceId"
         ],
         "type": "object"
+      },
+      "TenantScope": {
+        "additionalProperties": false,
+        "properties": {
+          "type": {
+            "enum": [
+              "TENANT"
+            ],
+            "type": "string"
+          }
+        },
+        "required": [
+          "type"
+        ],
+        "type": "object"
+      },
+      "TokenLoginResult": {
+        "additionalProperties": false,
+        "properties": {
+          "identity": {
+            "$ref": "#/components/schemas/CurrentIdentity"
+          },
+          "token": {
+            "$ref": "#/components/schemas/TokenResult"
+          }
+        },
+        "required": [
+          "identity",
+          "token"
+        ],
+        "type": "object"
+      },
+      "TokenResult": {
+        "additionalProperties": false,
+        "properties": {
+          "expiresAt": {
+            "description": "输入必须带Z或offset、最多3位小数；输出UTC且固定3位毫秒",
+            "format": "date-time",
+            "type": "string"
+          },
+          "headerName": {
+            "type": "string"
+          },
+          "value": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "expiresAt",
+          "headerName",
+          "value"
+        ],
+        "type": "object"
+      }
+    },
+    "securitySchemes": {
+      "StaffCookie": {
+        "description": "生产Cookie；local HTTP使用pet_dev_staff_sid，写请求另需X-CSRF-Token及固定Origin/Referer",
+        "in": "cookie",
+        "name": "__Secure-pet_staff_sid",
+        "type": "apiKey"
+      },
+      "StaffToken": {
+        "description": "Bearer加一个空格再加原始opaque Token；与Cookie不能并存",
+        "in": "header",
+        "name": "X-Staff-Token",
+        "type": "apiKey"
       }
     }
   },
@@ -212,5 +574,485 @@
     "version": "0.0.0"
   },
   "openapi": "3.1.0",
-  "paths": {}
+  "paths": {
+    "/api/admin/auth/csrf": {
+      "get": {
+        "description": "匿名创建10分钟服务器预会话；已登录绑定当前WEB设备；no-store，不续闲置期限",
+        "operationId": "csrf",
+        "responses": {
+          "200": {
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/SuccessCsrfResult"
+                }
+              }
+            },
+            "description": "成功，统一响应信封"
+          },
+          "400": {
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/Failure"
+                }
+              }
+            },
+            "description": "非法格式或凭据混用"
+          },
+          "401": {
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/Failure"
+                }
+              }
+            },
+            "description": "认证失败、未登录或会话失效"
+          },
+          "403": {
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/Failure"
+                }
+              }
+            },
+            "description": "CSRF或权限拒绝"
+          },
+          "422": {
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/Failure"
+                }
+              }
+            },
+            "description": "输入校验失败"
+          },
+          "429": {
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/Failure"
+                }
+              }
+            },
+            "description": "频控，响应Retry-After"
+          },
+          "503": {
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/Failure"
+                }
+              }
+            },
+            "description": "数据库或Redis不可用"
+          }
+        },
+        "summary": "获取员工Web CSRF凭据",
+        "tags": [
+          "staff-authentication-controller"
+        ]
+      }
+    },
+    "/api/admin/auth/login": {
+      "post": {
+        "description": "必须先获取预会话Cookie与CSRF；提交X-CSRF-Token和固定Origin或Referer。成功轮换会话与CSRF，仅Set-Cookie，不返回Token。",
+        "operationId": "web",
+        "parameters": [
+          {
+            "description": "GET csrf取得的服务器绑定凭据",
+            "in": "header",
+            "name": "X-CSRF-Token",
+            "required": true
+          },
+          {
+            "description": "必须匹配固定来源；缺失时必须提供同源Referer",
+            "in": "header",
+            "name": "Origin"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LoginInput"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/SuccessCurrentIdentity"
+                }
+              }
+            },
+            "description": "成功，统一响应信封"
+          },
+          "400": {
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/Failure"
+                }
+              }
+            },
+            "description": "非法格式或凭据混用"
+          },
+          "401": {
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/Failure"
+                }
+              }
+            },
+            "description": "认证失败、未登录或会话失效"
+          },
+          "403": {
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/Failure"
+                }
+              }
+            },
+            "description": "CSRF或权限拒绝"
+          },
+          "409": {
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/Failure"
+                }
+              }
+            },
+            "description": "设备数上限"
+          },
+          "422": {
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/Failure"
+                }
+              }
+            },
+            "description": "输入校验失败"
+          },
+          "429": {
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/Failure"
+                }
+              }
+            },
+            "description": "频控，响应Retry-After"
+          },
+          "503": {
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/Failure"
+                }
+              }
+            },
+            "description": "数据库或Redis不可用"
+          }
+        },
+        "summary": "员工Web账号密码登录",
+        "tags": [
+          "staff-authentication-controller"
+        ]
+      }
+    },
+    "/api/admin/auth/logout": {
+      "post": {
+        "description": "Cookie需CSRF与来源校验，Token渠道无需浏览器CSRF。只撤销当前设备并删除对应Cookie/CSRF；重复无有效凭据返回401。",
+        "operationId": "logout",
+        "responses": {
+          "200": {
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/SuccessVoid"
+                }
+              }
+            },
+            "description": "成功，统一响应信封"
+          },
+          "400": {
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/Failure"
+                }
+              }
+            },
+            "description": "非法格式或凭据混用"
+          },
+          "401": {
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/Failure"
+                }
+              }
+            },
+            "description": "认证失败、未登录或会话失效"
+          },
+          "403": {
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/Failure"
+                }
+              }
+            },
+            "description": "CSRF或权限拒绝"
+          },
+          "422": {
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/Failure"
+                }
+              }
+            },
+            "description": "输入校验失败"
+          },
+          "429": {
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/Failure"
+                }
+              }
+            },
+            "description": "频控，响应Retry-After"
+          },
+          "503": {
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/Failure"
+                }
+              }
+            },
+            "description": "数据库或Redis不可用"
+          }
+        },
+        "security": [
+          {
+            "StaffCookie": []
+          },
+          {
+            "StaffToken": []
+          }
+        ],
+        "summary": "退出当前员工设备",
+        "tags": [
+          "staff-authentication-controller"
+        ]
+      }
+    },
+    "/api/admin/auth/me": {
+      "get": {
+        "description": "每请求读取正式有效租户、员工、角色、权限和门店授权；不续闲置期限",
+        "operationId": "me",
+        "responses": {
+          "200": {
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/SuccessCurrentIdentity"
+                }
+              }
+            },
+            "description": "成功，统一响应信封"
+          },
+          "400": {
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/Failure"
+                }
+              }
+            },
+            "description": "非法格式或凭据混用"
+          },
+          "401": {
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/Failure"
+                }
+              }
+            },
+            "description": "认证失败、未登录或会话失效"
+          },
+          "403": {
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/Failure"
+                }
+              }
+            },
+            "description": "CSRF或权限拒绝"
+          },
+          "422": {
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/Failure"
+                }
+              }
+            },
+            "description": "输入校验失败"
+          },
+          "429": {
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/Failure"
+                }
+              }
+            },
+            "description": "频控，响应Retry-After"
+          },
+          "503": {
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/Failure"
+                }
+              }
+            },
+            "description": "数据库或Redis不可用"
+          }
+        },
+        "security": [
+          {
+            "StaffCookie": []
+          },
+          {
+            "StaffToken": []
+          }
+        ],
+        "summary": "当前员工身份",
+        "tags": [
+          "staff-authentication-controller"
+        ]
+      }
+    },
+    "/api/admin/auth/token/login": {
+      "post": {
+        "description": "不得提交Web会话/预会话Cookie或身份Header；成功建立独立MINIPROGRAM设备，仅此响应返回原始Token。",
+        "operationId": "mini",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LoginInput"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/SuccessTokenLoginResult"
+                }
+              }
+            },
+            "description": "成功，统一响应信封"
+          },
+          "400": {
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/Failure"
+                }
+              }
+            },
+            "description": "非法格式或凭据混用"
+          },
+          "401": {
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/Failure"
+                }
+              }
+            },
+            "description": "认证失败、未登录或会话失效"
+          },
+          "403": {
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/Failure"
+                }
+              }
+            },
+            "description": "CSRF或权限拒绝"
+          },
+          "409": {
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/Failure"
+                }
+              }
+            },
+            "description": "设备数上限"
+          },
+          "422": {
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/Failure"
+                }
+              }
+            },
+            "description": "输入校验失败"
+          },
+          "429": {
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/Failure"
+                }
+              }
+            },
+            "description": "频控，响应Retry-After"
+          },
+          "503": {
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/Failure"
+                }
+              }
+            },
+            "description": "数据库或Redis不可用"
+          }
+        },
+        "summary": "员工小程序账号密码登录",
+        "tags": [
+          "staff-authentication-controller"
+        ]
+      }
+    }
+  }
 }

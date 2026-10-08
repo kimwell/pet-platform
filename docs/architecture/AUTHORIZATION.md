@@ -1,6 +1,6 @@
 # 权限与授权执行
 
-当前实施状态见本文P05-01章节及[P05-01验证](../testing/P05-01-VERIFICATION.md)。旧阶段“尚未实现”描述保留为历史范围；冻结安全契约不变。
+当前STAFF认证实施见本文P05-02章节及[P05-02验证](../testing/P05-02-VERIFICATION.md)。旧阶段叙述保留为历史范围；本轮渠道/输入细化见当前章节。
 冻结日期：2026-10-07，P01-02。本文拥有权限注册、范围组合、授权顺序；字段见 [身份契约](../contracts/IDENTITY.md)，隔离执行见 [多租户](MULTI-TENANCY.md)。
 
 代码固定 `模块:资源:动作`，正则 `^[a-z][a-z0-9-]*:[a-z][a-z0-9-]*:[a-z][a-z0-9-]*$`；例如 identity:user:list/create/update/disable/export 分别独立。代码声明权限注册表：身份域、中文名、动作及支持范围。DB 仅保存角色、主体和授权关系及范围参数，不提供任意权限脚本或隐含 * 全权。
@@ -55,3 +55,9 @@ ScopedPersistence实例固定本用例permissionCode，访问时requirePermissio
 加载只采用ACTIVE租户/员工/角色，身份门店上限来自明确EmployeeStore中ACTIVE Store；STORES按该上限取交集，TENANT仍不能跳过门店授权上限。相同权限用既有ScopeGrant合并；不同权限分别保留，测试list:TENANT与update:STORES+SELF/停用角色反例。未注册代码或不支持范围失败关闭；SELF还须具体资源登记行归属。没有管理API、默认未来门店授权或授予权限范围旁路。
 
 Employee.authorization_version是实际持久化字段，初始化0；所有未来角色/权限/关系与门店有效状态变更须同事务更新受影响员工。加载当前值已实现，真实会话重验、撤销、敏感写提交前复核与异步权限交集仍未实现。当前正式Store Provider读取当前租户ACTIVE事实后由既有Guard校验操作范围；404/503语义保持原契约。
+
+## P05-02 当前请求授权（2026-10-08）
+
+STAFF真实会话先验证期限、设备渠道与可信主体，再通过P05-01窄范围函数读取当前租户/员工、角色、每权限范围及有效门店。CurrentPrincipal来自当前查询，TenantContextFilter继续建立AUTHORITY_READ根，业务仍forPermission/Guard/ScopedTransaction/RLS。客户或平台Token不借员工权限。每请求重载策略不依赖授权版本字段独自保证撤销；角色停用、权限/角色关系/门店关系及门店状态变化在提交后的新权威查询中生效，securityVersion/Tenant securityVersion变化拒绝旧会话。
+
+已在执行的请求保留当次授权快照；本轮没有管理写API，未实现未来敏感写提交前重验，不能声称撤回已提交操作。未来修改服务仍须按冻结事务责任递增安全/授权版本并记录撤销意图。真实会话异步快照禁止提交，内部技术任务保持原边界。[P05-02验证](../testing/P05-02-VERIFICATION.md)覆盖正式HTTP/PG/Redis，完整CRUD与审计留待后续。

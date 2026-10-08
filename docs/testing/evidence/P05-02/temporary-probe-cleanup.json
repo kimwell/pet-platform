@@ -1,0 +1,14 @@
+{
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "command": "仅清理本轮明确临时探针文件/目录；不删除数据库卷",
+  "exitCode": 0,
+  "removed": [
+    "/tmp/P05BrowserHarness.java",
+    "/tmp/pet-p05-02-browser-classes",
+    "/tmp/pet-p05-02-browser-url",
+    "/tmp/pet-p05-02-classpath",
+    "/tmp/pet-p05-browser-run.py",
+    "/tmp/pet-p05-02-source",
+    "/tmp/pet-p05-02-docs.py"
+  ]
+}

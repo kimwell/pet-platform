@@ -1,0 +1,1 @@
+两个独立JVM：登录A→me B 200→退出B→me A 401；生产Cookie属性与跨实例CSRF/退出通过。HTTP属性检查不等于生产TLS浏览器验收。

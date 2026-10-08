@@ -1,0 +1,280 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ---------------< com.pet.platform:pet-platform-backend >----------------
+[INFO] Building pet-platform-backend 0.0.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ pet-platform-backend ---
+[INFO] Copying 3 resources from src/main/resources to target/classes
+[INFO] Copying 2 resources from src/main/resources to target/classes
+[INFO] 
+[INFO] --- compiler:3.14.1:compile (default-compile) @ pet-platform-backend ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ pet-platform-backend ---
+[INFO] Copying 3 resources from src/test/resources to target/test-classes
+[INFO] 
+[INFO] --- compiler:3.14.1:testCompile (default-testCompile) @ pet-platform-backend ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- surefire:3.5.6:test (default-test) @ pet-platform-backend ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running com.pet.testing.architecture.StructureRulesTest
+[INFO] Tests run: 14, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.330 s -- in com.pet.testing.architecture.StructureRulesTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 14, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] 
+[INFO] --- jar:3.4.2:jar (default-jar) @ pet-platform-backend ---
+[INFO] Building jar: /Users/kimwell/work/pet-platform/apps/backend/target/pet-platform-backend-0.0.0-SNAPSHOT.jar
+[INFO] 
+[INFO] --- spring-boot:4.0.8:repackage (repackage) @ pet-platform-backend ---
+[INFO] Replacing main artifact /Users/kimwell/work/pet-platform/apps/backend/target/pet-platform-backend-0.0.0-SNAPSHOT.jar with repackaged archive, adding nested dependencies in BOOT-INF/.
+[INFO] The original artifact has been renamed to /Users/kimwell/work/pet-platform/apps/backend/target/pet-platform-backend-0.0.0-SNAPSHOT.jar.original
+[INFO] 
+[INFO] --- failsafe:3.5.6:integration-test (default) @ pet-platform-backend ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running com.pet.testing.authentication.StaffAuthenticationIT
+13:23:27.510 [main] INFO org.testcontainers.images.PullPolicy -- Image pull policy will be performed by: DefaultPullPolicy()
+13:23:27.513 [main] INFO org.testcontainers.utility.ImageNameSubstitutor -- Image name substitution will be performed by: DefaultImageNameSubstitutor (composite of 'ConfigurationFileImageNameSubstitutor' and 'PrefixingImageNameSubstitutor')
+13:23:27.531 [main] INFO org.testcontainers.DockerClientFactory -- Testcontainers version: 2.0.5
+13:23:27.734 [main] INFO org.testcontainers.dockerclient.DockerClientProviderStrategy -- Loaded org.testcontainers.dockerclient.UnixSocketClientProviderStrategy from ~/.testcontainers.properties, will try it first
+13:23:28.065 [main] INFO org.testcontainers.dockerclient.DockerClientProviderStrategy -- Found Docker environment with local Unix socket (unix:///var/run/docker.sock)
+13:23:28.066 [main] INFO org.testcontainers.DockerClientFactory -- Docker host IP address is localhost
+13:23:28.086 [main] INFO org.testcontainers.DockerClientFactory -- Connected to docker: 
+  Server Version: 29.4.0
+  API Version: 1.54
+  Operating System: Docker Desktop
+  Total Memory: 9936 MB
+  Labels: 
+    com.docker.desktop.address=unix:///Users/kimwell/Library/Containers/com.docker.docker/Data/docker-cli.sock
+13:23:28.106 [main] INFO tc.testcontainers/ryuk:0.14.0 -- Creating container for image: testcontainers/ryuk:0.14.0
+13:23:28.239 [main] INFO org.testcontainers.utility.RegistryAuthLocator -- Credential helper/store (docker-credential-desktop) does not have credentials for https://index.docker.io/v1/
+13:23:28.409 [main] INFO tc.testcontainers/ryuk:0.14.0 -- Container testcontainers/ryuk:0.14.0 is starting: 15fd33be6bf4438e0b944181337a249ee9081eecea003100e6c018c98d099173
+13:23:28.757 [main] INFO tc.testcontainers/ryuk:0.14.0 -- Container testcontainers/ryuk:0.14.0 started in PT0.650294S
+13:23:28.768 [main] INFO org.testcontainers.utility.RyukResourceReaper -- Ryuk started - will monitor and terminate Testcontainers containers on JVM exit
+13:23:28.768 [main] INFO org.testcontainers.DockerClientFactory -- Checking the system...
+13:23:28.768 [main] INFO org.testcontainers.DockerClientFactory -- ✔︎ Docker server version should be at least 1.6.0
+13:23:28.775 [main] INFO tc.postgres:17.11-bookworm@sha256:364557... -- Creating container for image: postgres:17.11-bookworm@sha256:3645570cccdfa447589da9f57dd740faa29b30938e861289a5574b6ca6b03826
+13:23:28.805 [main] INFO tc.postgres:17.11-bookworm@sha256:364557... -- Container postgres:17.11-bookworm@sha256:3645570cccdfa447589da9f57dd740faa29b30938e861289a5574b6ca6b03826 is starting: 864daea5f1a4bb4400a49f9fd5651d39d7f53cf001b7e2292b05115912003fb8
+13:23:29.733 [main] INFO tc.postgres:17.11-bookworm@sha256:364557... -- Container postgres:17.11-bookworm@sha256:3645570cccdfa447589da9f57dd740faa29b30938e861289a5574b6ca6b03826 started in PT0.957537S
+13:23:29.734 [main] INFO tc.postgres:17.11-bookworm@sha256:364557... -- Container is started (JDBC URL: jdbc:postgresql://localhost:53152/p03_technical_fixture?loggerLevel=OFF)
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v4.0.8)
+
+2026-10-08T13:23:30.258+08:00  INFO 75624 --- [pet-platform-backend] [           main] t.r.2.10-bookworm@sha256:476707...       : Creating container for image: redis:8.2.10-bookworm@sha256:47670742d7924adbcdb404d1288b6327815b23141969c0939b8e5d61f78c2634
+2026-10-08T13:23:30.348+08:00  INFO 75624 --- [pet-platform-backend] [           main] t.r.2.10-bookworm@sha256:476707...       : Container redis:8.2.10-bookworm@sha256:47670742d7924adbcdb404d1288b6327815b23141969c0939b8e5d61f78c2634 is starting: 10e7a3b004dd1b623c0f9b9cf38b2231c2a829d8c45f8925fd03e9fa7c7a765b
+2026-10-08T13:23:30.552+08:00  INFO 75624 --- [pet-platform-backend] [           main] t.r.2.10-bookworm@sha256:476707...       : Container redis:8.2.10-bookworm@sha256:47670742d7924adbcdb404d1288b6327815b23141969c0939b8e5d61f78c2634 started in PT0.293478S
+2026-10-08T13:23:30.556+08:00  INFO 75624 --- [pet-platform-backend] [           main] c.p.t.a.StaffAuthenticationIT            : Starting StaffAuthenticationIT using Java 21.0.12.1 with PID 75624 (started by kimwell in /Users/kimwell/work/pet-platform/apps/backend)
+2026-10-08T13:23:30.557+08:00  INFO 75624 --- [pet-platform-backend] [           main] c.p.t.a.StaffAuthenticationIT            : The following 1 profile is active: "test"
+2026-10-08T13:23:31.004+08:00  INFO 75624 --- [pet-platform-backend] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2026-10-08T13:23:31.005+08:00  INFO 75624 --- [pet-platform-backend] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-10-08T13:23:31.024+08:00  INFO 75624 --- [pet-platform-backend] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 14 ms. Found 0 JPA repository interfaces.
+2026-10-08T13:23:31.463+08:00  INFO 75624 --- [pet-platform-backend] [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 0 (http)
+2026-10-08T13:23:31.473+08:00  INFO 75624 --- [pet-platform-backend] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-10-08T13:23:31.473+08:00  INFO 75624 --- [pet-platform-backend] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.24]
+2026-10-08T13:23:31.501+08:00  INFO 75624 --- [pet-platform-backend] [           main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 937 ms
+2026-10-08T13:23:31.666+08:00  INFO 75624 --- [pet-platform-backend] [           main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:postgresql://localhost:53152/p03_technical_fixture (PostgreSQL 17.11)
+2026-10-08T13:23:31.696+08:00  INFO 75624 --- [pet-platform-backend] [           main] o.f.c.i.s.JdbcTableSchemaHistory         : Schema history table "public"."flyway_schema_history" does not exist yet
+2026-10-08T13:23:31.698+08:00  INFO 75624 --- [pet-platform-backend] [           main] o.f.core.internal.command.DbValidate     : Successfully validated 1 migration (execution time 00:00.011s)
+2026-10-08T13:23:31.712+08:00  INFO 75624 --- [pet-platform-backend] [           main] o.f.c.i.s.JdbcTableSchemaHistory         : Creating Schema History table "public"."flyway_schema_history" ...
+2026-10-08T13:23:31.751+08:00  INFO 75624 --- [pet-platform-backend] [           main] o.f.core.internal.command.DbMigrate      : Current version of schema "public": << Empty Schema >>
+2026-10-08T13:23:31.772+08:00  INFO 75624 --- [pet-platform-backend] [           main] o.f.core.internal.command.DbMigrate      : Migrating schema "public" to version "1 - platform identity foundation"
+2026-10-08T13:23:31.781+08:00  WARN 75624 --- [pet-platform-backend] [           main] o.f.c.i.s.DefaultSqlScriptExecutor       : DB: no privileges were granted for "public" (SQL State: 01007 - Error Code: 0)
+2026-10-08T13:23:31.840+08:00  INFO 75624 --- [pet-platform-backend] [           main] o.f.core.internal.command.DbMigrate      : Successfully applied 1 migration to schema "public", now at version v1 (execution time 00:00.057s)
+2026-10-08T13:23:32.121+08:00  WARN 75624 --- [pet-platform-backend] [           main] i.n.r.d.DnsServerAddressStreamProviders  : Can not find io.netty.resolver.dns.macos.MacOSDnsServerAddressStreamProvider in the classpath, fallback to system defaults. This may result in incorrect DNS resolutions on MacOS. Check whether you have a dependency on 'io.netty:netty-resolver-dns-native-macos'
+2026-10-08T13:23:32.495+08:00  INFO 75624 --- [pet-platform-backend] [           main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-10-08T13:23:32.524+08:00  INFO 75624 --- [pet-platform-backend] [           main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.24.Final
+2026-10-08T13:23:32.775+08:00  INFO 75624 --- [pet-platform-backend] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-10-08T13:23:32.792+08:00  INFO 75624 --- [pet-platform-backend] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-10-08T13:23:32.809+08:00  INFO 75624 --- [pet-platform-backend] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@5d71813b
+2026-10-08T13:23:32.810+08:00  INFO 75624 --- [pet-platform-backend] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-10-08T13:23:32.853+08:00  INFO 75624 --- [pet-platform-backend] [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:53152/p03_technical_fixture]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 17.11
+	Default catalog/schema: p03_technical_fixture/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-10-08T13:23:33.393+08:00  INFO 75624 --- [pet-platform-backend] [           main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-10-08T13:23:33.432+08:00  INFO 75624 --- [pet-platform-backend] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-10-08T13:23:33.804+08:00  INFO 75624 --- [pet-platform-backend] [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2026-10-08T13:23:33.846+08:00  INFO 75624 --- [pet-platform-backend] [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 53170 (http) with context path '/'
+2026-10-08T13:23:33.853+08:00  INFO 75624 --- [pet-platform-backend] [           main] c.p.t.a.StaffAuthenticationIT            : Started StaffAuthenticationIT in 3.795 seconds (process running for 7.038)
+OpenJDK 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
+2026-10-08T13:23:34.492+08:00  INFO 75624 --- [pet-platform-backend] [1-auto-1-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-10-08T13:23:34.492+08:00  INFO 75624 --- [pet-platform-backend] [1-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-10-08T13:23:34.493+08:00  INFO 75624 --- [pet-platform-backend] [1-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2026-10-08T13:23:35.203+08:00 ERROR 75624 --- [pet-platform-backend] [1-auto-1-exec-4] c.p.p.s.e.GlobalExceptionHandler         : 请求处理失败，traceId=3708269bc0114bea824afea35d6b9e24，异常类型=org.springframework.http.converter.HttpMessageNotWritableException
+2026-10-08T13:23:36.052+08:00 ERROR 75624 --- [pet-platform-backend] [1-auto-1-exec-1] c.p.p.s.e.GlobalExceptionHandler         : 请求处理失败，traceId=b465c78c8d6c4ec993ad1173cd58abd2，异常类型=org.springframework.http.converter.HttpMessageNotWritableException
+2026-10-08T13:23:36.532+08:00 ERROR 75624 --- [pet-platform-backend] [1-auto-1-exec-4] c.p.p.s.e.GlobalExceptionHandler         : 请求处理失败，traceId=4a05aae1cf474932812f145ed1084a28，异常类型=java.lang.IllegalStateException
+2026-10-08T13:23:37.738+08:00 ERROR 75624 --- [pet-platform-backend] [1-auto-1-exec-8] c.p.p.s.e.GlobalExceptionHandler         : 请求处理失败，traceId=f647cd78dad24fe6852c44d033d6523b，异常类型=org.springframework.http.converter.HttpMessageNotWritableException
+2026-10-08T13:23:38.828+08:00 ERROR 75624 --- [pet-platform-backend] [1-auto-1-exec-5] c.p.p.s.e.GlobalExceptionHandler         : 请求处理失败，traceId=46733dc126174fe38587991c9f3224e9，异常类型=org.springframework.http.converter.HttpMessageNotWritableException
+2026-10-08T13:23:42.475+08:00 ERROR 75624 --- [pet-platform-backend] [1-auto-1-exec-7] c.p.p.s.e.GlobalExceptionHandler         : 请求处理失败，traceId=8a1512a06e1449a89e0bc5ebb17f1ca0，异常类型=org.springframework.http.converter.HttpMessageNotWritableException
+2026-10-08T13:23:42.959+08:00 ERROR 75624 --- [pet-platform-backend] [-auto-1-exec-10] c.p.p.s.e.GlobalExceptionHandler         : 请求处理失败，traceId=f25c3aac9bcc4d6b944979be0ab88680，异常类型=org.springframework.http.converter.HttpMessageNotWritableException
+2026-10-08T13:23:43.078+08:00 ERROR 75624 --- [pet-platform-backend] [1-auto-1-exec-1] c.p.p.s.e.GlobalExceptionHandler         : 请求处理失败，traceId=ef7bd8ab3bb2484b99e92ba140833805，异常类型=org.springframework.http.converter.HttpMessageNotWritableException
+2026-10-08T13:23:43.770+08:00 ERROR 75624 --- [pet-platform-backend] [1-auto-1-exec-9] c.p.p.s.e.GlobalExceptionHandler         : 请求处理失败，traceId=ae012c30fb694ae0887f84b2b0eeac91，异常类型=org.springframework.http.converter.HttpMessageNotWritableException
+2026-10-08T13:23:44.291+08:00 ERROR 75624 --- [pet-platform-backend] [1-auto-1-exec-5] c.p.p.s.e.GlobalExceptionHandler         : 请求处理失败，traceId=1df955a7bc964f3eafd4d287bd9e7772，异常类型=org.springframework.http.converter.HttpMessageNotWritableException
+[ERROR] Tests run: 29, Failures: 9, Errors: 0, Skipped: 0, Time elapsed: 16.86 s <<< FAILURE! -- in com.pet.testing.authentication.StaffAuthenticationIT
+[ERROR] com.pet.testing.authentication.StaffAuthenticationIT.webAndMiniLogoutAreDeviceIsolated -- Time elapsed: 0.147 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <200> but was: <500>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:158)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:139)
+	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:201)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:152)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:147)
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:558)
+	at com.pet.testing.authentication.StaffAuthenticationIT.pre(StaffAuthenticationIT.java:65)
+	at com.pet.testing.authentication.StaffAuthenticationIT.web(StaffAuthenticationIT.java:66)
+	at com.pet.testing.authentication.StaffAuthenticationIT.webAndMiniLogoutAreDeviceIsolated(StaffAuthenticationIT.java:80)
+
+[ERROR] com.pet.testing.authentication.StaffAuthenticationIT.cookieAttributesAndWebBodyContainNoToken -- Time elapsed: 0.133 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <200> but was: <500>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:158)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:139)
+	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:201)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:152)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:147)
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:558)
+	at com.pet.testing.authentication.StaffAuthenticationIT.pre(StaffAuthenticationIT.java:65)
+	at com.pet.testing.authentication.StaffAuthenticationIT.cookieAttributesAndWebBodyContainNoToken(StaffAuthenticationIT.java:74)
+
+[ERROR] com.pet.testing.authentication.StaffAuthenticationIT.miniRejectsWebCookiesAndWebRejectsMiniToken -- Time elapsed: 0.128 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <200> but was: <500>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:158)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:139)
+	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:201)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:152)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:147)
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:558)
+	at com.pet.testing.authentication.StaffAuthenticationIT.pre(StaffAuthenticationIT.java:65)
+	at com.pet.testing.authentication.StaffAuthenticationIT.web(StaffAuthenticationIT.java:66)
+	at com.pet.testing.authentication.StaffAuthenticationIT.miniRejectsWebCookiesAndWebRejectsMiniToken(StaffAuthenticationIT.java:82)
+
+[ERROR] com.pet.testing.authentication.StaffAuthenticationIT.credentialAmbiguityDomainAndHeaderGrammar -- Time elapsed: 0.109 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <200> but was: <500>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:158)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:139)
+	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:201)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:152)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:147)
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:558)
+	at com.pet.testing.authentication.StaffAuthenticationIT.pre(StaffAuthenticationIT.java:65)
+	at com.pet.testing.authentication.StaffAuthenticationIT.web(StaffAuthenticationIT.java:66)
+	at com.pet.testing.authentication.StaffAuthenticationIT.credentialAmbiguityDomainAndHeaderGrammar(StaffAuthenticationIT.java:81)
+
+[ERROR] com.pet.testing.authentication.StaffAuthenticationIT.sourceRequiredAndExactRefererFallback -- Time elapsed: 0.219 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <200> but was: <500>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:158)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:139)
+	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:201)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:152)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:147)
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:558)
+	at com.pet.testing.authentication.StaffAuthenticationIT.pre(StaffAuthenticationIT.java:65)
+	at com.pet.testing.authentication.StaffAuthenticationIT.sourceRequiredAndExactRefererFallback(StaffAuthenticationIT.java:77)
+
+[ERROR] com.pet.testing.authentication.StaffAuthenticationIT.webLogoutInvalidatesCookieAndCsrf -- Time elapsed: 0.120 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <200> but was: <500>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:158)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:139)
+	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:201)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:152)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:147)
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:558)
+	at com.pet.testing.authentication.StaffAuthenticationIT.pre(StaffAuthenticationIT.java:65)
+	at com.pet.testing.authentication.StaffAuthenticationIT.web(StaffAuthenticationIT.java:66)
+	at com.pet.testing.authentication.StaffAuthenticationIT.webLogoutInvalidatesCookieAndCsrf(StaffAuthenticationIT.java:78)
+
+[ERROR] com.pet.testing.authentication.StaffAuthenticationIT.csrfRotationAndSessionFixationProtection -- Time elapsed: 0.118 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <200> but was: <500>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:158)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:139)
+	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:201)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:152)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:147)
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:558)
+	at com.pet.testing.authentication.StaffAuthenticationIT.pre(StaffAuthenticationIT.java:65)
+	at com.pet.testing.authentication.StaffAuthenticationIT.web(StaffAuthenticationIT.java:66)
+	at com.pet.testing.authentication.StaffAuthenticationIT.csrfRotationAndSessionFixationProtection(StaffAuthenticationIT.java:79)
+
+[ERROR] com.pet.testing.authentication.StaffAuthenticationIT.expiredAnonymousCsrfRejected -- Time elapsed: 0.109 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <200> but was: <500>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:158)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:139)
+	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:201)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:152)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:147)
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:558)
+	at com.pet.testing.authentication.StaffAuthenticationIT.pre(StaffAuthenticationIT.java:65)
+	at com.pet.testing.authentication.StaffAuthenticationIT.expiredAnonymousCsrfRejected(StaffAuthenticationIT.java:76)
+
+[ERROR] com.pet.testing.authentication.StaffAuthenticationIT.missingAndWrongCsrfRejected -- Time elapsed: 0.128 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <200> but was: <500>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:158)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:139)
+	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:201)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:152)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:147)
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:558)
+	at com.pet.testing.authentication.StaffAuthenticationIT.pre(StaffAuthenticationIT.java:65)
+	at com.pet.testing.authentication.StaffAuthenticationIT.missingAndWrongCsrfRejected(StaffAuthenticationIT.java:75)
+
+[INFO] 
+[INFO] Results:
+[INFO] 
+[ERROR] Failures: 
+[ERROR]   StaffAuthenticationIT.cookieAttributesAndWebBodyContainNoToken:74->pre:65 expected: <200> but was: <500>
+[ERROR]   StaffAuthenticationIT.credentialAmbiguityDomainAndHeaderGrammar:81->web:66->pre:65 expected: <200> but was: <500>
+[ERROR]   StaffAuthenticationIT.csrfRotationAndSessionFixationProtection:79->web:66->pre:65 expected: <200> but was: <500>
+[ERROR]   StaffAuthenticationIT.expiredAnonymousCsrfRejected:76->pre:65 expected: <200> but was: <500>
+[ERROR]   StaffAuthenticationIT.miniRejectsWebCookiesAndWebRejectsMiniToken:82->web:66->pre:65 expected: <200> but was: <500>
+[ERROR]   StaffAuthenticationIT.missingAndWrongCsrfRejected:75->pre:65 expected: <200> but was: <500>
+[ERROR]   StaffAuthenticationIT.sourceRequiredAndExactRefererFallback:77->pre:65 expected: <200> but was: <500>
+[ERROR]   StaffAuthenticationIT.webAndMiniLogoutAreDeviceIsolated:80->web:66->pre:65 expected: <200> but was: <500>
+[ERROR]   StaffAuthenticationIT.webLogoutInvalidatesCookieAndCsrf:78->web:66->pre:65 expected: <200> but was: <500>
+[INFO] 
+[ERROR] Tests run: 29, Failures: 9, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] 
+[INFO] --- failsafe:3.5.6:verify (default) @ pet-platform-backend ---
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  21.686 s
+[INFO] Finished at: 2026-10-08T13:23:45+08:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-failsafe-plugin:3.5.6:verify (default) on project pet-platform-backend: There are test failures.
+[ERROR] 
+[ERROR] See /Users/kimwell/work/pet-platform/apps/backend/target/failsafe-reports for the individual test results.
+[ERROR] See dump files (if any exist) [date].dump, [date]-jvmRun[N].dump and [date].dumpstream.
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException

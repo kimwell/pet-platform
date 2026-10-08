@@ -13,7 +13,7 @@ public final class TrustedTenantExecutor {
     public <T> T execute(String permissionCode, Supplier<T> action) {
         if (TenantContextHolder.current().isPresent()) throw new TenantAccessDeniedException();
         var principal = provider.currentPrincipal().orElseThrow(() -> new BusinessException(ErrorCode.AUTH_REQUIRED));
-        var boundary = TenantExecutionScope.openIdentity(principal);
+        var boundary = (provider instanceof com.pet.platform.shared.security.SessionPrincipalProvider ? TenantExecutionScope.openSessionIdentity(principal) : TenantExecutionScope.openIdentity(principal));
         try (var scope = TenantExecutionScope.forPermission(permissionCode)) { return action.get(); }
         finally { boundary.finishBoundary(); }
     }

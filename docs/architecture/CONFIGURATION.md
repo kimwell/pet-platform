@@ -65,3 +65,9 @@ TenantTaskExecutor只有显式Bean，线程/队列/快照期限/停止等待有�
 ## P05-01 正式身份执行配置
 
 现有数据库输入新增显式独立迁移PET_MIGRATION_DATABASE_*，启用启动迁移时必填且目标URL与运行URL一致；禁止凭据回退。prod仍独立命令迁移、普通Application只validate。初始化另用PET_BOOTSTRAP_DATABASE_*，只独立bootstrap命令读取；初始密码不来自应用环境或参数，普通启动没有自动初始化能力。真实输入和命令见[初始化说明](../development/IDENTITY-BOOTSTRAP.md)、[本地开发](../development/LOCAL-DEVELOPMENT.md)。容器验证不代表正式部署；未创建真实本地管理员。
+
+## P05-02 认证实际配置（2026-10-08）
+
+Sa-Token STAFF真实Redis会话是必需安全基础设施，AuthenticationRedis使用已配置的受限单节点Redis连接，独立命名空间/固定JSON线模型；没有内存回退。`pet.auth.cookie-secure`基础默认true，local显式false、prod拒绝false；生产名称由Secure决定，不接受任意Cookie名称覆盖。`server.forward-headers-strategy=none`且启动校验，当前不支持启用转发Header，来源以固定pet.public-origin校验。
+
+会话数值由代码冻结；`pet.auth.web-absolute-seconds/web-idle-seconds/mini-absolute-seconds/mini-idle-seconds`仅test环境可作短期限验收，其他环境拒绝覆盖冻结值。生产部署仍须HTTPS、受限代理网络、Redis TLS/ACL与日志屏蔽专项验收。实际值和行为不在本表重复，以[认证](AUTHENTICATION.md)、[本地开发](../development/LOCAL-DEVELOPMENT.md)和[P05-02](../testing/P05-02-VERIFICATION.md)为准。跨源CORS仍关闭。

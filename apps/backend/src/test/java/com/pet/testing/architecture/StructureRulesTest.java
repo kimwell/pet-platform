@@ -138,7 +138,7 @@ class StructureRulesTest {
                     || target.equals("jakarta/persistence/Query") || target.equals("jakarta/persistence/TypedQuery")
                     || target.startsWith("org/hibernate/Session") || target.startsWith("org/springframework/jdbc/")
                     || target.startsWith("java/sql/") || target.equals("javax/sql/DataSource");
-            boolean redisImplementation = Set.of(ROOT + "shared/redis/RedisValueStore", ROOT + "shared/redis/RedisConfiguration").contains(symbols.name());
+            boolean redisImplementation = Set.of(ROOT + "shared/redis/RedisValueStore", ROOT + "shared/redis/RedisConfiguration", ROOT + "identity/infrastructure/session/AuthenticationRedis", ROOT + "identity/infrastructure/session/AuthenticationConfiguration").contains(symbols.name());
             boolean rawRedis = target.startsWith("org/springframework/data/redis/") || target.startsWith("io/lettuce/") || target.startsWith("redis/clients/");
             boolean asyncImplementation = symbols.name().equals(ROOT + "shared/tenancy/TenantTaskExecutor") || symbols.name().startsWith(ROOT + "shared/tenancy/TenantTaskExecutor$");
             boolean rawAsync = target.startsWith("java/util/concurrent/Executor") || target.equals("java/util/concurrent/ThreadPoolExecutor")
@@ -146,13 +146,19 @@ class StructureRulesTest {
                     || target.equals("java/util/concurrent/ScheduledExecutorService") || target.equals("java/util/concurrent/ScheduledThreadPoolExecutor")
                     || target.equals("java/util/Timer") || target.equals("org/springframework/scheduling/annotation/Async")
                     || target.startsWith("org/springframework/core/task/") || target.startsWith("org/springframework/scheduling/concurrent/");
+            boolean saAdapter = symbols.name().startsWith(ROOT + "identity/infrastructure/session/");
+            boolean rawSa = target.startsWith("cn/dev33/satoken/");
+            boolean restrictedSession = target.startsWith(ROOT + "identity/infrastructure/session/");
             boolean restrictedAuthentication = target.startsWith(ROOT + "identity/application/authentication/") || target.equals(ROOT + "identity/infrastructure/AuthenticationJdbc");
             boolean authenticationCaller = symbols.name().startsWith(ROOT + "identity/application/authentication/")
                     || symbols.name().equals(ROOT + "identity/infrastructure/AuthenticationJdbc")
-                    || symbols.name().startsWith(ROOT + "identity/api/authentication/");
+                    || symbols.name().startsWith(ROOT + "identity/api/authentication/")
+                    || symbols.name().startsWith(ROOT + "identity/infrastructure/session/");
             boolean restrictedBootstrap = target.startsWith(ROOT + "identity/application/bootstrap/") || target.startsWith(ROOT + "identity/infrastructure/bootstrap/");
             boolean bootstrapCaller = symbols.name().startsWith(ROOT + "identity/application/bootstrap/") || symbols.name().startsWith(ROOT + "identity/infrastructure/bootstrap/");
-            if (restrictedAuthentication && !authenticationCaller) rule = "未批准调用认证前身份入口";
+            if (rawSa && !saAdapter && !symbols.name().equals(ROOT + "Application")) rule = "绕过身份会话适配器";
+            else if (restrictedSession && !saAdapter && !symbols.name().equals(ROOT + "Application")) rule = "绕过身份会话适配器";
+            else if (restrictedAuthentication && !authenticationCaller) rule = "未批准调用认证前身份入口";
             else if (restrictedBootstrap && !bootstrapCaller) rule = "未批准调用初始化入口";
             else if (rawRedis && !redisImplementation) rule = "绕过受控Redis访问";
             else if (target.startsWith("org/springframework/cache/")) rule = "当前禁止授权结果通用缓存";
@@ -205,7 +211,7 @@ class StructureRulesTest {
                 errors.add("直接操作上下文底层存储：" + symbols.name() + " -> " + call);
             }
             if (call.equals(ROOT + "shared/tenancy/TenantExecutionScope#openIdentity")
-                    && !Set.of(ROOT + "shared/tenancy/TenantContextFilter", ROOT + "shared/tenancy/TrustedTenantExecutor").contains(symbols.name())) {
+                    && !Set.of(ROOT + "shared/tenancy/TenantContextFilter", ROOT + "shared/tenancy/TrustedTenantExecutor", ROOT + "shared/tenancy/TenantExecutionScope").contains(symbols.name())) {
                 errors.add("绕过可信身份入口：" + symbols.name());
             }
             boolean taskExecutor = symbols.name().equals(ROOT + "shared/tenancy/TenantTaskExecutor") || symbols.name().startsWith(ROOT + "shared/tenancy/TenantTaskExecutor$");

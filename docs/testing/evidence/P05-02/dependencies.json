@@ -1,0 +1,12 @@
+{
+  "cwd": "/Users/kimwell/work/pet-platform/apps/backend",
+  "argv": [
+    "./mvnw",
+    "dependency:tree",
+    "-DoutputFile=/Users/kimwell/work/pet-platform/docs/testing/evidence/P05-02/backend-dependency-tree.txt"
+  ],
+  "exitCode": 0,
+  "startedAtUTC": "2026-10-08T05:38:32.898182+00:00",
+  "finishedAtUTC": "2026-10-08T05:38:35.689460+00:00",
+  "log": "dependencies.log"
+}

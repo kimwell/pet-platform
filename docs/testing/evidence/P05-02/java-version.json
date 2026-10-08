@@ -1,0 +1,11 @@
+{
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "argv": [
+    "/private/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/pet-platform-p02-02-_qb1x3n7/tools/jdk/jdk-21.0.12.1+1/Contents/Home/bin/java",
+    "-version"
+  ],
+  "exitCode": 0,
+  "startedAtUTC": "2026-10-08T05:41:21.132404+00:00",
+  "finishedAtUTC": "2026-10-08T05:41:21.179701+00:00",
+  "log": "java-version.log"
+}

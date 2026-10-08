@@ -1,0 +1,134 @@
+{
+  "paths": {
+    "/api/admin/auth/csrf": {
+      "get": {
+        "security": [],
+        "responses": [
+          "200",
+          "400",
+          "401",
+          "403",
+          "422",
+          "429",
+          "503"
+        ],
+        "requiredHeaders": []
+      }
+    },
+    "/api/admin/auth/login": {
+      "post": {
+        "security": [],
+        "responses": [
+          "200",
+          "400",
+          "401",
+          "403",
+          "409",
+          "422",
+          "429",
+          "503"
+        ],
+        "requiredHeaders": [
+          "X-CSRF-Token"
+        ]
+      }
+    },
+    "/api/admin/auth/logout": {
+      "post": {
+        "security": [
+          {
+            "StaffCookie": []
+          },
+          {
+            "StaffToken": []
+          }
+        ],
+        "responses": [
+          "200",
+          "400",
+          "401",
+          "403",
+          "422",
+          "429",
+          "503"
+        ],
+        "requiredHeaders": []
+      }
+    },
+    "/api/admin/auth/me": {
+      "get": {
+        "security": [
+          {
+            "StaffCookie": []
+          },
+          {
+            "StaffToken": []
+          }
+        ],
+        "responses": [
+          "200",
+          "400",
+          "401",
+          "403",
+          "422",
+          "429",
+          "503"
+        ],
+        "requiredHeaders": []
+      }
+    },
+    "/api/admin/auth/token/login": {
+      "post": {
+        "security": [],
+        "responses": [
+          "200",
+          "400",
+          "401",
+          "403",
+          "409",
+          "422",
+          "429",
+          "503"
+        ],
+        "requiredHeaders": []
+      }
+    }
+  },
+  "schemes": {
+    "StaffCookie": {
+      "description": "生产Cookie；local HTTP使用pet_dev_staff_sid，写请求另需X-CSRF-Token及固定Origin/Referer",
+      "in": "cookie",
+      "name": "__Secure-pet_staff_sid",
+      "type": "apiKey"
+    },
+    "StaffToken": {
+      "description": "Bearer加一个空格再加原始opaque Token；与Cookie不能并存",
+      "in": "header",
+      "name": "X-Staff-Token",
+      "type": "apiKey"
+    }
+  },
+  "schemas": [
+    "ApiError",
+    "CsrfResult",
+    "CurrentIdentity",
+    "Failure",
+    "FieldErrorDetail",
+    "Grant",
+    "LoginInput",
+    "PageQuery",
+    "PageResponseFieldErrorDetail",
+    "Scope",
+    "ScopeData",
+    "SelfScope",
+    "StoresScope",
+    "SuccessCsrfResult",
+    "SuccessCurrentIdentity",
+    "SuccessFieldErrorDetail",
+    "SuccessTokenLoginResult",
+    "SuccessVoid",
+    "TenantScope",
+    "TokenLoginResult",
+    "TokenResult"
+  ]
+}

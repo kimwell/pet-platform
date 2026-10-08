@@ -20,6 +20,7 @@ public final class TenantExecutionScope implements AutoCloseable {
     private final TaskDeadline deadline;
     private final Map<String, String> previousMdc = new HashMap<>();
     private boolean closed;
+    private boolean sessionBacked;
 
     private TenantExecutionScope(TenantContext context, Map<String, DataScope> grants) {
         this(context, grants, TenantContextHolder.frame() == null ? null : TenantContextHolder.frame().deadline);
@@ -28,6 +29,7 @@ public final class TenantExecutionScope implements AutoCloseable {
     private TenantExecutionScope(TenantContext context, Map<String, DataScope> grants, TaskDeadline deadline) {
         this.previous = TenantContextHolder.frame(); this.context = context; this.grants = grants;
         this.deadline = deadline;
+        this.sessionBacked = previous != null && previous.sessionBacked;
         for (String key : MDC_KEYS) previousMdc.put(key, MDC.get(key));
         TenantContextHolder.replace(this);
         MDC.put("tenantId", context.tenantId().toString()); MDC.put("operatorId", context.principalId().toString());
@@ -41,6 +43,10 @@ public final class TenantExecutionScope implements AutoCloseable {
         return new TenantExecutionScope(new TenantContext(principal.tenantId(), principal.principalType(), principal.principalId(),
                 principal.sessionId(), principal.authorizationVersion(), null, null, principal.authorizedStoreIds(), null,
                 trace, TenantPurpose.AUTHORITY_READ), principal.grants());
+    }
+
+    static TenantExecutionScope openSessionIdentity(CurrentPrincipal principal) {
+        var frame=openIdentity(principal);frame.sessionBacked=true;return frame;
     }
 
     public static TenantExecutionScope forPermission(String permissionCode) {
@@ -82,6 +88,7 @@ public final class TenantExecutionScope implements AutoCloseable {
 
     static TaskDeadline captureTaskDeadline(long maxAgeNanos, java.util.function.LongSupplier ticker) {
         var frame = TenantContextHolder.frame(); TenantScopeGuard.requireBusiness();
+        if(frame.sessionBacked) throw new PermissionDeniedException();
         long remaining = frame.deadline == null ? maxAgeNanos : Math.min(maxAgeNanos, frame.deadline.remaining());
         var result = new TaskDeadline(ticker.getAsLong(), remaining, ticker);
         result.verify(); return result;

@@ -59,3 +59,9 @@ P05 提供权威主体状态、security/authorizationVersion、门店和角色�
 ## 新模块接入
 
 注入唯一登记的执行器，只在可信当前权限、事务完整完成后提交；输入最小且不可变；工作端代理用例新事务；资源层仍执行本次TENANT/STORES/SELF/门店和关联检查；检查Future/异常，定义拒绝/取消/停止/已提交副作用的业务处理；需要当前授权时先接P05权威能力，可靠性需求接P10。真实PostgreSQL/Redis范围及异常反例必须随模块补充，不能以基础测试通过推导全部未来业务安全。
+
+## P05-02 真实会话的明确限制（2026-10-08）
+
+当前选择**禁止真实会话授权快照**，尚未实现执行前撤销重验。生产STAFF Provider实现SessionPrincipalProvider标记；TenantContextFilter/TrustedTenantExecutor创建带会话来源标记的身份根，forPermission/narrow/门店选择均保持标记，captureTaskDeadline在入队前403 PERMISSION_DENIED。标记不来自请求，不向业务开放安装接口；因此真实用户任务不可能以30秒旧快照入队后继续执行，停用/退出无需等待30秒。
+
+此限制只针对新增真实会话来源；现有测试与明确内部技术Provider边界保持，submitUnscoped仍不授租户业务权限。没有系统任务伪装员工会话，也没有给所有任务加Token。以后用户任务需先实现原sessionId重验、当前安全状态/授权与捕获范围交集、当前权限扩大不得扩大任务授权，然后再建立范围/新事务；不得仅删除本限制。真实HTTP提交反例及原执行器回归见[P05-02](../testing/P05-02-VERIFICATION.md)。

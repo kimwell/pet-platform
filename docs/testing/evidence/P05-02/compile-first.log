@@ -1,0 +1,97 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ---------------< com.pet.platform:pet-platform-backend >----------------
+[INFO] Building pet-platform-backend 0.0.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ pet-platform-backend ---
+[INFO] Copying 3 resources from src/main/resources to target/classes
+[INFO] Copying 2 resources from src/main/resources to target/classes
+[INFO] 
+[INFO] --- compiler:3.14.1:compile (default-compile) @ pet-platform-backend ---
+[INFO] Recompiling the module because of added or removed source files.
+[INFO] Compiling 97 source files with javac [debug parameters release 21] to target/classes
+[INFO] /Users/kimwell/work/pet-platform/apps/backend/src/main/java/com/pet/platform/identity/api/authentication/StaffAuthenticationController.java: /Users/kimwell/work/pet-platform/apps/backend/src/main/java/com/pet/platform/identity/api/authentication/StaffAuthenticationController.java使用或覆盖了已过时的 API。
+[INFO] /Users/kimwell/work/pet-platform/apps/backend/src/main/java/com/pet/platform/identity/api/authentication/StaffAuthenticationController.java: 有关详细信息, 请使用 -Xlint:deprecation 重新编译。
+[INFO] /Users/kimwell/work/pet-platform/apps/backend/src/main/java/com/pet/platform/shared/openapi/OpenApiConfiguration.java: /Users/kimwell/work/pet-platform/apps/backend/src/main/java/com/pet/platform/shared/openapi/OpenApiConfiguration.java使用了未经检查或不安全的操作。
+[INFO] /Users/kimwell/work/pet-platform/apps/backend/src/main/java/com/pet/platform/shared/openapi/OpenApiConfiguration.java: 有关详细信息, 请使用 -Xlint:unchecked 重新编译。
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/main/java/com/pet/platform/identity/api/authentication/StaffAuthenticationController.java:[16,59] 找不到符号
+  符号: 变量 SecuritySchemeType
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/main/java/com/pet/platform/identity/api/authentication/StaffAuthenticationController.java:[16,77] 枚举批注值必须是枚举常量
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/main/java/com/pet/platform/identity/api/authentication/StaffAuthenticationController.java:[16,88] 找不到符号
+  符号: 变量 SecuritySchemeIn
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/main/java/com/pet/platform/identity/api/authentication/StaffAuthenticationController.java:[16,104] 枚举批注值必须是枚举常量
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/main/java/com/pet/platform/identity/api/authentication/StaffAuthenticationController.java:[17,44] 找不到符号
+  符号: 变量 SecuritySchemeType
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/main/java/com/pet/platform/identity/api/authentication/StaffAuthenticationController.java:[17,62] 枚举批注值必须是枚举常量
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/main/java/com/pet/platform/identity/api/authentication/StaffAuthenticationController.java:[17,73] 找不到符号
+  符号: 变量 SecuritySchemeIn
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/main/java/com/pet/platform/identity/api/authentication/StaffAuthenticationController.java:[17,89] 枚举批注值必须是枚举常量
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/main/java/com/pet/platform/identity/api/authentication/StaffAuthenticationController.java:[18,17] 对ApiResponse的引用不明确
+  io.swagger.v3.oas.annotations.responses 中的类 io.swagger.v3.oas.annotations.responses.ApiResponse 和 com.pet.platform.shared.api 中的类 com.pet.platform.shared.api.ApiResponse 都匹配
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/main/java/com/pet/platform/identity/api/authentication/StaffAuthenticationController.java:[19,6] 对ApiResponse的引用不明确
+  io.swagger.v3.oas.annotations.responses 中的类 io.swagger.v3.oas.annotations.responses.ApiResponse 和 com.pet.platform.shared.api 中的类 com.pet.platform.shared.api.ApiResponse 都匹配
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/main/java/com/pet/platform/identity/api/authentication/StaffAuthenticationController.java:[20,6] 对ApiResponse的引用不明确
+  io.swagger.v3.oas.annotations.responses 中的类 io.swagger.v3.oas.annotations.responses.ApiResponse 和 com.pet.platform.shared.api 中的类 com.pet.platform.shared.api.ApiResponse 都匹配
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/main/java/com/pet/platform/identity/api/authentication/StaffAuthenticationController.java:[21,6] 对ApiResponse的引用不明确
+  io.swagger.v3.oas.annotations.responses 中的类 io.swagger.v3.oas.annotations.responses.ApiResponse 和 com.pet.platform.shared.api 中的类 com.pet.platform.shared.api.ApiResponse 都匹配
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/main/java/com/pet/platform/identity/api/authentication/StaffAuthenticationController.java:[22,6] 对ApiResponse的引用不明确
+  io.swagger.v3.oas.annotations.responses 中的类 io.swagger.v3.oas.annotations.responses.ApiResponse 和 com.pet.platform.shared.api 中的类 com.pet.platform.shared.api.ApiResponse 都匹配
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/main/java/com/pet/platform/identity/api/authentication/StaffAuthenticationController.java:[23,6] 对ApiResponse的引用不明确
+  io.swagger.v3.oas.annotations.responses 中的类 io.swagger.v3.oas.annotations.responses.ApiResponse 和 com.pet.platform.shared.api 中的类 com.pet.platform.shared.api.ApiResponse 都匹配
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/main/java/com/pet/platform/identity/api/authentication/StaffAuthenticationController.java:[37,6] 对ApiResponse的引用不明确
+  io.swagger.v3.oas.annotations.responses 中的类 io.swagger.v3.oas.annotations.responses.ApiResponse 和 com.pet.platform.shared.api 中的类 com.pet.platform.shared.api.ApiResponse 都匹配
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/main/java/com/pet/platform/identity/api/authentication/StaffAuthenticationController.java:[40,6] 对ApiResponse的引用不明确
+  io.swagger.v3.oas.annotations.responses 中的类 io.swagger.v3.oas.annotations.responses.ApiResponse 和 com.pet.platform.shared.api 中的类 com.pet.platform.shared.api.ApiResponse 都匹配
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/main/java/com/pet/platform/identity/api/authentication/StaffAuthenticationController.java:[16,112] 批注@io.swagger.v3.oas.annotations.security.SecurityScheme中的元素 'name' 重复。
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/main/java/com/pet/platform/identity/api/authentication/StaffAuthenticationController.java:[17,97] 批注@io.swagger.v3.oas.annotations.security.SecurityScheme中的元素 'name' 重复。
+[INFO] 18 errors 
+[INFO] -------------------------------------------------------------
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  2.101 s
+[INFO] Finished at: 2026-10-08T13:20:25+08:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.14.1:compile (default-compile) on project pet-platform-backend: Compilation failure: Compilation failure: 
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/main/java/com/pet/platform/identity/api/authentication/StaffAuthenticationController.java:[16,59] 找不到符号
+[ERROR]   符号: 变量 SecuritySchemeType
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/main/java/com/pet/platform/identity/api/authentication/StaffAuthenticationController.java:[16,77] 枚举批注值必须是枚举常量
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/main/java/com/pet/platform/identity/api/authentication/StaffAuthenticationController.java:[16,88] 找不到符号
+[ERROR]   符号: 变量 SecuritySchemeIn
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/main/java/com/pet/platform/identity/api/authentication/StaffAuthenticationController.java:[16,104] 枚举批注值必须是枚举常量
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/main/java/com/pet/platform/identity/api/authentication/StaffAuthenticationController.java:[17,44] 找不到符号
+[ERROR]   符号: 变量 SecuritySchemeType
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/main/java/com/pet/platform/identity/api/authentication/StaffAuthenticationController.java:[17,62] 枚举批注值必须是枚举常量
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/main/java/com/pet/platform/identity/api/authentication/StaffAuthenticationController.java:[17,73] 找不到符号
+[ERROR]   符号: 变量 SecuritySchemeIn
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/main/java/com/pet/platform/identity/api/authentication/StaffAuthenticationController.java:[17,89] 枚举批注值必须是枚举常量
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/main/java/com/pet/platform/identity/api/authentication/StaffAuthenticationController.java:[18,17] 对ApiResponse的引用不明确
+[ERROR]   io.swagger.v3.oas.annotations.responses 中的类 io.swagger.v3.oas.annotations.responses.ApiResponse 和 com.pet.platform.shared.api 中的类 com.pet.platform.shared.api.ApiResponse 都匹配
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/main/java/com/pet/platform/identity/api/authentication/StaffAuthenticationController.java:[19,6] 对ApiResponse的引用不明确
+[ERROR]   io.swagger.v3.oas.annotations.responses 中的类 io.swagger.v3.oas.annotations.responses.ApiResponse 和 com.pet.platform.shared.api 中的类 com.pet.platform.shared.api.ApiResponse 都匹配
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/main/java/com/pet/platform/identity/api/authentication/StaffAuthenticationController.java:[20,6] 对ApiResponse的引用不明确
+[ERROR]   io.swagger.v3.oas.annotations.responses 中的类 io.swagger.v3.oas.annotations.responses.ApiResponse 和 com.pet.platform.shared.api 中的类 com.pet.platform.shared.api.ApiResponse 都匹配
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/main/java/com/pet/platform/identity/api/authentication/StaffAuthenticationController.java:[21,6] 对ApiResponse的引用不明确
+[ERROR]   io.swagger.v3.oas.annotations.responses 中的类 io.swagger.v3.oas.annotations.responses.ApiResponse 和 com.pet.platform.shared.api 中的类 com.pet.platform.shared.api.ApiResponse 都匹配
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/main/java/com/pet/platform/identity/api/authentication/StaffAuthenticationController.java:[22,6] 对ApiResponse的引用不明确
+[ERROR]   io.swagger.v3.oas.annotations.responses 中的类 io.swagger.v3.oas.annotations.responses.ApiResponse 和 com.pet.platform.shared.api 中的类 com.pet.platform.shared.api.ApiResponse 都匹配
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/main/java/com/pet/platform/identity/api/authentication/StaffAuthenticationController.java:[23,6] 对ApiResponse的引用不明确
+[ERROR]   io.swagger.v3.oas.annotations.responses 中的类 io.swagger.v3.oas.annotations.responses.ApiResponse 和 com.pet.platform.shared.api 中的类 com.pet.platform.shared.api.ApiResponse 都匹配
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/main/java/com/pet/platform/identity/api/authentication/StaffAuthenticationController.java:[37,6] 对ApiResponse的引用不明确
+[ERROR]   io.swagger.v3.oas.annotations.responses 中的类 io.swagger.v3.oas.annotations.responses.ApiResponse 和 com.pet.platform.shared.api 中的类 com.pet.platform.shared.api.ApiResponse 都匹配
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/main/java/com/pet/platform/identity/api/authentication/StaffAuthenticationController.java:[40,6] 对ApiResponse的引用不明确
+[ERROR]   io.swagger.v3.oas.annotations.responses 中的类 io.swagger.v3.oas.annotations.responses.ApiResponse 和 com.pet.platform.shared.api 中的类 com.pet.platform.shared.api.ApiResponse 都匹配
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/main/java/com/pet/platform/identity/api/authentication/StaffAuthenticationController.java:[16,112] 批注@io.swagger.v3.oas.annotations.security.SecurityScheme中的元素 'name' 重复。
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/main/java/com/pet/platform/identity/api/authentication/StaffAuthenticationController.java:[17,97] 批注@io.swagger.v3.oas.annotations.security.SecurityScheme中的元素 'name' 重复。
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException

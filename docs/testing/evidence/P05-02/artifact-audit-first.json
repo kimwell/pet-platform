@@ -1,0 +1,17 @@
+{
+  "jar": "/Users/kimwell/work/pet-platform/apps/backend/target/pet-platform-backend-0.0.0-SNAPSHOT.jar",
+  "sha256": "adcf521ebd341d95758f56cb26d1fd2e7f40c6dbdf88a1e4e0f5b43975e5dded",
+  "applicationClassEntries": 176,
+  "saTokenModules": [
+    "BOOT-INF/lib/sa-token-spring-boot4-starter-1.46.0.jar",
+    "BOOT-INF/lib/sa-token-spring-boot-webmvc-v3v4-common-1.46.0.jar",
+    "BOOT-INF/lib/sa-token-jakarta-servlet-1.46.0.jar",
+    "BOOT-INF/lib/sa-token-spring-boot-webmvc-reactor-v2v3v4-common-1.46.0.jar",
+    "BOOT-INF/lib/sa-token-jackson3-1.46.0.jar",
+    "BOOT-INF/lib/sa-token-redis-template-1.46.0.jar",
+    "BOOT-INF/lib/sa-token-core-1.46.0.jar"
+  ],
+  "testOrBrowserArtifacts": [],
+  "expectedProductionProviderIncluded": true,
+  "formalMigrationIncluded": false
+}

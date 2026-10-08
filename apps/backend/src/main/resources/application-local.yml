@@ -1,4 +1,6 @@
 pet:
+  auth:
+    cookie-secure: false
   environment: local
   # 仅 local 的公开开发来源允许默认值；没有密码或生产回退。
   public-origin: ${PET_PUBLIC_ORIGIN:http://localhost:5173}
