@@ -1,0 +1,13 @@
+{
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "command": [
+    "pnpm",
+    "--filter",
+    "@pet/admin-web",
+    "typecheck"
+  ],
+  "exitCode": 2,
+  "durationSeconds": 4.24,
+  "log": "typecheck-initial.log",
+  "summary": "uth: AuthService; }, AnyContext, ... 7 more ..., undefined>; history: RouterHistory; isServer: true; }' but required in type '{ context: { queryClient: QueryClient; auth: AuthService; }; }'.\nsrc/app/router/router.test.tsx(13,40): error TS2345: Argument of type '{ routeTree: Route<Register, any, \"/\", \"/\", string, \"__root__\", undefined, {}, { queryClient: QueryClient; auth: AuthService; }, AnyContext, ... 7 more ..., undefined>; history: RouterHistory; isServer: true; }' is not assignable to parameter of type 'RouterConstructorOptions<Route<Register, any, \"/\", \"/\", string, \"__root__\", undefined, {}, { queryClient: QueryClient; auth: AuthService; }, AnyContext, ... 7 more ..., undefined>, \"never\", false, RouterHistory, Record<...>>'.\n  Property 'context' is missing in type '{ routeTree: Route<Register, any, \"/\", \"/\", string, \"__root__\", undefined, {}, { queryClient: QueryClient; auth: AuthService; }, AnyContext, ... 7 more ..., undefined>; history: RouterHistory; isServer: true; }' but required in type '{ context: { queryClient: QueryClient; auth: AuthService; }; }'.\nsrc/app/router/router.test.tsx(15,42): error TS2741: Property 'services' is missing in type '{ children: Element; }' but required in type '{ services: { queryClient: QueryClient; auth: AuthService; }; }'.\nsrc/app/router/router.test.tsx(21,42): error TS2741: Property 'services' is missing in type '{ children: Element; }' but required in type '{ services: { queryClient: QueryClient; auth: AuthService; }; }'.\nsrc/features/auth/pages/LoginPage.tsx(36,24): error TS2345: Argument of type '{ name: string; errors: string[]; }[]' is not assignable to parameter of type 'FieldData<{ loginName: string; password: string; tenantCode: string; }>[]'.\n  Type '{ name: string; errors: string[]; }' is not assignable to type 'FieldData<{ loginName: string; password: string; tenantCode: string; }>'.\n    Types of property 'name' are incompatible.\n      Type 'string' is not assignable to type '\"tenantCode\" | \"loginName\" | \"password\" | [\"tenantCode\"] | [\"loginName\"] | [\"password\"]'.\n/Users/kimwell/work/pet-platform/apps/admin-web:\n ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL  @pet/admin-web@0.0.0 typecheck: `tsc --noEmit`\nExit status 2\n"
+}

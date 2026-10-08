@@ -1,0 +1,1336 @@
+[
+  {
+    "method": "GET",
+    "path": "/api/admin/auth/me",
+    "csrfHeaderPresent": false,
+    "origin": null,
+    "startedAt": "2026-10-08T12:34:59.592Z",
+    "status": 401,
+    "traceId": "28ea0956ffdc4071844c0ae8737546b1",
+    "cookies": []
+  },
+  {
+    "method": "GET",
+    "path": "/api/admin/auth/me",
+    "csrfHeaderPresent": false,
+    "origin": null,
+    "startedAt": "2026-10-08T12:34:59.619Z",
+    "status": 401,
+    "traceId": "67171e71a3d442fcb462002888f533d5",
+    "cookies": []
+  },
+  {
+    "method": "GET",
+    "path": "/api/admin/auth/me",
+    "csrfHeaderPresent": false,
+    "origin": null,
+    "startedAt": "2026-10-08T12:35:04.157Z",
+    "status": 401,
+    "traceId": "db934a46c55546c9a3c420305ee75c67",
+    "cookies": []
+  },
+  {
+    "method": "GET",
+    "path": "/api/admin/auth/me",
+    "csrfHeaderPresent": false,
+    "origin": null,
+    "startedAt": "2026-10-08T12:35:04.206Z",
+    "status": 401,
+    "traceId": "70c2e2cc75d84f9a8af68e10bb76b388",
+    "cookies": []
+  },
+  {
+    "method": "GET",
+    "path": "/api/platform/auth/me",
+    "csrfHeaderPresent": false,
+    "origin": null,
+    "startedAt": "2026-10-08T12:35:15.461Z",
+    "status": 401,
+    "traceId": "21caf296fa6c4d269ed905077e0cd2b8",
+    "cookies": []
+  },
+  {
+    "method": "GET",
+    "path": "/api/platform/auth/me",
+    "csrfHeaderPresent": false,
+    "origin": null,
+    "startedAt": "2026-10-08T12:35:15.500Z",
+    "status": 401,
+    "traceId": "53b87964bf1b4fb79bc58d340662dcde",
+    "cookies": []
+  },
+  {
+    "method": "GET",
+    "path": "/api/admin/auth/me",
+    "csrfHeaderPresent": false,
+    "origin": null,
+    "startedAt": "2026-10-08T12:35:20.422Z",
+    "status": 401,
+    "traceId": "b12e6af65ab449aa98eb747462f32ecb",
+    "cookies": []
+  },
+  {
+    "method": "GET",
+    "path": "/api/admin/auth/me",
+    "csrfHeaderPresent": false,
+    "origin": null,
+    "startedAt": "2026-10-08T12:35:20.438Z",
+    "status": 401,
+    "traceId": "022d700e38e64b67ae8ed7686bda721d",
+    "cookies": []
+  },
+  {
+    "method": "GET",
+    "path": "/api/admin/auth/csrf",
+    "csrfHeaderPresent": false,
+    "origin": null,
+    "startedAt": "2026-10-08T12:35:21.153Z",
+    "status": 200,
+    "traceId": "fcf4367d4ed34c8887df297e0d72448a",
+    "cookies": [
+      {
+        "name": "pet_dev_staff_pre",
+        "attributes": [
+          "Path=/api/admin/",
+          "HttpOnly",
+          "SameSite=Lax"
+        ]
+      }
+    ]
+  },
+  {
+    "method": "POST",
+    "path": "/api/admin/auth/login",
+    "csrfHeaderPresent": true,
+    "origin": "http://127.0.0.1:5173",
+    "startedAt": "2026-10-08T12:35:21.330Z",
+    "status": 401,
+    "traceId": "4def02d5fb3e467294fdd18e9e0bae83",
+    "cookies": []
+  },
+  {
+    "method": "GET",
+    "path": "/api/admin/auth/me",
+    "csrfHeaderPresent": false,
+    "origin": null,
+    "startedAt": "2026-10-08T12:35:21.660Z",
+    "status": 401,
+    "traceId": "ac1bcf4e574649f7b6cc2cbec812a22c",
+    "cookies": []
+  },
+  {
+    "method": "GET",
+    "path": "/api/admin/auth/me",
+    "csrfHeaderPresent": false,
+    "origin": null,
+    "startedAt": "2026-10-08T12:35:21.705Z",
+    "status": 401,
+    "traceId": "c37db10efa504a15ab58643dc70213bc",
+    "cookies": []
+  },
+  {
+    "method": "GET",
+    "path": "/api/admin/auth/csrf",
+    "csrfHeaderPresent": false,
+    "origin": null,
+    "startedAt": "2026-10-08T12:35:53.305Z",
+    "status": 200,
+    "traceId": "a9e3fd0661854b36ae1c6941586b1fb8",
+    "cookies": []
+  },
+  {
+    "method": "POST",
+    "path": "/api/admin/auth/login",
+    "csrfHeaderPresent": true,
+    "origin": "http://127.0.0.1:5173",
+    "startedAt": "2026-10-08T12:35:53.343Z",
+    "status": 200,
+    "traceId": "46b86ae9e3e54bafb7f9d0bedfb8658d",
+    "cookies": [
+      {
+        "name": "pet_dev_staff_pre",
+        "attributes": [
+          "Path=/api/admin/",
+          "Max-Age=0",
+          "Expires=Thu, 01 Jan 1970 00:00:00 GMT",
+          "HttpOnly",
+          "SameSite=Lax"
+        ]
+      },
+      {
+        "name": "pet_dev_staff_sid",
+        "attributes": [
+          "Path=/api/admin/",
+          "HttpOnly",
+          "SameSite=Lax"
+        ]
+      }
+    ]
+  },
+  {
+    "method": "GET",
+    "path": "/api/admin/auth/csrf",
+    "csrfHeaderPresent": false,
+    "origin": null,
+    "startedAt": "2026-10-08T12:35:53.537Z",
+    "status": 200,
+    "traceId": "1896790a90aa48d5825e26d29a8e9586",
+    "cookies": []
+  },
+  {
+    "method": "GET",
+    "path": "/api/admin/auth/me",
+    "csrfHeaderPresent": false,
+    "origin": null,
+    "startedAt": "2026-10-08T12:35:53.562Z",
+    "status": 200,
+    "traceId": "af1d883cf4534066b54262d0a0902f7d",
+    "cookies": []
+  },
+  {
+    "method": "GET",
+    "path": "/api/admin/auth/me",
+    "csrfHeaderPresent": false,
+    "origin": null,
+    "startedAt": "2026-10-08T12:35:53.630Z",
+    "status": 200,
+    "traceId": "6f79505733a2494dbae44169ab0e2fc9",
+    "cookies": []
+  },
+  {
+    "method": "GET",
+    "path": "/api/admin/auth/me",
+    "csrfHeaderPresent": false,
+    "origin": null,
+    "startedAt": "2026-10-08T12:35:54.169Z",
+    "status": 200,
+    "traceId": "9ffb96b6c6d040bfa69a3f5dfcf1cf97",
+    "cookies": []
+  },
+  {
+    "method": "GET",
+    "path": "/api/admin/auth/me",
+    "csrfHeaderPresent": false,
+    "origin": null,
+    "startedAt": "2026-10-08T12:36:00.084Z",
+    "status": 200,
+    "traceId": "5277e37b05b7435c9f078dbb3c4f9288",
+    "cookies": []
+  },
+  {
+    "method": "GET",
+    "path": "/api/admin/auth/me",
+    "csrfHeaderPresent": false,
+    "origin": null,
+    "startedAt": "2026-10-08T12:36:00.602Z",
+    "status": 200,
+    "traceId": "9c10ea40a9b44b77b822e2483f827e03",
+    "cookies": []
+  },
+  {
+    "method": "GET",
+    "path": "/api/platform/auth/me",
+    "csrfHeaderPresent": false,
+    "origin": null,
+    "startedAt": "2026-10-08T12:36:06.681Z",
+    "status": 401,
+    "traceId": "7b28fb09089046408845868b490c4345",
+    "cookies": []
+  },
+  {
+    "method": "GET",
+    "path": "/api/platform/auth/me",
+    "csrfHeaderPresent": false,
+    "origin": null,
+    "startedAt": "2026-10-08T12:36:06.701Z",
+    "status": 401,
+    "traceId": "94bac2be8c934eac97f6372d0a8bba84",
+    "cookies": []
+  },
+  {
+    "method": "GET",
+    "path": "/api/platform/auth/me",
+    "csrfHeaderPresent": false,
+    "origin": null,
+    "startedAt": "2026-10-08T12:36:06.712Z",
+    "status": 401,
+    "traceId": "665ce10a636f45d0aee2f05f43ba405c",
+    "cookies": []
+  },
+  {
+    "method": "GET",
+    "path": "/api/platform/auth/csrf",
+    "csrfHeaderPresent": false,
+    "origin": null,
+    "startedAt": "2026-10-08T12:36:22.204Z",
+    "status": 200,
+    "traceId": "6835192201f440f38157b1cf144dc7d1",
+    "cookies": [
+      {
+        "name": "pet_dev_platform_pre",
+        "attributes": [
+          "Path=/api/platform/",
+          "HttpOnly",
+          "SameSite=Lax"
+        ]
+      }
+    ]
+  },
+  {
+    "method": "POST",
+    "path": "/api/platform/auth/login",
+    "csrfHeaderPresent": true,
+    "origin": "http://127.0.0.1:5173",
+    "startedAt": "2026-10-08T12:36:22.249Z",
+    "status": 200,
+    "traceId": "2749eaff7bb04dc793b3a136396412c3",
+    "cookies": [
+      {
+        "name": "pet_dev_platform_pre",
+        "attributes": [
+          "Path=/api/platform/",
+          "Max-Age=0",
+          "Expires=Thu, 01 Jan 1970 00:00:00 GMT",
+          "HttpOnly",
+          "SameSite=Lax"
+        ]
+      },
+      {
+        "name": "pet_dev_platform_sid",
+        "attributes": [
+          "Path=/api/platform/",
+          "HttpOnly",
+          "SameSite=Lax"
+        ]
+      }
+    ]
+  },
+  {
+    "method": "GET",
+    "path": "/api/platform/auth/csrf",
+    "csrfHeaderPresent": false,
+    "origin": null,
+    "startedAt": "2026-10-08T12:36:22.396Z",
+    "status": 200,
+    "traceId": "eadc3fafca6c4276afe0b4b7ec2920cb",
+    "cookies": []
+  },
+  {
+    "method": "GET",
+    "path": "/api/platform/auth/me",
+    "csrfHeaderPresent": false,
+    "origin": null,
+    "startedAt": "2026-10-08T12:36:22.418Z",
+    "status": 200,
+    "traceId": "e1da31d95e4e4775877fbf9798257cde",
+    "cookies": []
+  },
+  {
+    "method": "GET",
+    "path": "/api/platform/auth/me",
+    "csrfHeaderPresent": false,
+    "origin": null,
+    "startedAt": "2026-10-08T12:36:22.439Z",
+    "status": 200,
+    "traceId": "22e0fab7bdf6464aa119b85a91348661",
+    "cookies": []
+  },
+  {
+    "method": "GET",
+    "path": "/api/platform/auth/me",
+    "csrfHeaderPresent": false,
+    "origin": null,
+    "startedAt": "2026-10-08T12:36:22.990Z",
+    "status": 200,
+    "traceId": "0e13366bca3d4a50ab783c9c12dc2605",
+    "cookies": []
+  },
+  {
+    "method": "GET",
+    "path": "/api/platform/auth/me",
+    "csrfHeaderPresent": false,
+    "origin": null,
+    "startedAt": "2026-10-08T12:36:23.160Z",
+    "status": 200,
+    "traceId": "8735ee1b93eb4814830dfd99e5de33fb",
+    "cookies": []
+  },
+  {
+    "method": "GET",
+    "path": "/api/platform/auth/me",
+    "csrfHeaderPresent": false,
+    "origin": null,
+    "startedAt": "2026-10-08T12:36:23.669Z",
+    "status": 200,
+    "traceId": "0c6c8923dd644d0993527b17b93f91f8",
+    "cookies": []
+  },
+  {
+    "method": "GET",
+    "path": "/api/admin/auth/me",
+    "csrfHeaderPresent": false,
+    "origin": null,
+    "startedAt": "2026-10-08T12:36:52.300Z",
+    "status": 200,
+    "traceId": "80f84ee51a4e4984ba197c1de4718016",
+    "cookies": []
+  },
+  {
+    "method": "GET",
+    "path": "/api/admin/auth/me",
+    "csrfHeaderPresent": false,
+    "origin": null,
+    "startedAt": "2026-10-08T12:36:52.815Z",
+    "status": 200,
+    "traceId": "f5358baddc4e45e7b4d5b6d7d309d1f9",
+    "cookies": []
+  },
+  {
+    "method": "GET",
+    "path": "/api/admin/auth/csrf",
+    "csrfHeaderPresent": false,
+    "origin": null,
+    "startedAt": "2026-10-08T12:36:59.447Z",
+    "status": 200,
+    "traceId": "bdabf89896d247fd825f24292f1817dd",
+    "cookies": []
+  },
+  {
+    "method": "POST",
+    "path": "/api/admin/auth/logout",
+    "csrfHeaderPresent": true,
+    "origin": "http://127.0.0.1:5173",
+    "startedAt": "2026-10-08T12:36:59.464Z",
+    "status": 200,
+    "traceId": "b16b3cc9e3ca4a418b28a1b1b78e8871",
+    "cookies": [
+      {
+        "name": "pet_dev_staff_sid",
+        "attributes": [
+          "Path=/api/admin/",
+          "Max-Age=0",
+          "Expires=Thu, 01 Jan 1970 00:00:00 GMT",
+          "HttpOnly",
+          "SameSite=Lax"
+        ]
+      },
+      {
+        "name": "pet_dev_staff_pre",
+        "attributes": [
+          "Path=/api/admin/",
+          "Max-Age=0",
+          "Expires=Thu, 01 Jan 1970 00:00:00 GMT",
+          "HttpOnly",
+          "SameSite=Lax"
+        ]
+      }
+    ]
+  },
+  {
+    "method": "GET",
+    "path": "/api/admin/auth/me",
+    "csrfHeaderPresent": false,
+    "origin": null,
+    "startedAt": "2026-10-08T12:36:59.497Z",
+    "status": 401,
+    "traceId": "c609bf355e254150988070a23f2f38cf",
+    "cookies": []
+  },
+  {
+    "method": "GET",
+    "path": "/api/admin/auth/me",
+    "csrfHeaderPresent": false,
+    "origin": null,
+    "startedAt": "2026-10-08T12:36:59.506Z",
+    "status": 401,
+    "traceId": "f9a00d005e344310bfcaebe8102a8c81",
+    "cookies": []
+  },
+  {
+    "method": "GET",
+    "path": "/api/admin/auth/me",
+    "csrfHeaderPresent": false,
+    "origin": null,
+    "startedAt": "2026-10-08T12:37:00.076Z",
+    "status": 401,
+    "traceId": "17e10def26044a488ab1cdcac5955f3d",
+    "cookies": []
+  },
+  {
+    "method": "GET",
+    "path": "/api/platform/auth/me",
+    "csrfHeaderPresent": false,
+    "origin": null,
+    "startedAt": "2026-10-08T12:37:00.212Z",
+    "status": 200,
+    "traceId": "73d60a0c08004bb38b2ef27b08fc7b08",
+    "cookies": []
+  },
+  {
+    "method": "GET",
+    "path": "/api/platform/auth/me",
+    "csrfHeaderPresent": false,
+    "origin": null,
+    "startedAt": "2026-10-08T12:37:00.718Z",
+    "status": 200,
+    "traceId": "6634a2bc446a4616a59f7817a68080d0",
+    "cookies": []
+  },
+  {
+    "method": "GET",
+    "path": "/api/admin/auth/csrf",
+    "csrfHeaderPresent": false,
+    "origin": null,
+    "startedAt": "2026-10-08T12:37:18.496Z",
+    "status": 200,
+    "traceId": "9679ca83b0df46dc862152bb51127363",
+    "cookies": [
+      {
+        "name": "pet_dev_staff_pre",
+        "attributes": [
+          "Path=/api/admin/",
+          "HttpOnly",
+          "SameSite=Lax"
+        ]
+      }
+    ]
+  },
+  {
+    "method": "POST",
+    "path": "/api/admin/auth/login",
+    "csrfHeaderPresent": true,
+    "origin": "http://127.0.0.1:5173",
+    "startedAt": "2026-10-08T12:37:18.541Z",
+    "status": 200,
+    "traceId": "9e99418ba3e84c4380114922fbcece6b",
+    "cookies": [
+      {
+        "name": "pet_dev_staff_pre",
+        "attributes": [
+          "Path=/api/admin/",
+          "Max-Age=0",
+          "Expires=Thu, 01 Jan 1970 00:00:00 GMT",
+          "HttpOnly",
+          "SameSite=Lax"
+        ]
+      },
+      {
+        "name": "pet_dev_staff_sid",
+        "attributes": [
+          "Path=/api/admin/",
+          "HttpOnly",
+          "SameSite=Lax"
+        ]
+      }
+    ]
+  },
+  {
+    "method": "GET",
+    "path": "/api/admin/auth/csrf",
+    "csrfHeaderPresent": false,
+    "origin": null,
+    "startedAt": "2026-10-08T12:37:18.693Z",
+    "status": 200,
+    "traceId": "ad45310e081a4ee986d4d15f2d81eb7c",
+    "cookies": []
+  },
+  {
+    "method": "GET",
+    "path": "/api/admin/auth/me",
+    "csrfHeaderPresent": false,
+    "origin": null,
+    "startedAt": "2026-10-08T12:37:18.714Z",
+    "status": 200,
+    "traceId": "c802e82f9e5b4bb2ab4b2c137a2faa8d",
+    "cookies": []
+  },
+  {
+    "method": "GET",
+    "path": "/api/admin/auth/me",
+    "csrfHeaderPresent": false,
+    "origin": null,
+    "startedAt": "2026-10-08T12:37:18.736Z",
+    "status": 200,
+    "traceId": "fd9097a4bdcd44f0a1a3a2050440c1db",
+    "cookies": []
+  },
+  {
+    "method": "GET",
+    "path": "/api/admin/auth/me",
+    "csrfHeaderPresent": false,
+    "origin": null,
+    "startedAt": "2026-10-08T12:37:19.279Z",
+    "status": 200,
+    "traceId": "677231c66c8f40668effb501b7a3168b",
+    "cookies": []
+  },
+  {
+    "method": "GET",
+    "path": "/api/admin/auth/csrf",
+    "csrfHeaderPresent": false,
+    "origin": null,
+    "startedAt": "2026-10-08T12:37:30.808Z",
+    "status": 503,
+    "traceId": "71447bbfcabd479da718cc7281a959d1",
+    "cookies": []
+  },
+  {
+    "method": "GET",
+    "path": "/api/admin/auth/me",
+    "csrfHeaderPresent": false,
+    "origin": null,
+    "startedAt": "2026-10-08T12:37:32.827Z",
+    "status": 503,
+    "traceId": "95a73133d4a64a59bfde7b2a9211bf99",
+    "cookies": []
+  },
+  {
+    "method": "GET",
+    "path": "/api/admin/auth/me",
+    "csrfHeaderPresent": false,
+    "origin": null,
+    "startedAt": "2026-10-08T12:37:54.693Z",
+    "status": 200,
+    "traceId": "54c888b8c68a43bf9f5b8955207bc707",
+    "cookies": []
+  },
+  {
+    "method": "GET",
+    "path": "/api/admin/auth/me",
+    "csrfHeaderPresent": false,
+    "origin": null,
+    "startedAt": "2026-10-08T12:37:55.204Z",
+    "status": 200,
+    "traceId": "b529c22a206b433b89f0353cc5ce1c15",
+    "cookies": []
+  },
+  {
+    "method": "GET",
+    "path": "/api/admin/auth/csrf",
+    "csrfHeaderPresent": false,
+    "origin": null,
+    "startedAt": "2026-10-08T12:38:07.570Z",
+    "status": 200,
+    "traceId": "80097257c562461d9fa2e35aeaae42df",
+    "cookies": []
+  },
+  {
+    "method": "POST",
+    "path": "/api/admin/auth/logout",
+    "csrfHeaderPresent": true,
+    "origin": "http://127.0.0.1:5173",
+    "startedAt": "2026-10-08T12:38:07.588Z",
+    "status": 200,
+    "traceId": "dd06b015551c40a59ef930fa3064683e",
+    "cookies": [
+      {
+        "name": "pet_dev_staff_sid",
+        "attributes": [
+          "Path=/api/admin/",
+          "Max-Age=0",
+          "Expires=Thu, 01 Jan 1970 00:00:00 GMT",
+          "HttpOnly",
+          "SameSite=Lax"
+        ]
+      },
+      {
+        "name": "pet_dev_staff_pre",
+        "attributes": [
+          "Path=/api/admin/",
+          "Max-Age=0",
+          "Expires=Thu, 01 Jan 1970 00:00:00 GMT",
+          "HttpOnly",
+          "SameSite=Lax"
+        ]
+      }
+    ]
+  },
+  {
+    "method": "GET",
+    "path": "/api/admin/auth/me",
+    "csrfHeaderPresent": false,
+    "origin": null,
+    "startedAt": "2026-10-08T12:38:07.622Z",
+    "status": 401,
+    "traceId": "575cca50e5fc4723922b63f2491d8bc4",
+    "cookies": []
+  },
+  {
+    "method": "GET",
+    "path": "/api/admin/auth/me",
+    "csrfHeaderPresent": false,
+    "origin": null,
+    "startedAt": "2026-10-08T12:38:07.634Z",
+    "status": 401,
+    "traceId": "e6dc62ac342847ed8ec8bd8b58ac33a4",
+    "cookies": []
+  },
+  {
+    "method": "GET",
+    "path": "/api/admin/auth/me",
+    "csrfHeaderPresent": false,
+    "origin": null,
+    "startedAt": "2026-10-08T12:38:08.195Z",
+    "status": 401,
+    "traceId": "ef066f9fee2a473f813e6764c670f339",
+    "cookies": []
+  },
+  {
+    "method": "GET",
+    "path": "/api/platform/auth/csrf",
+    "csrfHeaderPresent": false,
+    "origin": null,
+    "startedAt": "2026-10-08T12:38:14.703Z",
+    "status": 200,
+    "traceId": "88a23602fd484fa289d21381517bde11",
+    "cookies": []
+  },
+  {
+    "method": "POST",
+    "path": "/api/platform/auth/logout",
+    "csrfHeaderPresent": true,
+    "origin": "http://127.0.0.1:5173",
+    "startedAt": "2026-10-08T12:38:14.719Z",
+    "status": 200,
+    "traceId": "7c2976a38dbc4b4cba51d9673ec5ce00",
+    "cookies": [
+      {
+        "name": "pet_dev_platform_sid",
+        "attributes": [
+          "Path=/api/platform/",
+          "Max-Age=0",
+          "Expires=Thu, 01 Jan 1970 00:00:00 GMT",
+          "HttpOnly",
+          "SameSite=Lax"
+        ]
+      },
+      {
+        "name": "pet_dev_platform_pre",
+        "attributes": [
+          "Path=/api/platform/",
+          "Max-Age=0",
+          "Expires=Thu, 01 Jan 1970 00:00:00 GMT",
+          "HttpOnly",
+          "SameSite=Lax"
+        ]
+      }
+    ]
+  },
+  {
+    "method": "GET",
+    "path": "/api/platform/auth/me",
+    "csrfHeaderPresent": false,
+    "origin": null,
+    "startedAt": "2026-10-08T12:38:14.751Z",
+    "status": 401,
+    "traceId": "189c2569bb074d1d818c2a7a1422ad48",
+    "cookies": []
+  },
+  {
+    "method": "GET",
+    "path": "/api/platform/auth/me",
+    "csrfHeaderPresent": false,
+    "origin": null,
+    "startedAt": "2026-10-08T12:38:14.758Z",
+    "status": 401,
+    "traceId": "67491211acd244b9adfa7a7fcd711412",
+    "cookies": []
+  },
+  {
+    "method": "GET",
+    "path": "/api/platform/auth/me",
+    "csrfHeaderPresent": false,
+    "origin": null,
+    "startedAt": "2026-10-08T12:38:15.319Z",
+    "status": 401,
+    "traceId": "644bc2af64bf4f1cb1b51bca2e38b3e8",
+    "cookies": []
+  },
+  {
+    "method": "GET",
+    "path": "/api/platform/auth/me",
+    "csrfHeaderPresent": false,
+    "origin": null,
+    "startedAt": "2026-10-08T12:38:15.398Z",
+    "status": 401,
+    "traceId": "d21db2d50959417fb3f458d93fd46810",
+    "cookies": []
+  },
+  {
+    "method": "GET",
+    "path": "/api/platform/auth/me",
+    "csrfHeaderPresent": false,
+    "origin": null,
+    "startedAt": "2026-10-08T12:38:15.408Z",
+    "status": 401,
+    "traceId": "9fd7eb264dac44d7943d4e8b1bfd8f08",
+    "cookies": []
+  },
+  {
+    "method": "GET",
+    "path": "/api/platform/auth/me",
+    "csrfHeaderPresent": false,
+    "origin": null,
+    "startedAt": "2026-10-08T12:38:15.416Z",
+    "status": 401,
+    "traceId": "919cbc7b08004f0590dc42ba9189c9bb",
+    "cookies": []
+  },
+  {
+    "method": "GET",
+    "path": "/api/platform/auth/me",
+    "csrfHeaderPresent": false,
+    "origin": null,
+    "startedAt": "2026-10-08T12:39:25.397Z",
+    "status": 401,
+    "traceId": "e0d6938ddcd34bd3a5de2f33f1607a1a",
+    "cookies": []
+  },
+  {
+    "method": "GET",
+    "path": "/api/platform/auth/me",
+    "csrfHeaderPresent": false,
+    "origin": null,
+    "startedAt": "2026-10-08T12:39:25.420Z",
+    "status": 401,
+    "traceId": "7c1fd249439e442da24aca230a0c6d0a",
+    "cookies": []
+  },
+  {
+    "method": "GET",
+    "path": "/api/platform/auth/me",
+    "csrfHeaderPresent": false,
+    "origin": null,
+    "startedAt": "2026-10-08T12:40:04.631Z",
+    "status": 401,
+    "traceId": "dbb17c106d8242c5894864ee0dbf902e",
+    "cookies": []
+  },
+  {
+    "method": "GET",
+    "path": "/api/platform/auth/me",
+    "csrfHeaderPresent": false,
+    "origin": null,
+    "startedAt": "2026-10-08T12:40:04.658Z",
+    "status": 401,
+    "traceId": "bc42369ab8d649288b15851041ff5322",
+    "cookies": []
+  },
+  {
+    "method": "GET",
+    "path": "/api/admin/auth/me",
+    "csrfHeaderPresent": false,
+    "origin": null,
+    "startedAt": "2026-10-08T12:40:16.293Z",
+    "status": 401,
+    "traceId": "76eb1c5ab14d466e9f32fbc5fc555cbc",
+    "cookies": []
+  },
+  {
+    "method": "GET",
+    "path": "/api/admin/auth/me",
+    "csrfHeaderPresent": false,
+    "origin": null,
+    "startedAt": "2026-10-08T12:40:16.310Z",
+    "status": 401,
+    "traceId": "896b0f35c83247d7b8ad99bdf4644cbe",
+    "cookies": []
+  },
+  {
+    "method": "GET",
+    "path": "/api/admin/auth/me",
+    "csrfHeaderPresent": false,
+    "origin": null,
+    "startedAt": "2026-10-08T12:40:16.319Z",
+    "status": 401,
+    "traceId": "4467b37678494635b0f906aa2cf0eb0a",
+    "cookies": []
+  },
+  {
+    "method": "GET",
+    "path": "/api/admin/auth/csrf",
+    "csrfHeaderPresent": false,
+    "origin": null,
+    "startedAt": "2026-10-08T12:40:26.235Z",
+    "status": 200,
+    "traceId": "bb2fc81d825847b8ad53826d86b5b1db",
+    "cookies": [
+      {
+        "name": "pet_dev_staff_pre",
+        "attributes": [
+          "Path=/api/admin/",
+          "HttpOnly",
+          "SameSite=Lax"
+        ]
+      }
+    ]
+  },
+  {
+    "method": "POST",
+    "path": "/api/admin/auth/login",
+    "csrfHeaderPresent": true,
+    "origin": "http://127.0.0.1:5173",
+    "startedAt": "2026-10-08T12:40:26.274Z",
+    "status": 200,
+    "traceId": "d3b033fca8a44ee1ac1984558fd064f4",
+    "cookies": [
+      {
+        "name": "pet_dev_staff_pre",
+        "attributes": [
+          "Path=/api/admin/",
+          "Max-Age=0",
+          "Expires=Thu, 01 Jan 1970 00:00:00 GMT",
+          "HttpOnly",
+          "SameSite=Lax"
+        ]
+      },
+      {
+        "name": "pet_dev_staff_sid",
+        "attributes": [
+          "Path=/api/admin/",
+          "HttpOnly",
+          "SameSite=Lax"
+        ]
+      }
+    ]
+  },
+  {
+    "method": "GET",
+    "path": "/api/admin/auth/csrf",
+    "csrfHeaderPresent": false,
+    "origin": null,
+    "startedAt": "2026-10-08T12:40:26.424Z",
+    "status": 200,
+    "traceId": "453c4f595dbc4ceb881b6f75e8be950a",
+    "cookies": []
+  },
+  {
+    "method": "GET",
+    "path": "/api/admin/auth/me",
+    "csrfHeaderPresent": false,
+    "origin": null,
+    "startedAt": "2026-10-08T12:40:26.447Z",
+    "status": 200,
+    "traceId": "aa840338d06e416794ccd6add1d97f9f",
+    "cookies": []
+  },
+  {
+    "method": "GET",
+    "path": "/api/admin/auth/me",
+    "csrfHeaderPresent": false,
+    "origin": null,
+    "startedAt": "2026-10-08T12:40:26.471Z",
+    "status": 200,
+    "traceId": "d068d6fbd3104bc58d14fcadb32ef2c4",
+    "cookies": []
+  },
+  {
+    "method": "GET",
+    "path": "/api/admin/auth/me",
+    "csrfHeaderPresent": false,
+    "origin": null,
+    "startedAt": "2026-10-08T12:40:27.015Z",
+    "status": 200,
+    "traceId": "5be352a30b8f4bd9af5c9108e0f3668f",
+    "cookies": []
+  },
+  {
+    "method": "GET",
+    "path": "/api/admin/auth/csrf",
+    "csrfHeaderPresent": false,
+    "origin": null,
+    "startedAt": "2026-10-08T12:40:38.169Z",
+    "status": 503,
+    "traceId": "bfad193fa2f4407583c058a8a8461331",
+    "cookies": []
+  },
+  {
+    "method": "GET",
+    "path": "/api/admin/auth/me",
+    "csrfHeaderPresent": false,
+    "origin": null,
+    "startedAt": "2026-10-08T12:40:40.190Z",
+    "status": 503,
+    "traceId": "1413f887e19a48138493fc30b41c4b1d",
+    "cookies": []
+  },
+  {
+    "method": "GET",
+    "path": "/api/admin/auth/me",
+    "csrfHeaderPresent": false,
+    "origin": null,
+    "startedAt": "2026-10-08T12:41:41.017Z",
+    "status": 200,
+    "traceId": "19aecc1b16f44fb8ab8e02e0818aadc4",
+    "cookies": []
+  },
+  {
+    "method": "GET",
+    "path": "/api/admin/auth/me",
+    "csrfHeaderPresent": false,
+    "origin": null,
+    "startedAt": "2026-10-08T12:41:41.086Z",
+    "status": 200,
+    "traceId": "48d896fbc86b48f888f621c7c7d27318",
+    "cookies": []
+  },
+  {
+    "method": "GET",
+    "path": "/api/admin/auth/me",
+    "csrfHeaderPresent": false,
+    "origin": null,
+    "startedAt": "2026-10-08T12:41:41.379Z",
+    "status": 200,
+    "traceId": "9032acf03eca45f0900f4110df532991",
+    "cookies": []
+  },
+  {
+    "method": "GET",
+    "path": "/api/admin/auth/me",
+    "csrfHeaderPresent": false,
+    "origin": null,
+    "startedAt": "2026-10-08T12:41:41.897Z",
+    "status": 200,
+    "traceId": "7acd70a5140948f1879269511e7b920f",
+    "cookies": []
+  },
+  {
+    "method": "GET",
+    "path": "/api/platform/auth/me",
+    "csrfHeaderPresent": false,
+    "origin": null,
+    "startedAt": "2026-10-08T12:41:42.956Z",
+    "status": 401,
+    "traceId": "10a2f12e78fe4fc7ae33c9589d1848b3",
+    "cookies": []
+  },
+  {
+    "method": "GET",
+    "path": "/api/platform/auth/me",
+    "csrfHeaderPresent": false,
+    "origin": null,
+    "startedAt": "2026-10-08T12:41:42.973Z",
+    "status": 401,
+    "traceId": "d417e78557e34752ba6f967d3f48bbe5",
+    "cookies": []
+  },
+  {
+    "method": "GET",
+    "path": "/api/platform/auth/me",
+    "csrfHeaderPresent": false,
+    "origin": null,
+    "startedAt": "2026-10-08T12:41:42.981Z",
+    "status": 401,
+    "traceId": "67358e80787d4732a92a8041ba68e1cb",
+    "cookies": []
+  },
+  {
+    "method": "GET",
+    "path": "/api/platform/auth/csrf",
+    "csrfHeaderPresent": false,
+    "origin": null,
+    "startedAt": "2026-10-08T12:41:51.074Z",
+    "status": 200,
+    "traceId": "889780a1d7d24d19903693a51aeb5f8a",
+    "cookies": [
+      {
+        "name": "pet_dev_platform_pre",
+        "attributes": [
+          "Path=/api/platform/",
+          "HttpOnly",
+          "SameSite=Lax"
+        ]
+      }
+    ]
+  },
+  {
+    "method": "POST",
+    "path": "/api/platform/auth/login",
+    "csrfHeaderPresent": true,
+    "origin": "http://127.0.0.1:5173",
+    "startedAt": "2026-10-08T12:41:51.133Z",
+    "status": 200,
+    "traceId": "f29a72d4188e40efac5d09819db5ddef",
+    "cookies": [
+      {
+        "name": "pet_dev_platform_pre",
+        "attributes": [
+          "Path=/api/platform/",
+          "Max-Age=0",
+          "Expires=Thu, 01 Jan 1970 00:00:00 GMT",
+          "HttpOnly",
+          "SameSite=Lax"
+        ]
+      },
+      {
+        "name": "pet_dev_platform_sid",
+        "attributes": [
+          "Path=/api/platform/",
+          "HttpOnly",
+          "SameSite=Lax"
+        ]
+      }
+    ]
+  },
+  {
+    "method": "GET",
+    "path": "/api/platform/auth/csrf",
+    "csrfHeaderPresent": false,
+    "origin": null,
+    "startedAt": "2026-10-08T12:41:51.267Z",
+    "status": 200,
+    "traceId": "114ca729ec4148459f0429b383d9882b",
+    "cookies": []
+  },
+  {
+    "method": "GET",
+    "path": "/api/platform/auth/me",
+    "csrfHeaderPresent": false,
+    "origin": null,
+    "startedAt": "2026-10-08T12:41:51.287Z",
+    "status": 200,
+    "traceId": "4249de22ec334854971bb8923beb9d80",
+    "cookies": []
+  },
+  {
+    "method": "GET",
+    "path": "/api/platform/auth/me",
+    "csrfHeaderPresent": false,
+    "origin": null,
+    "startedAt": "2026-10-08T12:41:51.309Z",
+    "status": 200,
+    "traceId": "c0c01c5f2ac44ba8a3ecaa14a6951e87",
+    "cookies": []
+  },
+  {
+    "method": "GET",
+    "path": "/api/platform/auth/me",
+    "csrfHeaderPresent": false,
+    "origin": null,
+    "startedAt": "2026-10-08T12:41:51.837Z",
+    "status": 200,
+    "traceId": "2e73311b75984be4ac36b773ce83a33f",
+    "cookies": []
+  },
+  {
+    "method": "GET",
+    "path": "/api/platform/auth/me",
+    "csrfHeaderPresent": false,
+    "origin": null,
+    "startedAt": "2026-10-08T12:41:52.006Z",
+    "status": 200,
+    "traceId": "af1246d6c3b54b6b875ac36862f5aa25",
+    "cookies": []
+  },
+  {
+    "method": "GET",
+    "path": "/api/platform/auth/me",
+    "csrfHeaderPresent": false,
+    "origin": null,
+    "startedAt": "2026-10-08T12:41:52.525Z",
+    "status": 200,
+    "traceId": "02906679e7e64b6b9df4de8e54e67c11",
+    "cookies": []
+  },
+  {
+    "method": "GET",
+    "path": "/api/admin/auth/csrf",
+    "csrfHeaderPresent": false,
+    "origin": null,
+    "startedAt": "2026-10-08T12:41:52.996Z",
+    "status": 200,
+    "traceId": "185b5a2056fa4d5db835ec2501fd0d0b",
+    "cookies": []
+  },
+  {
+    "method": "POST",
+    "path": "/api/admin/auth/logout",
+    "csrfHeaderPresent": true,
+    "origin": "http://127.0.0.1:5173",
+    "startedAt": "2026-10-08T12:41:53.014Z",
+    "status": 200,
+    "traceId": "26652eeedc8641c1889fcb378ce77d38",
+    "cookies": [
+      {
+        "name": "pet_dev_staff_sid",
+        "attributes": [
+          "Path=/api/admin/",
+          "Max-Age=0",
+          "Expires=Thu, 01 Jan 1970 00:00:00 GMT",
+          "HttpOnly",
+          "SameSite=Lax"
+        ]
+      },
+      {
+        "name": "pet_dev_staff_pre",
+        "attributes": [
+          "Path=/api/admin/",
+          "Max-Age=0",
+          "Expires=Thu, 01 Jan 1970 00:00:00 GMT",
+          "HttpOnly",
+          "SameSite=Lax"
+        ]
+      }
+    ]
+  },
+  {
+    "method": "GET",
+    "path": "/api/admin/auth/me",
+    "csrfHeaderPresent": false,
+    "origin": null,
+    "startedAt": "2026-10-08T12:41:53.043Z",
+    "status": 401,
+    "traceId": "b6bdb5eb25df4c7ab29c692eeda7ffc5",
+    "cookies": []
+  },
+  {
+    "method": "GET",
+    "path": "/api/admin/auth/me",
+    "csrfHeaderPresent": false,
+    "origin": null,
+    "startedAt": "2026-10-08T12:41:53.051Z",
+    "status": 401,
+    "traceId": "1dd650fbc4b9457dae076580587af39e",
+    "cookies": []
+  },
+  {
+    "method": "GET",
+    "path": "/api/admin/auth/me",
+    "csrfHeaderPresent": false,
+    "origin": null,
+    "startedAt": "2026-10-08T12:41:53.631Z",
+    "status": 401,
+    "traceId": "9cefcd33ce0649f392511dcb01f8839e",
+    "cookies": []
+  },
+  {
+    "method": "GET",
+    "path": "/api/platform/auth/me",
+    "csrfHeaderPresent": false,
+    "origin": null,
+    "startedAt": "2026-10-08T12:41:53.701Z",
+    "status": 200,
+    "traceId": "37f250ece29442fe83192c6cc8a61815",
+    "cookies": []
+  },
+  {
+    "method": "GET",
+    "path": "/api/platform/auth/me",
+    "csrfHeaderPresent": false,
+    "origin": null,
+    "startedAt": "2026-10-08T12:41:54.219Z",
+    "status": 200,
+    "traceId": "4777dfa9e2a542fcb7f52f7368f99326",
+    "cookies": []
+  },
+  {
+    "method": "GET",
+    "path": "/api/platform/auth/me",
+    "csrfHeaderPresent": false,
+    "origin": null,
+    "startedAt": "2026-10-08T12:43:18.058Z",
+    "status": 200,
+    "traceId": "6dd438d0f5224f468541599d49934a14",
+    "cookies": []
+  },
+  {
+    "method": "GET",
+    "path": "/api/platform/auth/me",
+    "csrfHeaderPresent": false,
+    "origin": null,
+    "startedAt": "2026-10-08T12:43:18.579Z",
+    "status": 200,
+    "traceId": "46b92ccc412140b8899c07aba58eae20",
+    "cookies": []
+  },
+  {
+    "method": "GET",
+    "path": "/api/platform/auth/me",
+    "csrfHeaderPresent": false,
+    "origin": null,
+    "startedAt": "2026-10-08T12:43:19.815Z",
+    "status": 200,
+    "traceId": "35a978b01145434b9e3d2011c590efdb",
+    "cookies": []
+  },
+  {
+    "method": "GET",
+    "path": "/api/platform/auth/me",
+    "csrfHeaderPresent": false,
+    "origin": null,
+    "startedAt": "2026-10-08T12:43:20.585Z",
+    "status": 200,
+    "traceId": "f00dc81b00fc44dfb3dbc01a4071b223",
+    "cookies": []
+  },
+  {
+    "method": "GET",
+    "path": "/api/platform/auth/me",
+    "csrfHeaderPresent": false,
+    "origin": null,
+    "startedAt": "2026-10-08T12:43:20.944Z",
+    "status": 200,
+    "traceId": "be1e742e6e304e6ca9518a66544c51ec",
+    "cookies": []
+  },
+  {
+    "method": "GET",
+    "path": "/api/platform/auth/me",
+    "csrfHeaderPresent": false,
+    "origin": null,
+    "startedAt": "2026-10-08T12:43:21.221Z",
+    "status": 200,
+    "traceId": "03561f30d9d2475dabbc0877bd466115",
+    "cookies": []
+  },
+  {
+    "method": "GET",
+    "path": "/api/admin/auth/me",
+    "csrfHeaderPresent": false,
+    "origin": null,
+    "startedAt": "2026-10-08T12:44:38.196Z",
+    "status": 401,
+    "traceId": "9b46b91a26624dd989612585e13450b9",
+    "cookies": []
+  },
+  {
+    "method": "GET",
+    "path": "/api/admin/auth/me",
+    "csrfHeaderPresent": false,
+    "origin": null,
+    "startedAt": "2026-10-08T12:44:38.221Z",
+    "status": 401,
+    "traceId": "ef3a5445375142b1b95e6e8f2e7067f1",
+    "cookies": []
+  },
+  {
+    "method": "GET",
+    "path": "/api/admin/auth/me",
+    "csrfHeaderPresent": false,
+    "origin": null,
+    "startedAt": "2026-10-08T12:46:34.192Z",
+    "status": 401,
+    "traceId": "9deddd18ac144cbaaa7f9272df864f9b",
+    "cookies": []
+  },
+  {
+    "method": "GET",
+    "path": "/api/admin/auth/me",
+    "csrfHeaderPresent": false,
+    "origin": null,
+    "startedAt": "2026-10-08T12:46:34.211Z",
+    "status": 401,
+    "traceId": "a0b5935de56041b08f68ae46de0cfb2d",
+    "cookies": []
+  },
+  {
+    "method": "GET",
+    "path": "/api/admin/auth/me",
+    "csrfHeaderPresent": false,
+    "origin": null,
+    "startedAt": "2026-10-08T12:46:34.220Z",
+    "status": 401,
+    "traceId": "6d0e3664eae643349eb578d78bc5d7dd",
+    "cookies": []
+  }
+]

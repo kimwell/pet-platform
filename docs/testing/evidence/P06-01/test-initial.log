@@ -1,0 +1,49 @@
+
+> @pet/admin-web@0.0.0 test /Users/kimwell/work/pet-platform/apps/admin-web
+> vitest run
+
+
+ RUN  v4.1.11 /Users/kimwell/work/pet-platform/apps/admin-web
+
+ ❯ src/app/router/router.test.tsx (8 tests | 3 failed) 82ms
+     × 直接访问保护页/admin先请求对应me再跳登录 17ms
+     × 直接访问保护页/platform先请求对应me再跳登录 2ms
+     × 登录页面使用官方Form、中文label和password autocomplete 2ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 3 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/app/router/router.test.tsx > 入口、路由守卫与官方组件（受控网络替身） > 直接访问保护页/admin先请求对应me再跳登录
+ FAIL  src/app/router/router.test.tsx > 入口、路由守卫与官方组件（受控网络替身） > 直接访问保护页/platform先请求对应me再跳登录
+AssertionError: the given combination of arguments (undefined and string) is invalid for this assertion. You can use an array, a map, an object, a set, a string, or a weakset instead of a string
+ ❯ src/app/router/router.test.tsx:30:41
+     28|   it.each(['/admin', '/platform'])('直接访问保护页%s先请求对应me再跳登录', async path …
+     29|     const { router, services, fetcher } = testRouter(path); await rout…
+     30|     expect(router.state.redirect?.href).toContain(`${path}/login`); ex…
+       |                                         ^
+     31|   });
+     32|   it('有效员工只读取员工域，保护页不使用登录草稿造身份', async () => {
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/3]⎯
+
+ FAIL  src/app/router/router.test.tsx > 入口、路由守卫与官方组件（受控网络替身） > 登录页面使用官方Form、中文label和password autocomplete
+AssertionError: expected '' to contain '员工登录'
+
+- Expected
++ Received
+
+- 员工登录
+
+ ❯ src/app/router/router.test.tsx:43:20
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/3]⎯
+
+
+ Test Files  1 failed | 3 passed (4)
+      Tests  3 failed | 70 passed (73)
+   Start at  20:30:54
+   Duration  1.30s (transform 254ms, setup 0ms, import 1.40s, tests 162ms, environment 0ms)
+
+/Users/kimwell/work/pet-platform/apps/admin-web:
+ ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL  @pet/admin-web@0.0.0 test: `vitest run`
+Exit status 1

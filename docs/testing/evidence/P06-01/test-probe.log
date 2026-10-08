@@ -1,0 +1,37 @@
+
+> @pet/admin-web@0.0.0 test /Users/kimwell/work/pet-platform/apps/admin-web
+> vitest run
+
+
+ RUN  v4.1.11 /Users/kimwell/work/pet-platform/apps/admin-web
+
+stdout | src/app/router/router.test.tsx > 入口、路由守卫与官方组件（受控网络替身） > 登录页面使用官方Form、中文label和password autocomplete
+login-state redirect []
+
+ ❯ src/app/router/router.test.tsx (8 tests | 1 failed) 75ms
+     × 登录页面使用官方Form、中文label和password autocomplete 6ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/app/router/router.test.tsx > 入口、路由守卫与官方组件（受控网络替身） > 登录页面使用官方Form、中文label和password autocomplete
+AssertionError: expected '' to contain '员工登录'
+
+- Expected
++ Received
+
+- 员工登录
+
+ ❯ src/app/router/router.test.tsx:46:20
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed | 3 passed (4)
+      Tests  1 failed | 72 passed (73)
+   Start at  20:31:53
+   Duration  1.04s (transform 230ms, setup 0ms, import 1.08s, tests 137ms, environment 0ms)
+
+/Users/kimwell/work/pet-platform/apps/admin-web:
+ ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL  @pet/admin-web@0.0.0 test: `vitest run`
+Exit status 1

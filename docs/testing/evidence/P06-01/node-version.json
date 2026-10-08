@@ -1,0 +1,11 @@
+{
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "command": [
+    "node",
+    "--version"
+  ],
+  "exitCode": 0,
+  "durationSeconds": 0.05,
+  "log": "node-version.log",
+  "summary": "v24.21.0\n"
+}

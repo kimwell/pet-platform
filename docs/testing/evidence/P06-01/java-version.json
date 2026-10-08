@@ -1,0 +1,11 @@
+{
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "command": [
+    "java",
+    "--version"
+  ],
+  "exitCode": 0,
+  "durationSeconds": 0.07,
+  "log": "java-version.log",
+  "summary": "openjdk 21.0.12.1 2026-08-18 LTS\nOpenJDK Runtime Environment Temurin-21.0.12.1+1 (build 21.0.12.1+1-LTS)\nOpenJDK 64-Bit Server VM Temurin-21.0.12.1+1 (build 21.0.12.1+1-LTS, mixed mode, sharing)\n"
+}

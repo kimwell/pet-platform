@@ -82,3 +82,14 @@
 2026-10-08 P05-05真实续验追加：用户确认暂时无法提供AppSecret。实际秘密属性和0600/0700忽略文件、专用白名单入口已准备；冻结PG/Redis、正式角色/V1～V4迁移/租户初始化、既有生产JAR受限运行及readiness=200 UP实际通过，匿名me=401 AUTH_REQUIRED仅为准备检查。客户及绑定0/0；未获取code、未交换、未签真实CUSTOMER会话、未验证真实me/退出/再次复用。当前工具AppID/版本匹配，wx.login开发权限仍NOT_VERIFIED；CLI246为服务端口关闭。A05-09真实四步仍NOT_EXECUTED、G12 BLOCKED、P05-05 BLOCKED/P05 IN_PROGRESS，其他门禁维持历史证据。仅本轮资源停止，既有卷/进程保全；无认证代码/依赖/公开契约修改、无全套421项重跑。证据见[本轮准备](evidence/P05-05/resume-2026-10-08/isolation-preparation.json)、[本轮四步结果](evidence/P05-05/resume-2026-10-08/real-wechat-result.json)、[报告第10节](P05-05-VERIFICATION.md#10-2026-10-08-真实微信续验准备完成appsecret仍缺少)。P07/P09/P10及生产/远程CI限制不变，下一仅P05-05续验。
 
 2026-10-08 20:04真实微信最终续验：指定本地安全配置、实际AppID/工具基础库匹配，正式WxJava4.8.0生产Gateway交换通过；登录200、PG客户/绑定1/1及Redis CUSTOMER/MINIPROGRAM会话、me200同租户/SELF、logout200后旧Token401 SESSION_EXPIRED/旧Redis会话不存在。第二个新鲜code200复用同客户，计数仍1/1并退出。A05-09真实四步 RUNTIME_VERIFIED、G12 PASS；综合P05全部原条件后P05-05/P05 COMPLETE。原准备BLOCKED/NOT_EXECUTED、首轮HOME导致的自动化失败（微信尝试0）均保留。仅本轮资源已恢复，包括临时服务端口关闭，原进程/卷保全；无认证/依赖/公开契约改动，不重跑421项。详见[实际四步](evidence/P05-05/resume-2026-10-08/real-run-second/real-wechat-result.json)、[综合复核](P05-ACCEPTANCE.md#2026-10-08-真实微信通过后的阶段验收)。P07完整员工/组织/角色权限管理仍必选未实现，P09/P10/生产/远程CI/多OS仍独立未执行；下一P06-01仅建议、不自动执行。
+
+## P06-01 本轮验收追加（2026-10-08）
+
+| 项 | 当前结论 / 证据边界 |
+| --- | --- |
+| A06-01 请求/会话 | RUNTIME_VERIFIED：正式PG/Redis/生产JAR+浏览器Cookie/独立CSRF、真实双域登录/恢复/当前退出、仅访问当前空间、503未确认退出与恢复、错误密码/防重复、NotFound；请求错误/取消/超时/非JSON/旧epoch/并发401为77项受控技术测试，不能称真实网络竞态全部重现 |
+| A06-02 Query作用域 | 真实双身份并存及员工退出后平台仍有效RUNTIME_VERIFIED；Query身份唯一投影、范围key/旧响应/授权版本清理以受控测试COMPILED/RUNTIME_VERIFIED（技术场景）。实际业务列表/管理权限变化、后续mutation关联失效尚未实现/NOT_VERIFIED，留P06-02/P07 |
+| P06-01 G01～G14 | PASS，逐项依据见[P06-01报告](P06-01-VERIFICATION.md)；typecheck/lint/test/build/contracts检查退出0，77项前端受控测试、10项契约导出检查；421项为原后端完整基线，本轮没有重跑 |
+| 保全/边界 | 506项后端/类型/小程序/ui/根依赖保护摘要无变化；原P05未提交修改保留。入口chunk警告保留；生产/TLS/跨源/远程CI/多OS/下载/实时推送/全部未来业务NOT_EXECUTED或NOT_VERIFIED |
+
+P06-01 COMPLETE，P06整体IN_PROGRESS，下一建议P06-02 NOT_STARTED，只报告不执行。真实验证与受控替身测试按报告分开，不用文档检查替代联调。

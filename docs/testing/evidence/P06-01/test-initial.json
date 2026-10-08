@@ -1,0 +1,13 @@
+{
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "command": [
+    "pnpm",
+    "--filter",
+    "@pet/admin-web",
+    "test"
+  ],
+  "exitCode": 1,
+  "durationSeconds": 2.93,
+  "log": "test-initial.log",
+  "summary": "\n> @pet/admin-web@0.0.0 test /Users/kimwell/work/pet-platform/apps/admin-web\n> vitest run\n\n\n RUN  v4.1.11 /Users/kimwell/work/pet-platform/apps/admin-web\n\n ❯ src/app/router/router.test.tsx (8 tests | 3 failed) 82ms\n     × 直接访问保护页/admin先请求对应me再跳登录 17ms\n     × 直接访问保护页/platform先请求对应me再跳登录 2ms\n     × 登录页面使用官方Form、中文label和password autocomplete 2ms\n\n⎯⎯⎯⎯⎯⎯⎯ Failed Tests 3 ⎯⎯⎯⎯⎯⎯⎯\n\n FAIL  src/app/router/router.test.tsx > 入口、路由守卫与官方组件（受控网络替身） > 直接访问保护页/admin先请求对应me再跳登录\n FAIL  src/app/router/router.test.tsx > 入口、路由守卫与官方组件（受控网络替身） > 直接访问保护页/platform先请求对应me再跳登录\nAssertionError: the given combination of arguments (undefined and string) is invalid for this assertion. You can use an array, a map, an object, a set, a string, or a weakset instead of a string\n ❯ src/app/router/router.test.tsx:30:41\n     28|   it.each(['/admin', '/platform'])('直接访问保护页%s先请求对应me再跳登录', async path …\n     29|     const { router, services, fetcher } = testRouter(path); await rout…\n     30|     expect(router.state.redirect?.href).toContain(`${path}/login`); ex…\n       |                                         ^\n     31|   });\n     32|   it('有效员工只读取员工域，保护页不使用登录草稿造身份', async () => {\n\n⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/3]⎯\n\n FAIL  src/app/router/router.test.tsx > 入口、路由守卫与官方组件（受控网络替身） > 登录页面使用官方Form、中文label和password autocomplete\nAssertionError: expected '' to contain '员工登录'\n\n- Expected\n+ Received\n\n- 员工登录\n\n ❯ src/app/router/router.test.tsx:43:20\n\n\n⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/3]⎯\n\n\n Test Files  1 failed | 3 passed (4)\n      Tests  3 failed | 70 passed (73)\n   Start at  20:30:54\n   Duration  1.30s (transform 254ms, setup 0ms, import 1.40s, tests 162ms, environment 0ms)\n\n/Users/kimwell/work/pet-platform/apps/admin-web:\n ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL  @pet/admin-web@0.0.0 test: `vitest run`\nExit status 1\n"
+}

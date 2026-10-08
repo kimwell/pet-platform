@@ -290,3 +290,18 @@ Spring标准[配置树机制](https://docs.spring.io/spring-boot/4.0/reference/f
 本轮探针窗口关闭、原工程窗口恢复；服务端口已恢复关闭，46904/9420均不监听，登录票据/全局信任/插件端口保持关闭。只结束本轮正式后端（SIGTERM143）和两临时容器（停止0），清理技术凭据输入文件，既有进程/容器/数据库卷保全；客户和绑定随专用临时库结束，不在日常库破坏性清理。秘密文件保留供用户安全轮换。证据执行脚本只在明确隔离验收中使用，重跑需新的工具授权及新鲜code，不能用已消费code；不为了重复本轮通过结果主动再消耗微信接口。
 
 本轮没有认证代码、公开契约或依赖修改，历史421项及三端类型/漂移通过证据保持，仅执行相关语法/结构/保全检查。下一建议P06-01仍NOT_STARTED；完整员工/组织/角色权限管理API留P07，P09完整小程序交互/真机、P10消息支付、生产部署与远程CI限制独立保留，未提交、推送或部署。
+
+## P06-01 Web 同源认证开发（2026-10-08）
+
+P06-01 COMPLETE，P06整体IN_PROGRESS；最新验证见[P06-01](../testing/P06-01-VERIFICATION.md)。上方P02/P03“仅工程入口/无认证接口”等为阶段历史。
+
+1. 用冻结工具构建正式后端，在明确隔离库预配置三个正式角色脚本、V1～V4独立迁移；分别执行租户STAFF bootstrap与platform-bootstrap，密码只Console/受控stdin。普通启动不创建/重置账号；不用日常账号做破坏性验收。
+2. 运行身份只继承pet_runtime、不拥有表、无superuser/BYPASSRLS，接真实PostgreSQL/Redis。设置`PET_PUBLIC_ORIGIN=http://127.0.0.1:5173`，必须和浏览器精确一致；localhost与127.0.0.1不是同一来源。
+3. 启动Web `pnpm dev:web`；后端非8080时，仅在进程或忽略的apps/admin-web/.env.local设置DEV_BACKEND_ORIGIN为实际回环来源。Vite保留/api、Origin和Cookie Path，changeOrigin=false；客户端只有/api，不配置任意CORS、不读取Cookie。
+4. `/admin/login`、`/platform/login` 分别登录，`/admin`、`/platform` 为真实身份壳，直接刷新先验证me。退出只影响对应空间。403 CSRF需重新明确操作，不自动重放；503/网络保留会话并重试确认。preview依旧没有开发代理，生产SPA fallback/API代理/TLS须独立部署验证。
+
+实际脚本：`pnpm --filter @pet/admin-web typecheck`、`lint`、`test`、`build`，根`pnpm contracts:check`。本轮沿用全部精确依赖/根锁；工具、工作目录/命令/退出码及历史失败均见[证据目录](../testing/evidence/P06-01/)。contracts:check运行10项导出/模型检查，不等于421项后端回归。
+
+本轮专用tmpfs PG/Redis、正式初始化、local生产JAR、Vite同源代理和浏览器联调已完成。中间加入只透传的回环观察代理：不改路径/状态/Cookie/Origin，只记录method/path/status、CSRF是否存在及Cookie名称/属性，不记录Body/凭据/HAR。真实故障使用暂停本轮Redis再恢复；不是Mock服务。资源现已停止，技术密码输入已移除，原三容器/卷保全；下次重建新隔离账号，不复用本轮账号或凭据。
+
+P02记录入口JS621.32kB，本轮入口711.10kB（gzip234.59kB）；登录54.29kB、布局88.36kB及共享错误状态10.02kB为实际懒加载块，500kB警告仍输出、阈值未提高。不声称性能预算、远程CI、多OS、TLS/跨源或生产发布已通过。

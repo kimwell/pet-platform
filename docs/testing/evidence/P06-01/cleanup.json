@@ -1,0 +1,58 @@
+{
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "commands": [
+    {
+      "label": "web",
+      "command": [
+        "SIGTERM",
+        "15934"
+      ],
+      "signalSent": false
+    },
+    {
+      "label": "proxy",
+      "command": [
+        "SIGTERM",
+        "15933"
+      ],
+      "signalSent": true
+    },
+    {
+      "label": "backend",
+      "command": [
+        "SIGTERM",
+        "15346"
+      ],
+      "signalSent": true
+    },
+    {
+      "command": [
+        "docker",
+        "stop",
+        "pet-p06-01-redis"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "docker",
+        "stop",
+        "pet-p06-01-pg"
+      ],
+      "exitCode": 0
+    }
+  ],
+  "portsClosed": [
+    5173,
+    18086,
+    18087
+  ],
+  "technicalSecretInputsRemoved": true,
+  "remainingContainers": "pet-platform-p02-validation-rabbitmq-1\texited\npet-platform-p02-validation-postgres-1\texited\npet-platform-p02-validation-redis-1\texited\n",
+  "summary": "仅本轮资源结束，原三容器仍exited；未删除既有卷。生产JAR与私有执行脚本保留忽略目录，账号随tmpfs结束。",
+  "command": [
+    "python3",
+    ".local-data/p06-01/cleanup.py"
+  ],
+  "exitCode": 0
+}

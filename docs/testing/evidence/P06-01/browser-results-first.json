@@ -1,0 +1,104 @@
+{
+  "date": "2026-10-08",
+  "browser": "Codex In-app Browser",
+  "origin": "http://127.0.0.1:5173",
+  "scenarios": [
+    {
+      "scenario": "员工错误密码、双Enter提交",
+      "result": "安全中文LOGIN_FAILED提示；仍在登录页",
+      "passwordCleared": true
+    },
+    {
+      "scenario": "员工真实登录/me",
+      "result": "PASS",
+      "url": "http://127.0.0.1:5173/admin"
+    },
+    {
+      "scenario": "员工刷新恢复",
+      "result": "PASS",
+      "url": "http://127.0.0.1:5173/admin"
+    },
+    {
+      "scenario": "平台真实登录/me",
+      "result": "PASS",
+      "url": "http://127.0.0.1:5173/platform"
+    },
+    {
+      "scenario": "平台刷新恢复",
+      "result": "PASS"
+    },
+    {
+      "scenario": "同浏览器双空间并存",
+      "result": "PASS",
+      "staffUrl": "http://127.0.0.1:5173/admin",
+      "platformUrl": "http://127.0.0.1:5173/platform"
+    },
+    {
+      "scenario": "员工退出",
+      "result": "PASS",
+      "url": "http://127.0.0.1:5173/admin/login"
+    },
+    {
+      "scenario": "员工退出后平台仍有效",
+      "result": "PASS"
+    },
+    {
+      "scenario": "真实Redis故障下退出与身份确认503",
+      "result": "PASS：保护路径保留、服务错误可重试、退出未确认提示",
+      "url": "http://127.0.0.1:5173/admin",
+      "automationNote": "首个UI等待默认超时，随后实际页面确认成功"
+    },
+    {
+      "scenario": "服务恢复后重试",
+      "result": "PASS：原员工Cookie仍有效，无重新登录",
+      "url": "http://127.0.0.1:5173/admin"
+    },
+    {
+      "scenario": "退出失败后的明确重试退出",
+      "result": "PASS"
+    },
+    {
+      "scenario": "平台真实退出",
+      "result": "PASS",
+      "url": "http://127.0.0.1:5173/platform/login"
+    },
+    {
+      "scenario": "退出后平台保护路径",
+      "result": "PASS：只进入对应登录"
+    },
+    {
+      "scenario": "真实NotFound",
+      "result": "PASS",
+      "url": "http://127.0.0.1:5173/missing/deep"
+    }
+  ],
+  "console": {
+    "staff": [
+      {
+        "level": "error",
+        "message": "%o\n\n%s\n\n%s\n ApiError: 服务暂时不可用，请稍后重试\n    at run (http://127.0.0.1:5173/src/shared/api/request.ts:78:15)\n    at async RequestClient.request (http://127.0.0.1:5173/src/shared/api/request.ts:83:14)\n    at async SessionRuntime.transport (http://127.0.0.1:5173/src/shared/auth/SessionRuntime.ts:91:21)\n    at async queryFn (http://127.0.0.1:5173/src/features/auth/api/AuthService.ts:42:25) The above error occurred in the <MatchInnerImpl> component. React will try to recreate this component tree from scratch using the error boundary you provided, CatchBoundary.",
+        "timestamp": "2026-10-08T12:37:34.902Z",
+        "url": "http://127.0.0.1:5173/node_modules/.vite/deps/chunk-72A2ILAT.js?v=3974157c"
+      },
+      {
+        "level": "warn",
+        "message": "Warning: Error in route match: __root__/",
+        "timestamp": "2026-10-08T12:37:34.902Z",
+        "url": "http://127.0.0.1:5173/node_modules/.vite/deps/@tanstack_react-router.js?v=3974157c"
+      },
+      {
+        "level": "error",
+        "message": "%o\n\n%s\n\n%s\n ApiError: 服务暂时不可用，请稍后重试\n    at run (http://127.0.0.1:5173/src/shared/api/request.ts:78:15)\n    at async RequestClient.request (http://127.0.0.1:5173/src/shared/api/request.ts:83:14)\n    at async SessionRuntime.transport (http://127.0.0.1:5173/src/shared/auth/SessionRuntime.ts:91:21)\n    at async queryFn (http://127.0.0.1:5173/src/features/auth/api/AuthService.ts:42:25) The above error occurred in the <MatchInnerImpl> component. React will try to recreate this component tree from scratch using the error boundary you provided, CatchBoundary.",
+        "timestamp": "2026-10-08T12:37:54.775Z",
+        "url": "http://127.0.0.1:5173/node_modules/.vite/deps/chunk-72A2ILAT.js?v=3974157c"
+      },
+      {
+        "level": "warn",
+        "message": "Warning: Error in route match: __root__/",
+        "timestamp": "2026-10-08T12:37:54.775Z",
+        "url": "http://127.0.0.1:5173/node_modules/.vite/deps/@tanstack_react-router.js?v=3974157c"
+      }
+    ],
+    "platform": []
+  }
+}

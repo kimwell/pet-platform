@@ -1,0 +1,22 @@
+{
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "commands": [
+    {
+      "command": [
+        "docker",
+        "stop",
+        "pet-p06-01-redis"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "docker",
+        "stop",
+        "pet-p06-01-pg"
+      ],
+      "exitCode": 0
+    }
+  ],
+  "summary": "只停止本次初始化未完成的两个专用容器并移除秘密输入；没有启动Web/后端"
+}

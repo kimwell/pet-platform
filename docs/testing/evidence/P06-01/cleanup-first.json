@@ -1,0 +1,9 @@
+{
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "command": [
+    "python3",
+    ".local-data/p06-01/cleanup.py"
+  ],
+  "exitCode": 1,
+  "summary": "本轮Web SIGTERM已发送；代理进程使用相对脚本路径，绝对路径归属断言失败，尚未结束proxy/backend。按实际ps参数修正后继续。"
+}

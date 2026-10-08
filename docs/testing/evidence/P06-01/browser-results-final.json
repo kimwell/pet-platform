@@ -1,0 +1,45 @@
+{
+  "date": "2026-10-08",
+  "browser": "Codex In-app Browser",
+  "origin": "http://127.0.0.1:5173",
+  "scenarios": [
+    {
+      "scenario": "最终员工登录与合法返回参数",
+      "result": "PASS",
+      "url": "http://127.0.0.1:5173/admin?tab=profile"
+    },
+    {
+      "scenario": "最终真实退出503与身份服务异常",
+      "result": "PASS：受控错误状态，非未登录",
+      "url": "http://127.0.0.1:5173/admin?tab=profile"
+    },
+    {
+      "scenario": "最终服务恢复重试",
+      "result": "PASS：无需重新登录"
+    },
+    {
+      "scenario": "最终员工刷新恢复",
+      "result": "PASS"
+    },
+    {
+      "scenario": "最终平台登录/me/刷新/双空间并存",
+      "result": "PASS"
+    },
+    {
+      "scenario": "最终员工退出后平台仍有效",
+      "result": "PASS"
+    },
+    {
+      "scenario": "外站返回目标拒绝",
+      "result": "PASS",
+      "url": "http://127.0.0.1:5173/admin/login?returnTo=%2Fadmin"
+    },
+    {
+      "scenario": "最终NotFound",
+      "result": "PASS"
+    }
+  ],
+  "consoleDuringFault": [],
+  "consoleFinal": [],
+  "note": "首轮边界日志与UI等待超时保留；最终503为受控页面，无新增控制台错误。临时页回收后独立复核NotFound/非法返回。"
+}

@@ -236,3 +236,14 @@ P05-04补充安全修复：真实编码登录路径无CSRF探针观察到200，�
 - 实际WxJava解析commons-io2.14.0与Testcontainers/commons-compress冲突，保留失败并恢复原已解析commons-io2.20.0，不改冻结SDK/BOM体系；唯一版本事实见矩阵。
 - 原路线P05“角色权限”和A05-04仍保留，正式权威加载/每请求撤销已验；原P07明确员工/角色页面及真业务创建/修改/停用API验收，IDENTITY原账号管理也归P07。完整管理API尚未实现，不能称作已经交付；P05验收仍保留真实微信缺口，不凭三域类型/本地替身关闭阶段。详见[P05总验收](../testing/P05-ACCEPTANCE.md)。
 - 真实微信仅在秘密安全配置及新鲜code可获得时执行；本轮未配置，不读无关秘密/私有配置推断秘密。自动化Gateway替身仅src/test，不以本地流程证明微信认证；P05-05/P05最终状态以实际门禁报告为准。
+
+## P06-01 Web 请求与同源会话（2026-10-08）
+
+- 当前明确授权替代AGENTS旧P02-01范围，仅P06-01；已核对P05 COMPLETE/真实微信续验与421项历史基线，不使用Product Delivery OS，不自动下一任务或提交/推送/部署。
+- 沿用冻结代码路由/admin、/platform；登录分别/auth路径之外的/admin/login、/platform/login。后端路径/类型/Cookie/CSRF唯一来自实际Controller和生成契约，未改后端及公开schema。
+- 只同源/api fetch，无Axios或其他栈；不接受任意绝对URL/跳转、未知认证头或Customer Token。返回data，trace只安全元数据；原始下载留独立扩展，未伪造下载验收。
+- Query独占身份事实；内存SessionRuntime按空间维护CSRF/epoch和互斥过渡，清当前空间，不用全局角色字符串，不持久化Token/密码。Zustand只实际菜单折叠；登录Mutation不把密码放variables/cache。
+- 首轮真实503被beforeLoad抛入React边界产生控制台错误，改为受控sessionError页面；只有未知渲染异常进入错误边界。首轮日志、默认UI等待超时、数据库初始化早期ready误判和收尾归属断言失败保留，最终复验无新增错误。
+- 用户明确允许隔离初始化验收账号，因此使用tmpfs正式PG/Redis和正式独立命令，未修改日常账号。秘密只受控输入/进程内存，HTTP观察只白名单元数据；本轮资源与输入已清理。
+- 77项受控错误/竞态测试与真实双域浏览器/依赖故障分开记证；未修改后端，不重跑完整421项。contracts:check实际10项导出检查通过。依赖/锁、ui/小程序/后端/生成类型506项摘要均保全；体积警告不掩盖。
+- P06-01完成只关闭当前G01～G14；P06整体仍IN_PROGRESS。下一建议P06-02为Web权限呈现、强制改密与本人会话安全最小流程，复用已有password/logout-all；NOT_STARTED，待明确任务授权，不自动执行。

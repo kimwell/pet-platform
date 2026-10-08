@@ -1,0 +1,110 @@
+[
+  {
+    "method": "GET",
+    "path": "/api/admin/auth/me",
+    "csrfHeaderPresent": false,
+    "origin": null,
+    "startedAt": "2026-10-08T12:57:56.587Z",
+    "status": 401,
+    "traceId": "e0d8fc5e75cb4d6a8128f6b77b87a5b7",
+    "cookies": []
+  },
+  {
+    "method": "GET",
+    "path": "/api/admin/auth/me",
+    "csrfHeaderPresent": false,
+    "origin": null,
+    "startedAt": "2026-10-08T12:57:56.648Z",
+    "status": 401,
+    "traceId": "abdc381c47d04d7e9ae0f552f4b19504",
+    "cookies": []
+  },
+  {
+    "method": "GET",
+    "path": "/api/admin/auth/csrf",
+    "csrfHeaderPresent": false,
+    "origin": null,
+    "startedAt": "2026-10-08T12:58:05.787Z",
+    "status": 200,
+    "traceId": "0cb90c9a7d864b8d9dbb64de67e10b38",
+    "cookies": [
+      {
+        "name": "pet_dev_staff_pre",
+        "attributes": [
+          "Path=/api/admin/",
+          "HttpOnly",
+          "SameSite=Lax"
+        ]
+      }
+    ]
+  },
+  {
+    "method": "POST",
+    "path": "/api/admin/auth/login",
+    "csrfHeaderPresent": true,
+    "origin": "http://127.0.0.1:5173",
+    "startedAt": "2026-10-08T12:58:05.885Z",
+    "status": 200,
+    "traceId": "d338962b377e4c91a660e467223be58d",
+    "cookies": [
+      {
+        "name": "pet_dev_staff_pre",
+        "attributes": [
+          "Path=/api/admin/",
+          "Max-Age=0",
+          "Expires=Thu, 01 Jan 1970 00:00:00 GMT",
+          "HttpOnly",
+          "SameSite=Lax"
+        ]
+      },
+      {
+        "name": "pet_dev_staff_sid",
+        "attributes": [
+          "Path=/api/admin/",
+          "HttpOnly",
+          "SameSite=Lax"
+        ]
+      }
+    ]
+  },
+  {
+    "method": "GET",
+    "path": "/api/admin/auth/csrf",
+    "csrfHeaderPresent": false,
+    "origin": null,
+    "startedAt": "2026-10-08T12:58:06.261Z",
+    "status": 200,
+    "traceId": "65e51d48334046ffb5f13503d66a05c4",
+    "cookies": []
+  },
+  {
+    "method": "GET",
+    "path": "/api/admin/auth/me",
+    "csrfHeaderPresent": false,
+    "origin": null,
+    "startedAt": "2026-10-08T12:58:06.297Z",
+    "status": 200,
+    "traceId": "c4a60e6609a34d93bf22e17a680b5cd1",
+    "cookies": []
+  },
+  {
+    "method": "GET",
+    "path": "/api/admin/auth/me",
+    "csrfHeaderPresent": false,
+    "origin": null,
+    "startedAt": "2026-10-08T12:58:06.467Z",
+    "status": 200,
+    "traceId": "249b7bfb66d343d5857effd99fe8c2a2",
+    "cookies": []
+  },
+  {
+    "method": "GET",
+    "path": "/api/admin/auth/me",
+    "csrfHeaderPresent": false,
+    "origin": null,
+    "startedAt": "2026-10-08T12:58:06.980Z",
+    "status": 200,
+    "traceId": "3e3a76cdbdb8424a8b0776a77e6123af",
+    "cookies": []
+  }
+]

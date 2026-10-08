@@ -41,3 +41,17 @@ multipart用FormData不手写boundary，支持signal，Cookie仍CSRF；下载检
 后台刷新保留已有合法数据并标更新状态；身份变化必须立即去除旧数据。optimistic仅可选低风险可回滚交互；员工停用/权限/文件删除默认等待服务端结果，不能乐观宣称安全操作生效。
 
 路由guard使用当前me和权限，仅显示控制，后端复核。returnTo仅应用内相对路径、当前身份域白名单、无协议/双斜杠/外域；未保存离开由页面guard，不能放URL秘密。
+
+## P06-01 当前实现（2026-10-08）
+
+请求实现为 `shared/api/RequestClient`，默认相对根 `/api`、15秒超时、credentials=same-origin、no-store、redirect=error。路径拒绝绝对/协议相对URL、点段、编码路径、反斜线及内嵌query/hash，query由URLSearchParams编码并拒绝敏感键。JSON与FormData互斥；multipart不设置boundary。返回成功data（包括null）；onTrace只提供合法trace元数据。HTTP与信封必须一致，错误保留status/code/fieldErrors/trace/Retry-After；NETWORK/CANCELLED/TIMEOUT/PROTOCOL独立，非JSON错误页只显示安全中文。没有下载API，字节/Range/Content-Disposition须由独立原始响应客户端扩展，本轮没有下载联调。
+
+服务端身份只有Query投影。`AuthService.meOptions`为0 staleTime/0 gcTime、不自动重试、查询传AbortSignal；普通GET仅网络/超时/502～504最多2次（1/2秒），mutation不自动重试、不缓存密码变量。初始化me key为`[{principalType,sessionEpoch},auth,me,current]`（身份尚未知），后续受保护资源工厂加入可信tenantId/principalId/sessionId/authorizationVersion、门店与dataScope。me授权事实变化清当前空间缓存/请求，并把新me投影交给新代际。真实业务列表尚未实现，权限变更缓存反例只为受控技术测试。
+
+`SessionRuntime`仅保存两套内存CSRF、请求代际、过渡锁/取消器和临时中文通知，没有用户副本或持久化。登录前GET对应csrf、POST携带X-CSRF-Token、成功轮换代际并重新GET csrf、再查me；不采用login响应或表单构造身份。同空间CSRF合并，旧响应须匹配代际才可写回；不同空间并行。CSRF_INVALID只清本空间CSRF，下一次明确操作重取，原写入不重放；PERMISSION_DENIED不刷新CSRF。401 LOGIN_FAILED是表单错误；受保护标准401按空间/代际仅一次清理，旧代际的成功/401都丢弃。非JSON401、网络和503不退出。
+
+同空间登录/退出互斥；过渡先取消旧请求/移除当前范围，再确认服务端结果。logout成功或契约证明已失效后进入本空间登录；退出失败提示“退出未确认，服务端会话可能仍有效”，重新查me/提供明确重试，不宣称撤销。取消本身不证明服务端写入回滚。另一空间的Cookie、CSRF、Query和布局状态不清。导航到另一空间只恢复该空间；当前页面卸载清表单、Query观察和临时页面状态，按空间key隔离缓存，不主动验证所有空间、不撤销其他会话。Zustand只保存实际侧栏折叠，未使用persist。
+
+路由beforeLoad先查me；401进入对应登录，预期网络/503/403返回受控sessionError页面状态，不抛React渲染异常；未知渲染错误仍由系统错误边界处理。合法登录与保护页无未授权内容闪现。返回目标只允许本空间已实现的首页，保留合法search，拒绝外站/双斜杠/编码路径/登录循环/hash/敏感键。会话变化通过router.invalidate重算。
+
+[77项受控测试和真实浏览器证据](../testing/P06-01-VERIFICATION.md)分开。前端不保证跨标签页主动同步、实时推送撤权，也不能回滚已提交操作；每次后端仍权威验证。

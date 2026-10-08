@@ -1,0 +1,25 @@
+{
+  "date": "2026-10-08",
+  "browser": "Codex In-app Browser",
+  "origin": "http://127.0.0.1:5173",
+  "status": "PASS",
+  "expanded": {
+    "contentWidth": 390,
+    "direction": "column",
+    "scrollWidth": 390,
+    "width": 390
+  },
+  "collapsed": {
+    "contentWidth": 390,
+    "scrollWidth": 390,
+    "width": 390
+  },
+  "desktop": {
+    "contentWidth": 1060,
+    "direction": "row",
+    "scrollWidth": 1280,
+    "width": 1280
+  },
+  "folding": "PASS",
+  "console": []
+}

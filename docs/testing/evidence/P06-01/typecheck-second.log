@@ -1,0 +1,11 @@
+
+> @pet/admin-web@0.0.0 typecheck /Users/kimwell/work/pet-platform/apps/admin-web
+> tsc --noEmit
+
+src/app/router/router.test.tsx(30,34): error TS2339: Property 'redirect' does not exist on type 'ServerLoadResult'.
+  Property 'redirect' does not exist on type '{ type: "render"; status: 404 | 500 | 200; matches: AnyRouteMatch[]; }'.
+src/app/router/router.test.tsx(38,34): error TS2339: Property 'redirect' does not exist on type 'ServerLoadResult'.
+  Property 'redirect' does not exist on type '{ type: "render"; status: 404 | 500 | 200; matches: AnyRouteMatch[]; }'.
+/Users/kimwell/work/pet-platform/apps/admin-web:
+ ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL  @pet/admin-web@0.0.0 typecheck: `tsc --noEmit`
+Exit status 2

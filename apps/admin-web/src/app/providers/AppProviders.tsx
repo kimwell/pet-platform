@@ -1,15 +1,14 @@
-import { useState } from 'react';
 import type { PropsWithChildren } from 'react';
 import { ConfigProvider } from 'antd';
 import zhCN from 'antd/locale/zh_CN';
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { QueryClientProvider } from '@tanstack/react-query';
+import type { Services } from '../../features/auth/api/AuthService';
 
-export function AppProviders({ children }: PropsWithChildren) {
-  // 当前没有业务请求；缓存和身份策略在对应任务接入，不预设另一套规则。
-  const [queryClient] = useState(() => new QueryClient());
+export function AppProviders({ children, services }: PropsWithChildren<{ services: Services }>) {
+  // 本轮只使用页面内Alert，无message/modal上下文调用，因此不添加无用途的App。
   return (
     <ConfigProvider locale={zhCN}>
-      <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
+      <QueryClientProvider client={services.queryClient}>{children}</QueryClientProvider>
     </ConfigProvider>
   );
 }

@@ -1,0 +1,9 @@
+{
+  "scenario": "仅访问员工空间",
+  "paths": [
+    "/api/admin/auth/me",
+    "/api/admin/auth/me",
+    "/api/admin/auth/me"
+  ],
+  "passed": true
+}

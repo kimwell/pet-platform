@@ -1,0 +1,12 @@
+{
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "command": [
+    "docker",
+    "unpause",
+    "pet-p06-01-redis"
+  ],
+  "exitCode": 0,
+  "durationSeconds": 0.14,
+  "log": "redis-unpause.log",
+  "summary": "pet-p06-01-redis\n"
+}

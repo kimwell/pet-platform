@@ -1,0 +1,122 @@
+[
+  {
+    "label": "已有容器保全基线",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "docker",
+      "ps",
+      "-a",
+      "--format",
+      "{{.Names}}\t{{.State}}"
+    ],
+    "startedAt": "2026-10-08T20:32:56.203931+08:00",
+    "exitCode": 0,
+    "summary": "pet-platform-p02-validation-rabbitmq-1\texited\npet-platform-p02-validation-postgres-1\texited\npet-platform-p02-validation-redis-1\texited\n"
+  },
+  {
+    "label": "独立冻结PostgreSQL",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "docker",
+      "run",
+      "-d",
+      "--rm",
+      "--name",
+      "pet-p06-01-pg",
+      "--label",
+      "pet.validation=P06-01",
+      "--tmpfs",
+      "/var/lib/postgresql/data",
+      "--env-file",
+      "/Users/kimwell/work/pet-platform/.local-data/p06-01/postgres.env",
+      "-p",
+      "127.0.0.1::5432",
+      "postgres:17.11-bookworm@sha256:3645570cccdfa447589da9f57dd740faa29b30938e861289a5574b6ca6b03826",
+      "-c",
+      "log_statement=none",
+      "-c",
+      "log_min_error_statement=panic",
+      "-c",
+      "log_parameter_max_length=0",
+      "-c",
+      "log_parameter_max_length_on_error=0"
+    ],
+    "startedAt": "2026-10-08T20:32:56.327591+08:00",
+    "exitCode": 0,
+    "summary": "e3177a279713ca67dd250f02137cbb40718746b558d740e681a9188c7d72394b\n"
+  },
+  {
+    "label": "独立冻结Redis",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "docker",
+      "run",
+      "-d",
+      "--rm",
+      "--name",
+      "pet-p06-01-redis",
+      "--label",
+      "pet.validation=P06-01",
+      "--tmpfs",
+      "/data",
+      "-v",
+      "/Users/kimwell/work/pet-platform/.local-data/p06-01/redis.conf:/tmp/validation.conf:ro",
+      "-p",
+      "127.0.0.1::6379",
+      "redis:8.2.10-bookworm@sha256:47670742d7924adbcdb404d1288b6327815b23141969c0939b8e5d61f78c2634",
+      "redis-server",
+      "/tmp/validation.conf"
+    ],
+    "startedAt": "2026-10-08T20:32:58.723478+08:00",
+    "exitCode": 0,
+    "summary": "1caab26c7a91dd4fc49633303f043d70af4a68b4607f8dd43266d6e81da74a59\n"
+  },
+  {
+    "label": "PostgreSQL回环端口",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "docker",
+      "port",
+      "pet-p06-01-pg",
+      "5432"
+    ],
+    "startedAt": "2026-10-08T20:32:59.283058+08:00",
+    "exitCode": 0,
+    "summary": "127.0.0.1:61318\n"
+  },
+  {
+    "label": "Redis回环端口",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "docker",
+      "port",
+      "pet-p06-01-redis",
+      "6379"
+    ],
+    "startedAt": "2026-10-08T20:32:59.303022+08:00",
+    "exitCode": 0,
+    "summary": "127.0.0.1:61319\n"
+  },
+  {
+    "label": "正式角色:identity",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "docker",
+      "exec",
+      "-i",
+      "pet-p06-01-pg",
+      "psql",
+      "-X",
+      "-qAt",
+      "-v",
+      "ON_ERROR_STOP=1",
+      "-U",
+      "postgres",
+      "-d",
+      "p06_01_acceptance"
+    ],
+    "startedAt": "2026-10-08T20:32:59.321818+08:00",
+    "exitCode": 2,
+    "summary": "psql: error: connection to server on socket \"/var/run/postgresql/.s.PGSQL.5432\" failed: FATAL:  database \"p06_01_acceptance\" does not exist\n"
+  }
+]

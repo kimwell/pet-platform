@@ -1,11 +1,15 @@
-import { Alert, Space, Typography } from 'antd';
+import { Button, Card, Typography } from 'antd';
+import { Link } from '@tanstack/react-router';
 
 export function SystemEntry() {
   return (
-    <Space orientation="vertical" size="large" className="system-entry">
-      <Typography.Title level={1}>系统工程入口</Typography.Title>
-      <Typography.Paragraph>三端工程骨架正在建立，当前页面用于确认 Web 应用入口。</Typography.Paragraph>
-      <Alert type="info" title="尚未接入正式功能" description="认证、身份权限、租户隔离、附件和消息能力将在后续任务实现。" showIcon />
-    </Space>
+    <main className="system-content system-entry">
+      <Typography.Title level={1}>企业应用</Typography.Title>
+      <Typography.Paragraph type="secondary">选择与你的账号对应的入口</Typography.Paragraph>
+      <div className="entry-grid">
+        <Card title="员工工作台"><Typography.Paragraph>使用所属租户的员工账号</Typography.Paragraph><Link to="/admin"><Button type="primary">进入员工工作台</Button></Link></Card>
+        <Card title="平台控制台"><Typography.Paragraph>使用独立的平台管理员账号</Typography.Paragraph><Link to="/platform"><Button>进入平台控制台</Button></Link></Card>
+      </div>
+    </main>
   );
 }

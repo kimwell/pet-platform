@@ -4,7 +4,7 @@
 
 ## 当前实际结构
 
-根目录 `/Users/kimwell/work/pet-platform` 为 Git 仓库，main 尚无提交；ui 保留原位，属于既有视觉成果，不是模板业务。实际结构如下，不列不存在的功能包：
+根目录 `/Users/kimwell/work/pet-platform` 为 Git 仓库；ui 保留原位，属于既有视觉成果。以下为P03历史目录快照，最新Web实际结构见文末；当前Git状态见P06-01证据。
 
 ```text
 pet-platform/
@@ -106,3 +106,25 @@ packages/api-contracts 只承载纯类型，不含 React/DOM/fetch/wx.request/Co
 P02-01 已初始化上述最小工程壳与工具；P02-02已完成真实启停/配置及冻结微信工具构建/编译验收。P03-01公共协议已COMPLETE（[报告](../testing/P03-01-VERIFICATION.md)），新增/error仅为框架安全兜底，协议Controller仅在测试配置。P03-02持久化、P03-03标量/OpenAPI/类型与结构检查已COMPLETE，P03整体COMPLETE，下一合法P04不自动执行。P03 协议/数据，P04 隔离，P05 身份，P06～P10 页面与能力，P11 模板，P12 全新项目验收。规划目录只在有实际行为时创建，不用空目录/空类充数。
 
 P03-03实际代码新增shared.serialization/openapi，测试契约与字节码夹具仅在src/test；小程序types/generated为独占生成目录，手写消费在types/contracts.ts，Web消费在src/contracts.ts。完整目录与生成范围见 [生成](../contracts/OPENAPI-GENERATION.md)、[验证](../testing/P03-03-VERIFICATION.md)。
+
+## P06-01 最新 Web 实际结构（2026-10-08）
+
+前述完整树是P03历史快照；后端当前正式身份/客户和迁移以P05契约/报告为准，不再以旧“无正式身份/生产paths为空”判断当前实现。当前Web新增的有行为目录如下：
+
+```text
+apps/admin-web/src/
+├── app/providers/AppProviders.tsx
+├── app/router/{router.ts,router.test.tsx,dev-config.test.ts}
+├── app/guards/requireSession.ts
+├── app/layout/{SystemLayout,SessionLayout}.tsx / layoutState.ts
+├── features/auth/api/{AuthService,queryKeys}.ts
+├── features/auth/pages/LoginPage.tsx
+├── features/account/AccountHome.tsx
+├── shared/api/{request,ApiError}.ts / ErrorNotice.tsx / request.test.ts
+├── shared/auth/{spaces,returnTo,SessionRuntime,useSession}.ts / SessionFailure.tsx / SessionRuntime.test.ts
+├── shared/config/api.ts
+├── test/responses.ts
+└── main.tsx / contracts.ts / shared/System*.tsx / styles/global.css
+```
+
+Provider中文ConfigProvider/Query；Router挂载于main，context传同一服务实例。代码路由、登录页/空间布局dynamic import，无空功能目录/万能Wrapper。服务器身份只在Query、侧栏客户端偏好只在非持久化Zustand，两个空间服务/缓存生命周期独立。已有ui、后端/生成类型、小程序及精确依赖根锁不改；实测与限制见[P06-01](../testing/P06-01-VERIFICATION.md)。

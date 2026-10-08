@@ -1,0 +1,24 @@
+{
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "command": [
+    "docker",
+    "exec",
+    "-i",
+    "pet-p06-01-pg",
+    "psql",
+    "-X",
+    "-qAt",
+    "-v",
+    "ON_ERROR_STOP=1",
+    "-U",
+    "postgres",
+    "-d",
+    "p06_01_acceptance",
+    "-c",
+    "SELECT version,success FROM flyway_schema_history ORDER BY installed_rank; SELECT count(*) FROM identity_employee; SELECT count(*) FROM pet_control.platform_account;"
+  ],
+  "exitCode": 0,
+  "durationSeconds": 0.18,
+  "log": "runtime-database.log",
+  "summary": "1|t\n2|t\n3|t\n4|t\n1\n1\n"
+}

@@ -1,0 +1,42 @@
+{
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "command": [
+    "python3",
+    "<本轮文档/哈希/源代码审计>"
+  ],
+  "exitCode": 1,
+  "checks": [
+    {
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exitCode": 0,
+      "summary": ""
+    }
+  ],
+  "initialGitStatus": "",
+  "protectedFileCount": 506,
+  "protectedChanges": [],
+  "dependencyChanges": [],
+  "missingDocumentLinks": [
+    {
+      "file": "docs/testing/P06-01-VERIFICATION.md",
+      "link": "evidence/P06-01/final-audit.json"
+    },
+    {
+      "file": "docs/testing/P06-01-VERIFICATION.md",
+      "link": "evidence/P06-01/changed-files.json"
+    }
+  ],
+  "missingNewReportAnchors": [],
+  "productionPersistenceOrConsoleCalls": [],
+  "actualCredentialScanEvidence": [
+    "preservation-and-secrets.json",
+    "responsive-secrets.json"
+  ],
+  "sourceFiles": 27,
+  "documentationFiles": 9,
+  "summary": "仅Web源码/必要文档/证据变更；506个既有保护文件逐项相同，所需链接存在；实际凭据扫描零泄露，临时服务停止"
+}

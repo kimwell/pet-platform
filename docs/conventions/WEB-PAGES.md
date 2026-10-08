@@ -29,3 +29,11 @@ VERSION_CONFLICT保留当前输入，提示“数据已更新，请重新加载�
 404统一“资源不存在或不可访问”，不区分越权；无操作权限403、网络失败可重试、loading分别显示，不误退出身份。tab进入URL、入口校验白名单，深链恢复。编辑成功失效detail/list及模块声明的关联查询；返回列表保留已提交URL。状态允许操作与权限分别展示和校验。
 
 可访问性：字段label/错误关联、键盘可达、焦点进入/返回Modal、确认操作中文、loading不只靠颜色。P07用真实后端及浏览器覆盖筛选恢复、删除回退、并发版本/批量失败和权限变化，Mock页面不是验收。
+
+## P06-01 已实现页面（2026-10-08）
+
+公开 `/` 只提供员工/平台实际入口；`/admin/login` 为租户编码、账号、密码，`/platform/login` 为账号、密码。采用官方Ant Design Form/Input/Button，中文label、organization/username/current-password autocomplete和键盘提交；同步提交锁与pending防重复。账号按IdentityNames的Java strip/ASCII小写规范化，密码原样传输、不trim/改大小写；失败或成功均清密码，离页Form clearOnDestroy/resetFields。不提供“记住密码”。字段错误只映射本表单合法字段，未知路径消息在表单总错误，trace可复制；429读Retry-After，网络故障不同于密码错误。
+
+保护 `/admin` 与 `/platform` 展示真实me名称、空间及员工tenantId（契约没有租户名称/编码，不能用登录输入补造）。官方Layout/Menu/Breadcrumb/Dropdown/Avatar、侧栏折叠、刷新身份与当前退出可用，只有“当前身份”菜单；没有假统计、业务菜单、权限代码堆叠。强制改密只提示联系管理员，本轮不建设凭据安全页面。全局NotFound和错误边界存在；预期身份服务/权限故障是可重试页面，保持对应路径，不当作未登录。
+
+所有提示为页面内Alert/Result，没有message/modal上下文调用，故继续不安装无用途Ant Design App上下文。页面采用真实路由dynamic import；体积警告保留。历史ui是未确认用于管理壳的寄养/微信成果，本轮未复用或改动。详见[P06-01](../testing/P06-01-VERIFICATION.md)。
