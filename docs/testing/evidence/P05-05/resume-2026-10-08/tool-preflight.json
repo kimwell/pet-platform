@@ -1,0 +1,60 @@
+{
+  "recordedAt": "2026-10-08T17:17:53.868880+08:00",
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "level": "DOCUMENTED / UI_OBSERVED",
+  "toolPath": "/Users/kimwell/Applications/WechatDevTools-2.02.2608080.app",
+  "toolVersion": "2.02.2608080",
+  "libraryVersion": "3.17.2",
+  "designatedAppId": "wx9bcab67d52e2ee04",
+  "privateAppIdMatches": true,
+  "currentToolAppIdMatches": true,
+  "publicDefaultAppIdEmpty": true,
+  "uiResults": {
+    "basicInformationAppIdMatched": true,
+    "applicationInformationResolved": true,
+    "loggedInProjectViewObserved": true,
+    "loginSessionFreshness": "NOT_VERIFIED_BY_CLI",
+    "currentWxLoginPermission": "NOT_VERIFIED",
+    "originalProjectViewRestored": true
+  },
+  "cliCommands": [
+    {
+      "argv": [
+        "Contents/MacOS/cli",
+        "--help"
+      ],
+      "exitCode": 0,
+      "summary": "存在islogin/auto；没有独立compile命令"
+    },
+    {
+      "argv": [
+        "Contents/MacOS/cli",
+        "islogin"
+      ],
+      "exitCode": 246,
+      "summary": "IDE服务端口关闭；未确认开启，也未修改设置。该结果不证明账号无权限。"
+    },
+    {
+      "argv": [
+        "Contents/MacOS/cli",
+        "auto",
+        "--help"
+      ],
+      "exitCode": 0,
+      "summary": "工具支持automation；未启动automation或获取ticket"
+    }
+  ],
+  "uiEvidencePolicy": "只记录预定义AppID/版本匹配、界面结果；不保存原始可访问性树或基本信息截图。",
+  "safeProbe": {
+    "path": "/Users/kimwell/work/pet-platform/.local-data/p05-05-wechat/probe",
+    "outsideOfficialMiniProgramSource": true,
+    "imported": false,
+    "wxLoginCalled": false,
+    "secretIncluded": false,
+    "credentialLogging": false
+  },
+  "upstreamNetwork": "NOT_VERIFIED",
+  "requiredHumanAction": "填写实际PET_WECHAT_LOCAL_SECRET安全文件；本轮用户确认暂时无法提供。",
+  "cliServiceSettingNextTime": "若后续采用automation，由用户在微信开发者工具→设置→安全设置→服务端口开启；只在实际续验需要时处理，完成后恢复原关闭状态。",
+  "accountPermissionNextTime": "wx.login取得新鲜code时实际验证；若工具要求扫码，使用已获该AppID开发权限的微信扫码。本轮没有账号无权限证据。"
+}

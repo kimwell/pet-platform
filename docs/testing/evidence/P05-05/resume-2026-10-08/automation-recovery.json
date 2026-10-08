@@ -1,0 +1,23 @@
+{
+  "recordedAt": "2026-10-08T20:04:39.268794+08:00",
+  "firstAttempt": "real-run/real-wechat-result.json",
+  "firstAttemptStatus": "BLOCKED_BEFORE_CODE",
+  "upstreamAttempts": 0,
+  "rootCause": "独立验证子进程未继承HOME；官方CLI通过process.env.HOME定位工具用户资料，导致启动失败。",
+  "source": "当前安装工具Contents/MacOS/cli.js的userDataPath=path.join(process.env.HOME||空字符串,Library/Application Support,...)",
+  "adjustment": "只在本轮验证进程继承现有HOME，不修改其值、不修改全局配置或认证代码。",
+  "directCliChecks": [
+    {
+      "command": "cli islogin",
+      "exitCode": 0,
+      "rawOutputSaved": false
+    },
+    {
+      "command": "cli auto --project <独立probe> --auto-port 9420 --trust-project",
+      "exitCode": 0,
+      "rawOutputSaved": false
+    }
+  ],
+  "automationEndpoint": "ws://127.0.0.1:9420",
+  "endpointListening": true
+}

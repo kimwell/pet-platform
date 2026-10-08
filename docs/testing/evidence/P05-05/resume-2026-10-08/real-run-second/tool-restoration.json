@@ -1,0 +1,20 @@
+{
+  "recordedAt": "2026-10-08T20:08:20.262369+08:00",
+  "method": "cua_repl原生界面操作；只输出安全开关白名单",
+  "userAuthorizedTemporaryServicePort": true,
+  "servicePortBefore": false,
+  "servicePortDuring": true,
+  "servicePortAfter": false,
+  "loginTicketAllowed": false,
+  "globalDefaultTrustProjects": false,
+  "pluginServicePort": false,
+  "probeClosed": true,
+  "originalProjectWindowRestored": true,
+  "loopbackPortListeningAfter": {
+    "46904": false,
+    "9420": false
+  },
+  "rawAccessibilityTreeSaved": false,
+  "screenshotTaken": false,
+  "originalUserToolProcessStopped": false
+}

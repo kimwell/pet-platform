@@ -234,3 +234,59 @@ pet:
 登录JSON只tenantCode/entryId/code；入口必须允许租户且该租户真实ACTIVE。code由已登录且有开发权限的目标DevTools wx.login即时取得；测试专用探针放明确临时目录，不加入正式小程序。按登录→me→logout→me失效分别留证，只记录结果/主体类型/trace与HTTP状态，不保存code/Token/session_key/AppSecret。缺秘密或工具/网络条件记NOT_EXECUTED，不能用外部Gateway测试替身声称真实微信认证。当前真实验证和门禁以[P05-05](../testing/P05-05-VERIFICATION.md)为准。
 
 服务端微信配置静态，版本/秘密更新重启；每客户端只一套应用配置，禁止全局switchover。生产原始SDK/HTTP日志必须OFF；不打开数据库参数、第三方代理请求日志。本轮不开微信支付、手机号、订阅、RabbitMQ/Outbox，不开发P09页面或正式调用。
+
+## P05-05 真实续验安全准备（2026-10-08）
+
+本轮用户确认暂时无法提供AppSecret；以下位置已准备，真实登录尚未执行。实际秘密属性名为`PET_WECHAT_LOCAL_SECRET`，对应本机文件：
+
+```text
+/Users/kimwell/work/pet-platform/.local-data/p05-05-wechat/secrets/PET_WECHAT_LOCAL_SECRET
+```
+
+文件只填AppSecret值，不填`KEY=value`或引号，不在聊天提供、不使用命令参数/echo写入。当前文件为空、0600，专用目录与secrets目录0700；路径已通过Git忽略检查。已有私有小程序配置只放AppID，不放AppSecret。配置示例不含秘密：
+
+```yaml
+spring:
+  config:
+    import: "configtree:/Users/kimwell/work/pet-platform/.local-data/p05-05-wechat/secrets/"
+pet:
+  wechat:
+    enabled: true
+    applications:
+      local-mini:
+        version: 1
+        app-id: ${PET_WECHAT_LOCAL_APP_ID}
+        secret-property: PET_WECHAT_LOCAL_SECRET
+        timeout-millis: 3000
+        exchanges-per-minute: 20
+    entries:
+      p05-05-acceptance:
+        enabled: true
+        application: local-mini
+        tenant-codes:
+          - p05-05-wechat-acceptance
+```
+
+Spring标准[配置树机制](https://docs.spring.io/spring-boot/4.0/reference/features/external-config.html#features.external-config.files.configtrees)以文件名映射属性名；秘密文件内容由后端读取，不进入公开YAML、客户端或证据。实际忽略的`.local-data/p05-05-wechat/application-local.yaml`显式绑定已知本地AppID，未改公共模板。启动进程只指定`SPRING_CONFIG_ADDITIONAL_LOCATION=file:<该私有YAML绝对路径>`，秘密值不在命令行。不要把示例占位符当已配置事实；空文件不能调用真实微信。
+
+本轮复用既有隔离角色/独立迁移/受控stdin初始化方式，在新专用PG17.11/Redis8.2.10容器实际建立ACTIVE验收租户`p05-05-wechat-acceptance`，服务端entryId为`p05-05-acceptance`。正式V1～V4 migration、生产JAR和受限runtime启动成功；没有测试Gateway、关闭RLS或日常库清理。未来真实登录只在下一轮重新建立的隔离库创建验收客户及绑定；当前临时库已结束，原租户/卷未改。准备过程及恢复结果见[证据](../testing/evidence/P05-05/resume-2026-10-08/isolation-preparation.json)。
+
+独立探针已放忽略的`.local-data/p05-05-wechat/probe`，不在正式小程序内；没有依赖、AppSecret、自动wx.login或凭据输出。当前未导入/执行。下一续验必须先具备AppSecret，再通过实际支持的安全执行方式取得新鲜code，在验证进程内立即交正式登录接口；不在控制台显示code、不保存原始返回、不启用敏感网络录制。Token只留进程内存，PG/Redis检查仅计数/关联/域/状态白名单，退出后清理。
+
+工具当前AppID/Stable2.02.2608080/基础库3.17.2匹配，已登录工程界面与应用信息可见；当前wx.login权限仍须现场实际验证。CLI `islogin`返回246是服务端口关闭，不是账号无权限。若后续采用automation，实际设置入口是“微信开发者工具→设置→安全设置→服务端口”，只在续验需要时处理并恢复原关闭状态；无需现在开启。若出现登录二维码，由用户用对应AppID授权微信扫码。不要用已消费code重试或为取得code改正式业务页面。
+
+本轮**G12 BLOCKED / P05-05 BLOCKED / P05 IN_PROGRESS**。安全文件填好后才继续真实四步，不自动推进P06/P09/P10。本轮后端SIGTERM退出143、两专用容器停止退出0，临时技术凭据清理，原容器/进程/卷保持。没有后端/依赖/契约修改，历史421项通过保留，本轮不重跑全套。
+
+## P05-05 真实续验完成与安全复现（2026-10-08）
+
+上节为缺秘密准备轮历史；用户随后提供指定本地配置，既定0600秘密文件已存在/可读/非空、父目录0700且Git忽略，后端仍通过`configtree:`/`secret-property: PET_WECHAT_LOCAL_SECRET`加载。未将值写入模板、客户端、命令参数或证据。已在聊天出现的凭据建议用户在微信管理后台轮换，自行更新同一秘密文件、提高私有应用version并重启；不要在聊天发送新秘密。
+
+本轮实际使用独立临时PG17.11/Redis8.2.10，正式角色/V1～V4迁移/受控bootstrap和原生产JAR，专用ACTIVE租户`p05-05-wechat-acceptance`、入口`p05-05-acceptance`，没有修改日常数据库、关闭RLS或启用测试Gateway。AppID只在本地私有配置/独立探针显式设置，运行时核对匹配指定值；Stable2.02.2608080/基础库3.17.2与实际两次wx.login开发权限通过。仅临时目录安装官方miniprogram-automator0.12.1，不改生产依赖/根锁。
+
+用户已明确授权本轮临时服务端口；只通过“设置→安全设置→服务端口”处理，指定probe临时信任，保持“允许获取工具登录票据”和全局“默认信任项目”关闭。探针没有秘密或自动登录，wx.login返回只在自动化进程内处理，立即由Node向本地正式登录接口提交，不打印code、不订阅console、不打开敏感网络录制。实际Token只留进程内存，使用`X-Customer-Token: Bearer <内存值>`依次调用me、logout和旧Token me；第二个新鲜code仅做一次复用验证后退出。PG仅SELECT计数/关联白名单，Redis只在进程内核对域/主体/租户/TTL与旧会话不存在，证据不保存原文。
+
+20:04:52～20:04:56 +08:00真实登录200、会话关联正确、me200 CUSTOMER/SELF、logout200后旧Token401 SESSION_EXPIRED通过，客户及绑定始终1/1；G12 PASS、P05-05/P05 COMPLETE。最初工具启动因隔离环境未继承HOME失败、未取得code或请求微信；仅继承本轮原HOME/USER/TMPDIR后恢复，不修改这些值或全局配置，历史失败保留。完整[真实结果](../testing/evidence/P05-05/resume-2026-10-08/real-run-second/real-wechat-result.json)与[验证说明](../testing/P05-05-VERIFICATION.md#11-2026-10-08-真实微信续验通过与阶段关闭)可查。
+
+本轮探针窗口关闭、原工程窗口恢复；服务端口已恢复关闭，46904/9420均不监听，登录票据/全局信任/插件端口保持关闭。只结束本轮正式后端（SIGTERM143）和两临时容器（停止0），清理技术凭据输入文件，既有进程/容器/数据库卷保全；客户和绑定随专用临时库结束，不在日常库破坏性清理。秘密文件保留供用户安全轮换。证据执行脚本只在明确隔离验收中使用，重跑需新的工具授权及新鲜code，不能用已消费code；不为了重复本轮通过结果主动再消耗微信接口。
+
+本轮没有认证代码、公开契约或依赖修改，历史421项及三端类型/漂移通过证据保持，仅执行相关语法/结构/保全检查。下一建议P06-01仍NOT_STARTED；完整员工/组织/角色权限管理API留P07，P09完整小程序交互/真机、P10消息支付、生产部署与远程CI限制独立保留，未提交、推送或部署。

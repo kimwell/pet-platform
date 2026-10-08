@@ -1,0 +1,589 @@
+{
+  "startedAt": "2026-10-08T17:16:20.814748+08:00",
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "commands": [
+    {
+      "label": "秘密位置Git忽略检查",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "argv": [
+        "git",
+        "check-ignore",
+        "/Users/kimwell/work/pet-platform/.local-data/p05-05-wechat/secrets/PET_WECHAT_LOCAL_SECRET"
+      ],
+      "startedAt": "2026-10-08T17:16:20.815333+08:00",
+      "finishedAt": "2026-10-08T17:16:20.840349+08:00",
+      "exitCode": 0,
+      "summary": "/Users/kimwell/work/pet-platform/.local-data/p05-05-wechat/secrets/PET_WECHAT_LOCAL_SECRET"
+    },
+    {
+      "label": "初始容器状态",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "argv": [
+        "docker",
+        "ps",
+        "-a",
+        "--format",
+        "{{.ID}}\t{{.Names}}\t{{.Status}}"
+      ],
+      "startedAt": "2026-10-08T17:16:20.840527+08:00",
+      "finishedAt": "2026-10-08T17:16:20.980855+08:00",
+      "exitCode": 0,
+      "summary": "aaf4a5757d7b\tpet-platform-p02-validation-rabbitmq-1\tExited (0) 10 hours ago\n220b713e01b2\tpet-platform-p02-validation-postgres-1\tExited (0) 10 hours ago\nc32b316136a1\tpet-platform-p02-validation-redis-1\tExited (0) 10 hours ago"
+    },
+    {
+      "label": "冻结Java版本",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "argv": [
+        "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/pet-platform-p02-02-_qb1x3n7/tools/jdk/jdk-21.0.12.1+1/Contents/Home/bin/java",
+        "-version"
+      ],
+      "startedAt": "2026-10-08T17:16:20.980959+08:00",
+      "finishedAt": "2026-10-08T17:16:21.139420+08:00",
+      "exitCode": 0,
+      "summary": "完成"
+    },
+    {
+      "label": "启动独立PostgreSQL",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "argv": [
+        "docker",
+        "run",
+        "-d",
+        "--rm",
+        "--name",
+        "pet-p05-05-wechat-pg-72009",
+        "--label",
+        "pet.validation=P05-05-resume",
+        "--tmpfs",
+        "/var/lib/postgresql/data",
+        "--env-file",
+        "/Users/kimwell/work/pet-platform/.local-data/p05-05-wechat/p05-05-isolated-input-i25kkpbw/postgres.env",
+        "-p",
+        "127.0.0.1::5432",
+        "postgres:17.11-bookworm@sha256:3645570cccdfa447589da9f57dd740faa29b30938e861289a5574b6ca6b03826",
+        "-c",
+        "log_statement=none",
+        "-c",
+        "log_min_error_statement=panic",
+        "-c",
+        "log_parameter_max_length=0",
+        "-c",
+        "log_parameter_max_length_on_error=0"
+      ],
+      "startedAt": "2026-10-08T17:16:21.241661+08:00",
+      "finishedAt": "2026-10-08T17:16:21.541463+08:00",
+      "exitCode": 0,
+      "summary": "完成"
+    },
+    {
+      "label": "启动独立Redis",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "argv": [
+        "docker",
+        "run",
+        "-d",
+        "--rm",
+        "--name",
+        "pet-p05-05-wechat-redis-72009",
+        "--label",
+        "pet.validation=P05-05-resume",
+        "--tmpfs",
+        "/data",
+        "-v",
+        "/Users/kimwell/work/pet-platform/.local-data/p05-05-wechat/p05-05-isolated-input-i25kkpbw/redis.conf:/tmp/validation.conf:ro",
+        "-p",
+        "127.0.0.1::6379",
+        "redis:8.2.10-bookworm@sha256:47670742d7924adbcdb404d1288b6327815b23141969c0939b8e5d61f78c2634",
+        "redis-server",
+        "/tmp/validation.conf"
+      ],
+      "startedAt": "2026-10-08T17:16:21.541798+08:00",
+      "finishedAt": "2026-10-08T17:16:21.930778+08:00",
+      "exitCode": 0,
+      "summary": "完成"
+    },
+    {
+      "label": "PostgreSQL回环端口",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "argv": [
+        "docker",
+        "port",
+        "pet-p05-05-wechat-pg-72009",
+        "5432"
+      ],
+      "startedAt": "2026-10-08T17:16:23.209234+08:00",
+      "finishedAt": "2026-10-08T17:16:23.230295+08:00",
+      "exitCode": 0,
+      "summary": "127.0.0.1:60393"
+    },
+    {
+      "label": "Redis回环端口",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "argv": [
+        "docker",
+        "port",
+        "pet-p05-05-wechat-redis-72009",
+        "6379"
+      ],
+      "startedAt": "2026-10-08T17:16:23.230366+08:00",
+      "finishedAt": "2026-10-08T17:16:23.256408+08:00",
+      "exitCode": 0,
+      "summary": "127.0.0.1:60395"
+    },
+    {
+      "label": "PostgreSQL版本",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "argv": [
+        "docker",
+        "exec",
+        "-i",
+        "pet-p05-05-wechat-pg-72009",
+        "psql",
+        "-X",
+        "-qAt",
+        "-v",
+        "ON_ERROR_STOP=1",
+        "-U",
+        "postgres",
+        "-d",
+        "p05_05_wechat_acceptance"
+      ],
+      "startedAt": "2026-10-08T17:16:23.256523+08:00",
+      "finishedAt": "2026-10-08T17:16:23.342738+08:00",
+      "exitCode": 0,
+      "summary": "PostgreSQL 17.11 (Debian 17.11-1.pgdg12+2) on aarch64-unknown-linux-gnu, compiled by gcc (Debian 12.2.0-14+deb12u1) 12.2.0, 64-bit"
+    },
+    {
+      "label": "Redis版本",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "argv": [
+        "docker",
+        "exec",
+        "pet-p05-05-wechat-redis-72009",
+        "redis-server",
+        "--version"
+      ],
+      "startedAt": "2026-10-08T17:16:23.342800+08:00",
+      "finishedAt": "2026-10-08T17:16:23.426056+08:00",
+      "exitCode": 0,
+      "summary": "Redis server v=8.2.10 sha=00000000:1 malloc=jemalloc-5.3.0 bits=64 build=fab3807f1c670702"
+    },
+    {
+      "label": "正式角色预配置:provision-identity-roles.sql",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "argv": [
+        "docker",
+        "exec",
+        "-i",
+        "pet-p05-05-wechat-pg-72009",
+        "psql",
+        "-X",
+        "-qAt",
+        "-v",
+        "ON_ERROR_STOP=1",
+        "-U",
+        "postgres",
+        "-d",
+        "p05_05_wechat_acceptance"
+      ],
+      "startedAt": "2026-10-08T17:16:23.427101+08:00",
+      "finishedAt": "2026-10-08T17:16:23.514437+08:00",
+      "exitCode": 0,
+      "summary": "完成"
+    },
+    {
+      "label": "正式角色预配置:provision-platform-roles.sql",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "argv": [
+        "docker",
+        "exec",
+        "-i",
+        "pet-p05-05-wechat-pg-72009",
+        "psql",
+        "-X",
+        "-qAt",
+        "-v",
+        "ON_ERROR_STOP=1",
+        "-U",
+        "postgres",
+        "-d",
+        "p05_05_wechat_acceptance"
+      ],
+      "startedAt": "2026-10-08T17:16:23.515029+08:00",
+      "finishedAt": "2026-10-08T17:16:23.594512+08:00",
+      "exitCode": 0,
+      "summary": "完成"
+    },
+    {
+      "label": "正式角色预配置:provision-customer-roles.sql",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "argv": [
+        "docker",
+        "exec",
+        "-i",
+        "pet-p05-05-wechat-pg-72009",
+        "psql",
+        "-X",
+        "-qAt",
+        "-v",
+        "ON_ERROR_STOP=1",
+        "-U",
+        "postgres",
+        "-d",
+        "p05_05_wechat_acceptance"
+      ],
+      "startedAt": "2026-10-08T17:16:23.594973+08:00",
+      "finishedAt": "2026-10-08T17:16:23.686232+08:00",
+      "exitCode": 0,
+      "summary": "完成"
+    },
+    {
+      "label": "临时独立登录身份及受限成员关系",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "argv": [
+        "docker",
+        "exec",
+        "-i",
+        "pet-p05-05-wechat-pg-72009",
+        "psql",
+        "-X",
+        "-qAt",
+        "-v",
+        "ON_ERROR_STOP=1",
+        "-U",
+        "postgres",
+        "-d",
+        "p05_05_wechat_acceptance"
+      ],
+      "startedAt": "2026-10-08T17:16:23.686304+08:00",
+      "finishedAt": "2026-10-08T17:16:24.231570+08:00",
+      "exitCode": 0,
+      "summary": "完成"
+    },
+    {
+      "label": "正式生产JAR独立迁移",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "argv": [
+        "/Users/kimwell/work/pet-platform/scripts/backend-identity.sh",
+        "migrate"
+      ],
+      "startedAt": "2026-10-08T17:16:24.231737+08:00",
+      "finishedAt": "2026-10-08T17:16:26.269302+08:00",
+      "exitCode": 0,
+      "summary": "完成"
+    },
+    {
+      "label": "正式迁移history白名单",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "argv": [
+        "docker",
+        "exec",
+        "-i",
+        "pet-p05-05-wechat-pg-72009",
+        "psql",
+        "-X",
+        "-qAt",
+        "-v",
+        "ON_ERROR_STOP=1",
+        "-U",
+        "postgres",
+        "-d",
+        "p05_05_wechat_acceptance"
+      ],
+      "startedAt": "2026-10-08T17:16:26.269481+08:00",
+      "finishedAt": "2026-10-08T17:16:26.375271+08:00",
+      "exitCode": 0,
+      "summary": "1:true\n2:true\n3:true\n4:true"
+    },
+    {
+      "label": "正式初始化验收租户",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "argv": [
+        "/Users/kimwell/work/pet-platform/scripts/backend-identity.sh",
+        "bootstrap",
+        "--tenant-code",
+        "p05-05-wechat-acceptance",
+        "--tenant-name",
+        "P05-05微信隔离验收",
+        "--admin-login",
+        "p05-acceptance-admin",
+        "--password-stdin"
+      ],
+      "startedAt": "2026-10-08T17:16:26.375473+08:00",
+      "finishedAt": "2026-10-08T17:16:27.399141+08:00",
+      "exitCode": 0,
+      "summary": "完成"
+    },
+    {
+      "label": "验收租户非敏感投影",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "argv": [
+        "docker",
+        "exec",
+        "-i",
+        "pet-p05-05-wechat-pg-72009",
+        "psql",
+        "-X",
+        "-qAt",
+        "-v",
+        "ON_ERROR_STOP=1",
+        "-U",
+        "postgres",
+        "-d",
+        "p05_05_wechat_acceptance"
+      ],
+      "startedAt": "2026-10-08T17:16:27.399204+08:00",
+      "finishedAt": "2026-10-08T17:16:27.502749+08:00",
+      "exitCode": 0,
+      "summary": "704f2053-ec6c-4731-86ef-2b7345c450ba:p05-05-wechat-acceptance:ACTIVE"
+    },
+    {
+      "label": "客户及绑定基线数量",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "argv": [
+        "docker",
+        "exec",
+        "-i",
+        "pet-p05-05-wechat-pg-72009",
+        "psql",
+        "-X",
+        "-qAt",
+        "-v",
+        "ON_ERROR_STOP=1",
+        "-U",
+        "postgres",
+        "-d",
+        "p05_05_wechat_acceptance"
+      ],
+      "startedAt": "2026-10-08T17:16:27.502825+08:00",
+      "finishedAt": "2026-10-08T17:16:27.597283+08:00",
+      "exitCode": 0,
+      "summary": "0:0"
+    },
+    {
+      "label": "受限运行角色/RLS/秘密列权限",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "argv": [
+        "docker",
+        "exec",
+        "-i",
+        "pet-p05-05-wechat-pg-72009",
+        "psql",
+        "-X",
+        "-qAt",
+        "-v",
+        "ON_ERROR_STOP=1",
+        "-U",
+        "p05_probe_runtime",
+        "-d",
+        "p05_05_wechat_acceptance"
+      ],
+      "startedAt": "2026-10-08T17:16:27.597342+08:00",
+      "finishedAt": "2026-10-08T17:16:27.688500+08:00",
+      "exitCode": 0,
+      "summary": "p05_probe_runtime:false:false:false\n0"
+    },
+    {
+      "label": "真实Redis认证PING",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "argv": [
+        "docker",
+        "exec",
+        "-i",
+        "pet-p05-05-wechat-redis-72009",
+        "sh",
+        "-c",
+        "read -r task_password; REDISCLI_AUTH=\"$task_password\" redis-cli ping"
+      ],
+      "startedAt": "2026-10-08T17:16:27.688639+08:00",
+      "finishedAt": "2026-10-08T17:16:27.770641+08:00",
+      "exitCode": 0,
+      "summary": "PONG"
+    },
+    {
+      "label": "正式后端启动/健康",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "argv": [
+        "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/pet-platform-p02-02-_qb1x3n7/tools/jdk/jdk-21.0.12.1+1/Contents/Home/bin/java",
+        "-jar",
+        "/Users/kimwell/work/pet-platform/apps/backend/target/pet-platform-backend-0.0.0-SNAPSHOT.jar"
+      ],
+      "startedAt": "2026-10-08T17:16:27.771294+08:00",
+      "finishedAt": "2026-10-08T17:16:37.481741+08:00",
+      "exitCode": null,
+      "summary": "独立local生产装配；HTTP readiness=200 UP；结束状态在cleanup记录"
+    },
+    {
+      "label": "准备后客户及绑定未创建",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "argv": [
+        "docker",
+        "exec",
+        "-i",
+        "pet-p05-05-wechat-pg-72009",
+        "psql",
+        "-X",
+        "-qAt",
+        "-v",
+        "ON_ERROR_STOP=1",
+        "-U",
+        "postgres",
+        "-d",
+        "p05_05_wechat_acceptance"
+      ],
+      "startedAt": "2026-10-08T17:16:37.502600+08:00",
+      "finishedAt": "2026-10-08T17:16:37.725189+08:00",
+      "exitCode": 0,
+      "summary": "0:0"
+    },
+    {
+      "label": "停止本轮专用容器",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "argv": [
+        "docker",
+        "stop",
+        "--time",
+        "15",
+        "pet-p05-05-wechat-redis-72009"
+      ],
+      "startedAt": "2026-10-08T17:16:37.800838+08:00",
+      "finishedAt": "2026-10-08T17:16:38.155379+08:00",
+      "exitCode": 0,
+      "summary": "完成"
+    },
+    {
+      "label": "停止本轮专用容器",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "argv": [
+        "docker",
+        "stop",
+        "--time",
+        "15",
+        "pet-p05-05-wechat-pg-72009"
+      ],
+      "startedAt": "2026-10-08T17:16:38.155436+08:00",
+      "finishedAt": "2026-10-08T17:16:38.556801+08:00",
+      "exitCode": 0,
+      "summary": "完成"
+    },
+    {
+      "label": "结束容器状态",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "argv": [
+        "docker",
+        "ps",
+        "-a",
+        "--format",
+        "{{.ID}}\t{{.Names}}\t{{.Status}}"
+      ],
+      "startedAt": "2026-10-08T17:16:38.556888+08:00",
+      "finishedAt": "2026-10-08T17:16:38.588599+08:00",
+      "exitCode": 0,
+      "summary": "aaf4a5757d7b\tpet-platform-p02-validation-rabbitmq-1\tExited (0) 10 hours ago\n220b713e01b2\tpet-platform-p02-validation-postgres-1\tExited (0) 10 hours ago\nc32b316136a1\tpet-platform-p02-validation-redis-1\tExited (0) 10 hours ago"
+    }
+  ],
+  "checks": {
+    "secret": {
+      "property": "PET_WECHAT_LOCAL_SECRET",
+      "path": "/Users/kimwell/work/pet-platform/.local-data/p05-05-wechat/secrets/PET_WECHAT_LOCAL_SECRET",
+      "exists": true,
+      "readable": true,
+      "nonempty": false,
+      "mode": "0o600",
+      "directoryMode": "0o700",
+      "gitIgnored": true,
+      "contentRead": false
+    },
+    "initialContainers": [
+      "aaf4a5757d7b\tpet-platform-p02-validation-rabbitmq-1\tExited (0) 10 hours ago",
+      "220b713e01b2\tpet-platform-p02-validation-postgres-1\tExited (0) 10 hours ago",
+      "c32b316136a1\tpet-platform-p02-validation-redis-1\tExited (0) 10 hours ago"
+    ],
+    "javaVersion": "Temurin 21.0.12.1+1-LTS",
+    "productionJarSHA256": "783dce595d9c45fe275db083093b625b9fdfe670debdfb56f030f6bf1ed0581f",
+    "packagedMigrationMatches": {
+      "V4__customer_wechat_identity.sql": true,
+      "V2__staff_credential_security.sql": true,
+      "V1__platform_identity_foundation.sql": true,
+      "V3__platform_administrator.sql": true
+    },
+    "productionGatewayClassPresent": true,
+    "testGatewayPackaged": false,
+    "migrations": [
+      "1:true",
+      "2:true",
+      "3:true",
+      "4:true"
+    ],
+    "tenant": "704f2053-ec6c-4731-86ef-2b7345c450ba:p05-05-wechat-acceptance:ACTIVE",
+    "customerBaselineCounts": "0:0",
+    "runtimeSecurity": [
+      "p05_probe_runtime:false:false:false",
+      "0"
+    ],
+    "redisPing": "PONG",
+    "applicationStartedMessageObserved": true,
+    "readiness": {
+      "path": "/actuator/health/readiness",
+      "httpStatus": 200,
+      "traceId": null,
+      "headerTraceMatches": true,
+      "errorCode": null,
+      "healthStatus": "UP"
+    },
+    "unauthenticatedMe": {
+      "path": "/api/customer/auth/me",
+      "httpStatus": 401,
+      "traceId": "5abfedbcf30c895e1dd5be260eb156e6",
+      "headerTraceMatches": true,
+      "errorCode": "AUTH_REQUIRED",
+      "healthStatus": null
+    },
+    "productionGateway": {
+      "class": "com.pet.platform.customeridentity.infrastructure.WxJavaMiniProgramGateway",
+      "wxJavaVersion": "4.8.0",
+      "profile": "local",
+      "testOverrides": false,
+      "enabledEntry": "p05-05-acceptance",
+      "application": "local-mini",
+      "appIdMatchesDesignated": true,
+      "upstreamExchange": "NOT_EXECUTED"
+    },
+    "customerCountsAfterPreparation": "0:0",
+    "temporaryInputsRemovedWhenContextEnds": true
+  },
+  "steps": {
+    "realCodeExchange": "NOT_EXECUTED",
+    "customerSession": "NOT_EXECUTED",
+    "currentIdentity": "NOT_EXECUTED",
+    "logoutInvalidation": "NOT_EXECUTED",
+    "repeatCustomerReuse": "NOT_EXECUTED"
+  },
+  "reason": "用户确认暂时无法提供AppSecret；本轮只完成安全准备。",
+  "preparationStatus": "RUNTIME_VERIFIED",
+  "cleanup": {
+    "backendExitCode": 143,
+    "containers": [
+      {
+        "name": "pet-p05-05-wechat-redis-72009",
+        "stopExitCode": 0
+      },
+      {
+        "name": "pet-p05-05-wechat-pg-72009",
+        "stopExitCode": 0
+      }
+    ],
+    "finalContainers": [
+      "aaf4a5757d7b\tpet-platform-p02-validation-rabbitmq-1\tExited (0) 10 hours ago",
+      "220b713e01b2\tpet-platform-p02-validation-postgres-1\tExited (0) 10 hours ago",
+      "c32b316136a1\tpet-platform-p02-validation-redis-1\tExited (0) 10 hours ago"
+    ],
+    "existingContainersStatePreserved": true,
+    "userProcessesStopped": false,
+    "existingVolumesDeleted": false
+  },
+  "finishedAt": "2026-10-08T17:16:38.588682+08:00",
+  "G12": "BLOCKED",
+  "P05-05": "BLOCKED",
+  "P05": "IN_PROGRESS"
+}

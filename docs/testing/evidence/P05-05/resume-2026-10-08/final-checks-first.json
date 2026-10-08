@@ -1,0 +1,23 @@
+{
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "startedAt": "2026-10-08T17:21:02.842976+08:00",
+  "finishedAt": "2026-10-08T17:21:02.915490+08:00",
+  "status": "FAIL",
+  "missingLocalLinks": [
+    {
+      "file": "docs/testing/P05-05-VERIFICATION.md",
+      "link": "evidence/P05-05/resume-2026-10-08/final-checks.json"
+    }
+  ],
+  "protectedFilesChanges": [],
+  "priorStageEvidenceChanges": [],
+  "originalP05_05EvidenceChanges": [],
+  "temporaryCredentialInputDirectoriesRemaining": 0,
+  "pythonPreparationSyntax": "PASS",
+  "productionJarSHA256": "783dce595d9c45fe275db083093b625b9fdfe670debdfb56f030f6bf1ed0581f",
+  "backendChanges": false,
+  "dependencyChanges": false,
+  "publicContractChanges": false,
+  "full421TestsRepeated": false,
+  "reasonNoFullVerify": "仅本机私有配置、隔离准备脚本与文档/证据；既有生产JAR运行检查成功，未修改后端/依赖/契约。"
+}

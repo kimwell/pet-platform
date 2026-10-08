@@ -1,0 +1,42 @@
+{
+  "recordedAt": "2026-10-08T17:17:53.868880+08:00",
+  "P05-05": "BLOCKED",
+  "P05": "IN_PROGRESS",
+  "G12": "BLOCKED",
+  "blockingCondition": "用户确认暂时无法提供AppSecret；指定安全文件存在可读但为空。",
+  "steps": [
+    {
+      "name": "真实微信code交换/登录",
+      "httpStatus": null,
+      "traceId": null,
+      "status": "NOT_EXECUTED"
+    },
+    {
+      "name": "CUSTOMER会话建立/PG绑定与Redis会话",
+      "httpStatus": null,
+      "traceId": null,
+      "status": "NOT_EXECUTED"
+    },
+    {
+      "name": "真实客户me与SELF",
+      "httpStatus": null,
+      "traceId": null,
+      "status": "NOT_EXECUTED"
+    },
+    {
+      "name": "当前退出后同旧Token失效",
+      "httpStatus": null,
+      "traceId": null,
+      "status": "NOT_EXECUTED"
+    }
+  ],
+  "existingCustomerReused": "NOT_EXECUTED",
+  "freshCodeAcquired": false,
+  "upstreamCalls": 0,
+  "productionBackendChanged": false,
+  "publicContractChanged": false,
+  "prior421Tests": "历史verify-final通过，本轮未无理由重跑。",
+  "preparationEvidence": "isolation-preparation.json",
+  "toolEvidence": "tool-preflight.json",
+  "nextLegalTask": "P05-05真实微信续验；G12四步通过后才重新核对P05。"
+}

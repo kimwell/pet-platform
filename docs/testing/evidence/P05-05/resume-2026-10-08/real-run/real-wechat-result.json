@@ -1,0 +1,13 @@
+{
+  "startedAt": "2026-10-08T12:02:36.349Z",
+  "steps": [],
+  "repeatCustomerReuse": "NOT_EXECUTED",
+  "codeLogged": false,
+  "tokenLogged": false,
+  "upstreamAttempts": 0,
+  "status": "BLOCKED",
+  "failedStage": "TOOL_LAUNCH",
+  "failureCategory": "DEVTOOLS_LOGIN_OR_AUTOMATION_BLOCKED",
+  "unreturnedSessionsCleanup": [],
+  "finishedAt": "2026-10-08T12:02:52.400Z"
+}

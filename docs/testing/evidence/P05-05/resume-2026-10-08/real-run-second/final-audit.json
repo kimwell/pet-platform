@@ -1,0 +1,120 @@
+{
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "startedAt": "2026-10-08T20:11:44.513553+08:00",
+  "status": "PASS",
+  "commands": [
+    {
+      "label": "秘密文件Git忽略",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "argv": [
+        "git",
+        "check-ignore",
+        "/Users/kimwell/work/pet-platform/.local-data/p05-05-wechat/secrets/PET_WECHAT_LOCAL_SECRET"
+      ],
+      "startedAt": "2026-10-08T20:11:44.515246+08:00",
+      "finishedAt": "2026-10-08T20:11:44.537868+08:00",
+      "exitCode": 0,
+      "summary": "通过"
+    },
+    {
+      "label": "已跟踪变更边界",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "argv": [
+        "git",
+        "diff",
+        "--name-only"
+      ],
+      "startedAt": "2026-10-08T20:11:44.541108+08:00",
+      "finishedAt": "2026-10-08T20:11:44.558555+08:00",
+      "exitCode": 0,
+      "summary": "通过"
+    },
+    {
+      "label": "原阶段与P05-05历史证据保全",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "argv": [
+        "git",
+        "diff",
+        "--name-only",
+        "--",
+        "docs/testing/evidence",
+        "apps",
+        "packages",
+        "infra",
+        "scripts",
+        "ui",
+        "AGENTS.md",
+        "pnpm-lock.yaml",
+        "package.json"
+      ],
+      "startedAt": "2026-10-08T20:11:44.558911+08:00",
+      "finishedAt": "2026-10-08T20:11:44.570648+08:00",
+      "exitCode": 0,
+      "summary": "通过"
+    },
+    {
+      "label": "真实执行器Node语法",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "argv": [
+        "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/tools/node-v24.21.0-darwin-arm64/bin/node",
+        "--check",
+        "/Users/kimwell/work/pet-platform/docs/testing/evidence/P05-05/resume-2026-10-08/safe-real-wechat.cjs"
+      ],
+      "startedAt": "2026-10-08T20:11:44.679206+08:00",
+      "finishedAt": "2026-10-08T20:11:44.850316+08:00",
+      "exitCode": 0,
+      "summary": "通过"
+    },
+    {
+      "label": "仓库单锁固定版本及秘密特征",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "argv": [
+        "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/tools/node-v24.21.0-darwin-arm64/bin/node",
+        "scripts/check-repository.mjs"
+      ],
+      "startedAt": "2026-10-08T20:11:44.850353+08:00",
+      "finishedAt": "2026-10-08T20:11:45.047691+08:00",
+      "exitCode": 0,
+      "summary": "通过"
+    },
+    {
+      "label": "正式小程序结构及配置",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "argv": [
+        "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/tools/node-v24.21.0-darwin-arm64/bin/node",
+        "scripts/check-miniprogram.mjs"
+      ],
+      "startedAt": "2026-10-08T20:11:45.047753+08:00",
+      "finishedAt": "2026-10-08T20:11:45.085298+08:00",
+      "exitCode": 0,
+      "summary": "通过"
+    },
+    {
+      "label": "差异格式",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "argv": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "startedAt": "2026-10-08T20:11:45.085353+08:00",
+      "finishedAt": "2026-10-08T20:11:45.100234+08:00",
+      "exitCode": 0,
+      "summary": "通过"
+    }
+  ],
+  "checks": {
+    "realFourStepsAndRepeatReuse": "PASS",
+    "resourceAndToolRestoration": "PASS",
+    "secretExistsReadableNonemptyIgnored600": true,
+    "knownSecretAbsentFromNewEvidenceAndDocs": true,
+    "realResultContainsOnlyNoncredentialFields": true,
+    "onlyFiveTrackedDocumentsChanged": true,
+    "backendContractsDependenciesUiPriorEvidenceUnchanged": true,
+    "productionJarSHA256": "783dce595d9c45fe275db083093b625b9fdfe670debdfb56f030f6bf1ed0581f",
+    "pythonSyntax": "PASS",
+    "missingLocalLinks": [],
+    "historical421PreservedNotRepeated": true
+  },
+  "finishedAt": "2026-10-08T20:11:45.103063+08:00"
+}

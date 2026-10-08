@@ -1,0 +1,24 @@
+{
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "checks": [
+    {
+      "check": "仓库单锁/固定版本/秘密特征",
+      "status": "fulfilled",
+      "exitCode": 0,
+      "summary": "单锁、精确直接依赖、工具链、固定后端入口及秘密特征检查通过。秘密检查不输出匹配值。"
+    },
+    {
+      "check": "小程序公共结构/配置",
+      "status": "fulfilled",
+      "exitCode": 0,
+      "summary": "原生小程序结构、页面和官方组件引用检查通过；这不是开发者工具编译。"
+    },
+    {
+      "check": "差异检查",
+      "status": "fulfilled",
+      "exitCode": 0,
+      "summary": "docs/development/LOCAL-DEVELOPMENT.md | 42 +++++++++++++++++++++++++++++++++++\n docs/development/ROADMAP.md           |  8 +++++++\n docs/testing/ACCEPTANCE-MATRIX.md     |  2 ++\n docs/testing/P05-05-VERIFICATION.md   | 40 ++++++++++++++++++++++++++++++++-\n docs/testing/P05-ACCEPTANCE.md        | 10 +++++++++\n 5 files changed, 101 insertions(+), 1 deletion(-)\n M docs/development/LOCAL-DEVELOPMENT.md\n M docs/development/ROADMAP.md\n M docs/testing/ACCEPTANCE-MATRIX.md\n M docs/testing/P05-05-VERIFICATION.md\n M docs/testing/P05-ACCEPTANCE.md\n?? docs/testing/evidence/P05-05/resume-2026-10-08/"
+    }
+  ],
+  "scope": "仓库/小程序静态与差异检查；不替代真实微信、开发者工具编译或421项回归。"
+}
