@@ -1,5 +1,6 @@
 # 后端模块边界
 
+当前实施状态见本文P05-01章节及[P05-01验证](../testing/P05-01-VERIFICATION.md)。旧阶段“尚未实现”描述保留为历史范围；冻结安全契约不变。
 冻结日期：2026-10-07，P01-02。本文拥有职责、数据归属、依赖和事务边界。一个 Spring Boot 应用、一个 Maven Module、一个 PostgreSQL 主库；使用 JPA/Flyway，不增加服务或独立数据库。包及目录见 [工程结构](PROJECT-STRUCTURE.md)。
 
 接口名均是拟定契约名，不代表已有 Java 类型；只在真实用例需要时创建，输出稳定 DTO，不泄露 Entity/Repository/凭据或 SDK 对象。
@@ -62,3 +63,13 @@ shared.redis拥有RedisKeyBuilder/RedisKey、TenantRedisAccess、PlatformRedisAc
 shared.tenancy新增唯一TenantTaskExecutor/AsyncExecutionConfiguration与包内TaskDeadline；shared.observability增加只管理traceId的TraceScope。任务根openTask、时效捕获和底层状态读取仍包内且仅批准执行器使用。业务不可构造未登记执行器/可信身份根入口、调用无身份技术submitUnscoped、使用@Async/公共ForkJoinPool/Executors/自行启动Thread绕过。先结束调用方事务，工作端代理新事务沿用ScopedTransaction。快照只当前权限、不可伪造或序列化成未来消息凭证；P05/P10责任见[ASYNC-EXECUTION](../conventions/ASYNC-EXECUTION.md)。
 
 ASM只扫描本项目生产class，第三方内部Executor不进入检查；新增泛型引用/直接调用/bootstrap Handle反例证明Redis、Key伪造、异步入口、无身份任务及未登记可信入口规则有效。生产继续禁止引用测试Provider、角色/Entity/SQL夹具，并对全部测试class/resources/dependencies做JAR比对。扫描不理解任意闭包/反射/动态字符串或缓存内容，真实范围与部署权限不能以静态PASS替代。
+
+## P05-01 正式数据owner与受限入口（2026-10-08）
+
+platform.domain拥有Tenant/Store（控制面Tenant继承BaseEntity，Store继承TenantScopedEntity）；identity.domain拥有Employee/Role与三关系，均为真实JPA映射而非空分层类。platform.application.PlatformPermissions声明租户门店管理能力，identity仅依赖该公开契约。Organization/平台账号/客户身份未在本轮创建，留待其真实用例。
+
+identity.application.authentication公开StaffAuthentication/StaffIdentity及内部IdentityLookup/AuthenticationCandidate，只有identity认证应用与登记AuthenticationJdbc，以及未来identity/api/authentication适配器可以访问；其他业务/api引用被编译字节码拒绝。候选无凭据getter、Jackson禁止可见性，实体不返回Controller，身份事实不等于已验证会话。
+
+新增底层白名单仅AuthenticationJdbc（两个固定只读函数）、IdentityRuntimePermissions（系统权限目录检查）、CommandDatabase/BootstrapJdbc/MigrationCommand（独立命令）。普通EntityManager/native/JPQL/JDBC禁令保留，白名单不是给模块infrastructure全面放行。反例仍检查方法引用和泛型；Store事实投影只能登记PostgresStoreOwnershipReader调用，shared不引用具体实体。
+
+显式identity.application.bootstrap协调一次跨owner基础初始化，经专用数据库函数原子创建platform与identity基础记录；这是单一初始化用例，不是跨模块Repository或通用写接口。初始化命令不注册Spring Bean，不被Application调用，不开放HTTP。普通模块/api不能引用bootstrap端口或底层类。正式表/角色/命令及安全责任见[初始化说明](../development/IDENTITY-BOOTSTRAP.md)。

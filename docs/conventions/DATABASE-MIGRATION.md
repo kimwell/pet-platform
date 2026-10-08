@@ -1,5 +1,6 @@
 # 数据库迁移约定
 
+当前实施状态见本文P05-01章节及[P05-01验证](../testing/P05-01-VERIFICATION.md)。旧阶段“尚未实现”描述保留为历史范围；冻结安全契约不变。
 P03-02 实施日期：2026-10-08。版本由 [唯一矩阵](../development/VERSION-MATRIX.md) 管理；配置 owner 为 [CONFIGURATION](../architecture/CONFIGURATION.md)。
 
 生产 SQL 只放 `apps/backend/src/main/resources/db/migration/`。当前没有正式业务表，目录只有规则说明；Flyway 自身的 `flyway_schema_history` 是技术执行记录，不是业务表。不得为了启动或验收新增无用途的表。后续已安装模块按冻结的 locations 组织，运行关闭的模块仍保留历史迁移。
@@ -29,3 +30,13 @@ local/test 默认在应用启动时迁移，Spring Boot 的数据库初始化依
 实际pg_class/pg_policies/pg_constraint查询与范围外native/JPQL更新、无GUC、WITH CHECK伪造写入、DDL/TRUNCATE/SET ROLE拒绝见[P04-02](../testing/P04-02-VERIFICATION.md)。每个失败后的结果用独立owner连接读取。触发器故意跳过一行制造真实影响数异常，应用回滚全部变更；只在该隔离容器中使用TRUNCATE重置技术夹具，没有删除日常数据库卷或历史数据。
 
 未来正式模块按[持久化接入清单](PERSISTENCE.md#关联与新模块接入清单)创建正确复合约束与RLS，生产迁移编号仍唯一递增；运行/迁移角色实际权限、独立生产迁移执行和部署验证仍NOT_VERIFIED/NOT_EXECUTED，不能从技术容器结论推导生产账号权限验收。
+
+## P05-01 首次正式V1与独立执行（2026-10-08）
+
+新增唯一正式V1__platform_identity_foundation.sql，建立七表、索引、复合约束、FORCE RLS与三个受限函数。此前生产目录没有SQL，本轮空库迁移与已有空history升级均真实测试；不存在未测试的历史业务SQL升级路径。原测试persistence/security migrations保持src/test独立locations、独立EntityScan，正式迁移不引用测试角色/表。
+
+管理员显式执行infra/database/provision-identity-roles.sql预配置NOLOGIN能力角色；SQL不创建登录账号、密码或租户，已有角色冲突失败，不自动修复。正式迁移在开头SET ROLE pet_migrator；Flyway历史由继承迁移能力的独立登录身份维护，避免依赖会被恢复的init-sql role。函数由NOLOGIN、无BYPASSRLS的读/写owner分别拥有，PUBLIC EXECUTE撤销、固定search_path、显式限定表，不使用动态SQL。前置权限、成员配置及命令见[身份初始化](../development/IDENTITY-BOOTSTRAP.md)。
+
+生产JAR提供scripts/backend-identity.sh migrate独立入口；prod Application仍不迁移，只validate。local启用迁移时PET_MIGRATION_DATABASE_*显式必填且URL必须与运行数据库一致，不回退运行凭据。仍禁止clean、baseline非空库、repair、out-of-order或忽略checksum；生产原迁移不得改写。
+
+容器验证正式迁移/JPA validate/重复无变更及角色权限；正式部署、真实生产账号权限、备份恢复、既有生产数据升级仍NOT_VERIFIED/NOT_EXECUTED。本轮没有实际本地/生产管理员初始化。

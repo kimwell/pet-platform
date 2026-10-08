@@ -1,0 +1,1 @@
+{"test":"bootstrapLoginCannotReadTablesOrExecuteAuthentication","serverVersion":"17.11 (Debian 17.11-1.pgdg12+2)","runtime":"p05_probe_runtime","counts":{"identity_employee":0,"identity_employee_role":0,"identity_employee_store":0,"identity_role":0,"identity_role_permission":0,"platform_store":0,"platform_tenant":0},"outsideTransactionTenant":"EMPTY"}

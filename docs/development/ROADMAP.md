@@ -8,7 +8,7 @@
 | P02 三端工程初始化 | P02-01 根目录工程骨架、构建工具与本地基础设施初始化；P02-02 三端启动联调、环境配置校验与工程基础验收 | P01 完成及对应任务授权 | 三端工程、锁文件、配置样例、基础启动说明 | 三端可独立构建；可选能力关闭可启动；无行业业务 | Wrapper 构建、frozen install、tsc/Vite、小程序构建、启动检查 | COMPLETE；[P02-01 COMPLETE](../testing/P02-01-VERIFICATION.md)；[P02-02 COMPLETE](../testing/P02-02-VERIFICATION.md)，冻结微信工具npm/源码编译/模拟器已补齐 |
 | P03 后端协议与数据基础 | 统一响应/错误/分页/序列化；OpenAPI；JPA/Flyway/事务 | P02 | 协议基础、迁移和生成类型流程 | 协议与生成类型一致；真实 PostgreSQL 迁移和事务可重复 | JUnit、Testcontainers PostgreSQL、OpenAPI 生成与类型编译 | COMPLETE；[P03-01](../testing/P03-01-VERIFICATION.md)、[P03-02](../testing/P03-02-VERIFICATION.md)、[P03-03](../testing/P03-03-VERIFICATION.md)；限定本机工程/协议验证，后续隔离/生产/远程限制保留 |
 | P04 多租户与数据范围 | P04-01上下文与范围；P04-02 JPA/关联/PG隔离；P04-03 Redis/异步及阶段验收 | P03 | 租户策略、持久化防护与范围测试 | 单/多租户共用机制；无上下文拒绝；越权查询和写入被阻止 | 真实 PostgreSQL/Redis跨租户读写与确定性异步/复用反例 | COMPLETE；P04-01/02/03完成，[总验收](../testing/P04-ACCEPTANCE.md) |
-| P05 认证与身份权限 | Sa-Token Redis 会话；平台/员工/客户隔离；角色权限；Cookie/CSRF | P04 | 身份模块、会话契约、权限与安全测试 | 会话失效真实生效；身份跨域拒绝；CSRF 正反例通过 | 真实 Redis、HTTP/Cookie/Token、CSRF、权限集成测试 | NOT_STARTED |
+| P05 认证与身份权限 | Sa-Token Redis 会话；平台/员工/客户隔离；角色权限；Cookie/CSRF | P04 | 身份模块、会话契约、权限与安全测试 | 会话失效真实生效；身份跨域拒绝；CSRF 正反例通过 | 真实 Redis、HTTP/Cookie/Token、CSRF、权限集成测试 | IN_PROGRESS |
 | P06 Web 应用基础 | 应用壳；TanStack Router/Query；fetch；会话/权限呈现；表单错误 | P03、P05 | Web 应用壳与请求/会话基础 | 同源会话与后端真实联通；错误/加载/空态清楚 | tsc、lint、build、真实后端联调与浏览器测试 | NOT_STARTED |
 | P07 企业级页面与员工管理 | 官方组件列表/筛选/分页/详情/表单；员工/组织/角色页面 | P04～P06 | 页面模式与基础员工管理 | 服务端授权与数据范围实际生效；创建/修改/停用可验收 | 真实业务基础 API、权限反例、页面可访问性和端到端测试 | NOT_STARTED |
 | P08 文件附件与审计 | 本地存储；附件授权/生命周期；导出；审计链 | P03～P05 | 附件和审计模块、Web 接入 | 跨租户访问拒绝；日志不泄露秘密；错误路径可恢复 | 文件/DB 集成、越权下载、生命周期和审计关联检查 | NOT_STARTED |
@@ -81,3 +81,11 @@ P04-01关闭时的历史边界：当时只建立上下文/范围/Guard与生命�
 P04-02节中未授权/NOT_STARTED为其关闭时历史，本节为当前状态。P05～P12仍NOT_STARTED，没有自动进入下一阶段或提交、推送、部署。
 
 下一合法任务为 **P05-01：正式身份数据基础、初始化路径与认证接入依赖**。先建立Tenant/Store及平台/员工/客户/组织/角色/凭据等实际数据owner、正式迁移/复合约束/RLS及安全初始化，打通权威账号状态/版本/权限、Store事实和受限登录查找依赖；不提供默认真实账号/明文秘密，不用测试Provider/技术表完成登录验收。后续认证任务基于正式数据接Sa-Token Redis、三域/载体/Cookie/CSRF/撤销，不能跳过数据基础继续以内存/测试身份作为验收账号。本轮只报告P05-01，不执行。
+
+## P05-01 当前实施（2026-10-08）
+
+用户明确授权正式身份数据基础、初始化路径与认证接入依赖，替代AGENTS旧P02范围；不使用Product Delivery OS，不自动下一任务、不提交/推送/部署。P04三项及整体COMPLETE的历史证据保留。
+
+P05-01 COMPLETE，正式Tenant/Store/Employee/Role及三关系、受限函数、PBKDF2、显式初始化、正式Store事实Provider与权威身份加载已实现；最终状态以[P05-01验证](../testing/P05-01-VERIFICATION.md)为准，命令与权限模型见[初始化说明](IDENTITY-BOOTSTRAP.md)。本轮范围不要求平台/客户/Organization表，它们留待各自身份接入/管理任务，不能将租户管理员解释为平台管理员。
+
+P05整体IN_PROGRESS；原会话失效、身份跨域、真实Cookie/Token/CSRF完成条件未改变且尚未验收。下一合法任务为**P05-02：Sa-Token真实认证、会话与当前身份接入**，必须复用正式数据和窄化入口，接入真实会话/状态/版本、安全传输与频控，并落实撤销及异步重验责任；本轮只报告、不执行。

@@ -23,7 +23,10 @@ class PackagedDocumentPolicyIT extends PostgresIntegrationSupport {
             var environment = builder.environment();
             com.pet.testing.RedisTestSupport.environment(environment);
             environment.put("PET_DATABASE_URL", POSTGRES.getJdbcUrl().split("\\?", 2)[0]);
-            environment.put("PET_DATABASE_USERNAME", POSTGRES.getUsername()); environment.put("PET_DATABASE_PASSWORD", POSTGRES.getPassword());
+            environment.put("PET_DATABASE_USERNAME", com.pet.testing.IdentityDatabaseSupport.RUNTIME); environment.put("PET_DATABASE_PASSWORD", POSTGRES.getPassword());
+            environment.put("PET_MIGRATION_DATABASE_URL", POSTGRES.getJdbcUrl().split("\\?",2)[0]);
+            environment.put("PET_MIGRATION_DATABASE_USERNAME", com.pet.testing.IdentityDatabaseSupport.MIGRATION);
+            environment.put("PET_MIGRATION_DATABASE_PASSWORD", POSTGRES.getPassword());
             environment.put("PET_PUBLIC_ORIGIN", "https://example.invalid"); environment.put("SERVER_PORT", Integer.toString(port));
             environment.put("SERVER_ADDRESS", "127.0.0.1");
             var process = builder.redirectErrorStream(true).redirectOutput(logs.toFile()).start();

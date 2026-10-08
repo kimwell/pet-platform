@@ -2,7 +2,7 @@
 
 项目直接在 `/Users/kimwell/work/pet-platform` 建设，既有ui保留原位，不创建enterprise-app-scaffold子目录，不使用Product Delivery OS。后端固定 `com.pet.platform`，三端结构见文档；模板不包含宠物/订单等行业业务。
 
-P01 整体 COMPLETE，P02-01 COMPLETE；P02-02 已完成，工程基础验收见 [P02-02 验证报告](docs/testing/P02-02-VERIFICATION.md)。P02-02 COMPLETE，P02整体COMPLETE：后端、Web、基础设施真实启停及冻结微信工具npm/源码编译/模拟器入口通过；基础真机预览有用户反馈，完整P09验收尚未执行。P03-01 已 COMPLETE，公共响应/错误/trace/分页排序见 [P03-01 验证报告](docs/testing/P03-01-VERIFICATION.md)，P03-02、P03-03及P03整体 COMPLETE，完整标量/OpenAPI/类型与结构结果见 [P03-03](docs/testing/P03-03-VERIFICATION.md)。历史初始化结论见 [P02-01](docs/testing/P02-01-VERIFICATION.md)。三端最小工程、单锁、Wrapper、配置、CI 和本地 Compose 已建立；P03-02 已接入 PostgreSQL/JPA/Flyway 与持久化基础；认证、用户/角色/租户 CRUD、隔离、附件和消息业务尚未实现。当前是Git仓库，P04-01启动时已有提交且工作区干净；本轮不自动提交/推送/发布/部署。
+P05-01 COMPLETE，P05整体IN_PROGRESS；最新实施与限定验证见文末及[P05-01](docs/testing/P05-01-VERIFICATION.md)。以下P01～P04记录为阶段历史。P01 整体 COMPLETE，P02-01 COMPLETE；P02-02 已完成，工程基础验收见 [P02-02 验证报告](docs/testing/P02-02-VERIFICATION.md)。P02-02 COMPLETE，P02整体COMPLETE：后端、Web、基础设施真实启停及冻结微信工具npm/源码编译/模拟器入口通过；基础真机预览有用户反馈，完整P09验收尚未执行。P03-01 已 COMPLETE，公共响应/错误/trace/分页排序见 [P03-01 验证报告](docs/testing/P03-01-VERIFICATION.md)，P03-02、P03-03及P03整体 COMPLETE，完整标量/OpenAPI/类型与结构结果见 [P03-03](docs/testing/P03-03-VERIFICATION.md)。历史初始化结论见 [P02-01](docs/testing/P02-01-VERIFICATION.md)。三端最小工程、单锁、Wrapper、配置、CI 和本地 Compose 已建立；P03-02 已接入 PostgreSQL/JPA/Flyway 与持久化基础；完整认证、用户/角色/租户 CRUD、附件和消息业务尚未实现，P04隔离基础已完成。当前是Git仓库，P04-01启动时已有提交且工作区干净；本轮不自动提交/推送/发布/部署。
 
 ## 阅读入口
 
@@ -42,7 +42,7 @@ Windows 使用 mvnw.cmd。无需全局 Maven，首次下载需网络；默认回
 
 本地 PostgreSQL、Redis、RabbitMQ 配置见 [基础设施说明](infra/local/README.md)：先复制 infra/local/.env.example 为同目录 .env，在本机填写专用凭据，再执行 `pnpm check:infra`、`pnpm dev:infra`、`pnpm stop:infra`。端口可调且只绑定回环，named volumes 保留数据；不复用生产凭据，不删除其他项目容器/卷。
 
-当前已安装 PostgreSQL/JPA/Flyway/Actuator和Redis资源客户端，未安装认证/消息客户端，未创建正式业务表或接口；OpenAPI生产paths为空，显式注册真实公共模型，packages/api-contracts已提供可重复生成的纯类型。Docker 与微信运行状态分别留证，静态检查不替代真实服务/设备验收。第三方声明检查边界沿用 P01 的 strict+skipLibCheck；CI 平台执行、Windows/Linux、真机和发布未被本地检查覆盖。
+P04关闭时已安装 PostgreSQL/JPA/Flyway/Actuator和Redis资源客户端，未安装认证/消息客户端，当时未创建正式业务表或接口；OpenAPI生产paths为空，显式注册真实公共模型，packages/api-contracts已提供可重复生成的纯类型。Docker 与微信运行状态分别留证，静态检查不替代真实服务/设备验收。第三方声明检查边界沿用 P01 的 strict+skipLibCheck；CI 平台执行、Windows/Linux、真机和发布未被本地检查覆盖。
 
 当前P02、P03均已完成工程阶段门禁，限定运行证据见各任务报告。后续Controller显式调用 `ApiResponse.success(dto)`，输入与分页用法见 [API](docs/contracts/API.md)、[分页](docs/contracts/PAGINATION.md) 和 [后端约定](docs/conventions/BACKEND.md)。P03-02 已 COMPLETE，详情见 [持久化验证报告](docs/testing/P03-02-VERIFICATION.md)。P03-03 COMPLETE，P04-01现已授权执行；最新状态见下文，下一P04-02不自动执行。认证/租户/三端业务、完整真机、远程CI、多OS仍未验证；基础真机预览保留P02用户反馈边界。
 
@@ -54,3 +54,9 @@ P04-02 COMPLETE（167项测试0失败/错误/跳过，原114项全部回归）�
 
 
 P04-03与P04整体 COMPLETE，当前范围与限制见[P04-03验证](docs/testing/P04-03-VERIFICATION.md)、[P04总验收](docs/testing/P04-ACCEPTANCE.md)。Redis受控原始资源空间与有限进程内任务已实现，生产默认仍无真实身份/Store事实，权限过滤结果禁止缓存，短期快照未处理权威撤销重验。启动需同时提供PostgreSQL与Redis配置，readiness包含db/redis；用法见[Redis](docs/conventions/REDIS.md)、[异步执行](docs/conventions/ASYNC-EXECUTION.md)、[本地开发](docs/development/LOCAL-DEVELOPMENT.md)。下一合法P05-01先处理正式身份数据基础、初始化与认证依赖，P05仍NOT_STARTED；没有提交、推送或部署。
+
+## P05-01 当前身份基础（2026-10-08）
+
+最新范围为正式身份数据基础：七表及首次正式V1、受限认证前函数、PBKDF2、权威员工权限加载、正式Store事实Provider和独立初始化命令。前述各阶段“没有正式表/默认Store事实”的陈述保留为历史；当前准确状态见[P05-01验证](docs/testing/P05-01-VERIFICATION.md)。登录HTTP、Sa-Token会话、Cookie/CSRF仍未实现，Provider无会话仍empty，租户管理员不是平台管理员。
+
+正式模型启动需要受限运行身份，local启用迁移另需PET_MIGRATION_DATABASE_*；不能继续用Compose管理员作为应用运行账号。管理员角色预配置、实际独立迁移/初始化命令及密码安全输入见[身份初始化](docs/development/IDENTITY-BOOTSTRAP.md)。本轮没有操作日常/生产库或创建真实管理员。P05整体IN_PROGRESS，下一P05-02只建议、不自动执行；不提交、推送或部署。

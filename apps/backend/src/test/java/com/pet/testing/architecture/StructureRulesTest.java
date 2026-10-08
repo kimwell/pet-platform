@@ -146,7 +146,15 @@ class StructureRulesTest {
                     || target.equals("java/util/concurrent/ScheduledExecutorService") || target.equals("java/util/concurrent/ScheduledThreadPoolExecutor")
                     || target.equals("java/util/Timer") || target.equals("org/springframework/scheduling/annotation/Async")
                     || target.startsWith("org/springframework/core/task/") || target.startsWith("org/springframework/scheduling/concurrent/");
-            if (rawRedis && !redisImplementation) rule = "绕过受控Redis访问";
+            boolean restrictedAuthentication = target.startsWith(ROOT + "identity/application/authentication/") || target.equals(ROOT + "identity/infrastructure/AuthenticationJdbc");
+            boolean authenticationCaller = symbols.name().startsWith(ROOT + "identity/application/authentication/")
+                    || symbols.name().equals(ROOT + "identity/infrastructure/AuthenticationJdbc")
+                    || symbols.name().startsWith(ROOT + "identity/api/authentication/");
+            boolean restrictedBootstrap = target.startsWith(ROOT + "identity/application/bootstrap/") || target.startsWith(ROOT + "identity/infrastructure/bootstrap/");
+            boolean bootstrapCaller = symbols.name().startsWith(ROOT + "identity/application/bootstrap/") || symbols.name().startsWith(ROOT + "identity/infrastructure/bootstrap/");
+            if (restrictedAuthentication && !authenticationCaller) rule = "未批准调用认证前身份入口";
+            else if (restrictedBootstrap && !bootstrapCaller) rule = "未批准调用初始化入口";
+            else if (rawRedis && !redisImplementation) rule = "绕过受控Redis访问";
             else if (target.startsWith("org/springframework/cache/")) rule = "当前禁止授权结果通用缓存";
             else if (rawAsync && !asyncImplementation) rule = "绕过批准的租户异步入口";
             else if (target.equals(ROOT + "shared/redis/RedisValueStore") && !symbols.name().startsWith(ROOT + "shared/redis/")) rule = "绕过受控Redis驱动";
@@ -178,11 +186,15 @@ class StructureRulesTest {
         for (String call : symbols.calls()) {
             String calledOwner = call.substring(0, call.indexOf('#'));
             String calledMethod = call.substring(call.indexOf('#') + 1);
-            boolean controlledImplementation = Set.of(ROOT + "shared/persistence/ScopedPersistence", ROOT + "shared/persistence/ScopedTransaction").contains(symbols.name());
+            boolean controlledImplementation = Set.of(ROOT + "shared/persistence/ScopedPersistence", ROOT + "shared/persistence/ScopedTransaction",
+                    ROOT + "identity/infrastructure/AuthenticationJdbc", ROOT + "identity/infrastructure/IdentityRuntimePermissions",
+                    ROOT + "identity/infrastructure/bootstrap/MigrationCommand", ROOT + "identity/infrastructure/bootstrap/CommandDatabase", ROOT + "identity/infrastructure/bootstrap/BootstrapJdbc").contains(symbols.name());
             boolean databaseCall = calledOwner.equals("jakarta/persistence/EntityManager") || calledOwner.equals("jakarta/persistence/Query")
                     || calledOwner.equals("jakarta/persistence/TypedQuery") || calledOwner.startsWith("org/hibernate/Session")
                     || calledOwner.startsWith("org/springframework/jdbc/") || calledOwner.startsWith("java/sql/")
                     || calledOwner.equals("javax/sql/DataSource");
+            if (calledOwner.equals(ROOT + "shared/persistence/ScopedPersistence") && calledMethod.equals("findActiveStoreTenant")
+                    && !symbols.name().equals(ROOT + "platform/infrastructure/PostgresStoreOwnershipReader")) errors.add("未批准调用门店事实入口：" + symbols.name());
             if (databaseCall && !controlledImplementation) errors.add("未登记底层持久化调用：" + symbols.name() + " -> " + call);
             if (calledOwner.equals("jakarta/persistence/EntityManager") && Set.of("merge", "find", "getReference", "createNativeQuery", "string-query").contains(calledMethod)) {
                 errors.add("禁止无范围实体或SQL入口：" + symbols.name() + " -> " + call);
@@ -222,6 +234,19 @@ class StructureRulesTest {
             }
         }
         return errors;
+    }
+    @Test void restrictedIdentityAndBootstrapEntriesRejectOrdinaryBusinessAndControllers() {
+        for(String target : List.of(ROOT+"identity/application/authentication/IdentityLookup",ROOT+"identity/application/authentication/AuthenticationCandidate",
+                ROOT+"identity/application/authentication/StaffAuthentication",ROOT+"identity/infrastructure/AuthenticationJdbc",
+                ROOT+"identity/application/bootstrap/IdentityBootstrap",ROOT+"identity/infrastructure/bootstrap/BootstrapJdbc")) {
+            for(String caller : List.of(ROOT+"identity/api/UserController",ROOT+"identity/application/StaffManagement",ROOT+"modules/alpha/application/Bad"))
+                assertFalse(violations(symbols(fixture(caller,target,true)),Set.of()).isEmpty());
+        }
+        assertTrue(violations(symbols(fixture(ROOT+"identity/api/authentication/FutureAdapter",ROOT+"identity/application/authentication/StaffAuthentication",false)),Set.of()).isEmpty());
+    }
+    @Test void storeFactCapabilityCannotBeBorrowedByOtherAdapters() {
+        var symbol=new Symbols(ROOT+"identity/infrastructure/Bad",Set.of(),Set.of(ROOT+"shared/persistence/ScopedPersistence#findActiveStoreTenant"));
+        assertTrue(violations(symbol,Set.of()).stream().anyMatch(e -> e.startsWith("未批准调用门店事实入口")));
     }
     static Set<String> classes(Path root) throws IOException {
         try (var paths = Files.walk(root)) {

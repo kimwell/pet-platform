@@ -1,0 +1,242 @@
+{
+  "total": 258,
+  "baselineCount": 222,
+  "addedCount": 36,
+  "missingBaselineCases": [],
+  "groups": {
+    "surefire": {
+      "tests": 132,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "failsafe": {
+      "tests": 126,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    }
+  },
+  "suites": [
+    {
+      "name": "com.pet.platform.ApplicationTest",
+      "tests": 3,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.pet.platform.protocol.ApiProtocolTest",
+      "tests": 30,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.pet.platform.shared.persistence.DatabaseConfigurationRulesTest",
+      "tests": 6,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.pet.platform.shared.persistence.JpaPageAdapterTest",
+      "tests": 5,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.pet.platform.shared.redis.RedisConfigurationTest",
+      "tests": 2,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.pet.platform.shared.tenancy.TenantTaskExecutorTest",
+      "tests": 23,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.pet.testing.architecture.StructureRulesTest",
+      "tests": 14,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.pet.testing.contracts.ContractExportTest",
+      "tests": 9,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.pet.testing.contracts.DocumentPolicyTest",
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.pet.testing.contracts.ProductionOpenApiExportTest",
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.pet.testing.identity.PasswordServiceTest",
+      "tests": 6,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.pet.testing.tenancy.TenantExecutionTest",
+      "tests": 19,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.pet.testing.tenancy.TenantMvcTest",
+      "tests": 13,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.pet.platform.protocol.ApiProtocolIT",
+      "tests": 2,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.pet.platform.shared.redis.RedisIsolationIT",
+      "tests": 17,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.pet.testing.RedisHealthIT",
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.pet.testing.architecture.ProductionArtifactIT",
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.pet.testing.contracts.PackagedDocumentPolicyIT",
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.pet.testing.contracts.ScalarPostgresIT",
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.pet.testing.identity.IdentityFoundationIT",
+      "tests": 27,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.pet.testing.identity.IdentityMigrationIT",
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.pet.testing.persistence.JpaPersistenceIT",
+      "tests": 12,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.pet.testing.persistence.MigrationSafetyIT",
+      "tests": 5,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.pet.testing.tenancy.TenantHttpIT",
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.pet.testing.tenantpersistence.AsyncTenantPersistenceIT",
+      "tests": 9,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.pet.testing.tenantpersistence.TenantPersistenceIT",
+      "tests": 48,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    }
+  ],
+  "addedCases": [
+    "com.pet.testing.architecture.StructureRulesTest#restrictedIdentityAndBootstrapEntriesRejectOrdinaryBusinessAndControllers",
+    "com.pet.testing.architecture.StructureRulesTest#storeFactCapabilityCannotBeBorrowedByOtherAdapters",
+    "com.pet.testing.identity.IdentityFoundationIT#authenticationBeforeContextReturnsMinimalCredentialWithoutSerialization",
+    "com.pet.testing.identity.IdentityFoundationIT#authenticationCannotBeHijackedByTemporaryShadowTables",
+    "com.pet.testing.identity.IdentityFoundationIT#authenticationFunctionsOwnedByMinimalNoLoginRolesAndNotPublic",
+    "com.pet.testing.identity.IdentityFoundationIT#bootstrapCommandRejectsPrivilegedOrOrdinaryRuntimeLogin",
+    "com.pet.testing.identity.IdentityFoundationIT#bootstrapIntermediateFailureRollsBackAllTablesIndependentConnection",
+    "com.pet.testing.identity.IdentityFoundationIT#bootstrapLoginCannotReadTablesOrExecuteAuthentication",
+    "com.pet.testing.identity.IdentityFoundationIT#bootstrapRelationsCompleteAndOptionalStoreReallyOptional",
+    "com.pet.testing.identity.IdentityFoundationIT#bootstrapRepeatDoesNotChangeHashPermissionsOrRepairHalfState",
+    "com.pet.testing.identity.IdentityFoundationIT#commandRejectsPasswordArgumentAndMissingConsoleBeforeDatabase",
+    "com.pet.testing.identity.IdentityFoundationIT#concurrentBootstrapHasExactlyOneCompleteAdministrator",
+    "com.pet.testing.identity.IdentityFoundationIT#disabledTenantEmployeeRoleAndStoreAreReflectedByAuthorityLoad",
+    "com.pet.testing.identity.IdentityFoundationIT#emptyStoresAndUnknownPermissionFailClosed",
+    "com.pet.testing.identity.IdentityFoundationIT#explicitPackagedCommandsMigrateBootstrapAndConflictWithSafeOutput",
+    "com.pet.testing.identity.IdentityFoundationIT#formalMigrationRepeatedAndJpaValidationWithSevenModels",
+    "com.pet.testing.identity.IdentityFoundationIT#formalRlsWithCheckRejectsForeignInsertAndTenantMoveWithIndependentRead",
+    "com.pet.testing.identity.IdentityFoundationIT#noRealSessionDoesNotCreatePrincipalAndBootstrapNotSpringBean",
+    "com.pet.testing.identity.IdentityFoundationIT#perPermissionRoleUnionDoesNotEnlargeOtherPermissions",
+    "com.pet.testing.identity.IdentityFoundationIT#plaintextNeverStoredAndPasswordInputLifecycleCleared",
+    "com.pet.testing.identity.IdentityFoundationIT#requestClonesAndClearsPasswordWithoutSerializingIt",
+    "com.pet.testing.identity.IdentityFoundationIT#roleAndStoreCompositeReferencesRejectForeignTenantAndRestrictDelete",
+    "com.pet.testing.identity.IdentityFoundationIT#runtimeRlsNoContextNoForeignTenantAndCredentialColumnDenied",
+    "com.pet.testing.identity.IdentityFoundationIT#runtimeStartupCheckRejectsCredentialAccessAndBootstrapMembership",
+    "com.pet.testing.identity.IdentityFoundationIT#sameTenantLoginUniquenessAndCanonicalDatabaseConstraint",
+    "com.pet.testing.identity.IdentityFoundationIT#sameTenantUnauthorizedStoreDeniedAfterFactFound",
+    "com.pet.testing.identity.IdentityFoundationIT#storeProductionBeanAndGuardReadOfficialTenantAndStatus",
+    "com.pet.testing.identity.IdentityFoundationIT#tenantNormalizationUniqueAndDifferentTenantsShareLogin",
+    "com.pet.testing.identity.IdentityFoundationIT#unavailableStoreSourceIsDependencyFailureWithoutGuardRecursion",
+    "com.pet.testing.identity.IdentityMigrationIT#previouslyEmptyProductionHistoryUpgradesThenRemainsIdempotent(Path)",
+    "com.pet.testing.identity.PasswordServiceTest#doesNotTrimCaseFoldOrNormalizePasswords",
+    "com.pet.testing.identity.PasswordServiceTest#identityNamesNormalizeOnlyApprovedAsciiNames",
+    "com.pet.testing.identity.PasswordServiceTest#malformedUnknownAndExcessiveCostEncodingsFailSafely",
+    "com.pet.testing.identity.PasswordServiceTest#randomSaltAndCorrectIncorrectPasswords",
+    "com.pet.testing.identity.PasswordServiceTest#rejectsTooShortLongAndBrokenUnicodeWithoutTruncation",
+    "com.pet.testing.identity.PasswordServiceTest#unicodeMatchesIndependentUtf8ReferenceVector"
+  ]
+}

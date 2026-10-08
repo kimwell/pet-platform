@@ -1,0 +1,163 @@
+[
+  {
+    "file": "baseline-tests.json",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": "python3 docs/testing/evidence/P04-03/final-audit.py",
+    "exitCode": 0
+  },
+  {
+    "file": "compile-first.json",
+    "cwd": "/Users/kimwell/work/pet-platform/apps/backend",
+    "argv": [
+      "./mvnw",
+      "-DskipTests",
+      "package"
+    ],
+    "exitCode": 0,
+    "startedAtUTC": "2026-10-08T04:08:51.676511+00:00",
+    "finishedAtUTC": "2026-10-08T04:08:58.261662+00:00",
+    "log": "compile-first.log"
+  },
+  {
+    "file": "final-audit-first.json",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": "python3 docs/testing/evidence/P05-01/final-audit.py",
+    "exitCode": 1
+  },
+  {
+    "file": "final-audit.json",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": "python3 docs/testing/evidence/P05-01/final-audit.py",
+    "exitCode": 0
+  },
+  {
+    "file": "first-regression.json",
+    "cwd": "/Users/kimwell/work/pet-platform/apps/backend",
+    "argv": [
+      "./mvnw",
+      "clean",
+      "verify"
+    ],
+    "exitCode": 1,
+    "startedAtUTC": "2026-10-08T04:09:41.259927+00:00",
+    "finishedAtUTC": "2026-10-08T04:10:32.268113+00:00",
+    "log": "first-regression.log"
+  },
+  {
+    "file": "fourth-regression.json",
+    "cwd": "/Users/kimwell/work/pet-platform/apps/backend",
+    "argv": [
+      "./mvnw",
+      "clean",
+      "verify"
+    ],
+    "exitCode": 0,
+    "startedAtUTC": "2026-10-08T04:20:21.595105+00:00",
+    "finishedAtUTC": "2026-10-08T04:21:21.642140+00:00",
+    "log": "fourth-regression.log"
+  },
+  {
+    "file": "host-client-check.json",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "argv": [
+      "sh",
+      "-c",
+      "command -v psql"
+    ],
+    "exitCode": 1
+  },
+  {
+    "file": "migration-smoke.json",
+    "cwd": "/Users/kimwell/work/pet-platform/apps/backend",
+    "argv": [
+      "./mvnw",
+      "-Dtest=ApplicationTest,StructureRulesTest,PasswordServiceTest",
+      "test"
+    ],
+    "exitCode": 1,
+    "startedAtUTC": "2026-10-08T04:11:25.440791+00:00",
+    "finishedAtUTC": "2026-10-08T04:11:37.576408+00:00",
+    "log": "migration-smoke.log"
+  },
+  {
+    "file": "postgres-client.json",
+    "cwd": "/Users/kimwell/work/pet-platform/apps/backend",
+    "argv": [
+      "docker",
+      "run",
+      "--rm",
+      "--entrypoint",
+      "psql",
+      "postgres:17.11-bookworm@sha256:3645570cccdfa447589da9f57dd740faa29b30938e861289a5574b6ca6b03826",
+      "--version"
+    ],
+    "exitCode": 0,
+    "startedAtUTC": "2026-10-08T04:35:28.307457+00:00",
+    "finishedAtUTC": "2026-10-08T04:35:30.492191+00:00",
+    "log": "postgres-client.log"
+  },
+  {
+    "file": "second-regression.json",
+    "cwd": "/Users/kimwell/work/pet-platform/apps/backend",
+    "argv": [
+      "./mvnw",
+      "clean",
+      "verify"
+    ],
+    "exitCode": 1,
+    "startedAtUTC": "2026-10-08T04:14:37.013797+00:00",
+    "finishedAtUTC": "2026-10-08T04:14:53.371496+00:00",
+    "log": "second-regression.log"
+  },
+  {
+    "file": "third-regression.json",
+    "cwd": "/Users/kimwell/work/pet-platform/apps/backend",
+    "argv": [
+      "./mvnw",
+      "clean",
+      "verify"
+    ],
+    "exitCode": 1,
+    "startedAtUTC": "2026-10-08T04:16:19.283316+00:00",
+    "finishedAtUTC": "2026-10-08T04:17:18.677320+00:00",
+    "log": "third-regression.log"
+  },
+  {
+    "file": "toolchain.json",
+    "cwd": "/Users/kimwell/work/pet-platform/apps/backend",
+    "argv": [
+      "./mvnw",
+      "-v"
+    ],
+    "exitCode": 0,
+    "startedAtUTC": "2026-10-08T04:24:12.256964+00:00",
+    "finishedAtUTC": "2026-10-08T04:24:12.778768+00:00",
+    "log": "toolchain.log"
+  },
+  {
+    "file": "verify-before-confirmation.json",
+    "cwd": "/Users/kimwell/work/pet-platform/apps/backend",
+    "argv": [
+      "./mvnw",
+      "clean",
+      "verify"
+    ],
+    "exitCode": 0,
+    "startedAtUTC": "2026-10-08T04:23:59.803619+00:00",
+    "finishedAtUTC": "2026-10-08T04:24:59.968200+00:00",
+    "log": "verify-final.log"
+  },
+  {
+    "file": "verify-final.json",
+    "cwd": "/Users/kimwell/work/pet-platform/apps/backend",
+    "argv": [
+      "./mvnw",
+      "clean",
+      "verify"
+    ],
+    "exitCode": 0,
+    "startedAtUTC": "2026-10-08T04:37:19.195039+00:00",
+    "finishedAtUTC": "2026-10-08T04:38:20.177307+00:00",
+    "log": "verify-final.log"
+  }
+]

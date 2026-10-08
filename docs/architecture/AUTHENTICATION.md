@@ -1,5 +1,6 @@
 # 认证、设备会话与传输安全
 
+当前实施状态见本文P05-01章节及[P05-01验证](../testing/P05-01-VERIFICATION.md)。旧阶段“尚未实现”描述保留为历史范围；冻结安全契约不变。
 冻结日期：2026-10-07，P01-02。本文拥有认证空间、Cookie/Token、CSRF、期限与撤销。接口及字段见 [身份契约](../contracts/IDENTITY.md)，权限见 [授权](AUTHORIZATION.md)。当前未实现正式认证。
 
 ## 精确版本集成依据
@@ -60,3 +61,13 @@ SaLoginParameter 使用 setDeviceType(WEB/MINIPROGRAM)、setTimeout、setActiveT
 TLS 可在可信代理终止；代理删除用户 Forwarded/X-Forwarded-* 后重建，后端只允许可信代理网段，Host allowlist、publicOrigin 配置固定。Boot forwarded 处理仅在该网络约束下启用。[官方代理说明](https://docs.spring.io/spring-boot/4.0/how-to/webserver.html)。
 
 仅小程序登录返回当前域 Token，Web 只 Set-Cookie。不得返回密码哈希、微信 session_key/AppSecret、支付密钥、CSRF 哈希、Redis 键。日志屏蔽 Cookie、Token、密码、手机号 code、票据 URL。临时内存探针不证明真实 Redis、HTTP、Cookie/CSRF，详见 [验证报告](../testing/P01-02-VERIFICATION.md)。
+
+## P05-01 正式认证依赖（2026-10-08）
+
+本轮已建立正式员工凭据、PasswordService与StaffAuthentication，完整说明见[身份初始化](../development/IDENTITY-BOOTSTRAP.md)，运行证据见[P05-01](../testing/P05-01-VERIFICATION.md)。算法沿用IDENTITY冻结，不新增依赖或另一认证框架；编码包括版本/迭代/独立随机盐，校验失败不输出编码，支持needsRehash但本轮不更新密码。
+
+认证前仅调用两个固定SECURITY DEFINER函数，函数owner为非登录/非superuser/无BYPASSRLS的受限角色，FORCE RLS显式准许该角色必要读；PUBLIC EXECUTE撤销、固定search_path、明确限定表，无动态SQL。候选按有效租户编码+规范化登录名定位，内部对象不序列化、不返回Employee实体；tenantCode只作线索，不设GUC或建立可信范围。结构检查拒绝普通业务/Controller引用受限入口，只有未来身份认证适配器可使用公开契约。
+
+密码匹配后重新读取当前状态与真实版本/角色范围，哈希期间版本变化则失败；无候选用随机运行时dummy编码执行比较。StaffIdentity不是CurrentPrincipal/会话，CurrentPrincipalProvider默认仍empty。后续P05-02必须接真实Sa-Token、载体解析/身份域、Cookie/CSRF、会话频控与统一LOGIN_FAILED，签发/每次请求复核权威状态版本。平台账号和客户微信身份本轮不建表，租户管理员仍STAFF。
+
+Tenant/Employee停用、密码变化、角色/门店授权变化有权威字段/加载契约，但对应修改事务、撤销意图、会话撤销与敏感提交前校验尚未实现。异步执行前权威重验也未接入，不将字段存在或短期快照称为撤销已生效。本页上文所有HTTP接口仍是冻结计划。

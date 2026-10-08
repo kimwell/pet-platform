@@ -1,0 +1,7 @@
+12:37:59.889 [main] INFO org.flywaydb.core.FlywayExecutor -- Database: jdbc:postgresql://localhost:62549/p05_identity_fixture (PostgreSQL 17.11)
+12:37:59.938 [main] INFO org.flywaydb.core.internal.command.DbValidate -- Successfully validated 1 migration (execution time 00:00.023s)
+12:37:59.966 [main] INFO org.flywaydb.core.internal.command.DbMigrate -- Current version of schema "public": 1
+12:37:59.969 [main] INFO org.flywaydb.core.internal.command.DbMigrate -- Schema "public" is up to date. No migration necessary.
+正式迁移成功：本次执行数量=0
+初始化成功：tenantId=0517dfc1-7c65-4220-a0e7-3aa3c8bab99d employeeId=8d303770-3037-4ab0-a3b8-43bf5e54452f storeId=null
+租户已存在或初始化冲突；未修改密码或权限

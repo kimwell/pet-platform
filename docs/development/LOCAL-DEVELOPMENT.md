@@ -1,5 +1,6 @@
 # 本地开发与检查
 
+当前实施状态见本文P05-01章节及[P05-01验证](../testing/P05-01-VERIFICATION.md)。旧阶段“尚未实现”描述保留为历史范围；冻结安全契约不变。
 日期：2026-10-08。精确版本以 [VERSION-MATRIX](VERSION-MATRIX.md) 为唯一文档事实源。历史初始化见 [P02-01](../testing/P02-01-VERIFICATION.md)，本轮实际启停与限制见 [P02-02](../testing/P02-02-VERIFICATION.md)。以下命令从项目根执行，后端命令单独进入 apps/backend。ui 保留原位，不加入工程构建。
 
 ## 工具与安装
@@ -164,3 +165,13 @@ local `/v3/api-docs`与`/swagger-ui/index.html`开启，文档开启时仅允许
 总体health/readiness包含db+redis，连接失败返回503，liveness只进程状态；没有对业务响应使用健康格式。完整verify包含独立认证Redis的真实读写/TTL/命名空间/故障及HTTP健康故障测试、受限PG角色的异步隔离；无需也不得在开发Redis执行KEYS/FLUSHDB或删前缀。测试容器自动停止，开发卷保留；Docker故障不能隐性skip。
 
 命名空间/值与合法调用见[REDIS](../conventions/REDIS.md)，异步事务/期限/拒绝/取消见[ASYNC-EXECUTION](../conventions/ASYNC-EXECUTION.md)。当前没有Token存储、认证、长期用户任务、RabbitMQ/Outbox或正式业务缓存。生产依赖连通、角色权限、TLS/ACL、容量与远程CI仍需各自验收。
+
+## P05-01 正式身份配置与初始化（2026-10-08）
+
+当前后端存在七个正式身份/门店实体与V1迁移，必须先由数据库管理员对明确目标预配置能力角色、提供独立迁移/运行/初始化登录身份。普通应用运行身份不能使用Compose数据库管理员、拥有业务表或切换高权限角色；正式实体装配时核验，失败拒绝启动。原P03/P04仅测试夹具的说明为历史范围。
+
+新增实际输入：local启动启用Flyway时PET_MIGRATION_DATABASE_URL/USERNAME/PASSWORD必填，与PET_DATABASE_*属于同一目标但独立执行身份，URL须一致。关闭local迁移仅允许结构已由独立命令更新，继续JPA validate；prod默认关闭启动迁移。普通运行进程不需要初始化配置或初始密码，也不自动创建管理员。
+
+打包后的scripts/backend-identity.sh migrate与bootstrap已存在。bootstrap仅使用PET_BOOTSTRAP_DATABASE_URL/USERNAME/PASSWORD，初始密码通过不回显Console或显式--password-stdin；不使用参数、默认值或普通启动环境变量重置。命令、角色、可选首店、重跑冲突/回滚、故障与无法自动恢复事项见[身份初始化说明](IDENTITY-BOOTSTRAP.md)。
+
+本轮只在临时PostgreSQL/Testcontainers验证，没有对开发者日常数据库预配置角色、迁移或创建管理员；实际目标/初始化值未由用户提供，不擅自执行。原local启动若使用管理员凭据须先按新模型配置受限身份，不能以提升运行角色解决启动。登录HTTP、Sa-Token会话、平台/客户身份与管理页面仍未实现。

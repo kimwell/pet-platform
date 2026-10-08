@@ -45,6 +45,14 @@ public abstract class ScopedPersistence<T extends TenantScopedEntity> {
         query.select(root).where(secured(root, cb, condition));
         return em.createQuery(query);
     }
+    /** 仅登记的正式Store事实适配器使用，不授权业务行；Guard随后检查门店上限/操作范围。 */
+    protected final Optional<UUID> findActiveStoreTenant(UUID id) {
+        var context = ScopedTransaction.enter(em);
+        var cb = em.getCriteriaBuilder(); var query = cb.createQuery(UUID.class); var root = query.from(entityType);
+        query.select(root.get("tenantId")).where(cb.and(cb.equal(root.get("tenantId"),context.tenantId()),
+                cb.equal(root.get("id"),id),cb.equal(root.get("status"),"ACTIVE")));
+        return em.createQuery(query).getResultStream().findFirst();
+    }
     protected final Optional<T> find(UUID id) {
         return query((root, cb) -> cb.equal(root.get("id"), id)).getResultStream().findFirst();
     }

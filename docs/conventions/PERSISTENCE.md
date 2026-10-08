@@ -1,5 +1,6 @@
 # 持久化与事务约定
 
+当前实施状态见本文P05-01章节及[P05-01验证](../testing/P05-01-VERIFICATION.md)。旧阶段“尚未实现”描述保留为历史范围；冻结安全契约不变。
 P03-02 实施日期：2026-10-08。当前实现位于 `com.pet.platform.shared.persistence`；单 Module 和模块公开接口规则见 [模块边界](../architecture/MODULE-BOUNDARIES.md)。数据库是 PostgreSQL，正式结构由 [Flyway](DATABASE-MIGRATION.md) 管理。
 
 `BaseEntity` 是 `@MappedSuperclass`，只有 `UUID id`、`Instant createdAt`、`Instant updatedAt`。首次 persist 时由 JDK `UUID.randomUUID()` 生成 UUID v4，数据库列为 uuid；没有外部 ID 框架。未持久化时 id 为 null，使 Spring Data 能正确识别新实体。没有主键或时间公共 setter，也没有依赖可变字段的 equals/hashCode；当前保持 Java 对象身份语义，跨会话需要显式比较非空 ID。
@@ -100,3 +101,13 @@ P04-02实际运行角色为非owner/SUPERUSER/BYPASSRLS/CREATEROLE/CREATEDB/INHE
 5. prod启动只validate，独立迁移任务先升级；实际部署网络、凭据、备份与最小权限留证，不能用Testcontainers owner或本地Compose管理员替代。
 
 正式身份/Store数据、权限撤销重验以及所有未来查询/附件/导出/消息仍按owner另行接入，不把本轮安全夹具当正式数据基础。[P04总验收](../testing/P04-ACCEPTANCE.md)保持这些限制。
+
+## P05-01 正式身份持久化与窄化例外（2026-10-08）
+
+正式七表及完整唯一/FK/审计/version/状态/删除策略见[身份初始化](../development/IDENTITY-BOOTSTRAP.md#数据归属与正式结构)，不复制测试表。实体按owner映射只读@Immutable/@Version，六张租户实体沿用TenantScopedEntity，Tenant不是自身归属租户实体。当前没有实体普通写/CRUD API，初始化仅调用专用函数。
+
+Store事实读取新增ScopedPersistence.findActiveStoreTenant的固定标量投影，只有正式Store适配器可调用；同当前BUSINESS JPA事务进入已有ScopedTransaction，绑定同连接GUC，查询当前tenant下ACTIVE Store。事实不受操作门店过滤，以便Guard分别检查归属与授权；不会授予业务查询/写能力，也不递归StoreScopeGuard。任何其他适配器调用该例外被ASM门禁拒绝。
+
+仅登记AuthenticationJdbc固定认证函数SQL、IdentityRuntimePermissions系统目录检查、独立CommandDatabase/BootstrapJdbc/MigrationCommand；没有放宽普通原生查询、裸Repository或业务层JDBC。认证前查询不加载TenantScopedEntity、不假造BUSINESS，函数owner最小权限与FORCE RLS明确分离。Bootstrap只INSERT必要基础行，异常回滚独立连接验证；完整角色配置见初始化说明。
+
+运行身份启动校验与容器真实角色/约束验收已实施，不代表生产数据库部署、未来更新责任/撤销或新的资源映射已验收。未来解除只读映射并实现角色/账号修改时，必须补权威版本同事务递增、敏感提交前检查与对应数据范围反例。

@@ -1,5 +1,6 @@
 # 租户、门店与持久化隔离
 
+当前实施状态见本文P05-01章节及[P05-01验证](../testing/P05-01-VERIFICATION.md)。旧阶段“尚未实现”描述保留为历史范围；冻结安全契约不变。
 冻结日期：2026-10-07，P01-02。本文拥有数据范围执行和运行入口上下文；P01冻结设计，P04-02当前实现及限制见文末。
 
 Tenant 是经营主体/客户组织；Store 为可选经营门店；Organization 为内部组织。后两者归 Tenant，不能互相替代。单租户仍有真实 tenantId 并走相同机制。身份固定一个 Tenant；tenantCode 仅用于登录/入口找候选，校验凭据与关系后才建可信 tenantId。业务 DTO 不接收 tenantId，未知字段拒绝。storeId 只表达意图，必须属于当前 Tenant、状态有效且在本操作范围。跨实体使用同租户引用查询与复合外键。
@@ -114,3 +115,13 @@ TenantTaskExecutor只捕获当前permission/range的不可变内部快照，不�
 发现工作线程残留时拒绝并废弃线程，不承认残留外层身份。取消不是立即停止，清理由实际执行线程finally完成，Future/固定脱敏失败日志可观察。完整规则见[ASYNC-EXECUTION](../conventions/ASYNC-EXECUTION.md)；Servlet ASYNC与第三方线程池不自动传播。
 
 P04-01/02/03工程基础总体验收见[P04-ACCEPTANCE](../testing/P04-ACCEPTANCE.md)。真实认证/正式Store事实/权限撤销时重新授权/生产角色部署，以及附件、导出、消息和所有未来业务，按原阶段owner继续验收；基础通过不外推上线安全。P05必须先建立正式身份/租户/门店数据基础与初始化路径，不用测试Provider完成登录验收。
+
+## P05-01 正式基础表与登录前入口（2026-10-08）
+
+首次正式V1建立Tenant控制面及六张tenant_id非空身份/门店表，复合唯一/FK与RESTRICT删除约束见[身份初始化](../development/IDENTITY-BOOTSTRAP.md#数据归属与正式结构)。七表FORCE RLS：Tenant按id匹配当前可信GUC，其余按tenant_id。普通应用登录身份非owner/超级用户/旁路，只有必要SELECT，密码列和初始化EXECUTE不可用，启动核对实际权限。
+
+认证前没有TenantContext，不能runAsTenant或把tenantCode当可信tenant。唯一解决方案为两项固定SECURITY DEFINER查询，独立NOLOGIN读函数owner的RLS政策与读权限，按精确代码/登录名或已验证会话主体引用查找，无宽泛筛选/分页/导出。初始化为另一个受限NOLOGIN写函数owner，仅独立初始化执行身份可调用；普通运行角色无其成员或永久旁路。
+
+正式StoreOwnershipReader沿用ScopedPersistence中唯一登记的固定事实投影和ScopedTransaction同JPA连接绑定，必须当前BUSINESS；WHERE含当前tenant、id与ACTIVE状态，不递归Guard。事实读取不授操作权限，Guard继续校验门店上限/本权限范围，不存在/他租户/停用/未授权统一404；依赖异常503。不是第二套租户上下文或Repository框架。
+
+正式角色/函数/容器边界见[P05-01](../testing/P05-01-VERIFICATION.md)。当前仍依赖可信应用控制GUC，不能防持有数据库凭据的恶意SQL代码；结构反例与RLS运行反例分别留证。生产部署角色、独立实际生产迁移/初始化、会话/异步撤销与未来业务仍NOT_VERIFIED或未实现。

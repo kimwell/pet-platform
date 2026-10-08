@@ -1,5 +1,6 @@
 # 权限与授权执行
 
+当前实施状态见本文P05-01章节及[P05-01验证](../testing/P05-01-VERIFICATION.md)。旧阶段“尚未实现”描述保留为历史范围；冻结安全契约不变。
 冻结日期：2026-10-07，P01-02。本文拥有权限注册、范围组合、授权顺序；字段见 [身份契约](../contracts/IDENTITY.md)，隔离执行见 [多租户](MULTI-TENANCY.md)。
 
 代码固定 `模块:资源:动作`，正则 `^[a-z][a-z0-9-]*:[a-z][a-z0-9-]*:[a-z][a-z0-9-]*$`；例如 identity:user:list/create/update/disable/export 分别独立。代码声明权限注册表：身份域、中文名、动作及支持范围。DB 仅保存角色、主体和授权关系及范围参数，不提供任意权限脚本或隐含 * 全权。
@@ -46,3 +47,11 @@ openStore只绑定经过上述检查的当前门店；同门店嵌套可恢复�
 ScopedPersistence实例固定本用例permissionCode，访问时requirePermission核对，避免将list范围用于update。租户与资源条件在所有列表/count/exists/单条/ID集合以及固定批量DML上强制AND；单条未找到和范围外均TenantAccessDeniedException（既定404）。无可信BUSINESS或只有AUTHORITY_READ不能使用该能力。缺操作权限仍403；缺正式门店事实源仍沿用P04-01的503，不提供生产默认事实。
 
 新增来自可信上下文，门店归属/授权经Guard；更新从范围内加载managed实体，仅模块固定业务方法改允许字段，不接收请求Entity。批次先锁定并核对完整去重目标，含不存在/跨租户/未授权门店即统一拒绝，写入语句再次带范围、核对实际影响行数。SELF读写、主体域冲突、门店上限、事务期间范围改变和独立数据库结果见[P04-02](../testing/P04-02-VERIFICATION.md)。该测试不实现真实认证、权限管理、权威撤销或提交前实时版本重验；P05及对应模块仍需承担这些责任。
+
+## P05-01 正式角色授权加载（2026-10-08）
+
+正式Employee/Role/EmployeeRole/RolePermission/EmployeeStore由identity拥有，RolePermission保存permission_code与scope_type的关联。PermissionCatalog注册9项基础管理代码（员工、角色、门店），初始化使用显式TENANT清单，无*或未来行业权限；准确清单及支持组合见[身份初始化](../development/IDENTITY-BOOTSTRAP.md#权限与认证接入契约)。PLATFORM权限及账号留待后续，不把STAFF租户管理员当平台身份。
+
+加载只采用ACTIVE租户/员工/角色，身份门店上限来自明确EmployeeStore中ACTIVE Store；STORES按该上限取交集，TENANT仍不能跳过门店授权上限。相同权限用既有ScopeGrant合并；不同权限分别保留，测试list:TENANT与update:STORES+SELF/停用角色反例。未注册代码或不支持范围失败关闭；SELF还须具体资源登记行归属。没有管理API、默认未来门店授权或授予权限范围旁路。
+
+Employee.authorization_version是实际持久化字段，初始化0；所有未来角色/权限/关系与门店有效状态变更须同事务更新受影响员工。加载当前值已实现，真实会话重验、撤销、敏感写提交前复核与异步权限交集仍未实现。当前正式Store Provider读取当前租户ACTIVE事实后由既有Guard校验操作范围；404/503语义保持原契约。

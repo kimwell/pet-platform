@@ -26,6 +26,11 @@ final class DatabaseConfigurationRules {
         } catch (IllegalArgumentException failure) {
             throw new IllegalStateException("spring.datasource.url 必须是不含凭据或查询参数的 PostgreSQL JDBC 地址");
         }
+        if ("true".equals(environment.getProperty("spring.flyway.enabled"))) {
+            if(!url.equals(required(environment,"spring.flyway.url"))) throw new IllegalStateException("运行与迁移数据库地址必须一致");
+            required(environment,"spring.flyway.user");
+            required(environment,"spring.flyway.password");
+        }
         expect(environment, "spring.jpa.open-in-view", "false");
         expect(environment, "spring.jpa.properties.hibernate.cache.use_second_level_cache", "false");
         expect(environment, "spring.jpa.properties.hibernate.cache.use_query_cache", "false");

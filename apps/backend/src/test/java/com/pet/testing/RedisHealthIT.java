@@ -21,8 +21,11 @@ class RedisHealthIT {
     @Container static final PostgreSQLContainer POSTGRES = new PostgreSQLContainer(DockerImageName.parse(PostgresIntegrationSupport.IMAGE).asCompatibleSubstituteFor("postgres"));
     @Container static final GenericContainer<?> REDIS = RedisTestSupport.isolatedContainer();
     @DynamicPropertySource static void services(DynamicPropertyRegistry r) {
+        IdentityDatabaseSupport.provision(POSTGRES);
+        r.add("spring.flyway.url",()->POSTGRES.getJdbcUrl().split("\\?",2)[0]);
+        r.add("spring.flyway.user",()->IdentityDatabaseSupport.MIGRATION);r.add("spring.flyway.password",POSTGRES::getPassword);
         r.add("spring.datasource.url",()->POSTGRES.getJdbcUrl().split("\\?",2)[0]);
-        r.add("spring.datasource.username",POSTGRES::getUsername);r.add("spring.datasource.password",POSTGRES::getPassword);
+        r.add("spring.datasource.username",()->IdentityDatabaseSupport.RUNTIME);r.add("spring.datasource.password",POSTGRES::getPassword);
         r.add("spring.data.redis.host",REDIS::getHost);r.add("spring.data.redis.port",()->REDIS.getMappedPort(6379));
         r.add("spring.data.redis.password",RedisTestSupport::password);
         r.add("spring.data.redis.timeout",()->"300ms");r.add("spring.data.redis.connect-timeout",()->"300ms");

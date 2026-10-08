@@ -167,3 +167,21 @@
 | D104 | 复用ASM补裸Redis/Cache/未登记Executor/内部snapshot/Key伪造/无身份入口与方法句柄反例 | 只扫描项目class；闭包/反射/动态内容/恶意凭据代码不在静态证明范围，产物继续隔离测试 |
 | D105 | 实际受限运行角色与迁移owner关系重新核对；三项P04和原完成条件综合关闭 | [P04总验收](../testing/P04-ACCEPTANCE.md)；生产角色/认证/正式Store/MQ/未来业务限制保留 |
 | D106 | 下一P05-01先正式身份数据基础/安全初始化/权威状态与Store/认证查找依赖 | 禁止以测试身份完成登录验收；P05仍NOT_STARTED，本轮只报告 |
+
+## P05-01 正式身份数据基础（2026-10-08）
+
+| 编号 | 决策 | 依据与边界 |
+| --- | --- | --- |
+| D107 | 最新明确授权替代AGENTS旧P02-01任务范围；只执行P05-01 | 当前实际P04三项/整体COMPLETE及222项XML；不使用Product Delivery OS，不自动下一任务或提交/推送/部署 |
+| D108 | Tenant控制面+Store/Employee/Role与三关系，首次正式V1 | 七表、复合唯一/FK、ON DELETE RESTRICT、UTC审计/version；此前生产无SQL，仅验证空history升级 |
+| D109 | 账号/编码唯一规范化为strip+ASCII小写，数据库CHECK约束规范值 | 同租户冲突、跨租户同名、非法编码反例；密码不规范化，名称不作身份凭据 |
+| D110 | 密码复用冻结JDK PBKDF2与编码版本，不新增库 | SecureRandom盐、常量时间比较、独立UTF-8向量/上限/损坏编码；无参数密码或明文存储/日志；登录频控尚未实现 |
+| D111 | 登录前唯一窄化方案：两个SECURITY DEFINER函数 | NOLOGIN非owner读角色、FORCE RLS专用SELECT政策、固定search_path、限定表、撤销PUBLIC/限制runtime EXECUTE；不能伪造tenant上下文 |
+| D112 | 初始化独立能力角色与INSERT函数，普通启动无钩子/HTTP | 只SELECT Tenant/INSERT七表，runtime无bootstrap EXECUTE/高角色成员；不创建平台管理员或客户账号 |
+| D113 | 同租户事务级advisory lock+唯一约束，重复存在即冲突 | 独立连接证明中途回滚、两线程一个完整成功；不覆盖哈希/补权限/修复半成品 |
+| D114 | RolePermission保留每权限范围，角色启停与有效EmployeeStore上限 | 同权限用既有ScopeGrant并集；不同权限不互借范围；显式9项管理员清单，未知权限失败关闭 |
+| D115 | 正式Store事实固定投影接入原ScopedPersistence/ScopedTransaction | 当前BUSINESS/当前tenant/ACTIVE，无递归Guard或第二套Repo；随后检查门店上限/操作范围，404与503区分 |
+| D116 | 独立迁移登录身份继承能力维护history，V1显式SET ROLE建表 | 冻结Flyway会恢复初始role；真实失败日志及源码核对后移除init-sql方案，不提升应用运行权限 |
+| D117 | 当前数据库security/authorizationVersion真实存储，尚无撤销链路 | 后续变更用例需同事务递增、真实会话及异步当前状态/交集重验；字段存在不表示撤销已生效 |
+
+完整事实、命令/退出码、生产JAR和G01～G15以[P05-01验证](../testing/P05-01-VERIFICATION.md)为准，操作说明见[身份初始化](IDENTITY-BOOTSTRAP.md)。下一合法P05-02只建议，不执行。临时容器证明正式SQL和角色设计，不证明生产部署或真实本地管理员初始化。

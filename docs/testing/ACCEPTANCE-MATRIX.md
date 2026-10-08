@@ -20,6 +20,7 @@
 | A04-05 | redis / P04-03 | tenant/store/platform命名空间、无上下文/门店/跨范围拒绝、编码/TTL/实际CRUD/故障、授权结果缓存限制 | 独立认证Redis实际读写/TTL/故障与健康HTTP；raw命中重验，过滤结果禁止；[P04-03](P04-03-VERIFICATION.md) | [REDIS](../conventions/REDIS.md) |
 | A04-06 | tenancy / P04-03 | 不可伪造快照、同线程A/B/无身份、异常/MDC、拒绝/取消/停止/期限、异步新事务/连接复用 | 确定性Latch/屏障/时钟及受限PG；不继承第三方线程变量；[P04-03](P04-03-VERIFICATION.md) | [ASYNC-EXECUTION](../conventions/ASYNC-EXECUTION.md) |
 | A04-07 | persistence / P04-03 | 实际RLS运行角色非owner/SUPERUSER/BYPASSRLS、FORCE/迁移关系、阶段总核对 | 容器目录/受限角色及原native/bulk/DDL/TRUNCATE/升权反例回归；生产NOT_VERIFIED；[P04总验收](P04-ACCEPTANCE.md) | [PERSISTENCE](../conventions/PERSISTENCE.md) |
+| A05-00 | identity/platform / P05-01 | 正式七表/首迁移/JPA validate、复合关联/RLS、密码/受限查询、Store事实、显式初始化/回滚/重跑/并发/生产包 | 正式PostgreSQL/Testcontainers与实际生产JAR命令 RUNTIME_VERIFIED；258项0失败/错误/跳过，原222逐项回归；[P05-01](P05-01-VERIFICATION.md)。未操作真实开发/生产库，不能代替后续登录/会话验收 | [初始化](../development/IDENTITY-BOOTSTRAP.md)、[认证](../architecture/AUTHENTICATION.md)、[持久化](../conventions/PERSISTENCE.md) |
 | A05-01 | 三身份 / P05 | 同主体ID跨域拒绝；Cookie/Header混合与错误头；公共端点不继承身份 | 真Redis与HTTP，空间/键隔离及客户端请求 | [认证](../architecture/AUTHENTICATION.md) |
 | A05-02 | security / P05 | Cookie属性/local-prod/代理；登录、退出、上传/写CSRF正反例；CORS错误origin | 浏览器+真后端/代理，Cookie/Origin/CSRF证据 | 同上 |
 | A05-03 | identity / P05 | 绝对/闲置/设备上限、当前退出vs全部撤销、停用/改密、Redis删除故障 | 真Redis两设备/跨实例、DB版本、故障注入；不依赖Mock内存 | 同上 |
@@ -64,3 +65,5 @@
 
 
 2026-10-08 P04-03及P04关闭：A04-00～04原目标和反例保留，新增A04-05～07补Redis/异步/角色与总体验收，最终命令/数量与零跳过以[P04-03](P04-03-VERIFICATION.md)为准。真实认证、正式Store、权威撤销重验、MQ/Outbox、生产角色部署和所有未来业务仍未实现或未验证；技术夹具不是业务账号，基础阶段完成不等于产品上线。下一合法P05-01先正式身份数据基础/初始化/认证依赖，P05仍NOT_STARTED，不自动执行。
+
+2026-10-08 P05-01：正式身份数据基础/初始化/认证依赖已完成，A05-00限定正式SQL/角色/函数/密码/Store/原子性和生产命令技术验收；258项（原222+新增36）0失败/错误/跳过，G01～G15及命令证据见[P05-01](P05-01-VERIFICATION.md)。A05-05密码存储/Unicode/编码反例已验证，真实HTTP枚举/频控、生产性能仍未验证。A05-01～04真实三域会话/载体/Cookie/CSRF/撤销条件未改变且未执行；P05整体IN_PROGRESS。平台/客户/Organization及管理CRUD、异步权限撤销重验未实现，生产部署和真实管理员初始化NOT_EXECUTED/NOT_VERIFIED。下一合法P05-02只建议、不自动执行。

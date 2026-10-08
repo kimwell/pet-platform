@@ -61,3 +61,7 @@ Redis资源访问为当前后端连接能力，host/password必填无回退，pr
 总体health与readiness新增真实redis贡献，故障503，liveness不依赖Redis；隐藏details/components。完整verify使用隔离认证容器，不连接开发Redis，生产JAR local/prod测试均注入独立服务输入。标准配置没有开发host/密码或生产降级。Redis ACL/TLS/网络与容量的生产配置未验收。
 
 TenantTaskExecutor只有显式Bean，线程/队列/快照期限/停止等待有硬边界，没有@EnableAsync、全局第三方池自动包装或CallerRuns。生命周期、事务提交时机与当前授权限制唯一见[ASYNC-EXECUTION](../conventions/ASYNC-EXECUTION.md)。尚无真实会话、MQ、Outbox或调度平台；后续P05/P10不得仅靠修改开关冒充接入完成。
+
+## P05-01 正式身份执行配置
+
+现有数据库输入新增显式独立迁移PET_MIGRATION_DATABASE_*，启用启动迁移时必填且目标URL与运行URL一致；禁止凭据回退。prod仍独立命令迁移、普通Application只validate。初始化另用PET_BOOTSTRAP_DATABASE_*，只独立bootstrap命令读取；初始密码不来自应用环境或参数，普通启动没有自动初始化能力。真实输入和命令见[初始化说明](../development/IDENTITY-BOOTSTRAP.md)、[本地开发](../development/LOCAL-DEVELOPMENT.md)。容器验证不代表正式部署；未创建真实本地管理员。

@@ -49,7 +49,7 @@ class TenantPersistenceIT {
         r.add("spring.datasource.url", () -> POSTGRES.getJdbcUrl().split("\\?", 2)[0]);
         r.add("spring.datasource.username", () -> "security_probe_runtime"); r.add("spring.datasource.password", POSTGRES::getPassword);
         r.add("spring.flyway.url", () -> POSTGRES.getJdbcUrl().split("\\?", 2)[0]);
-        r.add("spring.flyway.user", POSTGRES::getUsername); r.add("spring.flyway.password", POSTGRES::getPassword);
+        r.add("spring.flyway.user", POSTGRES::getUsername); r.add("spring.flyway.password", POSTGRES::getPassword); r.add("spring.flyway.init-sql", () -> "");
     }
     @Autowired SafetyApplicationService service;
     @Autowired SafetyFixtures.PrincipalFixture provider;

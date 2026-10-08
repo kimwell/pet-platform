@@ -1,0 +1,21 @@
+{
+  "path": "/Users/kimwell/work/pet-platform/apps/backend/target/pet-platform-backend-0.0.0-SNAPSHOT.jar",
+  "sha256": "c051a30cd68f76dd8694fb952141001d8758c99869030033b8751ebf87f7f21a",
+  "testIsolationViolations": [],
+  "encodedCredentialConstants": [],
+  "fixtureStrings": [],
+  "productionSql": [
+    "BOOT-INF/classes/db/migration/V1__platform_identity_foundation.sql"
+  ],
+  "productionEntities": [
+    "BOOT-INF/classes/com/pet/platform/identity/domain/Role.class",
+    "BOOT-INF/classes/com/pet/platform/identity/domain/RolePermission.class",
+    "BOOT-INF/classes/com/pet/platform/identity/domain/EmployeeStore.class",
+    "BOOT-INF/classes/com/pet/platform/identity/domain/EmployeeRole.class",
+    "BOOT-INF/classes/com/pet/platform/identity/domain/Employee.class",
+    "BOOT-INF/classes/com/pet/platform/platform/domain/Tenant.class",
+    "BOOT-INF/classes/com/pet/platform/platform/domain/Store.class"
+  ],
+  "testClassesCompared": 78,
+  "testResourcesCompared": 3
+}

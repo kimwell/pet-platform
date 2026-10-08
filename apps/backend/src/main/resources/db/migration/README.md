@@ -1,8 +1,6 @@
 # 生产迁移目录
 
-本目录只存正式结构迁移，当前没有正式业务表，因此不放 SQL。
-命名沿用全应用唯一递增编号 `V<整数>__<module>_<英文含义>.sql`。
-已执行版本不得改名或修改；不得自动 baseline、repair、clean 或乱序补迁移。
-local 启动迁移后才进行 JPA validate；prod 先由独立任务使用迁移角色执行迁移，运行角色仅 validate。
-测试迁移位于 `src/test/resources/persistence-migrations/`，由测试显式配置，不能复制到本目录。
-完整规则见仓库 `docs/conventions/DATABASE-MIGRATION.md`。
+P05-01首次正式V1建立Tenant/Store/Employee/Role及三关系、RLS和受限函数；此前目录仅有说明。迁移前由管理员显式预配置身份能力角色，迁移执行身份与应用运行身份独立。
+命名使用全应用唯一递增V<整数>__<module>_<英文含义>.sql，已执行版本不改写，不自动baseline/repair/clean。
+prod由独立命令迁移，Application只JPA validate；local启用Flyway需独立迁移凭据。测试migration保持src/test独立，不能复制到此目录。
+准确命令与角色边界见仓库docs/development/IDENTITY-BOOTSTRAP.md，迁移规则见docs/conventions/DATABASE-MIGRATION.md。

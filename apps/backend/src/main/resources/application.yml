@@ -46,6 +46,9 @@ spring:
   flyway:
     enabled: ${PET_DATABASE_MIGRATION_ENABLED:true}
     locations: classpath:db/migration
+    url: ${PET_MIGRATION_DATABASE_URL:}
+    user: ${PET_MIGRATION_DATABASE_USERNAME:}
+    password: ${PET_MIGRATION_DATABASE_PASSWORD:}
     clean-disabled: true
     baseline-on-migrate: false
     validate-on-migrate: true

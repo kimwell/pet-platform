@@ -37,6 +37,10 @@ class JpaPersistenceIT {
         registry.add("spring.datasource.url", () -> POSTGRES.getJdbcUrl().split("\\?", 2)[0]);
         registry.add("spring.datasource.username", POSTGRES::getUsername);
         registry.add("spring.datasource.password", POSTGRES::getPassword);
+        registry.add("spring.flyway.url", () -> POSTGRES.getJdbcUrl().split("\\?",2)[0]);
+        registry.add("spring.flyway.user", POSTGRES::getUsername);
+        registry.add("spring.flyway.password", POSTGRES::getPassword);
+        registry.add("spring.flyway.init-sql", () -> "");
     }
     @Autowired ProbeApplicationService service;
     @Autowired ProbeRepository repository;

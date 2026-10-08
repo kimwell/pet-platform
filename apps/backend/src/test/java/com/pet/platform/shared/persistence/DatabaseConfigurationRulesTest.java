@@ -20,7 +20,10 @@ class DatabaseConfigurationRulesTest {
         environment.withProperty("pet.public-origin", "https://example.invalid")
                 .withProperty("spring.datasource.url", "jdbc:postgresql://localhost:15432/fixture")
                 .withProperty("spring.datasource.username", "technical_fixture")
-                .withProperty("spring.datasource.password", "technical_fixture");
+                .withProperty("spring.datasource.password", "technical_fixture")
+                .withProperty("spring.flyway.url", "jdbc:postgresql://localhost:15432/fixture")
+                .withProperty("spring.flyway.user", "technical_migration")
+                .withProperty("spring.flyway.password", "technical_migration");
         return environment;
     }
 

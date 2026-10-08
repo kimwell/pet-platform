@@ -1,0 +1,18 @@
+{
+  "cwd": "/Users/kimwell/work/pet-platform/apps/backend",
+  "argv": [
+    "docker",
+    "run",
+    "--rm",
+    "--entrypoint",
+    "psql",
+    "postgres:17.11-bookworm@sha256:3645570cccdfa447589da9f57dd740faa29b30938e861289a5574b6ca6b03826",
+    "--version"
+  ],
+  "JAVA_HOME": "/private/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/pet-platform-p02-02-_qb1x3n7/tools/jdk/jdk-21.0.12.1+1/Contents/Home",
+  "exitCode": 0,
+  "startedAtUTC": "2026-10-08T04:35:28.307457+00:00",
+  "finishedAtUTC": "2026-10-08T04:35:30.492191+00:00",
+  "log": "postgres-client.log",
+  "summary": "psql (PostgreSQL) 17.11 (Debian 17.11-1.pgdg12+2)\n"
+}
