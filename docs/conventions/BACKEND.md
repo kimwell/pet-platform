@@ -51,3 +51,11 @@ Controller声明具体ApiResponse<T>，schema解析保留实际Success<T>与可�
 本轮MVC上下文测试无需PostgreSQL；完整verify仍执行原真实PostgreSQL迁移/JPA/事务测试。线程复用用同一个单线程Executor逐次A/B/匿名，返回并核对实际线程ID，每次先断言上下文/MDC已清理，不在请求后先clear掩盖问题；测试身份只在测试包。[验证](../testing/P04-01-VERIFICATION.md)区分技术场景与未来业务/生产验收。
 
 P04-01异步边界加固：REQUEST启动Servlet异步后移除同步ERROR使用的服务端身份快照；后续ASYNC/异步ERROR不自动重绑身份，公共处理链继续运行。此反例仅验证拒绝隐式传播，不代表已实现或验证完整Servlet异步协议。
+
+## P04-02 持久化接入（2026-10-08）
+
+租户实体按[持久化](PERSISTENCE.md)继承TenantScopedEntity或StoreScopedEntity，普通创建由可信上下文确定归属；模块适配器使用固定permissionCode的ScopedPersistence能力，应用方法声明真实代理事务并通过本模块固定查询/命令接入。先选择/收窄权限再开启事务；首次数据库访问后执行范围必须保持一致，不能拿宽范围加载的实体在收窄范围写回。DTO只映射业务允许字段，不将Entity输入直接merge。
+
+查询和count/exists必须同时具备tenant、资源策略和业务条件；SELF明确主体域+ownerID，未知组合拒绝，关联由目标受控查询和复合FK共同约束。内部原子批次与冻结HTTP逐项批处理不同，详见[PERSISTENCE](PERSISTENCE.md#内部原子集合命令)，当前未实现公开批量接口、version输入协议或幂等功能。
+
+结构检查禁止业务层直接数据库和基础实现、裸Repository、未登记infra SQL/merge/getReference及方法引用绕过；只有共享受控实现持有实际底层调用。生产配置显式禁OSIV/二级缓存/查询缓存。新模块按接入清单完成其真实PG范围与SQL反例，不能仅凭包名或结构PASS宣称安全。结果与生产角色/认证/Redis/异步等限制见[P04-02](../testing/P04-02-VERIFICATION.md)；本轮无正式业务表、接口或部署。

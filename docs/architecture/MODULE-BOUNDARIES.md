@@ -44,3 +44,13 @@ shared.security公开最小CurrentPrincipalProvider/CurrentPrincipal、Principal
 StoreOwnershipReader端口在shared，由未来platform/store数据owner实现；不反向引用实现、Entity或Repository。P05三个身份owner按认证与IDENTITY契约提供权威事实；当前未提供登录、会话或业务API。AUTHORITY_READ与BUSINESS的持久化目的白名单尚待P04-02，不能把当前Guard称为数据库防绕过。
 
 原P03编译字节码检查新增：禁止生产InheritableThreadLocal、领域依赖tenancy、内部上下文模型依赖HTTP/Controller/微信SDK；扫描调用/字段符号，只有Holder/Scope能操作底层存储，只有TenantContextFilter/TrustedTenantExecutor能调用根openIdentity。反例用ASM生成，不放入生产。另验证修改方法的非public可见性。生产/测试class、资源、依赖的JAR隔离检查继续执行，包含新增测试身份/门店夹具。结构规则不分析反射/恶意代码/运行时归属，不能防止所有越权；数据库和真实认证测试仍需后续完成。
+
+## P04-02 受控适配器与防绕过规则（2026-10-08）
+
+shared.persistence新增TenantScopedEntity/StoreScopedEntity、ResourceAccessPolicy、ScopedPersistence，以及包可见ScopedTransaction。业务实体继承归属基类；domain只使用实体基类，不直接访问tenancy线程范围。模块infrastructure构造受控适配器，application调用本模块固定查询/命令方法并声明代理事务；api仍只接DTO。ScopedPersistence的受保护方法不是模块公开API，不向跨模块消费者暴露Entity或Repository。
+
+StructureRulesTest新增业务api/application/domain对EntityManager/Factory、Query/TypedQuery、Hibernate Session、JdbcTemplate/JDBC、Connection和DataSource的禁止；api/application不能直接引用受控基础实现。业务模块不能继承裸Spring Data Repository全量API。跨模块Repository/非application引用继续拒绝。基础设施位置只允许构造基类所需句柄，不能调用原生Query、merge/find/getReference或自行创建JPQL/bulk；底层调用仅登记ScopedPersistence/ScopedTransaction，字符串JPQL/native/无范围find等仍全局禁止，当前没有其他底层适配器白名单。
+
+规则读取编译字节码的字段/泛型/注解/继承及直接调用、bootstrap Handle/ConstantDynamic/方法引用；违规夹具包括api/application直连、裸Repository、infrastructure中的native/merge/JPQL以及原生方法引用，合法基础适配器也有正例。生产class与全部测试class/resource/JAR依赖比对继续执行。测试模型、应用服务、门店事实源、故意绕过入口和migration全在src/test，没有生产测试Controller。
+
+这些规则不解析任意反射字符串、恶意代码或外部动态SQL，不证明未来自定义查询安全。新能力只能经明确登记、代码审查与真实PostgreSQL范围反例接入；名称含Tenant、位于infrastructure或通过静态检查都不构成授权证据。接入清单与具体限制见[持久化](../conventions/PERSISTENCE.md)、[P04-02](../testing/P04-02-VERIFICATION.md)。

@@ -136,3 +136,17 @@
 | D83 | TraceFilter先行，可信认证适配器在租户Filter之前；REQUEST/同步ERROR复用服务器身份，不采信HTTP tenant；异常复用MVC解析协议 | ASYNC不注册/不继承，公共流仍可继续；完整异步传播P04-03；已提交流不改写协议 |
 | D84 | MDC只管理tenant/operator/明确当前store并恢复；同步Executor只从可信Provider取身份，不接任意tenantId | SYSTEM授权登记/重验/审计后续接入，无系统超权运行入口 |
 | D85 | 复用P03 ASM扩展存储/入口符号与模型边界反例，生产JAR全测试class/resource隔离继续执行 | 结构不证明运行时或数据库越权安全；完整verify保留原PG测试，内部类型无理由改三端产物 |
+
+## P04-02 受控JPA与PostgreSQL越权（2026-10-08）
+
+| 编号 | 决策/理由 | 验证与边界 |
+| --- | --- | --- |
+| D86 | 用户明确授权P04-02替代AGENTS旧任务边界，沿用冻结版本/固定包；初始Git干净并保留ui/三端/CI/历史证据 | [验证](../testing/P04-02-VERIFICATION.md)，不提交/推送/部署或推进P04-03 |
+| D87 | 模块ScopedPersistence适配器固定权限，protected final查询/写入，强制tenant AND scope AND business；不引入通用DSL或Spring Data全量CRUD | 不接受替代安全Specification或任意detached merge；真实OR/count/exists/单条范围测试 |
+| D88 | 资源显式声明tenantOnly/stores/owned/storesAndOwned，未知组合拒绝，SELF映射principalType+ownerID | 空STORES无行；TENANT门店受身份上限；不能用createdBy或没有store就全量 |
+| D89 | 归属MappedSuperclass + 创建上下文注入 + 回调/受控更新显式校验 + 事务完整范围固定 | 不把updatable=false当bulk安全；JPA getter不final以兼容代理，警告证据保留 |
+| D90 | 沿用P01受控入口+RLS，在真实JPA事务同连接参数化set_config(local)，同步挂起恢复支持REQUIRES_NEW；禁OSIV/二级/查询缓存 | 真PG连接/GUC/提交回滚/旧范围实体反例；不是异步或任意直接DB防护 |
+| D91 | 内部原子集合固定Criteria DML，1～100提交ID去重、全目标锁定/范围校验、实际影响数、rollbackOnly、version/audit及clear | 公开API逐项成功契约保持原样且未实现；混合不可见、缺失、触发器部分影响均数据库无部分写入 |
+| D92 | 应用受控关联+tenant复合唯一/FK+RESTRICT；测试模型采用引用ID，再经父资源受控query投影 | 初始复合ManyToOne的LAZY实测提前解析，改为显式ID避免隐式导航授权；失败报告保留，无级联 |
+| D93 | 测试表/门店事实/角色/适配器/故意绕过和migration全src/test，独立PG容器运行角色与owner分离，五表FORCE RLS | 实际生产角色权限、正式模块SQL/认证/Store仍未验证，不将容器权限当生产验收 |
+| D94 | ASM增加低层持久化、裸Repository、infra native/JPQL/merge及bootstrap方法引用反例，保留跨模块和产物隔离 | 不能证明反射、恶意代码、未来自定义SQL安全；新增模型与查询需范围测试 |

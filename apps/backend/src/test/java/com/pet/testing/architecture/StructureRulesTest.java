@@ -62,7 +62,22 @@ class StructureRulesTest {
             @Override public MethodVisitor visitMethod(int access, String name, String desc, String signature, String[] exceptions) {
                 descriptor(desc, refs); signature(signature);
                 return new MethodVisitor(Opcodes.ASM9) {
-                    @Override public void visitMethodInsn(int opcode, String owner, String name, String descriptor, boolean isInterface) { calls.add(owner + "#" + name); }
+                    private void call(String owner, String name, String descriptor) {
+                        calls.add(owner + "#" + name);
+                        if (owner.equals("jakarta/persistence/EntityManager") && name.equals("createQuery") && descriptor.startsWith("(Ljava/lang/String;")) calls.add(owner + "#string-query");
+                    }
+                    private void bootstrap(Object value) {
+                        if (value instanceof Handle h) call(h.getOwner(), h.getName(), h.getDesc());
+                        if (value instanceof ConstantDynamic c) {
+                            bootstrap(c.getBootstrapMethod());
+                            for (int i = 0; i < c.getBootstrapMethodArgumentCount(); i++) bootstrap(c.getBootstrapMethodArgument(i));
+                        }
+                    }
+                    @Override public void visitMethodInsn(int opcode, String owner, String name, String descriptor, boolean isInterface) { call(owner, name, descriptor); }
+                    @Override public void visitInvokeDynamicInsn(String name, String descriptor, Handle handle, Object... arguments) {
+                        bootstrap(handle); for (Object argument : arguments) bootstrap(argument);
+                    }
+                    @Override public void visitLdcInsn(Object value) { bootstrap(value); }
                     @Override public void visitFieldInsn(int opcode, String owner, String name, String descriptor) { calls.add(owner + "#" + name); }
                     @Override public AnnotationVisitor visitAnnotation(String desc, boolean visible) { return annotation(desc); }
                     @Override public AnnotationVisitor visitParameterAnnotation(int parameter, String desc, boolean visible) { return annotation(desc); }
@@ -118,7 +133,16 @@ class StructureRulesTest {
             String rule = null;
             boolean contextModel = Set.of(ROOT + "shared/tenancy/TenantContext", ROOT + "shared/tenancy/DataScope",
                     ROOT + "shared/tenancy/ScopeGrant", ROOT + "shared/security/CurrentPrincipal").contains(symbols.name());
-            if (target.equals("java/lang/InheritableThreadLocal")) rule = "禁止隐式继承身份";
+            boolean businessLayer = symbols.name().contains("/api/") || symbols.name().contains("/application/") || symbols.name().contains("/domain/");
+            boolean rawPersistence = target.equals("jakarta/persistence/EntityManager") || target.equals("jakarta/persistence/EntityManagerFactory")
+                    || target.equals("jakarta/persistence/Query") || target.equals("jakarta/persistence/TypedQuery")
+                    || target.startsWith("org/hibernate/Session") || target.startsWith("org/springframework/jdbc/")
+                    || target.startsWith("java/sql/") || target.equals("javax/sql/DataSource");
+            if ((symbols.name().contains("/api/") || symbols.name().contains("/application/")) && target.startsWith(ROOT + "shared/persistence/ScopedPersistence")) rule = "业务层直连受控基础实现";
+            else if (businessLayer && rawPersistence) rule = "业务层直连数据库";
+            else if (!owner.isEmpty() && !owner.equals("shared") && repository(target, new HashSet<>())
+                    && !target.startsWith(ROOT)) rule = "业务模块继承裸Repository";
+            else if (target.equals("java/lang/InheritableThreadLocal")) rule = "禁止隐式继承身份";
             else if (contextModel && (target.startsWith("org/springframework/web/") || target.startsWith("jakarta/servlet/")
                     || target.contains("/api/") || target.startsWith("cn/binarywang/wx/") || target.startsWith("me/chanjar/weixin/"))) rule = "上下文模型依赖HTTP或SDK";
             else if (symbols.name().contains("/domain/") && target.startsWith(ROOT + "shared/tenancy/")) rule = "domain依赖线程范围";
@@ -140,6 +164,17 @@ class StructureRulesTest {
             if (rule != null) errors.add(rule + "：" + symbols.name() + " -> " + target);
         }
         for (String call : symbols.calls()) {
+            String calledOwner = call.substring(0, call.indexOf('#'));
+            String calledMethod = call.substring(call.indexOf('#') + 1);
+            boolean controlledImplementation = Set.of(ROOT + "shared/persistence/ScopedPersistence", ROOT + "shared/persistence/ScopedTransaction").contains(symbols.name());
+            boolean databaseCall = calledOwner.equals("jakarta/persistence/EntityManager") || calledOwner.equals("jakarta/persistence/Query")
+                    || calledOwner.equals("jakarta/persistence/TypedQuery") || calledOwner.startsWith("org/hibernate/Session")
+                    || calledOwner.startsWith("org/springframework/jdbc/") || calledOwner.startsWith("java/sql/")
+                    || calledOwner.equals("javax/sql/DataSource");
+            if (databaseCall && !controlledImplementation) errors.add("未登记底层持久化调用：" + symbols.name() + " -> " + call);
+            if (calledOwner.equals("jakarta/persistence/EntityManager") && Set.of("merge", "find", "getReference", "createNativeQuery", "string-query").contains(calledMethod)) {
+                errors.add("禁止无范围实体或SQL入口：" + symbols.name() + " -> " + call);
+            }
             if (Set.of(ROOT + "shared/tenancy/TenantContextHolder#frame", ROOT + "shared/tenancy/TenantContextHolder#replace",
                     ROOT + "shared/tenancy/TenantContextHolder#CURRENT").contains(call)
                     && !Set.of(ROOT + "shared/tenancy/TenantContextHolder", ROOT + "shared/tenancy/TenantExecutionScope").contains(symbols.name())) {
@@ -214,6 +249,49 @@ class StructureRulesTest {
         }
         for (var method : com.pet.platform.shared.tenancy.TenantExecutionScope.class.getDeclaredMethods()) {
             if (Set.of("openIdentity", "finishBoundary", "withVerifiedStore").contains(method.getName())) assertFalse(java.lang.reflect.Modifier.isPublic(method.getModifiers()));
+        }
+    }
+    @Test void detectsRawPersistenceInBusinessLayersAndRepositoryInheritance() {
+        for (String layer : List.of("api", "application", "domain")) {
+            for (String target : List.of("jakarta/persistence/EntityManager", "org/springframework/jdbc/core/JdbcTemplate", "java/sql/Connection", "javax/sql/DataSource")) {
+                assertTrue(violations(symbols(fixture(ROOT + "modules/alpha/" + layer + "/Bad", target, true)), Set.of()).stream().anyMatch(e -> e.startsWith("业务层直连数据库")));
+            }
+        }
+        assertTrue(violations(symbols(fixture(ROOT + "modules/alpha/infrastructure/BadRepository", "org/springframework/data/jpa/repository/JpaRepository", true)), Set.of()).stream().anyMatch(e -> e.startsWith("业务模块继承裸Repository")));
+        assertTrue(violations(symbols(fixture(ROOT + "modules/alpha/application/Bad", ROOT + "shared/persistence/ScopedPersistence", true)), Set.of()).stream().anyMatch(e -> e.startsWith("业务层直连受控基础实现")));
+        assertTrue(violations(symbols(fixture(ROOT + "modules/alpha/infrastructure/Good", ROOT + "shared/persistence/ScopedPersistence", true)), Set.of()).isEmpty());
+    }
+    @Test void infrastructurePackageDoesNotAuthorizeNativeQueriesMergeOrBulkBypass() {
+        for (String methodName : List.of("merge", "find", "getReference", "createNativeQuery", "createQuery")) {
+            var writer = new ClassWriter(0);
+            writer.visit(Opcodes.V21, Opcodes.ACC_PUBLIC, ROOT + "modules/alpha/infrastructure/Bad", null, "java/lang/Object", null);
+            var method = writer.visitMethod(Opcodes.ACC_PUBLIC, "bypass", "()V", null, null);
+            method.visitMethodInsn(Opcodes.INVOKEINTERFACE, "jakarta/persistence/EntityManager", methodName, "(Ljava/lang/String;)Ljakarta/persistence/Query;", true);
+            method.visitInsn(Opcodes.RETURN); method.visitMaxs(2, 1); method.visitEnd(); writer.visitEnd();
+            var errors = violations(symbols(writer.toByteArray()), Set.of());
+            assertTrue(errors.stream().anyMatch(e -> e.startsWith("未登记底层持久化调用")));
+            assertTrue(errors.stream().anyMatch(e -> e.startsWith("禁止无范围实体或SQL入口")));
+        }
+    }
+    @Test void nativeMethodReferenceIsAlsoDetectedInInfrastructure() {
+        var writer = new ClassWriter(0);
+        writer.visit(Opcodes.V21, Opcodes.ACC_PUBLIC, ROOT + "modules/alpha/infrastructure/Bad", null, "java/lang/Object", null);
+        var method = writer.visitMethod(Opcodes.ACC_PUBLIC, "bypass", "()V", null, null);
+        method.visitInvokeDynamicInsn("apply", "()Ljava/util/function/Function;",
+                new Handle(Opcodes.H_INVOKESTATIC, "java/lang/invoke/LambdaMetafactory", "metafactory", "()V", false),
+                Type.getMethodType("(Ljava/lang/String;)Ljakarta/persistence/Query;"),
+                new Handle(Opcodes.H_INVOKEINTERFACE, "jakarta/persistence/EntityManager", "createNativeQuery", "(Ljava/lang/String;)Ljakarta/persistence/Query;", true));
+        method.visitInsn(Opcodes.RETURN); method.visitMaxs(2, 1); method.visitEnd(); writer.visitEnd();
+        assertTrue(violations(symbols(writer.toByteArray()), Set.of()).stream().anyMatch(e -> e.startsWith("禁止无范围实体或SQL入口")));
+    }
+    @Test void controlledBaseDoesNotExposeDetachedSaveOrDatabaseHandles() {
+        var type = com.pet.platform.shared.persistence.ScopedPersistence.class;
+        for (var method : type.getMethods()) {
+            assertFalse(Set.of("save", "merge", "deleteById", "getReferenceById", "findById", "findAll", "deleteAllInBatch").contains(method.getName()));
+            assertFalse(Set.of(jakarta.persistence.EntityManager.class, jakarta.persistence.Query.class, javax.sql.DataSource.class).contains(method.getReturnType()));
+        }
+        for (var typeWithOwnership : List.of(com.pet.platform.shared.persistence.TenantScopedEntity.class, com.pet.platform.shared.persistence.StoreScopedEntity.class)) {
+            for(var method : typeWithOwnership.getMethods()) assertFalse(Set.of("setTenantId", "setStoreId").contains(method.getName()));
         }
     }
     static List<String> artifactViolations(Set<String> entries, Set<String> tests, Set<String> testResources) {

@@ -1,0 +1,7 @@
+{
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "command": "证据辅助脚本（为initial-launch-failure.json补元数据）",
+  "exitCode": 1,
+  "summary": "缺少json import；已补齐。产品源码与Maven命令未受影响。",
+  "log": "evidence-helper-failure.log"
+}

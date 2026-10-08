@@ -1,6 +1,6 @@
 # 租户、门店与持久化隔离
 
-冻结日期：2026-10-07，P01-02。本文拥有数据范围执行和运行入口上下文；本轮未实现 JPA/RLS。
+冻结日期：2026-10-07，P01-02。本文拥有数据范围执行和运行入口上下文；P01冻结设计，P04-02当前实现及限制见文末。
 
 Tenant 是经营主体/客户组织；Store 为可选经营门店；Organization 为内部组织。后两者归 Tenant，不能互相替代。单租户仍有真实 tenantId 并走相同机制。身份固定一个 Tenant；tenantCode 仅用于登录/入口找候选，校验凭据与关系后才建可信 tenantId。业务 DTO 不接收 tenantId，未知字段拒绝。storeId 只表达意图，必须属于当前 Tenant、状态有效且在本操作范围。跨实体使用同租户引用查询与复合外键。
 
@@ -40,11 +40,11 @@ CREATE POLICY item_tenant ON item TO pet_runtime
 
 ## 查询、写入、SQL
 
-application 只能调用本模块 scoped Repository，选择性暴露有范围方法，不直接公开 JpaRepository 全量 API。共享 repository factory/base implementation 统一上下文断言/谓词，P03/P04 按实际版本验证。禁止无范围 findAll/findById/deleteById/getReferenceById 或 save detached Entity。
+application 只能调用本模块 scoped Repository，选择性暴露有范围方法，不直接公开 JpaRepository 全量 API。模块适配器继承 shared.persistence.ScopedPersistence，统一上下文断言/谓词；不引入 Spring Data 全量 Repository factory，当前按冻结版本验证。禁止无范围 findAll/findById/deleteById/getReferenceById 或 save detached Entity。
 
 查询/count/exists 同时加租户和本 permissionCode 的 TENANT/STORES/SELF 条件，总数也受限。更新/删除在同范围加载 managed Entity 后修改，带 @Version；创建 tenant 从上下文赋值，store/owner 按业务校验，禁止请求改 tenant/owner 逃逸。
 
-默认禁止 bulk update/delete；确需时登记固定命令，参数化 SQL/JPQL 带统一范围谓词、影响行数校验、version 和持久化上下文失效处理。用户批量操作逐项事务，见 [API](../contracts/API.md)，不可退化为仅 id IN。native SQL 仅登记 infrastructure adapter，经 ScopedPersistence、同连接事务及 RLS；不动态拼表名/排序。EntityManager/JdbcTemplate/nativeQuery 按允许类清单检查。
+普通模块禁止自行创建 bulk update/delete；P04-02只开放基类中的固定 Criteria 批次命令，带统一范围谓词、白名单字段、影响行数校验、version 和持久化上下文失效处理。用户批量操作逐项事务，见 [API](../contracts/API.md)，不可退化为仅 id IN。native SQL 仅登记 infrastructure adapter，经 ScopedPersistence、同连接事务及 RLS；不动态拼表名/排序。EntityManager/JdbcTemplate/nativeQuery 按允许类清单检查。
 
 先开启事务，再在 JPA 实际使用的同一连接 set_config(is_local=true)，包含只读与 REQUIRES_NEW；不能在另一 DataSource 设置。REQUIRED 不变 tenant/扩大范围。关闭 OSIV、租户实体二级缓存；禁止事务外懒加载、连接池长期 SET tenant、运行账号执行 Flyway。提交/回滚后局部设置消失，必须测连接复用。
 
@@ -86,3 +86,19 @@ REQUEST/同步ERROR已覆盖。ERROR从私有请求属性复用服务器身份�
 P04-02必须继续实现受控JPA/关联/真实PostgreSQL越权测试；P04-03处理Redis与异步边界及阶段验收。原RLS/角色/连接复用/SQL和所有阶段门禁保持不变。
 
 P04-01异步边界加固：REQUEST启动Servlet异步后移除同步ERROR使用的服务端身份快照；后续ASYNC/异步ERROR不自动重绑身份，公共处理链继续运行。此反例仅验证拒绝隐式传播，不代表已实现或验证完整Servlet异步协议。
+
+## P04-02 受控JPA与测试数据库边界（2026-10-08）
+
+实现为显式强制条件 + 模块固定方法 + 实体归属校验 + 事务执行范围绑定 + 复合关联约束 + PostgreSQL RLS + 字节码检查。没有Hibernate Filter，也没有租户管理员旁路。`ScopedPersistence<T>`仅提供protected final能力，模块infrastructure适配器继承并向自己的application用例暴露固定方法；基类没有公共save/merge、EntityManager getter或任意SQL入口。每个适配器实例固定本用例permissionCode，不能借用其他权限的范围。正式模块需按用例分别登记查询/写入能力，不把测试的单一operate权限复制为全量业务权限。
+
+所有find/page/count/exists/ID集合查询都构造 `tenantCondition AND dataScopeCondition AND businessCondition`；业务OR作为最后一项整体参与AND。只允许模块静态代码中的BusinessCondition，未提供可替换安全条件的Specification/查询语言。count使用同一策略，不拿items数量当total。未声明范围组合抛统一404，不回退无条件。合法空STORES在门店资源SQL中是false，列表/count/exists分别为空/0/false；租户级资源没有STORES或SELF映射时直接拒绝。
+
+ResourceAccessPolicy明确tenantOnly、stores、owned及storesAndOwned。TENANT始终有tenant条件，门店模型另外受authorizedStoreIds上限限制；STORES使用本权限允许的storeIds；SELF使用模块登记的principalType+ownerId属性，不推断createdBy。STORES+SELF仅在同时声明两种映射的模型中按同权限并集组合，仍置于tenant AND内。SELF只授权具体owned行，不授权整店，也不能借此调用StoreScopeGuard进行整店创建。拥有者字段不可经普通更新迁移。
+
+TenantScopedEntity和StoreScopedEntity为MappedSuperclass，继承BaseEntity的UUID/时间；无参构造供JPA，业务构造显式initializeTenant或initializeStore。tenantId来自当前可信BUSINESS，私有非空列、updatable=false、无公共setter；门店初始化及insert均经过事实Guard。创建和PostLoad记录归属，写入检查当前租户/原归属/加载执行范围；即使反射改字段，受控更新也显式校验，不仅等dirty callback。ORM的updatable=false不是原生SQL/bulk保护。
+
+ScopedTransaction在应用JPA事务第一次受控访问时，经Hibernate实际连接参数化set_config(is_local=true)。固定完整执行上下文（租户/主体域和ID/会话/授权版本/权限/范围/当前门店等），后续访问、实体写入和beforeCommit必须保持一致。同一业务执行边界可先narrow后开启用例事务；已访问数据库的事务内再改变范围会拒绝，收窄应在独立事务开始前完成，不能复用宽范围加载的实体。REQUIRES_NEW的同步挂起/恢复有真PG验证；提交/回滚后局部GUC清除。关闭OSIV、二级缓存和查询缓存，配置覆盖开启缓存会拒绝启动。当前一应用一持久化工厂，不支持跨库事务或事务内切身份。
+
+关联采用明确ID + 父资源受控查询 + `(tenant_id, foreign_id)`复合FK。当前测试不使用隐式JPA关系导航或级联。试验中的复合ManyToOne标注LAZY仍提前解析父实体，失败证据保留；不能依据注解宣称关联授权或事务外可安全加载。任何未来join、fetch、投影或懒加载都要验证所访问资源自己的Store/SELF策略，复合FK和RLS只保证tenant底线。
+
+本轮只在src/test创建safety_parent/child/store_resource/owned_resource/store_fact及策略；生产没有Tenant/Store/Employee表、RLS业务migration或CRUD。测试独立角色与owner分离、ENABLE/FORCE策略、WITH CHECK及DDL/TRUNCATE/SET ROLE拒绝已真实验证，**生产数据库角色权限和独立迁移任务仍NOT_VERIFIED/NOT_EXECUTED**。RLS参数依赖可信应用；持有数据库凭据的恶意代码仍能改GUC，不声称阻止任意直接数据库访问。底层SQL只在ScopedPersistence/ScopedTransaction登记，普通业务原生SQL支持未实现且禁止作为扩展入口。详情、接入清单与批次边界见[持久化](../conventions/PERSISTENCE.md)、[验证](../testing/P04-02-VERIFICATION.md)。

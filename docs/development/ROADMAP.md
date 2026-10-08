@@ -7,7 +7,7 @@
 | P01 技术基线与工程规范 | P01-01 事实/版本/基线；P01-02 架构与三端契约详细冻结 | 当前根目录与既有成果边界明确、固定技术方向 | 规则、矩阵、结构、契约、路线及架构详细决策 | P01-01 条件满足且详细契约可供三端初始化实施 | 官方来源、临时解析/编译探针、文档引用检查 | COMPLETE；[详细结果](../testing/P01-02-VERIFICATION.md) |
 | P02 三端工程初始化 | P02-01 根目录工程骨架、构建工具与本地基础设施初始化；P02-02 三端启动联调、环境配置校验与工程基础验收 | P01 完成及对应任务授权 | 三端工程、锁文件、配置样例、基础启动说明 | 三端可独立构建；可选能力关闭可启动；无行业业务 | Wrapper 构建、frozen install、tsc/Vite、小程序构建、启动检查 | COMPLETE；[P02-01 COMPLETE](../testing/P02-01-VERIFICATION.md)；[P02-02 COMPLETE](../testing/P02-02-VERIFICATION.md)，冻结微信工具npm/源码编译/模拟器已补齐 |
 | P03 后端协议与数据基础 | 统一响应/错误/分页/序列化；OpenAPI；JPA/Flyway/事务 | P02 | 协议基础、迁移和生成类型流程 | 协议与生成类型一致；真实 PostgreSQL 迁移和事务可重复 | JUnit、Testcontainers PostgreSQL、OpenAPI 生成与类型编译 | COMPLETE；[P03-01](../testing/P03-01-VERIFICATION.md)、[P03-02](../testing/P03-02-VERIFICATION.md)、[P03-03](../testing/P03-03-VERIFICATION.md)；限定本机工程/协议验证，后续隔离/生产/远程限制保留 |
-| P04 多租户与数据范围 | P04-01上下文与范围；P04-02 JPA/关联/PG隔离；P04-03 Redis/异步及阶段验收 | P03 | 租户策略、持久化防护与范围测试 | 单/多租户共用机制；无上下文拒绝；越权查询和写入被阻止 | 真实 PostgreSQL 的跨租户读写/批量/原生 SQL 反向测试 | IN_PROGRESS；P04-01 COMPLETE，P04-02/P04-03 NOT_STARTED |
+| P04 多租户与数据范围 | P04-01上下文与范围；P04-02 JPA/关联/PG隔离；P04-03 Redis/异步及阶段验收 | P03 | 租户策略、持久化防护与范围测试 | 单/多租户共用机制；无上下文拒绝；越权查询和写入被阻止 | 真实 PostgreSQL 的跨租户读写/批量/原生 SQL 反向测试 | IN_PROGRESS；P04-01/P04-02 COMPLETE，P04-03 NOT_STARTED |
 | P05 认证与身份权限 | Sa-Token Redis 会话；平台/员工/客户隔离；角色权限；Cookie/CSRF | P04 | 身份模块、会话契约、权限与安全测试 | 会话失效真实生效；身份跨域拒绝；CSRF 正反例通过 | 真实 Redis、HTTP/Cookie/Token、CSRF、权限集成测试 | NOT_STARTED |
 | P06 Web 应用基础 | 应用壳；TanStack Router/Query；fetch；会话/权限呈现；表单错误 | P03、P05 | Web 应用壳与请求/会话基础 | 同源会话与后端真实联通；错误/加载/空态清楚 | tsc、lint、build、真实后端联调与浏览器测试 | NOT_STARTED |
 | P07 企业级页面与员工管理 | 官方组件列表/筛选/分页/详情/表单；员工/组织/角色页面 | P04～P06 | 页面模式与基础员工管理 | 服务端授权与数据范围实际生效；创建/修改/停用可验收 | 真实业务基础 API、权限反例、页面可访问性和端到端测试 | NOT_STARTED |
@@ -62,7 +62,13 @@ P03关闭时没有剩余必选任务，下一合法任务当时是P04。2026-10-
 | 任务 | 范围 | 当前状态 |
 | --- | --- | --- |
 | P04-01 | 可信身份接入、不可变上下文、数据范围、门店事实端口/Guard、同步HTTP/ERROR与后台边界、清理与防伪造测试 | COMPLETE；G01～G15 PASS，114项0跳过，[本轮报告](../testing/P04-01-VERIFICATION.md) |
-| P04-02 | JPA租户受控访问、关联约束与PostgreSQL越权测试；RLS/运行角色/SQL注册/连接与事务复用 | NOT_STARTED |
+| P04-02 | JPA租户受控访问、关联约束与PostgreSQL越权测试；RLS/运行角色/SQL注册/连接与事务复用 | COMPLETE；G01～G15 PASS，[验证](../testing/P04-02-VERIFICATION.md) |
 | P04-03 | Redis、异步边界与阶段验收；核对P04全部原条件及真实资源隔离 | NOT_STARTED |
 
-当前只建立上下文/范围/Guard与生命周期，未实现真实认证、正式门店数据源、JPA/RLS隔离、数据库越权读写或Redis/异步传播。P04整体IN_PROGRESS。下一合法任务为**P04-02：JPA租户受控访问、关联约束与PostgreSQL越权测试**，只报告、不自动执行。没有提交、推送或部署。
+P04-01关闭时的历史边界：当时只建立上下文/范围/Guard与生命周期，JPA/RLS与数据库越权测试未执行，下一合法任务为P04-02。该历史结论保留；本轮P04-02结果与下一边界见下节。P04整体仍IN_PROGRESS。没有提交、推送或部署。
+
+## P04-02 当前执行（2026-10-08）
+
+用户本轮明确授权P04-02，按冻结版本执行受控JPA、资源策略、实体归属、应用与数据库关联、真实PostgreSQL越权和结构检查。P04-02 COMPLETE，167项测试0失败/错误/跳过（原114项逐项回归），G01～G15 PASS；结果见[P04-02](../testing/P04-02-VERIFICATION.md)。P04整体仍IN_PROGRESS，生产角色与独立迁移、真实认证/正式Store、Redis及异步尚未验收。本轮没有正式业务表、登录/权限管理、提交/推送/部署；P04-03尚未授权执行。
+
+下一合法任务为**P04-03：Redis命名空间、异步执行边界与多租户阶段验收**，只报告、不自动执行；P04原完成条件与A04门禁保留。

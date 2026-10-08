@@ -1,0 +1,12 @@
+{
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "argv": [
+    "./mvnw",
+    "-q",
+    "-DskipTests",
+    "test-compile"
+  ],
+  "exitCode": 127,
+  "summary": "初次Wrapper命令从根目录执行，根目录没有mvnw；后续改为apps/backend。",
+  "level": "NOT_EXECUTED"
+}

@@ -13,10 +13,10 @@
 | A03-04 | API / P03 | 实际后端OpenAPI导出、生成/复制、破坏性差异使CI失败 | P03-03临时重新生成/比对、真实total string→number差异exit1、三端tsc通过；CI命令已接入，远程未执行。完整破坏性分类/同步接受变更后的旧端兼容未实现，[报告](P03-03-VERIFICATION.md) | [生成](../contracts/OPENAPI-GENERATION.md) |
 | A03-05 | 各模块 / P03 | 结构依赖、shared禁止具体模块、跨Repository拒绝 | P03-03编译字节码/泛型/注解/继承规则与违规夹具、JAR隔离通过；范围/SQL注册表按既有A04实施，不用结构检查替代越权读写，[报告](P03-03-VERIFICATION.md) | [模块](../architecture/MODULE-BOUNDARIES.md) |
 | A04-00 | tenancy / P04-01 | 可信身份/范围/默认拒绝、Header/Query/Body防伪造；嵌套/LIFO/异常/同线程连续A/B/匿名、门店归属/授权、MDC/REQUEST/ERROR、生产测试夹具隔离 | P04-01 PASS：114项0失败/错误/跳过，原79项全部回归；模型与真实MVC链、同一单线程Executor及真Tomcat技术测试；[本轮报告](P04-01-VERIFICATION.md)。不替代下列真PG数据库验收 | [隔离](../architecture/MULTI-TENANCY.md)、[授权](../architecture/AUTHORIZATION.md) |
-| A04-01 | tenancy / P04 | 同ID/跨tenant查询/count/exists/关联；无上下文拒绝 | 真PG/Testcontainers/JPA，两个租户技术数据 | [隔离](../architecture/MULTI-TENANCY.md) |
-| A04-02 | persistence / P04 | 创建/更新/删除/bulk/native跨tenant；运行角色不能绕RLS/DDL/TRUNCATE | 真PG运行角色与owner分离，SQL/JPA反例、迁移策略扫描 | 同上 |
-| A04-03 | tenancy / P04 | store属于他tenant/无授权store、SELF归属、不同权限不同范围 | 真PG读写/总数；不是前端按钮检查 | [授权](../architecture/AUTHORIZATION.md) |
-| A04-04 | persistence / P04 | 连接复用/提交回滚/REQUIRES_NEW/事务外加载，不能旧tenant泄漏 | 真连接池JPA事务，SQL GUC与线程清理记录 | [隔离](../architecture/MULTI-TENANCY.md) |
+| A04-01 | tenancy / P04 | 同ID/跨tenant查询/count/exists/关联；无上下文拒绝 | P04-02 RUNTIME_VERIFIED：独立PG两个租户、强制范围、OR/total/exists/关联/无上下文；[报告](P04-02-VERIFICATION.md) | [隔离](../architecture/MULTI-TENANCY.md) |
+| A04-02 | persistence / P04 | 创建/更新/删除/bulk/native跨tenant；运行角色不能绕RLS/DDL/TRUNCATE | P04-02 RUNTIME_VERIFIED：测试runtime/owner分离、FORCE RLS/WITH CHECK、DDL/TRUNCATE/升权拒绝、混合批次及真实影响数回滚；生产角色NOT_VERIFIED；[报告](P04-02-VERIFICATION.md) | 同上 |
+| A04-03 | tenancy / P04 | store属于他tenant/无授权store、SELF归属、不同权限不同范围 | P04-02 RUNTIME_VERIFIED：STORES/空集/门店上限、SELF主体域+ownerID读写、跨权限拒绝；正式授权数据仍待P05；[报告](P04-02-VERIFICATION.md) | [授权](../architecture/AUTHORIZATION.md) |
+| A04-04 | persistence / P04 | 连接复用/提交回滚/REQUIRES_NEW/事务外加载，不能旧tenant泄漏 | P04-02 RUNTIME_VERIFIED：池复用/局部GUC、REQUIRES_NEW、flush失败回滚、旧范围实体/commit前范围改变拒绝；当前关联只存ID，不开放事务外懒加载；[报告](P04-02-VERIFICATION.md) | [隔离](../architecture/MULTI-TENANCY.md) |
 | A05-01 | 三身份 / P05 | 同主体ID跨域拒绝；Cookie/Header混合与错误头；公共端点不继承身份 | 真Redis与HTTP，空间/键隔离及客户端请求 | [认证](../architecture/AUTHENTICATION.md) |
 | A05-02 | security / P05 | Cookie属性/local-prod/代理；登录、退出、上传/写CSRF正反例；CORS错误origin | 浏览器+真后端/代理，Cookie/Origin/CSRF证据 | 同上 |
 | A05-03 | identity / P05 | 绝对/闲置/设备上限、当前退出vs全部撤销、停用/改密、Redis删除故障 | 真Redis两设备/跨实例、DB版本、故障注入；不依赖Mock内存 | 同上 |
@@ -56,3 +56,5 @@
 2026-10-08 P03-03：G01～G15 PASS，79项后端测试无失败/错误/跳过；生产/测试OpenAPI严格分离，生成产物一致性反例、Web/小程序纯类型消费、字节码违规与产物隔离已执行。P03-03/P03整体COMPLETE依据原路线的协议与生成一致、真实PostgreSQL迁移/事务可重复条件，三项报告合并核对，不修改历史失败。生产独立迁移运行、运行/迁移角色权限仍NOT_EXECUTED（原A04-02及部署边界）；远程CI、多OS仍NOT_VERIFIED。完整破坏性分析、租户/身份/业务筛选/完整微信验收不在当前证据范围。下一P04需后续授权，不自动执行。详见 [P03-03](P03-03-VERIFICATION.md)。
 
 2026-10-08 P04-01：新增A04-00细化上下文/范围/生命周期技术门禁，原A04-01～04及P04原完成条件保持不变。真实认证、正式Store事实源、JPA/RLS/数据库越权、Redis/异步仍NOT_EXECUTED/NOT_VERIFIED，不由上下文或结构测试推导多租户隔离完成。最新数量/命令/退出码/生产产物及G01～G15见 [P04-01](P04-01-VERIFICATION.md)。P04整体IN_PROGRESS，下一P04-02不自动执行。
+
+2026-10-08 P04-02：受控JPA与资源策略、归属不可由客户端决定、复合关联、RLS同连接执行、内部原子批次及结构违规反例已实施，P04-02 COMPLETE（167项0失败/错误/跳过，原114项全部回归），最终命令/XML/数据库快照/JAR隔离与G01～G15见[P04-02](P04-02-VERIFICATION.md)。A04-01～04的本轮技术模型证据使用独立PostgreSQL与受限角色；正式生产角色/独立迁移、认证/权威撤销、所有未来业务、Redis/异步、跨OS/远程CI/部署仍未验证。P04整体IN_PROGRESS；下一合法P04-03只报告、不自动执行，公开HTTP逐项批处理协议未改变且尚未实现。

@@ -1,0 +1,41 @@
+[ERROR] COMPILATION ERROR : 
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/testing/tenantpersistence/TenantPersistenceIT.java:[91,67] 对于assertThrows(java.lang.Class<com.pet.platform.shared.exception.TenantAccessDeniedException>,java.lang.Runnable), 找不到合适的方法
+    方法 org.junit.jupiter.api.Assertions.<T>assertThrows(java.lang.Class<T>,org.junit.jupiter.api.function.Executable,java.util.function.Supplier<java.lang.String>)不适用
+      (无法推断类型变量 T
+        (实际参数列表和形式参数列表长度不同))
+    方法 org.junit.jupiter.api.Assertions.<T>assertThrows(java.lang.Class<T>,org.junit.jupiter.api.function.Executable,java.lang.String)不适用
+      (无法推断类型变量 T
+        (实际参数列表和形式参数列表长度不同))
+    方法 org.junit.jupiter.api.Assertions.<T>assertThrows(java.lang.Class<T>,org.junit.jupiter.api.function.Executable)不适用
+      (无法推断类型变量 T
+        (参数不匹配; java.lang.Runnable无法转换为org.junit.jupiter.api.function.Executable))
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/testing/tenantpersistence/TenantPersistenceIT.java:[101,89] 找不到符号
+  符号:   方法 errorCode()
+  位置: 类型为com.pet.platform.shared.exception.TenantAccessDeniedException的变量 missing
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/testing/tenantpersistence/TenantPersistenceIT.java:[101,108] 找不到符号
+  符号:   方法 errorCode()
+  位置: 类型为com.pet.platform.shared.exception.TenantAccessDeniedException的变量 hidden
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.14.1:testCompile (default-testCompile) on project pet-platform-backend: Compilation failure: Compilation failure: 
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/testing/tenantpersistence/TenantPersistenceIT.java:[91,67] 对于assertThrows(java.lang.Class<com.pet.platform.shared.exception.TenantAccessDeniedException>,java.lang.Runnable), 找不到合适的方法
+[ERROR]     方法 org.junit.jupiter.api.Assertions.<T>assertThrows(java.lang.Class<T>,org.junit.jupiter.api.function.Executable,java.util.function.Supplier<java.lang.String>)不适用
+[ERROR]       (无法推断类型变量 T
+[ERROR]         (实际参数列表和形式参数列表长度不同))
+[ERROR]     方法 org.junit.jupiter.api.Assertions.<T>assertThrows(java.lang.Class<T>,org.junit.jupiter.api.function.Executable,java.lang.String)不适用
+[ERROR]       (无法推断类型变量 T
+[ERROR]         (实际参数列表和形式参数列表长度不同))
+[ERROR]     方法 org.junit.jupiter.api.Assertions.<T>assertThrows(java.lang.Class<T>,org.junit.jupiter.api.function.Executable)不适用
+[ERROR]       (无法推断类型变量 T
+[ERROR]         (参数不匹配; java.lang.Runnable无法转换为org.junit.jupiter.api.function.Executable))
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/testing/tenantpersistence/TenantPersistenceIT.java:[101,89] 找不到符号
+[ERROR]   符号:   方法 errorCode()
+[ERROR]   位置: 类型为com.pet.platform.shared.exception.TenantAccessDeniedException的变量 missing
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/testing/tenantpersistence/TenantPersistenceIT.java:[101,108] 找不到符号
+[ERROR]   符号:   方法 errorCode()
+[ERROR]   位置: 类型为com.pet.platform.shared.exception.TenantAccessDeniedException的变量 hidden
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException

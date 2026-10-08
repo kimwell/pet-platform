@@ -27,6 +27,8 @@ final class DatabaseConfigurationRules {
             throw new IllegalStateException("spring.datasource.url 必须是不含凭据或查询参数的 PostgreSQL JDBC 地址");
         }
         expect(environment, "spring.jpa.open-in-view", "false");
+        expect(environment, "spring.jpa.properties.hibernate.cache.use_second_level_cache", "false");
+        expect(environment, "spring.jpa.properties.hibernate.cache.use_query_cache", "false");
         expect(environment, "spring.jpa.generate-ddl", "false");
         expect(environment, "spring.jpa.hibernate.ddl-auto", "validate");
         optionalExpected(environment, "spring.jpa.properties.hibernate.hbm2ddl.auto", "validate");

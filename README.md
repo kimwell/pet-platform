@@ -48,4 +48,6 @@ Windows 使用 mvnw.cmd。无需全局 Maven，首次下载需网络；默认回
 
 生成与同步规则见 [OpenAPI](docs/contracts/OPENAPI-GENERATION.md)：Web只import type，小程序从固定生成目录读取同源声明。local文档和UI回环可访问，prod两者关闭；测试环境配置和测试契约均不进入生产JAR。生产独立迁移任务与数据库角色权限归P04/部署验证，远程CI、多OS仍是已知未验证项，不因P03完成而写成运行PASS。
 
-P04-01 COMPLETE（114项测试0跳过），已建立内部可信身份Provider（默认无身份）、不可变租户上下文/数据范围、门店事实端口/Guard、同步REQUEST/ERROR和同步后台执行范围；验证与状态见 [P04-01](docs/testing/P04-01-VERIFICATION.md)。P04整体仍IN_PROGRESS；真实认证、正式门店数据源、JPA/RLS隔离、数据库越权、Redis与异步尚未实现。公开DTO/OpenAPI及三端产物未改变，下一合法任务为P04-02，只报告、不自动执行。
+P04-01关闭时的历史结论：COMPLETE（114项测试0跳过），已建立内部可信身份Provider（默认无身份）、不可变租户上下文/数据范围、门店事实端口/Guard、同步REQUEST/ERROR和同步后台执行范围；验证与状态见 [P04-01](docs/testing/P04-01-VERIFICATION.md)。P04整体仍IN_PROGRESS；真实认证、正式门店数据源、JPA/RLS隔离、数据库越权、Redis与异步尚未实现。公开DTO/OpenAPI及三端产物未改变，下一合法任务为P04-02，只报告、不自动执行。
+
+P04-02 COMPLETE（167项测试0失败/错误/跳过，原114项全部回归），已实现受控JPA、TENANT/STORES/SELF SQL策略、归属基类与事务范围绑定；独立PostgreSQL中的复合关联/RLS/角色/批次回滚验证见[P04-02](docs/testing/P04-02-VERIFICATION.md)。P04整体仍IN_PROGRESS；生产角色、真实认证/正式Store数据源、Redis与异步尚未验收。下一合法P04-03只报告、不自动执行；没有提交、推送或部署。

@@ -38,3 +38,11 @@ StoreScopeGuard只接受目标storeId，通过StoreOwnershipReader获取内部�
 openStore只绑定经过上述检查的当前门店；同门店嵌套可恢复，不允许已选择门店的内层静默换店。当前无正式Store表/状态规则，未来platform/store实现必须提供权威归属并按用例检查有效状态，不能把当前查询端口当Store CRUD已完成。
 
 模型、Guard与技术请求链结果见 [P04-01](../testing/P04-01-VERIFICATION.md)，操作范围不等于数据库行隔离、真实角色撤销或业务验收。
+
+## P04-02 资源策略与写入授权（2026-10-08）
+
+本轮已将TENANT/STORES/SELF进入真实SQL，由ResourceAccessPolicy按资源静态声明支持组合：tenantOnly仅TENANT，stores支持TENANT/STORES，owned支持TENANT/SELF，storesAndOwned同时支持三者及STORES+SELF并集。未声明组合整体拒绝，即使其中一个分支有映射也不擅自忽略未知分支。TENANT门店查询仍检查身份门店上限；租户级无store字段不会被STORES放行。空STORES对已声明门店模型是空结果；SELF使用principalType+ownerId，员工/客户同UUID不会互认。具体模型必须明确owner业务意义及不可变性。
+
+ScopedPersistence实例固定本用例permissionCode，访问时requirePermission核对，避免将list范围用于update。租户与资源条件在所有列表/count/exists/单条/ID集合以及固定批量DML上强制AND；单条未找到和范围外均TenantAccessDeniedException（既定404）。无可信BUSINESS或只有AUTHORITY_READ不能使用该能力。缺操作权限仍403；缺正式门店事实源仍沿用P04-01的503，不提供生产默认事实。
+
+新增来自可信上下文，门店归属/授权经Guard；更新从范围内加载managed实体，仅模块固定业务方法改允许字段，不接收请求Entity。批次先锁定并核对完整去重目标，含不存在/跨租户/未授权门店即统一拒绝，写入语句再次带范围、核对实际影响行数。SELF读写、主体域冲突、门店上限、事务期间范围改变和独立数据库结果见[P04-02](../testing/P04-02-VERIFICATION.md)。该测试不实现真实认证、权限管理、权威撤销或提交前实时版本重验；P05及对应模块仍需承担这些责任。

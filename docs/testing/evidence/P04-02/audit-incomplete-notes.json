@@ -1,0 +1,6 @@
+{
+  "command": "python3 docs/testing/evidence/P04-02/final-audit.py",
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "exitCode": 1,
+  "summary": "首次审计运行时验证报告尚未创建，文档链接检查拒绝；HEAD比较误将baseline中本轮证据目录的untracked行一起比较。实际HEAD前后均dcf7e3feb18e9d65094e620ca4dfb0794c46c849，已改为比较基线最后一行。原始审计保留final-audit-incomplete.json；不把它当最终验收。"
+}

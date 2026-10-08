@@ -64,6 +64,12 @@ class DatabaseConfigurationRulesTest {
         }
     }
 
+    @Test void sharedEntityCachesCannotBeEnabledByOverrides() throws Exception {
+        for (String property : new String[]{"spring.jpa.properties.hibernate.cache.use_second_level_cache", "spring.jpa.properties.hibernate.cache.use_query_cache"}) {
+            assertThrows(IllegalStateException.class, () -> DatabaseConfigurationRules.validate(configuration("local").withProperty(property, "true")));
+        }
+    }
+
     @Test void productionCannotRunStartupMigrations() throws Exception {
         var environment = configuration("prod").withProperty("spring.flyway.enabled", "true");
         assertThrows(IllegalStateException.class, () -> DatabaseConfigurationRules.validate(environment));

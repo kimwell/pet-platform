@@ -17,3 +17,15 @@ local/test 默认在应用启动时迁移，Spring Boot 的数据库初始化依
 测试 SQL 在 `src/test/resources/persistence-migrations/`，测试实体、Repository 和服务在 `src/test/java/com/pet/testing/persistence/`。测试配置显式指定 `classpath:persistence-migrations`，生产默认 locations 不含此目录；测试实体位于生产包扫描之外。生产 JAR 不包含测试源码/资源/依赖，产物审计作为本阶段门禁。
 
 `./mvnw clean verify` 使用冻结 PostgreSQL Testcontainers 镜像，必须有可用 Docker；没有 Docker 则失败并记录 NOT_EXECUTED，不能改用 H2 或 `disabledWithoutDocker`。校验和冲突只修改临时迁移副本，结构反例只改独立测试容器中的 schema。迁移、重复执行、拒绝 baseline/clean、结构不匹配及实际启动证据见 [P03-02](../testing/P03-02-VERIFICATION.md)。
+
+## P04-02 安全测试迁移与关联约束（2026-10-08）
+
+新增测试migration仅 `src/test/resources/security-migrations/V1__tenant_security_fixtures.sql`，由专用测试上下文选择独立locations；它与原persistence-migrations分别运行在隔离Testcontainer，因此测试V1不进入全应用生产版本号序列。原测试migration与所有历史失败证据保留，生产db/migration无新SQL，Hibernate仍validate。
+
+本安全夹具包含safety_parent/child/store_resource/owned_resource/store_fact，五表tenant_id非空、UNIQUE(tenant_id,id)，父子与门店引用为复合FK并ON DELETE RESTRICT；业务代码的唯一约束按tenant_id+code。没有cascade。JPA保存parentId/storeId标量引用，关联目标从受控查询加载/校验，与DDL使用同一tenant_id关联；不依赖隐式懒加载授权。
+
+五表均ENABLE/FORCE RLS，USING/WITH CHECK使用事务局部pet.tenant_id。临时容器角色security_probe_runtime与迁移owner分离，前者NOSUPERUSER/NOBYPASSRLS/NOINHERIT/NOCREATEDB/NOCREATEROLE，只有技术资源DML和门店事实SELECT，PUBLIC撤销schema CREATE；Flyway专用连接以容器owner执行后，JPA以runtime连接validate。角色不进入生产migration，临时凭据不保存或复用。
+
+实际pg_class/pg_policies/pg_constraint查询与范围外native/JPQL更新、无GUC、WITH CHECK伪造写入、DDL/TRUNCATE/SET ROLE拒绝见[P04-02](../testing/P04-02-VERIFICATION.md)。每个失败后的结果用独立owner连接读取。触发器故意跳过一行制造真实影响数异常，应用回滚全部变更；只在该隔离容器中使用TRUNCATE重置技术夹具，没有删除日常数据库卷或历史数据。
+
+未来正式模块按[持久化接入清单](PERSISTENCE.md#关联与新模块接入清单)创建正确复合约束与RLS，生产迁移编号仍唯一递增；运行/迁移角色实际权限、独立生产迁移执行和部署验证仍NOT_VERIFIED/NOT_EXECUTED，不能从技术容器结论推导生产账号权限验收。

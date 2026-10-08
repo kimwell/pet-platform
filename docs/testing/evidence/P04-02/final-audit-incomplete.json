@@ -1,0 +1,99 @@
+{
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "command": "python3 docs/testing/evidence/P04-02/final-audit.py",
+  "testCount": 167,
+  "baselineCount": 114,
+  "missingBaselineCases": [],
+  "securityDatabaseTestCount": 48,
+  "databaseSnapshots": 48,
+  "databaseSnapshotErrors": [],
+  "artifact": {
+    "path": "/Users/kimwell/work/pet-platform/apps/backend/target/pet-platform-backend-0.0.0-SNAPSHOT.jar",
+    "sha256": "d379a61a97a4bf306cddc6efca790eeed00c34dcdd9fdf9228f588c7d144662d",
+    "violations": [],
+    "fixtureStrings": [],
+    "productionSql": [],
+    "productionEntityClasses": [],
+    "testClassesCompared": 66,
+    "testResourcesCompared": 3
+  },
+  "preservationChecked": 343,
+  "preservationViolations": [],
+  "missingDocumentLinks": [
+    {
+      "file": "docs/architecture/AUTHORIZATION.md",
+      "target": "../testing/P04-02-VERIFICATION.md"
+    },
+    {
+      "file": "docs/architecture/MODULE-BOUNDARIES.md",
+      "target": "../testing/P04-02-VERIFICATION.md"
+    },
+    {
+      "file": "docs/architecture/MULTI-TENANCY.md",
+      "target": "../testing/P04-02-VERIFICATION.md"
+    },
+    {
+      "file": "docs/conventions/BACKEND.md",
+      "target": "../testing/P04-02-VERIFICATION.md"
+    },
+    {
+      "file": "docs/conventions/DATABASE-MIGRATION.md",
+      "target": "../testing/P04-02-VERIFICATION.md"
+    },
+    {
+      "file": "docs/conventions/PERSISTENCE.md",
+      "target": "../testing/P04-02-VERIFICATION.md"
+    },
+    {
+      "file": "docs/development/DECISION-LOG.md",
+      "target": "../testing/P04-02-VERIFICATION.md"
+    },
+    {
+      "file": "docs/development/ROADMAP.md",
+      "target": "../testing/P04-02-VERIFICATION.md"
+    },
+    {
+      "file": "docs/development/ROADMAP.md",
+      "target": "../testing/P04-02-VERIFICATION.md"
+    },
+    {
+      "file": "docs/testing/ACCEPTANCE-MATRIX.md",
+      "target": "P04-02-VERIFICATION.md"
+    }
+  ],
+  "diffCheckExitCode": 0,
+  "diffCheckOutput": "",
+  "gitHead": "dcf7e3feb18e9d65094e620ca4dfb0794c46c849",
+  "gitHeadUnchanged": false,
+  "sourceFiles": [
+    "apps/backend/src/main/java/com/pet/platform/shared/persistence/DatabaseConfigurationRules.java",
+    "apps/backend/src/main/java/com/pet/platform/shared/persistence/ResourceAccessPolicy.java",
+    "apps/backend/src/main/java/com/pet/platform/shared/persistence/ScopedPersistence.java",
+    "apps/backend/src/main/java/com/pet/platform/shared/persistence/ScopedTransaction.java",
+    "apps/backend/src/main/java/com/pet/platform/shared/persistence/StoreScopedEntity.java",
+    "apps/backend/src/main/java/com/pet/platform/shared/persistence/TenantScopedEntity.java",
+    "apps/backend/src/main/resources/application.yml",
+    "apps/backend/src/test/java/com/pet/platform/shared/persistence/DatabaseConfigurationRulesTest.java",
+    "apps/backend/src/test/java/com/pet/testing/architecture/StructureRulesTest.java",
+    "apps/backend/src/test/java/com/pet/testing/tenantpersistence/SafetyApplicationService.java",
+    "apps/backend/src/test/java/com/pet/testing/tenantpersistence/SafetyBypassProbe.java",
+    "apps/backend/src/test/java/com/pet/testing/tenantpersistence/SafetyChild.java",
+    "apps/backend/src/test/java/com/pet/testing/tenantpersistence/SafetyFixtures.java",
+    "apps/backend/src/test/java/com/pet/testing/tenantpersistence/SafetyOwnedResource.java",
+    "apps/backend/src/test/java/com/pet/testing/tenantpersistence/SafetyParent.java",
+    "apps/backend/src/test/java/com/pet/testing/tenantpersistence/SafetyRepositories.java",
+    "apps/backend/src/test/java/com/pet/testing/tenantpersistence/SafetyStoreResource.java",
+    "apps/backend/src/test/java/com/pet/testing/tenantpersistence/TenantPersistenceIT.java",
+    "apps/backend/src/test/resources/security-migrations/V1__tenant_security_fixtures.sql",
+    "docs/architecture/AUTHORIZATION.md",
+    "docs/architecture/MODULE-BOUNDARIES.md",
+    "docs/architecture/MULTI-TENANCY.md",
+    "docs/conventions/BACKEND.md",
+    "docs/conventions/DATABASE-MIGRATION.md",
+    "docs/conventions/PERSISTENCE.md",
+    "docs/development/DECISION-LOG.md",
+    "docs/development/ROADMAP.md",
+    "docs/testing/ACCEPTANCE-MATRIX.md"
+  ],
+  "exitCode": 1
+}
