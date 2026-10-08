@@ -1,0 +1,5 @@
+import os,json,datetime,pathlib
+root=pathlib.Path('/Users/kimwell/work/pet-platform')
+result={'status':'NOT_EXECUTED','checkedAt':datetime.datetime.now(datetime.timezone.utc).isoformat(),'checks':{'designatedLocalSecretConfigured':bool(os.environ.get('PET_WECHAT_LOCAL_SECRET')),'designatedLocalAppIdConfigured':bool(os.environ.get('PET_WECHAT_LOCAL_APP_ID')),'designatedLocalTenantEntryConfigured':bool(os.environ.get('PET_WECHAT_LOCAL_TENANT_CODE'))},'reason':'本轮没有载入指定微信本地入口及AppSecret安全配置；未尝试获取新鲜code或调用真实微信。私有AppID不构成AppSecret证据。','steps':{'realCodeExchange':'NOT_EXECUTED','customerSession':'NOT_EXECUTED','currentIdentity':'NOT_EXECUTED','logoutInvalidation':'NOT_EXECUTED'},'developerToolsCurrentLogin':'NOT_VERIFIED','networkToWechat':'NOT_VERIFIED','deviceBusinessFlow':'P09_NOT_EXECUTED','secretsLogged':False}
+(root/'docs/testing/evidence/P05-05/real-wechat-result.json').write_text(json.dumps(result,ensure_ascii=False,indent=2)+'\n')
+print(json.dumps(result,ensure_ascii=False,indent=2))

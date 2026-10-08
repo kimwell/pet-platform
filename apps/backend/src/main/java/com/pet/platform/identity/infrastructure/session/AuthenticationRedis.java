@@ -29,13 +29,13 @@ public final class AuthenticationRedis extends SaTokenDaoForRedisTemplate {
     private <T> T safe(Supplier<T> call) { try { return call.get(); } catch(BusinessException e) { throw e; } catch(RuntimeException e) { throw unavailable(); } }
     private static BusinessException unavailable() { return new BusinessException(ErrorCode.DEPENDENCY_UNAVAILABLE); }
     private static void value(String value) { if(value==null || value.getBytes(StandardCharsets.UTF_8).length>131072) throw unavailable(); }
-    private static void ttl(long ttl) { if(ttl<1 || ttl>604800) throw unavailable(); }
+    private static void ttl(String key,long ttl) { if(ttl<1 || ttl>(key.contains(":customer:customer:")?2592000:604800)) throw unavailable(); }
     @Override public String get(String key) { return safe(() -> {String v=super.get(key);if(v!=null)value(v);return v;}); }
-    @Override public void set(String key,String value,long timeout) { value(value);ttl(timeout);safe(() -> {super.set(key,value,timeout);return true;}); }
+    @Override public void set(String key,String value,long timeout) { value(value);ttl(key,timeout);safe(() -> {super.set(key,value,timeout);return true;}); }
     @Override public void update(String key,String value) { value(value);safe(() -> {super.update(key,value);return true;}); }
     @Override public void delete(String key) { safe(() -> {super.delete(key);return true;}); }
     @Override public long getTimeout(String key) { return safe(() -> super.getTimeout(key)); }
-    @Override public void updateTimeout(String key,long timeout) { ttl(timeout);safe(() -> {super.updateTimeout(key,timeout);return true;}); }
+    @Override public void updateTimeout(String key,long timeout) { ttl(key,timeout);safe(() -> {super.updateTimeout(key,timeout);return true;}); }
     @Override public List<String> searchData(String p,String k,int s,int n,boolean sort) { throw unavailable(); }
     @Override public Object getObject(String key) { return getObject(key,SaSession.class); }
     @Override public <T> T getObject(String key,Class<T> type) {
@@ -68,7 +68,14 @@ public final class AuthenticationRedis extends SaTokenDaoForRedisTemplate {
     @Override public void setObject(String key,Object obj,long timeout) { set(key,encode(obj),timeout); }
     @Override public void updateObject(String key,Object obj) { update(key,encode(obj)); }
     // 以下方法仅接收服务端安全摘要，认证前不制造TenantContext。
-    private String auxiliary(String domain,String suffix) { if(!Set.of("staff","platform").contains(domain))throw unavailable(); if(!suffix.matches("[a-z]+:[a-f0-9]{64}"))throw unavailable();return prefix+"auth:"+domain+":"+suffix; }
+    private String auxiliary(String domain,String suffix) { if(!Set.of("staff","platform","customer").contains(domain))throw unavailable(); if(!suffix.matches("[a-z]+:[a-f0-9]{64}"))throw unavailable();return prefix+"auth:"+domain+":"+suffix; }
+    public void reserveCustomerAttempt(String purpose,String source,int maximum) {
+        if(!Set.of("entry","exchange","source").contains(purpose) || maximum<1 || maximum>60)throw unavailable();
+        var script=new DefaultRedisScript<List>("local n=redis.call('INCR',KEYS[1]); if n==1 then redis.call('EXPIRE',KEYS[1],60) end; return {n,redis.call('TTL',KEYS[1])}",List.class);
+        List<?> r=safe(() -> stringRedisTemplate.execute(script,List.of(auxiliary("customer",purpose+":"+source))));
+        if(r==null || r.size()!=2)throw unavailable();
+        if(((Number)r.get(0)).longValue()>maximum)throw BusinessException.rateLimited(Math.max(1,((Number)r.get(1)).longValue()));
+    }
     public void reserveAttempt(String domain,String ipDigest,String accountDigest) {
         var script=new DefaultRedisScript<List>("local a=redis.call('INCR',KEYS[1]); if a==1 then redis.call('EXPIRE',KEYS[1],300) end; local b=redis.call('INCR',KEYS[2]); if b==1 then redis.call('EXPIRE',KEYS[2],900) end; return {a,b,redis.call('TTL',KEYS[1]),redis.call('TTL',KEYS[2])}",List.class);
         List<?> r=safe(() -> stringRedisTemplate.execute(script,List.of(auxiliary(domain,"ip:"+ipDigest),auxiliary(domain,"account:"+accountDigest))));

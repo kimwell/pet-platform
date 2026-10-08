@@ -1,0 +1,315 @@
+-------------------------------------------------------------------------------
+Test set: com.pet.testing.authentication.CustomerAuthenticationIT
+-------------------------------------------------------------------------------
+Tests run: 36, Failures: 27, Errors: 2, Skipped: 0, Time elapsed: 10.79 s <<< FAILURE! -- in com.pet.testing.authentication.CustomerAuthenticationIT
+com.pet.testing.authentication.CustomerAuthenticationIT.customerAsyncIsExplicitlyRejectedBeforeQueueing -- Time elapsed: 0.664 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: {"success":false,"error":{"code":"LOGIN_FAILED","message":"登录失败，请检查登录信息"},"traceId":"03ac3762f327491694572974a3c139bc"} ==> expected: <200> but was: <401>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:158)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:139)
+	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:201)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:152)
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:590)
+	at com.pet.testing.authentication.CustomerAuthenticationIT.token(CustomerAuthenticationIT.java:46)
+	at com.pet.testing.authentication.CustomerAuthenticationIT.token(CustomerAuthenticationIT.java:47)
+	at com.pet.testing.authentication.CustomerAuthenticationIT.customerAsyncIsExplicitlyRejectedBeforeQueueing(CustomerAuthenticationIT.java:71)
+
+com.pet.testing.authentication.CustomerAuthenticationIT.currentIdentityComesFromDatabaseAndProviderSelfDomain -- Time elapsed: 0.089 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: {"success":false,"error":{"code":"LOGIN_FAILED","message":"登录失败，请检查登录信息"},"traceId":"a95e51032b524fb1906f824e4b0c9b0b"} ==> expected: <200> but was: <401>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:158)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:139)
+	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:201)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:152)
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:590)
+	at com.pet.testing.authentication.CustomerAuthenticationIT.token(CustomerAuthenticationIT.java:46)
+	at com.pet.testing.authentication.CustomerAuthenticationIT.token(CustomerAuthenticationIT.java:47)
+	at com.pet.testing.authentication.CustomerAuthenticationIT.currentIdentityComesFromDatabaseAndProviderSelfDomain(CustomerAuthenticationIT.java:70)
+
+com.pet.testing.authentication.CustomerAuthenticationIT.auditWriteFailureCannotReturnSuccessfulToken -- Time elapsed: 0.090 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: {"success":false,"error":{"code":"LOGIN_FAILED","message":"登录失败，请检查登录信息"},"traceId":"f409dcaa51db4a489861f5e77a51d1ec"} ==> expected: <503> but was: <401>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:158)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:139)
+	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:201)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:152)
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:590)
+	at com.pet.testing.authentication.CustomerAuthenticationIT.error(CustomerAuthenticationIT.java:49)
+	at com.pet.testing.authentication.CustomerAuthenticationIT.auditWriteFailureCannotReturnSuccessfulToken(CustomerAuthenticationIT.java:99)
+
+com.pet.testing.authentication.CustomerAuthenticationIT.compositeForeignKeyRefusesCustomerFromAnotherTenant -- Time elapsed: 0.056 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: {"success":false,"error":{"code":"LOGIN_FAILED","message":"登录失败，请检查登录信息"},"traceId":"3dd37625813e4a37a33f1ba520c49138"} ==> expected: <200> but was: <401>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:158)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:139)
+	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:201)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:152)
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:590)
+	at com.pet.testing.authentication.CustomerAuthenticationIT.token(CustomerAuthenticationIT.java:46)
+	at com.pet.testing.authentication.CustomerAuthenticationIT.token(CustomerAuthenticationIT.java:47)
+	at com.pet.testing.authentication.CustomerAuthenticationIT.compositeForeignKeyRefusesCustomerFromAnotherTenant(CustomerAuthenticationIT.java:97)
+
+com.pet.testing.authentication.CustomerAuthenticationIT.eventsContainKnownIdsOnlyAndNeverExternalSecrets -- Time elapsed: 0.077 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: {"success":false,"error":{"code":"LOGIN_FAILED","message":"登录失败，请检查登录信息"},"traceId":"74e67f5f12d842f6ac089139b3359a1a"} ==> expected: <200> but was: <401>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:158)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:139)
+	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:201)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:152)
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:590)
+	at com.pet.testing.authentication.CustomerAuthenticationIT.token(CustomerAuthenticationIT.java:46)
+	at com.pet.testing.authentication.CustomerAuthenticationIT.token(CustomerAuthenticationIT.java:47)
+	at com.pet.testing.authentication.CustomerAuthenticationIT.eventsContainKnownIdsOnlyAndNeverExternalSecrets(CustomerAuthenticationIT.java:98)
+
+com.pet.testing.authentication.CustomerAuthenticationIT.nonUniqueDatabaseFailureRollsBackAndIsNotTreatedAsExisting -- Time elapsed: 0.090 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: Expected com.pet.platform.shared.exception.BusinessException to be thrown, but nothing was thrown.
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:159)
+	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:74)
+	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:35)
+	at org.junit.jupiter.api.Assertions.assertThrows(Assertions.java:3223)
+	at com.pet.testing.authentication.CustomerAuthenticationIT.nonUniqueDatabaseFailureRollsBackAndIsNotTreatedAsExisting(CustomerAuthenticationIT.java:57)
+
+com.pet.testing.authentication.CustomerAuthenticationIT.disabledCustomerCannotBeRecreatedThroughLogin -- Time elapsed: 0.051 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: {"success":false,"error":{"code":"LOGIN_FAILED","message":"登录失败，请检查登录信息"},"traceId":"346cf1b00735401885b14bd6af4eff29"} ==> expected: <200> but was: <401>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:158)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:139)
+	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:201)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:152)
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:590)
+	at com.pet.testing.authentication.CustomerAuthenticationIT.token(CustomerAuthenticationIT.java:46)
+	at com.pet.testing.authentication.CustomerAuthenticationIT.token(CustomerAuthenticationIT.java:47)
+	at com.pet.testing.authentication.CustomerAuthenticationIT.disabledCustomerCannotBeRecreatedThroughLogin(CustomerAuthenticationIT.java:66)
+
+com.pet.testing.authentication.CustomerAuthenticationIT.actualDatabasePermissionFaultIs503AndDoesNotDeleteSession -- Time elapsed: 0.065 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: {"success":false,"error":{"code":"LOGIN_FAILED","message":"登录失败，请检查登录信息"},"traceId":"ec4e31e2bdbe4d99a2be4e7041ca45f8"} ==> expected: <200> but was: <401>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:158)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:139)
+	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:201)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:152)
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:590)
+	at com.pet.testing.authentication.CustomerAuthenticationIT.token(CustomerAuthenticationIT.java:46)
+	at com.pet.testing.authentication.CustomerAuthenticationIT.token(CustomerAuthenticationIT.java:47)
+	at com.pet.testing.authentication.CustomerAuthenticationIT.actualDatabasePermissionFaultIs503AndDoesNotDeleteSession(CustomerAuthenticationIT.java:89)
+
+com.pet.testing.authentication.CustomerAuthenticationIT.deviceLimitUsesSharedRedisAccountLock -- Time elapsed: 0.069 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: {"success":false,"error":{"code":"LOGIN_FAILED","message":"登录失败，请检查登录信息"},"traceId":"d2b04c3d02d04c7f9a27b4e483e4e5e7"} ==> expected: <200> but was: <401>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:158)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:139)
+	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:201)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:152)
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:590)
+	at com.pet.testing.authentication.CustomerAuthenticationIT.token(CustomerAuthenticationIT.java:46)
+	at com.pet.testing.authentication.CustomerAuthenticationIT.token(CustomerAuthenticationIT.java:47)
+	at com.pet.testing.authentication.CustomerAuthenticationIT.deviceLimitUsesSharedRedisAccountLock(CustomerAuthenticationIT.java:83)
+
+com.pet.testing.authentication.CustomerAuthenticationIT.concurrentFirstRegistrationHasOneBindingAndNoOrphan -- Time elapsed: 0.050 s <<< ERROR!
+java.util.concurrent.ExecutionException: java.util.NoSuchElementException: No value present
+	at java.base/java.util.concurrent.FutureTask.report(FutureTask.java:122)
+	at java.base/java.util.concurrent.FutureTask.get(FutureTask.java:205)
+	at com.pet.testing.authentication.CustomerAuthenticationIT.concurrentFirstRegistrationHasOneBindingAndNoOrphan(CustomerAuthenticationIT.java:56)
+Caused by: java.util.NoSuchElementException: No value present
+	at java.base/java.util.Optional.orElseThrow(Optional.java:377)
+	at com.pet.testing.authentication.CustomerAuthenticationIT.lambda$concurrentFirstRegistrationHasOneBindingAndNoOrphan$11(CustomerAuthenticationIT.java:56)
+
+com.pet.testing.authentication.CustomerAuthenticationIT.allLogoutInvalidatesEveryOldCustomerDeviceAndFreshLoginWorks -- Time elapsed: 0.163 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: {"success":false,"error":{"code":"LOGIN_FAILED","message":"登录失败，请检查登录信息"},"traceId":"90b3f7d05c45449f83d17aca4b5f38d7"} ==> expected: <200> but was: <401>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:158)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:139)
+	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:201)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:152)
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:590)
+	at com.pet.testing.authentication.CustomerAuthenticationIT.token(CustomerAuthenticationIT.java:46)
+	at com.pet.testing.authentication.CustomerAuthenticationIT.token(CustomerAuthenticationIT.java:47)
+	at com.pet.testing.authentication.CustomerAuthenticationIT.allLogoutInvalidatesEveryOldCustomerDeviceAndFreshLoginWorks(CustomerAuthenticationIT.java:79)
+
+com.pet.testing.authentication.CustomerAuthenticationIT.unknownIdentityFieldsAndEncodedPathsAreRejected -- Time elapsed: 0.065 s <<< ERROR!
+tools.jackson.core.exc.StreamReadException: 
+Unexpected character ('<' (code 60)): expected a valid value (JSON String, Number, Array, Object or token 'null', 'true' or 'false')
+ at [Source: REDACTED (`StreamReadFeature.INCLUDE_SOURCE_IN_LOCATION` disabled); byte offset: #UNKNOWN]
+	at tools.jackson.core.JsonParser._constructReadException(JsonParser.java:1856)
+	at tools.jackson.core.base.ParserMinimalBase._reportUnexpectedChar(ParserMinimalBase.java:1049)
+	at tools.jackson.core.json.ReaderBasedJsonParser._handleOddValue(ReaderBasedJsonParser.java:2078)
+	at tools.jackson.core.json.ReaderBasedJsonParser.nextToken(ReaderBasedJsonParser.java:809)
+	at tools.jackson.databind.ObjectMapper._readTreeAndClose(ObjectMapper.java:2665)
+	at tools.jackson.databind.ObjectMapper.readTree(ObjectMapper.java:1154)
+	at com.pet.testing.authentication.CustomerAuthenticationIT.error(CustomerAuthenticationIT.java:49)
+	at com.pet.testing.authentication.CustomerAuthenticationIT.unknownIdentityFieldsAndEncodedPathsAreRejected(CustomerAuthenticationIT.java:85)
+
+com.pet.testing.authentication.CustomerAuthenticationIT.noHeaderCookieQueryAndMixedCredentialsNeverBecomeCustomer -- Time elapsed: 0.080 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: {"success":false,"error":{"code":"LOGIN_FAILED","message":"登录失败，请检查登录信息"},"traceId":"233e571dc5c0434197c80843d2b1d52f"} ==> expected: <200> but was: <401>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:158)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:139)
+	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:201)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:152)
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:590)
+	at com.pet.testing.authentication.CustomerAuthenticationIT.token(CustomerAuthenticationIT.java:46)
+	at com.pet.testing.authentication.CustomerAuthenticationIT.token(CustomerAuthenticationIT.java:47)
+	at com.pet.testing.authentication.CustomerAuthenticationIT.noHeaderCookieQueryAndMixedCredentialsNeverBecomeCustomer(CustomerAuthenticationIT.java:84)
+
+com.pet.testing.authentication.CustomerAuthenticationIT.currentLogoutInvalidatesOnlyCurrentCustomerDevice -- Time elapsed: 0.051 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: {"success":false,"error":{"code":"LOGIN_FAILED","message":"登录失败，请检查登录信息"},"traceId":"b4cbe5c001564dd694630f7fe02f4a22"} ==> expected: <200> but was: <401>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:158)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:139)
+	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:201)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:152)
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:590)
+	at com.pet.testing.authentication.CustomerAuthenticationIT.token(CustomerAuthenticationIT.java:46)
+	at com.pet.testing.authentication.CustomerAuthenticationIT.token(CustomerAuthenticationIT.java:47)
+	at com.pet.testing.authentication.CustomerAuthenticationIT.currentLogoutInvalidatesOnlyCurrentCustomerDevice(CustomerAuthenticationIT.java:78)
+
+com.pet.testing.authentication.CustomerAuthenticationIT.redisCleanupFailureStillRevokesByDatabaseVersion -- Time elapsed: 0.054 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: {"success":false,"error":{"code":"LOGIN_FAILED","message":"登录失败，请检查登录信息"},"traceId":"d62366ee29694e1bad9c1896a5814f10"} ==> expected: <200> but was: <401>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:158)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:139)
+	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:201)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:152)
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:590)
+	at com.pet.testing.authentication.CustomerAuthenticationIT.token(CustomerAuthenticationIT.java:46)
+	at com.pet.testing.authentication.CustomerAuthenticationIT.token(CustomerAuthenticationIT.java:47)
+	at com.pet.testing.authentication.CustomerAuthenticationIT.redisCleanupFailureStillRevokesByDatabaseVersion(CustomerAuthenticationIT.java:80)
+
+com.pet.testing.authentication.CustomerAuthenticationIT.customerCannotAccessStaffOrPlatformAndReverseIsRejected -- Time elapsed: 0.058 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: {"success":false,"error":{"code":"LOGIN_FAILED","message":"登录失败，请检查登录信息"},"traceId":"39d26178fef44a679aae7e08bba94844"} ==> expected: <200> but was: <401>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:158)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:139)
+	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:201)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:152)
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:590)
+	at com.pet.testing.authentication.CustomerAuthenticationIT.token(CustomerAuthenticationIT.java:46)
+	at com.pet.testing.authentication.CustomerAuthenticationIT.token(CustomerAuthenticationIT.java:47)
+	at com.pet.testing.authentication.CustomerAuthenticationIT.customerCannotAccessStaffOrPlatformAndReverseIsRejected(CustomerAuthenticationIT.java:72)
+
+com.pet.testing.authentication.CustomerAuthenticationIT.disabledTenantNeverExchangesAndExistingSessionRevoked -- Time elapsed: 0.051 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: {"success":false,"error":{"code":"LOGIN_FAILED","message":"登录失败，请检查登录信息"},"traceId":"17645f1772e24bbaa5f5b19390bd160a"} ==> expected: <200> but was: <401>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:158)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:139)
+	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:201)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:152)
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:590)
+	at com.pet.testing.authentication.CustomerAuthenticationIT.token(CustomerAuthenticationIT.java:46)
+	at com.pet.testing.authentication.CustomerAuthenticationIT.token(CustomerAuthenticationIT.java:47)
+	at com.pet.testing.authentication.CustomerAuthenticationIT.disabledTenantNeverExchangesAndExistingSessionRevoked(CustomerAuthenticationIT.java:65)
+
+com.pet.testing.authentication.CustomerAuthenticationIT.absoluteAndIdlePoliciesDoNotSlideOnMe -- Time elapsed: 0.047 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: {"success":false,"error":{"code":"LOGIN_FAILED","message":"登录失败，请检查登录信息"},"traceId":"e8896e46f33446fbb32609a20d32ed8b"} ==> expected: <200> but was: <401>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:158)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:139)
+	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:201)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:152)
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:590)
+	at com.pet.testing.authentication.CustomerAuthenticationIT.token(CustomerAuthenticationIT.java:46)
+	at com.pet.testing.authentication.CustomerAuthenticationIT.absoluteAndIdlePoliciesDoNotSlideOnMe(CustomerAuthenticationIT.java:81)
+
+com.pet.testing.authentication.CustomerAuthenticationIT.sessionCreationFailureKeepsIdentityAndFreshCodeCanRetry -- Time elapsed: 0.057 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: {"success":false,"error":{"code":"LOGIN_FAILED","message":"登录失败，请检查登录信息"},"traceId":"d9fa43b8ac8d4ad1a890e0e3bb7d04f3"} ==> expected: <503> but was: <401>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:158)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:139)
+	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:201)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:152)
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:590)
+	at com.pet.testing.authentication.CustomerAuthenticationIT.error(CustomerAuthenticationIT.java:49)
+	at com.pet.testing.authentication.CustomerAuthenticationIT.sessionCreationFailureKeepsIdentityAndFreshCodeCanRetry(CustomerAuthenticationIT.java:69)
+
+com.pet.testing.authentication.CustomerAuthenticationIT.runtimeRlsHasNoContextNoRowsAndCannotReadOpenIdOrElevate -- Time elapsed: 0.050 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: {"success":false,"error":{"code":"LOGIN_FAILED","message":"登录失败，请检查登录信息"},"traceId":"cfb0d8060ffd40b6ae251efe68231f53"} ==> expected: <200> but was: <401>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:158)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:139)
+	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:201)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:152)
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:590)
+	at com.pet.testing.authentication.CustomerAuthenticationIT.token(CustomerAuthenticationIT.java:46)
+	at com.pet.testing.authentication.CustomerAuthenticationIT.token(CustomerAuthenticationIT.java:47)
+	at com.pet.testing.authentication.CustomerAuthenticationIT.runtimeRlsHasNoContextNoRowsAndCannotReadOpenIdOrElevate(CustomerAuthenticationIT.java:90)
+
+com.pet.testing.authentication.CustomerAuthenticationIT.customerAndTenantVersionInvalidateOldSessions -- Time elapsed: 0.054 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: {"success":false,"error":{"code":"LOGIN_FAILED","message":"登录失败，请检查登录信息"},"traceId":"5347c59f530c473b9333213d62e329b8"} ==> expected: <200> but was: <401>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:158)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:139)
+	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:201)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:152)
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:590)
+	at com.pet.testing.authentication.CustomerAuthenticationIT.token(CustomerAuthenticationIT.java:46)
+	at com.pet.testing.authentication.CustomerAuthenticationIT.token(CustomerAuthenticationIT.java:47)
+	at com.pet.testing.authentication.CustomerAuthenticationIT.customerAndTenantVersionInvalidateOldSessions(CustomerAuthenticationIT.java:68)
+
+com.pet.testing.authentication.CustomerAuthenticationIT.tenantAppAndOpenIdAreAllPartOfBindingKey -- Time elapsed: 0.067 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: {"success":false,"error":{"code":"LOGIN_FAILED","message":"登录失败，请检查登录信息"},"traceId":"01149272f1f949db94a66f8813bee93e"} ==> expected: <200> but was: <401>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:158)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:139)
+	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:201)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:152)
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:590)
+	at com.pet.testing.authentication.CustomerAuthenticationIT.token(CustomerAuthenticationIT.java:46)
+	at com.pet.testing.authentication.CustomerAuthenticationIT.tenantAppAndOpenIdAreAllPartOfBindingKey(CustomerAuthenticationIT.java:58)
+
+com.pet.testing.authentication.CustomerAuthenticationIT.sameUuidAcrossThreeDomainsStillIsolated -- Time elapsed: 0.244 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: {"success":false,"error":{"code":"LOGIN_FAILED","message":"登录失败，请检查登录信息"},"traceId":"75e2e9e0d9f3435bb111c8831d81bb05"} ==> expected: <200> but was: <401>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:158)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:139)
+	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:201)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:152)
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:590)
+	at com.pet.testing.authentication.CustomerAuthenticationIT.token(CustomerAuthenticationIT.java:46)
+	at com.pet.testing.authentication.CustomerAuthenticationIT.token(CustomerAuthenticationIT.java:47)
+	at com.pet.testing.authentication.CustomerAuthenticationIT.sameUuidAcrossThreeDomainsStillIsolated(CustomerAuthenticationIT.java:75)
+
+com.pet.testing.authentication.CustomerAuthenticationIT.missingUnionIdDoesNotBlockAndSameUnionDoesNotMerge -- Time elapsed: 0.066 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: {"success":false,"error":{"code":"LOGIN_FAILED","message":"登录失败，请检查登录信息"},"traceId":"af1a970bd219407f81664326ef9a39d0"} ==> expected: <200> but was: <401>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:158)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:139)
+	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:201)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:152)
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:590)
+	at com.pet.testing.authentication.CustomerAuthenticationIT.token(CustomerAuthenticationIT.java:46)
+	at com.pet.testing.authentication.CustomerAuthenticationIT.token(CustomerAuthenticationIT.java:47)
+	at com.pet.testing.authentication.CustomerAuthenticationIT.missingUnionIdDoesNotBlockAndSameUnionDoesNotMerge(CustomerAuthenticationIT.java:59)
+
+com.pet.testing.authentication.CustomerAuthenticationIT.idleExpiryRefusesExistingToken -- Time elapsed: 0.056 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: {"success":false,"error":{"code":"LOGIN_FAILED","message":"登录失败，请检查登录信息"},"traceId":"f34589bdc8a34b298856862118f7cf6a"} ==> expected: <200> but was: <401>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:158)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:139)
+	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:201)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:152)
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:590)
+	at com.pet.testing.authentication.CustomerAuthenticationIT.token(CustomerAuthenticationIT.java:46)
+	at com.pet.testing.authentication.CustomerAuthenticationIT.token(CustomerAuthenticationIT.java:47)
+	at com.pet.testing.authentication.CustomerAuthenticationIT.idleExpiryRefusesExistingToken(CustomerAuthenticationIT.java:82)
+
+com.pet.testing.authentication.CustomerAuthenticationIT.repeatLoginReusesCustomerWithIndependentDevice -- Time elapsed: 0.049 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: {"success":false,"error":{"code":"LOGIN_FAILED","message":"登录失败，请检查登录信息"},"traceId":"7a1e506c835c477a876ff30e112294e2"} ==> expected: <200> but was: <401>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:158)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:139)
+	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:201)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:152)
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:590)
+	at com.pet.testing.authentication.CustomerAuthenticationIT.token(CustomerAuthenticationIT.java:46)
+	at com.pet.testing.authentication.CustomerAuthenticationIT.token(CustomerAuthenticationIT.java:47)
+	at com.pet.testing.authentication.CustomerAuthenticationIT.repeatLoginReusesCustomerWithIndependentDevice(CustomerAuthenticationIT.java:55)
+
+com.pet.testing.authentication.CustomerAuthenticationIT.actualRedisOutageFailsClosedAndRecoversExistingSession -- Time elapsed: 0.049 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: {"success":false,"error":{"code":"LOGIN_FAILED","message":"登录失败，请检查登录信息"},"traceId":"b92db0211fc74ff7b2dbba5e0acefdd3"} ==> expected: <200> but was: <401>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:158)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:139)
+	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:201)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:152)
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:590)
+	at com.pet.testing.authentication.CustomerAuthenticationIT.token(CustomerAuthenticationIT.java:46)
+	at com.pet.testing.authentication.CustomerAuthenticationIT.token(CustomerAuthenticationIT.java:47)
+	at com.pet.testing.authentication.CustomerAuthenticationIT.actualRedisOutageFailsClosedAndRecoversExistingSession(CustomerAuthenticationIT.java:88)
+
+com.pet.testing.authentication.CustomerAuthenticationIT.disabledBindingCannotBeBypassed -- Time elapsed: 0.056 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: {"success":false,"error":{"code":"LOGIN_FAILED","message":"登录失败，请检查登录信息"},"traceId":"e84b960457654df397efa89cccd42c82"} ==> expected: <200> but was: <401>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:158)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:139)
+	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:201)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:152)
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:590)
+	at com.pet.testing.authentication.CustomerAuthenticationIT.token(CustomerAuthenticationIT.java:46)
+	at com.pet.testing.authentication.CustomerAuthenticationIT.token(CustomerAuthenticationIT.java:47)
+	at com.pet.testing.authentication.CustomerAuthenticationIT.disabledBindingCannotBeBypassed(CustomerAuthenticationIT.java:67)
+
+com.pet.testing.authentication.CustomerAuthenticationIT.firstLoginCreatesAtomicFormalIdentityAndRealSession -- Time elapsed: 0.050 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: {"success":false,"error":{"code":"LOGIN_FAILED","message":"登录失败，请检查登录信息"},"traceId":"d6d95506cd54477c89aa94d4948acda5"} ==> expected: <200> but was: <401>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:158)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:139)
+	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:201)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:152)
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:590)
+	at com.pet.testing.authentication.CustomerAuthenticationIT.token(CustomerAuthenticationIT.java:46)
+	at com.pet.testing.authentication.CustomerAuthenticationIT.firstLoginCreatesAtomicFormalIdentityAndRealSession(CustomerAuthenticationIT.java:54)
+

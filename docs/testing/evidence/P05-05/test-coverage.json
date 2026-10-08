@@ -1,0 +1,81 @@
+{
+  "scope": "真实PG/Redis/Sa/HTTP；外部微信替身仅测试包，不是真实微信认证",
+  "coverage": {
+    "01 正式迁移/RLS": [
+      "versionThreeUpgradesWithoutChangingEarlierMigrationsOrCreatingCustomers",
+      "runtimeRlsHasNoContextNoRowsAndCannotReadOpenIdOrElevate"
+    ],
+    "02 首次登录": [
+      "firstLoginCreatesAtomicFormalIdentityAndRealSession"
+    ],
+    "03 再次复用": [
+      "repeatLoginReusesCustomerWithIndependentDevice"
+    ],
+    "04 并发首次": [
+      "concurrentFirstRegistrationHasOneBindingAndNoOrphan",
+      "concurrentHttpLoginsNeverLeaveAnOrphanAndFreshCodeRecovers",
+      "nonUniqueDatabaseFailureRollsBackAndIsNotTreatedAsExisting"
+    ],
+    "05 tenant/AppID/OpenID隔离": [
+      "tenantAppAndOpenIdAreAllPartOfBindingKey",
+      "compositeForeignKeyRefusesCustomerFromAnotherTenant"
+    ],
+    "06 UnionID缺失": [
+      "missingUnionIdDoesNotBlockAndSameUnionDoesNotMerge"
+    ],
+    "07 UnionID不合并": [
+      "missingUnionIdDoesNotBlockAndSameUnionDoesNotMerge"
+    ],
+    "08 无效code": [
+      "invalidCodeCreatesNoCustomerOrSession"
+    ],
+    "09 上游超时/错误": [
+      "timeoutRequiresFreshCodeAndNeverCreatesIdentity",
+      "upstreamAndMissingIdentityErrorsAreRecognizable",
+      "wrongApplicationResultIsRejected"
+    ],
+    "10 停用拒绝": [
+      "disabledTenantNeverExchangesAndExistingSessionRevoked",
+      "disabledCustomerCannotBeRecreatedThroughLogin",
+      "disabledBindingCannotBeBypassed"
+    ],
+    "11 会话失败恢复": [
+      "sessionCreationFailureKeepsIdentityAndFreshCodeCanRetry",
+      "auditWriteFailureCannotReturnSuccessfulToken"
+    ],
+    "12 真实DB/Session当前身份": [
+      "currentIdentityComesFromDatabaseAndProviderSelfDomain"
+    ],
+    "13 同UUID三域": [
+      "sameUuidAcrossThreeDomainsStillIsolated"
+    ],
+    "14 退出/期限/状态": [
+      "currentLogoutInvalidatesOnlyCurrentCustomerDevice",
+      "allLogoutInvalidatesEveryOldCustomerDeviceAndFreshLoginWorks",
+      "absoluteAndIdlePoliciesDoNotSlideOnMe",
+      "idleExpiryRefusesExistingToken",
+      "customerAndTenantVersionInvalidateOldSessions",
+      "delayedCustomerCleanupNeverDeletesFreshGeneration",
+      "concurrentCustomerLogoutAllIncrementsVersionOnlyOnce"
+    ],
+    "15 员工权限拒绝": [
+      "customerCannotAccessStaffOrPlatformAndReverseIsRejected"
+    ],
+    "16 异步边界": [
+      "customerAsyncIsExplicitlyRejectedBeforeQueueing"
+    ],
+    "17 频控/故障": [
+      "invalidInputsCannotConsumeUnlimitedGatewayCalls",
+      "exchangeRateIsDistributedAndLimitsFailureAsWellAsSuccess",
+      "actualRedisOutageFailsClosedAndRecoversExistingSession",
+      "actualDatabasePermissionFaultIs503AndDoesNotDeleteSession",
+      "redisCleanupFailureStillRevokesByDatabaseVersion"
+    ],
+    "18 最小安全记录/生产无秘密": [
+      "eventsContainKnownIdsOnlyAndNeverExternalSecrets",
+      "customerProductionClassesContainNoTechnicalWechatCredentialsOrProbe",
+      "packagedJarContainsNoTestClassResourceMigrationOrDependency"
+    ]
+  },
+  "missingTestNames": []
+}

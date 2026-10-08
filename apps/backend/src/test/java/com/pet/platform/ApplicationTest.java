@@ -30,7 +30,7 @@ class ApplicationTest extends PostgresIntegrationSupport {
 
     @Test
     void defaultApplicationScanDoesNotLoadTestEntities() {
-        assertEquals(8, entityManagerFactory.getMetamodel().getEntities().size());
+        assertEquals(10, entityManagerFactory.getMetamodel().getEntities().size());
         org.junit.jupiter.api.Assertions.assertTrue(entityManagerFactory.getMetamodel().getEntities().stream()
                 .noneMatch(entity -> entity.getJavaType().getName().startsWith("com.pet.testing.")));
         try(var c=java.sql.DriverManager.getConnection(POSTGRES.getJdbcUrl(),POSTGRES.getUsername(),POSTGRES.getPassword());var statement=c.createStatement();var result=statement.executeQuery("select count(*) from public.identity_employee")) {

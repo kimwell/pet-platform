@@ -1,4 +1,4 @@
-// 自动生成：请勿手改；来源SHA256=8b4e56afe1ad546d76082c5caa062320d09d7e9316c572afa35613fb2decda19
+// 自动生成：请勿手改；来源SHA256=e097f8e188911cfc7581397f0b1c9b70cd5b748cd85bb7cd33fb0f085f6855df
 /** 自动生成：后端OpenAPI → openapi-typescript；禁止手改。 */
 export interface paths {
     "/api/admin/auth/csrf": {
@@ -54,7 +54,7 @@ export interface paths {
          * 退出当前员工设备
          * @description Cookie需CSRF与来源校验，Token渠道无需浏览器CSRF。只撤销当前设备并删除对应Cookie/CSRF；重复无有效凭据返回401。
          */
-        post: operations["logout_1"];
+        post: operations["logout_2"];
         delete?: never;
         options?: never;
         head?: never;
@@ -74,7 +74,7 @@ export interface paths {
          * 本人退出全部员工会话
          * @description 当前密码重新确认；数据库安全版本递增；WEB和小程序设备全部失效，重复旧会话401
          */
-        post: operations["logoutAll_1"];
+        post: operations["logoutAll_2"];
         delete?: never;
         options?: never;
         head?: never;
@@ -92,7 +92,7 @@ export interface paths {
          * 当前员工身份
          * @description 每请求读取正式有效租户、员工、角色、权限和门店授权；不续闲置期限
          */
-        get: operations["me_1"];
+        get: operations["me_2"];
         put?: never;
         post?: never;
         delete?: never;
@@ -175,6 +175,86 @@ export interface paths {
          * @description 独立identity:user:revoke-sessions权限及目标管理范围；操作者当前密码确认；不改密码/角色/归属；version防止并发与旧请求重放
          */
         post: operations["revoke"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/api/customer/auth/logout": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        /**
+         * 退出当前客户会话
+         * @description 撤销当前客户设备，其他身份域不受影响；重复已退出请求401
+         */
+        post: operations["logout_1"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/api/customer/auth/logout-all": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        /**
+         * 退出客户全部会话
+         * @description 无需密码；有效当前客户Token再次验证，数据库同事务递增安全代际。旧会话即刻逻辑失效，物理清理失败标PENDING，后续新登录清旧代际；不能自动重放。
+         */
+        post: operations["logoutAll_1"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/api/customer/auth/me": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /**
+         * 当前客户身份
+         * @description 真实会话及有效租户/客户/绑定/安全版本重验，不续闲置期限；不返回微信标识
+         */
+        get: operations["me_1"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/api/customer/auth/wechat/login": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        /**
+         * 客户微信登录
+         * @description 服务端入口白名单解析有效租户和应用；一次code交换，不自动重试。共享AppID按租户独立注册，不提供员工权限。
+         */
+        post: operations["login_1"];
         delete?: never;
         options?: never;
         head?: never;
@@ -307,7 +387,7 @@ export interface components {
     schemas: {
         ApiError: {
             /** @enum {string} */
-            code: "BAD_REQUEST" | "PAGINATION_INVALID" | "SORT_INVALID" | "AUTH_CREDENTIAL_AMBIGUOUS" | "AUTH_REQUIRED" | "SESSION_EXPIRED" | "SESSION_REVOKED" | "AUTH_DOMAIN_MISMATCH" | "LOGIN_FAILED" | "PERMISSION_DENIED" | "SECURITY_CONFIRMATION_FAILED" | "PASSWORD_CHANGE_REQUIRED" | "CSRF_INVALID" | "RESOURCE_NOT_FOUND" | "METHOD_NOT_ALLOWED" | "NOT_ACCEPTABLE" | "BUSINESS_STATE_CONFLICT" | "DUPLICATE_RESOURCE" | "VERSION_CONFLICT" | "SESSION_LIMIT_REACHED" | "IDEMPOTENCY_CONFLICT" | "PAYLOAD_TOO_LARGE" | "UNSUPPORTED_MEDIA_TYPE" | "VALIDATION_FAILED" | "DATE_RANGE_INVALID" | "AMOUNT_INVALID" | "RESULT_TOO_LARGE" | "RATE_LIMITED" | "INTERNAL_ERROR" | "DEPENDENCY_UNAVAILABLE" | "CAPABILITY_DISABLED" | "REQUEST_REJECTED";
+            code: "BAD_REQUEST" | "PAGINATION_INVALID" | "SORT_INVALID" | "AUTH_CREDENTIAL_AMBIGUOUS" | "AUTH_REQUIRED" | "SESSION_EXPIRED" | "SESSION_REVOKED" | "AUTH_DOMAIN_MISMATCH" | "WECHAT_CODE_INVALID" | "WECHAT_RESULT_UNCERTAIN" | "WECHAT_UPSTREAM_ERROR" | "WECHAT_RESPONSE_INVALID" | "WECHAT_CONFIGURATION_MISSING" | "LOGIN_FAILED" | "PERMISSION_DENIED" | "SECURITY_CONFIRMATION_FAILED" | "PASSWORD_CHANGE_REQUIRED" | "CSRF_INVALID" | "RESOURCE_NOT_FOUND" | "METHOD_NOT_ALLOWED" | "NOT_ACCEPTABLE" | "BUSINESS_STATE_CONFLICT" | "DUPLICATE_RESOURCE" | "VERSION_CONFLICT" | "SESSION_LIMIT_REACHED" | "IDEMPOTENCY_CONFLICT" | "PAYLOAD_TOO_LARGE" | "UNSUPPORTED_MEDIA_TYPE" | "VALIDATION_FAILED" | "DATE_RANGE_INVALID" | "AMOUNT_INVALID" | "RESULT_TOO_LARGE" | "RATE_LIMITED" | "INTERNAL_ERROR" | "DEPENDENCY_UNAVAILABLE" | "CAPABILITY_DISABLED" | "REQUEST_REJECTED";
             fieldErrors?: components["schemas"]["FieldErrorDetail"][];
             message: string;
         };
@@ -352,6 +432,53 @@ export interface components {
             sessionId: string;
             /** Format: uuid */
             tenantId: string;
+        };
+        CustomerCurrentIdentity: {
+            authorizationVersion: string;
+            authorizedStoreIds: string[];
+            dataScope: components["schemas"]["CustomerScopeData"];
+            displayName: string;
+            /**
+             * Format: date-time
+             * @description 输入必须带Z或offset、最多3位小数；输出UTC且固定3位毫秒
+             */
+            expiresAt: string;
+            /** Format: int32 */
+            idleTimeoutSeconds: number;
+            permissionCodes: string[];
+            /** Format: uuid */
+            principalId: string;
+            /** @enum {string} */
+            principalType: "CUSTOMER";
+            /** Format: uuid */
+            sessionId: string;
+            /** Format: uuid */
+            tenantId: string;
+        };
+        CustomerGrant: {
+            permissionCode: string;
+            scopes: components["schemas"]["CustomerSelfScope"][];
+        };
+        CustomerScopeData: {
+            grants: components["schemas"]["CustomerGrant"][];
+        };
+        CustomerSelfScope: {
+            /** @enum {string} */
+            type: "SELF";
+        };
+        CustomerTokenLoginResult: {
+            identity: components["schemas"]["CustomerCurrentIdentity"];
+            token: components["schemas"]["CustomerTokenResult"];
+        };
+        CustomerTokenResult: {
+            /**
+             * Format: date-time
+             * @description 输入必须带Z或offset、最多3位小数；输出UTC且固定3位毫秒
+             */
+            expiresAt: string;
+            /** @enum {string} */
+            headerName: "X-Customer-Token";
+            value: string;
         };
         Failure: {
             error: components["schemas"]["ApiError"];
@@ -454,6 +581,18 @@ export interface components {
             success: true;
             traceId: string;
         };
+        SuccessCustomerCurrentIdentity: {
+            data: components["schemas"]["CustomerCurrentIdentity"] | null;
+            /** @constant */
+            success: true;
+            traceId: string;
+        };
+        SuccessCustomerTokenLoginResult: {
+            data: components["schemas"]["CustomerTokenLoginResult"] | null;
+            /** @constant */
+            success: true;
+            traceId: string;
+        };
         SuccessFieldErrorDetail: {
             data: components["schemas"]["FieldErrorDetail"] | null;
             /** @constant */
@@ -494,6 +633,11 @@ export interface components {
             expiresAt: string;
             headerName: string;
             value: string;
+        };
+        WechatLoginInput: {
+            code: string;
+            entryId: string;
+            tenantCode: string;
         };
     };
     responses: never;
@@ -670,7 +814,7 @@ export interface operations {
             };
         };
     };
-    logout_1: {
+    logout_2: {
         parameters: {
             query?: never;
             header?: never;
@@ -744,7 +888,7 @@ export interface operations {
             };
         };
     };
-    logoutAll_1: {
+    logoutAll_2: {
         parameters: {
             query?: never;
             header?: {
@@ -846,7 +990,7 @@ export interface operations {
             };
         };
     };
-    me_1: {
+    me_2: {
         parameters: {
             query?: never;
             header?: never;
@@ -1313,6 +1457,280 @@ export interface operations {
                 };
                 content: {
                     "application/json": components["schemas"]["Failure"];
+                };
+            };
+        };
+    };
+    logout_1: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description 成功，统一响应信封 */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "*/*": components["schemas"]["SuccessVoid"];
+                };
+            };
+            /** @description 格式或载体错误 */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "*/*": components["schemas"]["Failure"];
+                };
+            };
+            /** @description 登录失败或会话无效 */
+            401: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "*/*": components["schemas"]["Failure"];
+                };
+            };
+            /** @description 输入校验失败 */
+            422: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "*/*": components["schemas"]["Failure"];
+                };
+            };
+            /** @description 频控，含Retry-After */
+            429: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "*/*": components["schemas"]["Failure"];
+                };
+            };
+            /** @description 依赖/微信不可用；结果不确定须重新取得code */
+            503: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "*/*": components["schemas"]["Failure"];
+                };
+            };
+        };
+    };
+    logoutAll_1: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description 全部旧客户会话已失效 */
+            200: {
+                headers: {
+                    "X-Session-Cleanup"?: "COMPLETE" | "PENDING";
+                    [name: string]: unknown;
+                };
+                content: {
+                    "*/*": components["schemas"]["SuccessVoid"];
+                };
+            };
+            /** @description 格式或载体错误 */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "*/*": components["schemas"]["Failure"];
+                };
+            };
+            /** @description 登录失败或会话无效 */
+            401: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "*/*": components["schemas"]["Failure"];
+                };
+            };
+            /** @description 输入校验失败 */
+            422: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "*/*": components["schemas"]["Failure"];
+                };
+            };
+            /** @description 频控，含Retry-After */
+            429: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "*/*": components["schemas"]["Failure"];
+                };
+            };
+            /** @description 依赖/微信不可用；结果不确定须重新取得code */
+            503: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "*/*": components["schemas"]["Failure"];
+                };
+            };
+        };
+    };
+    me_1: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description 成功，统一响应信封 */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "*/*": components["schemas"]["SuccessCustomerCurrentIdentity"];
+                };
+            };
+            /** @description 格式或载体错误 */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "*/*": components["schemas"]["Failure"];
+                };
+            };
+            /** @description 登录失败或会话无效 */
+            401: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "*/*": components["schemas"]["Failure"];
+                };
+            };
+            /** @description 输入校验失败 */
+            422: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "*/*": components["schemas"]["Failure"];
+                };
+            };
+            /** @description 频控，含Retry-After */
+            429: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "*/*": components["schemas"]["Failure"];
+                };
+            };
+            /** @description 依赖/微信不可用；结果不确定须重新取得code */
+            503: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "*/*": components["schemas"]["Failure"];
+                };
+            };
+        };
+    };
+    login_1: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["WechatLoginInput"];
+            };
+        };
+        responses: {
+            /** @description 成功，统一响应信封 */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "*/*": components["schemas"]["SuccessCustomerTokenLoginResult"];
+                };
+            };
+            /** @description 格式或载体错误 */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "*/*": components["schemas"]["Failure"];
+                };
+            };
+            /** @description 登录失败或会话无效 */
+            401: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "*/*": components["schemas"]["Failure"];
+                };
+            };
+            /** @description 设备上限 */
+            409: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "*/*": components["schemas"]["Failure"];
+                };
+            };
+            /** @description 输入校验失败 */
+            422: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "*/*": components["schemas"]["Failure"];
+                };
+            };
+            /** @description 频控，含Retry-After */
+            429: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "*/*": components["schemas"]["Failure"];
+                };
+            };
+            /** @description 依赖/微信不可用；结果不确定须重新取得code */
+            503: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "*/*": components["schemas"]["Failure"];
                 };
             };
         };

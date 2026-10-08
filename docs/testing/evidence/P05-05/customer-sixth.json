@@ -1,0 +1,15 @@
+{
+  "cwd": "/Users/kimwell/work/pet-platform/apps/backend",
+  "argv": [
+    "./mvnw",
+    "clean",
+    "test-compile",
+    "failsafe:integration-test",
+    "failsafe:verify",
+    "-Dit.test=CustomerAuthenticationIT,CustomerMigrationIT"
+  ],
+  "exitCode": 1,
+  "startedAtUTC": "2026-10-08T08:19:41.226026+00:00",
+  "finishedAtUTC": "2026-10-08T08:20:06.691115+00:00",
+  "log": "customer-sixth.log"
+}

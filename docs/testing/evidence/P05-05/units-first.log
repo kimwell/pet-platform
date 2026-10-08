@@ -1,0 +1,85 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ---------------< com.pet.platform:pet-platform-backend >----------------
+[INFO] Building pet-platform-backend 0.0.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ pet-platform-backend ---
+[INFO] Copying 3 resources from src/main/resources to target/classes
+[INFO] Copying 5 resources from src/main/resources to target/classes
+[INFO] 
+[INFO] --- compiler:3.14.1:compile (default-compile) @ pet-platform-backend ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ pet-platform-backend ---
+[INFO] Copying 3 resources from src/test/resources to target/test-classes
+[INFO] 
+[INFO] --- compiler:3.14.1:testCompile (default-testCompile) @ pet-platform-backend ---
+[INFO] Recompiling the module because of added or removed source files.
+[INFO] Compiling 57 source files with javac [debug parameters release 21] to target/test-classes
+[INFO] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/platform/protocol/ApiProtocolIT.java: 某些输入文件使用或覆盖了已过时的 API。
+[INFO] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/platform/protocol/ApiProtocolIT.java: 有关详细信息, 请使用 -Xlint:deprecation 重新编译。
+[INFO] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/platform/customeridentity/infrastructure/WxJavaGatewayTest.java: /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/platform/customeridentity/infrastructure/WxJavaGatewayTest.java使用了未经检查或不安全的操作。
+[INFO] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/platform/customeridentity/infrastructure/WxJavaGatewayTest.java: 有关详细信息, 请使用 -Xlint:unchecked 重新编译。
+[INFO] 
+[INFO] --- surefire:3.5.6:test (default-test) @ pet-platform-backend ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running com.pet.platform.customeridentity.infrastructure.WechatConfigTest
+OpenJDK 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.523 s -- in com.pet.platform.customeridentity.infrastructure.WechatConfigTest
+[INFO] Running com.pet.platform.customeridentity.infrastructure.WxJavaGatewayTest
+[ERROR] Tests run: 8, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.425 s <<< FAILURE! -- in com.pet.platform.customeridentity.infrastructure.WxJavaGatewayTest
+[ERROR] com.pet.platform.customeridentity.infrastructure.WxJavaGatewayTest.clientsAreIsolatedByConfigurationVersionAndSecret -- Time elapsed: 0.016 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <null> but was: <default>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:158)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:139)
+	at org.junit.jupiter.api.AssertNull.failNotNull(AssertNull.java:56)
+	at org.junit.jupiter.api.AssertNull.assertNull(AssertNull.java:40)
+	at org.junit.jupiter.api.AssertNull.assertNull(AssertNull.java:34)
+	at org.junit.jupiter.api.Assertions.assertNull(Assertions.java:297)
+	at com.pet.platform.customeridentity.infrastructure.WxJavaGatewayTest.clientsAreIsolatedByConfigurationVersionAndSecret(WxJavaGatewayTest.java:32)
+
+[INFO] Running com.pet.testing.architecture.StructureRulesTest
+[ERROR] Tests run: 14, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.115 s <<< FAILURE! -- in com.pet.testing.architecture.StructureRulesTest
+[ERROR] com.pet.testing.architecture.StructureRulesTest.actualProductionBytecodeObeysRules -- Time elapsed: 0.024 s <<< ERROR!
+java.lang.IllegalArgumentException
+	at org.objectweb.asm.ClassReader.readElementValue(ClassReader.java:3195)
+	at org.objectweb.asm.ClassReader.readElementValues(ClassReader.java:3006)
+	at org.objectweb.asm.ClassReader.readMethod(ClassReader.java:1414)
+	at org.objectweb.asm.ClassReader.accept(ClassReader.java:745)
+	at org.objectweb.asm.ClassReader.accept(ClassReader.java:425)
+	at com.pet.testing.architecture.StructureRulesTest.symbols(StructureRulesTest.java:33)
+	at com.pet.testing.architecture.StructureRulesTest.actualProductionBytecodeObeysRules(StructureRulesTest.java:280)
+
+[INFO] 
+[INFO] Results:
+[INFO] 
+[ERROR] Failures: 
+[ERROR]   WxJavaGatewayTest.clientsAreIsolatedByConfigurationVersionAndSecret:32 expected: <null> but was: <default>
+[ERROR] Errors: 
+[ERROR]   StructureRulesTest.actualProductionBytecodeObeysRules:280->symbols:33 » IllegalArgument
+[INFO] 
+[ERROR] Tests run: 27, Failures: 1, Errors: 1, Skipped: 0
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  7.440 s
+[INFO] Finished at: 2026-10-08T16:18:17+08:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:3.5.6:test (default-test) on project pet-platform-backend: There are test failures.
+[ERROR] 
+[ERROR] See /Users/kimwell/work/pet-platform/apps/backend/target/surefire-reports for the individual test results.
+[ERROR] See dump files (if any exist) [date].dump, [date]-jvmRun[N].dump and [date].dumpstream.
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException

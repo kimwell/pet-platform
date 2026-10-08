@@ -146,6 +146,11 @@ class StructureRulesTest {
                     || target.equals("java/util/concurrent/ScheduledExecutorService") || target.equals("java/util/concurrent/ScheduledThreadPoolExecutor")
                     || target.equals("java/util/Timer") || target.equals("org/springframework/scheduling/annotation/Async")
                     || target.startsWith("org/springframework/core/task/") || target.startsWith("org/springframework/scheduling/concurrent/");
+            boolean customerAdapter = symbols.name().startsWith(ROOT+"customeridentity/infrastructure/");
+            boolean reusedSession = customerAdapter && (target.startsWith(ROOT+"identity/application/authentication/IdentitySessionPort") || Set.of(ROOT+"identity/application/authentication/StaffSessionPort",ROOT+"identity/application/authentication/StaffSessionPort$Channel").contains(target) || target.startsWith(ROOT+"identity/infrastructure/session/SaIdentitySessions") || target.equals(ROOT+"identity/infrastructure/session/AuthenticationRedis"));
+            boolean customerRouter = Set.of(ROOT+"identity/infrastructure/session/StaffAuthenticationFilter",ROOT+"identity/infrastructure/session/AuthenticationConfiguration").contains(symbols.name()) && target.startsWith(ROOT+"customeridentity/application/CustomerHttpAuthentication");
+            boolean restrictedCustomer = target.equals(ROOT+"customeridentity/application/CustomerIdentityStore") || target.startsWith(ROOT+"customeridentity/application/WechatMiniProgramGateway") || target.startsWith(ROOT+"customeridentity/application/WechatConfigResolver") || target.equals(ROOT+"customeridentity/infrastructure/CustomerIdentityJdbc");
+            boolean customerAuthCaller = symbols.name().startsWith(ROOT+"customeridentity/application/") || symbols.name().startsWith(ROOT+"customeridentity/infrastructure/");
             boolean saAdapter = symbols.name().startsWith(ROOT + "identity/infrastructure/session/");
             boolean rawSa = target.startsWith("cn/dev33/satoken/");
             boolean restrictedSession = target.startsWith(ROOT + "identity/infrastructure/session/");
@@ -158,9 +163,11 @@ class StructureRulesTest {
                     || symbols.name().startsWith(ROOT + "identity/infrastructure/session/");
             boolean restrictedBootstrap = target.startsWith(ROOT + "identity/application/bootstrap/") || target.startsWith(ROOT + "identity/infrastructure/bootstrap/");
             boolean bootstrapCaller = symbols.name().startsWith(ROOT + "identity/application/bootstrap/") || symbols.name().startsWith(ROOT + "identity/infrastructure/bootstrap/");
-            if (rawSa && !saAdapter && !symbols.name().equals(ROOT + "Application")) rule = "绕过身份会话适配器";
-            else if (restrictedSession && !saAdapter && !symbols.name().equals(ROOT + "Application")) rule = "绕过身份会话适配器";
-            else if (restrictedAuthentication && !authenticationCaller) rule = "未批准调用认证前身份入口";
+            if (restrictedCustomer && !customerAuthCaller) rule = "未批准调用客户认证入口";
+            else if ((target.startsWith("cn/binarywang/wx/") || target.startsWith("me/chanjar/weixin/")) && !symbols.name().startsWith(ROOT+"customeridentity/infrastructure/WxJavaMiniProgramGateway")) rule = "绕过微信Gateway";
+            else if (rawSa && !saAdapter && !symbols.name().equals(ROOT + "Application")) rule = "绕过身份会话适配器";
+            else if (restrictedSession && !reusedSession && !saAdapter && !symbols.name().equals(ROOT + "Application")) rule = "绕过身份会话适配器";
+            else if (restrictedAuthentication && !reusedSession && !authenticationCaller) rule = "未批准调用认证前身份入口";
             else if (restrictedBootstrap && !bootstrapCaller) rule = "未批准调用初始化入口";
             else if (rawRedis && !redisImplementation) rule = "绕过受控Redis访问";
             else if (target.startsWith("org/springframework/cache/")) rule = "当前禁止授权结果通用缓存";
@@ -182,9 +189,9 @@ class StructureRulesTest {
             else if (symbols.name().contains("/domain/") && (target.startsWith("cn/binarywang/wx/")
                     || target.startsWith("me/chanjar/weixin/"))) rule = "domain依赖WxJava";
             else if (!owner.isEmpty() && !other.isEmpty() && !owner.equals(other) && repository(target, new HashSet<>())) rule = "跨模块Repository";
-            else if (!owner.isEmpty() && !other.isEmpty() && !allowed(owner, other)) rule = "模块依赖未登记";
+            else if (!owner.isEmpty() && !other.isEmpty() && !reusedSession && !customerRouter && !allowed(owner, other)) rule = "模块依赖未登记";
             else if (!owner.isEmpty() && !other.isEmpty() && !owner.equals(other) && !other.equals("shared")
-                    && !target.startsWith(ROOT + other + "/application/")) rule = "跨模块依赖非application（含Repository）";
+                    && !reusedSession && !customerRouter && !target.startsWith(ROOT + other + "/application/")) rule = "跨模块依赖非application（含Repository）";
             else if (symbols.name().contains("/api/") && (target.contains("/infrastructure/")
                     || repository(target, new HashSet<>())
                     || target.startsWith("org/springframework/data/repository/")
@@ -195,7 +202,7 @@ class StructureRulesTest {
             String calledOwner = call.substring(0, call.indexOf('#'));
             String calledMethod = call.substring(call.indexOf('#') + 1);
             boolean controlledImplementation = Set.of(ROOT + "shared/persistence/ScopedPersistence", ROOT + "shared/persistence/ScopedTransaction",
-                    ROOT + "identity/infrastructure/AuthenticationJdbc", ROOT + "identity/infrastructure/StaffSecurityJdbc", ROOT+"identity/infrastructure/PlatformIdentityJdbc", ROOT + "identity/infrastructure/IdentityRuntimePermissions",
+                    ROOT + "customeridentity/infrastructure/CustomerIdentityJdbc", ROOT + "identity/infrastructure/AuthenticationJdbc", ROOT + "identity/infrastructure/StaffSecurityJdbc", ROOT+"identity/infrastructure/PlatformIdentityJdbc", ROOT + "identity/infrastructure/IdentityRuntimePermissions",
                     ROOT + "identity/infrastructure/bootstrap/MigrationCommand", ROOT + "identity/infrastructure/bootstrap/CommandDatabase", ROOT + "identity/infrastructure/bootstrap/BootstrapJdbc", ROOT+"identity/infrastructure/bootstrap/PlatformBootstrapJdbc").contains(symbols.name());
             boolean databaseCall = calledOwner.equals("jakarta/persistence/EntityManager") || calledOwner.equals("jakarta/persistence/Query")
                     || calledOwner.equals("jakarta/persistence/TypedQuery") || calledOwner.startsWith("org/hibernate/Session")
@@ -203,6 +210,7 @@ class StructureRulesTest {
                     || calledOwner.equals("javax/sql/DataSource");
             if (calledOwner.equals(ROOT + "shared/persistence/ScopedPersistence") && calledMethod.equals("findActiveStoreTenant")
                     && !symbols.name().equals(ROOT + "platform/infrastructure/PostgresStoreOwnershipReader")) errors.add("未批准调用门店事实入口：" + symbols.name());
+            if (calledOwner.equals(ROOT+"customeridentity/application/CustomerIdentityStore") && calledMethod.equals("register") && !Set.of(ROOT+"customeridentity/application/CustomerHttpAuthentication",ROOT+"customeridentity/infrastructure/CustomerIdentityJdbc").contains(symbols.name())) errors.add("未批准调用微信身份注册入口："+symbols.name());
             if (databaseCall && !controlledImplementation) errors.add("未登记底层持久化调用：" + symbols.name() + " -> " + call);
             if (calledOwner.equals("jakarta/persistence/EntityManager") && Set.of("merge", "find", "getReference", "createNativeQuery", "string-query").contains(calledMethod)) {
                 errors.add("禁止无范围实体或SQL入口：" + symbols.name() + " -> " + call);
@@ -263,6 +271,13 @@ class StructureRulesTest {
             return new HashSet<>(paths.filter(p -> p.toString().endsWith(".class"))
                     .map(p -> root.relativize(p).toString().replace('\\', '/').replaceFirst("\\.class$", "")).toList());
         }
+    }
+    @Test void customerGatewayAndRegistrationCannotBeCalledByControllersOrBusinessModules(){
+        for(String target:List.of(ROOT+"customeridentity/application/CustomerIdentityStore",ROOT+"customeridentity/application/WechatMiniProgramGateway$Identity",ROOT+"customeridentity/application/WechatConfigResolver$Resolved")){
+            assertFalse(violations(symbols(fixture(ROOT+"customeridentity/api/UnsafeController",target,false)),Set.of()).isEmpty());
+            assertFalse(violations(symbols(fixture(ROOT+"modules/example/application/UnsafeLogin",target,false)),Set.of()).isEmpty());
+        }
+        assertFalse(violations(symbols(fixture(ROOT+"customeridentity/infrastructure/UnsafeOtherAdapter",ROOT+"identity/application/authentication/IdentityLookup",false)),Set.of()).isEmpty());
     }
     @Test void actualProductionBytecodeObeysRules() throws Exception {
         var testClasses = classes(Path.of("target/test-classes"));

@@ -1,0 +1,12 @@
+{
+  "cwd": "/Users/kimwell/work/pet-platform/apps/backend",
+  "argv": [
+    "./mvnw",
+    "test",
+    "-Dtest=ApplicationTest,StructureRulesTest,ProductionOpenApiExportTest"
+  ],
+  "exitCode": 1,
+  "startedAtUTC": "2026-10-08T08:12:20.838193+00:00",
+  "finishedAtUTC": "2026-10-08T08:12:36.248269+00:00",
+  "log": "smoke-first.log"
+}

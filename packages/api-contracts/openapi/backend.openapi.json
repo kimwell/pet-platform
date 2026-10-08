@@ -14,6 +14,11 @@
               "SESSION_EXPIRED",
               "SESSION_REVOKED",
               "AUTH_DOMAIN_MISMATCH",
+              "WECHAT_CODE_INVALID",
+              "WECHAT_RESULT_UNCERTAIN",
+              "WECHAT_UPSTREAM_ERROR",
+              "WECHAT_RESPONSE_INVALID",
+              "WECHAT_CONFIGURATION_MISSING",
               "LOGIN_FAILED",
               "PERMISSION_DENIED",
               "SECURITY_CONFIRMATION_FAILED",
@@ -193,6 +198,172 @@
           "principalType",
           "sessionId",
           "tenantId"
+        ],
+        "type": "object"
+      },
+      "CustomerCurrentIdentity": {
+        "additionalProperties": false,
+        "properties": {
+          "authorizationVersion": {
+            "pattern": "^(0|[1-9][0-9]*)$",
+            "type": "string"
+          },
+          "authorizedStoreIds": {
+            "items": {
+              "format": "uuid",
+              "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$",
+              "type": "string"
+            },
+            "maxItems": 0,
+            "type": "array"
+          },
+          "dataScope": {
+            "$ref": "#/components/schemas/CustomerScopeData"
+          },
+          "displayName": {
+            "type": "string"
+          },
+          "expiresAt": {
+            "description": "输入必须带Z或offset、最多3位小数；输出UTC且固定3位毫秒",
+            "format": "date-time",
+            "type": "string"
+          },
+          "idleTimeoutSeconds": {
+            "format": "int32",
+            "maximum": 604800,
+            "minimum": 1,
+            "type": "integer"
+          },
+          "permissionCodes": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "principalId": {
+            "format": "uuid",
+            "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$",
+            "type": "string"
+          },
+          "principalType": {
+            "enum": [
+              "CUSTOMER"
+            ],
+            "type": "string"
+          },
+          "sessionId": {
+            "format": "uuid",
+            "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$",
+            "type": "string"
+          },
+          "tenantId": {
+            "format": "uuid",
+            "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$",
+            "type": "string"
+          }
+        },
+        "required": [
+          "authorizationVersion",
+          "authorizedStoreIds",
+          "dataScope",
+          "displayName",
+          "expiresAt",
+          "idleTimeoutSeconds",
+          "permissionCodes",
+          "principalId",
+          "principalType",
+          "sessionId",
+          "tenantId"
+        ],
+        "type": "object"
+      },
+      "CustomerGrant": {
+        "additionalProperties": false,
+        "properties": {
+          "permissionCode": {
+            "type": "string"
+          },
+          "scopes": {
+            "items": {
+              "$ref": "#/components/schemas/CustomerSelfScope"
+            },
+            "type": "array"
+          }
+        },
+        "required": [
+          "permissionCode",
+          "scopes"
+        ],
+        "type": "object"
+      },
+      "CustomerScopeData": {
+        "additionalProperties": false,
+        "properties": {
+          "grants": {
+            "items": {
+              "$ref": "#/components/schemas/CustomerGrant"
+            },
+            "type": "array"
+          }
+        },
+        "required": [
+          "grants"
+        ],
+        "type": "object"
+      },
+      "CustomerSelfScope": {
+        "additionalProperties": false,
+        "properties": {
+          "type": {
+            "enum": [
+              "SELF"
+            ],
+            "type": "string"
+          }
+        },
+        "required": [
+          "type"
+        ],
+        "type": "object"
+      },
+      "CustomerTokenLoginResult": {
+        "additionalProperties": false,
+        "properties": {
+          "identity": {
+            "$ref": "#/components/schemas/CustomerCurrentIdentity"
+          },
+          "token": {
+            "$ref": "#/components/schemas/CustomerTokenResult"
+          }
+        },
+        "required": [
+          "identity",
+          "token"
+        ],
+        "type": "object"
+      },
+      "CustomerTokenResult": {
+        "additionalProperties": false,
+        "properties": {
+          "expiresAt": {
+            "description": "输入必须带Z或offset、最多3位小数；输出UTC且固定3位毫秒",
+            "format": "date-time",
+            "type": "string"
+          },
+          "headerName": {
+            "enum": [
+              "X-Customer-Token"
+            ],
+            "type": "string"
+          },
+          "value": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "expiresAt",
+          "headerName",
+          "value"
         ],
         "type": "object"
       },
@@ -613,6 +784,64 @@
         ],
         "type": "object"
       },
+      "SuccessCustomerCurrentIdentity": {
+        "additionalProperties": false,
+        "properties": {
+          "data": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/CustomerCurrentIdentity"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "success": {
+            "const": true,
+            "type": "boolean"
+          },
+          "traceId": {
+            "pattern": "^[0-9a-f]{32}$",
+            "type": "string"
+          }
+        },
+        "required": [
+          "data",
+          "success",
+          "traceId"
+        ],
+        "type": "object"
+      },
+      "SuccessCustomerTokenLoginResult": {
+        "additionalProperties": false,
+        "properties": {
+          "data": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/CustomerTokenLoginResult"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "success": {
+            "const": true,
+            "type": "boolean"
+          },
+          "traceId": {
+            "pattern": "^[0-9a-f]{32}$",
+            "type": "string"
+          }
+        },
+        "required": [
+          "data",
+          "success",
+          "traceId"
+        ],
+        "type": "object"
+      },
       "SuccessFieldErrorDetail": {
         "additionalProperties": false,
         "properties": {
@@ -774,9 +1003,42 @@
           "value"
         ],
         "type": "object"
+      },
+      "WechatLoginInput": {
+        "additionalProperties": false,
+        "properties": {
+          "code": {
+            "maxLength": 256,
+            "minLength": 0,
+            "type": "string",
+            "writeOnly": true
+          },
+          "entryId": {
+            "maxLength": 32,
+            "minLength": 0,
+            "type": "string"
+          },
+          "tenantCode": {
+            "maxLength": 32,
+            "minLength": 0,
+            "type": "string"
+          }
+        },
+        "required": [
+          "code",
+          "entryId",
+          "tenantCode"
+        ],
+        "type": "object"
       }
     },
     "securitySchemes": {
+      "CustomerToken": {
+        "description": "Bearer加一个空格再加原始opaque Token；仅客户小程序，无客户Cookie",
+        "in": "header",
+        "name": "X-Customer-Token",
+        "type": "apiKey"
+      },
       "PlatformCookie": {
         "description": "仅PLATFORM WEB；写请求必须独立CSRF及同源来源",
         "in": "cookie",
@@ -1003,7 +1265,7 @@
     "/api/admin/auth/logout": {
       "post": {
         "description": "Cookie需CSRF与来源校验，Token渠道无需浏览器CSRF。只撤销当前设备并删除对应Cookie/CSRF；重复无有效凭据返回401。",
-        "operationId": "logout_1",
+        "operationId": "logout_2",
         "responses": {
           "200": {
             "content": {
@@ -1093,7 +1355,7 @@
     "/api/admin/auth/logout-all": {
       "post": {
         "description": "当前密码重新确认；数据库安全版本递增；WEB和小程序设备全部失效，重复旧会话401",
-        "operationId": "logoutAll_1",
+        "operationId": "logoutAll_2",
         "parameters": [
           {
             "description": "WEB Cookie写入必须；MINIPROGRAM Token无需浏览器CSRF",
@@ -1237,7 +1499,7 @@
     "/api/admin/auth/me": {
       "get": {
         "description": "每请求读取正式有效租户、员工、角色、权限和门店授权；不续闲置期限",
-        "operationId": "me_1",
+        "operationId": "me_2",
         "responses": {
           "200": {
             "content": {
@@ -1875,6 +2137,341 @@
         "summary": "授权管理员撤销目标员工全部会话",
         "tags": [
           "staff-security-controller"
+        ]
+      }
+    },
+    "/api/customer/auth/logout": {
+      "post": {
+        "description": "撤销当前客户设备，其他身份域不受影响；重复已退出请求401",
+        "operationId": "logout_1",
+        "responses": {
+          "200": {
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/SuccessVoid"
+                }
+              }
+            },
+            "description": "成功，统一响应信封"
+          },
+          "400": {
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/Failure"
+                }
+              }
+            },
+            "description": "格式或载体错误"
+          },
+          "401": {
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/Failure"
+                }
+              }
+            },
+            "description": "登录失败或会话无效"
+          },
+          "422": {
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/Failure"
+                }
+              }
+            },
+            "description": "输入校验失败"
+          },
+          "429": {
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/Failure"
+                }
+              }
+            },
+            "description": "频控，含Retry-After"
+          },
+          "503": {
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/Failure"
+                }
+              }
+            },
+            "description": "依赖/微信不可用；结果不确定须重新取得code"
+          }
+        },
+        "security": [
+          {
+            "CustomerToken": []
+          }
+        ],
+        "summary": "退出当前客户会话",
+        "tags": [
+          "customer-authentication-controller"
+        ]
+      }
+    },
+    "/api/customer/auth/logout-all": {
+      "post": {
+        "description": "无需密码；有效当前客户Token再次验证，数据库同事务递增安全代际。旧会话即刻逻辑失效，物理清理失败标PENDING，后续新登录清旧代际；不能自动重放。",
+        "operationId": "logoutAll_1",
+        "responses": {
+          "200": {
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/SuccessVoid"
+                }
+              }
+            },
+            "description": "全部旧客户会话已失效",
+            "headers": {
+              "X-Session-Cleanup": {
+                "schema": {
+                  "enum": [
+                    "COMPLETE",
+                    "PENDING"
+                  ],
+                  "type": "string"
+                },
+                "style": "simple"
+              }
+            }
+          },
+          "400": {
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/Failure"
+                }
+              }
+            },
+            "description": "格式或载体错误"
+          },
+          "401": {
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/Failure"
+                }
+              }
+            },
+            "description": "登录失败或会话无效"
+          },
+          "422": {
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/Failure"
+                }
+              }
+            },
+            "description": "输入校验失败"
+          },
+          "429": {
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/Failure"
+                }
+              }
+            },
+            "description": "频控，含Retry-After"
+          },
+          "503": {
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/Failure"
+                }
+              }
+            },
+            "description": "依赖/微信不可用；结果不确定须重新取得code"
+          }
+        },
+        "security": [
+          {
+            "CustomerToken": []
+          }
+        ],
+        "summary": "退出客户全部会话",
+        "tags": [
+          "customer-authentication-controller"
+        ]
+      }
+    },
+    "/api/customer/auth/me": {
+      "get": {
+        "description": "真实会话及有效租户/客户/绑定/安全版本重验，不续闲置期限；不返回微信标识",
+        "operationId": "me_1",
+        "responses": {
+          "200": {
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/SuccessCustomerCurrentIdentity"
+                }
+              }
+            },
+            "description": "成功，统一响应信封"
+          },
+          "400": {
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/Failure"
+                }
+              }
+            },
+            "description": "格式或载体错误"
+          },
+          "401": {
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/Failure"
+                }
+              }
+            },
+            "description": "登录失败或会话无效"
+          },
+          "422": {
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/Failure"
+                }
+              }
+            },
+            "description": "输入校验失败"
+          },
+          "429": {
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/Failure"
+                }
+              }
+            },
+            "description": "频控，含Retry-After"
+          },
+          "503": {
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/Failure"
+                }
+              }
+            },
+            "description": "依赖/微信不可用；结果不确定须重新取得code"
+          }
+        },
+        "security": [
+          {
+            "CustomerToken": []
+          }
+        ],
+        "summary": "当前客户身份",
+        "tags": [
+          "customer-authentication-controller"
+        ]
+      }
+    },
+    "/api/customer/auth/wechat/login": {
+      "post": {
+        "description": "服务端入口白名单解析有效租户和应用；一次code交换，不自动重试。共享AppID按租户独立注册，不提供员工权限。",
+        "operationId": "login_1",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/WechatLoginInput"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/SuccessCustomerTokenLoginResult"
+                }
+              }
+            },
+            "description": "成功，统一响应信封"
+          },
+          "400": {
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/Failure"
+                }
+              }
+            },
+            "description": "格式或载体错误"
+          },
+          "401": {
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/Failure"
+                }
+              }
+            },
+            "description": "登录失败或会话无效"
+          },
+          "409": {
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/Failure"
+                }
+              }
+            },
+            "description": "设备上限"
+          },
+          "422": {
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/Failure"
+                }
+              }
+            },
+            "description": "输入校验失败"
+          },
+          "429": {
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/Failure"
+                }
+              }
+            },
+            "description": "频控，含Retry-After"
+          },
+          "503": {
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/Failure"
+                }
+              }
+            },
+            "description": "依赖/微信不可用；结果不确定须重新取得code"
+          }
+        },
+        "summary": "客户微信登录",
+        "tags": [
+          "customer-authentication-controller"
         ]
       }
     },

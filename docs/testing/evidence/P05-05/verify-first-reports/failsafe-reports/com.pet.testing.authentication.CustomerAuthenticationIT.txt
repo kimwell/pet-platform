@@ -1,0 +1,30 @@
+-------------------------------------------------------------------------------
+Test set: com.pet.testing.authentication.CustomerAuthenticationIT
+-------------------------------------------------------------------------------
+Tests run: 37, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 5.098 s <<< FAILURE! -- in com.pet.testing.authentication.CustomerAuthenticationIT
+com.pet.testing.authentication.CustomerAuthenticationIT.sameUuidAcrossThreeDomainsStillIsolated -- Time elapsed: 0.471 s <<< ERROR!
+org.springframework.dao.DataIntegrityViolationException: 
+PreparedStatementCallback; SQL [delete from pet_control.platform_account where id=?]; ERROR: update or delete on table "platform_account" violates foreign key constraint "platform_security_event_actor_id_fkey" on table "platform_security_event"
+  详细：Key (id)=(f57dc5d2-14a5-4517-8726-95ac5c9c0a2b) is still referenced from table "platform_security_event".
+	at org.springframework.jdbc.support.SQLStateSQLExceptionTranslator.doTranslate(SQLStateSQLExceptionTranslator.java:140)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:102)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:111)
+	at org.springframework.jdbc.core.JdbcTemplate.translateException(JdbcTemplate.java:1549)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:689)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:966)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:1010)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:1020)
+	at com.pet.testing.authentication.CustomerAuthenticationIT.sameUuidAcrossThreeDomainsStillIsolated(CustomerAuthenticationIT.java:78)
+Caused by: org.postgresql.util.PSQLException: ERROR: update or delete on table "platform_account" violates foreign key constraint "platform_security_event_actor_id_fkey" on table "platform_security_event"
+  详细：Key (id)=(f57dc5d2-14a5-4517-8726-95ac5c9c0a2b) is still referenced from table "platform_security_event".
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2993)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2656)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:446)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:533)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:449)
+	at org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:197)
+	at org.postgresql.jdbc.PgPreparedStatement.executeUpdate(PgPreparedStatement.java:158)
+	at org.springframework.jdbc.core.JdbcTemplate.lambda$update$0(JdbcTemplate.java:971)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:670)
+	... 4 more
+

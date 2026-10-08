@@ -1,0 +1,357 @@
+{
+  "api-typecheck": {
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "argv": [
+      "pnpm",
+      "contracts:typecheck"
+    ],
+    "exitCode": 0,
+    "startedAtUTC": "2026-10-08T08:27:11.261343+00:00",
+    "finishedAtUTC": "2026-10-08T08:27:13.158036+00:00",
+    "log": "api-typecheck.log"
+  },
+  "collect-final": {
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "argv": [
+      "python3",
+      "docs/testing/evidence/P05-05/collect-final.py"
+    ],
+    "exitCode": 0,
+    "startedAtUTC": "2026-10-08T08:32:25.221195+00:00",
+    "finishedAtUTC": "2026-10-08T08:32:25.860302+00:00",
+    "log": "collect-final.log"
+  },
+  "compile-first": {
+    "cwd": "/Users/kimwell/work/pet-platform/apps/backend",
+    "argv": [
+      "./mvnw",
+      "test-compile",
+      "-DskipTests"
+    ],
+    "exitCode": 1,
+    "startedAtUTC": "2026-10-08T08:11:12.577468+00:00",
+    "finishedAtUTC": "2026-10-08T08:11:28.098119+00:00",
+    "log": "compile-first.log"
+  },
+  "compile-second": {
+    "cwd": "/Users/kimwell/work/pet-platform/apps/backend",
+    "argv": [
+      "./mvnw",
+      "clean",
+      "test-compile",
+      "-DskipTests"
+    ],
+    "exitCode": 0,
+    "startedAtUTC": "2026-10-08T08:11:40.524563+00:00",
+    "finishedAtUTC": "2026-10-08T08:11:46.444263+00:00",
+    "log": "compile-second.log"
+  },
+  "contracts-check": {
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "argv": [
+      "pnpm",
+      "contracts:check"
+    ],
+    "exitCode": 0,
+    "startedAtUTC": "2026-10-08T08:27:11.261764+00:00",
+    "finishedAtUTC": "2026-10-08T08:27:31.524203+00:00",
+    "log": "contracts-check.log"
+  },
+  "contracts-generate-second": {
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "argv": [
+      "pnpm",
+      "contracts:generate"
+    ],
+    "exitCode": 0,
+    "startedAtUTC": "2026-10-08T08:26:19.721744+00:00",
+    "finishedAtUTC": "2026-10-08T08:26:37.496457+00:00",
+    "log": "contracts-generate-second.log"
+  },
+  "contracts-generate": {
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "argv": [
+      "pnpm",
+      "contracts:generate"
+    ],
+    "exitCode": 1,
+    "startedAtUTC": "2026-10-08T08:25:15.643998+00:00",
+    "finishedAtUTC": "2026-10-08T08:25:32.294522+00:00",
+    "log": "contracts-generate.log"
+  },
+  "customer-first": {
+    "cwd": "/Users/kimwell/work/pet-platform/apps/backend",
+    "argv": [
+      "./mvnw",
+      "test-compile",
+      "failsafe:integration-test",
+      "failsafe:verify",
+      "-Dit.test=CustomerAuthenticationIT"
+    ],
+    "exitCode": 1,
+    "startedAtUTC": "2026-10-08T08:15:33.070190+00:00",
+    "finishedAtUTC": "2026-10-08T08:15:43.084748+00:00",
+    "log": "customer-first.log"
+  },
+  "customer-fourth": {
+    "cwd": "/Users/kimwell/work/pet-platform/apps/backend",
+    "argv": [
+      "./mvnw",
+      "test-compile",
+      "failsafe:integration-test",
+      "failsafe:verify",
+      "-Dit.test=CustomerAuthenticationIT"
+    ],
+    "exitCode": 1,
+    "startedAtUTC": "2026-10-08T08:17:00.488296+00:00",
+    "finishedAtUTC": "2026-10-08T08:17:08.841994+00:00",
+    "log": "customer-fourth.log"
+  },
+  "customer-second": {
+    "cwd": "/Users/kimwell/work/pet-platform/apps/backend",
+    "argv": [
+      "./mvnw",
+      "test-compile",
+      "failsafe:integration-test",
+      "failsafe:verify",
+      "-Dit.test=CustomerAuthenticationIT"
+    ],
+    "exitCode": 1,
+    "startedAtUTC": "2026-10-08T08:15:56.369945+00:00",
+    "finishedAtUTC": "2026-10-08T08:16:02.076350+00:00",
+    "log": "customer-second.log"
+  },
+  "customer-sixth": {
+    "cwd": "/Users/kimwell/work/pet-platform/apps/backend",
+    "argv": [
+      "./mvnw",
+      "clean",
+      "test-compile",
+      "failsafe:integration-test",
+      "failsafe:verify",
+      "-Dit.test=CustomerAuthenticationIT,CustomerMigrationIT"
+    ],
+    "exitCode": 1,
+    "startedAtUTC": "2026-10-08T08:19:41.226026+00:00",
+    "finishedAtUTC": "2026-10-08T08:20:06.691115+00:00",
+    "log": "customer-sixth.log"
+  },
+  "customer-third": {
+    "cwd": "/Users/kimwell/work/pet-platform/apps/backend",
+    "argv": [
+      "./mvnw",
+      "clean",
+      "test-compile",
+      "failsafe:integration-test",
+      "failsafe:verify",
+      "-Dit.test=CustomerAuthenticationIT"
+    ],
+    "exitCode": 1,
+    "startedAtUTC": "2026-10-08T08:16:29.582413+00:00",
+    "finishedAtUTC": "2026-10-08T08:16:35.745204+00:00",
+    "log": "customer-third.log"
+  },
+  "dependencies-final": {
+    "cwd": "/Users/kimwell/work/pet-platform/apps/backend",
+    "argv": [
+      "./mvnw",
+      "dependency:tree",
+      "-DoutputFile=/Users/kimwell/work/pet-platform/docs/testing/evidence/P05-05/backend-dependency-tree.txt"
+    ],
+    "exitCode": 0,
+    "startedAtUTC": "2026-10-08T08:32:25.954488+00:00",
+    "finishedAtUTC": "2026-10-08T08:32:29.566401+00:00",
+    "log": "dependencies-final.log"
+  },
+  "dependency-conflict": {
+    "cwd": "/Users/kimwell/work/pet-platform/apps/backend",
+    "argv": [
+      "./mvnw",
+      "dependency:tree",
+      "-Dincludes=commons-io:commons-io,org.apache.commons:commons-compress",
+      "-Dverbose"
+    ],
+    "exitCode": 0,
+    "startedAtUTC": "2026-10-08T08:16:15.485289+00:00",
+    "finishedAtUTC": "2026-10-08T08:16:17.976498+00:00",
+    "log": "dependency-conflict.log"
+  },
+  "final-audit-first": {
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "argv": [
+      "python3",
+      "docs/testing/evidence/P05-05/final-audit.py"
+    ],
+    "exitCode": 1,
+    "startedAtUTC": "2026-10-08T08:37:54.654034+00:00",
+    "finishedAtUTC": "2026-10-08T08:37:54.870338+00:00",
+    "log": "final-audit.log"
+  },
+  "final-audit": {
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "argv": [
+      "python3",
+      "docs/testing/evidence/P05-05/final-audit.py"
+    ],
+    "exitCode": 0,
+    "startedAtUTC": "2026-10-08T08:39:07.584327+00:00",
+    "finishedAtUTC": "2026-10-08T08:39:08.173640+00:00",
+    "log": "final-audit.log"
+  },
+  "final-contracts": {
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "argv": [
+      "node",
+      "docs/testing/evidence/P05-05/check-final-contracts.mjs"
+    ],
+    "exitCode": 0,
+    "startedAtUTC": "2026-10-08T08:33:07.530884+00:00",
+    "finishedAtUTC": "2026-10-08T08:33:08.182827+00:00",
+    "log": "final-contracts.log"
+  },
+  "focused-fifth": {
+    "cwd": "/Users/kimwell/work/pet-platform/apps/backend",
+    "argv": [
+      "./mvnw",
+      "clean",
+      "test",
+      "-Dtest=WxJavaGatewayTest,WechatConfigTest,StructureRulesTest,ApplicationTest,ProductionOpenApiExportTest",
+      "failsafe:integration-test",
+      "failsafe:verify",
+      "-Dit.test=CustomerAuthenticationIT,CustomerMigrationIT"
+    ],
+    "exitCode": 1,
+    "startedAtUTC": "2026-10-08T08:18:35.509364+00:00",
+    "finishedAtUTC": "2026-10-08T08:19:13.941125+00:00",
+    "log": "focused-fifth.log"
+  },
+  "maven-version": {
+    "cwd": "/Users/kimwell/work/pet-platform/apps/backend",
+    "argv": [
+      "./mvnw",
+      "-v"
+    ],
+    "exitCode": 0,
+    "startedAtUTC": "2026-10-08T08:33:40.177069+00:00",
+    "finishedAtUTC": "2026-10-08T08:33:41.574712+00:00",
+    "log": "maven-version.log"
+  },
+  "miniprogram-typecheck": {
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "argv": [
+      "pnpm",
+      "--filter",
+      "@pet/wechat-miniprogram",
+      "typecheck"
+    ],
+    "exitCode": 0,
+    "startedAtUTC": "2026-10-08T08:27:11.261339+00:00",
+    "finishedAtUTC": "2026-10-08T08:27:12.935439+00:00",
+    "log": "miniprogram-typecheck.log"
+  },
+  "node-version": {
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "argv": [
+      "node",
+      "--version"
+    ],
+    "exitCode": 0,
+    "startedAtUTC": "2026-10-08T08:33:40.177078+00:00",
+    "finishedAtUTC": "2026-10-08T08:33:40.268962+00:00",
+    "log": "node-version.log"
+  },
+  "pnpm-version": {
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "argv": [
+      "pnpm",
+      "--version"
+    ],
+    "exitCode": 0,
+    "startedAtUTC": "2026-10-08T08:33:40.177073+00:00",
+    "finishedAtUTC": "2026-10-08T08:33:40.616128+00:00",
+    "log": "pnpm-version.log"
+  },
+  "real-wechat-preflight": {
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "argv": [
+      "python3",
+      "docs/testing/evidence/P05-05/real-wechat-preflight.py"
+    ],
+    "exitCode": 0,
+    "startedAtUTC": "2026-10-08T08:26:55.926095+00:00",
+    "finishedAtUTC": "2026-10-08T08:26:55.956681+00:00",
+    "log": "real-wechat-preflight.log"
+  },
+  "repo-check": {
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "argv": [
+      "pnpm",
+      "check:repo"
+    ],
+    "exitCode": 0,
+    "startedAtUTC": "2026-10-08T08:27:11.261790+00:00",
+    "finishedAtUTC": "2026-10-08T08:27:12.465021+00:00",
+    "log": "repo-check.log"
+  },
+  "smoke-first": {
+    "cwd": "/Users/kimwell/work/pet-platform/apps/backend",
+    "argv": [
+      "./mvnw",
+      "test",
+      "-Dtest=ApplicationTest,StructureRulesTest,ProductionOpenApiExportTest"
+    ],
+    "exitCode": 1,
+    "startedAtUTC": "2026-10-08T08:12:20.838193+00:00",
+    "finishedAtUTC": "2026-10-08T08:12:36.248269+00:00",
+    "log": "smoke-first.log"
+  },
+  "units-first": {
+    "cwd": "/Users/kimwell/work/pet-platform/apps/backend",
+    "argv": [
+      "./mvnw",
+      "test",
+      "-Dtest=WxJavaGatewayTest,WechatConfigTest,StructureRulesTest"
+    ],
+    "exitCode": 1,
+    "startedAtUTC": "2026-10-08T08:18:07.214909+00:00",
+    "finishedAtUTC": "2026-10-08T08:18:17.959310+00:00",
+    "log": "units-first.log"
+  },
+  "verify-final": {
+    "cwd": "/Users/kimwell/work/pet-platform/apps/backend",
+    "argv": [
+      "./mvnw",
+      "clean",
+      "verify"
+    ],
+    "exitCode": 0,
+    "startedAtUTC": "2026-10-08T08:27:48.529097+00:00",
+    "finishedAtUTC": "2026-10-08T08:31:36.428470+00:00",
+    "log": "verify-final.log"
+  },
+  "verify-first": {
+    "cwd": "/Users/kimwell/work/pet-platform/apps/backend",
+    "argv": [
+      "./mvnw",
+      "clean",
+      "verify"
+    ],
+    "exitCode": 1,
+    "startedAtUTC": "2026-10-08T08:21:03.176716+00:00",
+    "finishedAtUTC": "2026-10-08T08:24:46.861306+00:00",
+    "log": "verify-first.log"
+  },
+  "web-typecheck": {
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "argv": [
+      "pnpm",
+      "--filter",
+      "@pet/admin-web",
+      "typecheck"
+    ],
+    "exitCode": 0,
+    "startedAtUTC": "2026-10-08T08:27:11.262333+00:00",
+    "finishedAtUTC": "2026-10-08T08:27:14.174673+00:00",
+    "log": "web-typecheck.log"
+  }
+}

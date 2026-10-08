@@ -156,3 +156,7 @@ setup-java 更新到上表的固定官方 SHA，移除旧 v4 的弃用警告；�
 正式加入后端表已冻结的Sa-Token Boot 4 starter及Redis Template模块，所有Sa-Token解析模块与矩阵版本一致；未覆盖Spring Boot BOM或改变其他依赖。实际传递模块含core、Jakarta Servlet、Boot WebMVC common与Jackson 3适配；[依赖树](../testing/evidence/P05-02/backend-dependency-tree.txt)记录解析事实，[官方同版源码URL/SHA](../testing/evidence/P05-02/sa-token-sources.json)核对配置、显式Token载体、设备、绝对/闲置期限、当前退出和Redis DAO API。
 
 COMPILED / RUNTIME_VERIFIED范围仅[P05-02](../testing/P05-02-VERIFICATION.md)的正式数据、真实PostgreSQL/Redis/HTTP、跨JVM共享会话、同源浏览器Cookie/CSRF及生成类型；平台/客户登录、生产TLS/代理/Redis ACL/HA、跨OS和远程CI仍未验证。历史阶段未执行记录不改写。
+
+## P05-05 解析兼容性修正（2026-10-08）
+
+commons-io固定为2.20.0，恢复[P05-02实际依赖树](../testing/evidence/P05-02/backend-dependency-tree.txt)中原Testcontainers解析值；不升级WxJava或其他冻结组件。新增WxJava4.8.0的较短依赖路径选中旧commons-io，导致commons-compress1.28.0调用FileTimes.toUnixTime出现NoSuchMethodError，Redis技术容器文件复制失败；[冲突记录](../testing/evidence/P05-05/dependency-conflict.log)。该项不受Boot BOM管理，POM显式固定原解析版本；最终解析和运行等级以[P05-05报告](../testing/P05-05-VERIFICATION.md)为准。

@@ -125,3 +125,19 @@ PLATFORM已接真实账号、独立初始化、六个控制面接口。两域共
 平台改密/全部退出复用DB权威安全代际、行锁事务、提交前状态/权限/设备复核和提交后按代际物理清理。旧密码验证不会升级到新安全代际，旧清理不删新会话；平台撤销不影响STAFF。PENDING由合法本人me/后续操作补偿，无定时补偿。实际运行与限制见[P05-04](../testing/P05-04-VERIFICATION.md)。
 
 P05-04路径加固：服务器servletPath与原始URI必须一致（仅扣除服务器contextPath），API拒绝百分号编码/矩阵参数等别名400 BAD_REQUEST，避免MVC解码路由和认证/CSRF域判定不一致。两域共用requestPath，客户端不能通过编码平台或员工登录路径绕过过滤器。真实HTTP反例及修复历史见P05-04报告。
+
+## P05-05 客户微信认证当前实施（2026-10-08）
+
+CUSTOMER由customeridentity拥有正式CustomerSubject/WechatBinding与四项HTTP接口，见[身份契约](../contracts/IDENTITY.md#p05-05-客户正式接口2026-10-08)。复用现有SaIdentitySessions/AuthenticationRedis，不建第二会话框架；独立loginType=customer、pet:<environment>:customer:customer:*，认证辅助pet:<environment>:auth:customer:*。只签发MINIPROGRAM的X-Customer-Token，不签客户/员工/平台Cookie。30天绝对期限、7天闲置、最多5设备、isShare=false；me/认证维护不续闲置，业务请求才续活跃。客户TTL仅在客户认证键扩大到30天，STAFF/PLATFORM和业务Redis原上限不变。
+
+顺序：Filter先以直接来源Redis原子60次/分钟限制入口（包括MVC失败输入）→严格输入→服务端entryId白名单与有效tenantCode→安全秘密引用→同来源所有应用合计20次/分钟及配置独立上限→一次微信code交换→受限函数短事务查找/原子注册→有效客户/租户/绑定检查→会话签发前后重载版本→安全结果事件→最小登录响应。微信HTTP完全在DB事务外；生产没有OpenID登录、网络故障模拟成功或测试Gateway。网络不确定返回WECHAT_RESULT_UNCERTAIN，要求重新获取code；不得重试旧code或当成认证成功。
+
+冻结WxJava4.8.0官方jsCode2SessionInfo/getSessionInfo由生产Gateway调用；普通SDK get会取access_token、重试并记录原响应，故仅登录客户端覆写get为官方SimpleGetRequestExecutor单次执行，固定微信URL、关闭Apache自动重试/重定向、受限超时。无需额外access_token，不输出code/session_key/AppSecret/OpenID/UnionID；session_key只在SDK解析临时对象中，不向业务流出。业务结果是最小appId/openId/可选unionId；UnionID缺失允许登录，本轮无业务用途，不持久化、不自动合并。配置缓存按配置ID/版本/AppID/秘密摘要/超时隔离，不使用switchover或全局可变配置；静态配置至多16个应用，修改/轮换需新版本和进程重启。
+
+当前客户主体一条微信绑定；绑定唯一键(tenant_id,app_id,open_id)，复合外键(tenant_id,customer_id)，绑定与客户原子创建。仅准确customer_wechat_identity_unique冲突触发子事务回滚及安全重读，其他数据库错误503。停用客户/绑定保留原映射且拒绝，不能删除式重建；会话建立失败保留已合法注册的客户，重新取得code可重试。成功记录失败不返回Token并尝试撤销未返回会话；撤销依赖故障时悬挂设备仍受数据库状态/期限/5设备上限约束，不宣称分布式原子提交。
+
+每请求真实Sa期限/设备验证→DB有效租户、客户、绑定及两安全版本→CUSTOMER CurrentPrincipal/SELF；没有员工employeeId或门店/角色权限。停用和安全版本变化拒绝旧会话，DB/Redis失败503关闭认证而不改成401。未来停用/恢复与绑定状态管理须递增客户security_version（租户安全变动增Tenant版本），避免停用后恢复复活旧Token；本轮未提供状态CRUD。
+
+当前退出只退一个设备。退出全部无需客户密码；再次验当前Token、受限函数锁租户/主体并比较签发安全版本、原子增代际/资源版本及LOGOUT_ALL事件后清Redis旧代际。X-Session-Cleanup=PENDING仍表示旧会话逻辑失效；下一次合法新登录持原账号锁清旧代际，不增加调度/Outbox或另建客户清理框架。延迟清理按cutoff不删新代际。网络异常不可自动重放；未完成物理记录最长保留至原会话期限。
+
+复用唯一生产SessionPrincipalProvider路由三类身份；CUSTOMER明确在StaffTaskAuthority.capture按主体域拒绝，未入队，不沿用员工证明或扩大Servlet ASYNC。Redis/PG/HTTP自动化的外部Gateway替身均在src/test；[P05-05验证](../testing/P05-05-VERIFICATION.md)将其与真实微信NOT_EXECUTED分开。没有开发P09页面、手机号、员工OpenID、通知、支付或账号注销。

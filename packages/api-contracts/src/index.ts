@@ -2,5 +2,5 @@
 export type { components, paths, operations } from './generated/api';
 
 import type { components as Generated } from './generated/api';
-// 两种实际生成模型组成判别身份；STAFF保留必填tenantId。
-export type AuthenticatedIdentity = Generated['schemas']['CurrentIdentity'] | Generated['schemas']['PlatformCurrentIdentity'];
+// 三种实际生成模型组成判别身份；STAFF/CUSTOMER保留必填tenantId。
+export type AuthenticatedIdentity = Generated['schemas']['CurrentIdentity'] | Generated['schemas']['PlatformCurrentIdentity'] | Generated['schemas']['CustomerCurrentIdentity'];

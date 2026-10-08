@@ -84,3 +84,7 @@ Web以import type从@pet/api-contracts读取components；workspace依赖只有ty
 ## P05-04 双身份类型（2026-10-08）
 
 正式路径新增六项PLATFORM，合计15。原CurrentIdentity保持STAFF判别枚举、非空tenantId/ScopeData及passwordChangeRequired；平台独立PlatformCurrentIdentity为PLATFORM、tenantId/dataScope必填null、authorizedStoreIds空数组约束，没有无约束object或将STAFF tenant改可空。端点返回明确DTO，消费者用principalType判别联合。PlatformCookie只COOKIE，不提供平台Token安全方案或小程序签发接口。类型从实际Controller生成，平台密码复用原writeOnly安全输入，响应null与清理Header准确，不修改前端页面。
+
+## P05-05 当前实际导出
+
+生产19路径（原15+客户4），实际CustomerCurrentIdentity/CustomerTokenLoginResult/CustomerToken安全方案加入；身份分别严格STAFF/PLATFORM/CUSTOMER，AuthenticatedIdentity只组合生成模型。小程序只同步生成声明，不开发登录页面/请求层。contracts:generate/check仍由真实生产Java应用导出，独立测试schema不进公共包/生产JAR。[当前验证](../testing/P05-05-VERIFICATION.md)记录实际命令，不把类型通过当真实微信认证或P09验收。

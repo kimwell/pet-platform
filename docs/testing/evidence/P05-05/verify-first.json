@@ -1,0 +1,12 @@
+{
+  "cwd": "/Users/kimwell/work/pet-platform/apps/backend",
+  "argv": [
+    "./mvnw",
+    "clean",
+    "verify"
+  ],
+  "exitCode": 1,
+  "startedAtUTC": "2026-10-08T08:21:03.176716+00:00",
+  "finishedAtUTC": "2026-10-08T08:24:46.861306+00:00",
+  "log": "verify-first.log"
+}

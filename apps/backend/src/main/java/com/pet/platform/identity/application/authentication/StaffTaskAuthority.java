@@ -18,6 +18,7 @@ public final class StaffTaskAuthority implements TaskAuthority {
     private final StaffSessionPort sessions;
     public StaffTaskAuthority(StaffAuthentication auth,StaffSessionPort sessions){this.auth=auth;this.sessions=sessions;}
     @Override public Proof capture(TenantContext context) {
+        if(context.principalType()!=com.pet.platform.shared.security.PrincipalType.STAFF)throw error(ErrorCode.PERMISSION_DENIED);
         if(!(RequestContextHolder.getRequestAttributes() instanceof ServletRequestAttributes attributes))throw error(ErrorCode.PERMISSION_DENIED);
         var current=StaffHttpAuthentication.current(attributes.getRequest());
         if(current==null || !context.tenantId().equals(current.identity().tenantId()) || !context.principalId().equals(current.identity().employeeId()) || !context.sessionId().equals(current.session().sessionId()))throw error(ErrorCode.PERMISSION_DENIED);

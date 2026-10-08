@@ -1,0 +1,12 @@
+{
+  "cwd": "/Users/kimwell/work/pet-platform/apps/backend",
+  "argv": [
+    "./mvnw",
+    "test",
+    "-Dtest=WxJavaGatewayTest,WechatConfigTest,StructureRulesTest"
+  ],
+  "exitCode": 1,
+  "startedAtUTC": "2026-10-08T08:18:07.214909+00:00",
+  "finishedAtUTC": "2026-10-08T08:18:17.959310+00:00",
+  "log": "units-first.log"
+}

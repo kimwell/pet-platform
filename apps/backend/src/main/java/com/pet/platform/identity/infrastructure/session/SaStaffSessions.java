@@ -5,7 +5,6 @@ import java.util.UUID;
 public final class SaStaffSessions implements StaffSessionPort {
     private final IdentitySessionPort<StaffIdentity> engine;
     public SaStaffSessions(AuthenticationRedis redis,StaffAuthentication auth,String env,int wa,int wi,int ma,int mi){
-        new cn.dev33.satoken.stp.StpLogic("customer").setConfig(SaIdentitySessions.config(env,"customer"));
         engine=new SaIdentitySessions<>(redis,env,"staff",s -> auth.loadForSession(s.tenantId(),s.principalId()).orElseThrow(() -> new com.pet.platform.shared.exception.BusinessException(com.pet.platform.shared.api.ErrorCode.LOGIN_FAILED)),
             i -> new IdentitySessionPort.State(i.employeeId(),i.tenantId(),i.securityVersion(),i.tenantSecurityVersion()),wa,wi,ma,mi);
     }

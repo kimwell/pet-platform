@@ -2,7 +2,7 @@
 
 项目直接在 `/Users/kimwell/work/pet-platform` 建设，既有ui保留原位，不创建enterprise-app-scaffold子目录，不使用Product Delivery OS。后端固定 `com.pet.platform`，三端结构见文档；模板不包含宠物/订单等行业业务。
 
-P05-04 COMPLETE，P05整体IN_PROGRESS；最新平台身份、初始化与控制面认证及限定验证见[P05-04](docs/testing/P05-04-VERIFICATION.md)，[平台初始化命令](docs/development/PLATFORM-BOOTSTRAP.md)与[STAFF初始化](docs/development/IDENTITY-BOOTSTRAP.md)独立，P05-01/02/03及前期证据保留。以下P01～P04记录为阶段历史。P01 整体 COMPLETE，P02-01 COMPLETE；P02-02 已完成，工程基础验收见 [P02-02 验证报告](docs/testing/P02-02-VERIFICATION.md)。P02-02 COMPLETE，P02整体COMPLETE：后端、Web、基础设施真实启停及冻结微信工具npm/源码编译/模拟器入口通过；基础真机预览有用户反馈，完整P09验收尚未执行。P03-01 已 COMPLETE，公共响应/错误/trace/分页排序见 [P03-01 验证报告](docs/testing/P03-01-VERIFICATION.md)，P03-02、P03-03及P03整体 COMPLETE，完整标量/OpenAPI/类型与结构结果见 [P03-03](docs/testing/P03-03-VERIFICATION.md)。历史初始化结论见 [P02-01](docs/testing/P02-01-VERIFICATION.md)。三端最小工程、单锁、Wrapper、配置、CI 和本地 Compose 已建立；P03-02 已接入 PostgreSQL/JPA/Flyway 与持久化基础；客户微信认证、完整用户/角色/租户 CRUD、附件和消息业务尚未实现，P04隔离基础已完成。当前是Git仓库，P04-01启动时已有提交且工作区干净；本轮不自动提交/推送/发布/部署。
+P05-05 BLOCKED：后端实现与本机自动化验收已执行，G12真实微信联调待补齐；P05整体IN_PROGRESS，当前门禁见[P05-05](docs/testing/P05-05-VERIFICATION.md)与[P05总验收](docs/testing/P05-ACCEPTANCE.md)。P05-04 COMPLETE；最新平台身份、初始化与控制面认证及限定验证见[P05-04](docs/testing/P05-04-VERIFICATION.md)，[平台初始化命令](docs/development/PLATFORM-BOOTSTRAP.md)与[STAFF初始化](docs/development/IDENTITY-BOOTSTRAP.md)独立，P05-01/02/03及前期证据保留。以下P01～P04记录为阶段历史。P01 整体 COMPLETE，P02-01 COMPLETE；P02-02 已完成，工程基础验收见 [P02-02 验证报告](docs/testing/P02-02-VERIFICATION.md)。P02-02 COMPLETE，P02整体COMPLETE：后端、Web、基础设施真实启停及冻结微信工具npm/源码编译/模拟器入口通过；基础真机预览有用户反馈，完整P09验收尚未执行。P03-01 已 COMPLETE，公共响应/错误/trace/分页排序见 [P03-01 验证报告](docs/testing/P03-01-VERIFICATION.md)，P03-02、P03-03及P03整体 COMPLETE，完整标量/OpenAPI/类型与结构结果见 [P03-03](docs/testing/P03-03-VERIFICATION.md)。历史初始化结论见 [P02-01](docs/testing/P02-01-VERIFICATION.md)。三端最小工程、单锁、Wrapper、配置、CI 和本地 Compose 已建立；P03-02 已接入 PostgreSQL/JPA/Flyway 与持久化基础，P04隔离基础已完成；本轮已实现客户微信认证后端，真实外部认证仍待验证，完整用户/角色/租户 CRUD、附件和消息业务尚未实现。当前是Git仓库，P04-01启动时已有提交且工作区干净；本轮不自动提交/推送/发布/部署。
 
 ## 阅读入口
 
@@ -73,3 +73,7 @@ P04-03与P04整体 COMPLETE，当前范围与限制见[P04-03验证](docs/testin
 最新范围包含本人修改密码/退出全部、授权管理员重置密码/撤销全部四项接口，详见[身份契约](docs/contracts/IDENTITY.md#p05-03-员工凭据与会话安全接口2026-10-08)。追加V2；复用security_version作为持久化失效代际，每请求检查；Redis提交后按员工终端索引清理旧代际，失败留PENDING记录，由该员工下一次合法me/安全操作重试。重置使用操作者明确提供的临时密码并要求目标登录后先改密；无固定密码和外部交付服务。Web敏感写保持CSRF/来源校验，成功本人操作清当前Cookie；小程序按契约清对应员工Token与CSRF状态。
 
 真实会话来源的进程内异步现已开放执行前权威重验、设备检查与捕获范围交集；前节“禁止提交”保留为P05-02历史。P05-03 COMPLETE：328项0失败/错误/跳过，G01～G15 PASS；完整验证/门禁见[P05-03报告](docs/testing/P05-03-VERIFICATION.md)。P05整体仍IN_PROGRESS；下一建议平台管理员身份基础任务尚未授权，不自动执行。未开发前端页面/请求层或完整管理CRUD；没有操作用户开发/生产库、提交、推送或部署。
+
+## P05-05 客户微信认证
+
+正式CustomerSubject/WechatBinding、追加V4和受限角色、服务端入口配置/冻结WxJava Gateway、四客户接口、CUSTOMER Sa/Redis/SELF与三域隔离已落地。三端只生成类型，客户身份/会话HTTP以[IDENTITY](docs/contracts/IDENTITY.md#p05-05-客户正式接口2026-10-08)为准。应用默认关闭微信且无AppID/秘密默认；真实联调需安全外部配置和新鲜code。[P05-05报告](docs/testing/P05-05-VERIFICATION.md)区分自动化真实PG/Redis与外部Gateway替身、真实微信未执行、失败历史/门禁；[P05总验收](docs/testing/P05-ACCEPTANCE.md)保留剩余阶段限制。

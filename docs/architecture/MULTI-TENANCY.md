@@ -138,3 +138,11 @@ P04-01/02/03工程基础总体验收见[P04-ACCEPTANCE](../testing/P04-ACCEPTANC
 pet_control仅平台账号/权限/首次创建标记/最小记录/清理意图，没有tenantId。身份凭据owner为identity；普通租户Repository不能引用平台候选/固定SQL入口。平台CurrentPrincipal.tenantId=null、grants/门店为空，TenantContextFilter不建租户根范围，客户端tenantId/角色/Header无法改变。TenantScopeGuard/受控持久化/同步租户Executor/租户任务保持默认拒绝；本轮没有任何平台租户业务旁路。
 
 五表FORCE RLS，runtime没有表读取/DML，仅受限函数；函数owner无数据库超级权限、无任何新增租户表特权。平台安全事务仅pet.platform_id局部GUC，事务结束清除；不设置pet.tenant_id，不关闭旧RLS。平台事件独立schema、PLATFORM类型/可识别actor/target、无虚构tenant，不开放租户查询。独立角色/函数清单与真实反例见[平台初始化](../development/PLATFORM-BOOTSTRAP.md)、[P05-04验证](../testing/P05-04-VERIFICATION.md)。
+
+## P05-05 客户认证前受限写入（2026-10-08）
+
+追加V4和pet_customer_auth_owner（NOLOGIN、非superuser、无BYPASSRLS），管理员角色前置脚本见[provision-customer-roles.sql](../../infra/database/provision-customer-roles.sql)。该角色不具有员工/平台读取权限或role继承，运行角色不能SET ROLE到它。customer_subject/customer_wechat_binding及安全事件FORCE RLS；runtime只可按现有事务tenant GUC读客户及非OpenID绑定列，无客户DML/DDL/TRUNCATE/事件表读取。微信注册只经认证后内部链路调用固定register_wechat，绝不制造任意TenantContext或平台管理员。
+
+pet_customer中的resolve_tenant、current_identity、register_wechat、record_login、revoke_sessions五个固定函数：固定search_path=pg_catalog,pg_temp、明确schema对象、无动态SQL、PUBLIC EXECUTE撤销、仅pet_runtime执行。resolve_tenant只返回有效租户ID/安全版本；register_wechat有精确参数约束、租户FOR SHARE及客户+绑定子事务，非唯一键错误原样失败；current_identity仅返回有效客户/租户和安全版本，不返回微信标识。租户FOR SHARE需最小UPDATE列权限及UPDATE USING策略，WITH CHECK=false禁止实际租户更新；这不是状态管理入口。
+
+OpenID只能作为已完成微信交换的受限业务参数；架构反例拒绝Controller/行业模块引用Gateway结果、配置、注册存储。恶意持有应用DB凭据可直接执行函数仍属于已冻结可信服务端/数据库凭据边界，函数/RLS不能证明被攻陷应用安全。非超级运行身份的真实RLS/复合外键/无上下文/升级反例见[P05-05](../testing/P05-05-VERIFICATION.md)。

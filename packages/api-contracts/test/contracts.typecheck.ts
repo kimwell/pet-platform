@@ -45,3 +45,14 @@ export type PlatformIdentityAssertions = [
   Assert<Equal<Extract<AuthenticatedIdentity, { principalType: 'STAFF' }>['dataScope'], Production['schemas']['ScopeData']>>,
   Assert<Equal<Extract<AuthenticatedIdentity, { principalType: 'PLATFORM' }>['tenantId'], null>>
 ];
+
+export type CustomerIdentityAssertions = [
+  Assert<Equal<Production['schemas']['CustomerCurrentIdentity']['principalType'], 'CUSTOMER'>>,
+  Assert<Equal<Production['schemas']['CustomerCurrentIdentity']['tenantId'], string>>,
+  Assert<Equal<Production['schemas']['CustomerCurrentIdentity']['dataScope'], Production['schemas']['CustomerScopeData']>>,
+  Assert<Equal<Production['schemas']['CustomerSelfScope']['type'], 'SELF'>>,
+  Assert<Equal<Extract<AuthenticatedIdentity, { principalType: 'CUSTOMER' }>['principalId'], string>>,
+  Assert<Equal<Production['schemas']['CustomerTokenResult']['headerName'], 'X-Customer-Token'>>
+];
+// @ts-expect-error 客户身份没有员工强制改密字段。
+export type CustomerHasNoEmployeePasswordFlag = Production['schemas']['CustomerCurrentIdentity']['passwordChangeRequired'];

@@ -34,6 +34,6 @@ public class AuthenticationConfiguration {
     }
     @Bean PlatformSessionPort platformSessionPort(AuthenticationRedis redis,PlatformAuthentication auth,Environment env){return new SaPlatformSessions(redis,auth,env.getRequiredProperty("pet.environment"),number(env,"web-absolute-seconds",28800),number(env,"web-idle-seconds",1800));}
     private int number(Environment env,String name,int fallback){int n=env.getProperty("pet.auth."+name,Integer.class,fallback);if(n<1 || n>604800)throw new IllegalStateException("会话期限配置超出允许范围");return n;}
-    @Bean StaffAuthenticationFilter staffPrincipalProvider(StaffHttpAuthentication auth,PlatformHttpAuthentication platform,@Qualifier("handlerExceptionResolver") HandlerExceptionResolver resolver){return new StaffAuthenticationFilter(auth,platform,resolver);}
+    @Bean StaffAuthenticationFilter staffPrincipalProvider(StaffHttpAuthentication auth,PlatformHttpAuthentication platform,com.pet.platform.customeridentity.application.CustomerHttpAuthentication customer,@Qualifier("handlerExceptionResolver") HandlerExceptionResolver resolver){return new StaffAuthenticationFilter(auth,platform,customer,resolver);}
     @Bean FilterRegistrationBean<StaffAuthenticationFilter> staffAuthenticationRegistration(StaffAuthenticationFilter filter){var r=new FilterRegistrationBean<>(filter);r.setOrder(Ordered.HIGHEST_PRECEDENCE+5);r.setDispatcherTypes(DispatcherType.REQUEST);return r;}
 }

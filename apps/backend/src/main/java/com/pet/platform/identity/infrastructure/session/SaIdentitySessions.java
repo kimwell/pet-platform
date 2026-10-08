@@ -20,7 +20,7 @@ public class SaIdentitySessions<T> implements IdentitySessionPort<T> {
     private final String domain;
     private final int webAbsolute,webIdle,miniAbsolute,miniIdle;
     public SaIdentitySessions(AuthenticationRedis redis,String environment,String domain,java.util.function.Function<State,T> reload,java.util.function.Function<T,State> state,int webAbsolute,int webIdle,int miniAbsolute,int miniIdle) {
-        if(!Set.of("staff","platform").contains(domain))throw new IllegalArgumentException("认证空间未登记");
+        if(!Set.of("staff","platform","customer").contains(domain))throw new IllegalArgumentException("认证空间未登记");
         this.redis=redis;this.domain=domain;this.reload=reload;this.state=state;this.webAbsolute=webAbsolute;this.webIdle=webIdle;this.miniAbsolute=miniAbsolute;this.miniIdle=miniIdle;
         logic=new StpLogic(domain).setConfig(config(environment,domain));
     }
@@ -34,7 +34,7 @@ public class SaIdentitySessions<T> implements IdentitySessionPort<T> {
     }
     public static String random() { byte[] b=new byte[32];new SecureRandom().nextBytes(b);return Base64.getUrlEncoder().withoutPadding().encodeToString(b); }
     @Override public Issued<T> create(T identity,StaffSessionPort.Channel channel) {
-        if(domain.equals("platform") && channel!=StaffSessionPort.Channel.WEB)throw new BusinessException(ErrorCode.AUTH_DOMAIN_MISMATCH);
+        if((domain.equals("platform") && channel!=StaffSessionPort.Channel.WEB) || (domain.equals("customer") && channel!=StaffSessionPort.Channel.MINIPROGRAM))throw new BusinessException(ErrorCode.AUTH_DOMAIN_MISMATCH);
         State original=state.apply(identity);String login=original.principalId().toString();
         return redis.accountLock(domain,digest(login),() -> {
             T currentIdentity=reload.apply(original);State current=state.apply(currentIdentity);

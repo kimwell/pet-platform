@@ -14,6 +14,11 @@
               "SESSION_EXPIRED",
               "SESSION_REVOKED",
               "AUTH_DOMAIN_MISMATCH",
+              "WECHAT_CODE_INVALID",
+              "WECHAT_RESULT_UNCERTAIN",
+              "WECHAT_UPSTREAM_ERROR",
+              "WECHAT_RESPONSE_INVALID",
+              "WECHAT_CONFIGURATION_MISSING",
               "LOGIN_FAILED",
               "PERMISSION_DENIED",
               "SECURITY_CONFIRMATION_FAILED",
@@ -475,6 +480,12 @@
       }
     },
     "securitySchemes": {
+      "CustomerToken": {
+        "description": "Bearer加一个空格再加原始opaque Token；仅客户小程序，无客户Cookie",
+        "in": "header",
+        "name": "X-Customer-Token",
+        "type": "apiKey"
+      },
       "PlatformCookie": {
         "description": "仅PLATFORM WEB；写请求必须独立CSRF及同源来源",
         "in": "cookie",

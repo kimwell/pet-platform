@@ -113,3 +113,20 @@ PlatformCurrentIdentity为实际Java DTO和OpenAPI生成类型：principalType�
 权限代码固定三项；本轮没有多角色管理、平台账号列表/邀请/重置他人、租户CRUD/模拟登录/导出。初始化、安全记录、数据库函数与部署条件见[平台初始化](../development/PLATFORM-BOOTSTRAP.md)，实际证据见[P05-04](../testing/P05-04-VERIFICATION.md)。CUSTOMER模型/微信真实登录仍未实现，不从三端类型通过推导客户认证完成。
 
 P05-04路径安全：API仅接受规范服务器路径；百分号编码/矩阵参数别名400 BAD_REQUEST，不作为免CSRF的登录入口。认证与MVC使用同一服务器路径，平台与员工均适用。
+
+## P05-05 客户正式接口（2026-10-08）
+
+本节替代原冻结表中“微信登录P09/P10”的当前归属：登录后端/客户主体/会话/隔离P05；页面、会话恢复、隐私与授权/真机业务P09；通知、支付、消息P10。客户资料CRUD/手机号、员工微信绑定、UnionID/手机号合并、注销均未实现。
+
+| HTTP与/api/customer/auth前缀 | 输入 / 身份 | 成功data / 副作用 |
+| --- | --- | --- |
+| POST /wechat/login | JSON tenantCode、entryId、code；公共，不接受任何身份Header或客户Cookie | CustomerTokenLoginResult；正式微信绑定定位或注册→CUSTOMER MINIPROGRAM会话；唯一此接口返回raw Token，无Cookie |
+| GET /me | X-Customer-Token: Bearer <原始值> | CustomerCurrentIdentity；真实DB/Redis/绑定/安全版本，不续闲置 |
+| POST /logout | 同客户Token；无需浏览器CSRF | null；只退当前客户设备，重复无效401 |
+| POST /logout-all | 同客户Token；无需客户密码 | null；原子递增客户安全代际，所有旧客户设备失效；X-Session-Cleanup=COMPLETE或PENDING，STAFF/PLATFORM不受影响 |
+
+CustomerCurrentIdentity严格principalType=CUSTOMER，tenantId必填UUID字符串、dataScope必填CustomerScopeData，grants只有customer:session:manage/SELF、authorizedStoreIds为空；principalId为客户ID，不使用employeeId，不返回OpenID/UnionID/session_key或客户完整资料。displayName为中文“微信客户”；授权版本字符串0（无客户可变角色），ID/时间/信封保持冻结协议。CurrentIdentity仍严格STAFF含passwordChangeRequired；PlatformCurrentIdentity仍仅PLATFORM/null租户，三种实际生成模型按principalType组成AuthenticatedIdentity判别union，不把所有字段放宽可空。
+
+CustomerTokenLoginResult={identity:CustomerCurrentIdentity,token:CustomerTokenResult}；token.headerName只X-Customer-Token，value原始opaque Token，客户端请求层添加Bearer。30天绝对/7天闲置、最多5设备；不把微信code/session_key当Token。未知JSON tenantId/OpenID/AppSecret/URL等字段400，非法输入422；无效/已消费code401 WECHAT_CODE_INVALID，未知/停用租户入口或停用客户/绑定401 LOGIN_FAILED；其他错误及频控见[认证](../architecture/AUTHENTICATION.md#p05-05-客户微信认证当前实施2026-10-08)。
+
+WECHAT_RESULT_UNCERTAIN、WECHAT_UPSTREAM_ERROR、WECHAT_RESPONSE_INVALID均503且要求重新获取code，WECHAT_CONFIGURATION_MISSING为503；不透传原始微信响应，不自动重试旧code，不将503作为会话失效。登录20次/分钟来源交换上限、独立60次/分钟入口异常输入限制；429含Retry-After。全部no-store/trace/中文安全错误。重新登录签发独立设备；会话建立失败保留已注册客户，下一新code可安全重试。PENDING代表版本撤销已提交、物理清理待下一合法新登录/原TTL，不自动重放logout-all。

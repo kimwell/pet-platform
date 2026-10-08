@@ -1,0 +1,49 @@
+{
+  "jar": "/Users/kimwell/work/pet-platform/apps/backend/target/pet-platform-backend-0.0.0-SNAPSHOT.jar",
+  "SHA256": "783dce595d9c45fe275db083093b625b9fdfe670debdfb56f030f6bf1ed0581f",
+  "testClassesOrResourcesPackaged": [],
+  "technicalCredentialsOrLocalAppIdInOwnProductionResources": [],
+  "probeEntries": [],
+  "migrations": {
+    "V4__customer_wechat_identity.sql": {
+      "sourceSHA256": "3ba1401c366829ed4468e851705f2e9cf51482a0564c4a32b9321cdac4495ffe",
+      "jarMatches": true
+    },
+    "V2__staff_credential_security.sql": {
+      "sourceSHA256": "51bb4c0a9ec03cb097d8f5dcbe886d8a2ffb5b7020c8f08673f6882c9222d07f",
+      "jarMatches": true
+    },
+    "V1__platform_identity_foundation.sql": {
+      "sourceSHA256": "51d26dc65d695a71d0dc319d77bc98637c5159e7eaa175a15803d9abcd84d436",
+      "jarMatches": true
+    },
+    "V3__platform_administrator.sql": {
+      "sourceSHA256": "c448e62238a079698b9f71fa109ee8c9e95273e007536886baaaa3aaf64626ac",
+      "jarMatches": true
+    }
+  },
+  "protectedFiles": {
+    "pnpm-lock.yaml": {
+      "matchesHEAD": true,
+      "SHA256": "2fd074d15a9c72032eb8b826c8789f792e2dd1bd06a83aa33fbe9b0b74b5b86d"
+    },
+    "AGENTS.md": {
+      "matchesHEAD": true,
+      "SHA256": "d173dc3e030d88ac7434bfdc8d902f6bc9b45a4503d837c4cdc7995558a72761"
+    },
+    "apps/backend/src/main/resources/db/migration/V2__staff_credential_security.sql": {
+      "matchesHEAD": true,
+      "SHA256": "51bb4c0a9ec03cb097d8f5dcbe886d8a2ffb5b7020c8f08673f6882c9222d07f"
+    },
+    "apps/backend/src/main/resources/db/migration/V1__platform_identity_foundation.sql": {
+      "matchesHEAD": true,
+      "SHA256": "51d26dc65d695a71d0dc319d77bc98637c5159e7eaa175a15803d9abcd84d436"
+    },
+    "apps/backend/src/main/resources/db/migration/V3__platform_administrator.sql": {
+      "matchesHEAD": true,
+      "SHA256": "c448e62238a079698b9f71fa109ee8c9e95273e007536886baaaa3aaf64626ac"
+    }
+  },
+  "uiChanges": [],
+  "scope": "检查应用自有生产class/resource；WxJava依赖必须含协议字段，不将字段名等同于秘密值。实际AppSecret未配置，未读取秘密。"
+}

@@ -203,3 +203,34 @@ Web本人改密/全部退出成功即清客户端CSRF/身份与缓存并重新�
 平台与STAFF租户管理员是两个身份域，真实平台初始化值未提供，本轮没有操作日常库或创建实际本地平台管理员。构建后使用scripts/backend-identity.sh platform-bootstrap，单独PET_PLATFORM_BOOTSTRAP_DATABASE_*和受控stdin/Console；完整参数、追加角色脚本及V2→V3顺序见[PLATFORM-BOOTSTRAP](PLATFORM-BOOTSTRAP.md)。不能重复全量旧角色脚本、用应用/租户bootstrap身份或环境开关重置。
 
 六平台接口、Cookie/CSRF、权限与PENDING含义见[IDENTITY](../contracts/IDENTITY.md#p05-04-平台正式接口2026-10-08)。安全表/意图在pet_control，日志不得含密码/哈希/Token/CSRF；PENDING后通过合法本人me/后续安全操作补偿，运维用受控只读连接复核account_id/revoke_before/completed，不向普通业务开放SQL。没有定时补偿/平台账号页面/租户管理CRUD。部署前置及未验证条件以[P05-04](../testing/P05-04-VERIFICATION.md)为准。
+
+## P05-05 客户微信登录本地配置（2026-10-08）
+
+先由数据库管理员在明确目标执行**新增**infra/database/provision-customer-roles.sql，不重跑旧全量角色脚本；再用既有独立迁移命令应用V4。应用运行身份不拥有表、不继承函数owner，无superuser/BYPASSRLS；本轮只在临时容器执行，未操作日常/生产数据库。微信默认关闭且无AppID或秘密默认值。
+
+需要真实本地联调时，在源码之外的受保护本地Spring配置中指定服务端入口（以下仅结构，不是已启用/已联通证据）：
+
+```yaml
+pet:
+  wechat:
+    enabled: true
+    applications:
+      local-mini:
+        version: 1
+        app-id: ${PET_WECHAT_LOCAL_APP_ID}
+        secret-property: PET_WECHAT_LOCAL_SECRET
+        timeout-millis: 3000
+        exchanges-per-minute: 20
+    entries:
+      local-customer:
+        enabled: true
+        application: local-mini
+        tenant-codes:
+          - ${PET_WECHAT_LOCAL_TENANT_CODE}
+```
+
+外部文件只放公开AppID/租户编码/秘密引用，不放AppSecret；通过安全进程环境或秘密配置提供PET_WECHAT_LOCAL_SECRET，不放聊天、源码、参数、报告或前端VITE变量。Java不自动加载.env；显式安全外部Spring配置路径可通过Spring标准机制提供，不打印环境。PET_WECHAT_LOCAL_APP_ID仅在本次明确本地配置设置为已知wx9bcab67d52e2ee04，不作为模板默认；私有小程序AppID不证明持有AppSecret。秘密属性命名限定PET_WECHAT_<标识>_SECRET。
+
+登录JSON只tenantCode/entryId/code；入口必须允许租户且该租户真实ACTIVE。code由已登录且有开发权限的目标DevTools wx.login即时取得；测试专用探针放明确临时目录，不加入正式小程序。按登录→me→logout→me失效分别留证，只记录结果/主体类型/trace与HTTP状态，不保存code/Token/session_key/AppSecret。缺秘密或工具/网络条件记NOT_EXECUTED，不能用外部Gateway测试替身声称真实微信认证。当前真实验证和门禁以[P05-05](../testing/P05-05-VERIFICATION.md)为准。
+
+服务端微信配置静态，版本/秘密更新重启；每客户端只一套应用配置，禁止全局switchover。生产原始SDK/HTTP日志必须OFF；不打开数据库参数、第三方代理请求日志。本轮不开微信支付、手机号、订阅、RabbitMQ/Outbox，不开发P09页面或正式调用。

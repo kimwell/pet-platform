@@ -1,0 +1,22 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ---------------< com.pet.platform:pet-platform-backend >----------------
+[INFO] Building pet-platform-backend 0.0.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- dependency:3.9.0:tree (default-cli) @ pet-platform-backend ---
+[INFO] com.pet.platform:pet-platform-backend:jar:0.0.0-SNAPSHOT
+[INFO] +- com.github.binarywang:weixin-java-miniapp:jar:4.8.0:compile
+[INFO] |  \- com.github.binarywang:weixin-java-common:jar:4.8.0:compile
+[INFO] |     \- commons-io:commons-io:jar:2.14.0:compile
+[INFO] \- org.testcontainers:testcontainers-junit-jupiter:jar:2.0.5:test
+[INFO]    \- org.testcontainers:testcontainers:jar:2.0.5:test (version managed from 2.0.5)
+[INFO]       \- org.apache.commons:commons-compress:jar:1.28.0:test
+[INFO]          \- (commons-io:commons-io:jar:2.20.0:test - omitted for conflict with 2.14.0)
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  1.233 s
+[INFO] Finished at: 2026-10-08T16:16:17+08:00
+[INFO] ------------------------------------------------------------------------

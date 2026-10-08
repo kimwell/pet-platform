@@ -1,0 +1,16 @@
+{
+  "cwd": "/Users/kimwell/work/pet-platform/apps/backend",
+  "argv": [
+    "./mvnw",
+    "clean",
+    "test",
+    "-Dtest=WxJavaGatewayTest,WechatConfigTest,StructureRulesTest,ApplicationTest,ProductionOpenApiExportTest",
+    "failsafe:integration-test",
+    "failsafe:verify",
+    "-Dit.test=CustomerAuthenticationIT,CustomerMigrationIT"
+  ],
+  "exitCode": 1,
+  "startedAtUTC": "2026-10-08T08:18:35.509364+00:00",
+  "finishedAtUTC": "2026-10-08T08:19:13.941125+00:00",
+  "log": "focused-fifth.log"
+}

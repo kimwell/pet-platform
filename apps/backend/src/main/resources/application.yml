@@ -120,3 +120,10 @@ sa-token:
   is-read-header: false
   is-read-cookie: false
   is-write-header: false
+
+# 登录SDK与底层HTTP原始日志可能包含微信秘密，所有环境必须关闭。
+logging:
+  level:
+    cn.binarywang.wx: 'OFF'
+    me.chanjar.weixin: 'OFF'
+    org.apache.http: 'OFF'

@@ -80,3 +80,13 @@ Sa-Token STAFF真实Redis会话是必需安全基础设施，AuthenticationRedis
 ## P05-04 独立控制面输入（2026-10-08）
 
 追加V3及独立NOLOGIN角色预配置脚本，既有V1/V2和冻结依赖不改。平台bootstrap只在独立main读取PET_PLATFORM_BOOTSTRAP_DATABASE_URL/USERNAME/PASSWORD，账号密码通过Console/显式stdin；普通启动没有重置开关。完整顺序及部署条件见[PLATFORM-BOOTSTRAP](../development/PLATFORM-BOOTSTRAP.md)。PLATFORM沿用已有固定来源、Secure/期限/Redis配置，不新增平台小程序、可信代理或跨源开关。runtime权限启动核对扩展pet_control；生产只validate及原独立迁移命令。
+
+## P05-05 微信登录配置与迁移（2026-10-08）
+
+微信登录已在P05安装冻结原始miniapp模块，无支付/starter/RabbitMQ能力；原表将微信整体放P10为冻结历史，本次明确边界把登录后端纳入P05，页面/隐私/会话恢复P09，订阅/支付/消息P10。pet.wechat默认enabled=false且无应用/入口/AppID默认值，关闭时客户登录503 CAPABILITY_DISABLED；已存会话仍按正式权威状态有效性校验（关闭只拒新登录，不自动删身份/会话）。
+
+@ConfigurationProperties绑定服务端静态applications/entries；每应用版本、AppID、安全属性引用、100～10000ms超时、1～20次/分钟来源交换限制，每入口启用/明确application/租户编码白名单；配置上限16应用/64入口。未知或禁用入口401 LOGIN_FAILED，缺秘密503 WECHAT_CONFIGURATION_MISSING，不读取小程序私有配置中的AppSecret。缓存按配置身份/版本/秘密摘要等隔离，配置更新通过安全外部配置及重启，不建设配置后台。来源合计频控与规范以[认证](AUTHENTICATION.md)为准。
+
+cn.binarywang.wx、me.chanjar.weixin、org.apache.http原始日志所有环境OFF；启动拒绝三项级别覆盖。不要启用HTTP wire、请求Body、数据库bind参数或第三方代理的原始日志；本轮应用/产物技术扫描不证明外部基础设施日志配置。使用固定官方URL，客户端不能提供接口URL或选择任意后端配置。
+
+追加provision-customer-roles.sql与V4，不修改V1～V3；生产独立迁移/应用只validate规则不变。新角色只供固定客户函数，运行身份权限启动核验扩展客户表/秘密列。精确依赖兼容修正及来源唯一见[版本矩阵](../development/VERSION-MATRIX.md#p05-05-解析兼容性修正2026-10-08)。安全本地配置与未执行联调条件见[本地开发](../development/LOCAL-DEVELOPMENT.md#p05-05-客户微信登录本地配置2026-10-08)。

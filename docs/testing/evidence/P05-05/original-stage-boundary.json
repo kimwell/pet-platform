@@ -1,0 +1,22 @@
+{
+  "sourceCommit": "60481ce",
+  "lines": {
+    "docs/development/ROADMAP.md": [
+      {
+        "line": 11,
+        "text": "| P05 认证与身份权限 | Sa-Token Redis 会话；平台/员工/客户隔离；角色权限；Cookie/CSRF | P04 | 身份模块、会话契约、权限与安全测试 | 会话失效真实生效；身份跨域拒绝；CSRF 正反例通过 | 真实 Redis、HTTP/Cookie/Token、CSRF、权限集成测试 | NOT_STARTED |"
+      },
+      {
+        "line": 13,
+        "text": "| P07 企业级页面与员工管理 | 官方组件列表/筛选/分页/详情/表单；员工/组织/角色页面 | P04～P06 | 页面模式与基础员工管理 | 服务端授权与数据范围实际生效；创建/修改/停用可验收 | 真实业务基础 API、权限反例、页面可访问性和端到端测试 | NOT_STARTED |"
+      }
+    ],
+    "docs/contracts/IDENTITY.md": [
+      {
+        "line": 41,
+        "text": "客户为微信认证，无密码字段；客户密码修改接口不适用、不生成空实现。员工账号密码重置由identity:user:reset-password管理用例，后续P07声明具体接口；不存在公开任意重置入口。客户phoneCode与登录code不能复用，手机号补充不是登录先决条件；需要手机号的业务显式返回补充要求，不冒充会话失效。"
+      }
+    ]
+  },
+  "currentAuthorization": "2026-10-08 P05-05任务：微信认证后端P05、页面真机P09、通知支付消息P10"
+}

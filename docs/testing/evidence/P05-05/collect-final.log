@@ -1,0 +1,32 @@
+{
+  "tests": {
+    "tests": 421,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "baseline": {
+    "P05-04": {
+      "counts": {
+        "tests": 366,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      "retained": 366,
+      "missing": []
+    },
+    "P05-03": {
+      "counts": {
+        "tests": 328,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      "retained": 328,
+      "missing": []
+    }
+  },
+  "artifactSHA256": "783dce595d9c45fe275db083093b625b9fdfe670debdfb56f030f6bf1ed0581f",
+  "checks": "PASS"
+}

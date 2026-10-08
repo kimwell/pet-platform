@@ -1,0 +1,679 @@
+-------------------------------------------------------------------------------
+Test set: com.pet.testing.identity.IdentityFoundationIT
+-------------------------------------------------------------------------------
+Tests run: 27, Failures: 0, Errors: 27, Skipped: 0, Time elapsed: 3.854 s <<< FAILURE! -- in com.pet.testing.identity.IdentityFoundationIT
+com.pet.testing.identity.IdentityFoundationIT.plaintextNeverStoredAndPasswordInputLifecycleCleared -- Time elapsed: 0.081 s <<< ERROR!
+org.springframework.jdbc.UncategorizedSQLException: 
+StatementCallback; uncategorized SQLException for SQL [TRUNCATE public.identity_security_event,public.identity_session_cleanup,public.identity_employee_store,public.identity_role_permission,public.identity_employee_role,public.identity_role,public.identity_employee,public.platform_store,public.platform_tenant]; SQL state [0A000]; error code [0]; ERROR: cannot truncate a table referenced in a foreign key constraint
+  详细：Table "customer_subject" references "platform_tenant".
+  建议：Truncate table "customer_subject" at the same time, or use TRUNCATE ... CASCADE.
+	at org.springframework.jdbc.core.JdbcTemplate.translateException(JdbcTemplate.java:1550)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:427)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:461)
+	at com.pet.testing.identity.IdentityFoundationIT.reset(IdentityFoundationIT.java:65)
+Caused by: org.postgresql.util.PSQLException: ERROR: cannot truncate a table referenced in a foreign key constraint
+  详细：Table "customer_subject" references "platform_tenant".
+  建议：Truncate table "customer_subject" at the same time, or use TRUNCATE ... CASCADE.
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2993)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2656)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:446)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:533)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:449)
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:371)
+	at org.postgresql.jdbc.PgStatement.executeCachedSql(PgStatement.java:356)
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:332)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:327)
+	at org.springframework.jdbc.core.JdbcTemplate$1ExecuteStatementCallback.doInStatement(JdbcTemplate.java:452)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:412)
+	... 2 more
+
+com.pet.testing.identity.IdentityFoundationIT.emptyStoresAndUnknownPermissionFailClosed -- Time elapsed: 0.068 s <<< ERROR!
+org.springframework.jdbc.UncategorizedSQLException: 
+StatementCallback; uncategorized SQLException for SQL [TRUNCATE public.identity_security_event,public.identity_session_cleanup,public.identity_employee_store,public.identity_role_permission,public.identity_employee_role,public.identity_role,public.identity_employee,public.platform_store,public.platform_tenant]; SQL state [0A000]; error code [0]; ERROR: cannot truncate a table referenced in a foreign key constraint
+  详细：Table "customer_subject" references "platform_tenant".
+  建议：Truncate table "customer_subject" at the same time, or use TRUNCATE ... CASCADE.
+	at org.springframework.jdbc.core.JdbcTemplate.translateException(JdbcTemplate.java:1550)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:427)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:461)
+	at com.pet.testing.identity.IdentityFoundationIT.reset(IdentityFoundationIT.java:65)
+Caused by: org.postgresql.util.PSQLException: ERROR: cannot truncate a table referenced in a foreign key constraint
+  详细：Table "customer_subject" references "platform_tenant".
+  建议：Truncate table "customer_subject" at the same time, or use TRUNCATE ... CASCADE.
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2993)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2656)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:446)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:533)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:449)
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:371)
+	at org.postgresql.jdbc.PgStatement.executeCachedSql(PgStatement.java:356)
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:332)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:327)
+	at org.springframework.jdbc.core.JdbcTemplate$1ExecuteStatementCallback.doInStatement(JdbcTemplate.java:452)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:412)
+	... 2 more
+
+com.pet.testing.identity.IdentityFoundationIT.disabledTenantEmployeeRoleAndStoreAreReflectedByAuthorityLoad -- Time elapsed: 0.066 s <<< ERROR!
+org.springframework.jdbc.UncategorizedSQLException: 
+StatementCallback; uncategorized SQLException for SQL [TRUNCATE public.identity_security_event,public.identity_session_cleanup,public.identity_employee_store,public.identity_role_permission,public.identity_employee_role,public.identity_role,public.identity_employee,public.platform_store,public.platform_tenant]; SQL state [0A000]; error code [0]; ERROR: cannot truncate a table referenced in a foreign key constraint
+  详细：Table "customer_subject" references "platform_tenant".
+  建议：Truncate table "customer_subject" at the same time, or use TRUNCATE ... CASCADE.
+	at org.springframework.jdbc.core.JdbcTemplate.translateException(JdbcTemplate.java:1550)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:427)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:461)
+	at com.pet.testing.identity.IdentityFoundationIT.reset(IdentityFoundationIT.java:65)
+Caused by: org.postgresql.util.PSQLException: ERROR: cannot truncate a table referenced in a foreign key constraint
+  详细：Table "customer_subject" references "platform_tenant".
+  建议：Truncate table "customer_subject" at the same time, or use TRUNCATE ... CASCADE.
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2993)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2656)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:446)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:533)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:449)
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:371)
+	at org.postgresql.jdbc.PgStatement.executeCachedSql(PgStatement.java:356)
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:332)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:327)
+	at org.springframework.jdbc.core.JdbcTemplate$1ExecuteStatementCallback.doInStatement(JdbcTemplate.java:452)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:412)
+	... 2 more
+
+com.pet.testing.identity.IdentityFoundationIT.bootstrapCommandRejectsPrivilegedOrOrdinaryRuntimeLogin -- Time elapsed: 0.075 s <<< ERROR!
+org.springframework.jdbc.UncategorizedSQLException: 
+StatementCallback; uncategorized SQLException for SQL [TRUNCATE public.identity_security_event,public.identity_session_cleanup,public.identity_employee_store,public.identity_role_permission,public.identity_employee_role,public.identity_role,public.identity_employee,public.platform_store,public.platform_tenant]; SQL state [0A000]; error code [0]; ERROR: cannot truncate a table referenced in a foreign key constraint
+  详细：Table "customer_subject" references "platform_tenant".
+  建议：Truncate table "customer_subject" at the same time, or use TRUNCATE ... CASCADE.
+	at org.springframework.jdbc.core.JdbcTemplate.translateException(JdbcTemplate.java:1550)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:427)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:461)
+	at com.pet.testing.identity.IdentityFoundationIT.reset(IdentityFoundationIT.java:65)
+Caused by: org.postgresql.util.PSQLException: ERROR: cannot truncate a table referenced in a foreign key constraint
+  详细：Table "customer_subject" references "platform_tenant".
+  建议：Truncate table "customer_subject" at the same time, or use TRUNCATE ... CASCADE.
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2993)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2656)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:446)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:533)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:449)
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:371)
+	at org.postgresql.jdbc.PgStatement.executeCachedSql(PgStatement.java:356)
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:332)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:327)
+	at org.springframework.jdbc.core.JdbcTemplate$1ExecuteStatementCallback.doInStatement(JdbcTemplate.java:452)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:412)
+	... 2 more
+
+com.pet.testing.identity.IdentityFoundationIT.tenantNormalizationUniqueAndDifferentTenantsShareLogin -- Time elapsed: 0.073 s <<< ERROR!
+org.springframework.jdbc.UncategorizedSQLException: 
+StatementCallback; uncategorized SQLException for SQL [TRUNCATE public.identity_security_event,public.identity_session_cleanup,public.identity_employee_store,public.identity_role_permission,public.identity_employee_role,public.identity_role,public.identity_employee,public.platform_store,public.platform_tenant]; SQL state [0A000]; error code [0]; ERROR: cannot truncate a table referenced in a foreign key constraint
+  详细：Table "customer_subject" references "platform_tenant".
+  建议：Truncate table "customer_subject" at the same time, or use TRUNCATE ... CASCADE.
+	at org.springframework.jdbc.core.JdbcTemplate.translateException(JdbcTemplate.java:1550)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:427)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:461)
+	at com.pet.testing.identity.IdentityFoundationIT.reset(IdentityFoundationIT.java:65)
+Caused by: org.postgresql.util.PSQLException: ERROR: cannot truncate a table referenced in a foreign key constraint
+  详细：Table "customer_subject" references "platform_tenant".
+  建议：Truncate table "customer_subject" at the same time, or use TRUNCATE ... CASCADE.
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2993)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2656)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:446)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:533)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:449)
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:371)
+	at org.postgresql.jdbc.PgStatement.executeCachedSql(PgStatement.java:356)
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:332)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:327)
+	at org.springframework.jdbc.core.JdbcTemplate$1ExecuteStatementCallback.doInStatement(JdbcTemplate.java:452)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:412)
+	... 2 more
+
+com.pet.testing.identity.IdentityFoundationIT.formalRlsWithCheckRejectsForeignInsertAndTenantMoveWithIndependentRead -- Time elapsed: 0.071 s <<< ERROR!
+org.springframework.jdbc.UncategorizedSQLException: 
+StatementCallback; uncategorized SQLException for SQL [TRUNCATE public.identity_security_event,public.identity_session_cleanup,public.identity_employee_store,public.identity_role_permission,public.identity_employee_role,public.identity_role,public.identity_employee,public.platform_store,public.platform_tenant]; SQL state [0A000]; error code [0]; ERROR: cannot truncate a table referenced in a foreign key constraint
+  详细：Table "customer_subject" references "platform_tenant".
+  建议：Truncate table "customer_subject" at the same time, or use TRUNCATE ... CASCADE.
+	at org.springframework.jdbc.core.JdbcTemplate.translateException(JdbcTemplate.java:1550)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:427)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:461)
+	at com.pet.testing.identity.IdentityFoundationIT.reset(IdentityFoundationIT.java:65)
+Caused by: org.postgresql.util.PSQLException: ERROR: cannot truncate a table referenced in a foreign key constraint
+  详细：Table "customer_subject" references "platform_tenant".
+  建议：Truncate table "customer_subject" at the same time, or use TRUNCATE ... CASCADE.
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2993)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2656)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:446)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:533)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:449)
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:371)
+	at org.postgresql.jdbc.PgStatement.executeCachedSql(PgStatement.java:356)
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:332)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:327)
+	at org.springframework.jdbc.core.JdbcTemplate$1ExecuteStatementCallback.doInStatement(JdbcTemplate.java:452)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:412)
+	... 2 more
+
+com.pet.testing.identity.IdentityFoundationIT.concurrentBootstrapHasExactlyOneCompleteAdministrator -- Time elapsed: 0.097 s <<< ERROR!
+org.springframework.jdbc.UncategorizedSQLException: 
+StatementCallback; uncategorized SQLException for SQL [TRUNCATE public.identity_security_event,public.identity_session_cleanup,public.identity_employee_store,public.identity_role_permission,public.identity_employee_role,public.identity_role,public.identity_employee,public.platform_store,public.platform_tenant]; SQL state [0A000]; error code [0]; ERROR: cannot truncate a table referenced in a foreign key constraint
+  详细：Table "customer_subject" references "platform_tenant".
+  建议：Truncate table "customer_subject" at the same time, or use TRUNCATE ... CASCADE.
+	at org.springframework.jdbc.core.JdbcTemplate.translateException(JdbcTemplate.java:1550)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:427)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:461)
+	at com.pet.testing.identity.IdentityFoundationIT.reset(IdentityFoundationIT.java:65)
+Caused by: org.postgresql.util.PSQLException: ERROR: cannot truncate a table referenced in a foreign key constraint
+  详细：Table "customer_subject" references "platform_tenant".
+  建议：Truncate table "customer_subject" at the same time, or use TRUNCATE ... CASCADE.
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2993)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2656)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:446)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:533)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:449)
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:371)
+	at org.postgresql.jdbc.PgStatement.executeCachedSql(PgStatement.java:356)
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:332)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:327)
+	at org.springframework.jdbc.core.JdbcTemplate$1ExecuteStatementCallback.doInStatement(JdbcTemplate.java:452)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:412)
+	... 2 more
+
+com.pet.testing.identity.IdentityFoundationIT.formalMigrationRepeatedAndJpaValidationWithSevenModels -- Time elapsed: 0.069 s <<< ERROR!
+org.springframework.jdbc.UncategorizedSQLException: 
+StatementCallback; uncategorized SQLException for SQL [TRUNCATE public.identity_security_event,public.identity_session_cleanup,public.identity_employee_store,public.identity_role_permission,public.identity_employee_role,public.identity_role,public.identity_employee,public.platform_store,public.platform_tenant]; SQL state [0A000]; error code [0]; ERROR: cannot truncate a table referenced in a foreign key constraint
+  详细：Table "customer_subject" references "platform_tenant".
+  建议：Truncate table "customer_subject" at the same time, or use TRUNCATE ... CASCADE.
+	at org.springframework.jdbc.core.JdbcTemplate.translateException(JdbcTemplate.java:1550)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:427)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:461)
+	at com.pet.testing.identity.IdentityFoundationIT.reset(IdentityFoundationIT.java:65)
+Caused by: org.postgresql.util.PSQLException: ERROR: cannot truncate a table referenced in a foreign key constraint
+  详细：Table "customer_subject" references "platform_tenant".
+  建议：Truncate table "customer_subject" at the same time, or use TRUNCATE ... CASCADE.
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2993)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2656)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:446)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:533)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:449)
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:371)
+	at org.postgresql.jdbc.PgStatement.executeCachedSql(PgStatement.java:356)
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:332)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:327)
+	at org.springframework.jdbc.core.JdbcTemplate$1ExecuteStatementCallback.doInStatement(JdbcTemplate.java:452)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:412)
+	... 2 more
+
+com.pet.testing.identity.IdentityFoundationIT.requestClonesAndClearsPasswordWithoutSerializingIt -- Time elapsed: 0.058 s <<< ERROR!
+org.springframework.jdbc.UncategorizedSQLException: 
+StatementCallback; uncategorized SQLException for SQL [TRUNCATE public.identity_security_event,public.identity_session_cleanup,public.identity_employee_store,public.identity_role_permission,public.identity_employee_role,public.identity_role,public.identity_employee,public.platform_store,public.platform_tenant]; SQL state [0A000]; error code [0]; ERROR: cannot truncate a table referenced in a foreign key constraint
+  详细：Table "customer_subject" references "platform_tenant".
+  建议：Truncate table "customer_subject" at the same time, or use TRUNCATE ... CASCADE.
+	at org.springframework.jdbc.core.JdbcTemplate.translateException(JdbcTemplate.java:1550)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:427)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:461)
+	at com.pet.testing.identity.IdentityFoundationIT.reset(IdentityFoundationIT.java:65)
+Caused by: org.postgresql.util.PSQLException: ERROR: cannot truncate a table referenced in a foreign key constraint
+  详细：Table "customer_subject" references "platform_tenant".
+  建议：Truncate table "customer_subject" at the same time, or use TRUNCATE ... CASCADE.
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2993)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2656)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:446)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:533)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:449)
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:371)
+	at org.postgresql.jdbc.PgStatement.executeCachedSql(PgStatement.java:356)
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:332)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:327)
+	at org.springframework.jdbc.core.JdbcTemplate$1ExecuteStatementCallback.doInStatement(JdbcTemplate.java:452)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:412)
+	... 2 more
+
+com.pet.testing.identity.IdentityFoundationIT.storeProductionBeanAndGuardReadOfficialTenantAndStatus -- Time elapsed: 0.074 s <<< ERROR!
+org.springframework.jdbc.UncategorizedSQLException: 
+StatementCallback; uncategorized SQLException for SQL [TRUNCATE public.identity_security_event,public.identity_session_cleanup,public.identity_employee_store,public.identity_role_permission,public.identity_employee_role,public.identity_role,public.identity_employee,public.platform_store,public.platform_tenant]; SQL state [0A000]; error code [0]; ERROR: cannot truncate a table referenced in a foreign key constraint
+  详细：Table "customer_subject" references "platform_tenant".
+  建议：Truncate table "customer_subject" at the same time, or use TRUNCATE ... CASCADE.
+	at org.springframework.jdbc.core.JdbcTemplate.translateException(JdbcTemplate.java:1550)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:427)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:461)
+	at com.pet.testing.identity.IdentityFoundationIT.reset(IdentityFoundationIT.java:65)
+Caused by: org.postgresql.util.PSQLException: ERROR: cannot truncate a table referenced in a foreign key constraint
+  详细：Table "customer_subject" references "platform_tenant".
+  建议：Truncate table "customer_subject" at the same time, or use TRUNCATE ... CASCADE.
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2993)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2656)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:446)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:533)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:449)
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:371)
+	at org.postgresql.jdbc.PgStatement.executeCachedSql(PgStatement.java:356)
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:332)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:327)
+	at org.springframework.jdbc.core.JdbcTemplate$1ExecuteStatementCallback.doInStatement(JdbcTemplate.java:452)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:412)
+	... 2 more
+
+com.pet.testing.identity.IdentityFoundationIT.authenticationCannotBeHijackedByTemporaryShadowTables -- Time elapsed: 0.065 s <<< ERROR!
+org.springframework.jdbc.UncategorizedSQLException: 
+StatementCallback; uncategorized SQLException for SQL [TRUNCATE public.identity_security_event,public.identity_session_cleanup,public.identity_employee_store,public.identity_role_permission,public.identity_employee_role,public.identity_role,public.identity_employee,public.platform_store,public.platform_tenant]; SQL state [0A000]; error code [0]; ERROR: cannot truncate a table referenced in a foreign key constraint
+  详细：Table "customer_subject" references "platform_tenant".
+  建议：Truncate table "customer_subject" at the same time, or use TRUNCATE ... CASCADE.
+	at org.springframework.jdbc.core.JdbcTemplate.translateException(JdbcTemplate.java:1550)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:427)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:461)
+	at com.pet.testing.identity.IdentityFoundationIT.reset(IdentityFoundationIT.java:65)
+Caused by: org.postgresql.util.PSQLException: ERROR: cannot truncate a table referenced in a foreign key constraint
+  详细：Table "customer_subject" references "platform_tenant".
+  建议：Truncate table "customer_subject" at the same time, or use TRUNCATE ... CASCADE.
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2993)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2656)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:446)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:533)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:449)
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:371)
+	at org.postgresql.jdbc.PgStatement.executeCachedSql(PgStatement.java:356)
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:332)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:327)
+	at org.springframework.jdbc.core.JdbcTemplate$1ExecuteStatementCallback.doInStatement(JdbcTemplate.java:452)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:412)
+	... 2 more
+
+com.pet.testing.identity.IdentityFoundationIT.bootstrapLoginCannotReadTablesOrExecuteAuthentication -- Time elapsed: 0.062 s <<< ERROR!
+org.springframework.jdbc.UncategorizedSQLException: 
+StatementCallback; uncategorized SQLException for SQL [TRUNCATE public.identity_security_event,public.identity_session_cleanup,public.identity_employee_store,public.identity_role_permission,public.identity_employee_role,public.identity_role,public.identity_employee,public.platform_store,public.platform_tenant]; SQL state [0A000]; error code [0]; ERROR: cannot truncate a table referenced in a foreign key constraint
+  详细：Table "customer_subject" references "platform_tenant".
+  建议：Truncate table "customer_subject" at the same time, or use TRUNCATE ... CASCADE.
+	at org.springframework.jdbc.core.JdbcTemplate.translateException(JdbcTemplate.java:1550)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:427)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:461)
+	at com.pet.testing.identity.IdentityFoundationIT.reset(IdentityFoundationIT.java:65)
+Caused by: org.postgresql.util.PSQLException: ERROR: cannot truncate a table referenced in a foreign key constraint
+  详细：Table "customer_subject" references "platform_tenant".
+  建议：Truncate table "customer_subject" at the same time, or use TRUNCATE ... CASCADE.
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2993)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2656)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:446)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:533)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:449)
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:371)
+	at org.postgresql.jdbc.PgStatement.executeCachedSql(PgStatement.java:356)
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:332)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:327)
+	at org.springframework.jdbc.core.JdbcTemplate$1ExecuteStatementCallback.doInStatement(JdbcTemplate.java:452)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:412)
+	... 2 more
+
+com.pet.testing.identity.IdentityFoundationIT.sameTenantUnauthorizedStoreDeniedAfterFactFound -- Time elapsed: 0.069 s <<< ERROR!
+org.springframework.jdbc.UncategorizedSQLException: 
+StatementCallback; uncategorized SQLException for SQL [TRUNCATE public.identity_security_event,public.identity_session_cleanup,public.identity_employee_store,public.identity_role_permission,public.identity_employee_role,public.identity_role,public.identity_employee,public.platform_store,public.platform_tenant]; SQL state [0A000]; error code [0]; ERROR: cannot truncate a table referenced in a foreign key constraint
+  详细：Table "customer_subject" references "platform_tenant".
+  建议：Truncate table "customer_subject" at the same time, or use TRUNCATE ... CASCADE.
+	at org.springframework.jdbc.core.JdbcTemplate.translateException(JdbcTemplate.java:1550)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:427)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:461)
+	at com.pet.testing.identity.IdentityFoundationIT.reset(IdentityFoundationIT.java:65)
+Caused by: org.postgresql.util.PSQLException: ERROR: cannot truncate a table referenced in a foreign key constraint
+  详细：Table "customer_subject" references "platform_tenant".
+  建议：Truncate table "customer_subject" at the same time, or use TRUNCATE ... CASCADE.
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2993)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2656)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:446)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:533)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:449)
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:371)
+	at org.postgresql.jdbc.PgStatement.executeCachedSql(PgStatement.java:356)
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:332)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:327)
+	at org.springframework.jdbc.core.JdbcTemplate$1ExecuteStatementCallback.doInStatement(JdbcTemplate.java:452)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:412)
+	... 2 more
+
+com.pet.testing.identity.IdentityFoundationIT.noRealSessionDoesNotCreatePrincipalAndBootstrapNotSpringBean -- Time elapsed: 0.060 s <<< ERROR!
+org.springframework.jdbc.UncategorizedSQLException: 
+StatementCallback; uncategorized SQLException for SQL [TRUNCATE public.identity_security_event,public.identity_session_cleanup,public.identity_employee_store,public.identity_role_permission,public.identity_employee_role,public.identity_role,public.identity_employee,public.platform_store,public.platform_tenant]; SQL state [0A000]; error code [0]; ERROR: cannot truncate a table referenced in a foreign key constraint
+  详细：Table "customer_subject" references "platform_tenant".
+  建议：Truncate table "customer_subject" at the same time, or use TRUNCATE ... CASCADE.
+	at org.springframework.jdbc.core.JdbcTemplate.translateException(JdbcTemplate.java:1550)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:427)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:461)
+	at com.pet.testing.identity.IdentityFoundationIT.reset(IdentityFoundationIT.java:65)
+Caused by: org.postgresql.util.PSQLException: ERROR: cannot truncate a table referenced in a foreign key constraint
+  详细：Table "customer_subject" references "platform_tenant".
+  建议：Truncate table "customer_subject" at the same time, or use TRUNCATE ... CASCADE.
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2993)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2656)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:446)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:533)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:449)
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:371)
+	at org.postgresql.jdbc.PgStatement.executeCachedSql(PgStatement.java:356)
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:332)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:327)
+	at org.springframework.jdbc.core.JdbcTemplate$1ExecuteStatementCallback.doInStatement(JdbcTemplate.java:452)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:412)
+	... 2 more
+
+com.pet.testing.identity.IdentityFoundationIT.perPermissionRoleUnionDoesNotEnlargeOtherPermissions -- Time elapsed: 0.068 s <<< ERROR!
+org.springframework.jdbc.UncategorizedSQLException: 
+StatementCallback; uncategorized SQLException for SQL [TRUNCATE public.identity_security_event,public.identity_session_cleanup,public.identity_employee_store,public.identity_role_permission,public.identity_employee_role,public.identity_role,public.identity_employee,public.platform_store,public.platform_tenant]; SQL state [0A000]; error code [0]; ERROR: cannot truncate a table referenced in a foreign key constraint
+  详细：Table "customer_subject" references "platform_tenant".
+  建议：Truncate table "customer_subject" at the same time, or use TRUNCATE ... CASCADE.
+	at org.springframework.jdbc.core.JdbcTemplate.translateException(JdbcTemplate.java:1550)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:427)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:461)
+	at com.pet.testing.identity.IdentityFoundationIT.reset(IdentityFoundationIT.java:65)
+Caused by: org.postgresql.util.PSQLException: ERROR: cannot truncate a table referenced in a foreign key constraint
+  详细：Table "customer_subject" references "platform_tenant".
+  建议：Truncate table "customer_subject" at the same time, or use TRUNCATE ... CASCADE.
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2993)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2656)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:446)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:533)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:449)
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:371)
+	at org.postgresql.jdbc.PgStatement.executeCachedSql(PgStatement.java:356)
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:332)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:327)
+	at org.springframework.jdbc.core.JdbcTemplate$1ExecuteStatementCallback.doInStatement(JdbcTemplate.java:452)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:412)
+	... 2 more
+
+com.pet.testing.identity.IdentityFoundationIT.explicitPackagedCommandsMigrateBootstrapAndConflictWithSafeOutput -- Time elapsed: 0.068 s <<< ERROR!
+org.springframework.jdbc.UncategorizedSQLException: 
+StatementCallback; uncategorized SQLException for SQL [TRUNCATE public.identity_security_event,public.identity_session_cleanup,public.identity_employee_store,public.identity_role_permission,public.identity_employee_role,public.identity_role,public.identity_employee,public.platform_store,public.platform_tenant]; SQL state [0A000]; error code [0]; ERROR: cannot truncate a table referenced in a foreign key constraint
+  详细：Table "customer_subject" references "platform_tenant".
+  建议：Truncate table "customer_subject" at the same time, or use TRUNCATE ... CASCADE.
+	at org.springframework.jdbc.core.JdbcTemplate.translateException(JdbcTemplate.java:1550)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:427)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:461)
+	at com.pet.testing.identity.IdentityFoundationIT.reset(IdentityFoundationIT.java:65)
+Caused by: org.postgresql.util.PSQLException: ERROR: cannot truncate a table referenced in a foreign key constraint
+  详细：Table "customer_subject" references "platform_tenant".
+  建议：Truncate table "customer_subject" at the same time, or use TRUNCATE ... CASCADE.
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2993)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2656)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:446)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:533)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:449)
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:371)
+	at org.postgresql.jdbc.PgStatement.executeCachedSql(PgStatement.java:356)
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:332)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:327)
+	at org.springframework.jdbc.core.JdbcTemplate$1ExecuteStatementCallback.doInStatement(JdbcTemplate.java:452)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:412)
+	... 2 more
+
+com.pet.testing.identity.IdentityFoundationIT.unavailableStoreSourceIsDependencyFailureWithoutGuardRecursion -- Time elapsed: 0.060 s <<< ERROR!
+org.springframework.jdbc.UncategorizedSQLException: 
+StatementCallback; uncategorized SQLException for SQL [TRUNCATE public.identity_security_event,public.identity_session_cleanup,public.identity_employee_store,public.identity_role_permission,public.identity_employee_role,public.identity_role,public.identity_employee,public.platform_store,public.platform_tenant]; SQL state [0A000]; error code [0]; ERROR: cannot truncate a table referenced in a foreign key constraint
+  详细：Table "customer_subject" references "platform_tenant".
+  建议：Truncate table "customer_subject" at the same time, or use TRUNCATE ... CASCADE.
+	at org.springframework.jdbc.core.JdbcTemplate.translateException(JdbcTemplate.java:1550)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:427)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:461)
+	at com.pet.testing.identity.IdentityFoundationIT.reset(IdentityFoundationIT.java:65)
+Caused by: org.postgresql.util.PSQLException: ERROR: cannot truncate a table referenced in a foreign key constraint
+  详细：Table "customer_subject" references "platform_tenant".
+  建议：Truncate table "customer_subject" at the same time, or use TRUNCATE ... CASCADE.
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2993)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2656)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:446)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:533)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:449)
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:371)
+	at org.postgresql.jdbc.PgStatement.executeCachedSql(PgStatement.java:356)
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:332)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:327)
+	at org.springframework.jdbc.core.JdbcTemplate$1ExecuteStatementCallback.doInStatement(JdbcTemplate.java:452)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:412)
+	... 2 more
+
+com.pet.testing.identity.IdentityFoundationIT.commandRejectsPasswordArgumentAndMissingConsoleBeforeDatabase -- Time elapsed: 0.069 s <<< ERROR!
+org.springframework.jdbc.UncategorizedSQLException: 
+StatementCallback; uncategorized SQLException for SQL [TRUNCATE public.identity_security_event,public.identity_session_cleanup,public.identity_employee_store,public.identity_role_permission,public.identity_employee_role,public.identity_role,public.identity_employee,public.platform_store,public.platform_tenant]; SQL state [0A000]; error code [0]; ERROR: cannot truncate a table referenced in a foreign key constraint
+  详细：Table "customer_subject" references "platform_tenant".
+  建议：Truncate table "customer_subject" at the same time, or use TRUNCATE ... CASCADE.
+	at org.springframework.jdbc.core.JdbcTemplate.translateException(JdbcTemplate.java:1550)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:427)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:461)
+	at com.pet.testing.identity.IdentityFoundationIT.reset(IdentityFoundationIT.java:65)
+Caused by: org.postgresql.util.PSQLException: ERROR: cannot truncate a table referenced in a foreign key constraint
+  详细：Table "customer_subject" references "platform_tenant".
+  建议：Truncate table "customer_subject" at the same time, or use TRUNCATE ... CASCADE.
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2993)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2656)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:446)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:533)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:449)
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:371)
+	at org.postgresql.jdbc.PgStatement.executeCachedSql(PgStatement.java:356)
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:332)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:327)
+	at org.springframework.jdbc.core.JdbcTemplate$1ExecuteStatementCallback.doInStatement(JdbcTemplate.java:452)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:412)
+	... 2 more
+
+com.pet.testing.identity.IdentityFoundationIT.bootstrapRelationsCompleteAndOptionalStoreReallyOptional -- Time elapsed: 0.063 s <<< ERROR!
+org.springframework.jdbc.UncategorizedSQLException: 
+StatementCallback; uncategorized SQLException for SQL [TRUNCATE public.identity_security_event,public.identity_session_cleanup,public.identity_employee_store,public.identity_role_permission,public.identity_employee_role,public.identity_role,public.identity_employee,public.platform_store,public.platform_tenant]; SQL state [0A000]; error code [0]; ERROR: cannot truncate a table referenced in a foreign key constraint
+  详细：Table "customer_subject" references "platform_tenant".
+  建议：Truncate table "customer_subject" at the same time, or use TRUNCATE ... CASCADE.
+	at org.springframework.jdbc.core.JdbcTemplate.translateException(JdbcTemplate.java:1550)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:427)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:461)
+	at com.pet.testing.identity.IdentityFoundationIT.reset(IdentityFoundationIT.java:65)
+Caused by: org.postgresql.util.PSQLException: ERROR: cannot truncate a table referenced in a foreign key constraint
+  详细：Table "customer_subject" references "platform_tenant".
+  建议：Truncate table "customer_subject" at the same time, or use TRUNCATE ... CASCADE.
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2993)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2656)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:446)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:533)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:449)
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:371)
+	at org.postgresql.jdbc.PgStatement.executeCachedSql(PgStatement.java:356)
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:332)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:327)
+	at org.springframework.jdbc.core.JdbcTemplate$1ExecuteStatementCallback.doInStatement(JdbcTemplate.java:452)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:412)
+	... 2 more
+
+com.pet.testing.identity.IdentityFoundationIT.bootstrapIntermediateFailureRollsBackAllTablesIndependentConnection -- Time elapsed: 0.056 s <<< ERROR!
+org.springframework.jdbc.UncategorizedSQLException: 
+StatementCallback; uncategorized SQLException for SQL [TRUNCATE public.identity_security_event,public.identity_session_cleanup,public.identity_employee_store,public.identity_role_permission,public.identity_employee_role,public.identity_role,public.identity_employee,public.platform_store,public.platform_tenant]; SQL state [0A000]; error code [0]; ERROR: cannot truncate a table referenced in a foreign key constraint
+  详细：Table "customer_subject" references "platform_tenant".
+  建议：Truncate table "customer_subject" at the same time, or use TRUNCATE ... CASCADE.
+	at org.springframework.jdbc.core.JdbcTemplate.translateException(JdbcTemplate.java:1550)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:427)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:461)
+	at com.pet.testing.identity.IdentityFoundationIT.reset(IdentityFoundationIT.java:65)
+Caused by: org.postgresql.util.PSQLException: ERROR: cannot truncate a table referenced in a foreign key constraint
+  详细：Table "customer_subject" references "platform_tenant".
+  建议：Truncate table "customer_subject" at the same time, or use TRUNCATE ... CASCADE.
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2993)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2656)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:446)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:533)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:449)
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:371)
+	at org.postgresql.jdbc.PgStatement.executeCachedSql(PgStatement.java:356)
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:332)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:327)
+	at org.springframework.jdbc.core.JdbcTemplate$1ExecuteStatementCallback.doInStatement(JdbcTemplate.java:452)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:412)
+	... 2 more
+
+com.pet.testing.identity.IdentityFoundationIT.roleAndStoreCompositeReferencesRejectForeignTenantAndRestrictDelete -- Time elapsed: 0.065 s <<< ERROR!
+org.springframework.jdbc.UncategorizedSQLException: 
+StatementCallback; uncategorized SQLException for SQL [TRUNCATE public.identity_security_event,public.identity_session_cleanup,public.identity_employee_store,public.identity_role_permission,public.identity_employee_role,public.identity_role,public.identity_employee,public.platform_store,public.platform_tenant]; SQL state [0A000]; error code [0]; ERROR: cannot truncate a table referenced in a foreign key constraint
+  详细：Table "customer_subject" references "platform_tenant".
+  建议：Truncate table "customer_subject" at the same time, or use TRUNCATE ... CASCADE.
+	at org.springframework.jdbc.core.JdbcTemplate.translateException(JdbcTemplate.java:1550)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:427)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:461)
+	at com.pet.testing.identity.IdentityFoundationIT.reset(IdentityFoundationIT.java:65)
+Caused by: org.postgresql.util.PSQLException: ERROR: cannot truncate a table referenced in a foreign key constraint
+  详细：Table "customer_subject" references "platform_tenant".
+  建议：Truncate table "customer_subject" at the same time, or use TRUNCATE ... CASCADE.
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2993)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2656)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:446)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:533)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:449)
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:371)
+	at org.postgresql.jdbc.PgStatement.executeCachedSql(PgStatement.java:356)
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:332)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:327)
+	at org.springframework.jdbc.core.JdbcTemplate$1ExecuteStatementCallback.doInStatement(JdbcTemplate.java:452)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:412)
+	... 2 more
+
+com.pet.testing.identity.IdentityFoundationIT.runtimeRlsNoContextNoForeignTenantAndCredentialColumnDenied -- Time elapsed: 0.054 s <<< ERROR!
+org.springframework.jdbc.UncategorizedSQLException: 
+StatementCallback; uncategorized SQLException for SQL [TRUNCATE public.identity_security_event,public.identity_session_cleanup,public.identity_employee_store,public.identity_role_permission,public.identity_employee_role,public.identity_role,public.identity_employee,public.platform_store,public.platform_tenant]; SQL state [0A000]; error code [0]; ERROR: cannot truncate a table referenced in a foreign key constraint
+  详细：Table "customer_subject" references "platform_tenant".
+  建议：Truncate table "customer_subject" at the same time, or use TRUNCATE ... CASCADE.
+	at org.springframework.jdbc.core.JdbcTemplate.translateException(JdbcTemplate.java:1550)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:427)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:461)
+	at com.pet.testing.identity.IdentityFoundationIT.reset(IdentityFoundationIT.java:65)
+Caused by: org.postgresql.util.PSQLException: ERROR: cannot truncate a table referenced in a foreign key constraint
+  详细：Table "customer_subject" references "platform_tenant".
+  建议：Truncate table "customer_subject" at the same time, or use TRUNCATE ... CASCADE.
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2993)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2656)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:446)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:533)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:449)
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:371)
+	at org.postgresql.jdbc.PgStatement.executeCachedSql(PgStatement.java:356)
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:332)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:327)
+	at org.springframework.jdbc.core.JdbcTemplate$1ExecuteStatementCallback.doInStatement(JdbcTemplate.java:452)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:412)
+	... 2 more
+
+com.pet.testing.identity.IdentityFoundationIT.authenticationFunctionsOwnedByMinimalNoLoginRolesAndNotPublic -- Time elapsed: 0.055 s <<< ERROR!
+org.springframework.jdbc.UncategorizedSQLException: 
+StatementCallback; uncategorized SQLException for SQL [TRUNCATE public.identity_security_event,public.identity_session_cleanup,public.identity_employee_store,public.identity_role_permission,public.identity_employee_role,public.identity_role,public.identity_employee,public.platform_store,public.platform_tenant]; SQL state [0A000]; error code [0]; ERROR: cannot truncate a table referenced in a foreign key constraint
+  详细：Table "customer_subject" references "platform_tenant".
+  建议：Truncate table "customer_subject" at the same time, or use TRUNCATE ... CASCADE.
+	at org.springframework.jdbc.core.JdbcTemplate.translateException(JdbcTemplate.java:1550)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:427)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:461)
+	at com.pet.testing.identity.IdentityFoundationIT.reset(IdentityFoundationIT.java:65)
+Caused by: org.postgresql.util.PSQLException: ERROR: cannot truncate a table referenced in a foreign key constraint
+  详细：Table "customer_subject" references "platform_tenant".
+  建议：Truncate table "customer_subject" at the same time, or use TRUNCATE ... CASCADE.
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2993)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2656)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:446)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:533)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:449)
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:371)
+	at org.postgresql.jdbc.PgStatement.executeCachedSql(PgStatement.java:356)
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:332)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:327)
+	at org.springframework.jdbc.core.JdbcTemplate$1ExecuteStatementCallback.doInStatement(JdbcTemplate.java:452)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:412)
+	... 2 more
+
+com.pet.testing.identity.IdentityFoundationIT.sameTenantLoginUniquenessAndCanonicalDatabaseConstraint -- Time elapsed: 0.054 s <<< ERROR!
+org.springframework.jdbc.UncategorizedSQLException: 
+StatementCallback; uncategorized SQLException for SQL [TRUNCATE public.identity_security_event,public.identity_session_cleanup,public.identity_employee_store,public.identity_role_permission,public.identity_employee_role,public.identity_role,public.identity_employee,public.platform_store,public.platform_tenant]; SQL state [0A000]; error code [0]; ERROR: cannot truncate a table referenced in a foreign key constraint
+  详细：Table "customer_subject" references "platform_tenant".
+  建议：Truncate table "customer_subject" at the same time, or use TRUNCATE ... CASCADE.
+	at org.springframework.jdbc.core.JdbcTemplate.translateException(JdbcTemplate.java:1550)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:427)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:461)
+	at com.pet.testing.identity.IdentityFoundationIT.reset(IdentityFoundationIT.java:65)
+Caused by: org.postgresql.util.PSQLException: ERROR: cannot truncate a table referenced in a foreign key constraint
+  详细：Table "customer_subject" references "platform_tenant".
+  建议：Truncate table "customer_subject" at the same time, or use TRUNCATE ... CASCADE.
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2993)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2656)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:446)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:533)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:449)
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:371)
+	at org.postgresql.jdbc.PgStatement.executeCachedSql(PgStatement.java:356)
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:332)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:327)
+	at org.springframework.jdbc.core.JdbcTemplate$1ExecuteStatementCallback.doInStatement(JdbcTemplate.java:452)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:412)
+	... 2 more
+
+com.pet.testing.identity.IdentityFoundationIT.bootstrapRepeatDoesNotChangeHashPermissionsOrRepairHalfState -- Time elapsed: 0.059 s <<< ERROR!
+org.springframework.jdbc.UncategorizedSQLException: 
+StatementCallback; uncategorized SQLException for SQL [TRUNCATE public.identity_security_event,public.identity_session_cleanup,public.identity_employee_store,public.identity_role_permission,public.identity_employee_role,public.identity_role,public.identity_employee,public.platform_store,public.platform_tenant]; SQL state [0A000]; error code [0]; ERROR: cannot truncate a table referenced in a foreign key constraint
+  详细：Table "customer_subject" references "platform_tenant".
+  建议：Truncate table "customer_subject" at the same time, or use TRUNCATE ... CASCADE.
+	at org.springframework.jdbc.core.JdbcTemplate.translateException(JdbcTemplate.java:1550)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:427)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:461)
+	at com.pet.testing.identity.IdentityFoundationIT.reset(IdentityFoundationIT.java:65)
+Caused by: org.postgresql.util.PSQLException: ERROR: cannot truncate a table referenced in a foreign key constraint
+  详细：Table "customer_subject" references "platform_tenant".
+  建议：Truncate table "customer_subject" at the same time, or use TRUNCATE ... CASCADE.
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2993)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2656)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:446)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:533)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:449)
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:371)
+	at org.postgresql.jdbc.PgStatement.executeCachedSql(PgStatement.java:356)
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:332)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:327)
+	at org.springframework.jdbc.core.JdbcTemplate$1ExecuteStatementCallback.doInStatement(JdbcTemplate.java:452)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:412)
+	... 2 more
+
+com.pet.testing.identity.IdentityFoundationIT.authenticationBeforeContextReturnsMinimalCredentialWithoutSerialization -- Time elapsed: 0.066 s <<< ERROR!
+org.springframework.jdbc.UncategorizedSQLException: 
+StatementCallback; uncategorized SQLException for SQL [TRUNCATE public.identity_security_event,public.identity_session_cleanup,public.identity_employee_store,public.identity_role_permission,public.identity_employee_role,public.identity_role,public.identity_employee,public.platform_store,public.platform_tenant]; SQL state [0A000]; error code [0]; ERROR: cannot truncate a table referenced in a foreign key constraint
+  详细：Table "customer_subject" references "platform_tenant".
+  建议：Truncate table "customer_subject" at the same time, or use TRUNCATE ... CASCADE.
+	at org.springframework.jdbc.core.JdbcTemplate.translateException(JdbcTemplate.java:1550)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:427)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:461)
+	at com.pet.testing.identity.IdentityFoundationIT.reset(IdentityFoundationIT.java:65)
+Caused by: org.postgresql.util.PSQLException: ERROR: cannot truncate a table referenced in a foreign key constraint
+  详细：Table "customer_subject" references "platform_tenant".
+  建议：Truncate table "customer_subject" at the same time, or use TRUNCATE ... CASCADE.
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2993)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2656)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:446)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:533)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:449)
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:371)
+	at org.postgresql.jdbc.PgStatement.executeCachedSql(PgStatement.java:356)
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:332)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:327)
+	at org.springframework.jdbc.core.JdbcTemplate$1ExecuteStatementCallback.doInStatement(JdbcTemplate.java:452)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:412)
+	... 2 more
+
+com.pet.testing.identity.IdentityFoundationIT.runtimeStartupCheckRejectsCredentialAccessAndBootstrapMembership -- Time elapsed: 0.057 s <<< ERROR!
+org.springframework.jdbc.UncategorizedSQLException: 
+StatementCallback; uncategorized SQLException for SQL [TRUNCATE public.identity_security_event,public.identity_session_cleanup,public.identity_employee_store,public.identity_role_permission,public.identity_employee_role,public.identity_role,public.identity_employee,public.platform_store,public.platform_tenant]; SQL state [0A000]; error code [0]; ERROR: cannot truncate a table referenced in a foreign key constraint
+  详细：Table "customer_subject" references "platform_tenant".
+  建议：Truncate table "customer_subject" at the same time, or use TRUNCATE ... CASCADE.
+	at org.springframework.jdbc.core.JdbcTemplate.translateException(JdbcTemplate.java:1550)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:427)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:461)
+	at com.pet.testing.identity.IdentityFoundationIT.reset(IdentityFoundationIT.java:65)
+Caused by: org.postgresql.util.PSQLException: ERROR: cannot truncate a table referenced in a foreign key constraint
+  详细：Table "customer_subject" references "platform_tenant".
+  建议：Truncate table "customer_subject" at the same time, or use TRUNCATE ... CASCADE.
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2993)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2656)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:446)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:533)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:449)
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:371)
+	at org.postgresql.jdbc.PgStatement.executeCachedSql(PgStatement.java:356)
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:332)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:327)
+	at org.springframework.jdbc.core.JdbcTemplate$1ExecuteStatementCallback.doInStatement(JdbcTemplate.java:452)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:412)
+	... 2 more
+

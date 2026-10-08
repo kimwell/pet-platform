@@ -62,7 +62,7 @@ class IdentityFoundationIT {
     @BeforeEach void reset() {
         owner=new JdbcTemplate(new DriverManagerDataSource(POSTGRES.getJdbcUrl(),POSTGRES.getUsername(),POSTGRES.getPassword()));
         owner.execute("DROP TRIGGER IF EXISTS p05_fail_permission ON public.identity_role_permission");
-        owner.execute("TRUNCATE public.identity_security_event,public.identity_session_cleanup,public.identity_employee_store,public.identity_role_permission,public.identity_employee_role,public.identity_role,public.identity_employee,public.platform_store,public.platform_tenant");
+        owner.execute("TRUNCATE pet_customer.security_event,public.customer_wechat_binding,public.customer_subject,public.identity_security_event,public.identity_session_cleanup,public.identity_employee_store,public.identity_role_permission,public.identity_employee_role,public.identity_role,public.identity_employee,public.platform_store,public.platform_tenant");
         assertTrue(TenantContextHolder.current().isEmpty());
     }
     @AfterEach void record(TestInfo info) throws Exception {
@@ -101,7 +101,7 @@ class IdentityFoundationIT {
         grants.forEach((permission,scope) -> owner.update("insert into public.identity_role_permission(id,tenant_id,role_id,permission_code,scope_type) values (?,?,?,?,?)",UUID.randomUUID(),staff.tenantId(),id,permission,scope));return id;
     }
     @Test void formalMigrationRepeatedAndJpaValidationWithSevenModels() {
-        assertEquals(8,factory.getMetamodel().getEntities().size());assertEquals(3,flyway.info().applied().length);
+        assertEquals(10,factory.getMetamodel().getEntities().size());assertEquals(4,flyway.info().applied().length);
         assertEquals(0,flyway.migrate().migrationsExecuted);assertTrue(flyway.validateWithResult().validationSuccessful);
         assertEquals(7,owner.queryForObject("select count(*) from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname='public' and c.relname in ('platform_tenant','platform_store','identity_employee','identity_role','identity_employee_role','identity_role_permission','identity_employee_store') and c.relrowsecurity and c.relforcerowsecurity and c.relowner='pet_migrator'::regrole",Integer.class));
     }

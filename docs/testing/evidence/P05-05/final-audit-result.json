@@ -1,0 +1,11 @@
+{
+  "status": "PASS",
+  "missingLocalLinks": [],
+  "priorEvidenceChanges": [],
+  "missingCoverageNames": [],
+  "secretValuePatternsInCommandLogs": [],
+  "diffCheckExitCode": 0,
+  "diffCheckOutput": "",
+  "sourceChangedFiles": 66,
+  "limits": "日志扫描是已知秘密/Token/SDK请求模式检查，不证明外部日志基础设施；不读取实际秘密或历史私有配置。"
+}

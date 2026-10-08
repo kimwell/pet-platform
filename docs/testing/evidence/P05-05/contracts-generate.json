@@ -1,0 +1,11 @@
+{
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "argv": [
+    "pnpm",
+    "contracts:generate"
+  ],
+  "exitCode": 1,
+  "startedAtUTC": "2026-10-08T08:25:15.643998+00:00",
+  "finishedAtUTC": "2026-10-08T08:25:32.294522+00:00",
+  "log": "contracts-generate.log"
+}

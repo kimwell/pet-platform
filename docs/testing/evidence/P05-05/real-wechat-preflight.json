@@ -1,0 +1,11 @@
+{
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "argv": [
+    "python3",
+    "docs/testing/evidence/P05-05/real-wechat-preflight.py"
+  ],
+  "exitCode": 0,
+  "startedAtUTC": "2026-10-08T08:26:55.926095+00:00",
+  "finishedAtUTC": "2026-10-08T08:26:55.956681+00:00",
+  "log": "real-wechat-preflight.log"
+}

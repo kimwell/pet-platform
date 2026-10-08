@@ -226,3 +226,13 @@
 - 完成结果、门禁及原始失败保留于[P05-04验证](../testing/P05-04-VERIFICATION.md)。P05仍IN_PROGRESS；下一建议P05-05需后续明确授权，先冻结客户身份owner及微信真实认证的边界/外部依赖，不自动执行。
 
 P05-04补充安全修复：真实编码登录路径无CSRF探针观察到200，原始URI判定与MVC解码路由存在不一致。将两域与唯一过滤器统一为服务器规范路径，并拒绝API编码/矩阵参数别名；不改变正常端点/认证载体/契约。真实回归同时覆盖平台和员工，前置机制局限及失败记录保留于P05-04报告。
+
+## P05-05 决策与阶段边界（2026-10-08）
+
+- 本轮明确授权覆盖AGENTS旧P02范围。客户主体/绑定、微信登录后端、CUSTOMER会话/隔离归P05；P09负责页面/恢复/隐私授权/真机业务，P10负责订阅/支付/RabbitMQ/Outbox；不自动推进或提交/推送/部署。
+- customeridentity独立owner。当前一主体一绑定，(租户,AppID,OpenID)唯一及复合FK，首次注册子事务只处理准确唯一冲突。共享AppID跨租户独立注册；入口白名单是服务端准入策略，tenantCode不是强身份凭据。不保存无用途UnionID或session_key，不自动合并/收手机号。
+- 复用现有Sa-Token/Redis引擎与唯一Provider，客户仅MINIPROGRAM Header/SELF，30天/7天/5设备；三域同UUID仍隔离。保留契约logout-all，数据库代际先失效，PENDING物理记录由下一新登录或原TTL收口；客户异步明确403拒绝，无Servlet ASYNC扩展。
+- 冻结WxJava4.8.0普通get有access_token/重试/原始日志路径，采用专用固定URL单次官方执行器；HTTP无重试/重定向，结果不确定需新code，按配置身份/版本缓存。原始SDK/HTTP日志OFF，不透传上游错误。
+- 实际WxJava解析commons-io2.14.0与Testcontainers/commons-compress冲突，保留失败并恢复原已解析commons-io2.20.0，不改冻结SDK/BOM体系；唯一版本事实见矩阵。
+- 原路线P05“角色权限”和A05-04仍保留，正式权威加载/每请求撤销已验；原P07明确员工/角色页面及真业务创建/修改/停用API验收，IDENTITY原账号管理也归P07。完整管理API尚未实现，不能称作已经交付；P05验收仍保留真实微信缺口，不凭三域类型/本地替身关闭阶段。详见[P05总验收](../testing/P05-ACCEPTANCE.md)。
+- 真实微信仅在秘密安全配置及新鲜code可获得时执行；本轮未配置，不读无关秘密/私有配置推断秘密。自动化Gateway替身仅src/test，不以本地流程证明微信认证；P05-05/P05最终状态以实际门禁报告为准。

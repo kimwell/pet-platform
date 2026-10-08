@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.pet.testing.authentication.CustomerAuthenticationIT
+-------------------------------------------------------------------------------
+Tests run: 39, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.804 s -- in com.pet.testing.authentication.CustomerAuthenticationIT

@@ -1,0 +1,11 @@
+{
+  "cwd": "/Users/kimwell/work/pet-platform/apps/backend",
+  "argv": [
+    "./mvnw",
+    "-v"
+  ],
+  "exitCode": 0,
+  "startedAtUTC": "2026-10-08T08:33:40.177069+00:00",
+  "finishedAtUTC": "2026-10-08T08:33:41.574712+00:00",
+  "log": "maven-version.log"
+}

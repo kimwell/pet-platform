@@ -1,0 +1,13 @@
+{
+  "cwd": "/Users/kimwell/work/pet-platform/apps/backend",
+  "argv": [
+    "./mvnw",
+    "dependency:tree",
+    "-Dincludes=commons-io:commons-io,org.apache.commons:commons-compress",
+    "-Dverbose"
+  ],
+  "exitCode": 0,
+  "startedAtUTC": "2026-10-08T08:16:15.485289+00:00",
+  "finishedAtUTC": "2026-10-08T08:16:17.976498+00:00",
+  "log": "dependency-conflict.log"
+}

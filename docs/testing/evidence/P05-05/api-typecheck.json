@@ -1,0 +1,11 @@
+{
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "argv": [
+    "pnpm",
+    "contracts:typecheck"
+  ],
+  "exitCode": 0,
+  "startedAtUTC": "2026-10-08T08:27:11.261343+00:00",
+  "finishedAtUTC": "2026-10-08T08:27:13.158036+00:00",
+  "log": "api-typecheck.log"
+}

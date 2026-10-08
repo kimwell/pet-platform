@@ -20,11 +20,12 @@
 | A04-05 | redis / P04-03 | tenant/store/platform命名空间、无上下文/门店/跨范围拒绝、编码/TTL/实际CRUD/故障、授权结果缓存限制 | 独立认证Redis实际读写/TTL/故障与健康HTTP；raw命中重验，过滤结果禁止；[P04-03](P04-03-VERIFICATION.md) | [REDIS](../conventions/REDIS.md) |
 | A04-06 | tenancy / P04-03 | 不可伪造快照、同线程A/B/无身份、异常/MDC、拒绝/取消/停止/期限、异步新事务/连接复用 | 确定性Latch/屏障/时钟及受限PG；不继承第三方线程变量；[P04-03](P04-03-VERIFICATION.md) | [ASYNC-EXECUTION](../conventions/ASYNC-EXECUTION.md) |
 | A04-07 | persistence / P04-03 | 实际RLS运行角色非owner/SUPERUSER/BYPASSRLS、FORCE/迁移关系、阶段总核对 | 容器目录/受限角色及原native/bulk/DDL/TRUNCATE/升权反例回归；生产NOT_VERIFIED；[P04总验收](P04-ACCEPTANCE.md) | [PERSISTENCE](../conventions/PERSISTENCE.md) |
+| A05-09 | CUSTOMER / P05-05 | 正式客户/绑定、tenant+app+open唯一/复合FK、可信入口、WxJava单次交换、CUSTOMER Token/SELF、三域/并发/状态/故障、频控/记录、产物与真实微信 | 本地正式PG/Redis/Sa/HTTP RUNTIME_VERIFIED；421项全通过、原366/328逐项保留。真实微信四步NOT_EXECUTED，G12 BLOCKED；P05-05 BLOCKED/P05 IN_PROGRESS；[验证](P05-05-VERIFICATION.md)、[总验收](P05-ACCEPTANCE.md) | [身份](../contracts/IDENTITY.md)、[认证](../architecture/AUTHENTICATION.md)、[配置](../architecture/CONFIGURATION.md) |
 | A05-08 | PLATFORM security / P05-04 | 独立账号/首次初始化、PLATFORM空间与Cookie/CSRF/频控、控制面权限/租户拒绝、本人改密/撤销/记录、故障竞争、契约与产物 | RUNTIME_VERIFIED：正式PG/Redis、生产JAR初始化、真实浏览器、366项0失败/错误/跳过；[P05-04](P05-04-VERIFICATION.md)，部署/客户认证限制保留 | [平台初始化](../development/PLATFORM-BOOTSTRAP.md)、[身份](../contracts/IDENTITY.md)、[认证](../architecture/AUTHENTICATION.md) |
 | A05-07 | STAFF security / P05-03 | 本人改密/退出全部、管理重置/撤销；重新确认/频控、独立操作和目标授权；DB原子版本/记录、Redis失败补偿与新代际保护、登录/并发、强制改密、排队重验 | RUNTIME_VERIFIED：328项0失败/错误/跳过；正式V1→V2、实际Redis暂停/补偿、确定性竞争及双JVM通过，G01～G15 PASS；291项原用例保留、一项异步限制明确替换；[P05-03](P05-03-VERIFICATION.md) | [身份](../contracts/IDENTITY.md)、[认证](../architecture/AUTHENTICATION.md)、[异步](../conventions/ASYNC-EXECUTION.md) |
 | A05-06 | STAFF security / P05-02 | 正式初始化员工→真实登录/当前身份；Cookie/CSRF/Token设备隔离；期限、并发频控、状态授权变化、DB/Redis故障、RLS与线程清理；P05-02历史真实身份异步禁止（P05-03已替换为重验）、双JVM共享会话 | 真PostgreSQL/Redis/Testcontainers、正式生产Provider与HTTP、实际IAB浏览器；292项0失败/错误/跳过；G01～G15见[P05-02](P05-02-VERIFICATION.md) | [认证](../architecture/AUTHENTICATION.md)、[身份](../contracts/IDENTITY.md)、[异步](../conventions/ASYNC-EXECUTION.md) |
 | A05-00 | identity/platform / P05-01 | 正式七表/首迁移/JPA validate、复合关联/RLS、密码/受限查询、Store事实、显式初始化/回滚/重跑/并发/生产包 | 正式PostgreSQL/Testcontainers与实际生产JAR命令 RUNTIME_VERIFIED；258项0失败/错误/跳过，原222逐项回归；[P05-01](P05-01-VERIFICATION.md)。未操作真实开发/生产库，不能代替后续登录/会话验收 | [初始化](../development/IDENTITY-BOOTSTRAP.md)、[认证](../architecture/AUTHENTICATION.md)、[持久化](../conventions/PERSISTENCE.md) |
-| A05-01 | 三身份 / P05 | 同主体ID跨域拒绝；Cookie/Header混合与错误头；公共端点不继承身份 | 真Redis与HTTP，空间/键隔离及客户端请求 | [认证](../architecture/AUTHENTICATION.md) |
+| A05-01 | 三身份 / P05 | 同主体ID跨域拒绝；Cookie/Header混合与错误头；公共端点不继承身份 | P05-05真实三域同UUID/HTTP/Sa/Redis和双Cookie隔离通过；客户真实微信入口未执行，见[P05总验收](P05-ACCEPTANCE.md) | [认证](../architecture/AUTHENTICATION.md) |
 | A05-02 | security / P05 | Cookie属性/local-prod/代理；登录、退出、上传/写CSRF正反例；CORS错误origin | 浏览器+真后端/代理，Cookie/Origin/CSRF证据 | 同上 |
 | A05-03 | identity / P05 | 绝对/闲置/设备上限、当前退出vs全部撤销、停用/改密、Redis删除故障 | 真Redis两设备/跨实例、DB版本、故障注入；不依赖Mock内存 | 同上 |
 | A05-04 | authorization / P05/P07 | 角色/门店撤销立即对新请求生效，敏感旧事务回滚，平台不默认业务全权 | 真PG/Redis/HTTP并发，授权版本及审计 | [授权](../architecture/AUTHORIZATION.md) |
@@ -43,7 +44,7 @@
 | A10-01 | messaging / P10 | 启停/安装清单、旧库升级/关闭保留数据/Flyway checksum | 真PG迁移组合；禁止关闭时删表或移历史迁移 | [配置](../architecture/CONFIGURATION.md) |
 | A10-02 | Outbox/AMQP / P10 | 并发领取/租约/fence/超时/确认不确定重复、至少一次、去重/死信 | 真RabbitMQ/Testcontainers+PG；断连/崩溃故障注入 | [异步](../architecture/ASYNC-EVENTS.md) |
 | A10-03 | tasks / P10 | 当前权限与提交范围交集、租户传播/清理、取消竞态、结果过期/下载 | 真PG/Redis/文件、两个租户任务/线程复用 | [任务](../contracts/ASYNC-TASKS.md) |
-| A10-04 | wechat / P10 | 微信code/phone分离、支付验签/重复/金额/证书轮换、不引订单状态机 | 启用时有合法外部配置的微信环境；缺配置NOT_EXECUTED | [异步](../architecture/ASYNC-EVENTS.md)、[身份](../contracts/IDENTITY.md) |
+| A10-04 | wechat / P10 | 订阅消息、支付验签/重复/金额/证书轮换、不引订单状态机；登录code与phoneCode分离 | 登录后端按本轮明确授权归A05-09/P05，页面/真机归P09；P10通知支付启用时需合法外部配置；当前NOT_EXECUTED | [异步](../architecture/ASYNC-EVENTS.md)、[身份](../contracts/IDENTITY.md) |
 | A11-01 | 模板 / P11 | 新目录name/package/标识替换完整、可选组合、生成前冲突拒绝 | 全新临时生成项目、三端构建/真实infra；原工程SHA不变 | [范围](../product/SCAFFOLD-SCOPE.md) |
 | A12-01 | 验收 / P12 | 干净环境全新项目，全部所选能力正反例、备份恢复、版本窗口复核 | 全新生成的真实三端/PG/Redis/所选外部能力；发布另需任务授权 | [路线](../development/ROADMAP.md) |
 
@@ -74,3 +75,6 @@
 2026-10-08 P05-02：A05-06及本轮G01～G15 PASS；132单元+160集成=292项，原258项逐项保留，真实员工由正式初始化服务建立并使用唯一生产会话Provider。A05-01已验证STAFF与预留空间/载体隔离，其他域正式登录未执行；A05-02同源本地浏览器链路和生产Cookie属性/配置反例通过，生产TLS/代理/上传/跨源仍未验证；A05-03当前设备/跨实例/期限/状态/凭据版本/Redis故障通过，全设备撤销API留下一任务；A05-04新请求读取当前授权通过，敏感旧事务提交前检查/平台审计仍未执行；A05-05真实HTTP安全失败和并发限流通过，生产负载性能未验证。异步选择真实身份任务403禁用，未实现撤销重验；不把30秒技术快照作为安全证据。P05-02 COMPLETE，P05整体IN_PROGRESS，P05-03建议范围见[路线](../development/ROADMAP.md#p05-02-当前结果及后续范围2026-10-08)，不自动执行。详见[P05-02报告](P05-02-VERIFICATION.md)。
 
 2026-10-08 P05-04：新增A05-08限定平台身份与控制面认证。366项（原P05-03的328逐项保留+新增38）0失败/错误/跳过；独立正式初始化/五表/V3、真实Sa/Redis/PG、同UUID/双Cookie/跨域CSRF/租户拒绝、本人改密/全撤销、实际Redis清理故障及确定性竞争、当前平台权限/受限Redis入口通过，真实浏览器在平台Cookie Path内且登录态有效时验证HttpOnly可见性。G01～G15 PASS，P05-04 COMPLETE，P05整体IN_PROGRESS；客户正式登录未执行，生产TLS/代理/跨源/数据库与Redis部署/真实管理员初始化、远程CI及多OS仍NOT_EXECUTED/NOT_VERIFIED。完整证据和失败历史见[P05-04](P05-04-VERIFICATION.md)，下一P05-05仅建议、不执行。
+
+
+2026-10-08 P05-05当前结论：新增A05-09，正式客户/微信绑定、服务端入口/安全秘密引用、WxJava4.8.0一次交换、四接口/CUSTOMER Sa会话、SELF/同UUID三域/跨租户、并发及依赖故障/频控/事件在真实PG/Redis及测试Gateway边界通过。最终421项0失败/错误/跳过，原366/328逐项保留；五项生成/类型检查与JAR隔离通过。真实微信安全配置未载入、新鲜code未获取，交换/会话/me/退出全NOT_EXECUTED，G12 BLOCKED，其余门禁通过；P05-05 BLOCKED/P05 IN_PROGRESS。P09页面/隐私/真机、P10消息支付、生产/远程CI/多OS未执行；完整员工角色权限管理API仍P07必选且未实现，不能将三类登录齐备当整个身份阶段COMPLETE。下一仅P05-05真实续验，不自动执行；详见[P05-05](P05-05-VERIFICATION.md)、[P05总验收](P05-ACCEPTANCE.md)。历史失败/NOT_EXECUTED与P05-01～04证据原样保留。

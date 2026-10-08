@@ -1,0 +1,493 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ---------------< com.pet.platform:pet-platform-backend >----------------
+[INFO] Building pet-platform-backend 0.0.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ pet-platform-backend ---
+[INFO] Copying 3 resources from src/main/resources to target/classes
+[INFO] Copying 5 resources from src/main/resources to target/classes
+[INFO] 
+[INFO] --- compiler:3.14.1:compile (default-compile) @ pet-platform-backend ---
+[INFO] Recompiling the module because of added or removed source files.
+[INFO] Compiling 139 source files with javac [debug parameters release 21] to target/classes
+[INFO] /Users/kimwell/work/pet-platform/apps/backend/src/main/java/com/pet/platform/customeridentity/api/CustomerAuthenticationController.java: 某些输入文件使用或覆盖了已过时的 API。
+[INFO] /Users/kimwell/work/pet-platform/apps/backend/src/main/java/com/pet/platform/customeridentity/api/CustomerAuthenticationController.java: 有关详细信息, 请使用 -Xlint:deprecation 重新编译。
+[INFO] /Users/kimwell/work/pet-platform/apps/backend/src/main/java/com/pet/platform/customeridentity/infrastructure/WxJavaMiniProgramGateway.java: 某些输入文件使用了未经检查或不安全的操作。
+[INFO] /Users/kimwell/work/pet-platform/apps/backend/src/main/java/com/pet/platform/customeridentity/infrastructure/WxJavaMiniProgramGateway.java: 有关详细信息, 请使用 -Xlint:unchecked 重新编译。
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ pet-platform-backend ---
+[INFO] Copying 3 resources from src/test/resources to target/test-classes
+[INFO] 
+[INFO] --- compiler:3.14.1:testCompile (default-testCompile) @ pet-platform-backend ---
+[INFO] Recompiling the module because of changed dependency.
+[INFO] Compiling 53 source files with javac [debug parameters release 21] to target/test-classes
+[INFO] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/platform/protocol/ApiProtocolTest.java: 某些输入文件使用或覆盖了已过时的 API。
+[INFO] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/platform/protocol/ApiProtocolTest.java: 有关详细信息, 请使用 -Xlint:deprecation 重新编译。
+[INFO] 某些消息已经过简化; 请使用 -Xdiags:verbose 重新编译以获得完整输出
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/platform/ApplicationTest.java:[4,38] 程序包com.pet.platform.shared.config不存在
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/platform/ApplicationTest.java:[26,13] 找不到符号
+  符号:   类 EnvironmentSettings
+  位置: 类 com.pet.platform.ApplicationTest
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/platform/protocol/ApiProtocolIT.java:[4,45] 程序包com.pet.platform.shared.observability不存在
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/platform/protocol/ApiProtocolTest.java:[34,39] 找不到符号
+  符号:   类 TraceFilter
+  位置: 类 com.pet.platform.protocol.ApiProtocolTest
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/platform/protocol/ApiProtocolTest.java:[4,31] 程序包com.pet.platform.shared.api不存在
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/platform/protocol/ApiProtocolTest.java:[5,31] 程序包com.pet.platform.shared.observability不存在
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/platform/protocol/ProtocolFixtures.java:[5,45] 程序包com.pet.platform.shared.observability不存在
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/platform/protocol/ProtocolFixtures.java:[3,31] 程序包com.pet.platform.shared.api不存在
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/platform/protocol/ProtocolFixtures.java:[4,31] 程序包com.pet.platform.shared.exception不存在
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/platform/protocol/ProtocolFixtures.java:[75,30] 找不到符号
+  符号:   类 SortWhitelist
+  位置: 类 com.pet.platform.protocol.ProtocolFixtures.ProtocolController
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/platform/protocol/ProtocolFixtures.java:[80,9] 找不到符号
+  符号:   类 ApiResponse
+  位置: 类 com.pet.platform.protocol.ProtocolFixtures.ProtocolController
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/platform/protocol/ProtocolFixtures.java:[88,9] 找不到符号
+  符号:   类 ApiResponse
+  位置: 类 com.pet.platform.protocol.ProtocolFixtures.ProtocolController
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/platform/protocol/ProtocolFixtures.java:[91,24] 找不到符号
+  符号:   类 ApiResponse
+  位置: 类 com.pet.platform.protocol.ProtocolFixtures.ProtocolController
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/platform/protocol/ProtocolFixtures.java:[97,50] 找不到符号
+  符号:   类 ErrorCode
+  位置: 类 com.pet.platform.protocol.ProtocolFixtures.ProtocolController
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/platform/protocol/ProtocolFixtures.java:[97,9] 找不到符号
+  符号:   类 ApiResponse
+  位置: 类 com.pet.platform.protocol.ProtocolFixtures.ProtocolController
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/platform/protocol/ProtocolFixtures.java:[103,9] 找不到符号
+  符号:   类 ApiResponse
+  位置: 类 com.pet.platform.protocol.ProtocolFixtures.ProtocolController
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/platform/protocol/ProtocolFixtures.java:[106,9] 找不到符号
+  符号:   类 ApiResponse
+  位置: 类 com.pet.platform.protocol.ProtocolFixtures.ProtocolController
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/platform/protocol/ProtocolFixtures.java:[109,9] 找不到符号
+  符号:   类 ApiResponse
+  位置: 类 com.pet.platform.protocol.ProtocolFixtures.ProtocolController
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/platform/protocol/ProtocolFixtures.java:[112,9] 找不到符号
+  符号:   类 ApiResponse
+  位置: 类 com.pet.platform.protocol.ProtocolFixtures.ProtocolController
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/platform/protocol/ProtocolFixtures.java:[115,9] 找不到符号
+  符号:   类 ApiResponse
+  位置: 类 com.pet.platform.protocol.ProtocolFixtures.ProtocolController
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/platform/protocol/ProtocolFixtures.java:[118,9] 找不到符号
+  符号:   类 ApiResponse
+  位置: 类 com.pet.platform.protocol.ProtocolFixtures.ProtocolController
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/platform/protocol/ProtocolFixtures.java:[121,9] 找不到符号
+  符号:   类 ApiResponse
+  位置: 类 com.pet.platform.protocol.ProtocolFixtures.ProtocolController
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/platform/protocol/ProtocolFixtures.java:[126,9] 找不到符号
+  符号:   类 ApiResponse
+  位置: 类 com.pet.platform.protocol.ProtocolFixtures.ProtocolController
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/platform/protocol/ProtocolFixtures.java:[129,9] 找不到符号
+  符号:   类 ApiResponse
+  位置: 类 com.pet.platform.protocol.ProtocolFixtures.ProtocolController
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/platform/protocol/ProtocolFixtures.java:[132,9] 找不到符号
+  符号:   类 ApiResponse
+  位置: 类 com.pet.platform.protocol.ProtocolFixtures.ProtocolController
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/platform/protocol/ProtocolFixtures.java:[136,9] 找不到符号
+  符号:   类 ApiResponse
+  位置: 类 com.pet.platform.protocol.ProtocolFixtures.ProtocolController
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/platform/protocol/ProtocolFixtures.java:[139,9] 找不到符号
+  符号:   类 ApiResponse
+  位置: 类 com.pet.platform.protocol.ProtocolFixtures.ProtocolController
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/platform/protocol/ProtocolFixtures.java:[139,21] 找不到符号
+  符号:   类 PageResponse
+  位置: 类 com.pet.platform.protocol.ProtocolFixtures.ProtocolController
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/platform/protocol/ProtocolFixtures.java:[146,9] 找不到符号
+  符号:   类 ApiResponse
+  位置: 类 com.pet.platform.protocol.ProtocolFixtures.ProtocolController
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/platform/protocol/ProtocolFixtures.java:[146,26] 找不到符号
+  符号:   类 SortRule
+  位置: 类 com.pet.platform.protocol.ProtocolFixtures.ProtocolController
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/platform/shared/persistence/JpaPageAdapterTest.java:[4,41] 程序包com.pet.platform.shared.exception不存在
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/platform/shared/persistence/JpaPageAdapterTest.java:[15,26] 找不到符号
+  符号:   类 SortWhitelist
+  位置: 类 com.pet.platform.shared.persistence.JpaPageAdapterTest
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/platform/shared/persistence/JpaPageAdapterTest.java:[3,31] 程序包com.pet.platform.shared.api不存在
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/platform/shared/redis/RedisIsolationIT.java:[3,35] 程序包com.pet.platform.shared.api不存在
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/platform/shared/redis/RedisIsolationIT.java:[26,27] 找不到符号
+  符号:   类 CurrentPrincipal
+  位置: 类 com.pet.platform.shared.redis.RedisIsolationIT
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/platform/shared/redis/RedisIsolationIT.java:[30,5] 找不到符号
+  符号:   类 StoreScopeGuard
+  位置: 类 com.pet.platform.shared.redis.RedisIsolationIT
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/platform/shared/redis/RedisIsolationIT.java:[51,45] 找不到符号
+  符号:   类 DataScopeType
+  位置: 类 com.pet.platform.shared.redis.RedisIsolationIT
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/platform/shared/redis/RedisIsolationIT.java:[51,5] 找不到符号
+  符号:   类 CurrentPrincipal
+  位置: 类 com.pet.platform.shared.redis.RedisIsolationIT
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/platform/shared/redis/RedisIsolationIT.java:[56,5] 找不到符号
+  符号:   类 CurrentPrincipal
+  位置: 类 com.pet.platform.shared.redis.RedisIsolationIT
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/platform/shared/redis/RedisIsolationIT.java:[57,15] 找不到符号
+  符号:   类 CurrentPrincipal
+  位置: 类 com.pet.platform.shared.redis.RedisIsolationIT
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/platform/shared/redis/RedisIsolationIT.java:[4,31] 程序包com.pet.platform.shared.exception不存在
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/platform/shared/redis/RedisIsolationIT.java:[5,31] 程序包com.pet.platform.shared.security不存在
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/platform/shared/tenancy/TenantTaskExecutorTest.java:[21,52] 找不到符号
+  符号:   类 PrincipalType
+  位置: 类 com.pet.platform.shared.tenancy.TenantTaskExecutorTest
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/platform/shared/tenancy/TenantTaskExecutorTest.java:[21,78] 找不到符号
+  符号:   类 DataScopeType
+  位置: 类 com.pet.platform.shared.tenancy.TenantTaskExecutorTest
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/platform/shared/tenancy/TenantTaskExecutorTest.java:[21,12] 找不到符号
+  符号:   类 CurrentPrincipal
+  位置: 类 com.pet.platform.shared.tenancy.TenantTaskExecutorTest
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/platform/shared/tenancy/TenantTaskExecutorTest.java:[26,12] 找不到符号
+  符号:   类 CurrentPrincipal
+  位置: 类 com.pet.platform.shared.tenancy.TenantTaskExecutorTest
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/platform/shared/tenancy/TenantTaskExecutorTest.java:[27,24] 找不到符号
+  符号:   类 CurrentPrincipal
+  位置: 类 com.pet.platform.shared.tenancy.TenantTaskExecutorTest
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/platform/shared/tenancy/TenantTaskExecutorTest.java:[3,31] 程序包com.pet.platform.shared.exception不存在
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/platform/shared/tenancy/TenantTaskExecutorTest.java:[4,31] 程序包com.pet.platform.shared.observability不存在
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/platform/shared/tenancy/TenantTaskExecutorTest.java:[5,31] 程序包com.pet.platform.shared.security不存在
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/testing/authentication/PlatformAuthenticationIT.java:[9,35] 程序包com.pet.platform.shared.api不存在
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/testing/authentication/PlatformAuthenticationIT.java:[10,41] 程序包com.pet.platform.shared.exception不存在
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/testing/authentication/PlatformAuthenticationIT.java:[11,31] 程序包com.pet.platform.shared.security不存在
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/testing/authentication/PlatformAuthenticationIT.java:[128,39] 找不到符号
+  符号:   类 CurrentPrincipalProvider
+  位置: 类 com.pet.testing.authentication.PlatformAuthenticationIT.Probes
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/testing/authentication/PlatformAuthenticationIT.java:[140,15] 找不到符号
+  符号:   类 CurrentPrincipalProvider
+  位置: 类 com.pet.testing.authentication.PlatformAuthenticationIT.TestEndpoints
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/testing/authentication/PlatformAuthenticationIT.java:[141,23] 找不到符号
+  符号:   类 CurrentPrincipalProvider
+  位置: 类 com.pet.testing.authentication.PlatformAuthenticationIT.TestEndpoints
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/testing/authentication/PlatformAuthenticationIT.java:[142,108] 程序包com.pet.platform.shared.api.ApiResponse不存在
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/testing/authentication/PlatformAuthenticationIT.java:[145,143] 程序包com.pet.platform.shared.api.ApiResponse不存在
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/testing/authentication/StaffAuthenticationIT.java:[11,35] 程序包com.pet.platform.shared.api不存在
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/testing/authentication/StaffAuthenticationIT.java:[12,35] 程序包com.pet.platform.shared.api不存在
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/testing/authentication/StaffAuthenticationIT.java:[42,16] 找不到符号
+  符号:   类 CurrentPrincipalProvider
+  位置: 类 com.pet.testing.authentication.StaffAuthenticationIT
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/testing/authentication/StaffAuthenticationIT.java:[9,31] 程序包com.pet.platform.shared.security不存在
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/testing/authentication/StaffAuthenticationIT.java:[121,112] 找不到符号
+  符号:   类 StoreScopeGuard
+  位置: 类 com.pet.testing.authentication.StaffAuthenticationIT.Probes
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/testing/authentication/StaffAuthenticationIT.java:[123,46] 找不到符号
+  符号:   类 StoreScopeGuard
+  位置: 类 com.pet.testing.authentication.StaffAuthenticationIT.Probe
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/testing/authentication/StaffAuthenticationIT.java:[123,100] 找不到符号
+  符号:   类 StoreScopeGuard
+  位置: 类 com.pet.testing.authentication.StaffAuthenticationIT.Probe
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/testing/authentication/StaffAuthenticationIT.java:[124,79] 程序包ApiResponse不存在
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/testing/authentication/StaffAuthenticationIT.java:[125,74] 程序包ApiResponse不存在
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/testing/authentication/StaffAuthenticationIT.java:[126,76] 程序包ApiResponse不存在
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/testing/authentication/StaffCredentialSecurityIT.java:[10,41] 程序包com.pet.platform.shared.exception不存在
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/testing/authentication/StaffCredentialSecurityIT.java:[167,75] 找不到符号
+  符号:   类 DataScope
+  位置: 类 com.pet.testing.authentication.StaffCredentialSecurityIT.QueueProbe
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/testing/authentication/StaffCredentialSecurityIT.java:[168,70] 程序包ApiResponse不存在
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/testing/authentication/StaffCredentialSecurityIT.java:[9,31] 程序包com.pet.platform.shared.api不存在
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/testing/contracts/ContractFixtures.java:[5,41] 程序包com.pet.platform.shared.exception不存在
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/testing/contracts/ContractFixtures.java:[4,31] 程序包com.pet.platform.shared.api不存在
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/testing/contracts/ContractFixtures.java:[68,16] 找不到符号
+  符号:   类 ApiResponse
+  位置: 类 com.pet.testing.contracts.ContractFixtures.ContractController
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/testing/contracts/ContractFixtures.java:[74,16] 找不到符号
+  符号:   类 ApiResponse
+  位置: 类 com.pet.testing.contracts.ContractFixtures.ContractController
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/testing/contracts/ContractFixtures.java:[74,28] 找不到符号
+  符号:   类 PageResponse
+  位置: 类 com.pet.testing.contracts.ContractFixtures.ContractController
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/testing/contracts/ContractFixtures.java:[78,16] 找不到符号
+  符号:   类 ApiResponse
+  位置: 类 com.pet.testing.contracts.ContractFixtures.ContractController
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/testing/contracts/ContractFixtures.java:[80,16] 找不到符号
+  符号:   类 ApiResponse
+  位置: 类 com.pet.testing.contracts.ContractFixtures.ContractController
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/testing/identity/IdentityFoundationIT.java:[49,16] 找不到符号
+  符号:   类 StoreOwnershipReader
+  位置: 类 com.pet.testing.identity.IdentityFoundationIT
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/testing/identity/IdentityFoundationIT.java:[50,16] 找不到符号
+  符号:   类 StoreScopeGuard
+  位置: 类 com.pet.testing.identity.IdentityFoundationIT
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/testing/identity/IdentityFoundationIT.java:[51,16] 找不到符号
+  符号:   类 CurrentPrincipalProvider
+  位置: 类 com.pet.testing.identity.IdentityFoundationIT
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/testing/identity/IdentityFoundationIT.java:[9,31] 程序包com.pet.platform.shared.api不存在
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/testing/identity/IdentityFoundationIT.java:[10,31] 程序包com.pet.platform.shared.exception不存在
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/testing/identity/IdentityFoundationIT.java:[11,31] 程序包com.pet.platform.shared.security不存在
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/testing/persistence/PersistenceProbe.java:[3,43] 找不到符号
+  符号:   类 BaseEntity
+  位置: 程序包 com.pet.platform.shared.persistence
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/testing/persistence/PersistenceProbe.java:[11,39] 找不到符号
+  符号: 类 BaseEntity
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/testing/persistence/JpaPersistenceIT.java:[52,26] 找不到符号
+  符号:   类 SortWhitelist
+  位置: 类 com.pet.testing.persistence.JpaPersistenceIT
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/testing/persistence/JpaPersistenceIT.java:[4,31] 程序包com.pet.platform.shared.api不存在
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/testing/tenancy/TenancyFixtures.java:[3,35] 程序包com.pet.platform.shared.api不存在
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/testing/tenancy/TenancyFixtures.java:[4,35] 程序包com.pet.platform.shared.api不存在
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/testing/tenancy/TenancyFixtures.java:[5,41] 程序包com.pet.platform.shared.exception不存在
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/testing/tenancy/TenancyFixtures.java:[32,41] 找不到符号
+  符号:   类 PrincipalType
+  位置: 类 com.pet.testing.tenancy.TenancyFixtures
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/testing/tenancy/TenancyFixtures.java:[32,65] 找不到符号
+  符号:   类 DataScopeType
+  位置: 类 com.pet.testing.tenancy.TenancyFixtures
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/testing/tenancy/TenancyFixtures.java:[32,12] 找不到符号
+  符号:   类 DataScope
+  位置: 类 com.pet.testing.tenancy.TenancyFixtures
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/testing/tenancy/TenancyFixtures.java:[35,12] 找不到符号
+  符号:   类 CurrentPrincipal
+  位置: 类 com.pet.testing.tenancy.TenancyFixtures
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/testing/tenancy/TenancyFixtures.java:[40,12] 找不到符号
+  符号:   类 CurrentPrincipal
+  位置: 类 com.pet.testing.tenancy.TenancyFixtures
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/testing/tenancy/TenancyFixtures.java:[44,12] 找不到符号
+  符号:   类 CurrentPrincipal
+  位置: 类 com.pet.testing.tenancy.TenancyFixtures
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/testing/tenancy/TenancyFixtures.java:[53,57] 找不到符号
+  符号:   类 CurrentPrincipalProvider
+  位置: 类 com.pet.testing.tenancy.TenancyFixtures
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/testing/tenancy/TenancyFixtures.java:[56,35] 找不到符号
+  符号:   类 CurrentPrincipal
+  位置: 类 com.pet.testing.tenancy.TenancyFixtures.TestPrincipalProvider
+[INFO] 100 errors 
+[INFO] -------------------------------------------------------------
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  12.014 s
+[INFO] Finished at: 2026-10-08T16:11:28+08:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.14.1:testCompile (default-testCompile) on project pet-platform-backend: Compilation failure: Compilation failure: 
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/platform/ApplicationTest.java:[4,38] 程序包com.pet.platform.shared.config不存在
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/platform/ApplicationTest.java:[26,13] 找不到符号
+[ERROR]   符号:   类 EnvironmentSettings
+[ERROR]   位置: 类 com.pet.platform.ApplicationTest
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/platform/protocol/ApiProtocolIT.java:[4,45] 程序包com.pet.platform.shared.observability不存在
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/platform/protocol/ApiProtocolTest.java:[34,39] 找不到符号
+[ERROR]   符号:   类 TraceFilter
+[ERROR]   位置: 类 com.pet.platform.protocol.ApiProtocolTest
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/platform/protocol/ApiProtocolTest.java:[4,31] 程序包com.pet.platform.shared.api不存在
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/platform/protocol/ApiProtocolTest.java:[5,31] 程序包com.pet.platform.shared.observability不存在
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/platform/protocol/ProtocolFixtures.java:[5,45] 程序包com.pet.platform.shared.observability不存在
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/platform/protocol/ProtocolFixtures.java:[3,31] 程序包com.pet.platform.shared.api不存在
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/platform/protocol/ProtocolFixtures.java:[4,31] 程序包com.pet.platform.shared.exception不存在
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/platform/protocol/ProtocolFixtures.java:[75,30] 找不到符号
+[ERROR]   符号:   类 SortWhitelist
+[ERROR]   位置: 类 com.pet.platform.protocol.ProtocolFixtures.ProtocolController
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/platform/protocol/ProtocolFixtures.java:[80,9] 找不到符号
+[ERROR]   符号:   类 ApiResponse
+[ERROR]   位置: 类 com.pet.platform.protocol.ProtocolFixtures.ProtocolController
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/platform/protocol/ProtocolFixtures.java:[88,9] 找不到符号
+[ERROR]   符号:   类 ApiResponse
+[ERROR]   位置: 类 com.pet.platform.protocol.ProtocolFixtures.ProtocolController
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/platform/protocol/ProtocolFixtures.java:[91,24] 找不到符号
+[ERROR]   符号:   类 ApiResponse
+[ERROR]   位置: 类 com.pet.platform.protocol.ProtocolFixtures.ProtocolController
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/platform/protocol/ProtocolFixtures.java:[97,50] 找不到符号
+[ERROR]   符号:   类 ErrorCode
+[ERROR]   位置: 类 com.pet.platform.protocol.ProtocolFixtures.ProtocolController
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/platform/protocol/ProtocolFixtures.java:[97,9] 找不到符号
+[ERROR]   符号:   类 ApiResponse
+[ERROR]   位置: 类 com.pet.platform.protocol.ProtocolFixtures.ProtocolController
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/platform/protocol/ProtocolFixtures.java:[103,9] 找不到符号
+[ERROR]   符号:   类 ApiResponse
+[ERROR]   位置: 类 com.pet.platform.protocol.ProtocolFixtures.ProtocolController
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/platform/protocol/ProtocolFixtures.java:[106,9] 找不到符号
+[ERROR]   符号:   类 ApiResponse
+[ERROR]   位置: 类 com.pet.platform.protocol.ProtocolFixtures.ProtocolController
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/platform/protocol/ProtocolFixtures.java:[109,9] 找不到符号
+[ERROR]   符号:   类 ApiResponse
+[ERROR]   位置: 类 com.pet.platform.protocol.ProtocolFixtures.ProtocolController
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/platform/protocol/ProtocolFixtures.java:[112,9] 找不到符号
+[ERROR]   符号:   类 ApiResponse
+[ERROR]   位置: 类 com.pet.platform.protocol.ProtocolFixtures.ProtocolController
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/platform/protocol/ProtocolFixtures.java:[115,9] 找不到符号
+[ERROR]   符号:   类 ApiResponse
+[ERROR]   位置: 类 com.pet.platform.protocol.ProtocolFixtures.ProtocolController
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/platform/protocol/ProtocolFixtures.java:[118,9] 找不到符号
+[ERROR]   符号:   类 ApiResponse
+[ERROR]   位置: 类 com.pet.platform.protocol.ProtocolFixtures.ProtocolController
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/platform/protocol/ProtocolFixtures.java:[121,9] 找不到符号
+[ERROR]   符号:   类 ApiResponse
+[ERROR]   位置: 类 com.pet.platform.protocol.ProtocolFixtures.ProtocolController
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/platform/protocol/ProtocolFixtures.java:[126,9] 找不到符号
+[ERROR]   符号:   类 ApiResponse
+[ERROR]   位置: 类 com.pet.platform.protocol.ProtocolFixtures.ProtocolController
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/platform/protocol/ProtocolFixtures.java:[129,9] 找不到符号
+[ERROR]   符号:   类 ApiResponse
+[ERROR]   位置: 类 com.pet.platform.protocol.ProtocolFixtures.ProtocolController
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/platform/protocol/ProtocolFixtures.java:[132,9] 找不到符号
+[ERROR]   符号:   类 ApiResponse
+[ERROR]   位置: 类 com.pet.platform.protocol.ProtocolFixtures.ProtocolController
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/platform/protocol/ProtocolFixtures.java:[136,9] 找不到符号
+[ERROR]   符号:   类 ApiResponse
+[ERROR]   位置: 类 com.pet.platform.protocol.ProtocolFixtures.ProtocolController
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/platform/protocol/ProtocolFixtures.java:[139,9] 找不到符号
+[ERROR]   符号:   类 ApiResponse
+[ERROR]   位置: 类 com.pet.platform.protocol.ProtocolFixtures.ProtocolController
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/platform/protocol/ProtocolFixtures.java:[139,21] 找不到符号
+[ERROR]   符号:   类 PageResponse
+[ERROR]   位置: 类 com.pet.platform.protocol.ProtocolFixtures.ProtocolController
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/platform/protocol/ProtocolFixtures.java:[146,9] 找不到符号
+[ERROR]   符号:   类 ApiResponse
+[ERROR]   位置: 类 com.pet.platform.protocol.ProtocolFixtures.ProtocolController
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/platform/protocol/ProtocolFixtures.java:[146,26] 找不到符号
+[ERROR]   符号:   类 SortRule
+[ERROR]   位置: 类 com.pet.platform.protocol.ProtocolFixtures.ProtocolController
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/platform/shared/persistence/JpaPageAdapterTest.java:[4,41] 程序包com.pet.platform.shared.exception不存在
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/platform/shared/persistence/JpaPageAdapterTest.java:[15,26] 找不到符号
+[ERROR]   符号:   类 SortWhitelist
+[ERROR]   位置: 类 com.pet.platform.shared.persistence.JpaPageAdapterTest
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/platform/shared/persistence/JpaPageAdapterTest.java:[3,31] 程序包com.pet.platform.shared.api不存在
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/platform/shared/redis/RedisIsolationIT.java:[3,35] 程序包com.pet.platform.shared.api不存在
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/platform/shared/redis/RedisIsolationIT.java:[26,27] 找不到符号
+[ERROR]   符号:   类 CurrentPrincipal
+[ERROR]   位置: 类 com.pet.platform.shared.redis.RedisIsolationIT
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/platform/shared/redis/RedisIsolationIT.java:[30,5] 找不到符号
+[ERROR]   符号:   类 StoreScopeGuard
+[ERROR]   位置: 类 com.pet.platform.shared.redis.RedisIsolationIT
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/platform/shared/redis/RedisIsolationIT.java:[51,45] 找不到符号
+[ERROR]   符号:   类 DataScopeType
+[ERROR]   位置: 类 com.pet.platform.shared.redis.RedisIsolationIT
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/platform/shared/redis/RedisIsolationIT.java:[51,5] 找不到符号
+[ERROR]   符号:   类 CurrentPrincipal
+[ERROR]   位置: 类 com.pet.platform.shared.redis.RedisIsolationIT
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/platform/shared/redis/RedisIsolationIT.java:[56,5] 找不到符号
+[ERROR]   符号:   类 CurrentPrincipal
+[ERROR]   位置: 类 com.pet.platform.shared.redis.RedisIsolationIT
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/platform/shared/redis/RedisIsolationIT.java:[57,15] 找不到符号
+[ERROR]   符号:   类 CurrentPrincipal
+[ERROR]   位置: 类 com.pet.platform.shared.redis.RedisIsolationIT
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/platform/shared/redis/RedisIsolationIT.java:[4,31] 程序包com.pet.platform.shared.exception不存在
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/platform/shared/redis/RedisIsolationIT.java:[5,31] 程序包com.pet.platform.shared.security不存在
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/platform/shared/tenancy/TenantTaskExecutorTest.java:[21,52] 找不到符号
+[ERROR]   符号:   类 PrincipalType
+[ERROR]   位置: 类 com.pet.platform.shared.tenancy.TenantTaskExecutorTest
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/platform/shared/tenancy/TenantTaskExecutorTest.java:[21,78] 找不到符号
+[ERROR]   符号:   类 DataScopeType
+[ERROR]   位置: 类 com.pet.platform.shared.tenancy.TenantTaskExecutorTest
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/platform/shared/tenancy/TenantTaskExecutorTest.java:[21,12] 找不到符号
+[ERROR]   符号:   类 CurrentPrincipal
+[ERROR]   位置: 类 com.pet.platform.shared.tenancy.TenantTaskExecutorTest
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/platform/shared/tenancy/TenantTaskExecutorTest.java:[26,12] 找不到符号
+[ERROR]   符号:   类 CurrentPrincipal
+[ERROR]   位置: 类 com.pet.platform.shared.tenancy.TenantTaskExecutorTest
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/platform/shared/tenancy/TenantTaskExecutorTest.java:[27,24] 找不到符号
+[ERROR]   符号:   类 CurrentPrincipal
+[ERROR]   位置: 类 com.pet.platform.shared.tenancy.TenantTaskExecutorTest
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/platform/shared/tenancy/TenantTaskExecutorTest.java:[3,31] 程序包com.pet.platform.shared.exception不存在
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/platform/shared/tenancy/TenantTaskExecutorTest.java:[4,31] 程序包com.pet.platform.shared.observability不存在
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/platform/shared/tenancy/TenantTaskExecutorTest.java:[5,31] 程序包com.pet.platform.shared.security不存在
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/testing/authentication/PlatformAuthenticationIT.java:[9,35] 程序包com.pet.platform.shared.api不存在
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/testing/authentication/PlatformAuthenticationIT.java:[10,41] 程序包com.pet.platform.shared.exception不存在
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/testing/authentication/PlatformAuthenticationIT.java:[11,31] 程序包com.pet.platform.shared.security不存在
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/testing/authentication/PlatformAuthenticationIT.java:[128,39] 找不到符号
+[ERROR]   符号:   类 CurrentPrincipalProvider
+[ERROR]   位置: 类 com.pet.testing.authentication.PlatformAuthenticationIT.Probes
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/testing/authentication/PlatformAuthenticationIT.java:[140,15] 找不到符号
+[ERROR]   符号:   类 CurrentPrincipalProvider
+[ERROR]   位置: 类 com.pet.testing.authentication.PlatformAuthenticationIT.TestEndpoints
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/testing/authentication/PlatformAuthenticationIT.java:[141,23] 找不到符号
+[ERROR]   符号:   类 CurrentPrincipalProvider
+[ERROR]   位置: 类 com.pet.testing.authentication.PlatformAuthenticationIT.TestEndpoints
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/testing/authentication/PlatformAuthenticationIT.java:[142,108] 程序包com.pet.platform.shared.api.ApiResponse不存在
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/testing/authentication/PlatformAuthenticationIT.java:[145,143] 程序包com.pet.platform.shared.api.ApiResponse不存在
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/testing/authentication/StaffAuthenticationIT.java:[11,35] 程序包com.pet.platform.shared.api不存在
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/testing/authentication/StaffAuthenticationIT.java:[12,35] 程序包com.pet.platform.shared.api不存在
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/testing/authentication/StaffAuthenticationIT.java:[42,16] 找不到符号
+[ERROR]   符号:   类 CurrentPrincipalProvider
+[ERROR]   位置: 类 com.pet.testing.authentication.StaffAuthenticationIT
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/testing/authentication/StaffAuthenticationIT.java:[9,31] 程序包com.pet.platform.shared.security不存在
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/testing/authentication/StaffAuthenticationIT.java:[121,112] 找不到符号
+[ERROR]   符号:   类 StoreScopeGuard
+[ERROR]   位置: 类 com.pet.testing.authentication.StaffAuthenticationIT.Probes
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/testing/authentication/StaffAuthenticationIT.java:[123,46] 找不到符号
+[ERROR]   符号:   类 StoreScopeGuard
+[ERROR]   位置: 类 com.pet.testing.authentication.StaffAuthenticationIT.Probe
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/testing/authentication/StaffAuthenticationIT.java:[123,100] 找不到符号
+[ERROR]   符号:   类 StoreScopeGuard
+[ERROR]   位置: 类 com.pet.testing.authentication.StaffAuthenticationIT.Probe
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/testing/authentication/StaffAuthenticationIT.java:[124,79] 程序包ApiResponse不存在
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/testing/authentication/StaffAuthenticationIT.java:[125,74] 程序包ApiResponse不存在
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/testing/authentication/StaffAuthenticationIT.java:[126,76] 程序包ApiResponse不存在
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/testing/authentication/StaffCredentialSecurityIT.java:[10,41] 程序包com.pet.platform.shared.exception不存在
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/testing/authentication/StaffCredentialSecurityIT.java:[167,75] 找不到符号
+[ERROR]   符号:   类 DataScope
+[ERROR]   位置: 类 com.pet.testing.authentication.StaffCredentialSecurityIT.QueueProbe
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/testing/authentication/StaffCredentialSecurityIT.java:[168,70] 程序包ApiResponse不存在
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/testing/authentication/StaffCredentialSecurityIT.java:[9,31] 程序包com.pet.platform.shared.api不存在
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/testing/contracts/ContractFixtures.java:[5,41] 程序包com.pet.platform.shared.exception不存在
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/testing/contracts/ContractFixtures.java:[4,31] 程序包com.pet.platform.shared.api不存在
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/testing/contracts/ContractFixtures.java:[68,16] 找不到符号
+[ERROR]   符号:   类 ApiResponse
+[ERROR]   位置: 类 com.pet.testing.contracts.ContractFixtures.ContractController
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/testing/contracts/ContractFixtures.java:[74,16] 找不到符号
+[ERROR]   符号:   类 ApiResponse
+[ERROR]   位置: 类 com.pet.testing.contracts.ContractFixtures.ContractController
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/testing/contracts/ContractFixtures.java:[74,28] 找不到符号
+[ERROR]   符号:   类 PageResponse
+[ERROR]   位置: 类 com.pet.testing.contracts.ContractFixtures.ContractController
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/testing/contracts/ContractFixtures.java:[78,16] 找不到符号
+[ERROR]   符号:   类 ApiResponse
+[ERROR]   位置: 类 com.pet.testing.contracts.ContractFixtures.ContractController
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/testing/contracts/ContractFixtures.java:[80,16] 找不到符号
+[ERROR]   符号:   类 ApiResponse
+[ERROR]   位置: 类 com.pet.testing.contracts.ContractFixtures.ContractController
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/testing/identity/IdentityFoundationIT.java:[49,16] 找不到符号
+[ERROR]   符号:   类 StoreOwnershipReader
+[ERROR]   位置: 类 com.pet.testing.identity.IdentityFoundationIT
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/testing/identity/IdentityFoundationIT.java:[50,16] 找不到符号
+[ERROR]   符号:   类 StoreScopeGuard
+[ERROR]   位置: 类 com.pet.testing.identity.IdentityFoundationIT
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/testing/identity/IdentityFoundationIT.java:[51,16] 找不到符号
+[ERROR]   符号:   类 CurrentPrincipalProvider
+[ERROR]   位置: 类 com.pet.testing.identity.IdentityFoundationIT
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/testing/identity/IdentityFoundationIT.java:[9,31] 程序包com.pet.platform.shared.api不存在
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/testing/identity/IdentityFoundationIT.java:[10,31] 程序包com.pet.platform.shared.exception不存在
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/testing/identity/IdentityFoundationIT.java:[11,31] 程序包com.pet.platform.shared.security不存在
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/testing/persistence/PersistenceProbe.java:[3,43] 找不到符号
+[ERROR]   符号:   类 BaseEntity
+[ERROR]   位置: 程序包 com.pet.platform.shared.persistence
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/testing/persistence/PersistenceProbe.java:[11,39] 找不到符号
+[ERROR]   符号: 类 BaseEntity
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/testing/persistence/JpaPersistenceIT.java:[52,26] 找不到符号
+[ERROR]   符号:   类 SortWhitelist
+[ERROR]   位置: 类 com.pet.testing.persistence.JpaPersistenceIT
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/testing/persistence/JpaPersistenceIT.java:[4,31] 程序包com.pet.platform.shared.api不存在
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/testing/tenancy/TenancyFixtures.java:[3,35] 程序包com.pet.platform.shared.api不存在
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/testing/tenancy/TenancyFixtures.java:[4,35] 程序包com.pet.platform.shared.api不存在
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/testing/tenancy/TenancyFixtures.java:[5,41] 程序包com.pet.platform.shared.exception不存在
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/testing/tenancy/TenancyFixtures.java:[32,41] 找不到符号
+[ERROR]   符号:   类 PrincipalType
+[ERROR]   位置: 类 com.pet.testing.tenancy.TenancyFixtures
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/testing/tenancy/TenancyFixtures.java:[32,65] 找不到符号
+[ERROR]   符号:   类 DataScopeType
+[ERROR]   位置: 类 com.pet.testing.tenancy.TenancyFixtures
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/testing/tenancy/TenancyFixtures.java:[32,12] 找不到符号
+[ERROR]   符号:   类 DataScope
+[ERROR]   位置: 类 com.pet.testing.tenancy.TenancyFixtures
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/testing/tenancy/TenancyFixtures.java:[35,12] 找不到符号
+[ERROR]   符号:   类 CurrentPrincipal
+[ERROR]   位置: 类 com.pet.testing.tenancy.TenancyFixtures
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/testing/tenancy/TenancyFixtures.java:[40,12] 找不到符号
+[ERROR]   符号:   类 CurrentPrincipal
+[ERROR]   位置: 类 com.pet.testing.tenancy.TenancyFixtures
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/testing/tenancy/TenancyFixtures.java:[44,12] 找不到符号
+[ERROR]   符号:   类 CurrentPrincipal
+[ERROR]   位置: 类 com.pet.testing.tenancy.TenancyFixtures
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/testing/tenancy/TenancyFixtures.java:[53,57] 找不到符号
+[ERROR]   符号:   类 CurrentPrincipalProvider
+[ERROR]   位置: 类 com.pet.testing.tenancy.TenancyFixtures
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/test/java/com/pet/testing/tenancy/TenancyFixtures.java:[56,35] 找不到符号
+[ERROR]   符号:   类 CurrentPrincipal
+[ERROR]   位置: 类 com.pet.testing.tenancy.TenancyFixtures.TestPrincipalProvider
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException

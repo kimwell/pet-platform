@@ -86,3 +86,5 @@ PUT 全量替换所有可编辑字段：必填全部存在，可空字段明确n
 `TraceFilter` 在 REQUEST 与同步 ERROR 分发运行，错误分发复用请求内生成的 ID。响应头、信封、`TraceContext` 和 MDC `traceId` 一致；请求结束恢复此前的 trace 上下文和该 MDC 键，不清空其他组件 MDC。无输入、非法长度/大小写/字符、重复 Header、逗号多值均生成新值；不记录非法输入。异步 Servlet 分发、后台任务/线程池、消息和跨服务传播未实现；不是完整分布式追踪。异常日志仅记录 trace 与异常类型，不打印原始 message/cause/堆栈/请求体。容器或未来第三方组件的日志策略需对应阶段单独验证。
 
 真实处理链与生产包检查见 [P03-01 验证](../testing/P03-01-VERIFICATION.md)。协议夹具只位于测试源码，由测试配置导入；不存在可调用的生产示例接口。PUT/PATCH/version/幂等/批量业务语义仍是冻结设计，未由公共错误类型实现。
+
+P05-05新增微信错误注册：401 WECHAT_CODE_INVALID；503 WECHAT_RESULT_UNCERTAIN/WECHAT_UPSTREAM_ERROR/WECHAT_RESPONSE_INVALID/WECHAT_CONFIGURATION_MISSING，均固定中文安全消息，无原始响应或秘密。实际客户四路径及身份判别唯一见[IDENTITY](IDENTITY.md#p05-05-客户正式接口2026-10-08)，没有改动ID/total字符串或时间/trace/信封协议。

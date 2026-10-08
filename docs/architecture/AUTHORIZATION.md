@@ -77,3 +77,11 @@ system_reserved是真实员工受保护标志，无HTTP修改接口，管理员�
 identity的PlatformPermissions只声明platform:session:manage、platform:credential:change、platform:redis:operate，分别对应本人会话、本人凭据及P04受限平台Redis。PlatformScopeGuard验证真实PLATFORM和明确代码，不能只isLogin或比较角色名；没有平台角色管理/通配符/租户业务权限。每请求从pet_control.authorization重载有效账号与权限，未登记代码失败关闭。敏感事务行锁后再查当前权限，授权变动不沿用请求旧快照。
 
 平台tenantId=null不是全租户访问；不建立TenantContext，租户持久化和任务入口默认拒绝，STAFF也不能调用平台接口/Redis能力。没有跨租户管理、impersonate/runAsTenant或管理员重置其他平台账号。当前范围与验证见[平台初始化](../development/PLATFORM-BOOTSTRAP.md)、[P05-04](../testing/P05-04-VERIFICATION.md)。
+
+## P05-05 客户授权当前实施（2026-10-08）
+
+CUSTOMER只拥有customer:session:manage本人会话能力，DataScope的principalType=CUSTOMER、principalId=customerId、tenantId来自已验证微信绑定；范围仅SELF，门店上限空，授权版本固定0（本轮没有可变客户角色授权）。不把客户ID映射成employeeId，不授STAFF角色/TENANT/门店管理能力。相同UUID分别属于三域仍不同身份，Header及服务端路由严格隔离；平台Cookie/员工Cookie不回退为客户认证。
+
+登录入口知道有效tenantCode只意味着服务端允许在该租户独立建立微信客户，不能获取员工或其他客户权限；共享AppID同OpenID跨租户独立主体。入口当前显式允许公开注册，没有虚构邀请/成员策略，也没有把tenantCode当强身份认证。后续有邀请要求必须实现明确策略。
+
+客户每请求从正式PG重验客户/租户/绑定状态和安全代际，SELF后续资源仍须登记正确owner+主体域且经ScopedPersistence/RLS；本轮仅身份/会话，没有客户业务资源CRUD。CUSTOMER任务入口提交前403拒绝，不生成可排队证明。完整员工/角色/权限管理API仍未实现，阶段归属及未完成项逐项见[P05总验收](../testing/P05-ACCEPTANCE.md)。
