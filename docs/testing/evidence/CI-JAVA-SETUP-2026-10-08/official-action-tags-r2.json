@@ -1,0 +1,17 @@
+{
+  "id": "official-action-tags-r2",
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "argv": [
+    "git",
+    "-c",
+    "http.version=HTTP/1.1",
+    "ls-remote",
+    "https://github.com/actions/setup-java.git",
+    "refs/tags/v5.7.0"
+  ],
+  "startedAtUTC": "2026-10-08T02:03:06.997538+00:00",
+  "finishedAtUTC": "2026-10-08T02:03:52.007296+00:00",
+  "exitCode": null,
+  "log": "official-action-tags-r2.log",
+  "summary": "NOT_EXECUTED：命令未在超时前完成。\n"
+}

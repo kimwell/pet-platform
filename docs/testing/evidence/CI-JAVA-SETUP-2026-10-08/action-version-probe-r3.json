@@ -1,0 +1,15 @@
+{
+  "id": "action-version-probe-r3",
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "argv": [
+    "/private/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/tools/node-v24.21.0-darwin-arm64/bin/node",
+    "/Users/kimwell/work/pet-platform/docs/testing/evidence/CI-JAVA-SETUP-2026-10-08/probe.cjs",
+    "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/pet-platform-ci-java-8ve8wku2/setup-java-v5-bundle.cjs",
+    "/Users/kimwell/work/pet-platform/docs/testing/evidence/CI-JAVA-SETUP-2026-10-08/adoptium-release.json"
+  ],
+  "startedAtUTC": "2026-10-08T02:03:52.008000+00:00",
+  "finishedAtUTC": "2026-10-08T02:03:52.228496+00:00",
+  "exitCode": 0,
+  "log": "action-version-probe-r3.log",
+  "summary": "已复现：官方 v5.7.0 仍拒绝原四段版本输入，单纯升级 Action 无法修复。\n{\n  \"status\": \"PASS\",\n  \"input\": \"21.0.12+101.0.LTS\",\n  \"runtimeVersion\": \"21.0.12.1+1-LTS\",\n  \"linuxX64Package\": \"https://github.com/adoptium/temurin21-binaries/releases/download/jdk-21.0.12.1%2B1/OpenJDK21U-jdk_x64_linux_hotspot_21.0.12.1_1.tar.gz\"\n}\n范围：真实 Action 的解析及元数据匹配；没有执行 Linux JDK 下载、安装或 GitHub CI。\n"
+}

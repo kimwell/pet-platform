@@ -1,0 +1,17 @@
+/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/pet-platform-ci-java-8ve8wku2/setup-java-v5-bundle.cjs:50330
+if (global.FinalizationRegistry && !(process.env.NODE_V8_COVERAGE || process.env.UNDICI_NO_FG)) {
+^
+
+ReferenceError: global is not defined
+    at 59136 (/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/pet-platform-ci-java-8ve8wku2/setup-java-v5-bundle.cjs:50330:1)
+    at __nccwpck_require__ (/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/pet-platform-ci-java-8ve8wku2/setup-java-v5-bundle.cjs:130555:43)
+    at 23701 (/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/pet-platform-ci-java-8ve8wku2/setup-java-v5-bundle.cjs:55318:24)
+    at __nccwpck_require__ (/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/pet-platform-ci-java-8ve8wku2/setup-java-v5-bundle.cjs:130555:43)
+    at 46752 (/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/pet-platform-ci-java-8ve8wku2/setup-java-v5-bundle.cjs:48622:16)
+    at __nccwpck_require__ (/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/pet-platform-ci-java-8ve8wku2/setup-java-v5-bundle.cjs:130555:43)
+    at 54844 (/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/pet-platform-ci-java-8ve8wku2/setup-java-v5-bundle.cjs:8369:18)
+    at __nccwpck_require__ (/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/pet-platform-ci-java-8ve8wku2/setup-java-v5-bundle.cjs:130555:43)
+    at 35306 (/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/pet-platform-ci-java-8ve8wku2/setup-java-v5-bundle.cjs:5578:23)
+    at __nccwpck_require__ (/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/pet-platform-ci-java-8ve8wku2/setup-java-v5-bundle.cjs:130555:43)
+
+Node.js v24.21.0

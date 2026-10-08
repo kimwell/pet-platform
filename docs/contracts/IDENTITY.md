@@ -47,3 +47,11 @@ TokenLoginResult：`{identity:CurrentIdentity,token:{headerName:string,value:str
 登录失败统一401 LOGIN_FAILED，“账号或登录信息不正确”，不区分租户/账号存在或密码错误。username规范化规则由账号模块唯一实现；密码不trim/不日志记录。账号密码最低12、最高128字符，允许Unicode，不强制格式组合、不保存明文；服务端使用JDK SecretKeyFactory/PBEKeySpec的PBKDF2WithHmacSHA256，600000次、每密码独立32字节SecureRandom盐、256位输出；记录algorithmVersion/iterations/salt/hash，MessageDigest.isEqual比较，升级成功登录时重新哈希。不会trim或Unicode归一化密码，禁止快速SHA/MD5和Hutool替代；P05验证UTF-8/Unicode一致性、性能与限流，参数只可经证据提高，不在生产静默降低。[OWASP依据](https://cheatsheetseries.owasp.org/cheatsheets/Password_Storage_Cheat_Sheet.html)。登录默认IP最多60次/5分钟，tenantCode+规范化username摘要最多10次/15分钟；微信code登录IP最多20次/分钟。Redis原子计数，生产依赖失败不跳过；429遵循API，不以自动永久停用账号作为限流。
 
 未登录me401不返回null身份；网络故障保留本地会话。小程序会话槽位及切换见 [小程序页面](../conventions/MINIPROGRAM-PAGES.md)，Web并发401见 [Web状态](../conventions/WEB-STATE.md)。
+
+## P04-01 内部可信身份接入（2026-10-08）
+
+上表CurrentIdentity仍是P05计划公开DTO，本轮不生成第二套身份JSON。内部CurrentPrincipalProvider返回Optional<CurrentPrincipal>，无身份为empty；默认生产Bean也是empty。CurrentPrincipal最小字段为principalType、principalId、tenantId、非凭据sessionId、非负authorizationVersion、permissionCodes、authorizedStoreIds及按permissionCode的DataScope。所有集合防御性复制，不含displayName/Token/客户资料/会话期限副本，类型不在OpenAPI注册。
+
+PLATFORM必须tenantId=null、无租户grants/门店；STAFF/CUSTOMER必须非空可信tenant，CUSTOMER只SELF。权限范围必须与主体域/ID/租户相符，grant键必须已授操作权限，STORES是身份门店上限子集。SELF由业务代码映射归属，非createdBy通用规则。P05适配器必须在服务器验证端点身份域、载体/会话和权威安全/授权版本后提供事实；客户端tenantCode只作登录线索，tenantId/角色/权限/门店集不作为身份来源，平台不得隐式转租户。
+
+本轮内部模型与拒绝/生命周期技术证据见 [P04-01](../testing/P04-01-VERIFICATION.md)，没有接入或伪造Sa-Token会话，不改变公开CurrentIdentity字段、错误枚举或三端类型。

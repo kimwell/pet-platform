@@ -16,6 +16,6 @@ JPA Auditing 的 `AuditingEntityListener` 负责创建和修改时间。`Clock.s
 
 应用服务可先 `Page.map(dtoMapper)`，再 `JpaPageAdapter.fromPage(dtoPage)` 得到现有 PageResponse；total 使用 `getTotalElements()` 的 long 保真字符串，不转 int 或以本页长度代替。实际列表返回超末页空集合，保留请求页码和真实总数。原生 SQL 的排序和 NULLS LAST 需要 owner 显式实现，不依赖 ORM 默认规则。
 
-本轮不提供通用 BaseService/BaseRepository、无范围全局 findById 服务或生产演示接口。测试 Repository 的全局 CRUD 仅是技术夹具。当前尚未实现 TenantContext、ScopedPersistence、RLS 或无上下文拒绝；后续正式业务访问必须先经过 P04 的范围机制，本轮基类不能被称为多租户完成。
+本轮不提供通用 BaseService/BaseRepository、无范围全局 findById 服务或生产演示接口。测试 Repository 的全局 CRUD 仅是技术夹具。P03-02当时尚未实现TenantContext或范围机制；P04-01现已实现上下文/Guard及无上下文拒绝，但ScopedPersistence、RLS和数据库隔离仍待P04-02。正式业务访问必须经过完整P04范围机制，BaseEntity不能被称为多租户完成。
 
 测试方法不加自动回滚事务：通过测试应用服务代理提交或抛异常，再由独立数据库查询核对提交/回滚，覆盖已 flush 单笔、多笔和唯一约束失败。Docker 必须可用，测试只连接动态独立 PostgreSQL 容器；详情与数量见 [P03-02](../testing/P03-02-VERIFICATION.md)。

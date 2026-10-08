@@ -1,4 +1,4 @@
 package com.pet.platform.shared.exception;
 
-/** 只定义不可见资源映射，未实现可信租户上下文或隔离机制。 */
+/** 租户缺上下文或资源不可访问统一404，不泄露其他租户资源存在性。 */
 public final class TenantAccessDeniedException extends ResourceNotFoundException { }

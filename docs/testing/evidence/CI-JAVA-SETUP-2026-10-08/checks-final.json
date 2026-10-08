@@ -1,0 +1,181 @@
+[
+  {
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": "git ls-remote https://github.com/actions/setup-java.git 'refs/tags/v5*' 'refs/tags/v6*' && git ls-remote https://github.com/adoptium/temurin21-binaries.git 'refs/tags/jdk-21.0.12.1+1*'",
+    "exitCode": 0,
+    "observedOnDate": "2026-10-08",
+    "summary": "本轮第一次官方 Git 查询成功；随后复查发生 HTTP/2 错误和超时，分别保留失败结果。",
+    "selectedOutput": "b6effb05e454b25005698d916606bdc6ffcbf961\trefs/tags/v5.7.0\na056bdb4513e0acd462e16c6f2dd3520306f730e\trefs/tags/jdk-21.0.12.1+1\n"
+  },
+  {
+    "id": "action-version-probe",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "argv": [
+      "/private/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/tools/node-v24.21.0-darwin-arm64/bin/node",
+      "/Users/kimwell/work/pet-platform/docs/testing/evidence/CI-JAVA-SETUP-2026-10-08/probe.cjs",
+      "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/pet-platform-ci-java-8ve8wku2/setup-java-v5-bundle.cjs",
+      "/Users/kimwell/work/pet-platform/docs/testing/evidence/CI-JAVA-SETUP-2026-10-08/adoptium-release.json"
+    ],
+    "startedAtUTC": "2026-10-08T02:00:27.340071+00:00",
+    "finishedAtUTC": "2026-10-08T02:00:27.530664+00:00",
+    "exitCode": 1,
+    "log": "action-version-probe.log",
+    "summary": "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/pet-platform-ci-java-8ve8wku2/setup-java-v5-bundle.cjs:50330\nif (global.FinalizationRegistry && !(process.env.NODE_V8_COVERAGE || process.env.UNDICI_NO_FG)) {\n^\n\nReferenceError: global is not defined\n    at 59136 (/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/pet-platform-ci-java-8ve8wku2/setup-java-v5-bundle.cjs:50330:1)\n    at __nccwpck_require__ (/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/pet-platform-ci-java-8ve8wku2/setup-java-v5-bundle.cjs:130555:43)\n    at 23701 (/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/pet-platform-ci-java-8ve8wku2/setup-java-v5-bundle.cjs:55318:24)\n    at __nccwpck_require__ (/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/pet-platform-ci-java-8ve8wku2/setup-java-v5-bundle.cjs:130555:43)\n    at 46752 (/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/pet-platform-ci-java-8ve8wku2/setup-java-v5-bundle.cjs:48622:16)\n    at __nccwpck_require__ (/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/pet-platform-ci-java-8ve8wku2/setup-java-v5-bundle.cjs:130555:43)\n    at 54844 (/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/pet-platform-ci-java-8ve8wku2/setup-java-v5-bundle.cjs:8369:18)\n    at __nccwpck_require__ (/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/pet-platform-ci-java-8ve8wku2/setup-java-v5-bundle.cjs:130555:43)\n    at 35306 (/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/pet-platform-ci-java-8ve8wku2/setup-java-v5-bundle.cjs:5578:23)\n    at __nccwpck_require__ (/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/pet-platform-ci-java-8ve8wku2/setup-java-v5-bundle.cjs:130555:43)\n\nNode.js v24.21.0\n"
+  },
+  {
+    "id": "official-action-tags",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "argv": [
+      "git",
+      "ls-remote",
+      "https://github.com/actions/setup-java.git",
+      "refs/tags/v5.7.0"
+    ],
+    "startedAtUTC": "2026-10-08T02:00:27.530886+00:00",
+    "finishedAtUTC": "2026-10-08T02:01:58.028265+00:00",
+    "exitCode": 128,
+    "log": "official-action-tags.log",
+    "summary": "fatal: unable to access 'https://github.com/actions/setup-java.git/': Error in the HTTP2 framing layer\n"
+  },
+  {
+    "id": "repository-check",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "argv": [
+      "/private/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/tools/node-v24.21.0-darwin-arm64/bin/node",
+      "scripts/check-repository.mjs"
+    ],
+    "startedAtUTC": "2026-10-08T02:01:58.028527+00:00",
+    "finishedAtUTC": "2026-10-08T02:01:58.328484+00:00",
+    "exitCode": 0,
+    "log": "repository-check.log",
+    "summary": "单锁、精确直接依赖、工具链、固定后端入口及秘密特征检查通过。秘密检查不输出匹配值。\n"
+  },
+  {
+    "id": "backend-verify-first",
+    "cwd": "/Users/kimwell/work/pet-platform/apps/backend",
+    "argv": [
+      "./mvnw",
+      "--batch-mode",
+      "clean",
+      "verify"
+    ],
+    "startedAtUTC": null,
+    "finishedAtUTC": "2026-10-08T02:01:23.656362+00:00",
+    "exitCode": 1,
+    "log": "backend-verify.log",
+    "summary": "89 tests，1 failure：当时异步租户 MVC 测试的中文响应编码失败。其后工作区已有并行 UTF-8 修正，本轮未编辑该测试。开始时间未保留，结束时间取日志文件保存时间。"
+  },
+  {
+    "id": "official-action-tags-r2",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "argv": [
+      "git",
+      "-c",
+      "http.version=HTTP/1.1",
+      "ls-remote",
+      "https://github.com/actions/setup-java.git",
+      "refs/tags/v5.7.0"
+    ],
+    "startedAtUTC": "2026-10-08T02:03:06.997538+00:00",
+    "finishedAtUTC": "2026-10-08T02:03:52.007296+00:00",
+    "exitCode": null,
+    "log": "official-action-tags-r2.log",
+    "summary": "NOT_EXECUTED：命令未在超时前完成。\n",
+    "status": "NOT_COMPLETED / NOT_VERIFIED",
+    "note": "命令已启动，网络复查未在超时前完成；日志中的 NOT_EXECUTED 不代表没有发起该命令。首次官方 Git 查询的成功输出单独保留。"
+  },
+  {
+    "id": "action-version-probe-r3",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "argv": [
+      "/private/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/tools/node-v24.21.0-darwin-arm64/bin/node",
+      "/Users/kimwell/work/pet-platform/docs/testing/evidence/CI-JAVA-SETUP-2026-10-08/probe.cjs",
+      "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/pet-platform-ci-java-8ve8wku2/setup-java-v5-bundle.cjs",
+      "/Users/kimwell/work/pet-platform/docs/testing/evidence/CI-JAVA-SETUP-2026-10-08/adoptium-release.json"
+    ],
+    "startedAtUTC": "2026-10-08T02:03:52.008000+00:00",
+    "finishedAtUTC": "2026-10-08T02:03:52.228496+00:00",
+    "exitCode": 0,
+    "log": "action-version-probe-r3.log",
+    "summary": "已复现：官方 v5.7.0 仍拒绝原四段版本输入，单纯升级 Action 无法修复。\n{\n  \"status\": \"PASS\",\n  \"input\": \"21.0.12+101.0.LTS\",\n  \"runtimeVersion\": \"21.0.12.1+1-LTS\",\n  \"linuxX64Package\": \"https://github.com/adoptium/temurin21-binaries/releases/download/jdk-21.0.12.1%2B1/OpenJDK21U-jdk_x64_linux_hotspot_21.0.12.1_1.tar.gz\"\n}\n范围：真实 Action 的解析及元数据匹配；没有执行 Linux JDK 下载、安装或 GitHub CI。\n"
+  },
+  {
+    "id": "runtime-version-step-r2",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "argv": [
+      "bash",
+      "-eu",
+      "-o",
+      "pipefail",
+      "-c",
+      "java -version\nruntime_version=\"$(java -XshowSettings:properties -version 2>&1 | awk '$1 == \"java.runtime.version\" { print $3 }')\"\nif [ \"$runtime_version\" != '21.0.12.1+1-LTS' ]; then\n  echo \"JDK 运行版本与冻结基线不一致：$runtime_version\" >&2\n  exit 1\nfi\n"
+    ],
+    "startedAtUTC": "2026-10-08T02:03:52.228706+00:00",
+    "finishedAtUTC": "2026-10-08T02:03:52.356549+00:00",
+    "exitCode": 0,
+    "log": "runtime-version-step-r2.log",
+    "summary": "openjdk version \"21.0.12.1\" 2026-08-18 LTS\nOpenJDK Runtime Environment Temurin-21.0.12.1+1 (build 21.0.12.1+1-LTS)\nOpenJDK 64-Bit Server VM Temurin-21.0.12.1+1 (build 21.0.12.1+1-LTS, mixed mode, sharing)\n"
+  },
+  {
+    "id": "repository-check-r2",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "argv": [
+      "/private/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/tools/node-v24.21.0-darwin-arm64/bin/node",
+      "scripts/check-repository.mjs"
+    ],
+    "startedAtUTC": "2026-10-08T02:03:52.356744+00:00",
+    "finishedAtUTC": "2026-10-08T02:03:52.456417+00:00",
+    "exitCode": 0,
+    "log": "repository-check-r2.log",
+    "summary": "单锁、精确直接依赖、工具链、固定后端入口及秘密特征检查通过。秘密检查不输出匹配值。\n"
+  },
+  {
+    "id": "backend-verify-r2",
+    "cwd": "/Users/kimwell/work/pet-platform/apps/backend",
+    "argv": [
+      "./mvnw",
+      "--batch-mode",
+      "clean",
+      "verify"
+    ],
+    "startedAtUTC": "2026-10-08T02:03:52.456610+00:00",
+    "finishedAtUTC": "2026-10-08T02:04:27.488240+00:00",
+    "exitCode": 0,
+    "log": "backend-verify-r2.log",
+    "summary": "d.\n2026-10-08T10:04:26.473+08:00  INFO 96976 --- [pet-platform-backend] [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'\n2026-10-08T10:04:26.479+08:00  INFO 96976 --- [pet-platform-backend] [           main] c.p.t.persistence.JpaPersistenceIT       : Started JpaPersistenceIT in 0.548 seconds (process running for 17.941)\n2026-10-08T10:04:26.777+08:00  INFO 96976 --- [pet-platform-backend] [           main] o.f.core.internal.command.DbValidate     : Successfully validated 1 migration (execution time 00:00.002s)\n2026-10-08T10:04:26.782+08:00  INFO 96976 --- [pet-platform-backend] [           main] o.f.core.internal.command.DbMigrate      : Current version of schema \"public\": 1\n2026-10-08T10:04:26.782+08:00  INFO 96976 --- [pet-platform-backend] [           main] o.f.core.internal.command.DbMigrate      : Schema \"public\" is up to date. No migration necessary.\n2026-10-08T10:04:26.922+08:00  WARN 96976 --- [pet-platform-backend] [           main] org.hibernate.orm.jdbc.error             : HHH000247: ErrorCode: 0, SQLState: 23505\n2026-10-08T10:04:26.922+08:00  WARN 96976 --- [pet-platform-backend] [           main] org.hibernate.orm.jdbc.error             : ERROR: duplicate key value violates unique constraint \"persistence_probe_code_key\"\n  详细：Key (code)=(duplicate) already exists.\n[INFO] Tests run: 12, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.103 s -- in com.pet.testing.persistence.JpaPersistenceIT\n[INFO] \n[INFO] Results:\n[INFO] \n[INFO] Tests run: 23, Failures: 0, Errors: 0, Skipped: 0\n[INFO] \n[INFO] \n[INFO] --- failsafe:3.5.6:verify (default) @ pet-platform-backend ---\n[INFO] ------------------------------------------------------------------------\n[INFO] BUILD SUCCESS\n[INFO] ------------------------------------------------------------------------\n[INFO] Total time:  31.029 s\n[INFO] Finished at: 2026-10-08T10:04:27+08:00\n[INFO] ------------------------------------------------------------------------\n"
+  },
+  {
+    "id": "contracts-check",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "argv": [
+      "/private/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/pet-platform-p02-02-_qb1x3n7/bin/pnpm",
+      "contracts:check"
+    ],
+    "startedAtUTC": "2026-10-08T02:04:27.488475+00:00",
+    "finishedAtUTC": "2026-10-08T02:04:39.375680+00:00",
+    "exitCode": 0,
+    "log": "contracts-check.log",
+    "summary": "'\n2026-10-08T10:04:38.131+08:00  INFO 97225 --- [pet-platform-backend] [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'\n2026-10-08T10:04:38.139+08:00  INFO 97225 --- [pet-platform-backend] [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 58950 (http) with context path '/'\n2026-10-08T10:04:38.142+08:00  INFO 97225 --- [pet-platform-backend] [           main] c.p.t.c.ProductionOpenApiExportTest      : Started ProductionOpenApiExportTest in 0.428 seconds (process running for 6.11)\n2026-10-08T10:04:38.147+08:00  INFO 97225 --- [pet-platform-backend] [1-auto-2-exec-1] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring DispatcherServlet 'dispatcherServlet'\n2026-10-08T10:04:38.147+08:00  INFO 97225 --- [pet-platform-backend] [1-auto-2-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'\n2026-10-08T10:04:38.148+08:00  INFO 97225 --- [pet-platform-backend] [1-auto-2-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms\n2026-10-08T10:04:38.192+08:00  INFO 97225 --- [pet-platform-backend] [1-auto-2-exec-1] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 41 ms\n[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.505 s -- in com.pet.testing.contracts.ProductionOpenApiExportTest\n[INFO] \n[INFO] Results:\n[INFO] \n[INFO] Tests run: 10, Failures: 0, Errors: 0, Skipped: 0\n[INFO] \n[INFO] ------------------------------------------------------------------------\n[INFO] BUILD SUCCESS\n[INFO] ------------------------------------------------------------------------\n[INFO] Total time:  9.797 s\n[INFO] Finished at: 2026-10-08T10:04:38+08:00\n[INFO] ------------------------------------------------------------------------\n后端schema、两份类型和小程序同步产物一致。此检查不等于完整破坏性变更分析。\n\n> @pet/api-contracts@0.0.0 typecheck /Users/kimwell/work/pet-platform/packages/api-contracts\n> tsc --noEmit\n\n"
+  },
+  {
+    "id": "diff-check",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "argv": [
+      "git",
+      "diff",
+      "--check"
+    ],
+    "startedAtUTC": "2026-10-08T02:04:39.375900+00:00",
+    "finishedAtUTC": "2026-10-08T02:04:39.394811+00:00",
+    "exitCode": 0,
+    "log": "diff-check.log",
+    "summary": ""
+  },
+  {
+    "id": "final-document-links-and-diff",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": "Python 检查修复报告与版本矩阵全部本地链接；git diff --check",
+    "exitCode": 0,
+    "summary": "本地文档链接及补丁格式通过。"
+  }
+]

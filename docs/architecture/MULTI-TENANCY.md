@@ -66,3 +66,23 @@ application 只能调用本模块 scoped Repository，选择性暴露有范围�
 不使用 InheritableThreadLocal 偷传；只传不可变最小执行描述，不传 Cookie/Token/EntityManager。正常/异常结束都清理。登录查找的具体限定 SQL 与 RLS 兼容性 P04/P05 必测，不扩展为业务绕过。
 
 P04 真 PostgreSQL/Testcontainers 验证跨租户查询/count、JPA/native/bulk 写、Store/SELF、关联、无上下文、运行角色、连接复用、回滚/REQUIRES_NEW。迁移扫描检查全部租户表策略/FORCE/复合键；结构扫描检查未登记持久化，详见 [验收矩阵](../testing/ACCEPTANCE-MATRIX.md)。
+
+## P04-01 已实现的上下文与执行边界（2026-10-08）
+
+本轮实现 `shared.security.CurrentPrincipalProvider/CurrentPrincipal`、`shared.tenancy.TenantContext/TenantContextHolder/TenantExecutionScope/TenantScopeGuard`、DataScope/ScopeGrant、StoreScopeGuard/StoreOwnershipReader、TenantContextFilter 与 TrustedTenantExecutor。它们都是内部类型，不改变公开DTO/OpenAPI。尚无真实认证、正式门店事实源、ScopedPersistence、RLS、Redis或异步传播，不能称为多租户数据隔离完成。证据见 [P04-01](../testing/P04-01-VERIFICATION.md)。
+
+CurrentPrincipal只保存主体域/ID、可信租户、非凭据sessionId、authorizationVersion、操作权限与按权限范围、门店上限。PLATFORM必须无tenant/grants/门店；STAFF/CUSTOMER必须有tenant，CUSTOMER仅SELF能力。无身份用Optional.empty表达，不能用null tenant表示全量权限。默认Provider返回空，P05由对应身份owner的可信Sa-Token适配器替换；公共端点应返回空，不从请求头/Query/Body建立身份，tenantCode仍只作候选线索。平台控制面用PlatformScopeGuard独立入口，没有转为租户身份的接口。
+
+HTTP入口依次为TraceFilter、未来可信认证适配器、TenantContextFilter、MVC。REQUEST从Provider取最小事实，根上下文purpose=AUTHORITY_READ，没有业务permission/range；这只预留身份owner的安全查询边界，当前没有实现授权数据库查询。应用用例通过 `try (var scope = TenantExecutionScope.forPermission(permissionCode))` 选择服务端已授权的本权限范围，业务访问必须 `TenantScopeGuard.requirePermission(permissionCode)`；不能把读取Holder等同业务授权。缺上下文/身份边界不能执行业务，统一404 RESOURCE_NOT_FOUND；缺具体操作权限403 PERMISSION_DENIED。
+
+范围只允许从当前合法边界建立，底层replace/frame不可公开。业务调用不能直接打开任意principal或tenant。同权限同租户可嵌套；forPermission在业务内保持当前收窄范围，narrow只接受同主体同租户子集，不允许扩大、跨权限或跨租户；内层关闭恢复外层。LIFO顺序错误拒绝且保持当前内层；可以按正确顺序补关。跨线程关闭拒绝，不修改任一线程。正常重复关闭幂等。最外层结束清理；HTTP和可信同步Executor的根边界发现未关内层时先恢复本次管理状态再报告内部错误，异常也不遗留上下文。没有InheritableThreadLocal，线程池/子线程不继承。
+
+同步后台只提供TrustedTenantExecutor：从注入的可信Provider取身份后执行明确permission，不接收tenantId或任意Principal。默认Provider为空时401 AUTH_REQUIRED；平台身份不能进入。业务已在范围中应使用嵌套scope，不重新打开后台根。SYSTEM任务的登记、允许能力、权威重新授权、审计及描述传递由后续P04-03/P05/P10接入，当前没有系统超权入口。
+
+MDC仅管理tenantId、operatorId、经StoreScopeGuard事实核验后显式选中的storeId。授权集合不是当前门店，未选择时无storeId。close恢复这三个键，不调用MDC.clear，不影响traceId或其他组件字段。不记录Token、完整身份、客户资料或门店授权集合，内部身份/上下文toString也不输出内容。
+
+REQUEST/同步ERROR已覆盖。ERROR从私有请求属性复用服务器身份快照、不再次认证；一般再分发重建身份根边界，嵌套同步ERROR保持当前收窄范围。Filter异常由现有HandlerExceptionResolver与GlobalExceptionHandler输出既定JSON和trace；已提交响应沿用容器/流边界。ASYNC不注册/不自动绑定身份，公共异步链仍可继续；受限租户操作若没有显式可信范围必须拒绝。现有trace也仅支持同步REQUEST/ERROR，本轮不声称支持完整异步Servlet、任务或消息传播。
+
+P04-02必须继续实现受控JPA/关联/真实PostgreSQL越权测试；P04-03处理Redis与异步边界及阶段验收。原RLS/角色/连接复用/SQL和所有阶段门禁保持不变。
+
+P04-01异步边界加固：REQUEST启动Servlet异步后移除同步ERROR使用的服务端身份快照；后续ASYNC/异步ERROR不自动重绑身份，公共处理链继续运行。此反例仅验证拒绝隐式传播，不代表已实现或验证完整Servlet异步协议。

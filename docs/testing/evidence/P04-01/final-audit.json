@@ -1,0 +1,211 @@
+{
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "argv": [
+    "python3",
+    "docs/testing/evidence/P04-01/final-audit.py"
+  ],
+  "finishedAtUTC": "2026-10-08T02:11:35.811902+00:00",
+  "ownedFiles": [
+    {
+      "path": "README.md",
+      "change": "modified",
+      "sha256": "d5104599575cdaf0dd13cf318cac5b7db2c299646a69a9c40f15f6e754b77131"
+    },
+    {
+      "path": "apps/backend/src/main/java/com/pet/platform/shared/exception/TenantAccessDeniedException.java",
+      "change": "modified",
+      "sha256": "4b687ab4b935945e0d02b57f8de7f54d40b8f3b4fdb5b49acb28516635d955a3"
+    },
+    {
+      "path": "apps/backend/src/main/java/com/pet/platform/shared/security/CurrentPrincipal.java",
+      "change": "added",
+      "sha256": "e7ff1d7a97c89e164a14ba8c813ffdf89d1d2c9f1e9abbdb45512b807c8dec5e"
+    },
+    {
+      "path": "apps/backend/src/main/java/com/pet/platform/shared/security/CurrentPrincipalProvider.java",
+      "change": "added",
+      "sha256": "ae68c0c2777b3f5193231abd3ac3aca402aae52c3bc3bc6cfdbecb70d5ae6a21"
+    },
+    {
+      "path": "apps/backend/src/main/java/com/pet/platform/shared/security/PlatformScopeGuard.java",
+      "change": "added",
+      "sha256": "1502b1498407737a90084c7bd17090af12099ca2dc76a5749272f79cdd132724"
+    },
+    {
+      "path": "apps/backend/src/main/java/com/pet/platform/shared/security/PrincipalType.java",
+      "change": "added",
+      "sha256": "c421d752f85bb689d1adac1bdb29f24445a152bc864261012c09bcccea77c7b9"
+    },
+    {
+      "path": "apps/backend/src/main/java/com/pet/platform/shared/tenancy/DataScope.java",
+      "change": "added",
+      "sha256": "53e17ebba07851dca1853cdaea405706b5a921c3317c107a24c8a5f09fa7a113"
+    },
+    {
+      "path": "apps/backend/src/main/java/com/pet/platform/shared/tenancy/DataScopeType.java",
+      "change": "added",
+      "sha256": "0d15d361a14fc35876f9ea639c163ad8f69df8f9a225757d5636a4f5e4daacdf"
+    },
+    {
+      "path": "apps/backend/src/main/java/com/pet/platform/shared/tenancy/ScopeGrant.java",
+      "change": "added",
+      "sha256": "dcb61b1419c3974ebf10739f5895b8ed5780214d13ac3d0c80c32e82295c79cd"
+    },
+    {
+      "path": "apps/backend/src/main/java/com/pet/platform/shared/tenancy/StoreOwnershipReader.java",
+      "change": "added",
+      "sha256": "434d6b7c3ac21307979ae5ca05b0590ac5514637fefd3cf74f24b71c7b10d8a0"
+    },
+    {
+      "path": "apps/backend/src/main/java/com/pet/platform/shared/tenancy/StoreScopeGuard.java",
+      "change": "added",
+      "sha256": "015e2eccce249362b2045b92b1d838c3468b49c3ebf50fc402d5a72f5cdb1177"
+    },
+    {
+      "path": "apps/backend/src/main/java/com/pet/platform/shared/tenancy/TenancyConfiguration.java",
+      "change": "added",
+      "sha256": "8801e662dc8fbedf544e32b6d4dd945876b1cac4f4e94d6f3bd6fe016bdb9335"
+    },
+    {
+      "path": "apps/backend/src/main/java/com/pet/platform/shared/tenancy/TenantContext.java",
+      "change": "added",
+      "sha256": "a93d70444c81dc0eb80e2b871d87d020551f6d3f8146b2e858278cd40c2a7901"
+    },
+    {
+      "path": "apps/backend/src/main/java/com/pet/platform/shared/tenancy/TenantContextFilter.java",
+      "change": "added",
+      "sha256": "77c72f946c44e047c10732943bf3fe02334059ca4121fc529cb8565aead0b262"
+    },
+    {
+      "path": "apps/backend/src/main/java/com/pet/platform/shared/tenancy/TenantContextHolder.java",
+      "change": "added",
+      "sha256": "c4d85c4ea9e3080aafd22b0cc253cd01921ecd25b1199cb4fafade643d4e73f2"
+    },
+    {
+      "path": "apps/backend/src/main/java/com/pet/platform/shared/tenancy/TenantExecutionScope.java",
+      "change": "added",
+      "sha256": "dd7aa0fe5e83c92e61ba439636aa3cfc167d780ee53734df0a80650a01a8f3a1"
+    },
+    {
+      "path": "apps/backend/src/main/java/com/pet/platform/shared/tenancy/TenantPurpose.java",
+      "change": "added",
+      "sha256": "3f144a54c621aa2b13412b4daf96958e3f95a1d1bcb532eb465b973601123bce"
+    },
+    {
+      "path": "apps/backend/src/main/java/com/pet/platform/shared/tenancy/TenantScopeGuard.java",
+      "change": "added",
+      "sha256": "69b306ed040e3c7074c3027963e96e07361c41853c4839970b4aa8dce70ab229"
+    },
+    {
+      "path": "apps/backend/src/main/java/com/pet/platform/shared/tenancy/TrustedTenantExecutor.java",
+      "change": "added",
+      "sha256": "e4e48a9833e2fbf187f5eb6d6f774d1130c1f91c025f2d55bb9fce0a5fa5f4e8"
+    },
+    {
+      "path": "apps/backend/src/test/java/com/pet/testing/architecture/StructureRulesTest.java",
+      "change": "modified",
+      "sha256": "76ee4f8e321dabd960fcf8f0574165a6503e47f6eec32d9539afdde2654e0e73"
+    },
+    {
+      "path": "apps/backend/src/test/java/com/pet/testing/tenancy/TenancyFixtures.java",
+      "change": "added",
+      "sha256": "10b67d3b86a2689e1625ff023b81e19765cb36cc988402c96628da53ad5590a3"
+    },
+    {
+      "path": "apps/backend/src/test/java/com/pet/testing/tenancy/TenantExecutionTest.java",
+      "change": "added",
+      "sha256": "0d09f43759ee6697606607117ab3444d469d6d3ff2c2c8a67e62acba35c811e3"
+    },
+    {
+      "path": "apps/backend/src/test/java/com/pet/testing/tenancy/TenantHttpIT.java",
+      "change": "added",
+      "sha256": "09ba61bb29ce8cae2a2688ee41f4bb3083a850cb3044ab568259ceb050107c94"
+    },
+    {
+      "path": "apps/backend/src/test/java/com/pet/testing/tenancy/TenantMvcTest.java",
+      "change": "added",
+      "sha256": "722a344677764b4608b7b49528bc75b2387246b3dc2104ae64be3436c79357a5"
+    },
+    {
+      "path": "docs/architecture/AUTHORIZATION.md",
+      "change": "modified",
+      "sha256": "01763383fe4643b6c5ff538d1eae09a92dac28f8dee8abf1eab75d2b3ea557a9"
+    },
+    {
+      "path": "docs/architecture/MODULE-BOUNDARIES.md",
+      "change": "modified",
+      "sha256": "926cb6df29d5cdb2c6808805abc2574987d6778de04eea3dacb750fe000eb8b1"
+    },
+    {
+      "path": "docs/architecture/MULTI-TENANCY.md",
+      "change": "modified",
+      "sha256": "73127387446f1b6a5f69249bc1c16b296196e7a1a63468d697b21d03511e0118"
+    },
+    {
+      "path": "docs/contracts/IDENTITY.md",
+      "change": "modified",
+      "sha256": "b565b44acc2bf4ac88c4cb283ef88d49659e11b98b42ff7c1cc6ac9dd726cece"
+    },
+    {
+      "path": "docs/conventions/BACKEND.md",
+      "change": "modified",
+      "sha256": "748179f1d39e88a96e2ae3c8f9e0b570713eb7789052a3402eee7bf71c791dc0"
+    },
+    {
+      "path": "docs/conventions/PERSISTENCE.md",
+      "change": "modified",
+      "sha256": "d68b3ffdf75ca39fb097da288b8b923a10a1bb8893dada03d8795aee40b4560e"
+    },
+    {
+      "path": "docs/development/DECISION-LOG.md",
+      "change": "modified",
+      "sha256": "9231dba034baff56dfba76a7ca07f503b009ff1cb5856a8f116bf961bcdf8a85"
+    },
+    {
+      "path": "docs/development/ROADMAP.md",
+      "change": "modified",
+      "sha256": "cf064a33aec1a74234ead7d70f04779527fa809f56152a9bceacda8396714a20"
+    },
+    {
+      "path": "docs/testing/ACCEPTANCE-MATRIX.md",
+      "change": "modified",
+      "sha256": "4cad88bc003a05fe44f31f8b24a187fea917ecd51cca85129bf8be470a70a08a"
+    },
+    {
+      "path": "docs/testing/P04-01-VERIFICATION.md",
+      "change": "added",
+      "sha256": "4acaf76e036e042768696bf809349236725198e4ecee00adcca2854c93687da8"
+    }
+  ],
+  "protectedFilesCount": 1497,
+  "protectedFileViolations": [],
+  "missingLinks": [],
+  "gitDiffCheckExitCode": 0,
+  "testCount": 114,
+  "baselineCases": 79,
+  "missingBaselineCases": [],
+  "testTotals": {
+    "surefire": {
+      "tests": 91,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "failsafe": {
+      "tests": 23,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    }
+  },
+  "artifactSHA256": "0c7fdaf7e8f97cfa315060f3aa6778caa5941ab8e707eab9d70e704ab81bb39b",
+  "artifactUnchangedSinceVerify": true,
+  "productionArtifactViolations": [],
+  "externalWorkPreserved": [
+    ".github/workflows/check.yml",
+    "docs/development/VERSION-MATRIX.md",
+    "docs/testing/evidence/CI-JAVA-SETUP-2026-10-08/",
+    "docs/testing/CI-JAVA-SETUP-VERIFICATION.md"
+  ],
+  "exitCode": 0
+}

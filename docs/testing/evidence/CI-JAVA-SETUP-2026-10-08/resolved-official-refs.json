@@ -1,0 +1,8 @@
+{
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "command": "git ls-remote https://github.com/actions/setup-java.git 'refs/tags/v5*' 'refs/tags/v6*' && git ls-remote https://github.com/adoptium/temurin21-binaries.git 'refs/tags/jdk-21.0.12.1+1*'",
+  "exitCode": 0,
+  "observedOnDate": "2026-10-08",
+  "summary": "本轮第一次官方 Git 查询成功；随后复查发生 HTTP/2 错误和超时，分别保留失败结果。",
+  "selectedOutput": "b6effb05e454b25005698d916606bdc6ffcbf961\trefs/tags/v5.7.0\na056bdb4513e0acd462e16c6f2dd3520306f730e\trefs/tags/jdk-21.0.12.1+1\n"
+}

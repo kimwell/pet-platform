@@ -110,16 +110,22 @@ Maven 编译/测试插件由 Boot parent 管理；Dependency Plugin 3.9.0 仅用
 
 ## P02-01 构建必需的 CI 工具补充
 
-应用依赖版本不变。P01 未指定 CI Actions；只补充执行既定检查所需的官方动作，2026-10-07 实际 git ls-remote 解析 v4 并固定完整 commit SHA。首次 API 查询受 GitHub 限流返回403，后续官方 Git 读取成功，原始命令/输出见 [CI 工具证据](../testing/evidence/P02-01/ci-actions.json)。Linux CI 配置已建立，平台运行仍 NOT_EXECUTED，不以本地 macOS 检查替代。
+应用依赖版本不变。P01 未指定 CI Actions；只补充执行既定检查所需的官方动作，2026-10-07 实际 git ls-remote 解析 v4 并固定完整 commit SHA。首次 API 查询受 GitHub 限流返回403，后续官方 Git 读取成功，原始命令/输出见 [CI 工具证据](../testing/evidence/P02-01/ci-actions.json)。下表为当前冻结值；2026-10-08 针对用户截图中的 Java 安装失败调整 setup-java，详见下方 CI 修复记录。历史阶段的远程检查仍为 NOT_EXECUTED；修复后远程执行 NOT_VERIFIED，不以本地 macOS 检查替代。
 
 | 组件 / 用途 | 精确版本 | 来源 | 验证等级 | 已知限制 |
 | --- | --- | --- | --- | --- |
 | actions/checkout / CI | v4，`11d5960a326750d5838078e36cf38b85af677262` | [官方源码](https://github.com/actions/checkout/tree/11d5960a326750d5838078e36cf38b85af677262) | DOCUMENTED / RESOLVED | 远程执行 NOT_VERIFIED |
 | actions/setup-node / CI | v4，`49933ea5288caeca8642d1e84afbd3f7d6820020` | [官方源码](https://github.com/actions/setup-node/tree/49933ea5288caeca8642d1e84afbd3f7d6820020) | DOCUMENTED / RESOLVED | 远程执行 NOT_VERIFIED |
-| actions/setup-java / CI | v4，`cf277c60eb25467037889841efdb72551f06f6c3` | [官方源码](https://github.com/actions/setup-java/tree/cf277c60eb25467037889841efdb72551f06f6c3) | DOCUMENTED / RESOLVED | 远程执行 NOT_VERIFIED |
+| actions/setup-java / CI | v5.7.0，`b6effb05e454b25005698d916606bdc6ffcbf961` | [官方源码](https://github.com/actions/setup-java/tree/b6effb05e454b25005698d916606bdc6ffcbf961) | DOCUMENTED / RESOLVED / RUNTIME_VERIFIED（解析及元数据匹配探针） | Node24 Action runtime；自托管 runner 要求 ≥2.327.1，本项目使用 GitHub 托管 ubuntu-24.04；完整远程执行 NOT_VERIFIED |
 | pnpm/action-setup / CI | v4，`b906affcce14559ad1aafd4ab0e942779e9f58b1` | [官方源码](https://github.com/pnpm/action-setup/tree/b906affcce14559ad1aafd4ab0e942779e9f58b1) | DOCUMENTED / RESOLVED | 远程执行 NOT_VERIFIED |
 
 Maven Failsafe 继承同一 Boot parent，实际解析与 Surefire 一致；详见 [P02 依赖和执行证据](../testing/P02-01-VERIFICATION.md)，不引入新的测试框架或额外 Maven Module。托管 CI runner 使用 ubuntu-24.04 标签，不声称其系统镜像全部软件固定；Java/Node/pnpm 输入仍来自上述冻结值。
+
+### 2026-10-08 CI Java 版本输入修复
+
+Temurin 的运行版本保持后端表中的冻结值。Adoptium 官方元数据将该发布表示为 `version_data.semver=21.0.12+101.0.LTS`，`openjdk_version=21.0.12.1+1-LTS`，对应同一 Linux x64 JDK 资产；见 [官方响应提取记录](../testing/evidence/CI-JAVA-SETUP-2026-10-08/adoptium-release.json)。workflow 的 `java-version` 使用前者，因为 setup-java 通过 SemVer 校验并匹配 `version_data.semver`；不改为大版本范围或其他 JDK 发布。单纯升级 Action 仍不能解析原四段带构建号的输入。
+
+setup-java 更新到上表的固定官方 SHA，移除旧 v4 的弃用警告；其 Action 自身 Node24 运行时与应用 `.nvmrc` 管理的 Node 是不同配置。安装后另行断言真实 `java.runtime.version`，防止安装版本偏离基线。解析探针、本地运行版本核验与后端验证范围见 [修复验证报告](../testing/CI-JAVA-SETUP-VERIFICATION.md)；GitHub 远程重跑未执行，不推导为 CI PASS。
 
 ## P03-01 依赖接入记录（2026-10-08）
 

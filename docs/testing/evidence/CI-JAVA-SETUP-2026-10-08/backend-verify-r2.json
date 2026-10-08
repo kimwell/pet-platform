@@ -1,0 +1,15 @@
+{
+  "id": "backend-verify-r2",
+  "cwd": "/Users/kimwell/work/pet-platform/apps/backend",
+  "argv": [
+    "./mvnw",
+    "--batch-mode",
+    "clean",
+    "verify"
+  ],
+  "startedAtUTC": "2026-10-08T02:03:52.456610+00:00",
+  "finishedAtUTC": "2026-10-08T02:04:27.488240+00:00",
+  "exitCode": 0,
+  "log": "backend-verify-r2.log",
+  "summary": "d.\n2026-10-08T10:04:26.473+08:00  INFO 96976 --- [pet-platform-backend] [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'\n2026-10-08T10:04:26.479+08:00  INFO 96976 --- [pet-platform-backend] [           main] c.p.t.persistence.JpaPersistenceIT       : Started JpaPersistenceIT in 0.548 seconds (process running for 17.941)\n2026-10-08T10:04:26.777+08:00  INFO 96976 --- [pet-platform-backend] [           main] o.f.core.internal.command.DbValidate     : Successfully validated 1 migration (execution time 00:00.002s)\n2026-10-08T10:04:26.782+08:00  INFO 96976 --- [pet-platform-backend] [           main] o.f.core.internal.command.DbMigrate      : Current version of schema \"public\": 1\n2026-10-08T10:04:26.782+08:00  INFO 96976 --- [pet-platform-backend] [           main] o.f.core.internal.command.DbMigrate      : Schema \"public\" is up to date. No migration necessary.\n2026-10-08T10:04:26.922+08:00  WARN 96976 --- [pet-platform-backend] [           main] org.hibernate.orm.jdbc.error             : HHH000247: ErrorCode: 0, SQLState: 23505\n2026-10-08T10:04:26.922+08:00  WARN 96976 --- [pet-platform-backend] [           main] org.hibernate.orm.jdbc.error             : ERROR: duplicate key value violates unique constraint \"persistence_probe_code_key\"\n  详细：Key (code)=(duplicate) already exists.\n[INFO] Tests run: 12, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.103 s -- in com.pet.testing.persistence.JpaPersistenceIT\n[INFO] \n[INFO] Results:\n[INFO] \n[INFO] Tests run: 23, Failures: 0, Errors: 0, Skipped: 0\n[INFO] \n[INFO] \n[INFO] --- failsafe:3.5.6:verify (default) @ pet-platform-backend ---\n[INFO] ------------------------------------------------------------------------\n[INFO] BUILD SUCCESS\n[INFO] ------------------------------------------------------------------------\n[INFO] Total time:  31.029 s\n[INFO] Finished at: 2026-10-08T10:04:27+08:00\n[INFO] ------------------------------------------------------------------------\n"
+}

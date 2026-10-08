@@ -40,12 +40,21 @@ jobs:
     runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # 官方 v4
-      - uses: actions/setup-java@cf277c60eb25467037889841efdb72551f06f6c3 # 官方 v4
+      - uses: actions/setup-java@b6effb05e454b25005698d916606bdc6ffcbf961 # 官方 v5.7.0
         with:
           distribution: temurin
-          java-version: 21.0.12.1+1
+          # Adoptium 的 SemVer 标识，对应矩阵中的 Temurin 运行版本。
+          java-version: '21.0.12+101.0.LTS'
           cache: maven
           cache-dependency-path: apps/backend/pom.xml
+      - name: 核验 JDK 运行版本
+        run: |
+          java -version
+          runtime_version="$(java -XshowSettings:properties -version 2>&1 | awk '$1 == "java.runtime.version" { print $3 }')"
+          if [ "$runtime_version" != '21.0.12.1+1-LTS' ]; then
+            echo "JDK 运行版本与冻结基线不一致：$runtime_version" >&2
+            exit 1
+          fi
       - uses: pnpm/action-setup@b906affcce14559ad1aafd4ab0e942779e9f58b1 # 官方 v4
         with:
           version: 10.34.6

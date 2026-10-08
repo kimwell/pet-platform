@@ -1,0 +1,29 @@
+{
+  "cwd": "/Users/kimwell/work/pet-platform/apps/backend",
+  "artifact": "/Users/kimwell/work/pet-platform/apps/backend/target/pet-platform-backend-0.0.0-SNAPSHOT.jar",
+  "sha256": "0c7fdaf7e8f97cfa315060f3aa6778caa5941ab8e707eab9d70e704ab81bb39b",
+  "testClassesCompared": 52,
+  "testResourcesCompared": 2,
+  "violations": [],
+  "productionTenancyEntries": [
+    "BOOT-INF/classes/com/pet/platform/shared/security/",
+    "BOOT-INF/classes/com/pet/platform/shared/tenancy/",
+    "BOOT-INF/classes/com/pet/platform/shared/security/CurrentPrincipalProvider.class",
+    "BOOT-INF/classes/com/pet/platform/shared/security/CurrentPrincipal.class",
+    "BOOT-INF/classes/com/pet/platform/shared/security/PlatformScopeGuard.class",
+    "BOOT-INF/classes/com/pet/platform/shared/security/PrincipalType.class",
+    "BOOT-INF/classes/com/pet/platform/shared/tenancy/TenantExecutionScope.class",
+    "BOOT-INF/classes/com/pet/platform/shared/tenancy/DataScope.class",
+    "BOOT-INF/classes/com/pet/platform/shared/tenancy/TenantContextFilter.class",
+    "BOOT-INF/classes/com/pet/platform/shared/tenancy/TenantContext.class",
+    "BOOT-INF/classes/com/pet/platform/shared/tenancy/TenantScopeGuard.class",
+    "BOOT-INF/classes/com/pet/platform/shared/tenancy/TenantContextHolder.class",
+    "BOOT-INF/classes/com/pet/platform/shared/tenancy/TenancyConfiguration.class",
+    "BOOT-INF/classes/com/pet/platform/shared/tenancy/StoreOwnershipReader.class",
+    "BOOT-INF/classes/com/pet/platform/shared/tenancy/ScopeGrant.class",
+    "BOOT-INF/classes/com/pet/platform/shared/tenancy/TenantPurpose.class",
+    "BOOT-INF/classes/com/pet/platform/shared/tenancy/StoreScopeGuard.class",
+    "BOOT-INF/classes/com/pet/platform/shared/tenancy/TrustedTenantExecutor.class",
+    "BOOT-INF/classes/com/pet/platform/shared/tenancy/DataScopeType.class"
+  ]
+}

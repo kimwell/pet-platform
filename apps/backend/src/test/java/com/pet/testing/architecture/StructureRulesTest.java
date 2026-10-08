@@ -14,11 +14,12 @@ import static org.junit.jupiter.api.Assertions.*;
 /** 编译字节码结构门禁；反例由ASM生成，不需要制造生产业务类。 */
 class StructureRulesTest {
     private static final String ROOT = "com/pet/platform/";
-    record Symbols(String name, Set<String> dependencies) { }
+    record Symbols(String name, Set<String> dependencies, Set<String> calls) { }
 
     static Symbols symbols(byte[] bytes) {
         var reader = new ClassReader(bytes);
         var refs = new TreeSet<String>();
+        var calls = new TreeSet<String>();
         // 所有符号类常量覆盖指令owner、class literal、bootstrap handle等；不搜索源码字符串。
         var buffer = new char[reader.getMaxStringLength()];
         for (int i = 1; i < reader.getItemCount(); i++) {
@@ -61,13 +62,15 @@ class StructureRulesTest {
             @Override public MethodVisitor visitMethod(int access, String name, String desc, String signature, String[] exceptions) {
                 descriptor(desc, refs); signature(signature);
                 return new MethodVisitor(Opcodes.ASM9) {
+                    @Override public void visitMethodInsn(int opcode, String owner, String name, String descriptor, boolean isInterface) { calls.add(owner + "#" + name); }
+                    @Override public void visitFieldInsn(int opcode, String owner, String name, String descriptor) { calls.add(owner + "#" + name); }
                     @Override public AnnotationVisitor visitAnnotation(String desc, boolean visible) { return annotation(desc); }
                     @Override public AnnotationVisitor visitParameterAnnotation(int parameter, String desc, boolean visible) { return annotation(desc); }
                 };
             }
         }, ClassReader.SKIP_DEBUG | ClassReader.SKIP_FRAMES);
         refs.remove(reader.getClassName());
-        return new Symbols(reader.getClassName(), refs);
+        return new Symbols(reader.getClassName(), refs, calls);
     }
     private static void addType(String name, Set<String> refs) {
         if (name.startsWith("[")) descriptor(name, refs); else refs.add(name);
@@ -113,7 +116,13 @@ class StructureRulesTest {
         for (String target : symbols.dependencies()) {
             String other = module(target);
             String rule = null;
-            if (target.startsWith("com/pet/testing/") || testClasses.contains(target)) rule = "生产引用测试夹具";
+            boolean contextModel = Set.of(ROOT + "shared/tenancy/TenantContext", ROOT + "shared/tenancy/DataScope",
+                    ROOT + "shared/tenancy/ScopeGrant", ROOT + "shared/security/CurrentPrincipal").contains(symbols.name());
+            if (target.equals("java/lang/InheritableThreadLocal")) rule = "禁止隐式继承身份";
+            else if (contextModel && (target.startsWith("org/springframework/web/") || target.startsWith("jakarta/servlet/")
+                    || target.contains("/api/") || target.startsWith("cn/binarywang/wx/") || target.startsWith("me/chanjar/weixin/"))) rule = "上下文模型依赖HTTP或SDK";
+            else if (symbols.name().contains("/domain/") && target.startsWith(ROOT + "shared/tenancy/")) rule = "domain依赖线程范围";
+            else if (target.startsWith("com/pet/testing/") || testClasses.contains(target)) rule = "生产引用测试夹具";
             else if (owner.equals("shared") && !other.isEmpty() && !other.equals("shared")) rule = "shared依赖具体模块";
             else if (symbols.name().contains("/domain/") && (target.contains("/api/")
                     || target.startsWith("org/springframework/web/") || target.startsWith("jakarta/servlet/")
@@ -129,6 +138,17 @@ class StructureRulesTest {
                     || target.startsWith("org/springframework/data/repository/")
                     || target.startsWith("org/springframework/data/jpa/repository/"))) rule = "api直连持久化";
             if (rule != null) errors.add(rule + "：" + symbols.name() + " -> " + target);
+        }
+        for (String call : symbols.calls()) {
+            if (Set.of(ROOT + "shared/tenancy/TenantContextHolder#frame", ROOT + "shared/tenancy/TenantContextHolder#replace",
+                    ROOT + "shared/tenancy/TenantContextHolder#CURRENT").contains(call)
+                    && !Set.of(ROOT + "shared/tenancy/TenantContextHolder", ROOT + "shared/tenancy/TenantExecutionScope").contains(symbols.name())) {
+                errors.add("直接操作上下文底层存储：" + symbols.name() + " -> " + call);
+            }
+            if (call.equals(ROOT + "shared/tenancy/TenantExecutionScope#openIdentity")
+                    && !Set.of(ROOT + "shared/tenancy/TenantContextFilter", ROOT + "shared/tenancy/TrustedTenantExecutor").contains(symbols.name())) {
+                errors.add("绕过可信身份入口：" + symbols.name());
+            }
         }
         return errors;
     }
@@ -167,11 +187,34 @@ class StructureRulesTest {
                 List.of(ROOT + "identity/api/Bad", ROOT + "identity/infrastructure/Repository"),
                 List.of(ROOT + "audit/application/Bad", ROOT + "identity/application/Directory"),
                 List.of(ROOT + "shared/Bad", "com/pet/testing/Fixture"),
+                List.of(ROOT + "shared/tenancy/TenantContext", "jakarta/servlet/http/HttpServletRequest"),
+                List.of(ROOT + "shared/tenancy/TenantContext", "me/chanjar/weixin/common/api/WxService"),
+                List.of(ROOT + "modules/alpha/domain/Bad", ROOT + "shared/tenancy/TenantContextHolder"),
+                List.of(ROOT + "modules/alpha/application/Bad", "java/lang/InheritableThreadLocal"),
                 List.of(ROOT + "shared/Bad", ROOT + "protocol/ProtocolFixtures"))) {
             for (boolean generic : List.of(false, true)) assertFalse(violations(symbols(fixture(pair.get(0), pair.get(1), generic)),
                     Set.of(ROOT + "protocol/ProtocolFixtures")).isEmpty(), pair.toString());
         }
         assertTrue(violations(symbols(fixture(ROOT + "identity/application/Good", ROOT + "platform/application/Directory", true)), Set.of()).isEmpty());
+    }
+    @Test void rejectsBytecodeStorageMutationAndUnauthorizedIdentityOpening() {
+        var writer = new ClassWriter(0);
+        writer.visit(Opcodes.V21, Opcodes.ACC_PUBLIC, ROOT + "modules/alpha/application/Bad", null, "java/lang/Object", null);
+        var method = writer.visitMethod(Opcodes.ACC_PUBLIC | Opcodes.ACC_STATIC, "bypass", "()V", null, null);
+        method.visitMethodInsn(Opcodes.INVOKESTATIC, ROOT + "shared/tenancy/TenantContextHolder", "replace", "(L" + ROOT + "shared/tenancy/TenantExecutionScope;)V", false);
+        method.visitMethodInsn(Opcodes.INVOKESTATIC, ROOT + "shared/tenancy/TenantExecutionScope", "openIdentity", "(L" + ROOT + "shared/security/CurrentPrincipal;)L" + ROOT + "shared/tenancy/TenantExecutionScope;", false);
+        method.visitInsn(Opcodes.RETURN); method.visitMaxs(1, 0); method.visitEnd(); writer.visitEnd();
+        var errors = violations(symbols(writer.toByteArray()), Set.of());
+        assertTrue(errors.stream().anyMatch(e -> e.startsWith("直接操作上下文底层存储")));
+        assertTrue(errors.stream().anyMatch(e -> e.startsWith("绕过可信身份入口")));
+    }
+    @Test void contextStorageAndIdentityOpeningHaveNoPublicMutators() {
+        for (var method : com.pet.platform.shared.tenancy.TenantContextHolder.class.getDeclaredMethods()) {
+            if (Set.of("frame", "replace").contains(method.getName())) assertFalse(java.lang.reflect.Modifier.isPublic(method.getModifiers()));
+        }
+        for (var method : com.pet.platform.shared.tenancy.TenantExecutionScope.class.getDeclaredMethods()) {
+            if (Set.of("openIdentity", "finishBoundary", "withVerifiedStore").contains(method.getName())) assertFalse(java.lang.reflect.Modifier.isPublic(method.getModifiers()));
+        }
     }
     static List<String> artifactViolations(Set<String> entries, Set<String> tests, Set<String> testResources) {
         return entries.stream().filter(entry -> tests.contains(entry.replaceFirst("^BOOT-INF/classes/", "").replaceFirst("\\.class$", ""))

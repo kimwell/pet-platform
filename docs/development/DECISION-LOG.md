@@ -123,3 +123,16 @@
 | D75 | 复用已有完整ASM测试依赖做字节码/泛型检查，不新增架构库 | shared/domain/跨模块/Repository/测试产物等反例；SQL/租户/反射运行时不在其证明范围 |
 | D76 | application-test.yml移动至测试资源，package后核对所有编译测试class和资源 | 生产无测试配置、Controller、Entity、migration、Testcontainers；不改变local/prod部署配置来源 |
 | D77 | 核对P03三项及原阶段条件后关闭P03；生产权限/独立迁移运行仍归A04/部署，远程CI/多OS保持未验证限制 | [路线图](ROADMAP.md)、[门禁报告](../testing/P03-03-VERIFICATION.md)，未临时降低必选门禁，下一合法P04不自动执行 |
+
+## P04-01 可信上下文与执行边界（2026-10-08）
+
+| 编号 | 决策/依据 | 验证与后续责任 |
+| --- | --- | --- |
+| D78 | 用户P04-01明确授权替代AGENTS旧任务边界；沿用冻结版本；补三项P04拆分不改原阶段条件 | 当前Git已有60481ce提交、初始工作区干净，纠正历史未提交描述；不提交/推送/部署，不修改无关UI |
+| D79 | CurrentPrincipal为内部最小可信认证授权事实，Provider默认empty；平台无租户、员工/客户必须租户、客户只SELF | P05真实Sa-Token/域/版本适配尚未执行；没有默认租户/测试身份兜底 |
+| D80 | 根身份AUTHORITY_READ与具体权限BUSINESS分开；只从已绑定范围选择/收窄，内部安装不公开 | 同主体/租户/权限嵌套保持或收窄，LIFO/同线程关闭，边界异常/泄漏最终清理；数据库目的白名单P04-02 |
+| D81 | 沿用STORES和已冻结的按permission并集，而非额外STORE_SET；ScopeGrant合并显式验证同权限/主体，STORES与身份上限相交 | 空集合无门店；SELF业务映射待P04-02/业务owner；不使用createdBy通用映射 |
+| D82 | StoreOwnershipReader为shared内部事实端口，StoreScopeGuard检查真实tenant与范围/门店上限；默认缺事实503 | 后续platform/store实现；不存在/跨租户/未授权统一404，TENANT不是平台权限 |
+| D83 | TraceFilter先行，可信认证适配器在租户Filter之前；REQUEST/同步ERROR复用服务器身份，不采信HTTP tenant；异常复用MVC解析协议 | ASYNC不注册/不继承，公共流仍可继续；完整异步传播P04-03；已提交流不改写协议 |
+| D84 | MDC只管理tenant/operator/明确当前store并恢复；同步Executor只从可信Provider取身份，不接任意tenantId | SYSTEM授权登记/重验/审计后续接入，无系统超权运行入口 |
+| D85 | 复用P03 ASM扩展存储/入口符号与模型边界反例，生产JAR全测试class/resource隔离继续执行 | 结构不证明运行时或数据库越权安全；完整verify保留原PG测试，内部类型无理由改三端产物 |

@@ -1,0 +1,321 @@
+{
+  "cwd": "/Users/kimwell/work/pet-platform/apps/backend",
+  "groups": {
+    "surefire": {
+      "totals": {
+        "tests": 10,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      "suites": [
+        {
+          "name": "com.pet.testing.contracts.ContractExportTest",
+          "tests": "9",
+          "failures": "0",
+          "errors": "0",
+          "skipped": "0",
+          "time": "5.306"
+        },
+        {
+          "name": "com.pet.testing.contracts.ProductionOpenApiExportTest",
+          "tests": "1",
+          "failures": "0",
+          "errors": "0",
+          "skipped": "0",
+          "time": "0.505"
+        }
+      ]
+    },
+    "failsafe": {
+      "totals": {
+        "tests": 0,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      "suites": []
+    }
+  },
+  "total": 10,
+  "oldBaselineCases": 79,
+  "missingBaselineCases": [
+    [
+      "com.pet.platform.ApplicationTest",
+      "defaultApplicationScanDoesNotLoadTestEntities"
+    ],
+    [
+      "com.pet.platform.ApplicationTest",
+      "rejectsMissingEnvironmentAndInsecureProductionOrigin"
+    ],
+    [
+      "com.pet.platform.ApplicationTest",
+      "startsRealHttpServerWithoutBusinessEndpoints"
+    ],
+    [
+      "com.pet.platform.protocol.ApiProtocolIT",
+      "realHttpMvcAndContainerErrorsKeepSafeEnvelopeAndTrace"
+    ],
+    [
+      "com.pet.platform.protocol.ApiProtocolIT",
+      "realServerRejectsMultipleTraceHeadersAndKeepsFileBytes"
+    ],
+    [
+      "com.pet.platform.protocol.ApiProtocolTest",
+      "bodyValidationHasStableNestedPathsAndMultipleCodes"
+    ],
+    [
+      "com.pet.platform.protocol.ApiProtocolTest",
+      "explicitSuccessNullAndResponseEntityKeepExactShape"
+    ],
+    [
+      "com.pet.platform.protocol.ApiProtocolTest",
+      "fileBytesAndDispositionAreNotWrapped"
+    ],
+    [
+      "com.pet.platform.protocol.ApiProtocolTest",
+      "framework404405415AndAllowHeaderArePreserved"
+    ],
+    [
+      "com.pet.platform.protocol.ApiProtocolTest",
+      "paginationDefaultBoundaryEmptyAndTotalPrecision"
+    ],
+    [
+      "com.pet.platform.protocol.ApiProtocolTest",
+      "parameterSyntaxAndMethodValidationHaveDifferentStatuses"
+    ],
+    [
+      "com.pet.platform.protocol.ApiProtocolTest",
+      "registeredBusinessMappingsAndSafeUnknownErrors"
+    ],
+    [
+      "com.pet.platform.protocol.ApiProtocolTest",
+      "rejectsDuplicatePaginationAndPageSizeLimit"
+    ],
+    [
+      "com.pet.platform.protocol.ApiProtocolTest",
+      "rejectsIllegalPagination(String)[10]"
+    ],
+    [
+      "com.pet.platform.protocol.ApiProtocolTest",
+      "rejectsIllegalPagination(String)[1]"
+    ],
+    [
+      "com.pet.platform.protocol.ApiProtocolTest",
+      "rejectsIllegalPagination(String)[2]"
+    ],
+    [
+      "com.pet.platform.protocol.ApiProtocolTest",
+      "rejectsIllegalPagination(String)[3]"
+    ],
+    [
+      "com.pet.platform.protocol.ApiProtocolTest",
+      "rejectsIllegalPagination(String)[4]"
+    ],
+    [
+      "com.pet.platform.protocol.ApiProtocolTest",
+      "rejectsIllegalPagination(String)[5]"
+    ],
+    [
+      "com.pet.platform.protocol.ApiProtocolTest",
+      "rejectsIllegalPagination(String)[6]"
+    ],
+    [
+      "com.pet.platform.protocol.ApiProtocolTest",
+      "rejectsIllegalPagination(String)[7]"
+    ],
+    [
+      "com.pet.platform.protocol.ApiProtocolTest",
+      "rejectsIllegalPagination(String)[8]"
+    ],
+    [
+      "com.pet.platform.protocol.ApiProtocolTest",
+      "rejectsIllegalPagination(String)[9]"
+    ],
+    [
+      "com.pet.platform.protocol.ApiProtocolTest",
+      "rejectsMalformedUnknownDuplicateAndWrongTypesWithoutEcho(String)[10]"
+    ],
+    [
+      "com.pet.platform.protocol.ApiProtocolTest",
+      "rejectsMalformedUnknownDuplicateAndWrongTypesWithoutEcho(String)[1]"
+    ],
+    [
+      "com.pet.platform.protocol.ApiProtocolTest",
+      "rejectsMalformedUnknownDuplicateAndWrongTypesWithoutEcho(String)[2]"
+    ],
+    [
+      "com.pet.platform.protocol.ApiProtocolTest",
+      "rejectsMalformedUnknownDuplicateAndWrongTypesWithoutEcho(String)[3]"
+    ],
+    [
+      "com.pet.platform.protocol.ApiProtocolTest",
+      "rejectsMalformedUnknownDuplicateAndWrongTypesWithoutEcho(String)[4]"
+    ],
+    [
+      "com.pet.platform.protocol.ApiProtocolTest",
+      "rejectsMalformedUnknownDuplicateAndWrongTypesWithoutEcho(String)[5]"
+    ],
+    [
+      "com.pet.platform.protocol.ApiProtocolTest",
+      "rejectsMalformedUnknownDuplicateAndWrongTypesWithoutEcho(String)[6]"
+    ],
+    [
+      "com.pet.platform.protocol.ApiProtocolTest",
+      "rejectsMalformedUnknownDuplicateAndWrongTypesWithoutEcho(String)[7]"
+    ],
+    [
+      "com.pet.platform.protocol.ApiProtocolTest",
+      "rejectsMalformedUnknownDuplicateAndWrongTypesWithoutEcho(String)[8]"
+    ],
+    [
+      "com.pet.platform.protocol.ApiProtocolTest",
+      "rejectsMalformedUnknownDuplicateAndWrongTypesWithoutEcho(String)[9]"
+    ],
+    [
+      "com.pet.platform.protocol.ApiProtocolTest",
+      "sortWhitelistDefaultDirectionAndUniqueTieBreakAreStable"
+    ],
+    [
+      "com.pet.platform.protocol.ApiProtocolTest",
+      "traceIsGeneratedOrPassedAndContextRestoresOnlyOwnedKeys"
+    ],
+    [
+      "com.pet.platform.shared.persistence.DatabaseConfigurationRulesTest",
+      "externalOverridesCannotEnableDangerousDefaults"
+    ],
+    [
+      "com.pet.platform.shared.persistence.DatabaseConfigurationRulesTest",
+      "localAndProductionDefaultsHaveExplicitSafeStrategies"
+    ],
+    [
+      "com.pet.platform.shared.persistence.DatabaseConfigurationRulesTest",
+      "missingConfigurationNamesAreReportedWithoutValues"
+    ],
+    [
+      "com.pet.platform.shared.persistence.DatabaseConfigurationRulesTest",
+      "productionCannotRunStartupMigrations"
+    ],
+    [
+      "com.pet.platform.shared.persistence.DatabaseConfigurationRulesTest",
+      "refusesSecretsInUrlAndOtherDatabaseSystems"
+    ],
+    [
+      "com.pet.platform.shared.persistence.JpaPageAdapterTest",
+      "convertsOneBasedPageAndDefaultSize"
+    ],
+    [
+      "com.pet.platform.shared.persistence.JpaPageAdapterTest",
+      "mapsEmptyOutOfRangePageWithoutChangingRequestedNumber"
+    ],
+    [
+      "com.pet.platform.shared.persistence.JpaPageAdapterTest",
+      "mapsOnlyWhitelistedPropertiesAndDoesNotDuplicateUniqueSort"
+    ],
+    [
+      "com.pet.platform.shared.persistence.JpaPageAdapterTest",
+      "preservesLargeTotalAsStringAndExactResponseShape"
+    ],
+    [
+      "com.pet.platform.shared.persistence.JpaPageAdapterTest",
+      "rejectsOffsetBeyondJpaIntWithoutOverflow"
+    ],
+    [
+      "com.pet.testing.architecture.ProductionArtifactIT",
+      "packagedJarContainsNoTestClassResourceMigrationOrDependency"
+    ],
+    [
+      "com.pet.testing.architecture.StructureRulesTest",
+      "actualProductionBytecodeObeysRules"
+    ],
+    [
+      "com.pet.testing.architecture.StructureRulesTest",
+      "rejectsEveryRequiredNegativeFixtureIncludingGenericOnlyReferences"
+    ],
+    [
+      "com.pet.testing.architecture.StructureRulesTest",
+      "rejectsTestClassesAndMigrationInArtifactFixture"
+    ],
+    [
+      "com.pet.testing.contracts.DocumentPolicyTest",
+      "environmentCannotEnableProductionDocumentsOrPublicBind"
+    ],
+    [
+      "com.pet.testing.contracts.PackagedDocumentPolicyIT",
+      "localAndProductionJarHaveActualDocumentAndUiPolicies"
+    ],
+    [
+      "com.pet.testing.contracts.ScalarPostgresIT",
+      "protocolScalarTypesSurvivePostgresWithoutFloatingPointOrTimezoneShift"
+    ],
+    [
+      "com.pet.testing.persistence.JpaPersistenceIT",
+      "applicationServiceCommitsOutsideTestTransaction"
+    ],
+    [
+      "com.pet.testing.persistence.JpaPersistenceIT",
+      "auditUpdatesOnlyOnActualChangeAndKeepsCreatedAt"
+    ],
+    [
+      "com.pet.testing.persistence.JpaPersistenceIT",
+      "databaseConstraintFailureAtFlushRollsBackEarlierWrite"
+    ],
+    [
+      "com.pet.testing.persistence.JpaPersistenceIT",
+      "databasePagesKeepStableUniqueOrderAndActualTotal"
+    ],
+    [
+      "com.pet.testing.persistence.JpaPersistenceIT",
+      "directUniqueSortIsNotDuplicatedAndCountReflectsLaterChanges"
+    ],
+    [
+      "com.pet.testing.persistence.JpaPersistenceIT",
+      "filtersComposeWithPageAndEmptyOrOutOfRangeResults"
+    ],
+    [
+      "com.pet.testing.persistence.JpaPersistenceIT",
+      "migrationCompletedBeforeJpaValidationAndDoesNotRepeat"
+    ],
+    [
+      "com.pet.testing.persistence.JpaPersistenceIT",
+      "nullableSortUsesNullsLastForBothDirectionsAndSpecifications"
+    ],
+    [
+      "com.pet.testing.persistence.JpaPersistenceIT",
+      "runtimeFailureRollsBackAllWritesInSameServiceTransaction"
+    ],
+    [
+      "com.pet.testing.persistence.JpaPersistenceIT",
+      "runtimeFailureRollsBackFlushedWrite"
+    ],
+    [
+      "com.pet.testing.persistence.JpaPersistenceIT",
+      "timestampHasMillisecondPrecisionAndUtcInstantAcrossSessionTimezone"
+    ],
+    [
+      "com.pet.testing.persistence.JpaPersistenceIT",
+      "uuidV4AndAuditingSurviveRealPostgresRoundTrip"
+    ],
+    [
+      "com.pet.testing.persistence.MigrationSafetyIT",
+      "checksumConflictFailsAgainstTemporaryCopy(Path)"
+    ],
+    [
+      "com.pet.testing.persistence.MigrationSafetyIT",
+      "cleanIsRefused"
+    ],
+    [
+      "com.pet.testing.persistence.MigrationSafetyIT",
+      "emptyDatabaseCreatesHistoryAndRepeatedMigrationIsIdempotent"
+    ],
+    [
+      "com.pet.testing.persistence.MigrationSafetyIT",
+      "mismatchedStructureFailsJpaValidation"
+    ],
+    [
+      "com.pet.testing.persistence.MigrationSafetyIT",
+      "nonEmptySchemaWithoutHistoryCannotBeAutomaticallyBaselined"
+    ]
+  ],
+  "newCases": []
+}

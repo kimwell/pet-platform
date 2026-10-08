@@ -12,6 +12,7 @@
 | A03-03 | shared / P03 | UUID/金额/UTC/日期/null/缺失/version，DST自然日、精度超限 | P03-03真实HTTP、schema、PG标量往返与JDK DST技术反例通过；业务自然日查询/并发version应用未实现，[报告](P03-03-VERIFICATION.md) | [类型](../contracts/DATA-TYPES.md) |
 | A03-04 | API / P03 | 实际后端OpenAPI导出、生成/复制、破坏性差异使CI失败 | P03-03临时重新生成/比对、真实total string→number差异exit1、三端tsc通过；CI命令已接入，远程未执行。完整破坏性分类/同步接受变更后的旧端兼容未实现，[报告](P03-03-VERIFICATION.md) | [生成](../contracts/OPENAPI-GENERATION.md) |
 | A03-05 | 各模块 / P03 | 结构依赖、shared禁止具体模块、跨Repository拒绝 | P03-03编译字节码/泛型/注解/继承规则与违规夹具、JAR隔离通过；范围/SQL注册表按既有A04实施，不用结构检查替代越权读写，[报告](P03-03-VERIFICATION.md) | [模块](../architecture/MODULE-BOUNDARIES.md) |
+| A04-00 | tenancy / P04-01 | 可信身份/范围/默认拒绝、Header/Query/Body防伪造；嵌套/LIFO/异常/同线程连续A/B/匿名、门店归属/授权、MDC/REQUEST/ERROR、生产测试夹具隔离 | P04-01 PASS：114项0失败/错误/跳过，原79项全部回归；模型与真实MVC链、同一单线程Executor及真Tomcat技术测试；[本轮报告](P04-01-VERIFICATION.md)。不替代下列真PG数据库验收 | [隔离](../architecture/MULTI-TENANCY.md)、[授权](../architecture/AUTHORIZATION.md) |
 | A04-01 | tenancy / P04 | 同ID/跨tenant查询/count/exists/关联；无上下文拒绝 | 真PG/Testcontainers/JPA，两个租户技术数据 | [隔离](../architecture/MULTI-TENANCY.md) |
 | A04-02 | persistence / P04 | 创建/更新/删除/bulk/native跨tenant；运行角色不能绕RLS/DDL/TRUNCATE | 真PG运行角色与owner分离，SQL/JPA反例、迁移策略扫描 | 同上 |
 | A04-03 | tenancy / P04 | store属于他tenant/无授权store、SELF归属、不同权限不同范围 | 真PG读写/总数；不是前端按钮检查 | [授权](../architecture/AUTHORIZATION.md) |
@@ -53,3 +54,5 @@
 2026-10-08 P03-02：已接入真实 PostgreSQL/JPA/Flyway、UUID/时间审计、应用服务事务、分页适配和数据库健康。62项测试包括17项专门 PostgreSQL IT，完整门禁与进程反例/产物隔离见 [P03-02](P03-02-VERIFICATION.md)。A03-02 在本轮技术数据库分页场景 RUNTIME_VERIFIED；A03-03仅 UUID/Instant 数据库存储和毫秒精度通过，完整JSON标量/DST/金额/version仍未执行。A03-04实际OpenAPI/三端生成、A03-05完整模块结构与持久化防绕过、A04全部范围/RLS/角色权限仍 NOT_EXECUTED / NOT_VERIFIED。没有正式业务模型或业务验收；P03保持 IN_PROGRESS，远程CI与多OS不由本机结果替代。
 
 2026-10-08 P03-03：G01～G15 PASS，79项后端测试无失败/错误/跳过；生产/测试OpenAPI严格分离，生成产物一致性反例、Web/小程序纯类型消费、字节码违规与产物隔离已执行。P03-03/P03整体COMPLETE依据原路线的协议与生成一致、真实PostgreSQL迁移/事务可重复条件，三项报告合并核对，不修改历史失败。生产独立迁移运行、运行/迁移角色权限仍NOT_EXECUTED（原A04-02及部署边界）；远程CI、多OS仍NOT_VERIFIED。完整破坏性分析、租户/身份/业务筛选/完整微信验收不在当前证据范围。下一P04需后续授权，不自动执行。详见 [P03-03](P03-03-VERIFICATION.md)。
+
+2026-10-08 P04-01：新增A04-00细化上下文/范围/生命周期技术门禁，原A04-01～04及P04原完成条件保持不变。真实认证、正式Store事实源、JPA/RLS/数据库越权、Redis/异步仍NOT_EXECUTED/NOT_VERIFIED，不由上下文或结构测试推导多租户隔离完成。最新数量/命令/退出码/生产产物及G01～G15见 [P04-01](P04-01-VERIFICATION.md)。P04整体IN_PROGRESS，下一P04-02不自动执行。

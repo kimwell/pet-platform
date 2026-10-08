@@ -1,0 +1,13 @@
+{
+  "id": "repository-check-r2",
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "argv": [
+    "/private/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/tools/node-v24.21.0-darwin-arm64/bin/node",
+    "scripts/check-repository.mjs"
+  ],
+  "startedAtUTC": "2026-10-08T02:03:52.356744+00:00",
+  "finishedAtUTC": "2026-10-08T02:03:52.456417+00:00",
+  "exitCode": 0,
+  "log": "repository-check-r2.log",
+  "summary": "单锁、精确直接依赖、工具链、固定后端入口及秘密特征检查通过。秘密检查不输出匹配值。\n"
+}

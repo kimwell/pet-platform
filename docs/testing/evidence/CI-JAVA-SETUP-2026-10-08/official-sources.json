@@ -1,0 +1,52 @@
+{
+  "probeDirectory": "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/pet-platform-ci-java-8ve8wku2",
+  "sources": [
+    {
+      "path": "v4/src/distributions/base-installer.ts",
+      "sha256": "c63feb9bb834b151f63c83019dcccc42116dcc08ef9888871b71fd44befaaf0c",
+      "size": 6704
+    },
+    {
+      "path": "v5/src/distributions/base-installer.ts",
+      "sha256": "597254b2a5cc10bf546257e74bd605d5260f5d2699ec9f33085d2b7a706b99d3",
+      "size": 12956
+    },
+    {
+      "path": "v6/src/distributions/base-installer.ts",
+      "sha256": "436e687568c11e521e36aa000909501efe491a735a78795922eadc036d6ec791",
+      "size": 26656
+    },
+    {
+      "path": "v5/src/util.ts",
+      "sha256": "568dc864487ebfb668aacb6e43738107ae2b8bb66f80af2d708b940552713a29",
+      "size": 11504
+    },
+    {
+      "path": "v5/action.yml",
+      "sha256": "54e5e8ef36785d9800698a0889ed17bacbdeb9f9fedcf3bbb0999b722c230bae",
+      "size": 6264
+    },
+    {
+      "path": "v5/README.md",
+      "sha256": "dee7050ae46fb65f229b5f35adb44761a02b782272c31689e3ce25839ce3652e",
+      "size": 22672
+    },
+    {
+      "path": "v5-temurin.txt",
+      "sha256": "7a0f13cede297ecf9d7e518e5c699e32b50bfe9e12ca4f55e551f7e344827597",
+      "size": 7377
+    },
+    {
+      "path": "setup-java-v5-bundle.cjs",
+      "sha256": "fb752b406a248f3b1d6b2a475fdaa3ab38fd790e3e32013bb1babe957e7d50b8",
+      "size": 4828366
+    }
+  ],
+  "refs": {
+    "previous": "cf277c60eb25467037889841efdb72551f06f6c3",
+    "selected": "b6effb05e454b25005698d916606bdc6ffcbf961",
+    "selectedTag": "v5.7.0",
+    "comparison": "de7274f081f381c8f8158605e0321c36c376e2e6"
+  },
+  "scope": "官方源码和实际 Action 分发包位于临时目录；这里只保存校验摘要。"
+}

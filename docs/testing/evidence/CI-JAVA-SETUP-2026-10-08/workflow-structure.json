@@ -1,0 +1,7 @@
+{
+  "status": "PASS",
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "command": "python3 verify.py 中 PyYAML BaseLoader 解析 workflow，检查触发器、Action SHA、官方 SemVer 输入、Maven 缓存参数",
+  "exitCode": 0,
+  "summary": "YAML 解析与关键字段一致性通过；不代表 GitHub runner 已执行。"
+}

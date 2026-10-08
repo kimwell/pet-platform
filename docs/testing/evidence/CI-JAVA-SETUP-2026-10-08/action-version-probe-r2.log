@@ -1,0 +1,8 @@
+已复现：官方 v5.7.0 仍拒绝原四段版本输入，单纯升级 Action 无法修复。
+{
+  "status": "PASS",
+  "input": "21.0.12+101.0.LTS",
+  "runtimeVersion": "21.0.12.1+1-LTS",
+  "linuxX64Package": "https://github.com/adoptium/temurin21-binaries/releases/download/jdk-21.0.12.1%2B1/OpenJDK21U-jdk_x64_linux_hotspot_21.0.12.1_1.tar.gz"
+}
+范围：真实 Action 的解析及元数据匹配；没有执行 Linux JDK 下载、安装或 GitHub CI。

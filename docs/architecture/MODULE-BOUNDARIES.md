@@ -36,3 +36,11 @@ ASM生成的违规class夹具覆盖普通字段及只有泛型签名的引用，
 范围Repository、租户表/原生SQL注册表与数据库角色/RLS属于P04持久化防绕过实施：本轮没有生产租户表或业务Repository，也没有实现这些行为门禁。类扫描不检查运行时反射字符串、SQL内容、动态依赖或数据授权，不等于租户隔离完成，不能替代A04的数据库越权读写测试。后续实际公开application契约仍由owner登记；包位置门禁本身不能证明契约行为正确。
 
 结构检查与 [验收矩阵](../testing/ACCEPTANCE-MATRIX.md) 的真实 PostgreSQL、Redis、HTTP、文件故障测试共同证明行为，文档或扫描不能单独证明隔离。
+
+## P04-01 实际契约与结构边界（2026-10-08）
+
+shared.security公开最小CurrentPrincipalProvider/CurrentPrincipal、PrincipalType及PlatformScopeGuard；shared.tenancy公开只读Holder、TenantContext、DataScope/ScopeGrant、执行范围/Guard、StoreOwnershipReader及可信同步Executor。上下文的构造不授予安装权限；根openIdentity、底层frame/replace与finishBoundary仅包可见，业务调用只能从已建立边界选择/收窄权限范围。生产默认身份为空、默认门店事实查询抛503；测试Provider/认证Filter/门店事实夹具只在src/test。
+
+StoreOwnershipReader端口在shared，由未来platform/store数据owner实现；不反向引用实现、Entity或Repository。P05三个身份owner按认证与IDENTITY契约提供权威事实；当前未提供登录、会话或业务API。AUTHORITY_READ与BUSINESS的持久化目的白名单尚待P04-02，不能把当前Guard称为数据库防绕过。
+
+原P03编译字节码检查新增：禁止生产InheritableThreadLocal、领域依赖tenancy、内部上下文模型依赖HTTP/Controller/微信SDK；扫描调用/字段符号，只有Holder/Scope能操作底层存储，只有TenantContextFilter/TrustedTenantExecutor能调用根openIdentity。反例用ASM生成，不放入生产。另验证修改方法的非public可见性。生产/测试class、资源、依赖的JAR隔离检查继续执行，包含新增测试身份/门店夹具。结构规则不分析反射/恶意代码/运行时归属，不能防止所有越权；数据库和真实认证测试仍需后续完成。

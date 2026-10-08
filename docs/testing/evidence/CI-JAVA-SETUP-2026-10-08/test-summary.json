@@ -1,0 +1,22 @@
+{
+  "source": "backend-verify-r2.log",
+  "unit": {
+    "tests": 90,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "integration": {
+    "tests": 23,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "total": {
+    "tests": 113,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "scope": "当前工作区在 macOS arm64 上的后端技术测试；包括 Testcontainers 的真实 PostgreSQL，不代表业务验收或 Linux CI。"
+}

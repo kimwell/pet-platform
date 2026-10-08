@@ -1,0 +1,17 @@
+{
+  "id": "runtime-version-step-r2",
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "argv": [
+    "bash",
+    "-eu",
+    "-o",
+    "pipefail",
+    "-c",
+    "java -version\nruntime_version=\"$(java -XshowSettings:properties -version 2>&1 | awk '$1 == \"java.runtime.version\" { print $3 }')\"\nif [ \"$runtime_version\" != '21.0.12.1+1-LTS' ]; then\n  echo \"JDK 运行版本与冻结基线不一致：$runtime_version\" >&2\n  exit 1\nfi\n"
+  ],
+  "startedAtUTC": "2026-10-08T02:03:52.228706+00:00",
+  "finishedAtUTC": "2026-10-08T02:03:52.356549+00:00",
+  "exitCode": 0,
+  "log": "runtime-version-step-r2.log",
+  "summary": "openjdk version \"21.0.12.1\" 2026-08-18 LTS\nOpenJDK Runtime Environment Temurin-21.0.12.1+1 (build 21.0.12.1+1-LTS)\nOpenJDK 64-Bit Server VM Temurin-21.0.12.1+1 (build 21.0.12.1+1-LTS, mixed mode, sharing)\n"
+}

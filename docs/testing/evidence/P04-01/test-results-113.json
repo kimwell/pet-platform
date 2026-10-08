@@ -1,0 +1,302 @@
+{
+  "cwd": "/Users/kimwell/work/pet-platform/apps/backend",
+  "groups": {
+    "surefire": {
+      "totals": {
+        "tests": 90,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      "suites": [
+        {
+          "name": "com.pet.platform.ApplicationTest",
+          "tests": "3",
+          "failures": "0",
+          "errors": "0",
+          "skipped": "0",
+          "time": "0.692"
+        },
+        {
+          "name": "com.pet.platform.protocol.ApiProtocolTest",
+          "tests": "30",
+          "failures": "0",
+          "errors": "0",
+          "skipped": "0",
+          "time": "4.411"
+        },
+        {
+          "name": "com.pet.platform.shared.persistence.DatabaseConfigurationRulesTest",
+          "tests": "5",
+          "failures": "0",
+          "errors": "0",
+          "skipped": "0",
+          "time": "0.161"
+        },
+        {
+          "name": "com.pet.platform.shared.persistence.JpaPageAdapterTest",
+          "tests": "5",
+          "failures": "0",
+          "errors": "0",
+          "skipped": "0",
+          "time": "0.131"
+        },
+        {
+          "name": "com.pet.testing.architecture.StructureRulesTest",
+          "tests": "5",
+          "failures": "0",
+          "errors": "0",
+          "skipped": "0",
+          "time": "0.041"
+        },
+        {
+          "name": "com.pet.testing.contracts.ContractExportTest",
+          "tests": "9",
+          "failures": "0",
+          "errors": "0",
+          "skipped": "0",
+          "time": "0.798"
+        },
+        {
+          "name": "com.pet.testing.contracts.DocumentPolicyTest",
+          "tests": "1",
+          "failures": "0",
+          "errors": "0",
+          "skipped": "0",
+          "time": "0.002"
+        },
+        {
+          "name": "com.pet.testing.contracts.ProductionOpenApiExportTest",
+          "tests": "1",
+          "failures": "0",
+          "errors": "0",
+          "skipped": "0",
+          "time": "0.366"
+        },
+        {
+          "name": "com.pet.testing.tenancy.TenantExecutionTest",
+          "tests": "19",
+          "failures": "0",
+          "errors": "0",
+          "skipped": "0",
+          "time": "0.021"
+        },
+        {
+          "name": "com.pet.testing.tenancy.TenantMvcTest",
+          "tests": "12",
+          "failures": "0",
+          "errors": "0",
+          "skipped": "0",
+          "time": "0.243"
+        }
+      ]
+    },
+    "failsafe": {
+      "totals": {
+        "tests": 23,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      "suites": [
+        {
+          "name": "com.pet.platform.protocol.ApiProtocolIT",
+          "tests": "2",
+          "failures": "0",
+          "errors": "0",
+          "skipped": "0",
+          "time": "4.223"
+        },
+        {
+          "name": "com.pet.testing.architecture.ProductionArtifactIT",
+          "tests": "1",
+          "failures": "0",
+          "errors": "0",
+          "skipped": "0",
+          "time": "0.009"
+        },
+        {
+          "name": "com.pet.testing.contracts.PackagedDocumentPolicyIT",
+          "tests": "1",
+          "failures": "0",
+          "errors": "0",
+          "skipped": "0",
+          "time": "7.297"
+        },
+        {
+          "name": "com.pet.testing.contracts.ScalarPostgresIT",
+          "tests": "1",
+          "failures": "0",
+          "errors": "0",
+          "skipped": "0",
+          "time": "0.019"
+        },
+        {
+          "name": "com.pet.testing.persistence.JpaPersistenceIT",
+          "tests": "12",
+          "failures": "0",
+          "errors": "0",
+          "skipped": "0",
+          "time": "1.984"
+        },
+        {
+          "name": "com.pet.testing.persistence.MigrationSafetyIT",
+          "tests": "5",
+          "failures": "0",
+          "errors": "0",
+          "skipped": "0",
+          "time": "1.841"
+        },
+        {
+          "name": "com.pet.testing.tenancy.TenantHttpIT",
+          "tests": "1",
+          "failures": "0",
+          "errors": "0",
+          "skipped": "0",
+          "time": "0.491"
+        }
+      ]
+    }
+  },
+  "total": 113,
+  "oldBaselineCases": 79,
+  "missingBaselineCases": [],
+  "newCases": [
+    [
+      "com.pet.testing.architecture.StructureRulesTest",
+      "contextStorageAndIdentityOpeningHaveNoPublicMutators"
+    ],
+    [
+      "com.pet.testing.architecture.StructureRulesTest",
+      "rejectsBytecodeStorageMutationAndUnauthorizedIdentityOpening"
+    ],
+    [
+      "com.pet.testing.tenancy.TenantExecutionTest",
+      "absentOperationPermissionRejectsIndependentlyOfTenantRange"
+    ],
+    [
+      "com.pet.testing.tenancy.TenantExecutionTest",
+      "closingOnOtherThreadRejectsAndOwnerCanStillClose"
+    ],
+    [
+      "com.pet.testing.tenancy.TenantExecutionTest",
+      "concurrentThreadsDoNotShareAndChildThreadDoesNotInherit"
+    ],
+    [
+      "com.pet.testing.tenancy.TenantExecutionTest",
+      "crossTenantSubjectAndScopeExpansionAreRejected"
+    ],
+    [
+      "com.pet.testing.tenancy.TenantExecutionTest",
+      "currentStoreCanOnlyBeBoundAfterOwnershipAndCannotSwitchNested"
+    ],
+    [
+      "com.pet.testing.tenancy.TenantExecutionTest",
+      "defaultProviderIsAnonymousAndDefaultStoreReaderIsUnavailable"
+    ],
+    [
+      "com.pet.testing.tenancy.TenantExecutionTest",
+      "emptyStoresAndSelfNeverAuthorizeAWholeStore"
+    ],
+    [
+      "com.pet.testing.tenancy.TenantExecutionTest",
+      "exceptionAndLeakedInnerScopesBothCleanAtTrustedBoundary"
+    ],
+    [
+      "com.pet.testing.tenancy.TenantExecutionTest",
+      "identityAndScopeDefensivelyCopyCollections"
+    ],
+    [
+      "com.pet.testing.tenancy.TenantExecutionTest",
+      "invalidPrincipalAndScopeCombinationsAreRejected"
+    ],
+    [
+      "com.pet.testing.tenancy.TenantExecutionTest",
+      "mdcOnlyRestoresOwnedFieldsAndStoreMustBeExplicit"
+    ],
+    [
+      "com.pet.testing.tenancy.TenantExecutionTest",
+      "mergesOnlySamePermissionAndIntersectsStoreUpperBound"
+    ],
+    [
+      "com.pet.testing.tenancy.TenantExecutionTest",
+      "nestedSameTenantRestoresOuterAndNeverWidens"
+    ],
+    [
+      "com.pet.testing.tenancy.TenantExecutionTest",
+      "noContextAlwaysRejectsTenantOperations"
+    ],
+    [
+      "com.pet.testing.tenancy.TenantExecutionTest",
+      "outOfOrderCloseRejectsWithoutChangingContextAndIsRecoverable"
+    ],
+    [
+      "com.pet.testing.tenancy.TenantExecutionTest",
+      "platformOnlyUsesExplicitControlPlaneGuard"
+    ],
+    [
+      "com.pet.testing.tenancy.TenantExecutionTest",
+      "staffAndCustomerAreDistinctTrustedTenantSubjects"
+    ],
+    [
+      "com.pet.testing.tenancy.TenantExecutionTest",
+      "storeOwnershipAndPermissionAreBothRequired"
+    ],
+    [
+      "com.pet.testing.tenancy.TenantExecutionTest",
+      "tenantScopeStillChecksOwnershipAndIdentityStoreUpperBound"
+    ],
+    [
+      "com.pet.testing.tenancy.TenantHttpIT",
+      "actualRegisteredRequestAndContainerErrorChainsKeepProtocol"
+    ],
+    [
+      "com.pet.testing.tenancy.TenantMvcTest",
+      "anonymousPublicRequestHasNoTenantAndProtectedOperationDenies"
+    ],
+    [
+      "com.pet.testing.tenancy.TenantMvcTest",
+      "asyncRedispatchDoesNotAutomaticallyBindIdentityOrBlockPublicWork"
+    ],
+    [
+      "com.pet.testing.tenancy.TenantMvcTest",
+      "bodyTenantIsOnlyTestIntentAndCannotCreateOrOverrideIdentity"
+    ],
+    [
+      "com.pet.testing.tenancy.TenantMvcTest",
+      "controllerExceptionAndValidationErrorCleanWithTrace"
+    ],
+    [
+      "com.pet.testing.tenancy.TenantMvcTest",
+      "exactSameWorkerHandlesAThenBThenAnonymousWithoutResidue"
+    ],
+    [
+      "com.pet.testing.tenancy.TenantMvcTest",
+      "filterFailureUsesExistingJsonResolverAndTrace"
+    ],
+    [
+      "com.pet.testing.tenancy.TenantMvcTest",
+      "headerTenantAndClientAuthorityCannotCreateOrOverrideIdentity"
+    ],
+    [
+      "com.pet.testing.tenancy.TenantMvcTest",
+      "leakedApplicationScopeIsRejectedAndBoundaryStillCleans"
+    ],
+    [
+      "com.pet.testing.tenancy.TenantMvcTest",
+      "nestedErrorDispatchRetainsNarrowedScopeAndTrace"
+    ],
+    [
+      "com.pet.testing.tenancy.TenantMvcTest",
+      "queryTenantCannotCreateOrOverrideIdentity"
+    ],
+    [
+      "com.pet.testing.tenancy.TenantMvcTest",
+      "synchronousErrorRedispatchUsesServerSnapshotWithoutProviderReread"
+    ],
+    [
+      "com.pet.testing.tenancy.TenantMvcTest",
+      "trustedStaffCustomerAndPlatformHaveExplicitDifferentBoundaries"
+    ]
+  ]
+}

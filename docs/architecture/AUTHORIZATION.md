@@ -17,3 +17,24 @@
 平台跨租户业务访问默认关闭，无空 tenantId 绕过。若后续需要，单独设计明确目标租户、具体权限、理由、范围和审计的用例，仍建受限 TenantContext、受 DB 策略约束；当前接口没有该能力。
 
 管理者不能给他人授予超出自己可委派的权限、租户、门店。敏感授予/撤销审计，真实测试覆盖同 ID 跨身份、撤销、list/update 范围差异、门店交集、本人与状态判断。
+
+## P04-01 范围模型与门店校验（2026-10-08）
+
+沿用冻结名称TENANT/STORES/SELF，DataScope绑定tenantId及principalType/principalId并防御性复制集合；STORES允许空，含义是没有门店权限，绝不代表全部。SELF仅表达行归属要求，不自动转换为createdBy，也不能单独授权整个门店；实际SELF谓词与业务owner映射归P04-02及对应业务任务。
+
+ScopeGrant.mergeForPermission显式要求同permissionCode、同主体、同租户；同权限角色按冻结并集规则合并，TENANT归一化为唯一类型，否则STORES+SELF可并存，门店集与身份上限相交。不同权限不能合并或借用最大范围。CurrentPrincipal验证权限/范围/门店上限一致；它不是公开身份DTO，角色授权与权威版本查询仍待P05。当前模型可表达授权结果，不是完整角色/权限管理。
+
+StoreScopeGuard只接受目标storeId，通过StoreOwnershipReader获取内部归属事实；shared不依赖platform/store实现，也不接受调用者自称所属租户的Store对象。调用前必须建立本操作的业务范围，并由应用用例检查requirePermission。TENANT也不是平台特权，门店仍必须属于当前租户且位于身份门店上限。STORES再检查本权限storeIds。SELF与空STORES都不授权整店操作。
+
+| 事实与当前范围 | 行为 |
+| --- | --- |
+| 门店不存在/属于其他租户 | 404 RESOURCE_NOT_FOUND，统一“资源不存在或不可访问” |
+| 本租户但不在本权限范围或身份门店上限 | 同一404与文案，不泄露存在性 |
+| 本租户且STORES含目标门店、身份上限允许 | 通过；可显式openStore绑定当前门店/MDC |
+| TENANT、本租户且身份上限允许 | 通过；仍核对真实归属 |
+| 仅SELF或STORES空集合 | 404；不会自动推断本人经营门店 |
+| 生产尚无StoreOwnershipReader事实实现 | 默认503 DEPENDENCY_UNAVAILABLE，绝不放行 |
+
+openStore只绑定经过上述检查的当前门店；同门店嵌套可恢复，不允许已选择门店的内层静默换店。当前无正式Store表/状态规则，未来platform/store实现必须提供权威归属并按用例检查有效状态，不能把当前查询端口当Store CRUD已完成。
+
+模型、Guard与技术请求链结果见 [P04-01](../testing/P04-01-VERIFICATION.md)，操作范围不等于数据库行隔离、真实角色撤销或业务验收。

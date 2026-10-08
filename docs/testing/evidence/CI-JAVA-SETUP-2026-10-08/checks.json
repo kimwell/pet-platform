@@ -1,0 +1,45 @@
+[
+  {
+    "id": "action-version-probe",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "argv": [
+      "/private/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/tools/node-v24.21.0-darwin-arm64/bin/node",
+      "/Users/kimwell/work/pet-platform/docs/testing/evidence/CI-JAVA-SETUP-2026-10-08/probe.cjs",
+      "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/pet-platform-ci-java-8ve8wku2/setup-java-v5-bundle.cjs",
+      "/Users/kimwell/work/pet-platform/docs/testing/evidence/CI-JAVA-SETUP-2026-10-08/adoptium-release.json"
+    ],
+    "startedAtUTC": "2026-10-08T02:00:27.340071+00:00",
+    "finishedAtUTC": "2026-10-08T02:00:27.530664+00:00",
+    "exitCode": 1,
+    "log": "action-version-probe.log",
+    "summary": "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/pet-platform-ci-java-8ve8wku2/setup-java-v5-bundle.cjs:50330\nif (global.FinalizationRegistry && !(process.env.NODE_V8_COVERAGE || process.env.UNDICI_NO_FG)) {\n^\n\nReferenceError: global is not defined\n    at 59136 (/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/pet-platform-ci-java-8ve8wku2/setup-java-v5-bundle.cjs:50330:1)\n    at __nccwpck_require__ (/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/pet-platform-ci-java-8ve8wku2/setup-java-v5-bundle.cjs:130555:43)\n    at 23701 (/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/pet-platform-ci-java-8ve8wku2/setup-java-v5-bundle.cjs:55318:24)\n    at __nccwpck_require__ (/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/pet-platform-ci-java-8ve8wku2/setup-java-v5-bundle.cjs:130555:43)\n    at 46752 (/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/pet-platform-ci-java-8ve8wku2/setup-java-v5-bundle.cjs:48622:16)\n    at __nccwpck_require__ (/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/pet-platform-ci-java-8ve8wku2/setup-java-v5-bundle.cjs:130555:43)\n    at 54844 (/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/pet-platform-ci-java-8ve8wku2/setup-java-v5-bundle.cjs:8369:18)\n    at __nccwpck_require__ (/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/pet-platform-ci-java-8ve8wku2/setup-java-v5-bundle.cjs:130555:43)\n    at 35306 (/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/pet-platform-ci-java-8ve8wku2/setup-java-v5-bundle.cjs:5578:23)\n    at __nccwpck_require__ (/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/pet-platform-ci-java-8ve8wku2/setup-java-v5-bundle.cjs:130555:43)\n\nNode.js v24.21.0\n"
+  },
+  {
+    "id": "official-action-tags",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "argv": [
+      "git",
+      "ls-remote",
+      "https://github.com/actions/setup-java.git",
+      "refs/tags/v5.7.0"
+    ],
+    "startedAtUTC": "2026-10-08T02:00:27.530886+00:00",
+    "finishedAtUTC": "2026-10-08T02:01:58.028265+00:00",
+    "exitCode": 128,
+    "log": "official-action-tags.log",
+    "summary": "fatal: unable to access 'https://github.com/actions/setup-java.git/': Error in the HTTP2 framing layer\n"
+  },
+  {
+    "id": "repository-check",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "argv": [
+      "/private/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/tools/node-v24.21.0-darwin-arm64/bin/node",
+      "scripts/check-repository.mjs"
+    ],
+    "startedAtUTC": "2026-10-08T02:01:58.028527+00:00",
+    "finishedAtUTC": "2026-10-08T02:01:58.328484+00:00",
+    "exitCode": 0,
+    "log": "repository-check.log",
+    "summary": "单锁、精确直接依赖、工具链、固定后端入口及秘密特征检查通过。秘密检查不输出匹配值。\n"
+  }
+]
