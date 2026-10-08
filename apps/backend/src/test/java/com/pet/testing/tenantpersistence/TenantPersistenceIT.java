@@ -45,6 +45,7 @@ class TenantPersistenceIT {
         } catch (SQLException e) { throw new IllegalStateException("无法初始化安全测试角色", e); }
     }
     @DynamicPropertySource static void properties(DynamicPropertyRegistry r) {
+        com.pet.testing.RedisTestSupport.properties(r);
         r.add("spring.datasource.url", () -> POSTGRES.getJdbcUrl().split("\\?", 2)[0]);
         r.add("spring.datasource.username", () -> "security_probe_runtime"); r.add("spring.datasource.password", POSTGRES::getPassword);
         r.add("spring.flyway.url", () -> POSTGRES.getJdbcUrl().split("\\?", 2)[0]);

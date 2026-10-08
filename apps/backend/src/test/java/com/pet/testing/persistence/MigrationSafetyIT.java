@@ -75,7 +75,11 @@ class MigrationSafetyIT {
         sql("alter table mismatch_validation.persistence_probe drop column display_name");
         var failure = assertThrows(Exception.class, () -> {
             try (var context = new SpringApplicationBuilder(Application.class, PersistenceFixtures.class)
-                    .web(WebApplicationType.NONE).profiles("test").run(
+                    .web(WebApplicationType.NONE).profiles("test")
+                    .initializers(applicationContext -> applicationContext.getEnvironment().getPropertySources().addFirst(new org.springframework.core.env.MapPropertySource("technicalRedis", java.util.Map.of("spring.data.redis.host", com.pet.testing.RedisTestSupport.REDIS.getHost(),
+                            "spring.data.redis.port", com.pet.testing.RedisTestSupport.REDIS.getMappedPort(6379),
+                            "spring.data.redis.password", com.pet.testing.RedisTestSupport.password()))))
+                    .run(
                             "--spring.datasource.url=" + POSTGRES.getJdbcUrl().split("\\?", 2)[0],
                             "--spring.datasource.username=" + POSTGRES.getUsername(),
                             "--spring.datasource.password=" + POSTGRES.getPassword(),

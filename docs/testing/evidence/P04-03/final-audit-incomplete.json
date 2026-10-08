@@ -1,0 +1,166 @@
+{
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "command": "python3 docs/testing/evidence/P04-03/final-audit.py",
+  "testCount": 222,
+  "baselineCount": 167,
+  "missingBaselineCases": [],
+  "groups": {
+    "surefire": {
+      "tests": 124,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "failsafe": {
+      "tests": 98,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    }
+  },
+  "redisIsolationTests": 17,
+  "asyncUnitTests": 23,
+  "asyncPostgresTests": 9,
+  "postgresSnapshots": 9,
+  "postgresSnapshotErrors": [],
+  "previousSecuritySnapshots": 48,
+  "previousSecuritySnapshotErrors": [],
+  "artifact": {
+    "path": "/Users/kimwell/work/pet-platform/apps/backend/target/pet-platform-backend-0.0.0-SNAPSHOT.jar",
+    "sha256": "959089793bb28816ebee5cb8932983537c632fa00f01ce5d6615e318f2a365b3",
+    "violations": [],
+    "fixtureStrings": [],
+    "productionSql": [],
+    "productionEntityClasses": [],
+    "testClassesCompared": 74,
+    "testResourcesCompared": 3
+  },
+  "preservationChecked": 1464,
+  "preservationViolations": [],
+  "frozenMatrixOriginalBodyPreserved": true,
+  "dependencyVersionsMatch": true,
+  "missingDocumentLinks": [
+    {
+      "file": "README.md",
+      "target": "docs/testing/P04-03-VERIFICATION.md"
+    },
+    {
+      "file": "docs/architecture/ASYNC-EVENTS.md",
+      "target": "../testing/P04-03-VERIFICATION.md"
+    },
+    {
+      "file": "docs/conventions/ASYNC-EXECUTION.md",
+      "target": "../testing/P04-03-VERIFICATION.md"
+    },
+    {
+      "file": "docs/conventions/REDIS.md",
+      "target": "../testing/P04-03-VERIFICATION.md"
+    },
+    {
+      "file": "docs/development/DECISION-LOG.md",
+      "target": "../testing/P04-03-VERIFICATION.md"
+    },
+    {
+      "file": "docs/development/ROADMAP.md",
+      "target": "../testing/P04-03-VERIFICATION.md"
+    },
+    {
+      "file": "docs/development/ROADMAP.md",
+      "target": "../testing/P04-03-VERIFICATION.md"
+    },
+    {
+      "file": "docs/development/VERSION-MATRIX.md",
+      "target": "../testing/P04-03-VERIFICATION.md"
+    },
+    {
+      "file": "docs/testing/ACCEPTANCE-MATRIX.md",
+      "target": "P04-03-VERIFICATION.md"
+    },
+    {
+      "file": "docs/testing/ACCEPTANCE-MATRIX.md",
+      "target": "P04-03-VERIFICATION.md"
+    },
+    {
+      "file": "docs/testing/ACCEPTANCE-MATRIX.md",
+      "target": "P04-03-VERIFICATION.md"
+    },
+    {
+      "file": "docs/testing/P04-ACCEPTANCE.md",
+      "target": "P04-03-VERIFICATION.md"
+    }
+  ],
+  "diffCheckExitCode": 0,
+  "diffCheckOutput": "",
+  "gitHead": "145e77acc706285f2295abe9fd75519b3c48dd1b",
+  "gitHeadUnchanged": true,
+  "resources": {
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "commands": [
+      "docker ps --format {{.ID}} {{.Image}} {{.Names}}",
+      "docker volume ls --format {{.Name}}"
+    ],
+    "containers": [],
+    "volumes": [
+      "2f0cb1b43942984d58c21106fc837a7bcd98b4dacbf44ec26a1e4a9a0148f17b",
+      "5cb37b53c5928c8f4f737b744ac423a9de4cefb960877ac2393ec707ee5ae885",
+      "7e8a427e33b700123b7558bef3e44a3ecc2fffe9179fcee0569059d29023e012",
+      "8f6a61721226d88201ab5a33e7a19e7f491882c88211f40b1a8082ded1d10a55",
+      "40a6c79baa0f35024bf15c16dc1eb00aa47c394ca87a4be067560a34a87af6ad",
+      "059c53c40bf888d6635045cc0b100dc072242b6f90831d34af2a5469b2a5e233",
+      "923b5bb0df8e2bb9a7a4a1da6e2b6fc4b15a8066bd954b9eabc2b6714fa0053b",
+      "b174c4df1595b3857673ccfae1a93a488ce62fd4330122a513f08fdb44f26478",
+      "d84ff1d2cdc05ebaf6970d272c5c0d2f36348000fb1caebebfbad08748d6b36b",
+      "pet-platform-p02-validation_postgres-data",
+      "pet-platform-p02-validation_rabbitmq-data",
+      "pet-platform-p02-validation_redis-data"
+    ],
+    "lostBaselineVolumes": [],
+    "exitCode": 0,
+    "createdAtUTC": "2026-10-08T03:48:34.874245+00:00"
+  },
+  "sourceFiles": [
+    "README.md",
+    "apps/backend/.env.example",
+    "apps/backend/pom.xml",
+    "apps/backend/src/main/java/com/pet/platform/shared/observability/TraceScope.java",
+    "apps/backend/src/main/java/com/pet/platform/shared/redis/PlatformRedisAccess.java",
+    "apps/backend/src/main/java/com/pet/platform/shared/redis/RedisConfiguration.java",
+    "apps/backend/src/main/java/com/pet/platform/shared/redis/RedisKey.java",
+    "apps/backend/src/main/java/com/pet/platform/shared/redis/RedisKeyBuilder.java",
+    "apps/backend/src/main/java/com/pet/platform/shared/redis/RedisValueStore.java",
+    "apps/backend/src/main/java/com/pet/platform/shared/redis/TenantRedisAccess.java",
+    "apps/backend/src/main/java/com/pet/platform/shared/tenancy/AsyncExecutionConfiguration.java",
+    "apps/backend/src/main/java/com/pet/platform/shared/tenancy/TaskDeadline.java",
+    "apps/backend/src/main/java/com/pet/platform/shared/tenancy/TenantExecutionScope.java",
+    "apps/backend/src/main/java/com/pet/platform/shared/tenancy/TenantTaskExecutor.java",
+    "apps/backend/src/main/resources/application.yml",
+    "apps/backend/src/test/java/com/pet/platform/shared/redis/RedisConfigurationTest.java",
+    "apps/backend/src/test/java/com/pet/platform/shared/redis/RedisIsolationIT.java",
+    "apps/backend/src/test/java/com/pet/platform/shared/tenancy/TenantTaskExecutorTest.java",
+    "apps/backend/src/test/java/com/pet/testing/PostgresIntegrationSupport.java",
+    "apps/backend/src/test/java/com/pet/testing/RedisHealthIT.java",
+    "apps/backend/src/test/java/com/pet/testing/RedisTestSupport.java",
+    "apps/backend/src/test/java/com/pet/testing/architecture/StructureRulesTest.java",
+    "apps/backend/src/test/java/com/pet/testing/contracts/PackagedDocumentPolicyIT.java",
+    "apps/backend/src/test/java/com/pet/testing/persistence/JpaPersistenceIT.java",
+    "apps/backend/src/test/java/com/pet/testing/persistence/MigrationSafetyIT.java",
+    "apps/backend/src/test/java/com/pet/testing/tenantpersistence/AsyncDatabaseProbe.java",
+    "apps/backend/src/test/java/com/pet/testing/tenantpersistence/AsyncTenantPersistenceIT.java",
+    "apps/backend/src/test/java/com/pet/testing/tenantpersistence/TenantPersistenceIT.java",
+    "docs/architecture/ASYNC-EVENTS.md",
+    "docs/architecture/CONFIGURATION.md",
+    "docs/architecture/MODULE-BOUNDARIES.md",
+    "docs/architecture/MULTI-TENANCY.md",
+    "docs/conventions/ASYNC-EXECUTION.md",
+    "docs/conventions/BACKEND.md",
+    "docs/conventions/PERSISTENCE.md",
+    "docs/conventions/REDIS.md",
+    "docs/development/DECISION-LOG.md",
+    "docs/development/LOCAL-DEVELOPMENT.md",
+    "docs/development/ROADMAP.md",
+    "docs/development/VERSION-MATRIX.md",
+    "docs/testing/ACCEPTANCE-MATRIX.md",
+    "docs/testing/P04-ACCEPTANCE.md"
+  ],
+  "exitCode": 1
+}

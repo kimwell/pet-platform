@@ -17,11 +17,17 @@ public final class TenantExecutionScope implements AutoCloseable {
     private final TenantExecutionScope previous;
     private final TenantContext context;
     private final Map<String, DataScope> grants;
+    private final TaskDeadline deadline;
     private final Map<String, String> previousMdc = new HashMap<>();
     private boolean closed;
 
     private TenantExecutionScope(TenantContext context, Map<String, DataScope> grants) {
+        this(context, grants, TenantContextHolder.frame() == null ? null : TenantContextHolder.frame().deadline);
+    }
+
+    private TenantExecutionScope(TenantContext context, Map<String, DataScope> grants, TaskDeadline deadline) {
         this.previous = TenantContextHolder.frame(); this.context = context; this.grants = grants;
+        this.deadline = deadline;
         for (String key : MDC_KEYS) previousMdc.put(key, MDC.get(key));
         TenantContextHolder.replace(this);
         MDC.put("tenantId", context.tenantId().toString()); MDC.put("operatorId", context.principalId().toString());
@@ -40,6 +46,7 @@ public final class TenantExecutionScope implements AutoCloseable {
     public static TenantExecutionScope forPermission(String permissionCode) {
         var outer = TenantContextHolder.frame();
         if (outer == null) throw new TenantAccessDeniedException();
+        outer.context(); // 异步期限也约束选择嵌套权限。
         var scope = outer.grants.get(permissionCode);
         if (scope == null) throw new PermissionDeniedException();
         if (outer.context.purpose() == TenantPurpose.BUSINESS) {
@@ -67,7 +74,21 @@ public final class TenantExecutionScope implements AutoCloseable {
         return new TenantExecutionScope(new TenantContext(c.tenantId(), c.principalType(), c.principalId(), c.sessionId(),
                 c.authorizationVersion(), permission, scope, c.authorizedStoreIds(), store, c.traceId(), TenantPurpose.BUSINESS), outer.grants);
     }
-    TenantContext context() { return context; }
+    static TenantExecutionScope openTask(TenantContext context, TaskDeadline deadline) {
+        if (hasWorkerContext()) throw new TenantAccessDeniedException();
+        deadline.verify();
+        return new TenantExecutionScope(context, Map.of(context.permissionCode(), context.dataScope()), deadline);
+    }
+
+    static TaskDeadline captureTaskDeadline(long maxAgeNanos, java.util.function.LongSupplier ticker) {
+        var frame = TenantContextHolder.frame(); TenantScopeGuard.requireBusiness();
+        long remaining = frame.deadline == null ? maxAgeNanos : Math.min(maxAgeNanos, frame.deadline.remaining());
+        var result = new TaskDeadline(ticker.getAsLong(), remaining, ticker);
+        result.verify(); return result;
+    }
+    static boolean hasWorkerContext() { return TenantContextHolder.frame() != null; }
+
+    TenantContext context() { if (deadline != null) deadline.verify(); return context; }
 
     @Override public void close() {
         if (Thread.currentThread() != owner) throw new IllegalStateException("执行范围必须在创建线程关闭");

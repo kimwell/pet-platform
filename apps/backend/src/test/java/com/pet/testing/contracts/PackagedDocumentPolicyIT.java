@@ -21,6 +21,7 @@ class PackagedDocumentPolicyIT extends PostgresIntegrationSupport {
             var logs = Path.of("target/p03-03-" + profile + "-jar.log");
             var builder = new ProcessBuilder(Path.of(System.getProperty("java.home"), "bin/java").toString(), "-jar", "target/pet-platform-backend-0.0.0-SNAPSHOT.jar", "--spring.profiles.active=" + profile);
             var environment = builder.environment();
+            com.pet.testing.RedisTestSupport.environment(environment);
             environment.put("PET_DATABASE_URL", POSTGRES.getJdbcUrl().split("\\?", 2)[0]);
             environment.put("PET_DATABASE_USERNAME", POSTGRES.getUsername()); environment.put("PET_DATABASE_PASSWORD", POSTGRES.getPassword());
             environment.put("PET_PUBLIC_ORIGIN", "https://example.invalid"); environment.put("SERVER_PORT", Integer.toString(port));

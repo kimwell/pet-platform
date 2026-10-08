@@ -54,3 +54,11 @@ StructureRulesTest新增业务api/application/domain对EntityManager/Factory、Q
 规则读取编译字节码的字段/泛型/注解/继承及直接调用、bootstrap Handle/ConstantDynamic/方法引用；违规夹具包括api/application直连、裸Repository、infrastructure中的native/merge/JPQL以及原生方法引用，合法基础适配器也有正例。生产class与全部测试class/resource/JAR依赖比对继续执行。测试模型、应用服务、门店事实源、故意绕过入口和migration全在src/test，没有生产测试Controller。
 
 这些规则不解析任意反射字符串、恶意代码或外部动态SQL，不证明未来自定义查询安全。新能力只能经明确登记、代码审查与真实PostgreSQL范围反例接入；名称含Tenant、位于infrastructure或通过静态检查都不构成授权证据。接入清单与具体限制见[持久化](../conventions/PERSISTENCE.md)、[P04-02](../testing/P04-02-VERIFICATION.md)。
+
+## P04-03 Redis与异步入口
+
+shared.redis拥有RedisKeyBuilder/RedisKey、TenantRedisAccess、PlatformRedisAccess及包内RedisValueStore/配置；模块infrastructure仅注入受控地址与端口，再提供固定资源方法并执行当前数据权限。禁止模块直接裸Redis/客户端/私有驱动、创建Key对象、通用Spring Cache/@Cacheable或将授权列表放入raw空间。数据语义限制、版本与TTL由[REDIS](../conventions/REDIS.md)拥有。
+
+shared.tenancy新增唯一TenantTaskExecutor/AsyncExecutionConfiguration与包内TaskDeadline；shared.observability增加只管理traceId的TraceScope。任务根openTask、时效捕获和底层状态读取仍包内且仅批准执行器使用。业务不可构造未登记执行器/可信身份根入口、调用无身份技术submitUnscoped、使用@Async/公共ForkJoinPool/Executors/自行启动Thread绕过。先结束调用方事务，工作端代理新事务沿用ScopedTransaction。快照只当前权限、不可伪造或序列化成未来消息凭证；P05/P10责任见[ASYNC-EXECUTION](../conventions/ASYNC-EXECUTION.md)。
+
+ASM只扫描本项目生产class，第三方内部Executor不进入检查；新增泛型引用/直接调用/bootstrap Handle反例证明Redis、Key伪造、异步入口、无身份任务及未登记可信入口规则有效。生产继续禁止引用测试Provider、角色/Entity/SQL夹具，并对全部测试class/resources/dependencies做JAR比对。扫描不理解任意闭包/反射/动态字符串或缓存内容，真实范围与部署权限不能以静态PASS替代。

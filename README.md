@@ -42,7 +42,7 @@ Windows 使用 mvnw.cmd。无需全局 Maven，首次下载需网络；默认回
 
 本地 PostgreSQL、Redis、RabbitMQ 配置见 [基础设施说明](infra/local/README.md)：先复制 infra/local/.env.example 为同目录 .env，在本机填写专用凭据，再执行 `pnpm check:infra`、`pnpm dev:infra`、`pnpm stop:infra`。端口可调且只绑定回环，named volumes 保留数据；不复用生产凭据，不删除其他项目容器/卷。
 
-当前已安装 PostgreSQL/JPA/Flyway/Actuator，未安装认证/消息客户端，未创建正式业务表或接口；OpenAPI生产paths为空，显式注册真实公共模型，packages/api-contracts已提供可重复生成的纯类型。Docker 与微信运行状态分别留证，静态检查不替代真实服务/设备验收。第三方声明检查边界沿用 P01 的 strict+skipLibCheck；CI 平台执行、Windows/Linux、真机和发布未被本地检查覆盖。
+当前已安装 PostgreSQL/JPA/Flyway/Actuator和Redis资源客户端，未安装认证/消息客户端，未创建正式业务表或接口；OpenAPI生产paths为空，显式注册真实公共模型，packages/api-contracts已提供可重复生成的纯类型。Docker 与微信运行状态分别留证，静态检查不替代真实服务/设备验收。第三方声明检查边界沿用 P01 的 strict+skipLibCheck；CI 平台执行、Windows/Linux、真机和发布未被本地检查覆盖。
 
 当前P02、P03均已完成工程阶段门禁，限定运行证据见各任务报告。后续Controller显式调用 `ApiResponse.success(dto)`，输入与分页用法见 [API](docs/contracts/API.md)、[分页](docs/contracts/PAGINATION.md) 和 [后端约定](docs/conventions/BACKEND.md)。P03-02 已 COMPLETE，详情见 [持久化验证报告](docs/testing/P03-02-VERIFICATION.md)。P03-03 COMPLETE，P04-01现已授权执行；最新状态见下文，下一P04-02不自动执行。认证/租户/三端业务、完整真机、远程CI、多OS仍未验证；基础真机预览保留P02用户反馈边界。
 
@@ -51,3 +51,6 @@ Windows 使用 mvnw.cmd。无需全局 Maven，首次下载需网络；默认回
 P04-01关闭时的历史结论：COMPLETE（114项测试0跳过），已建立内部可信身份Provider（默认无身份）、不可变租户上下文/数据范围、门店事实端口/Guard、同步REQUEST/ERROR和同步后台执行范围；验证与状态见 [P04-01](docs/testing/P04-01-VERIFICATION.md)。P04整体仍IN_PROGRESS；真实认证、正式门店数据源、JPA/RLS隔离、数据库越权、Redis与异步尚未实现。公开DTO/OpenAPI及三端产物未改变，下一合法任务为P04-02，只报告、不自动执行。
 
 P04-02 COMPLETE（167项测试0失败/错误/跳过，原114项全部回归），已实现受控JPA、TENANT/STORES/SELF SQL策略、归属基类与事务范围绑定；独立PostgreSQL中的复合关联/RLS/角色/批次回滚验证见[P04-02](docs/testing/P04-02-VERIFICATION.md)。P04整体仍IN_PROGRESS；生产角色、真实认证/正式Store数据源、Redis与异步尚未验收。下一合法P04-03只报告、不自动执行；没有提交、推送或部署。
+
+
+P04-03与P04整体 COMPLETE，当前范围与限制见[P04-03验证](docs/testing/P04-03-VERIFICATION.md)、[P04总验收](docs/testing/P04-ACCEPTANCE.md)。Redis受控原始资源空间与有限进程内任务已实现，生产默认仍无真实身份/Store事实，权限过滤结果禁止缓存，短期快照未处理权威撤销重验。启动需同时提供PostgreSQL与Redis配置，readiness包含db/redis；用法见[Redis](docs/conventions/REDIS.md)、[异步执行](docs/conventions/ASYNC-EXECUTION.md)、[本地开发](docs/development/LOCAL-DEVELOPMENT.md)。下一合法P05-01先处理正式身份数据基础、初始化与认证依赖，P05仍NOT_STARTED；没有提交、推送或部署。

@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.pet.testing.tenantpersistence.TenantPersistenceIT
+-------------------------------------------------------------------------------
+Tests run: 48, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 5.417 s -- in com.pet.testing.tenantpersistence.TenantPersistenceIT

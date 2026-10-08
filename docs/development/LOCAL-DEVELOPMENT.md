@@ -33,7 +33,7 @@ engine-strict 会拒绝不匹配的 Node/pnpm。前端仅根 pnpm 安装及一�
 | 本地数据 | Compose named volumes：postgres-data、redis-data、rabbitmq-data，由项目名加前缀 | 在Docker数据目录/VM内，不在源码中；.local-data仅任务临时配置/进程记录且忽略；业务文件存储目录在P08实现 |
 | 微信AppID | apps/wechat-miniprogram/project.private.config.json；由私有示例复制并填实际授权AppID | 公共appid为空；私有文件忽略，不填AppSecret；公共根/TS/npm配置已提供 |
 
-P03-02 已接入必需 PostgreSQL 数据源、JPA/Flyway 与 Actuator；Redis/AMQP/认证/文件/微信客户端仍未接入，不能仅修改开关启用。生产不能直接使用本地Compose；prod profile只有工程公开配置校验，未实现Cookie/CSRF、身份或生产部署方案。配置反例使用临时进程变量，不覆盖用户文件、不打印完整解析配置。
+P03-02 已接入必需 PostgreSQL 数据源、JPA/Flyway 与 Actuator；P04-03已接入Redis资源客户端；AMQP/认证/文件/微信客户端仍未接入，不能仅修改开关启用。生产不能直接使用本地Compose；prod profile只有工程公开配置校验，未实现Cookie/CSRF、身份或生产部署方案。配置反例使用临时进程变量，不覆盖用户文件、不打印完整解析配置。
 
 ## 后端启动、访问与停止
 
@@ -45,7 +45,7 @@ cd apps/backend
 
 Windows用同目录mvnw.cmd。首次Wrapper下载需要网络与JDK，无需全局Maven。矩阵固定分发与SHA；Windows/Linux运行未执行，CI配置不等于跨平台PASS。
 
-另一个终端检查 `curl -i http://127.0.0.1:8080/` 和不存在路径：两者目前都是404。后端没有业务 Controller；P03-02 已提供 Actuator 健康接口。local 现在需要真实 PostgreSQL 及数据库配置，`/actuator/health/readiness` 验证数据库就绪，`/actuator/health/liveness` 验证进程存活；404 只表明该路径不存在。Redis/RabbitMQ 仍未接入。
+另一个终端检查 `curl -i http://127.0.0.1:8080/` 和不存在路径：两者目前都是404。后端没有业务 Controller；P03-02 已提供 Actuator 健康接口。local 现在需要真实 PostgreSQL、Redis及各自配置，`/actuator/health/readiness` 验证数据库与Redis就绪，`/actuator/health/liveness` 验证进程存活；404 只表明该路径不存在。P04-03已接入Redis资源端口；RabbitMQ未接入。
 
 运行终端Ctrl+C正常停止，确认出现优雅停止日志、8080不再监听；只结束自己启动的进程。P02-02用本轮记录的独立进程组SIGTERM验证停止与无遗留进程。也可 `java -jar target/pet-platform-backend-0.0.0-SNAPSHOT.jar --spring.profiles.active=local`。apps/backend/.env.example只描述输入，Java不自动加载它；可通过进程环境或外部Spring配置注入。
 
@@ -116,15 +116,15 @@ stop核对每个本项目容器的Status/ExitCode/OOMKilled；异常会非零退
 | JDBC connectTimeout / socketTimeout | 5秒 / 30秒 | 独立 data-source-properties，避免长时间无界等待 |
 | PET_DATABASE_MIGRATION_ENABLED | local/test 默认 true；prod profile 固定 false | prod 标准 spring.flyway.enabled 若改 true，启动安全校验拒绝；需独立迁移任务 |
 
-先启动本项目 PostgreSQL（不需要为后端启动 Redis/RabbitMQ），保留既有卷：
+P03-02当时只需PostgreSQL；P04-03起同时需要Redis资源连接，RabbitMQ仍无需启动，保留既有卷：
 
 ```sh
-docker compose --env-file infra/local/.env -f infra/local/docker-compose.yml up -d --wait postgres
+docker compose --env-file infra/local/.env -f infra/local/docker-compose.yml up -d --wait postgres redis
 ```
 
 Java 不读取 infra/local/.env 或 apps/backend/.env.example。向运行终端注入本地数据源 URL、用户名、密码，再执行原 Wrapper 启动命令；数据库名称/用户必须与既有卷中的真实配置一致，不通过删卷修复认证问题。不要把凭据放进 JDBC URL、命令行参数或可提交配置中。停止时只停止本轮原本未运行、由本轮启动的服务，保留卷；如果原本已运行则保持原状态。
 
-现在 `./mvnw clean verify` 会真实启动冻结 PostgreSQL Testcontainers，普通协议回归也使用独立容器。无需开发者数据库或业务账号；动态 URL/公开技术凭据由测试框架提供。须先启动 Docker，Maven 不默认跳过容器；Docker 不可用时报错并按 NOT_EXECUTED 记录，不能 H2 替代。Surefire 执行 *Test，Failsafe 执行 *IT 并在 verify 传播失败；两个插件均 failIfNoTests=true。
+现在 `./mvnw clean verify` 会真实启动冻结 PostgreSQL和Redis Testcontainers，普通协议回归也使用独立容器。无需开发者数据库或业务账号；动态 URL/公开技术凭据由测试框架提供。须先启动 Docker，Maven 不默认跳过容器；Docker 不可用时报错并按 NOT_EXECUTED 记录，不能 H2 或开发Redis替代。Surefire 执行 *Test，Failsafe 执行 *IT 并在 verify 传播失败；两个插件均 failIfNoTests=true。
 
 正式迁移目录目前只有说明，没有正式业务表。测试 locations 显式使用 src/test 的 persistence-migrations，测试 Entity/Repository/Service 位于生产扫描包之外，不进入 JAR。迁移与持久化使用规则分别见 [迁移](../conventions/DATABASE-MIGRATION.md)、[持久化](../conventions/PERSISTENCE.md)。本阶段真实产物启停、健康故障、缺配置与错误认证证据见 [P03-02](../testing/P03-02-VERIFICATION.md)。生产部署、角色分离、认证/租户与远程 CI 未验证。
 
@@ -141,6 +141,26 @@ pnpm --filter @pet/admin-web typecheck
 pnpm --filter @pet/wechat-miniprogram typecheck
 ```
 
-generate/check自行启动随机回环测试应用及独立PostgreSQL，Docker必需；clean会重新编译后端target，不能与其他Wrapper构建并发执行。无需手动启动开发后端/日常数据库、Redis或微信。check不修改生成产物；发现差异运行generate并审查源类型/快照/声明，禁止手改d.ts。Web只import type从workspace包，小程序只import type从同步本地声明；types/generated目录只容纳生成文件，手写消费在types/contracts.ts。
+generate/check自行启动随机回环测试应用及独立PostgreSQL，Docker必需；clean会重新编译后端target，不能与其他Wrapper构建并发执行。无需手动启动开发后端/日常数据库、Redis或微信；测试框架提供独立PostgreSQL及Redis容器。check不修改生成产物；发现差异运行generate并审查源类型/快照/声明，禁止手改d.ts。Web只import type从workspace包，小程序只import type从同步本地声明；types/generated目录只容纳生成文件，手写消费在types/contracts.ts。
 
 local `/v3/api-docs`与`/swagger-ui/index.html`开启，文档开启时仅允许回环绑定；prod两者关闭且不能外部覆盖开启。版本来自POM过滤。当前生产paths为空，只注册已有公共模型；test-contract文档/路径是生成器验收夹具，不能发布为业务清单。src/test/resources/application-test.yml不进生产JAR，test只用于测试源码。CI已经配置contracts:check、纯类型/脚本测试及完整verify，远程执行仍未验证。Web构建、两端typecheck与本机JAR文档策略证据见 [P03-03报告](../testing/P03-03-VERIFICATION.md)。
+
+## P04-03 Redis与进程内执行器
+
+| 输入 | 默认与约束 | 对应配置/作用 |
+| --- | --- | --- |
+| PET_REDIS_HOST / PET_REDIS_PASSWORD | 必填，无可用默认值；host为主机名/IPv4，不含协议/端口/凭据 | spring.data.redis.host/password；不输出密码、不自动读dotenv |
+| PET_REDIS_USERNAME | 默认空，Redis密码认证默认用户；需要ACL时显式提供 | 不证明生产ACL已部署 |
+| PET_REDIS_PORT / PET_REDIS_DATABASE | 6379 / 0；端口1～65535，database 0～15 | 当前单节点模式，逻辑库不能替代租户Key隔离 |
+| PET_REDIS_PREFIX | pet；1～32位小写代码，以字母开头，只有小写字母/数字/连字符 | 与可信pet.environment组合；不接受分隔符/通配符 |
+| PET_REDIS_CONNECT_TIMEOUT / PET_REDIS_TIMEOUT | 2s / 2s；各100ms～5s | 有限连接及命令等待，失败503不静默miss |
+| PET_REDIS_SSL_ENABLED | false；使用生产TLS时显式设置并验证证书/网络 | 本轮TLS/ACL生产配置NOT_VERIFIED |
+| PET_ASYNC_THREADS / PET_ASYNC_QUEUE_CAPACITY | 2 / 32；1～16 / 1～1024 | 固定线程、有界队列，满队列拒绝、不回调用线程 |
+| PET_ASYNC_MAX_SNAPSHOT_AGE | 30s；正期限，硬上限60s | 排队与运行Guard/提交期限，不能替代权限撤销重验 |
+| PET_ASYNC_SHUTDOWN_WAIT | 5s；正期限，硬上限30s | 优雅等待后中断，再等同一时长；未退出明确报错 |
+
+沿用现有Compose Redis及volume，不改镜像、不删数据。先按infra说明设置本机专用配置，再启动postgres/redis；Java进程单独注入上述Redis变量，不能把本地基础设施.env误认为后端自动输入。`spring.data.redis.url`、Cluster/Sentinel当前拒绝，不通过任意URL覆盖必填值；IPv6/HA/Cluster部署需后续专项适配验证。
+
+总体health/readiness包含db+redis，连接失败返回503，liveness只进程状态；没有对业务响应使用健康格式。完整verify包含独立认证Redis的真实读写/TTL/命名空间/故障及HTTP健康故障测试、受限PG角色的异步隔离；无需也不得在开发Redis执行KEYS/FLUSHDB或删前缀。测试容器自动停止，开发卷保留；Docker故障不能隐性skip。
+
+命名空间/值与合法调用见[REDIS](../conventions/REDIS.md)，异步事务/期限/拒绝/取消见[ASYNC-EXECUTION](../conventions/ASYNC-EXECUTION.md)。当前没有Token存储、认证、长期用户任务、RabbitMQ/Outbox或正式业务缓存。生产依赖连通、角色权限、TLS/ACL、容量与远程CI仍需各自验收。

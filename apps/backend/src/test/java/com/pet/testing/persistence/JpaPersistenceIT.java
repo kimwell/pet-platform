@@ -32,6 +32,7 @@ class JpaPersistenceIT {
 
     @org.springframework.test.context.DynamicPropertySource
     static void databaseProperties(org.springframework.test.context.DynamicPropertyRegistry registry) {
+        com.pet.testing.RedisTestSupport.properties(registry);
         // Testcontainers 自带 loggerLevel 查询参数；应用 URL 保持无秘密/无参数形式。
         registry.add("spring.datasource.url", () -> POSTGRES.getJdbcUrl().split("\\?", 2)[0]);
         registry.add("spring.datasource.username", POSTGRES::getUsername);

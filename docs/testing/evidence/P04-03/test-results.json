@@ -1,0 +1,245 @@
+{
+  "groups": {
+    "surefire": {
+      "totals": {
+        "tests": 124,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      "suites": [
+        {
+          "name": "com.pet.platform.ApplicationTest",
+          "tests": 3,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.pet.platform.protocol.ApiProtocolTest",
+          "tests": 30,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.pet.platform.shared.persistence.DatabaseConfigurationRulesTest",
+          "tests": 6,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.pet.platform.shared.persistence.JpaPageAdapterTest",
+          "tests": 5,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.pet.platform.shared.redis.RedisConfigurationTest",
+          "tests": 2,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.pet.platform.shared.tenancy.TenantTaskExecutorTest",
+          "tests": 23,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.pet.testing.architecture.StructureRulesTest",
+          "tests": 12,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.pet.testing.contracts.ContractExportTest",
+          "tests": 9,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.pet.testing.contracts.DocumentPolicyTest",
+          "tests": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.pet.testing.contracts.ProductionOpenApiExportTest",
+          "tests": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.pet.testing.tenancy.TenantExecutionTest",
+          "tests": 19,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.pet.testing.tenancy.TenantMvcTest",
+          "tests": 13,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        }
+      ]
+    },
+    "failsafe": {
+      "totals": {
+        "tests": 98,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      "suites": [
+        {
+          "name": "com.pet.platform.protocol.ApiProtocolIT",
+          "tests": 2,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.pet.platform.shared.redis.RedisIsolationIT",
+          "tests": 17,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.pet.testing.RedisHealthIT",
+          "tests": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.pet.testing.architecture.ProductionArtifactIT",
+          "tests": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.pet.testing.contracts.PackagedDocumentPolicyIT",
+          "tests": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.pet.testing.contracts.ScalarPostgresIT",
+          "tests": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.pet.testing.persistence.JpaPersistenceIT",
+          "tests": 12,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.pet.testing.persistence.MigrationSafetyIT",
+          "tests": 5,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.pet.testing.tenancy.TenantHttpIT",
+          "tests": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.pet.testing.tenantpersistence.AsyncTenantPersistenceIT",
+          "tests": 9,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.pet.testing.tenantpersistence.TenantPersistenceIT",
+          "tests": 48,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        }
+      ]
+    }
+  },
+  "total": 222,
+  "baselineCases": 167,
+  "missingBaselineCases": [],
+  "addedCases": [
+    "com.pet.platform.shared.redis.RedisConfigurationTest#rejectsAmbiguousPrefixUnboundedTimeoutAndUnsupportedTopologies",
+    "com.pet.platform.shared.redis.RedisConfigurationTest#validConfigurationAndMissingRequiredNames",
+    "com.pet.platform.shared.redis.RedisIsolationIT#actualRedisOutageIsInfrastructureFailureForReadWriteAndDelete",
+    "com.pet.platform.shared.redis.RedisIsolationIT#addressCapturedInACannotBeUsedInBOrNarrowerScope",
+    "com.pet.platform.shared.redis.RedisIsolationIT#addressFromDifferentBuilderCannotSelectAnotherPrefixOrEnvironment",
+    "com.pet.platform.shared.redis.RedisIsolationIT#delimiterWildcardAndUnicodeEncodingIsRepeatableAndCollisionFree",
+    "com.pet.platform.shared.redis.RedisIsolationIT#foreignUnauthorizedEmptyAndSelfStoreScopesAreDenied",
+    "com.pet.platform.shared.redis.RedisIsolationIT#invalidPrefixModuleLengthAndUnicodeAreRejected",
+    "com.pet.platform.shared.redis.RedisIsolationIT#invalidTtlNullAndOversizedValuesRejectBeforeWrite",
+    "com.pet.platform.shared.redis.RedisIsolationIT#missingStoreFactsNeverAllowAddressOrOperation",
+    "com.pet.platform.shared.redis.RedisIsolationIT#noContextRejectsConstructionAndAllOperations",
+    "com.pet.platform.shared.redis.RedisIsolationIT#platformIsIndependentPermissionCheckedAndNeverFallsBackFromTenant",
+    "com.pet.platform.shared.redis.RedisIsolationIT#rawResourceHitRequiresCurrentStorePolicyAndFilteredListsHaveNoApi",
+    "com.pet.platform.shared.redis.RedisIsolationIT#realReadWriteDeleteAndEmptyValueHaveDefinedSemantics",
+    "com.pet.platform.shared.redis.RedisIsolationIT#realTtlExpiresWithBoundedPolling",
+    "com.pet.platform.shared.redis.RedisIsolationIT#sameBusinessKeyInTwoTenantsReadsIndependentRealValues",
+    "com.pet.platform.shared.redis.RedisIsolationIT#sameTenantDifferentStoresHaveIndependentValues",
+    "com.pet.platform.shared.redis.RedisIsolationIT#storeFactsAreRecheckedWhenAddressIsUsed",
+    "com.pet.platform.shared.redis.RedisIsolationIT#unknownSerializationVersionMalformedUtf8AndOversizedStoredValueFailExplicitly",
+    "com.pet.platform.shared.tenancy.TenantTaskExecutorTest#activeTransactionOrSynchronizationRejectsSubmission",
+    "com.pet.platform.shared.tenancy.TenantTaskExecutorTest#closeReportsNonCooperativeRunningTaskWithoutPrematureContextCleanup",
+    "com.pet.platform.shared.tenancy.TenantTaskExecutorTest#concurrentTasksKeepIndependentIdentityAndTrace",
+    "com.pet.platform.shared.tenancy.TenantTaskExecutorTest#emptyStoresRemainEmptyAndCannotRecoverTenantOrSwitchPermission",
+    "com.pet.platform.shared.tenancy.TenantTaskExecutorTest#exceptionIsObservableAndFollowingTaskIsClean",
+    "com.pet.platform.shared.tenancy.TenantTaskExecutorTest#fullQueueRejectsWithoutCallerExecutionOrMdcPollution",
+    "com.pet.platform.shared.tenancy.TenantTaskExecutorTest#gracefulCloseDrainsQueuedTasksAndRejectsFurtherSubmissions",
+    "com.pet.platform.shared.tenancy.TenantTaskExecutorTest#immutableSnapshotSurvivesCallerBoundaryAndExcludesSessionAndOtherGrants",
+    "com.pet.platform.shared.tenancy.TenantTaskExecutorTest#leakedNestedScopeIsRejectedAndCleanedByActualWorker",
+    "com.pet.platform.shared.tenancy.TenantTaskExecutorTest#noIdentityCannotSubmitAndTenantCannotSubmitUnscoped",
+    "com.pet.platform.shared.tenancy.TenantTaskExecutorTest#preexistingWorkerResidueRejectsNextTaskWithoutRunningIt",
+    "com.pet.platform.shared.tenancy.TenantTaskExecutorTest#queuedCancellationDoesNotInstallIdentityAndReleasesCapacity",
+    "com.pet.platform.shared.tenancy.TenantTaskExecutorTest#queuedSnapshotExpiresDeterministicallyBeforeExecution",
+    "com.pet.platform.shared.tenancy.TenantTaskExecutorTest#residualWorkerIdentityIsRejectedAndThreadIsReplaced",
+    "com.pet.platform.shared.tenancy.TenantTaskExecutorTest#resourceBoundsAndNonForgedSnapshotConstructors",
+    "com.pet.platform.shared.tenancy.TenantTaskExecutorTest#runningCancellationRetainsScopeUntilActualCooperativeExit",
+    "com.pet.platform.shared.tenancy.TenantTaskExecutorTest#runningExpiryBlocksGuardsAndNestedSubmissionCannotRenewSnapshot",
+    "com.pet.platform.shared.tenancy.TenantTaskExecutorTest#sameWorkerRunsAThenBThenAnonymousWithoutResidue",
+    "com.pet.platform.shared.tenancy.TenantTaskExecutorTest#selectedStoreAndNarrowedScopeAreCaptured",
+    "com.pet.platform.shared.tenancy.TenantTaskExecutorTest#selfRetainsSubjectDomainAndOwnerAndRejectsExpansion",
+    "com.pet.platform.shared.tenancy.TenantTaskExecutorTest#stopNowCancelsQueueAndInterruptsRunningTaskWithoutCallerPollution",
+    "com.pet.platform.shared.tenancy.TenantTaskExecutorTest#traceWhitelistDoesNotCopyOtherMdcOrDamageCaller",
+    "com.pet.platform.shared.tenancy.TenantTaskExecutorTest#workerCreationDoesNotInheritThirdPartyThreadLocals",
+    "com.pet.testing.RedisHealthIT#redisOutageFailsOverallAndReadinessWhileLivenessRemainsHealthy",
+    "com.pet.testing.architecture.StructureRulesTest#rejectsKeyForgeryUnscopedTasksAndInternalSnapshotOpeningViaMethodHandles",
+    "com.pet.testing.architecture.StructureRulesTest#rejectsRawRedisAndCacheAbstractionsEvenInInfrastructureAndGenericSignatures",
+    "com.pet.testing.architecture.StructureRulesTest#rejectsUnapprovedExecutorsAndAsyncAnnotationsOnlyInProjectClasses",
+    "com.pet.testing.tenantpersistence.AsyncTenantPersistenceIT#asyncAAndBQueriesAndWritesNeverReachForeignRows",
+    "com.pet.testing.tenantpersistence.AsyncTenantPersistenceIT#asyncStoresEmptyScopesAndSelfSubjectDomainsUseActualPostgresPolicies",
+    "com.pet.testing.tenantpersistence.AsyncTenantPersistenceIT#concurrentSnapshotScopesStayIndependentEvenWithOneDatabaseConnection",
+    "com.pet.testing.tenantpersistence.AsyncTenantPersistenceIT#configuredBeanCreatesIndependentWorkerTransactionAfterCommittedCaller",
+    "com.pet.testing.tenantpersistence.AsyncTenantPersistenceIT#exceptionAfterFlushRollsBackAndFollowingBHasNoAState",
+    "com.pet.testing.tenantpersistence.AsyncTenantPersistenceIT#expiredScopeAtRealTransactionCommitRollsBackAndConnectionCanServeB",
+    "com.pet.testing.tenantpersistence.AsyncTenantPersistenceIT#runtimeIsNonOwnerNonSuperuserNonBypassAndFiveTablesHaveForcedRls",
+    "com.pet.testing.tenantpersistence.AsyncTenantPersistenceIT#sameThreadAndSingleDatabaseConnectionRunAThenBThenAnonymous",
+    "com.pet.testing.tenantpersistence.AsyncTenantPersistenceIT#submissionInsideActualJpaTransactionIsRejectedAndCommittedDataIsVisibleAfterReturn"
+  ]
+}

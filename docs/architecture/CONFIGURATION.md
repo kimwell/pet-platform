@@ -18,7 +18,7 @@
 | pet.capabilities.wechat-miniapp.enabled / wechat-pay.enabled | 默认 false；开启前校验服务端配置 | shared.wechat；P10 |
 | springdoc.api-docs.enabled / swagger-ui.enabled | local/contract-export 可开；prod 默认 false | shared.api；P03 |
 
-Sa-Token 的准确配置/API 定义在 [认证](AUTHENTICATION.md)；本表不复制数值或 Cookie 规则。P02-01 的配置只校验工程环境和公开 origin，profile 文件与输入方法见 [本地开发](../development/LOCAL-DEVELOPMENT.md)。生产模板没有秘密或开发回退，不代表已实现安全配置。Redis 会话依赖在 P05 接入，届时仍是必需能力，不是生产可降级的可选内存存储。P03-02 数据库自动配置已接入；Redis/AMQP/微信仍未接入，未通过排除自动配置掩盖问题。
+Sa-Token 的准确配置/API 定义在 [认证](AUTHENTICATION.md)；本表不复制数值或 Cookie 规则。P02-01 的配置只校验工程环境和公开 origin，profile 文件与输入方法见 [本地开发](../development/LOCAL-DEVELOPMENT.md)。生产模板没有秘密或开发回退，不代表已实现安全配置。Redis 会话依赖在 P05 接入，届时仍是必需能力，不是生产可降级的可选内存存储。P03-02 数据库与P04-03资源Redis自动配置已接入；AMQP/微信未接入，没有排除自动配置掩盖依赖失败。Redis资源端口不提供会话DAO，认证会话仍归P05。
 
 ## 初始化选择与运行时启停
 
@@ -40,7 +40,7 @@ P02 本地 infra 固定镜像及卷路径，生产迁移独立执行任务；P03
 
 实际必填/可选变量、优先级、端口、代理、数据目录和AppID入口统一列在 [LOCAL-DEVELOPMENT](../development/LOCAL-DEVELOPMENT.md#当前实际配置来源)。这不是未来能力配置已实现的声明。Java不加载dotenv；无profile/prod缺值进入既有中文构造校验，空占位不是可用默认值；local/test/prod不能混用，profile与pet.environment不一致拒绝启动。Web开发来源只被Vite dev读取、校验且不入bundle；preview固定回环4173、无开发代理，生产需SPA fallback与未来API反向代理。
 
-本地Compose仍是开发配置；RabbitMQ固定hostname及30秒停止宽限，停止脚本检查节点真实退出。旧节点目录保留、消息迁移未验证；不删除卷作为修复。此为 P02 历史边界。P03-02 已增加必需的应用数据库连接；Redis/AMQP和本地业务存储仍未实现。证据与限制见 [P02-02](../testing/P02-02-VERIFICATION.md)。
+本地Compose仍是开发配置；RabbitMQ固定hostname及30秒停止宽限，停止脚本检查节点真实退出。旧节点目录保留、消息迁移未验证；不删除卷作为修复。此为 P02 历史边界。P03-02 已增加必需的应用数据库连接；P04-03增加Redis资源连接，AMQP和本地业务存储仍未实现。证据与限制见 [P02-02](../testing/P02-02-VERIFICATION.md)。
 
 ## P03-02 数据库与健康配置（2026-10-08）
 
@@ -50,6 +50,14 @@ Hikari 保守默认最大10、最小空闲2、连接等待5秒、验证等待2�
 
 local/test 默认 Flyway 先迁移再 JPA 校验；prod 强制关闭启动迁移，使用独立迁移任务与凭据，不覆盖冻结的生产方案。危险迁移默认值不能由外部配置打开，正式/测试 locations 物理隔离，详见 [迁移](../conventions/DATABASE-MIGRATION.md)。生产角色分离和迁移任务实际运行仍未验证，P04/部署阶段负责。
 
-Actuator 仅暴露 health，details/components 均 never。`/actuator/health/liveness` 只有 livenessState；`/actuator/health/readiness` 为 readinessState+db。总体 health 包含真实 db；数据库断开时总体/readiness 返回503，liveness 仍200。默认其他健康贡献关闭，不添加未接入的 Redis/RabbitMQ。健康返回工具格式 `{"status":"UP"}`，总体端点还可列出 liveness/readiness 分组名称，不包装业务信封；无连接信息。真实启动/故障/停止证据见 [P03-02](../testing/P03-02-VERIFICATION.md)，公开健康策略不代表已有认证或生产上线。
+Actuator 仅暴露 health，details/components 均 never。`/actuator/health/liveness` 只有 livenessState；P03-02当时 `/actuator/health/readiness` 为 readinessState+db；P04-03增加redis贡献，总体与readiness检查真实db/redis。任一依赖不可用时总体/readiness返回503，liveness仍只反映进程。默认其他健康贡献关闭，RabbitMQ未接入。健康返回工具格式 `{"status":"UP"}`，总体端点还可列出 liveness/readiness 分组名称，不包装业务信封；无连接信息。真实启动/故障/停止证据见 [P03-02](../testing/P03-02-VERIFICATION.md)，公开健康策略不代表已有认证或生产上线。
 
 P03-03文档与UI策略已实施，实际输入/过滤/扫描/生产覆盖拒绝和运行证据唯一见 [OpenAPI生成](../contracts/OPENAPI-GENERATION.md)。不在本文重复schema或版本定义。
+
+## P04-03 Redis与有限执行资源
+
+Redis资源访问为当前后端连接能力，host/password必填无回退，prefix/模块段校验，database/port及连接/命令超时有界；只允许单节点配置，repositories自动发现关闭。输入、默认值与支持范围唯一见[本地开发](../development/LOCAL-DEVELOPMENT.md#p04-03-redis与进程内执行器)，内容/编码/TTL/错误规则见[REDIS](../conventions/REDIS.md)。启动前校验只输出配置名；应用构建连接能力，实际依赖可用性由health与操作检查，不把Bean创建当Redis连接成功。
+
+总体health与readiness新增真实redis贡献，故障503，liveness不依赖Redis；隐藏details/components。完整verify使用隔离认证容器，不连接开发Redis，生产JAR local/prod测试均注入独立服务输入。标准配置没有开发host/密码或生产降级。Redis ACL/TLS/网络与容量的生产配置未验收。
+
+TenantTaskExecutor只有显式Bean，线程/队列/快照期限/停止等待有硬边界，没有@EnableAsync、全局第三方池自动包装或CallerRuns。生命周期、事务提交时机与当前授权限制唯一见[ASYNC-EXECUTION](../conventions/ASYNC-EXECUTION.md)。尚无真实会话、MQ、Outbox或调度平台；后续P05/P10不得仅靠修改开关冒充接入完成。

@@ -144,3 +144,9 @@ setup-java 更新到上表的固定官方 SHA，移除旧 v4 的弃用警告；�
 结构门禁复用已有json-smart测试传递依赖中的ASM 9.7.1（仅test scope），未增加直接依赖/版本覆盖；Spring内置ASM没有signature包的首次失败保留，正式检查使用完整ASM的泛型签名API，源码直接编译可用性由每次verify验证。springdoc传递的Swagger Core/annotations/models实际2.2.47、UI5.32.2只记录解析事实，不将其额外冻结为新的直接依赖。生成器peer仍使用冻结TypeScript。
 
 新增验证等级COMPILED/RUNTIME_VERIFIED仅限 [P03-03](../testing/P03-03-VERIFICATION.md) 的标量HTTP、两份OpenAPI、三端类型/生成检查、字节码与生产产物。本机结果不证明远程CI、多OS、租户/身份或真实业务。
+
+## P04-03 Redis接入与实际解析（2026-10-08）
+
+新增有实际资源读写/隔离/健康用途的 `spring-boot-starter-data-redis`，由原parent/BOM管理，不重复指定版本，不升级任何冻结值。实际Spring Data Redis、Lettuce与既有矩阵一致，完整解析见[依赖树](../testing/evidence/P04-03/backend-dependency-tree.txt)，实际命令与退出码见[解析元数据](../testing/evidence/P04-03/dependencies.json)。只增starter，未接入Sa-Token Redis DAO、AMQP或其他测试框架；Awaitility/GenericContainer均复用现有测试传递依赖。
+
+新增COMPILED/RUNTIME_VERIFIED限[P04-03](../testing/P04-03-VERIFICATION.md)中的独立认证Redis真实CRUD/TTL/命名空间/故障与HTTP健康、受限PostgreSQL异步/事务/GUC及确定性线程生命周期。原P01未执行记录保留，不外推会话持久性、Cluster、生产ACL/TLS/角色部署或真实业务。

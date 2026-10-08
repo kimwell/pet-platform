@@ -52,12 +52,12 @@ application 只能调用本模块 scoped Repository，选择性暴露有范围�
 
 | 入口/资源 | 建立、执行、清理 |
 | --- | --- |
-| HTTP | 正确域认证、当前授权后建立；finally 清线程变量，异步 servlet 显式重绑 |
+| HTTP | 正确域认证、当前授权后建立；finally 清线程变量。当前仅同步REQUEST/ERROR，Servlet ASYNC不自动重绑，未来支持须独立验收 |
 | 登录查找 | 独立 AuthLookupPurpose，仅登录服务可调最小候选目录/凭据查询；限定函数/视图、不能列员工，不能创建业务 TenantContext；tenantCode 仍不可信 |
 | 用户任务 | 保存提交主体/租户/权限快照，执行及结果访问按当前权限重验；每分片绑定，finally 清理 |
 | 系统任务 | 登记 SYSTEM purpose/允许表/明确租户，逐租户事务；不空 tenant 全量查业务 |
 | 消息 | 来源/schema/租户/handler purpose 校验；用户来源重验授权，系统来源仅固定服务能力；finally 清理 |
-| 缓存 | environment/域/tenant/resource/范围摘要或 principal/授权版本进入 key，不跨范围共享值 |
+| 缓存 | 环境/租户/门店/平台资源空间隔离；原始资源命中再查本次范围；授权过滤结果当前禁止缓存，未来完整身份/范围与权威撤销方案专项验收 |
 | 附件/票据/导出 | 同租户业务策略/任务策略校验，不根据目录或 ID 授权 |
 | Outbox | tenant 来自可信事务；调度器仅领取技术记录，无泛化业务读取权 |
 
@@ -102,3 +102,15 @@ ScopedTransaction在应用JPA事务第一次受控访问时，经Hibernate实际
 关联采用明确ID + 父资源受控查询 + `(tenant_id, foreign_id)`复合FK。当前测试不使用隐式JPA关系导航或级联。试验中的复合ManyToOne标注LAZY仍提前解析父实体，失败证据保留；不能依据注解宣称关联授权或事务外可安全加载。任何未来join、fetch、投影或懒加载都要验证所访问资源自己的Store/SELF策略，复合FK和RLS只保证tenant底线。
 
 本轮只在src/test创建safety_parent/child/store_resource/owned_resource/store_fact及策略；生产没有Tenant/Store/Employee表、RLS业务migration或CRUD。测试独立角色与owner分离、ENABLE/FORCE策略、WITH CHECK及DDL/TRUNCATE/SET ROLE拒绝已真实验证，**生产数据库角色权限和独立迁移任务仍NOT_VERIFIED/NOT_EXECUTED**。RLS参数依赖可信应用；持有数据库凭据的恶意代码仍能改GUC，不声称阻止任意直接数据库访问。底层SQL只在ScopedPersistence/ScopedTransaction登记，普通业务原生SQL支持未实现且禁止作为扩展入口。详情、接入清单与批次边界见[持久化](../conventions/PERSISTENCE.md)、[验证](../testing/P04-02-VERIFICATION.md)。
+
+## P04-03 Redis、进程内任务与阶段边界（2026-10-08）
+
+RedisKeyBuilder仅从可信BUSINESS签发租户地址，门店地址先经现有事实/范围Guard，独立PlatformRedisAccess复核控制面权限。Key对象绑定签发来源及完整当前范围，每次读写删验证，跨tenant/主体/窄范围/配置前缀复用拒绝。业务标识严格UTF-8且无歧义Base64 URL编码，不使用替换/hash tag。只存带版本的有限字符串、正TTL；Redis失败不是miss。具体格式与合法用法由[REDIS](../conventions/REDIS.md)拥有，未开放裸客户端/任意脚本/删前缀能力。
+
+原始资源空间只证明租户归属，命中后仍执行本次资源范围授权；管理员过滤列表不能放入该空间供STORES/SELF复用。当前没有完整权限结果缓存指纹/权威撤销方案，故禁止权限过滤结果缓存，不借既有authorizationVersion字段伪造实现。
+
+TenantTaskExecutor只捕获当前permission/range的不可变内部快照，不接收外部身份；taskId替代sessionId，trace允许字段显式建立。有限线程/队列、默认30秒且硬上限60秒的快照时效，排队和运行Guard/提交均检查，嵌套提交不续期。调用方事务必须完整结束后提交，工作线程先建范围再开代理应用新事务，继续使用唯一ScopedTransaction/RLS绑定，不继承连接/事务资源。正常、异常、漏关、拒绝、取消、停止以及同线程/同连接复用均有真实或确定性技术验证。
+
+发现工作线程残留时拒绝并废弃线程，不承认残留外层身份。取消不是立即停止，清理由实际执行线程finally完成，Future/固定脱敏失败日志可观察。完整规则见[ASYNC-EXECUTION](../conventions/ASYNC-EXECUTION.md)；Servlet ASYNC与第三方线程池不自动传播。
+
+P04-01/02/03工程基础总体验收见[P04-ACCEPTANCE](../testing/P04-ACCEPTANCE.md)。真实认证/正式Store事实/权限撤销时重新授权/生产角色部署，以及附件、导出、消息和所有未来业务，按原阶段owner继续验收；基础通过不外推上线安全。P05必须先建立正式身份/租户/门店数据基础与初始化路径，不用测试Provider完成登录验收。

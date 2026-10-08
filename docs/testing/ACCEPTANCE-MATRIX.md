@@ -17,6 +17,9 @@
 | A04-02 | persistence / P04 | 创建/更新/删除/bulk/native跨tenant；运行角色不能绕RLS/DDL/TRUNCATE | P04-02 RUNTIME_VERIFIED：测试runtime/owner分离、FORCE RLS/WITH CHECK、DDL/TRUNCATE/升权拒绝、混合批次及真实影响数回滚；生产角色NOT_VERIFIED；[报告](P04-02-VERIFICATION.md) | 同上 |
 | A04-03 | tenancy / P04 | store属于他tenant/无授权store、SELF归属、不同权限不同范围 | P04-02 RUNTIME_VERIFIED：STORES/空集/门店上限、SELF主体域+ownerID读写、跨权限拒绝；正式授权数据仍待P05；[报告](P04-02-VERIFICATION.md) | [授权](../architecture/AUTHORIZATION.md) |
 | A04-04 | persistence / P04 | 连接复用/提交回滚/REQUIRES_NEW/事务外加载，不能旧tenant泄漏 | P04-02 RUNTIME_VERIFIED：池复用/局部GUC、REQUIRES_NEW、flush失败回滚、旧范围实体/commit前范围改变拒绝；当前关联只存ID，不开放事务外懒加载；[报告](P04-02-VERIFICATION.md) | [隔离](../architecture/MULTI-TENANCY.md) |
+| A04-05 | redis / P04-03 | tenant/store/platform命名空间、无上下文/门店/跨范围拒绝、编码/TTL/实际CRUD/故障、授权结果缓存限制 | 独立认证Redis实际读写/TTL/故障与健康HTTP；raw命中重验，过滤结果禁止；[P04-03](P04-03-VERIFICATION.md) | [REDIS](../conventions/REDIS.md) |
+| A04-06 | tenancy / P04-03 | 不可伪造快照、同线程A/B/无身份、异常/MDC、拒绝/取消/停止/期限、异步新事务/连接复用 | 确定性Latch/屏障/时钟及受限PG；不继承第三方线程变量；[P04-03](P04-03-VERIFICATION.md) | [ASYNC-EXECUTION](../conventions/ASYNC-EXECUTION.md) |
+| A04-07 | persistence / P04-03 | 实际RLS运行角色非owner/SUPERUSER/BYPASSRLS、FORCE/迁移关系、阶段总核对 | 容器目录/受限角色及原native/bulk/DDL/TRUNCATE/升权反例回归；生产NOT_VERIFIED；[P04总验收](P04-ACCEPTANCE.md) | [PERSISTENCE](../conventions/PERSISTENCE.md) |
 | A05-01 | 三身份 / P05 | 同主体ID跨域拒绝；Cookie/Header混合与错误头；公共端点不继承身份 | 真Redis与HTTP，空间/键隔离及客户端请求 | [认证](../architecture/AUTHENTICATION.md) |
 | A05-02 | security / P05 | Cookie属性/local-prod/代理；登录、退出、上传/写CSRF正反例；CORS错误origin | 浏览器+真后端/代理，Cookie/Origin/CSRF证据 | 同上 |
 | A05-03 | identity / P05 | 绝对/闲置/设备上限、当前退出vs全部撤销、停用/改密、Redis删除故障 | 真Redis两设备/跨实例、DB版本、故障注入；不依赖Mock内存 | 同上 |
@@ -58,3 +61,6 @@
 2026-10-08 P04-01：新增A04-00细化上下文/范围/生命周期技术门禁，原A04-01～04及P04原完成条件保持不变。真实认证、正式Store事实源、JPA/RLS/数据库越权、Redis/异步仍NOT_EXECUTED/NOT_VERIFIED，不由上下文或结构测试推导多租户隔离完成。最新数量/命令/退出码/生产产物及G01～G15见 [P04-01](P04-01-VERIFICATION.md)。P04整体IN_PROGRESS，下一P04-02不自动执行。
 
 2026-10-08 P04-02：受控JPA与资源策略、归属不可由客户端决定、复合关联、RLS同连接执行、内部原子批次及结构违规反例已实施，P04-02 COMPLETE（167项0失败/错误/跳过，原114项全部回归），最终命令/XML/数据库快照/JAR隔离与G01～G15见[P04-02](P04-02-VERIFICATION.md)。A04-01～04的本轮技术模型证据使用独立PostgreSQL与受限角色；正式生产角色/独立迁移、认证/权威撤销、所有未来业务、Redis/异步、跨OS/远程CI/部署仍未验证。P04整体IN_PROGRESS；下一合法P04-03只报告、不自动执行，公开HTTP逐项批处理协议未改变且尚未实现。
+
+
+2026-10-08 P04-03及P04关闭：A04-00～04原目标和反例保留，新增A04-05～07补Redis/异步/角色与总体验收，最终命令/数量与零跳过以[P04-03](P04-03-VERIFICATION.md)为准。真实认证、正式Store、权威撤销重验、MQ/Outbox、生产角色部署和所有未来业务仍未实现或未验证；技术夹具不是业务账号，基础阶段完成不等于产品上线。下一合法P05-01先正式身份数据基础/初始化/认证依赖，P05仍NOT_STARTED，不自动执行。

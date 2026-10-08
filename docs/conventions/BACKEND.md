@@ -59,3 +59,7 @@ P04-01异步边界加固：REQUEST启动Servlet异步后移除同步ERROR使用�
 查询和count/exists必须同时具备tenant、资源策略和业务条件；SELF明确主体域+ownerID，未知组合拒绝，关联由目标受控查询和复合FK共同约束。内部原子批次与冻结HTTP逐项批处理不同，详见[PERSISTENCE](PERSISTENCE.md#内部原子集合命令)，当前未实现公开批量接口、version输入协议或幂等功能。
 
 结构检查禁止业务层直接数据库和基础实现、裸Repository、未登记infra SQL/merge/getReference及方法引用绕过；只有共享受控实现持有实际底层调用。生产配置显式禁OSIV/二级缓存/查询缓存。新模块按接入清单完成其真实PG范围与SQL反例，不能仅凭包名或结构PASS宣称安全。结果与生产角色/认证/Redis/异步等限制见[P04-02](../testing/P04-02-VERIFICATION.md)；本轮无正式业务表、接口或部署。
+
+## P04-03 基础接入
+
+Redis与进程内异步当前已实现，合法使用分别见[REDIS](REDIS.md)、[ASYNC-EXECUTION](ASYNC-EXECUTION.md)。应用范围仍先选择当前permission；缓存只原始资源且命中重验数据权限，禁止授权过滤结果缓存。显式任务须在调用方事务完整结束后提交，工作端代理新事务，短期快照不代表权威撤销重验。业务不得自行创建可信入口/线程池或引用裸Redis；结构与真实资源反例共同验收。P04总结果与真实限制见[P04-ACCEPTANCE](../testing/P04-ACCEPTANCE.md)，后续P05先建立正式数据基础，不使用测试身份完成登录。

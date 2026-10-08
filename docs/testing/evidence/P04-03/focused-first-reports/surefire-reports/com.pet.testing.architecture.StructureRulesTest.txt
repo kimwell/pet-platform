@@ -1,0 +1,14 @@
+-------------------------------------------------------------------------------
+Test set: com.pet.testing.architecture.StructureRulesTest
+-------------------------------------------------------------------------------
+Tests run: 9, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.103 s <<< FAILURE! -- in com.pet.testing.architecture.StructureRulesTest
+com.pet.testing.architecture.StructureRulesTest.actualProductionBytecodeObeysRules -- Time elapsed: 0.061 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <[]> but was: <[绕过可信异步快照入口：com/pet/platform/shared/tenancy/TenantExecutionScope]>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:158)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:139)
+	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:201)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:184)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:179)
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1188)
+	at com.pet.testing.architecture.StructureRulesTest.actualProductionBytecodeObeysRules(StructureRulesTest.java:235)
+

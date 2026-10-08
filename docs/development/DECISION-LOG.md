@@ -150,3 +150,20 @@
 | D92 | 应用受控关联+tenant复合唯一/FK+RESTRICT；测试模型采用引用ID，再经父资源受控query投影 | 初始复合ManyToOne的LAZY实测提前解析，改为显式ID避免隐式导航授权；失败报告保留，无级联 |
 | D93 | 测试表/门店事实/角色/适配器/故意绕过和migration全src/test，独立PG容器运行角色与owner分离，五表FORCE RLS | 实际生产角色权限、正式模块SQL/认证/Store仍未验证，不将容器权限当生产验收 |
 | D94 | ASM增加低层持久化、裸Repository、infra native/JPQL/merge及bootstrap方法引用反例，保留跨模块和产物隔离 | 不能证明反射、恶意代码、未来自定义SQL安全；新增模型与查询需范围测试 |
+
+## P04-03 Redis、异步及阶段验收（2026-10-08）
+
+| 编号 | 决策/依据 | 验证与后续责任 |
+| --- | --- | --- |
+| D95 | 当前明确授权替代AGENTS旧任务限制；根目录/固定包/冻结版本/旧成果保全，不用Product Delivery OS | [P04-03](../testing/P04-03-VERIFICATION.md)，不提交/推送/部署或自动P05 |
+| D96 | 增BOM管理Redis starter；环境+版本+tenant/store/platform原始资源空间；严格模块/前缀，UTF-8 Base64 URL业务标识无替换碰撞 | 之前未冻结字节格式，本轮细化不改变认证空间；无hash tag/Cluster多Key能力 |
+| D97 | 不可公开构造的RedisKey绑定签发builder及完整当前范围，操作复核；store再查事实，platform独立固定权限 | 真实A/B/不同门店/无上下文/事实缺失/跨范围/不同builder拒绝 |
+| D98 | raw资源命中再验数据权限，禁止权限过滤结果/通用Spring Cache；不伪造权限版本或范围指纹解决撤销 | [REDIS](../conventions/REDIS.md)，静态规则不理解任意字符串内容；未来owner负责策略 |
+| D99 | GET/带1ms～24h TTL的SET/DEL，64KiB严格UTF-8 v1格式，无Java反序列化/任意Lua/KEYS/FLUSHDB | 真实CRUD/有界TTL/损坏值/连接故障；失败503不静默miss，无业务降级 |
+| D100 | 显式有限TenantTaskExecutor，从当前BUSINESS捕获不可伪造最小快照；taskId替代sessionId，只当前permission/range | 有限资源/AbortPolicy，不CallerRuns、不继承第三方InheritableThreadLocal，不全局包装线程池 |
+| D101 | 默认30s且硬上限60s单调期限，排队及运行Guard/提交/完成校验，嵌套不续期 | 无权威撤销重验，不支持长期/持久化/跨进程；P05/P10必须接当前状态/交集 |
+| D102 | 活动事务/同步期提交拒绝，代理用例完整返回后提交；工作端新事务沿用唯一ScopedTransaction/RLS | 真PG独立tx、单连接复用、跨行拒绝、flush/超龄提交回滚；不是afterCommit可靠消息 |
+| D103 | 实际线程finally清理身份/允许MDC/trace；残留拒绝并废弃线程；Future+固定脱敏日志观察异常 | 排队取消释放容量、运行取消不中断时仍运行、停止有限等待/协作请求，不能从其他线程清身份 |
+| D104 | 复用ASM补裸Redis/Cache/未登记Executor/内部snapshot/Key伪造/无身份入口与方法句柄反例 | 只扫描项目class；闭包/反射/动态内容/恶意凭据代码不在静态证明范围，产物继续隔离测试 |
+| D105 | 实际受限运行角色与迁移owner关系重新核对；三项P04和原完成条件综合关闭 | [P04总验收](../testing/P04-ACCEPTANCE.md)；生产角色/认证/正式Store/MQ/未来业务限制保留 |
+| D106 | 下一P05-01先正式身份数据基础/安全初始化/权威状态与Store/认证查找依赖 | 禁止以测试身份完成登录验收；P05仍NOT_STARTED，本轮只报告 |

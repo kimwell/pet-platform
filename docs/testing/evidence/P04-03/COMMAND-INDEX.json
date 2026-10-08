@@ -1,0 +1,149 @@
+[
+  {
+    "file": "compile-first.json",
+    "cwd": "/Users/kimwell/work/pet-platform/apps/backend",
+    "argv": [
+      "./mvnw",
+      "-q",
+      "-DskipTests",
+      "test-compile"
+    ],
+    "exitCode": 0,
+    "startedAtUTC": "2026-10-08T03:24:10.964642+00:00",
+    "finishedAtUTC": "2026-10-08T03:24:19.173616+00:00",
+    "log": "compile-first.log"
+  },
+  {
+    "file": "dependencies.json",
+    "cwd": "/Users/kimwell/work/pet-platform/apps/backend",
+    "argv": [
+      "./mvnw",
+      "org.apache.maven.plugins:maven-dependency-plugin:3.9.0:tree",
+      "-DoutputFile=/Users/kimwell/work/pet-platform/docs/testing/evidence/P04-03/backend-dependency-tree.txt"
+    ],
+    "exitCode": 0,
+    "startedAtUTC": "2026-10-08T03:39:05.994369+00:00",
+    "finishedAtUTC": "2026-10-08T03:39:11.464997+00:00",
+    "log": "dependencies.log"
+  },
+  {
+    "file": "final-audit-incomplete.json",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": "python3 docs/testing/evidence/P04-03/final-audit.py",
+    "exitCode": 1
+  },
+  {
+    "file": "final-audit.json",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": "python3 docs/testing/evidence/P04-03/final-audit.py",
+    "exitCode": 1
+  },
+  {
+    "file": "focused-first.json",
+    "cwd": "/Users/kimwell/work/pet-platform/apps/backend",
+    "argv": [
+      "./mvnw",
+      "test",
+      "-Dtest=TenantTaskExecutorTest,RedisConfigurationTest,StructureRulesTest"
+    ],
+    "exitCode": 1,
+    "startedAtUTC": "2026-10-08T03:29:11.667185+00:00",
+    "finishedAtUTC": "2026-10-08T03:29:19.530874+00:00",
+    "log": "focused-first.log"
+  },
+  {
+    "file": "resources-before-final.json",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "commands": [
+      "docker ps --format {{.ID}} {{.Image}} {{.Names}}",
+      "docker volume ls --format {{.Name}}"
+    ],
+    "exitCode": 0
+  },
+  {
+    "file": "resources-final.json",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "commands": [
+      "docker ps --format {{.ID}} {{.Image}} {{.Names}}",
+      "docker volume ls --format {{.Name}}"
+    ],
+    "exitCode": 0
+  },
+  {
+    "file": "toolchain.json",
+    "cwd": "/Users/kimwell/work/pet-platform/apps/backend",
+    "argv": [
+      "./mvnw",
+      "-v"
+    ],
+    "exitCode": 0,
+    "startedAtUTC": "2026-10-08T03:37:13.808213+00:00",
+    "finishedAtUTC": "2026-10-08T03:37:15.322260+00:00",
+    "log": "toolchain.log"
+  },
+  {
+    "file": "verify-complete.json",
+    "cwd": "/Users/kimwell/work/pet-platform/apps/backend",
+    "argv": [
+      "./mvnw",
+      "clean",
+      "verify"
+    ],
+    "exitCode": 0,
+    "startedAtUTC": "2026-10-08T03:42:40.902264+00:00",
+    "finishedAtUTC": "2026-10-08T03:43:28.567879+00:00",
+    "log": "verify-complete.log"
+  },
+  {
+    "file": "verify-final.json",
+    "cwd": "/Users/kimwell/work/pet-platform/apps/backend",
+    "argv": [
+      "./mvnw",
+      "clean",
+      "verify"
+    ],
+    "exitCode": 0,
+    "startedAtUTC": "2026-10-08T03:39:12.486602+00:00",
+    "finishedAtUTC": "2026-10-08T03:39:55.475594+00:00",
+    "log": "verify-final.log"
+  },
+  {
+    "file": "verify-first.json",
+    "cwd": "/Users/kimwell/work/pet-platform/apps/backend",
+    "argv": [
+      "./mvnw",
+      "clean",
+      "verify"
+    ],
+    "exitCode": 1,
+    "startedAtUTC": "2026-10-08T03:32:25.610929+00:00",
+    "finishedAtUTC": "2026-10-08T03:33:10.046108+00:00",
+    "log": "verify-first.log"
+  },
+  {
+    "file": "verify-second.json",
+    "cwd": "/Users/kimwell/work/pet-platform/apps/backend",
+    "argv": [
+      "./mvnw",
+      "clean",
+      "verify"
+    ],
+    "exitCode": 1,
+    "startedAtUTC": "2026-10-08T03:34:39.677351+00:00",
+    "finishedAtUTC": "2026-10-08T03:34:45.875440+00:00",
+    "log": "verify-second.log"
+  },
+  {
+    "file": "verify-third.json",
+    "cwd": "/Users/kimwell/work/pet-platform/apps/backend",
+    "argv": [
+      "./mvnw",
+      "clean",
+      "verify"
+    ],
+    "exitCode": 0,
+    "startedAtUTC": "2026-10-08T03:37:27.790637+00:00",
+    "finishedAtUTC": "2026-10-08T03:38:09.469887+00:00",
+    "log": "verify-third.log"
+  }
+]

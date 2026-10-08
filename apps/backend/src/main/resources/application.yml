@@ -1,6 +1,19 @@
 spring:
   application:
     name: pet-platform-backend
+  data:
+    redis:
+      host: ${PET_REDIS_HOST:}
+      port: ${PET_REDIS_PORT:6379}
+      username: ${PET_REDIS_USERNAME:}
+      password: ${PET_REDIS_PASSWORD:}
+      database: ${PET_REDIS_DATABASE:0}
+      connect-timeout: ${PET_REDIS_CONNECT_TIMEOUT:2s}
+      timeout: ${PET_REDIS_TIMEOUT:2s}
+      ssl:
+        enabled: ${PET_REDIS_SSL_ENABLED:false}
+      repositories:
+        enabled: false
   datasource:
     # 没有本地 URL 或默认凭据回退；Java 不自动加载 dotenv。
     url: ${PET_DATABASE_URL:}
@@ -55,11 +68,13 @@ management:
         liveness:
           include: livenessState
         readiness:
-          include: readinessState,db
+          include: readinessState,db,redis
   health:
     defaults:
       enabled: false
     db:
+      enabled: true
+    redis:
       enabled: true
 server:
   # 当前没有认证能力；默认只在本机监听，不隐式开放公网。
@@ -78,6 +93,13 @@ springdoc:
   remove-broken-reference-definitions: false
   override-with-generic-response: false
 pet:
+  redis:
+    prefix: ${PET_REDIS_PREFIX:pet}
+  async:
+    threads: ${PET_ASYNC_THREADS:2}
+    queue-capacity: ${PET_ASYNC_QUEUE_CAPACITY:32}
+    max-snapshot-age: ${PET_ASYNC_MAX_SNAPSHOT_AGE:30s}
+    shutdown-wait: ${PET_ASYNC_SHUTDOWN_WAIT:5s}
   api:
     # 来自POM过滤，只替换@占位，保留环境变量表达式。
     version: "@pet.api.version@"

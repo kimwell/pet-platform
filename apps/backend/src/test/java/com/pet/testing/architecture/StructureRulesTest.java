@@ -138,7 +138,19 @@ class StructureRulesTest {
                     || target.equals("jakarta/persistence/Query") || target.equals("jakarta/persistence/TypedQuery")
                     || target.startsWith("org/hibernate/Session") || target.startsWith("org/springframework/jdbc/")
                     || target.startsWith("java/sql/") || target.equals("javax/sql/DataSource");
-            if ((symbols.name().contains("/api/") || symbols.name().contains("/application/")) && target.startsWith(ROOT + "shared/persistence/ScopedPersistence")) rule = "业务层直连受控基础实现";
+            boolean redisImplementation = Set.of(ROOT + "shared/redis/RedisValueStore", ROOT + "shared/redis/RedisConfiguration").contains(symbols.name());
+            boolean rawRedis = target.startsWith("org/springframework/data/redis/") || target.startsWith("io/lettuce/") || target.startsWith("redis/clients/");
+            boolean asyncImplementation = symbols.name().equals(ROOT + "shared/tenancy/TenantTaskExecutor") || symbols.name().startsWith(ROOT + "shared/tenancy/TenantTaskExecutor$");
+            boolean rawAsync = target.startsWith("java/util/concurrent/Executor") || target.equals("java/util/concurrent/ThreadPoolExecutor")
+                    || target.startsWith("java/util/concurrent/ThreadPoolExecutor$") || target.equals("java/util/concurrent/ForkJoinPool")
+                    || target.equals("java/util/concurrent/ScheduledExecutorService") || target.equals("java/util/concurrent/ScheduledThreadPoolExecutor")
+                    || target.equals("java/util/Timer") || target.equals("org/springframework/scheduling/annotation/Async")
+                    || target.startsWith("org/springframework/core/task/") || target.startsWith("org/springframework/scheduling/concurrent/");
+            if (rawRedis && !redisImplementation) rule = "绕过受控Redis访问";
+            else if (target.startsWith("org/springframework/cache/")) rule = "当前禁止授权结果通用缓存";
+            else if (rawAsync && !asyncImplementation) rule = "绕过批准的租户异步入口";
+            else if (target.equals(ROOT + "shared/redis/RedisValueStore") && !symbols.name().startsWith(ROOT + "shared/redis/")) rule = "绕过受控Redis驱动";
+            else if ((symbols.name().contains("/api/") || symbols.name().contains("/application/")) && target.startsWith(ROOT + "shared/persistence/ScopedPersistence")) rule = "业务层直连受控基础实现";
             else if (businessLayer && rawPersistence) rule = "业务层直连数据库";
             else if (!owner.isEmpty() && !owner.equals("shared") && repository(target, new HashSet<>())
                     && !target.startsWith(ROOT)) rule = "业务模块继承裸Repository";
@@ -183,6 +195,30 @@ class StructureRulesTest {
             if (call.equals(ROOT + "shared/tenancy/TenantExecutionScope#openIdentity")
                     && !Set.of(ROOT + "shared/tenancy/TenantContextFilter", ROOT + "shared/tenancy/TrustedTenantExecutor").contains(symbols.name())) {
                 errors.add("绕过可信身份入口：" + symbols.name());
+            }
+            boolean taskExecutor = symbols.name().equals(ROOT + "shared/tenancy/TenantTaskExecutor") || symbols.name().startsWith(ROOT + "shared/tenancy/TenantTaskExecutor$");
+            if (calledOwner.equals(ROOT + "shared/tenancy/TenantExecutionScope") && Set.of("openTask", "captureTaskDeadline", "hasWorkerContext").contains(calledMethod)
+                    && !taskExecutor && !(calledMethod.equals("hasWorkerContext") && symbols.name().equals(ROOT + "shared/tenancy/TenantExecutionScope"))) {
+                errors.add("绕过可信异步快照入口：" + symbols.name());
+            }
+            if (calledOwner.equals(ROOT + "shared/redis/RedisKey") && calledMethod.equals("<init>")
+                    && !Set.of(ROOT + "shared/redis/RedisKeyBuilder", ROOT + "shared/redis/PlatformRedisAccess").contains(symbols.name())) {
+                errors.add("伪造受控Redis地址：" + symbols.name());
+            }
+            if (calledOwner.equals(ROOT + "shared/tenancy/TenantTaskExecutor") && calledMethod.equals("submitUnscoped") && !symbols.name().startsWith(ROOT + "shared/")) {
+                errors.add("业务不能使用无身份任务入口：" + symbols.name());
+            }
+            if (calledOwner.equals(ROOT + "shared/tenancy/TenantTaskExecutor") && calledMethod.equals("<init>")
+                    && !Set.of(ROOT + "shared/tenancy/TenantTaskExecutor", ROOT + "shared/tenancy/AsyncExecutionConfiguration").contains(symbols.name())) {
+                errors.add("业务不能创建未登记执行器：" + symbols.name());
+            }
+            if (Set.of(ROOT + "shared/tenancy/TrustedTenantExecutor", ROOT + "shared/security/PlatformScopeGuard").contains(calledOwner)
+                    && calledMethod.equals("<init>") && !symbols.name().equals(ROOT + "shared/tenancy/TenancyConfiguration")) {
+                errors.add("业务不能创建未登记可信身份入口：" + symbols.name());
+            }
+            if ((calledOwner.equals("java/util/concurrent/CompletableFuture") && Set.of("runAsync", "supplyAsync").contains(calledMethod))
+                    || (calledOwner.equals("java/lang/Thread") && Set.of("<init>", "start", "startVirtualThread").contains(calledMethod) && !taskExecutor)) {
+                errors.add("绕过批准的租户异步入口：" + symbols.name());
             }
         }
         return errors;
@@ -248,7 +284,7 @@ class StructureRulesTest {
             if (Set.of("frame", "replace").contains(method.getName())) assertFalse(java.lang.reflect.Modifier.isPublic(method.getModifiers()));
         }
         for (var method : com.pet.platform.shared.tenancy.TenantExecutionScope.class.getDeclaredMethods()) {
-            if (Set.of("openIdentity", "finishBoundary", "withVerifiedStore").contains(method.getName())) assertFalse(java.lang.reflect.Modifier.isPublic(method.getModifiers()));
+            if (Set.of("openIdentity", "finishBoundary", "withVerifiedStore", "openTask", "captureTaskDeadline", "hasWorkerContext").contains(method.getName())) assertFalse(java.lang.reflect.Modifier.isPublic(method.getModifiers()));
         }
     }
     @Test void detectsRawPersistenceInBusinessLayersAndRepositoryInheritance() {
@@ -303,5 +339,36 @@ class StructureRulesTest {
     @Test void rejectsTestClassesAndMigrationInArtifactFixture() {
         assertEquals(2, artifactViolations(Set.of("BOOT-INF/classes/com/pet/testing/Controller.class", "BOOT-INF/classes/test-migrations/V1__probe.sql"),
                 Set.of("com/pet/testing/Controller"), Set.of("test-migrations/V1__probe.sql")).size());
+    }
+    @Test void rejectsRawRedisAndCacheAbstractionsEvenInInfrastructureAndGenericSignatures() {
+        for (String target : List.of("org/springframework/data/redis/core/RedisTemplate", "org/springframework/data/redis/connection/RedisConnectionFactory",
+                "io/lettuce/core/RedisClient", "org/springframework/cache/annotation/Cacheable", ROOT + "shared/redis/RedisValueStore")) {
+            assertFalse(violations(symbols(fixture(ROOT + "modules/alpha/infrastructure/Bad", target, true)), Set.of()).isEmpty());
+        }
+        assertTrue(violations(symbols(fixture(ROOT + "modules/alpha/infrastructure/Good", ROOT + "shared/redis/TenantRedisAccess", true)), Set.of()).isEmpty());
+    }
+    @Test void rejectsUnapprovedExecutorsAndAsyncAnnotationsOnlyInProjectClasses() {
+        for (String target : List.of("java/util/concurrent/ExecutorService", "java/util/concurrent/ForkJoinPool", "java/util/concurrent/Executors",
+                "org/springframework/scheduling/annotation/Async", "org/springframework/core/task/TaskExecutor")) {
+            assertTrue(violations(symbols(fixture(ROOT + "modules/alpha/application/Bad", target, true)), Set.of()).stream().anyMatch(e -> e.startsWith("绕过批准的租户异步入口")));
+        }
+        assertTrue(violations(symbols(fixture(ROOT + "modules/alpha/application/Good", ROOT + "shared/tenancy/TenantTaskExecutor", true)), Set.of()).isEmpty());
+    }
+    @Test void rejectsKeyForgeryUnscopedTasksAndInternalSnapshotOpeningViaMethodHandles() {
+        for (var call : List.of(List.of(ROOT + "shared/redis/RedisKey", "<init>"),
+                List.of(ROOT + "shared/tenancy/TenantExecutionScope", "openTask"),
+                List.of(ROOT + "shared/tenancy/TenantTaskExecutor", "submitUnscoped"),
+                List.of(ROOT + "shared/tenancy/TenantTaskExecutor", "<init>"),
+                List.of(ROOT + "shared/tenancy/TrustedTenantExecutor", "<init>"),
+                List.of(ROOT + "shared/security/PlatformScopeGuard", "<init>"),
+                List.of("java/util/concurrent/CompletableFuture", "supplyAsync"))) {
+            var writer = new ClassWriter(0);
+            writer.visit(Opcodes.V21, Opcodes.ACC_PUBLIC, ROOT + "modules/alpha/application/Bad", null, "java/lang/Object", null);
+            var method = writer.visitMethod(Opcodes.ACC_PUBLIC, "bypass", "()V", null, null);
+            method.visitLdcInsn(new Handle(Opcodes.H_INVOKESTATIC, call.get(0), call.get(1), "()V", false));
+            method.visitInsn(Opcodes.POP); method.visitInsn(Opcodes.RETURN); method.visitMaxs(1, 1); method.visitEnd(); writer.visitEnd();
+            assertFalse(violations(symbols(writer.toByteArray()), Set.of()).isEmpty(),call.toString());
+        }
+        for (var constructor : com.pet.platform.shared.redis.RedisKey.class.getDeclaredConstructors()) assertFalse(java.lang.reflect.Modifier.isPublic(constructor.getModifiers()));
     }
 }

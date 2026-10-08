@@ -84,3 +84,19 @@ DML前flush，成功后clear整个当前持久化上下文，禁止继续复用�
 禁止EntityManager.find/merge/getReference、JdbcTemplate/JDBC、裸JpaRepository/save/deleteById/deleteAllInBatch、native Query和字符串JPQL作为普通业务入口。当前底层白名单仅ScopedPersistence/ScopedTransaction。结构规则不是任意未来SQL安全证明；数据库凭据被恶意代码掌握后更改GUC仍在防御边界之外。
 
 完整验证见[P04-02](../testing/P04-02-VERIFICATION.md)。生产表与角色配置、真实认证/实时权威版本重验、正式Store事实源、Redis、异步/消息/附件/导出隔离、所有未来业务和生产部署仍未实现或未验证。
+
+## P04-03 异步事务与生产RLS前置
+
+工作线程只建立捕获的最小执行范围，不继承调用方transaction ThreadLocal、EntityManager或连接。TenantTaskExecutor拒绝在active transaction/synchronization中提交；代理应用服务返回后再提交，工作端通过代理开启新事务，沿用唯一ScopedTransaction在同一JPA连接set_config(local)。提交时仍需完整当前范围一致且未过快照支持期。没有第二套RLS入口，也不把提交后进程内工作当可靠消息。调用方法、短时授权和取消边界见[ASYNC-EXECUTION](ASYNC-EXECUTION.md)。
+
+P04-02实际运行角色为非owner/SUPERUSER/BYPASSRLS/CREATEROLE/CREATEDB/INHERIT，只授显式DML；迁移owner独立，五个技术租户表ENABLE/FORCE及USING/WITH CHECK。P04-03重新核对目录权限，并以单连接池验证异步A/B事务、跨行读写拒绝、flush回滚与超龄beforeCommit回滚后GUC为空。应用范围谓词、数据库RLS、容器角色配置与生产权限是四类证据，不能互相替代；生产仍NOT_VERIFIED。
+
+部署前必须逐项检查（本轮不执行生产操作）：
+
+1. 运行账号非表owner、SUPERUSER、BYPASSRLS、CREATEROLE/CREATEDB，无可继承/SET ROLE到owner或特权成员关系；迁移凭据不交给运行进程。
+2. schema无CREATE、无DDL/TRUNCATE/危险函数授权；只授所需表DML及登记最小函数/序列权限，PUBLIC默认权限与后续对象default privileges都检查。
+3. 每个正式租户表非空归属、复合唯一/FK、ENABLE/FORCE RLS、运行角色USING/WITH CHECK；全局表需明确白名单，不能凭无tenant列成为全局。
+4. 使用真实运行账号验证无GUC默认拒绝/无可见行、跨tenant native/bulk/WITH CHECK及DDL/TRUNCATE/升权反例；验证连接提交/回滚/REQUIRES_NEW/线程复用清理。
+5. prod启动只validate，独立迁移任务先升级；实际部署网络、凭据、备份与最小权限留证，不能用Testcontainers owner或本地Compose管理员替代。
+
+正式身份/Store数据、权限撤销重验以及所有未来查询/附件/导出/消息仍按owner另行接入，不把本轮安全夹具当正式数据基础。[P04总验收](../testing/P04-ACCEPTANCE.md)保持这些限制。
