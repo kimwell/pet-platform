@@ -1,0 +1,13 @@
+{
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "command": [
+    "pnpm",
+    "--filter",
+    "@pet/admin-web",
+    "typecheck"
+  ],
+  "exitCode": 2,
+  "durationSeconds": 4.11,
+  "log": "typecheck-third.log",
+  "summary": "\n> @pet/admin-web@0.0.0 typecheck /Users/kimwell/work/pet-platform/apps/admin-web\n> tsc --noEmit\n\nsrc/features/account/security.test.tsx(9,15): error TS6196: 'AuthSpace' is declared but never used.\nsrc/features/account/security.test.tsx(74,100): error TS2339: Property 'sessionError' does not exist on type '{ queryClient: QueryClient; auth: AuthService; } | ({ queryClient: QueryClient; auth: AuthService; } & { sessionError: ApiError; }) | ({ ...; } & { ...; }) | ({ ...; } & { ...; }) | ({ ...; } & { ...; })'.\n  Property 'sessionError' does not exist on type '{ queryClient: QueryClient; auth: AuthService; }'.\n/Users/kimwell/work/pet-platform/apps/admin-web:\n ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL  @pet/admin-web@0.0.0 typecheck: `tsc --noEmit`\nExit status 2\n"
+}

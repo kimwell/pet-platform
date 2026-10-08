@@ -1,0 +1,80 @@
+{
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "command": [
+    "node",
+    ".local-data/p06-02/browser.cjs"
+  ],
+  "browser": "Google Chrome headless / isolated real browser contexts",
+  "records": [
+    {
+      "label": "浏览器版本",
+      "result": "OBSERVED",
+      "version": "154.0.8037.98"
+    },
+    {
+      "label": "同浏览器双身份与第二独立浏览器上下文真实登录",
+      "result": "PASS"
+    },
+    {
+      "label": "确认不一致不提交",
+      "result": "PASS"
+    },
+    {
+      "label": "错误当前密码403安全提示且清密码字段",
+      "result": "PASS"
+    },
+    {
+      "label": "浏览器执行边界",
+      "result": "FAIL",
+      "sanitizedError": "locator.waitFor: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByText('新密码不能与当前密码相同').first() to be visible\u001b[22m\n\n    at /Users/kimwell/work/pet-platform/.local-data/p06-02/browser.cjs:19:311"
+    }
+  ],
+  "consoleEvents": [
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 401 (Unauthorized)"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 401 (Unauthorized)"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 401 (Unauthorized)"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 401 (Unauthorized)"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 401 (Unauthorized)"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 401 (Unauthorized)"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 401 (Unauthorized)"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 401 (Unauthorized)"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 403 (Forbidden)"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 422 (Unprocessable Entity)"
+    }
+  ],
+  "exitCode": 1,
+  "summary": "分段实际结果；FAIL与未到达步骤保留，不等于完整浏览器验收成功"
+}

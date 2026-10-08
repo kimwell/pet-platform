@@ -1,0 +1,104 @@
+{
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "command": [
+    "node",
+    ".local-data/p06-02/browser.cjs"
+  ],
+  "browser": "Google Chrome headless / isolated real browser contexts",
+  "records": [
+    {
+      "label": "浏览器版本",
+      "result": "OBSERVED",
+      "version": "154.0.8037.98"
+    },
+    {
+      "label": "受限状态只准备本轮隔离库",
+      "result": "PASS"
+    },
+    {
+      "label": "隔离数据库明确准备真实password_change_required及新安全代际",
+      "result": "PASS"
+    },
+    {
+      "label": "真实受限登录强制进入员工安全页",
+      "result": "PASS"
+    },
+    {
+      "label": "直接输入普通保护URL不能绕过强制改密",
+      "result": "PASS"
+    },
+    {
+      "label": "登录页合法返回目标仍优先强制改密，无循环",
+      "result": "PASS"
+    },
+    {
+      "label": "后端受限过滤器真实拒绝普通管理路径",
+      "result": "PASS"
+    },
+    {
+      "label": "受限状态导航隐藏普通页面",
+      "result": "PASS"
+    },
+    {
+      "label": "390px安全页无横向溢出",
+      "result": "PASS"
+    },
+    {
+      "label": "普通me重新验证保留未保存输入",
+      "result": "PASS"
+    },
+    {
+      "label": "admin真实本人改密成功并返回登录",
+      "result": "PASS"
+    },
+    {
+      "label": "强制改密成功撤销旧会话，新密码登录解除受限",
+      "result": "PASS"
+    },
+    {
+      "label": "解除受限后恢复普通导航",
+      "result": "FAIL"
+    },
+    {
+      "label": "浏览器执行边界",
+      "result": "FAIL",
+      "sanitizedError": "Error: 解除受限后恢复普通导航\n    at check (/Users/kimwell/work/pet-platform/.local-data/p06-02/browser-resume.cjs:5:112)\n    at /Users/kimwell/work/pet-platform/.local-data/p06-02/browser-resume.cjs:21:220"
+    }
+  ],
+  "consoleEvents": [
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 401 (Unauthorized)"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 401 (Unauthorized)"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 403 (Forbidden)"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 401 (Unauthorized)"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 401 (Unauthorized)"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 401 (Unauthorized)"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 401 (Unauthorized)"
+    }
+  ],
+  "exitCode": 1,
+  "summary": "分段实际结果；FAIL与未到达步骤保留，不等于完整浏览器验收成功"
+}

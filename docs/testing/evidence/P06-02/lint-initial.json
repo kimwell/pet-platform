@@ -1,0 +1,13 @@
+{
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "command": [
+    "pnpm",
+    "--filter",
+    "@pet/admin-web",
+    "lint"
+  ],
+  "exitCode": 1,
+  "durationSeconds": 1.89,
+  "log": "lint-initial.log",
+  "summary": "\n> @pet/admin-web@0.0.0 lint /Users/kimwell/work/pet-platform/apps/admin-web\n> eslint src vite.config.ts dev-config.ts --max-warnings=0\n\n\n/Users/kimwell/work/pet-platform/apps/admin-web/src/features/account/AccountSecurity.tsx\n  32:129  warning  React Hook useEffect has a missing dependency: 'mutation'. Either include it or remove the dependency array  react-hooks/exhaustive-deps\n\n/Users/kimwell/work/pet-platform/apps/admin-web/src/shared/auth/permissions.tsx\n   5:17  error  Fast refresh only works when a file only exports components. Use a new file to share constants or functions between components  react-refresh/only-export-components\n   9:17  error  Fast refresh only works when a file only exports components. Use a new file to share constants or functions between components  react-refresh/only-export-components\n  13:17  error  Fast refresh only works when a file only exports components. Use a new file to share constants or functions between components  react-refresh/only-export-components\n  18:17  error  Fast refresh only works when a file only exports components. Use a new file to share constants or functions between components  react-refresh/only-export-components\n\n✖ 5 problems (4 errors, 1 warning)\n\n/Users/kimwell/work/pet-platform/apps/admin-web:\n ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL  @pet/admin-web@0.0.0 lint: `eslint src vite.config.ts dev-config.ts --max-warnings=0`\nExit status 1\n"
+}

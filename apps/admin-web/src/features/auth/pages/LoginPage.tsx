@@ -8,6 +8,7 @@ import { safeReturnTo } from '../../../shared/auth/returnTo';
 import { normalizeName, spaces } from '../../../shared/auth/spaces';
 import type { AuthSpace, StaffLogin } from '../../../shared/auth/spaces';
 import { SessionFailure } from '../../../shared/auth/SessionFailure';
+import { isRestricted } from '../../../shared/auth/permissions';
 
 function LoginPage({ space }: { space: AuthSpace }) {
   const router = useRouter();
@@ -26,10 +27,11 @@ function LoginPage({ space }: { space: AuthSpace }) {
         form.resetFields();
         const identity = await auth.current(space);
         if (!identity) throw new ApiError('HTTP', '未能确认当前身份，请重新登录', 401, 'AUTH_REQUIRED');
+        return isRestricted(identity);
       } finally { form.setFieldValue('password', undefined); }
     },
-    onSuccess: async () => {
-      router.history.replace(safeReturnTo(space, 'returnTo' in search ? search.returnTo : undefined));
+    onSuccess: async restricted => {
+      router.history.replace(restricted ? spaces[space].security : safeReturnTo(space, 'returnTo' in search ? search.returnTo : undefined));
       await router.invalidate();
     },
     onError: error => {

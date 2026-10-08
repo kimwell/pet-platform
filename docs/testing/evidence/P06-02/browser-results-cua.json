@@ -1,0 +1,110 @@
+{
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "tool": "mcp__cua_repl",
+  "browser": "Codex In-app Browser",
+  "origin": "http://127.0.0.1:5173",
+  "records": [
+    {
+      "label": "CUA真实同源双空间登录及平台权限恢复",
+      "result": "PASS"
+    },
+    {
+      "label": "原生窗口focus补验",
+      "result": "NOT_EXECUTED",
+      "reason": "Chrome控制通道不可用，Codex原生窗口控制被工具拒绝；未把自动化bringToFront当作真实focus通过"
+    },
+    {
+      "label": "真实Redis暂停后全退出请求结果未确认，不提示成功；身份失败区别未登录",
+      "result": "PASS"
+    },
+    {
+      "label": "Redis恢复后手动重验回到原平台会话，未提示全设备退出",
+      "result": "PASS"
+    },
+    {
+      "label": "真实平台session权限撤销后403呈现无权限而非退出",
+      "result": "PASS"
+    },
+    {
+      "label": "平台故障和权限下降后独立员工会话仍可访问，零普通管理权限不拦本人操作",
+      "result": "PASS"
+    },
+    {
+      "label": "正式受限状态登录优先跳本人安全页，returnTo=/admin无法绕过",
+      "result": "PASS"
+    },
+    {
+      "label": "最终代码直接输入/admin仍强制返回/admin/security，无循环",
+      "result": "PASS"
+    },
+    {
+      "label": "最终390px受限安全页无横向溢出，截图密码为空",
+      "result": "PASS"
+    },
+    {
+      "label": "手动me重验保留未保存密码输入",
+      "result": "PASS",
+      "basis": "直接等值探针未作证明；未重新填写新密码即完成正式修改，服务端接收原草稿，后续新密码登录通过"
+    },
+    {
+      "label": "最终代码正式强制改密成功，当前空间回登录且单一成功文案，密码字段清空",
+      "result": "PASS"
+    },
+    {
+      "label": "密码草稿DOM直接等值探针",
+      "result": "NOT_VERIFIED",
+      "reason": "受保护密码值的只读探针返回false；未据此伪称PASS。后续未重填新密码，仅填写当前和确认密码，真实改密成功，证明原草稿用于提交。"
+    },
+    {
+      "label": "最终强制改密后旧密码拒绝",
+      "result": "PASS",
+      "visibleMessage": "登录失败，请检查登录信息"
+    },
+    {
+      "label": "最终新密码登录解除限制，正常导航恢复",
+      "result": "PASS"
+    },
+    {
+      "label": "最终版本平台正式改密成功，390px无溢出，密码包含边界空格",
+      "result": "PASS"
+    },
+    {
+      "label": "最终平台旧密码被拒绝",
+      "result": "PASS"
+    },
+    {
+      "label": "最终平台新密码原样登录成功，无自动重登",
+      "result": "PASS"
+    },
+    {
+      "label": "最终平台正式退出全部设备成功并返回平台登录",
+      "result": "PASS"
+    },
+    {
+      "label": "最终平台改密和全退出未影响员工空间",
+      "result": "PASS"
+    },
+    {
+      "label": "最终员工零管理权限正式全设备退出成功，返回员工登录",
+      "result": "PASS"
+    },
+    {
+      "label": "最终1280px桌面平台安全页布局及空密码字段",
+      "result": "PASS"
+    },
+    {
+      "label": "最终1280px桌面员工安全页布局及空密码字段",
+      "result": "PASS"
+    }
+  ],
+  "console": [],
+  "exitCode": null,
+  "executionStatus": "TOOL_COMPLETED",
+  "summary": "CUA工具没有进程退出码；逐操作结果和原生focus未执行分开记录",
+  "toolBoundaryErrors": [
+    "Chrome隔离浏览器控制不可用",
+    "原生Codex窗口控制被工具拒绝",
+    "等待首次未指定state，随后读取状态而非重放敏感请求",
+    "旧密码拒绝文案首次selector不匹配，实际DOM为登录失败，请检查登录信息"
+  ]
+}

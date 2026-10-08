@@ -1,0 +1,18 @@
+[
+  {
+    "method": "GET",
+    "path": "/api/admin/auth/me",
+    "status": 401,
+    "csrfPresent": false,
+    "sameOrigin": true,
+    "cookies": []
+  },
+  {
+    "method": "GET",
+    "path": "/api/admin/auth/me",
+    "status": 401,
+    "csrfPresent": false,
+    "sameOrigin": true,
+    "cookies": []
+  }
+]

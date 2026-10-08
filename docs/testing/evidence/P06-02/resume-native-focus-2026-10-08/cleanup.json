@@ -1,0 +1,87 @@
+{
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "at": "2026-10-08T15:01:02.123740+00:00",
+  "commands": [
+    {
+      "label": "web",
+      "command": [
+        "SIGTERM",
+        "own-process-group",
+        "63090"
+      ],
+      "exitCode": null,
+      "executionStatus": "SIGNAL_SENT"
+    },
+    {
+      "label": "proxy",
+      "command": [
+        "SIGTERM",
+        "own-process-group",
+        "63089"
+      ],
+      "exitCode": null,
+      "executionStatus": "SIGNAL_SENT"
+    },
+    {
+      "label": "backend",
+      "command": [
+        "SIGTERM",
+        "own-process-group",
+        "62980"
+      ],
+      "exitCode": null,
+      "executionStatus": "SIGNAL_SENT"
+    },
+    {
+      "label": "pet-p06-02-focus-pg",
+      "command": [
+        "docker",
+        "stop",
+        "pet-p06-02-focus-pg"
+      ],
+      "exitCode": 0,
+      "summary": "pet-p06-02-focus-pg"
+    },
+    {
+      "label": "pet-p06-02-focus-redis",
+      "command": [
+        "docker",
+        "stop",
+        "pet-p06-02-focus-redis"
+      ],
+      "exitCode": 0,
+      "summary": "pet-p06-02-focus-redis"
+    }
+  ],
+  "portsClosed": true,
+  "openPorts": [],
+  "technicalInputFilesRemoved": true,
+  "temporaryContainersRemoved": true,
+  "remainingContainers": [
+    "pet-platform-p02-validation-rabbitmq-1\texited",
+    "pet-platform-p02-validation-postgres-1\texited",
+    "pet-platform-p02-validation-redis-1\texited"
+  ],
+  "containerBaseline": "pet-platform-p02-validation-rabbitmq-1\texited\npet-platform-p02-validation-postgres-1\texited\npet-platform-p02-validation-redis-1\texited\n",
+  "containerCheckExitCode": 0,
+  "UI": "本轮无痕与访达窗口关闭，用户已有新标签页保留；事件观察器已移除",
+  "stoppedProcessCheck": {
+    "command": [
+      "ps",
+      "-p",
+      "63090,63089,62980",
+      "-o",
+      "pid=,stat="
+    ],
+    "exitCode": 1,
+    "summary": "",
+    "allOwnProcessesGone": true
+  },
+  "cleanupExecution": {
+    "command": [
+      "python3",
+      "<本轮已知输入扫描及独立资源收尾>"
+    ],
+    "exitCode": 0
+  }
+}

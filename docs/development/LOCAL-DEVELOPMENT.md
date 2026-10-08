@@ -305,3 +305,23 @@ P06-01 COMPLETE，P06整体IN_PROGRESS；最新验证见[P06-01](../testing/P06-
 本轮专用tmpfs PG/Redis、正式初始化、local生产JAR、Vite同源代理和浏览器联调已完成。中间加入只透传的回环观察代理：不改路径/状态/Cookie/Origin，只记录method/path/status、CSRF是否存在及Cookie名称/属性，不记录Body/凭据/HAR。真实故障使用暂停本轮Redis再恢复；不是Mock服务。资源现已停止，技术密码输入已移除，原三容器/卷保全；下次重建新隔离账号，不复用本轮账号或凭据。
 
 P02记录入口JS621.32kB，本轮入口711.10kB（gzip234.59kB）；登录54.29kB、布局88.36kB及共享错误状态10.02kB为实际懒加载块，500kB警告仍输出、阈值未提高。不声称性能预算、远程CI、多OS、TLS/跨源或生产发布已通过。
+
+## P06-02 本人账号安全验收（2026-10-08）
+
+Web 新入口 `/admin/security`、`/platform/security`；默认仍用 Vite 同源 /api、独立 Cookie/CSRF，不增加 CORS 或秘密 VITE_*。STAFF 强制改密只依据生成模型 passwordChangeRequired，平台无此状态。运行流程：本人原密码确认→正式 password PUT→所有旧设备逻辑失效→对应登录→用户明确用新密码登录；logout-all POST同样需当前密码。
+
+使用专用 tmpfs PostgreSQL/Redis、正式三个角色脚本、V1～V4独立迁移和 `backend-identity.sh bootstrap/platform-bootstrap --password-stdin` 建立测试账号。生产JAR由P06-01保留的同源产物提供，实际源码/契约未改；受限 runtime 非superuser/非BYPASSRLS，微信关闭、无测试profile/Gateway。不修改日常账号或库。初始化tenant-admin受正式重置保护且不能重置本人，本轮强制标记通过明确隔离库的数据准备设置 password_change_required 并增加安全/资源版本；不是管理员UI验收，不放宽正式重置策略。普通权限下降同样只在隔离库准备，再用正式 me/API和真实浏览器核验。
+
+真实多浏览器上下文与双空间改密/全撤销、CSRF反例、字段校验、390px、键盘及Redis暂停/恢复证据见[P06-02](../testing/P06-02-VERIFICATION.md)。不录制HAR/录像/请求体；密码仅0600输入文件和进程内存，截图仅空密码字段，响应观察只保留method/path/status、CSRF存在布尔值和Cookie名/属性。后台清理PENDING仍代表成功，浏览器不指导Redis补偿。测试收尾只停本轮进程/容器、移除技术凭据文件，既有容器/卷保全。
+
+检查仍使用冻结Node/pnpm/JDK的现有Web typecheck/lint/test/build、contracts:check和check:repo；没有后端源码修改，不重跑全部421项。入口500kB警告不提高阈值；生产HTTPS、反代/跨源、Redis ACL/HA、远程CI及多OS未被本机验收覆盖。P06-02仅本任务，P06综合验收与下一任务不自动执行。
+
+P06-02最终命令均退出0，5文件120项；入口714.55kB/gzip235.61kB，相比P06-01增加3.45/1.02kB，500kB警告保留。专用资源/临时秘密输入已清理，5173/18086关闭、原三容器仍exited；未改日常库或全局工具配置。前轮原生窗口focus真实补验工具受限，历史NOT_EXECUTED，G11 PARTIAL/P06-02 IN_PROGRESS；下一仅在新的隔离环境续验该项，不复用已销毁账号，不启动其他任务。
+
+## P06-02 原生窗口focus续验环境与收尾（2026-10-08）
+
+新tmpfs容器pet-p06-02-focus-pg/redis沿用冻结镜像，三个正式角色脚本、V1～V4迁移及两域stdin初始化；生产JAR受限runtime，后端18088、仅白名单观察的透传代理18089、同源Web5173。测试权限减少仅在隔离库准备、递增authorization_version，所有身份重验走正式后端；不修改日常账号或伪称管理员UI操作。[实际命令](../testing/evidence/P06-02/resume-native-focus-2026-10-08/environment.json)。
+
+CUA原生Chrome创建新无痕窗口，Window菜单切换后可信focus且visibility始终visible，平台me403及员工200分别留证；最小化恢复也通过。没有合成focus、HAR/录像/请求体或密码截图，事件探针仅观察且已移除。7个已知技术输入精确扫描无命中；未保留角色口令/旧轮密码不能重扫，不承诺物理内存擦除。三进程组已停止、5173/18088/18089关闭、两tmpfs容器及秘密输入清理，用户原窗口/已有三容器保全。[收尾](../testing/evidence/P06-02/resume-native-focus-2026-10-08/cleanup.json)。
+
+本轮无源码/契约/依赖变化，不重复完整421项或六项Web构建检查；既有120项及构建体积714.55kB证据继续有效，新增check:repo与保全审计。G01～G14 PASS，P06-02 COMPLETE/P06 IN_PROGRESS，下一仅建议P06综合验收，不自动执行。

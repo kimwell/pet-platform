@@ -4,6 +4,8 @@ import type { AuthSpace } from '../../shared/auth/spaces';
 import { spaces } from '../../shared/auth/spaces';
 import { safeReturnTo } from '../../shared/auth/returnTo';
 import { ApiError } from '../../shared/api/ApiError';
+import { isRestricted } from '../../shared/auth/permissions';
+import { canAccessPage, pageFor } from '../router/pageAccess';
 
 export async function requireSession(auth: AuthService, space: AuthSpace, href: string) {
   let identity;
@@ -14,5 +16,8 @@ export async function requireSession(auth: AuthService, space: AuthSpace, href: 
     throw error;
   }
   if (!identity) throw redirect({ to: spaces[space].login, search: { returnTo: safeReturnTo(space, href) }, replace: true });
+  const page = pageFor(space, new URL(href, 'https://local.invalid').pathname);
+  if (isRestricted(identity) && !page.allowRestricted) throw redirect({ href: spaces[space].security, replace: true });
+  if (!canAccessPage(page, identity)) return { sessionError: new ApiError('HTTP', '当前账号没有访问此页面的权限', 403, 'PERMISSION_DENIED') };
   return { sessionError: undefined };
 }

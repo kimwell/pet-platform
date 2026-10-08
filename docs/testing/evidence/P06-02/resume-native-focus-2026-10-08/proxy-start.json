@@ -1,0 +1,12 @@
+{
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "command": [
+    "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/tools/node-v24.21.0-darwin-arm64/bin/node",
+    "/Users/kimwell/work/pet-platform/.local-data/p06-02-focus/proxy.mjs"
+  ],
+  "pid": 63089,
+  "exitCode": null,
+  "listen": 18089,
+  "upstream": 18088,
+  "summary": "仅透传请求/响应；保存时间/路径/状态/CSRF是否存在/Cookie名称属性，不记录值或Body"
+}

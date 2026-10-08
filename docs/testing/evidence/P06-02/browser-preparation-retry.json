@@ -1,0 +1,13 @@
+{
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "command": [
+    "docker",
+    "exec",
+    "-i",
+    "pet-p06-02-pg",
+    "psql",
+    "<隔离库清理废弃测试会话>"
+  ],
+  "exitCode": 0,
+  "summary": "仅本轮隔离数据库增加安全代际；前两轮未进行密码操作"
+}

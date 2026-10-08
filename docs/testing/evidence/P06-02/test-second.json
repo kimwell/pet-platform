@@ -1,0 +1,13 @@
+{
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "command": [
+    "pnpm",
+    "--filter",
+    "@pet/admin-web",
+    "test"
+  ],
+  "exitCode": 0,
+  "durationSeconds": 3.47,
+  "log": "test-second.log",
+  "summary": "\n> @pet/admin-web@0.0.0 test /Users/kimwell/work/pet-platform/apps/admin-web\n> vitest run\n\n\n RUN  v4.1.11 /Users/kimwell/work/pet-platform/apps/admin-web\n\n\n Test Files  5 passed (5)\n      Tests  117 passed (117)\n   Start at  21:17:46\n   Duration  2.34s (transform 551ms, setup 0ms, import 3.87s, tests 568ms, environment 1ms)\n\n"
+}

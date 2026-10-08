@@ -1,0 +1,36 @@
+{
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "command": [
+    "python3",
+    ".local-data/p06-02-focus/audit.py"
+  ],
+  "exitCode": 0,
+  "at": "2026-10-08T15:05:29.407016+00:00",
+  "protectedFilesChecked": 1814,
+  "changedProtectedFiles": [],
+  "gitDiffCheckCommand": [
+    "git",
+    "diff",
+    "--check"
+  ],
+  "gitDiffCheckExitCode": 0,
+  "gitDiffCheckSummary": "",
+  "localDocumentLinksChecked": 312,
+  "missingLinks": [],
+  "visibleNativeFocusVerified": true,
+  "browserFailures": [],
+  "HTTPWhitelistVerified": true,
+  "resourceAndUICleanupVerified": true,
+  "newGitStatusEntries": [],
+  "updatedDocuments": [
+    "README.md",
+    "docs/testing/P06-02-VERIFICATION.md",
+    "docs/conventions/WEB-STATE.md",
+    "docs/conventions/WEB-PAGES.md",
+    "docs/development/LOCAL-DEVELOPMENT.md",
+    "docs/development/ROADMAP.md",
+    "docs/development/DECISION-LOG.md",
+    "docs/testing/ACCEPTANCE-MATRIX.md"
+  ],
+  "summary": "无代码/公开契约/依赖变更；1814项保护摘要不变，历史ui/后端/小程序/infra/生成类型/冻结依赖及P06-01证据保全；仅更新8份状态规范文档及本轮新证据；原检查沿用，未提交推送部署"
+}

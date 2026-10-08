@@ -1,0 +1,22 @@
+{
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "command": [
+    "docker",
+    "exec",
+    "-i",
+    "pet-p06-02-focus-pg",
+    "psql",
+    "-X",
+    "-qAt",
+    "-v",
+    "ON_ERROR_STOP=1",
+    "-U",
+    "postgres",
+    "-d",
+    "p06_02_focus_acceptance"
+  ],
+  "exitCode": 0,
+  "at": "2026-10-08T14:58:01.411832+00:00",
+  "summary": "platform:redis:operate\n",
+  "preparation": "原生窗口菜单切至已有空白窗口后，仅隔离验收库撤销平台 session:manage 并增加授权版本；未操作用户常用账号"
+}

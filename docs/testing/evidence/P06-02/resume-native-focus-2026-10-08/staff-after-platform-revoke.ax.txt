@@ -1,0 +1,50 @@
+The following is a diff from the previous accessibility tree for Window: "企业应用工程入口" with ~ and + representing changed and added elements, respectively. Removed elements are summarized by ID range.
+~						56 container
++							57 文本 员工工作台
++							58 菜单 Secondary Actions: Cancel
++								59 当前身份
++									60 link 当前身份, Value: 127.0.0.1:5173/admin
++								61 账号安全
++									62 link 账号安全, Value: 127.0.0.1:5173/admin/security
++							63 按钮 折叠菜单
++							64 container
++								65 text 员工 空间
++							66 按钮 当前账号菜单
++							67 内容列表
++								68 文本 员工工作台
++								69 文本 账号安全
++							70 标题 账号安全, Value: 1
++								71 文本 账号安全
++							72 文本 管理本人密码与登录会话
++							73 按钮 刷新当前身份
++							74 container
++								75 文本 本人身份
++								76 container 姓名 : 租户管理员
++									77 文本 姓名
++									78 文本 :
++									79 文本 租户管理员
++								80 container 身份空间 : 员工
++									81 文本 身份空间
++									82 文本 :
++									83 文本 员工
++							84 container
++								85 文本 修改密码
++								86 container
++									87 文本 当前密码
++									88 安全文本栏 (settable) 当前密码
++									89 文本 新密码
++									90 安全文本栏 (settable) 新密码
++									91 文本 12至128个字符，保留空格和大小写
++									92 文本 确认新密码
++									93 安全文本栏 (settable) 确认新密码
++									94 按钮 修改密码并重新登录
++							95 container
++								96 text 退出全部设备 将退出当前账号的全部设备，包括当前设备。请再次输入当前密码确认。
++								97 container
++									98 文本 当前密码
++									99 安全文本栏 (settable) 当前密码
++									100 按钮 确认退出全部设备
++							101 link 系统入口, Value: 127.0.0.1:5173/
++							102 link 平台控制台, Value: 127.0.0.1:5173/platform
+~					37 标签 (selected, settable, boolean) 企业应用工程入口 - 内存用量 - 156 MB, Value: on
+The focused UI element is 55 HTML 内容 企业应用工程入口, URL: 127.0.0.1:5173/admin/security

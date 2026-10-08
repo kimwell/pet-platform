@@ -1,4 +1,4 @@
-import { Alert, Button, Card, Descriptions, Space, Typography } from 'antd';
+import { Button, Card, Descriptions, Space, Typography } from 'antd';
 import type { WebIdentity } from '../../shared/auth/spaces';
 
 export function AccountHome({ identity, refreshing, refresh }: { identity: WebIdentity; refreshing: boolean; refresh: () => void }) {
@@ -7,7 +7,6 @@ export function AccountHome({ identity, refreshing, refresh }: { identity: WebId
       <Typography.Title level={1}>你好，{identity.displayName}</Typography.Title>
       <Typography.Paragraph type="secondary">{identity.principalType === 'STAFF' ? '当前已进入员工工作台' : '当前已进入平台控制台'}</Typography.Paragraph>
     </div><Button loading={refreshing} onClick={refresh}>刷新当前身份</Button></div>
-    {identity.principalType === 'STAFF' && identity.passwordChangeRequired && <Alert type="warning" showIcon title="当前账号需要修改密码，请联系管理员" />}
     <Card title="当前身份">
       <Descriptions column={1} items={[
         { key: 'name', label: '姓名', children: identity.displayName },

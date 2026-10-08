@@ -1,0 +1,1345 @@
+[
+  {
+    "method": "GET",
+    "path": "/api/admin/auth/me",
+    "status": 401,
+    "csrfPresent": false,
+    "sameOrigin": true,
+    "cookies": []
+  },
+  {
+    "method": "GET",
+    "path": "/api/admin/auth/me",
+    "status": 401,
+    "csrfPresent": false,
+    "sameOrigin": true,
+    "cookies": []
+  },
+  {
+    "method": "GET",
+    "path": "/api/admin/auth/csrf",
+    "status": 200,
+    "csrfPresent": false,
+    "sameOrigin": true,
+    "cookies": [
+      {
+        "name": "pet_dev_staff_pre",
+        "attributes": [
+          "Path=/api/admin/",
+          "HttpOnly",
+          "SameSite=Lax"
+        ]
+      }
+    ]
+  },
+  {
+    "method": "POST",
+    "path": "/api/admin/auth/login",
+    "status": 200,
+    "csrfPresent": true,
+    "sameOrigin": true,
+    "cookies": [
+      {
+        "name": "pet_dev_staff_pre",
+        "attributes": [
+          "Path=/api/admin/",
+          "Max-Age=0",
+          "HttpOnly",
+          "SameSite=Lax"
+        ]
+      },
+      {
+        "name": "pet_dev_staff_sid",
+        "attributes": [
+          "Path=/api/admin/",
+          "HttpOnly",
+          "SameSite=Lax"
+        ]
+      }
+    ]
+  },
+  {
+    "method": "GET",
+    "path": "/api/admin/auth/csrf",
+    "status": 200,
+    "csrfPresent": false,
+    "sameOrigin": true,
+    "cookies": []
+  },
+  {
+    "method": "GET",
+    "path": "/api/admin/auth/me",
+    "status": 200,
+    "csrfPresent": false,
+    "sameOrigin": true,
+    "cookies": []
+  },
+  {
+    "method": "GET",
+    "path": "/api/platform/auth/me",
+    "status": 401,
+    "csrfPresent": false,
+    "sameOrigin": true,
+    "cookies": []
+  },
+  {
+    "method": "GET",
+    "path": "/api/platform/auth/me",
+    "status": 401,
+    "csrfPresent": false,
+    "sameOrigin": true,
+    "cookies": []
+  },
+  {
+    "method": "GET",
+    "path": "/api/platform/auth/csrf",
+    "status": 200,
+    "csrfPresent": false,
+    "sameOrigin": true,
+    "cookies": [
+      {
+        "name": "pet_dev_platform_pre",
+        "attributes": [
+          "Path=/api/platform/",
+          "HttpOnly",
+          "SameSite=Lax"
+        ]
+      }
+    ]
+  },
+  {
+    "method": "POST",
+    "path": "/api/platform/auth/login",
+    "status": 200,
+    "csrfPresent": true,
+    "sameOrigin": true,
+    "cookies": [
+      {
+        "name": "pet_dev_platform_pre",
+        "attributes": [
+          "Path=/api/platform/",
+          "Max-Age=0",
+          "HttpOnly",
+          "SameSite=Lax"
+        ]
+      },
+      {
+        "name": "pet_dev_platform_sid",
+        "attributes": [
+          "Path=/api/platform/",
+          "HttpOnly",
+          "SameSite=Lax"
+        ]
+      }
+    ]
+  },
+  {
+    "method": "GET",
+    "path": "/api/platform/auth/csrf",
+    "status": 200,
+    "csrfPresent": false,
+    "sameOrigin": true,
+    "cookies": []
+  },
+  {
+    "method": "GET",
+    "path": "/api/platform/auth/me",
+    "status": 200,
+    "csrfPresent": false,
+    "sameOrigin": true,
+    "cookies": []
+  },
+  {
+    "method": "GET",
+    "path": "/api/platform/auth/me",
+    "status": 200,
+    "csrfPresent": false,
+    "sameOrigin": true,
+    "cookies": []
+  },
+  {
+    "method": "GET",
+    "path": "/api/admin/auth/me",
+    "status": 401,
+    "csrfPresent": false,
+    "sameOrigin": true,
+    "cookies": []
+  },
+  {
+    "method": "GET",
+    "path": "/api/admin/auth/me",
+    "status": 401,
+    "csrfPresent": false,
+    "sameOrigin": true,
+    "cookies": []
+  },
+  {
+    "method": "GET",
+    "path": "/api/platform/auth/me",
+    "status": 200,
+    "csrfPresent": false,
+    "sameOrigin": true,
+    "cookies": []
+  },
+  {
+    "method": "GET",
+    "path": "/api/admin/auth/csrf",
+    "status": 200,
+    "csrfPresent": false,
+    "sameOrigin": true,
+    "cookies": [
+      {
+        "name": "pet_dev_staff_pre",
+        "attributes": [
+          "Path=/api/admin/",
+          "HttpOnly",
+          "SameSite=Lax"
+        ]
+      }
+    ]
+  },
+  {
+    "method": "POST",
+    "path": "/api/admin/auth/login",
+    "status": 200,
+    "csrfPresent": true,
+    "sameOrigin": true,
+    "cookies": [
+      {
+        "name": "pet_dev_staff_pre",
+        "attributes": [
+          "Path=/api/admin/",
+          "Max-Age=0",
+          "HttpOnly",
+          "SameSite=Lax"
+        ]
+      },
+      {
+        "name": "pet_dev_staff_sid",
+        "attributes": [
+          "Path=/api/admin/",
+          "HttpOnly",
+          "SameSite=Lax"
+        ]
+      }
+    ]
+  },
+  {
+    "method": "GET",
+    "path": "/api/admin/auth/csrf",
+    "status": 200,
+    "csrfPresent": false,
+    "sameOrigin": true,
+    "cookies": []
+  },
+  {
+    "method": "GET",
+    "path": "/api/admin/auth/me",
+    "status": 200,
+    "csrfPresent": false,
+    "sameOrigin": true,
+    "cookies": []
+  },
+  {
+    "method": "GET",
+    "path": "/api/platform/auth/me",
+    "status": 401,
+    "csrfPresent": false,
+    "sameOrigin": true,
+    "cookies": []
+  },
+  {
+    "method": "GET",
+    "path": "/api/platform/auth/me",
+    "status": 401,
+    "csrfPresent": false,
+    "sameOrigin": true,
+    "cookies": []
+  },
+  {
+    "method": "GET",
+    "path": "/api/platform/auth/csrf",
+    "status": 200,
+    "csrfPresent": false,
+    "sameOrigin": true,
+    "cookies": [
+      {
+        "name": "pet_dev_platform_pre",
+        "attributes": [
+          "Path=/api/platform/",
+          "HttpOnly",
+          "SameSite=Lax"
+        ]
+      }
+    ]
+  },
+  {
+    "method": "POST",
+    "path": "/api/platform/auth/login",
+    "status": 200,
+    "csrfPresent": true,
+    "sameOrigin": true,
+    "cookies": [
+      {
+        "name": "pet_dev_platform_pre",
+        "attributes": [
+          "Path=/api/platform/",
+          "Max-Age=0",
+          "HttpOnly",
+          "SameSite=Lax"
+        ]
+      },
+      {
+        "name": "pet_dev_platform_sid",
+        "attributes": [
+          "Path=/api/platform/",
+          "HttpOnly",
+          "SameSite=Lax"
+        ]
+      }
+    ]
+  },
+  {
+    "method": "GET",
+    "path": "/api/platform/auth/csrf",
+    "status": 200,
+    "csrfPresent": false,
+    "sameOrigin": true,
+    "cookies": []
+  },
+  {
+    "method": "GET",
+    "path": "/api/platform/auth/me",
+    "status": 200,
+    "csrfPresent": false,
+    "sameOrigin": true,
+    "cookies": []
+  },
+  {
+    "method": "GET",
+    "path": "/api/platform/auth/me",
+    "status": 200,
+    "csrfPresent": false,
+    "sameOrigin": true,
+    "cookies": []
+  },
+  {
+    "method": "GET",
+    "path": "/api/admin/auth/me",
+    "status": 200,
+    "csrfPresent": false,
+    "sameOrigin": true,
+    "cookies": []
+  },
+  {
+    "method": "GET",
+    "path": "/api/platform/auth/me",
+    "status": 200,
+    "csrfPresent": false,
+    "sameOrigin": true,
+    "cookies": []
+  },
+  {
+    "method": "GET",
+    "path": "/api/admin/auth/me",
+    "status": 200,
+    "csrfPresent": false,
+    "sameOrigin": true,
+    "cookies": []
+  },
+  {
+    "method": "GET",
+    "path": "/api/platform/auth/me",
+    "status": 200,
+    "csrfPresent": false,
+    "sameOrigin": true,
+    "cookies": []
+  },
+  {
+    "method": "GET",
+    "path": "/api/admin/auth/me",
+    "status": 200,
+    "csrfPresent": false,
+    "sameOrigin": true,
+    "cookies": []
+  },
+  {
+    "method": "GET",
+    "path": "/api/admin/auth/csrf",
+    "status": 200,
+    "csrfPresent": false,
+    "sameOrigin": true,
+    "cookies": []
+  },
+  {
+    "method": "PUT",
+    "path": "/api/admin/auth/password",
+    "status": 403,
+    "csrfPresent": true,
+    "sameOrigin": true,
+    "cookies": []
+  },
+  {
+    "method": "GET",
+    "path": "/api/admin/auth/me",
+    "status": 200,
+    "csrfPresent": false,
+    "sameOrigin": true,
+    "cookies": []
+  },
+  {
+    "method": "GET",
+    "path": "/api/admin/auth/csrf",
+    "status": 200,
+    "csrfPresent": false,
+    "sameOrigin": true,
+    "cookies": []
+  },
+  {
+    "method": "PUT",
+    "path": "/api/admin/auth/password",
+    "status": 422,
+    "csrfPresent": true,
+    "sameOrigin": true,
+    "cookies": []
+  },
+  {
+    "method": "GET",
+    "path": "/api/admin/auth/me",
+    "status": 200,
+    "csrfPresent": false,
+    "sameOrigin": true,
+    "cookies": []
+  },
+  {
+    "method": "GET",
+    "path": "/api/admin/auth/csrf",
+    "status": 200,
+    "csrfPresent": false,
+    "sameOrigin": true,
+    "cookies": []
+  },
+  {
+    "method": "PUT",
+    "path": "/api/admin/auth/password",
+    "status": 200,
+    "csrfPresent": true,
+    "sameOrigin": true,
+    "cookies": [
+      {
+        "name": "pet_dev_staff_sid",
+        "attributes": [
+          "Path=/api/admin/",
+          "Max-Age=0",
+          "HttpOnly",
+          "SameSite=Lax"
+        ]
+      },
+      {
+        "name": "pet_dev_staff_pre",
+        "attributes": [
+          "Path=/api/admin/",
+          "Max-Age=0",
+          "HttpOnly",
+          "SameSite=Lax"
+        ]
+      }
+    ],
+    "cleanup": "COMPLETE"
+  },
+  {
+    "method": "GET",
+    "path": "/api/admin/auth/me",
+    "status": 401,
+    "csrfPresent": false,
+    "sameOrigin": true,
+    "cookies": []
+  },
+  {
+    "method": "GET",
+    "path": "/api/admin/auth/me",
+    "status": 401,
+    "csrfPresent": false,
+    "sameOrigin": true,
+    "cookies": []
+  },
+  {
+    "method": "GET",
+    "path": "/api/admin/auth/me",
+    "status": 401,
+    "csrfPresent": false,
+    "sameOrigin": true,
+    "cookies": [
+      {
+        "name": "pet_dev_staff_sid",
+        "attributes": [
+          "Path=/api/admin/",
+          "Max-Age=0",
+          "HttpOnly",
+          "SameSite=Lax"
+        ]
+      },
+      {
+        "name": "pet_dev_staff_pre",
+        "attributes": [
+          "Path=/api/admin/",
+          "Max-Age=0",
+          "HttpOnly",
+          "SameSite=Lax"
+        ]
+      }
+    ]
+  },
+  {
+    "method": "GET",
+    "path": "/api/platform/auth/me",
+    "status": 200,
+    "csrfPresent": false,
+    "sameOrigin": true,
+    "cookies": []
+  },
+  {
+    "method": "GET",
+    "path": "/api/platform/auth/me",
+    "status": 200,
+    "csrfPresent": false,
+    "sameOrigin": true,
+    "cookies": []
+  },
+  {
+    "method": "GET",
+    "path": "/api/admin/auth/me",
+    "status": 401,
+    "csrfPresent": false,
+    "sameOrigin": true,
+    "cookies": []
+  },
+  {
+    "method": "GET",
+    "path": "/api/admin/auth/me",
+    "status": 401,
+    "csrfPresent": false,
+    "sameOrigin": true,
+    "cookies": []
+  },
+  {
+    "method": "GET",
+    "path": "/api/admin/auth/csrf",
+    "status": 200,
+    "csrfPresent": false,
+    "sameOrigin": true,
+    "cookies": [
+      {
+        "name": "pet_dev_staff_pre",
+        "attributes": [
+          "Path=/api/admin/",
+          "HttpOnly",
+          "SameSite=Lax"
+        ]
+      }
+    ]
+  },
+  {
+    "method": "POST",
+    "path": "/api/admin/auth/login",
+    "status": 401,
+    "csrfPresent": true,
+    "sameOrigin": true,
+    "cookies": []
+  },
+  {
+    "method": "GET",
+    "path": "/api/admin/auth/me",
+    "status": 401,
+    "csrfPresent": false,
+    "sameOrigin": true,
+    "cookies": []
+  },
+  {
+    "method": "GET",
+    "path": "/api/admin/auth/me",
+    "status": 401,
+    "csrfPresent": false,
+    "sameOrigin": true,
+    "cookies": []
+  },
+  {
+    "method": "GET",
+    "path": "/api/admin/auth/me",
+    "status": 401,
+    "csrfPresent": false,
+    "sameOrigin": true,
+    "cookies": []
+  },
+  {
+    "method": "GET",
+    "path": "/api/admin/auth/me",
+    "status": 401,
+    "csrfPresent": false,
+    "sameOrigin": true,
+    "cookies": []
+  },
+  {
+    "method": "GET",
+    "path": "/api/admin/auth/csrf",
+    "status": 200,
+    "csrfPresent": false,
+    "sameOrigin": true,
+    "cookies": []
+  },
+  {
+    "method": "POST",
+    "path": "/api/admin/auth/login",
+    "status": 200,
+    "csrfPresent": true,
+    "sameOrigin": true,
+    "cookies": [
+      {
+        "name": "pet_dev_staff_pre",
+        "attributes": [
+          "Path=/api/admin/",
+          "Max-Age=0",
+          "HttpOnly",
+          "SameSite=Lax"
+        ]
+      },
+      {
+        "name": "pet_dev_staff_sid",
+        "attributes": [
+          "Path=/api/admin/",
+          "HttpOnly",
+          "SameSite=Lax"
+        ]
+      }
+    ]
+  },
+  {
+    "method": "GET",
+    "path": "/api/admin/auth/csrf",
+    "status": 200,
+    "csrfPresent": false,
+    "sameOrigin": true,
+    "cookies": []
+  },
+  {
+    "method": "GET",
+    "path": "/api/admin/auth/me",
+    "status": 200,
+    "csrfPresent": false,
+    "sameOrigin": true,
+    "cookies": []
+  },
+  {
+    "method": "GET",
+    "path": "/api/admin/auth/me",
+    "status": 200,
+    "csrfPresent": false,
+    "sameOrigin": true,
+    "cookies": []
+  },
+  {
+    "method": "GET",
+    "path": "/api/admin/auth/me",
+    "status": 200,
+    "csrfPresent": false,
+    "sameOrigin": true,
+    "cookies": []
+  },
+  {
+    "method": "GET",
+    "path": "/api/platform/auth/me",
+    "status": 200,
+    "csrfPresent": false,
+    "sameOrigin": true,
+    "cookies": []
+  },
+  {
+    "method": "GET",
+    "path": "/api/platform/auth/me",
+    "status": 200,
+    "csrfPresent": false,
+    "sameOrigin": true,
+    "cookies": []
+  },
+  {
+    "method": "GET",
+    "path": "/api/platform/auth/csrf",
+    "status": 200,
+    "csrfPresent": false,
+    "sameOrigin": true,
+    "cookies": []
+  },
+  {
+    "method": "PUT",
+    "path": "/api/platform/auth/password",
+    "status": 200,
+    "csrfPresent": true,
+    "sameOrigin": true,
+    "cookies": [
+      {
+        "name": "pet_dev_platform_sid",
+        "attributes": [
+          "Path=/api/platform/",
+          "Max-Age=0",
+          "HttpOnly",
+          "SameSite=Lax"
+        ]
+      },
+      {
+        "name": "pet_dev_platform_pre",
+        "attributes": [
+          "Path=/api/platform/",
+          "Max-Age=0",
+          "HttpOnly",
+          "SameSite=Lax"
+        ]
+      }
+    ],
+    "cleanup": "COMPLETE"
+  },
+  {
+    "method": "GET",
+    "path": "/api/platform/auth/me",
+    "status": 401,
+    "csrfPresent": false,
+    "sameOrigin": true,
+    "cookies": []
+  },
+  {
+    "method": "GET",
+    "path": "/api/platform/auth/me",
+    "status": 401,
+    "csrfPresent": false,
+    "sameOrigin": true,
+    "cookies": []
+  },
+  {
+    "method": "GET",
+    "path": "/api/platform/auth/me",
+    "status": 401,
+    "csrfPresent": false,
+    "sameOrigin": true,
+    "cookies": [
+      {
+        "name": "pet_dev_platform_sid",
+        "attributes": [
+          "Path=/api/platform/",
+          "Max-Age=0",
+          "HttpOnly",
+          "SameSite=Lax"
+        ]
+      },
+      {
+        "name": "pet_dev_platform_pre",
+        "attributes": [
+          "Path=/api/platform/",
+          "Max-Age=0",
+          "HttpOnly",
+          "SameSite=Lax"
+        ]
+      }
+    ]
+  },
+  {
+    "method": "GET",
+    "path": "/api/admin/auth/me",
+    "status": 200,
+    "csrfPresent": false,
+    "sameOrigin": true,
+    "cookies": []
+  },
+  {
+    "method": "GET",
+    "path": "/api/platform/auth/me",
+    "status": 401,
+    "csrfPresent": false,
+    "sameOrigin": true,
+    "cookies": []
+  },
+  {
+    "method": "GET",
+    "path": "/api/platform/auth/me",
+    "status": 401,
+    "csrfPresent": false,
+    "sameOrigin": true,
+    "cookies": []
+  },
+  {
+    "method": "GET",
+    "path": "/api/platform/auth/csrf",
+    "status": 200,
+    "csrfPresent": false,
+    "sameOrigin": true,
+    "cookies": [
+      {
+        "name": "pet_dev_platform_pre",
+        "attributes": [
+          "Path=/api/platform/",
+          "HttpOnly",
+          "SameSite=Lax"
+        ]
+      }
+    ]
+  },
+  {
+    "method": "POST",
+    "path": "/api/platform/auth/login",
+    "status": 401,
+    "csrfPresent": true,
+    "sameOrigin": true,
+    "cookies": []
+  },
+  {
+    "method": "GET",
+    "path": "/api/platform/auth/me",
+    "status": 401,
+    "csrfPresent": false,
+    "sameOrigin": true,
+    "cookies": []
+  },
+  {
+    "method": "GET",
+    "path": "/api/platform/auth/me",
+    "status": 401,
+    "csrfPresent": false,
+    "sameOrigin": true,
+    "cookies": []
+  },
+  {
+    "method": "GET",
+    "path": "/api/platform/auth/me",
+    "status": 401,
+    "csrfPresent": false,
+    "sameOrigin": true,
+    "cookies": []
+  },
+  {
+    "method": "GET",
+    "path": "/api/platform/auth/me",
+    "status": 401,
+    "csrfPresent": false,
+    "sameOrigin": true,
+    "cookies": []
+  },
+  {
+    "method": "GET",
+    "path": "/api/platform/auth/csrf",
+    "status": 200,
+    "csrfPresent": false,
+    "sameOrigin": true,
+    "cookies": []
+  },
+  {
+    "method": "POST",
+    "path": "/api/platform/auth/login",
+    "status": 200,
+    "csrfPresent": true,
+    "sameOrigin": true,
+    "cookies": [
+      {
+        "name": "pet_dev_platform_pre",
+        "attributes": [
+          "Path=/api/platform/",
+          "Max-Age=0",
+          "HttpOnly",
+          "SameSite=Lax"
+        ]
+      },
+      {
+        "name": "pet_dev_platform_sid",
+        "attributes": [
+          "Path=/api/platform/",
+          "HttpOnly",
+          "SameSite=Lax"
+        ]
+      }
+    ]
+  },
+  {
+    "method": "GET",
+    "path": "/api/platform/auth/csrf",
+    "status": 200,
+    "csrfPresent": false,
+    "sameOrigin": true,
+    "cookies": []
+  },
+  {
+    "method": "GET",
+    "path": "/api/platform/auth/me",
+    "status": 200,
+    "csrfPresent": false,
+    "sameOrigin": true,
+    "cookies": []
+  },
+  {
+    "method": "GET",
+    "path": "/api/platform/auth/me",
+    "status": 200,
+    "csrfPresent": false,
+    "sameOrigin": true,
+    "cookies": []
+  },
+  {
+    "method": "GET",
+    "path": "/api/platform/auth/me",
+    "status": 200,
+    "csrfPresent": false,
+    "sameOrigin": true,
+    "cookies": []
+  },
+  {
+    "method": "GET",
+    "path": "/api/admin/auth/me",
+    "status": 401,
+    "csrfPresent": false,
+    "sameOrigin": true,
+    "cookies": []
+  },
+  {
+    "method": "GET",
+    "path": "/api/admin/auth/me",
+    "status": 401,
+    "csrfPresent": false,
+    "sameOrigin": true,
+    "cookies": []
+  },
+  {
+    "method": "GET",
+    "path": "/api/platform/auth/me",
+    "status": 200,
+    "csrfPresent": false,
+    "sameOrigin": true,
+    "cookies": []
+  },
+  {
+    "method": "GET",
+    "path": "/api/admin/auth/csrf",
+    "status": 200,
+    "csrfPresent": false,
+    "sameOrigin": true,
+    "cookies": [
+      {
+        "name": "pet_dev_staff_pre",
+        "attributes": [
+          "Path=/api/admin/",
+          "HttpOnly",
+          "SameSite=Lax"
+        ]
+      }
+    ]
+  },
+  {
+    "method": "POST",
+    "path": "/api/admin/auth/login",
+    "status": 200,
+    "csrfPresent": true,
+    "sameOrigin": true,
+    "cookies": [
+      {
+        "name": "pet_dev_staff_pre",
+        "attributes": [
+          "Path=/api/admin/",
+          "Max-Age=0",
+          "HttpOnly",
+          "SameSite=Lax"
+        ]
+      },
+      {
+        "name": "pet_dev_staff_sid",
+        "attributes": [
+          "Path=/api/admin/",
+          "HttpOnly",
+          "SameSite=Lax"
+        ]
+      }
+    ]
+  },
+  {
+    "method": "GET",
+    "path": "/api/admin/auth/csrf",
+    "status": 200,
+    "csrfPresent": false,
+    "sameOrigin": true,
+    "cookies": []
+  },
+  {
+    "method": "GET",
+    "path": "/api/admin/auth/me",
+    "status": 200,
+    "csrfPresent": false,
+    "sameOrigin": true,
+    "cookies": []
+  },
+  {
+    "method": "GET",
+    "path": "/api/platform/auth/me",
+    "status": 401,
+    "csrfPresent": false,
+    "sameOrigin": true,
+    "cookies": []
+  },
+  {
+    "method": "GET",
+    "path": "/api/platform/auth/me",
+    "status": 401,
+    "csrfPresent": false,
+    "sameOrigin": true,
+    "cookies": []
+  },
+  {
+    "method": "GET",
+    "path": "/api/platform/auth/csrf",
+    "status": 200,
+    "csrfPresent": false,
+    "sameOrigin": true,
+    "cookies": [
+      {
+        "name": "pet_dev_platform_pre",
+        "attributes": [
+          "Path=/api/platform/",
+          "HttpOnly",
+          "SameSite=Lax"
+        ]
+      }
+    ]
+  },
+  {
+    "method": "POST",
+    "path": "/api/platform/auth/login",
+    "status": 200,
+    "csrfPresent": true,
+    "sameOrigin": true,
+    "cookies": [
+      {
+        "name": "pet_dev_platform_pre",
+        "attributes": [
+          "Path=/api/platform/",
+          "Max-Age=0",
+          "HttpOnly",
+          "SameSite=Lax"
+        ]
+      },
+      {
+        "name": "pet_dev_platform_sid",
+        "attributes": [
+          "Path=/api/platform/",
+          "HttpOnly",
+          "SameSite=Lax"
+        ]
+      }
+    ]
+  },
+  {
+    "method": "GET",
+    "path": "/api/platform/auth/csrf",
+    "status": 200,
+    "csrfPresent": false,
+    "sameOrigin": true,
+    "cookies": []
+  },
+  {
+    "method": "GET",
+    "path": "/api/platform/auth/me",
+    "status": 200,
+    "csrfPresent": false,
+    "sameOrigin": true,
+    "cookies": []
+  },
+  {
+    "method": "GET",
+    "path": "/api/platform/auth/me",
+    "status": 200,
+    "csrfPresent": false,
+    "sameOrigin": true,
+    "cookies": []
+  },
+  {
+    "method": "GET",
+    "path": "/api/admin/auth/me",
+    "status": 200,
+    "csrfPresent": false,
+    "sameOrigin": true,
+    "cookies": []
+  },
+  {
+    "method": "GET",
+    "path": "/api/platform/auth/me",
+    "status": 200,
+    "csrfPresent": false,
+    "sameOrigin": true,
+    "cookies": []
+  },
+  {
+    "method": "GET",
+    "path": "/api/admin/auth/me",
+    "status": 200,
+    "csrfPresent": false,
+    "sameOrigin": true,
+    "cookies": []
+  },
+  {
+    "method": "GET",
+    "path": "/api/admin/auth/csrf",
+    "status": 200,
+    "csrfPresent": false,
+    "sameOrigin": true,
+    "cookies": []
+  },
+  {
+    "method": "POST",
+    "path": "/api/admin/auth/logout-all",
+    "status": 200,
+    "csrfPresent": true,
+    "sameOrigin": true,
+    "cookies": [
+      {
+        "name": "pet_dev_staff_sid",
+        "attributes": [
+          "Path=/api/admin/",
+          "Max-Age=0",
+          "HttpOnly",
+          "SameSite=Lax"
+        ]
+      },
+      {
+        "name": "pet_dev_staff_pre",
+        "attributes": [
+          "Path=/api/admin/",
+          "Max-Age=0",
+          "HttpOnly",
+          "SameSite=Lax"
+        ]
+      }
+    ],
+    "cleanup": "COMPLETE"
+  },
+  {
+    "method": "GET",
+    "path": "/api/admin/auth/me",
+    "status": 401,
+    "csrfPresent": false,
+    "sameOrigin": true,
+    "cookies": []
+  },
+  {
+    "method": "GET",
+    "path": "/api/admin/auth/me",
+    "status": 401,
+    "csrfPresent": false,
+    "sameOrigin": true,
+    "cookies": []
+  },
+  {
+    "method": "GET",
+    "path": "/api/admin/auth/me",
+    "status": 401,
+    "csrfPresent": false,
+    "sameOrigin": true,
+    "cookies": [
+      {
+        "name": "pet_dev_staff_sid",
+        "attributes": [
+          "Path=/api/admin/",
+          "Max-Age=0",
+          "HttpOnly",
+          "SameSite=Lax"
+        ]
+      },
+      {
+        "name": "pet_dev_staff_pre",
+        "attributes": [
+          "Path=/api/admin/",
+          "Max-Age=0",
+          "HttpOnly",
+          "SameSite=Lax"
+        ]
+      }
+    ]
+  },
+  {
+    "method": "GET",
+    "path": "/api/platform/auth/me",
+    "status": 200,
+    "csrfPresent": false,
+    "sameOrigin": true,
+    "cookies": []
+  },
+  {
+    "method": "GET",
+    "path": "/api/platform/auth/me",
+    "status": 200,
+    "csrfPresent": false,
+    "sameOrigin": true,
+    "cookies": []
+  },
+  {
+    "method": "GET",
+    "path": "/api/platform/auth/me",
+    "status": 200,
+    "csrfPresent": false,
+    "sameOrigin": true,
+    "cookies": []
+  },
+  {
+    "method": "GET",
+    "path": "/api/platform/auth/me",
+    "status": 200,
+    "csrfPresent": false,
+    "sameOrigin": true,
+    "cookies": []
+  },
+  {
+    "method": "GET",
+    "path": "/api/platform/auth/csrf",
+    "status": 200,
+    "csrfPresent": false,
+    "sameOrigin": true,
+    "cookies": []
+  },
+  {
+    "method": "POST",
+    "path": "/api/platform/auth/logout-all",
+    "status": 200,
+    "csrfPresent": true,
+    "sameOrigin": true,
+    "cookies": [
+      {
+        "name": "pet_dev_platform_sid",
+        "attributes": [
+          "Path=/api/platform/",
+          "Max-Age=0",
+          "HttpOnly",
+          "SameSite=Lax"
+        ]
+      },
+      {
+        "name": "pet_dev_platform_pre",
+        "attributes": [
+          "Path=/api/platform/",
+          "Max-Age=0",
+          "HttpOnly",
+          "SameSite=Lax"
+        ]
+      }
+    ],
+    "cleanup": "COMPLETE"
+  },
+  {
+    "method": "GET",
+    "path": "/api/platform/auth/me",
+    "status": 401,
+    "csrfPresent": false,
+    "sameOrigin": true,
+    "cookies": []
+  },
+  {
+    "method": "GET",
+    "path": "/api/platform/auth/me",
+    "status": 401,
+    "csrfPresent": false,
+    "sameOrigin": true,
+    "cookies": []
+  },
+  {
+    "method": "GET",
+    "path": "/api/platform/auth/me",
+    "status": 401,
+    "csrfPresent": false,
+    "sameOrigin": true,
+    "cookies": [
+      {
+        "name": "pet_dev_platform_sid",
+        "attributes": [
+          "Path=/api/platform/",
+          "Max-Age=0",
+          "HttpOnly",
+          "SameSite=Lax"
+        ]
+      },
+      {
+        "name": "pet_dev_platform_pre",
+        "attributes": [
+          "Path=/api/platform/",
+          "Max-Age=0",
+          "HttpOnly",
+          "SameSite=Lax"
+        ]
+      }
+    ]
+  },
+  {
+    "method": "GET",
+    "path": "/api/admin/auth/me",
+    "status": 401,
+    "csrfPresent": false,
+    "sameOrigin": true,
+    "cookies": []
+  },
+  {
+    "method": "GET",
+    "path": "/api/admin/auth/me",
+    "status": 401,
+    "csrfPresent": false,
+    "sameOrigin": true,
+    "cookies": []
+  },
+  {
+    "method": "GET",
+    "path": "/api/admin/auth/csrf",
+    "status": 200,
+    "csrfPresent": false,
+    "sameOrigin": true,
+    "cookies": [
+      {
+        "name": "pet_dev_staff_pre",
+        "attributes": [
+          "Path=/api/admin/",
+          "HttpOnly",
+          "SameSite=Lax"
+        ]
+      }
+    ]
+  },
+  {
+    "method": "POST",
+    "path": "/api/admin/auth/login",
+    "status": 200,
+    "csrfPresent": true,
+    "sameOrigin": true,
+    "cookies": [
+      {
+        "name": "pet_dev_staff_pre",
+        "attributes": [
+          "Path=/api/admin/",
+          "Max-Age=0",
+          "HttpOnly",
+          "SameSite=Lax"
+        ]
+      },
+      {
+        "name": "pet_dev_staff_sid",
+        "attributes": [
+          "Path=/api/admin/",
+          "HttpOnly",
+          "SameSite=Lax"
+        ]
+      }
+    ]
+  },
+  {
+    "method": "GET",
+    "path": "/api/admin/auth/csrf",
+    "status": 200,
+    "csrfPresent": false,
+    "sameOrigin": true,
+    "cookies": []
+  },
+  {
+    "method": "GET",
+    "path": "/api/admin/auth/me",
+    "status": 200,
+    "csrfPresent": false,
+    "sameOrigin": true,
+    "cookies": []
+  }
+]

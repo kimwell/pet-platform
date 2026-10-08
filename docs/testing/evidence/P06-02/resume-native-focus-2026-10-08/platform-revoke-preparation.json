@@ -1,0 +1,22 @@
+{
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "command": [
+    "docker",
+    "exec",
+    "-i",
+    "pet-p06-02-focus-pg",
+    "psql",
+    "-X",
+    "-qAt",
+    "-v",
+    "ON_ERROR_STOP=1",
+    "-U",
+    "postgres",
+    "-d",
+    "p06_02_focus_acceptance"
+  ],
+  "exitCode": 0,
+  "at": "2026-10-08T22:38:34.776268+08:00",
+  "summary": "platform:redis:operate\nplatform:session:manage\n",
+  "preparation": "只在本轮隔离数据库撤销平台改密权限并增加授权版本；保留本人会话权限，不改用户账号"
+}

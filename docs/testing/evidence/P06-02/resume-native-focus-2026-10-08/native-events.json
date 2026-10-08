@@ -1,0 +1,75 @@
+{
+  "observation": "原生Chrome最小化恢复、两个原生窗口间通过Window菜单切换；监听实际trusted事件，未dispatch合成事件",
+  "events": [
+    {
+      "event": "focus",
+      "trusted": true,
+      "time": "2026-10-08T14:51:47.299Z",
+      "visibility": "visible",
+      "focused": true
+    },
+    {
+      "event": "blur",
+      "trusted": true,
+      "time": "2026-10-08T14:52:10.583Z",
+      "visibility": "visible",
+      "focused": false
+    },
+    {
+      "event": "visibilitychange",
+      "trusted": true,
+      "time": "2026-10-08T14:52:10.646Z",
+      "visibility": "hidden",
+      "focused": false
+    },
+    {
+      "event": "focus",
+      "trusted": true,
+      "time": "2026-10-08T14:52:36.310Z",
+      "visibility": "hidden",
+      "focused": true
+    },
+    {
+      "event": "visibilitychange",
+      "trusted": true,
+      "time": "2026-10-08T14:52:36.927Z",
+      "visibility": "visible",
+      "focused": true
+    },
+    {
+      "event": "blur",
+      "trusted": true,
+      "time": "2026-10-08T14:54:02.565Z",
+      "visibility": "visible",
+      "focused": false
+    },
+    {
+      "event": "focus",
+      "trusted": true,
+      "time": "2026-10-08T14:57:08.546Z",
+      "visibility": "visible",
+      "focused": true
+    },
+    {
+      "event": "blur",
+      "trusted": true,
+      "time": "2026-10-08T14:57:21.159Z",
+      "visibility": "visible",
+      "focused": false
+    },
+    {
+      "event": "focus",
+      "trusted": true,
+      "time": "2026-10-08T14:58:12.238Z",
+      "visibility": "visible",
+      "focused": true
+    },
+    {
+      "event": "blur",
+      "trusted": true,
+      "time": "2026-10-08T14:58:31.478Z",
+      "visibility": "visible",
+      "focused": false
+    }
+  ]
+}

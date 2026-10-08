@@ -1,0 +1,205 @@
+[
+  {
+    "path": "/api/admin/auth/me",
+    "status": 401,
+    "method": "GET",
+    "csrfPresent": false,
+    "originValid": true
+  },
+  {
+    "path": "/api/admin/auth/me",
+    "status": 401,
+    "method": "GET",
+    "csrfPresent": false,
+    "originValid": true
+  },
+  {
+    "path": "/api/admin/auth/csrf",
+    "status": 200,
+    "method": "GET",
+    "csrfPresent": false,
+    "originValid": true
+  },
+  {
+    "path": "/api/admin/auth/login",
+    "status": 200,
+    "method": "POST",
+    "csrfPresent": true,
+    "originValid": true
+  },
+  {
+    "path": "/api/admin/auth/csrf",
+    "status": 200,
+    "method": "GET",
+    "csrfPresent": false,
+    "originValid": true
+  },
+  {
+    "path": "/api/admin/auth/me",
+    "status": 200,
+    "method": "GET",
+    "csrfPresent": false,
+    "originValid": true
+  },
+  {
+    "path": "/api/admin/auth/me",
+    "status": 200,
+    "method": "GET",
+    "csrfPresent": false,
+    "originValid": true
+  },
+  {
+    "path": "/api/admin/auth/me",
+    "status": 200,
+    "method": "GET",
+    "csrfPresent": false,
+    "originValid": true
+  },
+  {
+    "path": "/api/platform/auth/me",
+    "status": 401,
+    "method": "GET",
+    "csrfPresent": false,
+    "originValid": true
+  },
+  {
+    "path": "/api/platform/auth/me",
+    "status": 401,
+    "method": "GET",
+    "csrfPresent": false,
+    "originValid": true
+  },
+  {
+    "path": "/api/platform/auth/csrf",
+    "status": 200,
+    "method": "GET",
+    "csrfPresent": false,
+    "originValid": true
+  },
+  {
+    "path": "/api/platform/auth/login",
+    "status": 200,
+    "method": "POST",
+    "csrfPresent": true,
+    "originValid": true
+  },
+  {
+    "path": "/api/platform/auth/csrf",
+    "status": 200,
+    "method": "GET",
+    "csrfPresent": false,
+    "originValid": true
+  },
+  {
+    "path": "/api/platform/auth/me",
+    "status": 200,
+    "method": "GET",
+    "csrfPresent": false,
+    "originValid": true
+  },
+  {
+    "path": "/api/platform/auth/me",
+    "status": 200,
+    "method": "GET",
+    "csrfPresent": false,
+    "originValid": true
+  },
+  {
+    "path": "/api/platform/auth/me",
+    "status": 200,
+    "method": "GET",
+    "csrfPresent": false,
+    "originValid": true
+  },
+  {
+    "path": "/api/admin/auth/me",
+    "status": 200,
+    "method": "GET",
+    "csrfPresent": false,
+    "originValid": true
+  },
+  {
+    "path": "/api/admin/auth/me",
+    "status": 200,
+    "method": "GET",
+    "csrfPresent": false,
+    "originValid": true
+  },
+  {
+    "path": "/api/admin/auth/csrf",
+    "status": 200,
+    "method": "GET",
+    "csrfPresent": false,
+    "originValid": true
+  },
+  {
+    "path": "/api/platform/auth/csrf",
+    "status": 200,
+    "method": "GET",
+    "csrfPresent": false,
+    "originValid": true
+  },
+  {
+    "path": "/api/admin/auth/password",
+    "status": 403,
+    "method": "PUT",
+    "csrfPresent": false,
+    "originValid": true
+  },
+  {
+    "path": "/api/admin/auth/password",
+    "status": 403,
+    "method": "PUT",
+    "csrfPresent": true,
+    "originValid": true
+  },
+  {
+    "path": "/api/admin/auth/password",
+    "status": 422,
+    "method": "PUT",
+    "csrfPresent": true,
+    "originValid": true
+  },
+  {
+    "path": "/api/admin/auth/me",
+    "status": 200,
+    "method": "GET",
+    "csrfPresent": false,
+    "originValid": true
+  },
+  {
+    "path": "/api/admin/auth/me",
+    "status": 200,
+    "method": "GET",
+    "csrfPresent": false,
+    "originValid": true
+  },
+  {
+    "path": "/api/admin/auth/me",
+    "status": 200,
+    "method": "GET",
+    "csrfPresent": false,
+    "originValid": true
+  },
+  {
+    "path": "/api/platform/auth/me",
+    "status": 200,
+    "method": "GET",
+    "csrfPresent": false,
+    "originValid": true
+  },
+  {
+    "path": "/api/platform/auth/me",
+    "status": 200,
+    "method": "GET",
+    "csrfPresent": false,
+    "originValid": true
+  },
+  {
+    "path": "/api/platform/auth/me",
+    "status": 200,
+    "method": "GET",
+    "csrfPresent": false,
+    "originValid": true
+  }
+]

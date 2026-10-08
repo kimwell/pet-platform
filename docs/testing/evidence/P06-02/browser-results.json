@@ -1,0 +1,272 @@
+{
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "command": [
+    "node",
+    ".local-data/p06-02/browser.cjs"
+  ],
+  "browser": "Google Chrome headless / isolated real browser contexts",
+  "records": [
+    {
+      "label": "浏览器版本",
+      "result": "OBSERVED",
+      "version": "154.0.8037.98"
+    },
+    {
+      "label": "同浏览器双身份与第二独立浏览器上下文真实登录",
+      "result": "PASS"
+    },
+    {
+      "label": "确认不一致不提交",
+      "result": "PASS"
+    },
+    {
+      "label": "错误当前密码403安全提示且清密码字段",
+      "result": "PASS"
+    },
+    {
+      "label": "真实后端422总错误呈现（同密码无字段明细）",
+      "result": "PASS"
+    },
+    {
+      "label": "键盘重复提交仅一次密码写入",
+      "result": "PASS"
+    },
+    {
+      "label": "员工改密旧设备失效，平台两个设备保留",
+      "result": "PASS"
+    },
+    {
+      "label": "员工旧密码不能登录",
+      "result": "PASS"
+    },
+    {
+      "label": "员工含首尾空格的新密码可以登录",
+      "result": "PASS"
+    },
+    {
+      "label": "platform真实本人改密成功并返回登录",
+      "result": "PASS"
+    },
+    {
+      "label": "平台改密旧设备失效，员工保留",
+      "result": "PASS"
+    },
+    {
+      "label": "平台旧密码不能登录",
+      "result": "PASS"
+    },
+    {
+      "label": "平台新密码登录成功",
+      "result": "PASS"
+    },
+    {
+      "label": "admin全部退出成功并返回对应登录",
+      "result": "PASS"
+    },
+    {
+      "label": "员工全部退出涵盖第二浏览器上下文，平台不受影响",
+      "result": "PASS"
+    },
+    {
+      "label": "platform全部退出成功并返回对应登录",
+      "result": "PASS"
+    },
+    {
+      "label": "平台全部退出涵盖第二浏览器上下文",
+      "result": "PASS"
+    },
+    {
+      "label": "受限状态只准备本轮隔离库",
+      "result": "PASS"
+    },
+    {
+      "label": "隔离数据库明确准备真实password_change_required及新安全代际",
+      "result": "PASS"
+    },
+    {
+      "label": "真实受限登录强制进入员工安全页",
+      "result": "FAIL"
+    },
+    {
+      "label": "浏览器执行边界",
+      "result": "FAIL",
+      "sanitizedError": "Error: 真实受限登录强制进入员工安全页\n    at check (/Users/kimwell/work/pet-platform/.local-data/p06-02/browser.cjs:5:112)\n    at /Users/kimwell/work/pet-platform/.local-data/p06-02/browser.cjs:28:44"
+    }
+  ],
+  "consoleEvents": [
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 401 (Unauthorized)"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 401 (Unauthorized)"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 401 (Unauthorized)"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 401 (Unauthorized)"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 401 (Unauthorized)"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 401 (Unauthorized)"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 401 (Unauthorized)"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 401 (Unauthorized)"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 403 (Forbidden)"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 422 (Unprocessable Entity)"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 401 (Unauthorized)"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 401 (Unauthorized)"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 401 (Unauthorized)"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 401 (Unauthorized)"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 401 (Unauthorized)"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 401 (Unauthorized)"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 401 (Unauthorized)"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 401 (Unauthorized)"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 401 (Unauthorized)"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 401 (Unauthorized)"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 401 (Unauthorized)"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 401 (Unauthorized)"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 401 (Unauthorized)"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 401 (Unauthorized)"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 401 (Unauthorized)"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 401 (Unauthorized)"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 401 (Unauthorized)"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 401 (Unauthorized)"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 401 (Unauthorized)"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 401 (Unauthorized)"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 401 (Unauthorized)"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 401 (Unauthorized)"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 401 (Unauthorized)"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 401 (Unauthorized)"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 401 (Unauthorized)"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 401 (Unauthorized)"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 401 (Unauthorized)"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 401 (Unauthorized)"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 401 (Unauthorized)"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 401 (Unauthorized)"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 401 (Unauthorized)"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 401 (Unauthorized)"
+    }
+  ],
+  "exitCode": 1,
+  "summary": "分段实际结果；FAIL与未到达步骤保留，不等于完整浏览器验收成功"
+}

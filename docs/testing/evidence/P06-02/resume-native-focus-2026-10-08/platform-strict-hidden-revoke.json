@@ -1,0 +1,21 @@
+{
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "command": [
+    "docker",
+    "exec",
+    "-i",
+    "pet-p06-02-focus-pg",
+    "psql",
+    "-X",
+    "-qAt",
+    "-v",
+    "ON_ERROR_STOP=1",
+    "-U",
+    "postgres",
+    "-d",
+    "p06_02_focus_acceptance"
+  ],
+  "exitCode": 0,
+  "at": "2026-10-08T22:52:25.468011+08:00",
+  "summary": "已在原生无痕窗口最小化后，仅隔离库撤销改密权限/增加授权版本"
+}

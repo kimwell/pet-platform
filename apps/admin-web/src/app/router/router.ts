@@ -9,6 +9,8 @@ import { requireSession } from '../guards/requireSession';
 import { safeReturnTo } from '../../shared/auth/returnTo';
 import type { AuthSpace } from '../../shared/auth/spaces';
 import { ApiError } from '../../shared/api/ApiError';
+import { isRestricted } from '../../shared/auth/permissions';
+import { spaces } from '../../shared/auth/spaces';
 
 const rootRoute = createRootRouteWithContext<Services>()({ component: SystemLayout, errorComponent: SystemError, notFoundComponent: SystemNotFound });
 const entryRoute = createRoute({ getParentRoute: () => rootRoute, path: '/', component: SystemEntry });
@@ -19,7 +21,7 @@ const loginGuard = (space: AuthSpace) => async ({ context, search }: { context: 
     if (error instanceof ApiError && error.kind !== 'CANCELLED') return { sessionError: error };
     throw error;
   }
-  if (identity) throw redirect({ href: safeReturnTo(space, search.returnTo), replace: true });
+  if (identity) throw redirect({ href: isRestricted(identity) ? spaces[space].security : safeReturnTo(space, search.returnTo), replace: true });
   return { sessionError: undefined };
 };
 const staffLogin = createRoute({ getParentRoute: () => rootRoute, path: '/admin/login',
@@ -38,7 +40,15 @@ const platform = createRoute({ getParentRoute: () => rootRoute, path: '/platform
   beforeLoad: ({ context, location }) => requireSession(context.auth, 'PLATFORM', location.href),
   component: lazyRouteComponent(() => import('../layout/SessionLayout'), 'PlatformLayout'),
 });
-export const routeTree = rootRoute.addChildren([entryRoute, staffLogin, platformLogin, staff, platform]);
+const staffSecurity = createRoute({ getParentRoute: () => rootRoute, path: '/admin/security',
+  beforeLoad: ({ context, location }) => requireSession(context.auth, 'STAFF', location.href),
+  component: lazyRouteComponent(() => import('../layout/SessionLayout'), 'StaffLayout'),
+});
+const platformSecurity = createRoute({ getParentRoute: () => rootRoute, path: '/platform/security',
+  beforeLoad: ({ context, location }) => requireSession(context.auth, 'PLATFORM', location.href),
+  component: lazyRouteComponent(() => import('../layout/SessionLayout'), 'PlatformLayout'),
+});
+export const routeTree = rootRoute.addChildren([entryRoute, staffLogin, platformLogin, staff, platform, staffSecurity, platformSecurity]);
 export const services = createServices();
 export const router = createRouter({ routeTree, context: services, defaultPreload: false,
   defaultPendingMs: 0, defaultPendingComponent: () => '正在确认当前会话…', defaultStaleTime: 0,

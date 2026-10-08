@@ -1,0 +1,60 @@
+{
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "command": [
+    "node",
+    ".local-data/p06-02/browser.cjs"
+  ],
+  "browser": "Google Chrome headless / isolated real browser contexts",
+  "records": [
+    {
+      "label": "浏览器版本",
+      "result": "OBSERVED",
+      "version": "154.0.8037.98"
+    },
+    {
+      "label": "浏览器执行边界",
+      "result": "FAIL",
+      "sanitizedError": "page.evaluate: TypeError: r.status is not a function\n    at eval (eval at evaluate (:311:30), <anonymous>:1:111)\n    at async <anonymous>:337:30\n    at api (/Users/kimwell/work/pet-platform/.local-data/p06-02/browser.cjs:9:38)\n    at /Users/kimwell/work/pet-platform/.local-data/p06-02/browser.cjs:14:183"
+    }
+  ],
+  "consoleEvents": [
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 401 (Unauthorized)"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 401 (Unauthorized)"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 401 (Unauthorized)"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 401 (Unauthorized)"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 401 (Unauthorized)"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 401 (Unauthorized)"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 401 (Unauthorized)"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 401 (Unauthorized)"
+    }
+  ],
+  "exitCode": 1,
+  "summary": "分段实际结果；FAIL与未到达步骤保留，不等于完整浏览器验收成功"
+}

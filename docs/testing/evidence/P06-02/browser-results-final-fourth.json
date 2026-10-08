@@ -1,0 +1,144 @@
+{
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "command": [
+    "node",
+    ".local-data/p06-02/browser-final.cjs"
+  ],
+  "records": [
+    {
+      "label": "最终解除受限后正常身份/安全导航恢复",
+      "result": "PASS"
+    },
+    {
+      "label": "最终安全页面密码引用与持久化检查通过",
+      "result": "PASS"
+    },
+    {
+      "label": "390px正常安全页面无横向溢出",
+      "result": "PASS"
+    },
+    {
+      "label": "字段label/自动填充关联正确",
+      "result": "PASS",
+      "a11y": {
+        "labels": true,
+        "autocomplete": [
+          "current-password",
+          "new-password",
+          "new-password",
+          "current-password"
+        ],
+        "inputs": 4
+      }
+    },
+    {
+      "label": "键盘焦点从当前密码到新密码",
+      "result": "PASS"
+    },
+    {
+      "label": "真实Cookie安全写缺失/跨域CSRF均拒绝",
+      "result": "PASS",
+      "outcomes": {
+        "missing": {
+          "status": 403,
+          "code": "CSRF_INVALID"
+        },
+        "cross": {
+          "status": 403,
+          "code": "CSRF_INVALID"
+        },
+        "fields": {
+          "status": 422,
+          "code": "VALIDATION_FAILED",
+          "fields": [
+            "newPassword"
+          ]
+        }
+      }
+    },
+    {
+      "label": "浏览器直接请求正式DTO产生真实422字段明细",
+      "result": "PASS",
+      "fields": [
+        "newPassword"
+      ]
+    },
+    {
+      "label": "最终双空间Cookie属性正确",
+      "result": "PASS",
+      "cookieFacts": [
+        {
+          "name": "pet_dev_platform_sid",
+          "path": "/api/platform/",
+          "httpOnly": true,
+          "sameSite": "Lax",
+          "secure": false
+        },
+        {
+          "name": "pet_dev_staff_sid",
+          "path": "/api/admin/",
+          "httpOnly": true,
+          "sameSite": "Lax",
+          "secure": false
+        }
+      ]
+    },
+    {
+      "label": "员工真实无普通管理权限仍可改密及本人全退出",
+      "result": "PASS"
+    },
+    {
+      "label": "390px平台安全页无横向溢出",
+      "result": "PASS"
+    },
+    {
+      "label": "执行边界",
+      "result": "FAIL",
+      "sanitizedError": "locator.waitFor: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: '刷新当前身份', exact: true }) to be visible\u001b[22m\n\n    at refresh (/Users/kimwell/work/pet-platform/.local-data/p06-02/browser-final.cjs:6:535)\n    at async /Users/kimwell/work/pet-platform/.local-data/p06-02/browser-final.cjs:16:2"
+    }
+  ],
+  "consoleEvents": [
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+      "path": "/api/admin/auth/me"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+      "path": "/favicon.ico"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+      "path": "/api/admin/auth/me"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+      "path": "/api/platform/auth/me"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+      "path": "/api/platform/auth/me"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 403 (Forbidden)",
+      "path": "/api/admin/auth/password"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 403 (Forbidden)",
+      "path": "/api/admin/auth/password"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 422 (Unprocessable Entity)",
+      "path": "/api/admin/auth/password"
+    }
+  ],
+  "exitCode": 1,
+  "summary": "分段实际结果；FAIL与未到达步骤保留，不等于完整浏览器验收成功"
+}

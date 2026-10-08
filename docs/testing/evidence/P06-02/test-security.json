@@ -1,0 +1,13 @@
+{
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "command": [
+    "pnpm",
+    "--filter",
+    "@pet/admin-web",
+    "test"
+  ],
+  "exitCode": 1,
+  "durationSeconds": 1.93,
+  "log": "test-security.log",
+  "summary": "\n> @pet/admin-web@0.0.0 test /Users/kimwell/work/pet-platform/apps/admin-web\n> vitest run\n\n\n RUN  v4.1.11 /Users/kimwell/work/pet-platform/apps/admin-web\n\n ❯ src/features/account/security.test.tsx (40 tests | 4 failed) 64ms\n     × 新增安全页/admin/security未登录仍保护 5ms\n     × 新增安全页/platform/security未登录仍保护 1ms\n     × STAFF改密成功清当前身份/CSRF/缓存，保留另一空间 2ms\n     × PLATFORM改密成功清当前身份/CSRF/缓存，保留另一空间 0ms\n\n⎯⎯⎯⎯⎯⎯⎯ Failed Tests 4 ⎯⎯⎯⎯⎯⎯⎯\n\n FAIL  src/features/account/security.test.tsx > 强制改密 beforeLoad 与合法返回 > 新增安全页/admin/security未登录仍保护\n FAIL  src/features/account/security.test.tsx > 强制改密 beforeLoad 与合法返回 > 新增安全页/platform/security未登录仍保护\nAssertionError: expected 'render' to be 'redirect' // Object.is equality\n\nExpected: \"redirect\"\nReceived: \"render\"\n\n ❯ src/features/account/security.test.tsx:68:40\n\n\n⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/4]⎯\n\n FAIL  src/features/account/security.test.tsx > 真实服务类的安全写与竞态（受控传输） > STAFF改密成功清当前身份/CSRF/缓存，保留另一空间\n FAIL  src/features/account/security.test.tsx > 真实服务类的安全写与竞态（受控传输） > PLATFORM改密成功清当前身份/CSRF/缓存，保留另一空间\nRangeError: init[\"status\"] must be in the range of 200 to 599, inclusive.\n ❯ reply src/test/responses.ts:2:55\n\n ❯ src/features/account/security.test.tsx:92:86\n\n⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/4]⎯\n\n\n Test Files  1 failed | 4 passed (5)\n      Tests  4 failed | 113 passed (117)\n   Start at  21:16:34\n   Duration  1.26s (transform 451ms, setup 0ms, import 2.37s, tests 289ms, environment 0ms)\n\n/Users/kimwell/work/pet-platform/apps/admin-web:\n ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL  @pet/admin-web@0.0.0 test: `vitest run`\nExit status 1\n"
+}

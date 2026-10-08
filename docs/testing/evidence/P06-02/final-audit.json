@@ -1,0 +1,16 @@
+{
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "command": [
+    "python3",
+    ".local-data/p06-02/audit.py"
+  ],
+  "exitCode": 0,
+  "gitDiffCheckExitCode": 0,
+  "gitDiffCheckSummary": "",
+  "protectedFilesChecked": 1773,
+  "changedProtectedFiles": [],
+  "localDocumentLinksChecked": 292,
+  "missingLinks": [],
+  "sourceAndDocumentsCount": 24,
+  "summary": "ui/后端源码/小程序/生成契约/infra/冻结依赖与根锁/AGENTS/P06-01证据SHA256保持；无关文件未改"
+}

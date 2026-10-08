@@ -2,7 +2,7 @@
 
 项目直接在 `/Users/kimwell/work/pet-platform` 建设，既有ui保留原位，不创建enterprise-app-scaffold子目录，不使用Product Delivery OS。后端固定 `com.pet.platform`，三端结构见文档；模板不包含宠物/订单等行业业务。
 
-**最新：P06-01 COMPLETE；P06整体IN_PROGRESS。** P05 COMPLETE、真实微信四步已通过，421项为最近完整后端基线；本轮没有后端/公开契约修改。Web请求、STAFF/PLATFORM独立Cookie/CSRF与真实登录/恢复/退出及联调见[P06-01验证](docs/testing/P06-01-VERIFICATION.md)。下一建议P06-02仅报告，不自动执行或提交/推送/部署。下方P01～P05旧描述保留阶段历史。P01 整体 COMPLETE，P02-01 COMPLETE；P02-02 已完成，工程基础验收见 [P02-02 验证报告](docs/testing/P02-02-VERIFICATION.md)。P02-02 COMPLETE，P02整体COMPLETE：后端、Web、基础设施真实启停及冻结微信工具npm/源码编译/模拟器入口通过；基础真机预览有用户反馈，完整P09验收尚未执行。P03-01 已 COMPLETE，公共响应/错误/trace/分页排序见 [P03-01 验证报告](docs/testing/P03-01-VERIFICATION.md)，P03-02、P03-03及P03整体 COMPLETE，完整标量/OpenAPI/类型与结构结果见 [P03-03](docs/testing/P03-03-VERIFICATION.md)。历史初始化结论见 [P02-01](docs/testing/P02-01-VERIFICATION.md)。三端最小工程、单锁、Wrapper、配置、CI 和本地 Compose 已建立；P03-02 已接入 PostgreSQL/JPA/Flyway 与持久化基础，P04隔离基础已完成；本轮已实现客户微信认证后端，真实外部认证仍待验证，完整用户/角色/租户 CRUD、附件和消息业务尚未实现。当前是Git仓库，P04-01启动时已有提交且工作区干净；本轮不自动提交/推送/发布/部署。
+**最新：P06-02 COMPLETE；P06整体IN_PROGRESS。** 权限呈现、强制改密与本人改密/全部设备退出已实现并真实联调；5个文件120项Web测试通过。原生窗口focus续验已确认可信可见focus、平台权限收缩与员工空间保全，G01～G14 PASS，详见[P06-02验证](docs/testing/P06-02-VERIFICATION.md)。下一建议为P06 Web阶段综合验收（建议拆为P06-03），只报告、不自动执行或提交/推送/部署。P06-01 COMPLETE、P05 COMPLETE；421项为最近完整后端基线，本轮没有后端/公开契约修改或完整后端回归。下方P01～P05旧描述保留阶段历史。P01 整体 COMPLETE，P02-01 COMPLETE；P02-02 已完成，工程基础验收见 [P02-02 验证报告](docs/testing/P02-02-VERIFICATION.md)。P02-02 COMPLETE，P02整体COMPLETE：后端、Web、基础设施真实启停及冻结微信工具npm/源码编译/模拟器入口通过；基础真机预览有用户反馈，完整P09验收尚未执行。P03-01 已 COMPLETE，公共响应/错误/trace/分页排序见 [P03-01 验证报告](docs/testing/P03-01-VERIFICATION.md)，P03-02、P03-03及P03整体 COMPLETE，完整标量/OpenAPI/类型与结构结果见 [P03-03](docs/testing/P03-03-VERIFICATION.md)。历史初始化结论见 [P02-01](docs/testing/P02-01-VERIFICATION.md)。三端最小工程、单锁、Wrapper、配置、CI 和本地 Compose 已建立；P03-02 已接入 PostgreSQL/JPA/Flyway 与持久化基础，P04隔离基础已完成；本轮已实现客户微信认证后端，真实外部认证仍待验证，完整用户/角色/租户 CRUD、附件和消息业务尚未实现。当前是Git仓库，P04-01启动时已有提交且工作区干净；本轮不自动提交/推送/发布/部署。
 
 ## 阅读入口
 
@@ -28,7 +28,7 @@ pnpm dev:web
 pnpm preview:web
 ```
 
-Web 开发入口为 http://127.0.0.1:5173，构建后的预览为 http://127.0.0.1:4173；当前包含系统入口、/admin/login、/platform/login、对应受保护身份壳、错误和NotFound，开发 /api 经同源代理。预览不使用开发代理，Vite preview 不代表生产部署；生产静态服务器须配置 SPA fallback。apps/admin-web/.env.example 可复制为同目录 .env.local；仅公开配置允许进入 VITE_*。
+Web 开发入口为 http://127.0.0.1:5173，构建后的预览为 http://127.0.0.1:4173；当前包含系统入口、/admin/login、/platform/login、对应受保护身份壳、/admin/security、/platform/security、错误和NotFound，开发 /api 经同源代理。预览不使用开发代理，Vite preview 不代表生产部署；生产静态服务器须配置 SPA fallback。apps/admin-web/.env.example 可复制为同目录 .env.local；仅公开配置允许进入 VITE_*。
 
 ```sh
 cd apps/backend

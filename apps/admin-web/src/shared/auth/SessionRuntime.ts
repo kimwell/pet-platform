@@ -16,7 +16,7 @@ export class SessionRuntime {
     PLATFORM: { epoch: 0, invalidated: false, controllers: new Set() },
   };
   private listeners = new Set<() => void>();
-  constructor(readonly client: RequestClient, private readonly clearSpace: (space: AuthSpace) => void) {}
+  constructor(readonly client: RequestClient, private readonly clearSpace: (space: AuthSpace) => void, private readonly revalidate?: (space: AuthSpace) => void) {}
   subscribe = (listener: () => void) => { this.listeners.add(listener); return () => { this.listeners.delete(listener); }; };
   private emit() { this.listeners.forEach(listener => listener()); }
   epoch(space: AuthSpace) { return this.state[space].epoch; }
@@ -26,12 +26,18 @@ export class SessionRuntime {
   setNotice(space: AuthSpace, value?: string) { this.state[space].notice = value; this.emit(); }
   async idle(space: AuthSpace) { await this.state[space].busy; }
   assertCurrent(space: AuthSpace, epoch: number) { if (epoch !== this.epoch(space)) throw cancelled(); }
-  advance(space: AuthSpace) {
+  advance(space: AuthSpace, project?: (epoch: number) => void) {
     const state = this.state[space];
     state.epoch++; state.invalidated = false; state.csrf = undefined; state.pendingCsrf = undefined;
     state.controllers.forEach(c => c.abort()); state.controllers.clear();
-    this.clearSpace(space); this.emit();
+    this.clearSpace(space); project?.(state.epoch); this.emit();
     return state.epoch;
+  }
+  completeSecurityOperation(space: AuthSpace, notice: string) {
+    this.advance(space);
+    // 成功通知不被随后确认旧会话的401覆盖；新登录 advance 才开启新代际。
+    this.state[space].invalidated = true;
+    this.setNotice(space, notice);
   }
   private expire(space: AuthSpace, epoch: number, error: ApiError) {
     if (epoch !== this.epoch(space) || this.state[space].invalidated) return;
@@ -39,11 +45,11 @@ export class SessionRuntime {
     this.setNotice(space, error.code === 'AUTH_REQUIRED' ? undefined : '当前会话已失效，请重新登录');
   }
   /** 同一空间的登录/退出互斥；查询等待过渡完成。空间之间不互相等待。 */
-  async transition<T>(space: AuthSpace, work: () => Promise<T>): Promise<T> {
+  async transition<T>(space: AuthSpace, work: () => Promise<T>, project?: (epoch: number) => void): Promise<T> {
     if (this.isBusy(space)) throw new ApiError('HTTP', '当前操作正在处理，请稍候');
     let finish = () => {};
     this.state[space].busy = new Promise<void>(resolve => { finish = resolve; });
-    this.advance(space);
+    this.advance(space, project);
     try { return await work(); }
     finally { this.state[space].busy = undefined; finish(); this.emit(); }
   }
@@ -64,6 +70,7 @@ export class SessionRuntime {
         if (protectedRequest && error.status === 401 && error.code !== 'LOGIN_FAILED') this.expire(space, epoch, error);
         // 只使对应凭据过期，原写入不重放。权限403保留CSRF。
         if (error.code === 'CSRF_INVALID') this.state[space].csrf = undefined;
+        if (protectedRequest && !path.endsWith('/auth/me') && ['PERMISSION_DENIED', 'PASSWORD_CHANGE_REQUIRED'].includes(error.code ?? '')) this.revalidate?.(space);
       }
       throw error;
     } finally { this.state[space].controllers.delete(controller); options.signal?.removeEventListener('abort', abort); }

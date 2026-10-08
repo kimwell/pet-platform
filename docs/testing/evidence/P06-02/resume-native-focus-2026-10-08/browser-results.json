@@ -1,0 +1,186 @@
+{
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "tool": "mcp__cua_repl native Google Chrome",
+  "syntheticFocusEvents": false,
+  "records": [
+    {
+      "at": "2026-10-08T14:37:38.502Z",
+      "meCounts": {
+        "STAFF": 6,
+        "PLATFORM": 7
+      },
+      "name": "同一原生无痕窗口正式双空间登录，平台安全操作基线",
+      "status": "PASS",
+      "executionStatus": "TOOL_COMPLETED",
+      "exitCode": null
+    },
+    {
+      "at": "2026-10-08T14:38:24.582Z",
+      "meCounts": {
+        "STAFF": 6,
+        "PLATFORM": 7
+      },
+      "name": "切出至本轮新建访达窗口",
+      "status": "OBSERVED",
+      "boundary": "该操作未证明前台激活，不计为focus验收通过",
+      "executionStatus": "TOOL_COMPLETED",
+      "exitCode": null
+    },
+    {
+      "at": "2026-10-08T14:38:56.838Z",
+      "passwordActionPresent": true,
+      "meCounts": {
+        "STAFF": 6,
+        "PLATFORM": 7
+      },
+      "afterReadCounts": {
+        "STAFF": 6,
+        "PLATFORM": 7
+      },
+      "name": "返回前只读观察：旧改密按钮仍在、没有后台me",
+      "status": "OBSERVED",
+      "executionStatus": "TOOL_COMPLETED",
+      "exitCode": null
+    },
+    {
+      "at": "2026-10-08T14:40:39.521Z",
+      "before": {
+        "STAFF": 6,
+        "PLATFORM": 7
+      },
+      "after": {
+        "STAFF": 6,
+        "PLATFORM": 7
+      },
+      "name": "AXRaise与选中标签页未触发可证明me，未记为focus通过",
+      "status": "NOT_VERIFIED",
+      "executionStatus": "TOOL_COMPLETED",
+      "exitCode": null
+    },
+    {
+      "startedAt": "2026-10-08T14:40:58.849Z",
+      "before": {
+        "STAFF": 6,
+        "PLATFORM": 9
+      },
+      "after": {
+        "STAFF": 6,
+        "PLATFORM": 10
+      },
+      "path": "/platform/security",
+      "name": "原生最小化/窗口菜单恢复后仅当前平台me重验，改密隐藏而本人全退出保留",
+      "status": "PASS",
+      "executionStatus": "TOOL_COMPLETED",
+      "exitCode": null
+    },
+    {
+      "at": "2026-10-08T14:43:02.319Z",
+      "meCounts": {
+        "STAFF": 6,
+        "PLATFORM": 10
+      },
+      "name": "原生键盘目标切出至访达，准备独立窗口focus验证",
+      "status": "OBSERVED",
+      "boundary": "该操作未证明前台激活，不计为focus验收通过",
+      "executionStatus": "TOOL_COMPLETED",
+      "exitCode": null
+    },
+    {
+      "at": "2026-10-08T14:52:09.978Z",
+      "before": {
+        "STAFF": 6,
+        "PLATFORM": 12
+      },
+      "after": {
+        "STAFF": 6,
+        "PLATFORM": 12
+      },
+      "name": "正式基线恢复后先原生最小化，尚未缩权",
+      "status": "OBSERVED",
+      "executionStatus": "TOOL_COMPLETED",
+      "exitCode": null
+    },
+    {
+      "name": "原生窗口菜单 focus 后当前页权限回退",
+      "status": "PASS",
+      "executionStatus": "TOOL_COMPLETED",
+      "exitCode": null,
+      "awayAt": "2026-10-08T14:57:21.137Z",
+      "returnAt": "2026-10-08T14:58:12.161Z",
+      "before": {
+        "STAFF": 6,
+        "PLATFORM": 15
+      },
+      "whileAway": {
+        "STAFF": 6,
+        "PLATFORM": 15
+      },
+      "after": {
+        "STAFF": 6,
+        "PLATFORM": 16
+      },
+      "path": "/platform/security",
+      "ui": "当前账号没有访问权限；敏感表单及导航不再显示",
+      "preparation": "隔离库撤销平台session:manage/授权版本增加",
+      "syntheticEvents": false
+    },
+    {
+      "name": "可见窗口的原生focus",
+      "status": "PASS",
+      "executionStatus": "TOOL_COMPLETED",
+      "exitCode": null,
+      "event": {
+        "event": "focus",
+        "trusted": true,
+        "time": "2026-10-08T14:58:12.238Z",
+        "visibility": "visible",
+        "focused": true
+      },
+      "visibilityChangeBetweenBlurAndFocus": false,
+      "after": {
+        "STAFF": 6,
+        "PLATFORM": 16
+      },
+      "expectedConsoleStatuses": [
+        401,
+        403
+      ],
+      "unexpectedRuntimeErrors": 0
+    },
+    {
+      "name": "平台权限撤销后员工本人安全入口仍有效",
+      "status": "PASS",
+      "executionStatus": "TOOL_COMPLETED",
+      "exitCode": null,
+      "path": "/admin/security",
+      "after": {
+        "STAFF": 8,
+        "PLATFORM": 18
+      },
+      "separateCookieSession": "仍有效，无新登录"
+    },
+    {
+      "name": "最小化期间权限收缩，恢复窗口重验",
+      "status": "PASS",
+      "executionStatus": "TOOL_COMPLETED",
+      "exitCode": null,
+      "before": {
+        "STAFF": 6,
+        "PLATFORM": 12
+      },
+      "whileHidden": {
+        "STAFF": 6,
+        "PLATFORM": 12
+      },
+      "after": {
+        "STAFF": 6,
+        "PLATFORM": 14
+      },
+      "trustedFocusAt": "2026-10-08T14:52:36.310Z",
+      "visibleAt": "2026-10-08T14:52:36.927Z",
+      "ui": "改密表单消失，退出全部设备仍可见",
+      "preparation": "platform-strict-hidden-revoke.json",
+      "boundary": "该恢复同时发生visibilitychange；后续可见窗口切换单独证明focus重验"
+    }
+  ]
+}

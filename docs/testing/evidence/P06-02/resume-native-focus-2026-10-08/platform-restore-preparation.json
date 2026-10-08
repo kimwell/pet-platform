@@ -1,0 +1,22 @@
+{
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "command": [
+    "docker",
+    "exec",
+    "-i",
+    "pet-p06-02-focus-pg",
+    "psql",
+    "-X",
+    "-qAt",
+    "-v",
+    "ON_ERROR_STOP=1",
+    "-U",
+    "postgres",
+    "-d",
+    "p06_02_focus_acceptance"
+  ],
+  "exitCode": 0,
+  "at": "2026-10-08T22:51:32.182394+08:00",
+  "summary": "platform:credential:change\nplatform:redis:operate\nplatform:session:manage\n",
+  "preparation": "只恢复本轮隔离平台基线权限；用于先最小化、后缩权再恢复的独立事件验证"
+}

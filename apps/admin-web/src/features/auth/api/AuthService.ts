@@ -1,4 +1,5 @@
 import { QueryClient, queryOptions } from '@tanstack/react-query';
+import type { components } from '@pet/api-contracts';
 import { ApiError, queryRetry } from '../../../shared/api/ApiError';
 import { RequestClient } from '../../../shared/api/request';
 import { SessionRuntime } from '../../../shared/auth/SessionRuntime';
@@ -10,6 +11,7 @@ import { useLayoutState } from '../../../app/layout/layoutState';
 const authority = (identity: WebIdentity) => JSON.stringify([
   identity.principalType, identity.tenantId, identity.principalId, identity.sessionId,
   identity.authorizationVersion, [...identity.permissionCodes].sort(), [...identity.authorizedStoreIds].sort(), identity.dataScope,
+  identity.principalType === 'STAFF' ? identity.passwordChangeRequired : false,
 ]);
 
 export class AuthService {
@@ -20,6 +22,8 @@ export class AuthService {
       void queryClient.cancelQueries({ predicate });
       queryClient.removeQueries({ predicate });
       useLayoutState.getState().reset(space);
+    }, space => {
+      void queryClient.invalidateQueries({ queryKey: authKeys.me(space, this.runtime.epoch(space)) });
     });
   }
   meOptions(space: AuthSpace) {
@@ -35,13 +39,13 @@ export class AuthService {
           if (!value || value.principalType !== space || typeof value.displayName !== 'string'
             || typeof value.sessionId !== 'string' || !Array.isArray(value.permissionCodes)
             || !Array.isArray(value.authorizedStoreIds) || typeof value.authorizationVersion !== 'string'
-            || (space === 'STAFF' && (typeof value.tenantId !== 'string' || !value.dataScope))
+            || (space === 'STAFF' && (typeof value.tenantId !== 'string' || !value.dataScope || !('passwordChangeRequired' in value) || typeof value.passwordChangeRequired !== 'boolean'))
             || (space === 'PLATFORM' && (value.tenantId !== null || value.dataScope !== null))) {
             throw new ApiError('PROTOCOL', '身份响应格式异常，请重试');
           }
           if (previous && authority(previous) !== authority(value)) {
-            const next = this.runtime.advance(space);
-            this.queryClient.setQueryData(authKeys.me(space, next), value);
+            // 先交付新代际的 Query 身份，再通知路由/观察者，避免重验看见中间空态。
+            this.runtime.advance(space, next => this.queryClient.setQueryData(authKeys.me(space, next), value));
           }
           return value;
         } catch (error) {
@@ -87,6 +91,31 @@ export class AuthService {
         this.runtime.setNotice(space, '退出未确认，服务端会话可能仍有效，请重试退出'); throw error;
       }
     });
+  }
+  async secureSelf(space: AuthSpace, operation: 'password' | 'logout-all', input: components['schemas']['ChangePasswordInput'] | components['schemas']['ConfirmationInput']) {
+    const identity = this.queryClient.getQueryData<WebIdentity | null>(authKeys.me(space, this.runtime.epoch(space)));
+    try { return await this.runtime.transition(space, async () => {
+      this.runtime.setNotice(space);
+      // 取消旧请求后保留当前身份投影供禁用中的表单展示，不保存密码或权限副本。
+      const body = operation === 'password'
+        ? { currentPassword: input.currentPassword, newPassword: (input as components['schemas']['ChangePasswordInput']).newPassword }
+        : { currentPassword: input.currentPassword };
+      try {
+        await this.runtime.request<null>(space, `${spaces[space].api}/auth/${operation}`, { method: operation === 'password' ? 'PUT' : 'POST', json: body });
+        this.runtime.completeSecurityOperation(space, operation === 'password' ? '密码已修改，请重新登录' : '当前账号的全部设备已退出，请重新登录');
+      } catch (error) {
+        // 失效401只证明当前会话已失效，不证明本次改密/全撤销成功。
+        if (!(error instanceof ApiError) || ['NETWORK', 'TIMEOUT', 'PROTOCOL', 'CANCELLED'].includes(error.kind) || (error.status ?? 0) >= 500) {
+          this.runtime.setNotice(space, '请求结果未确认，请重新确认当前身份或重新登录；请勿直接重复提交');
+        }
+        throw error;
+      } finally {
+        // 只能清理应用引用；不能保证 JavaScript 内存被物理擦除。
+        body.currentPassword = ''; if ('newPassword' in body) body.newPassword = '';
+      }
+    }, next => { if (identity) this.queryClient.setQueryData(authKeys.me(space, next), identity); }); } finally {
+      input.currentPassword = ''; if ('newPassword' in input) input.newPassword = '';
+    }
   }
 }
 

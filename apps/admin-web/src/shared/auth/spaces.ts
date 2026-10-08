@@ -5,8 +5,8 @@ export type WebIdentity = components['schemas']['CurrentIdentity'] | components[
 export type StaffLogin = components['schemas']['LoginInput'];
 export type PlatformLogin = components['schemas']['PlatformLoginInput'];
 export const spaces = {
-  STAFF: { path: '/admin', login: '/admin/login', api: '/admin', title: '员工工作台', label: '员工' },
-  PLATFORM: { path: '/platform', login: '/platform/login', api: '/platform', title: '平台控制台', label: '平台管理员' },
+  STAFF: { path: '/admin', security: '/admin/security', login: '/admin/login', api: '/admin', title: '员工工作台', label: '员工' },
+  PLATFORM: { path: '/platform', security: '/platform/security', login: '/platform/login', api: '/platform', title: '平台控制台', label: '平台管理员' },
 } as const;
 
 // 对齐 Character.isWhitespace / String.strip，避免 JS trim 额外剥离 NBSP 等字符。

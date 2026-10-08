@@ -55,3 +55,21 @@ multipart用FormData不手写boundary，支持signal，Cookie仍CSRF；下载检
 路由beforeLoad先查me；401进入对应登录，预期网络/503/403返回受控sessionError页面状态，不抛React渲染异常；未知渲染错误仍由系统错误边界处理。合法登录与保护页无未授权内容闪现。返回目标只允许本空间已实现的首页，保留合法search，拒绝外站/双斜杠/编码路径/登录循环/hash/敏感键。会话变化通过router.invalidate重算。
 
 [77项受控测试和真实浏览器证据](../testing/P06-01-VERIFICATION.md)分开。前端不保证跨标签页主动同步、实时推送撤权，也不能回滚已提交操作；每次后端仍权威验证。
+
+## P06-02 权限与本人安全流程（2026-10-08）
+
+身份/权限仍只有 Query 投影。`hasPermission/usePermission/PermissionBoundary`精确检查当前空间代码；未加载、Query失败或过渡中默认拒绝，不借角色名称、通配符或 localStorage 放大授权。STAFF 各权限 dataScope.grants 原样保留，不合并不同权限最大范围。本人 STAFF password/logout/logout-all 无普通管理权限条件；PLATFORM 按实际 session:manage/credential:change 分别判断。
+
+每次保护路由 beforeLoad 重验 me；me staleTime=0，Query窗口恢复可见机制、当前保护空间window focus监听、手动重试/刷新触发重验，渲染不主动发送请求。普通操作明确 PERMISSION_DENIED/PASSWORD_CHANGE_REQUIRED 使当前 me 失效重验，me 自身失败不递归失效。授权/范围/门店/主体/会话或 STAFF passwordChangeRequired 变化推进本空间代际、取消旧请求、移除旧作用域缓存，在通知路由/观察者之前原子交付新 Query 身份；无访问权限隐藏导航/操作，当前非法页面执行统一守卫，进入安全页或403页。身份刷新失败暂停敏感操作并显示可重试状态，不能当作已退出；当前输入若页面仍合法，普通成功 me 刷新不重置 Form。
+
+安全写复用同空间过渡锁：先隔离旧请求、清旧缓存/CSRF，再仅在新 me key 保留既有身份投影供提交中禁用表单展示。password PUT 只发送 currentPassword/newPassword；logout-all POST 只发送 currentPassword，均禁止自动重试。Mutation 变量 undefined、retry=false/gcTime=0，操作完成及卸载 reset；错误仅持安全 ApiError 元数据，不含请求体。Form和局部引用均清密码，只承诺清应用引用，不承诺 JavaScript 内存物理擦除。
+
+200/data:null（包括物理清理 PENDING）立即清本空间身份、CSRF和旧请求，记录单一成功通知、返回对应登录；旧401不覆盖成功通知，新登录再开启代际。前端不重登、不填新密码、不显示 Redis 内部步骤。403 CSRF 只使本空间 CSRF 过期，下次明确操作重新取；其他403不刷新CSRF。409需重新确认，422字段白名单映射，429读Retry-After；503/网络/超时/协议不确定及敏感取消均不证明操作失败或成功，显示“请求结果未确认”，禁止直接重复提交，提供重新确认身份。当前退出仍保持P06-01“退出未确认”语义。结果不确定的通知由 runtime 持有，表单不重复显示同一通知。
+
+两域 Cookie/CSRF/Query/代际不互相清理。权限变化没有跨标签页主动推送；后台普通 me 不延长服务端闲置期。每次后端最终复核，受控竞态测试不能替代真实浏览器或生产网络竞争证明。当前验证见[P06-02](../testing/P06-02-VERIFICATION.md)。
+
+P06-02前轮状态（历史）为IN_PROGRESS：原生窗口focus真实触发补验尚未执行，G11 PARTIAL；不以自动化显示切换或代码监听存在推导真实focus通过。手动重验/权限下降及本人安全链路已有真实证据。
+
+## P06-02 原生focus续验结论（2026-10-08）
+
+原生Chrome窗口菜单切出/切回产生trusted blur/focus，visibility始终visible且无visibilitychange；返回后仅当前PLATFORM me重验，权限不足403不清STAFF会话。最小化恢复另由可见性机制重验，两个触发点均有真实证据。临时监听器只观察事件，收尾已移除；没有跨标签主动推送的承诺。G11已补齐、P06-02 COMPLETE，P06仍IN_PROGRESS；[实际事件及门禁](../testing/P06-02-VERIFICATION.md)。
