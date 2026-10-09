@@ -1,6 +1,6 @@
 # Web 列表页接入规则
 
-日期：2026-10-09；当前实例 `/admin/identity/users`，读取 [员工契约](../contracts/EMPLOYEE-MANAGEMENT.md)，验证见 [P07-02](../testing/P07-02-VERIFICATION.md)。直接组合官方 Ant Design Form/Input/Select/Button/Table/Pagination/Alert/Empty/Tag；没有万能 BaseTable、属性透传 Wrapper 或代码生成模板。
+日期：2026-10-09；当前实例 `/admin/identity/users`，读取 [员工契约](../contracts/EMPLOYEE-MANAGEMENT.md)，验证见 [P07-02](../testing/P07-02-VERIFICATION.md)。当前全部管理列表使用 `components/ProTable` 组合官方 Table、Empty 与错误重试；统一筛选、工具栏、加载/状态、表格和分页布局。页面的官方 Form 拥有草稿，页面及 Query 拥有请求/响应，不把业务列、权限和 API 配置塞入组件。新结构见 [工程结构](../architecture/PROJECT-STRUCTURE.md)，本轮见 [统一改造验证](../testing/ARCHITECTURE-REFRESH-VERIFICATION.md)。
 
 ## 状态与 URL
 
@@ -24,7 +24,7 @@ Ant Design Form 拥有未提交草稿；TanStack Router URL 拥有已提交条�
 
 ## 授权和缓存
 
-导航与 beforeLoad 共用 sessionPages/canAccessPage，STAFF/list独立权限；PLATFORM 不读取员工Cookie之外的身份，无权限不请求列表。安全页保持独立，未实现详情时不放详情链接或提前实现写入/导出按钮。
+导航与 beforeLoad 共用 sessionPages/canAccessPage，STAFF/list独立权限；PLATFORM 不读取员工Cookie之外的身份，无权限不请求列表。安全页保持独立；详情和写入使用各自权限，不从 list 权限推导。仅详情权限允许列表壳和详情弹框，背景明确无权限、列表 Query disabled，不能发出 list 请求。
 
 Query Key 复用 authKeys.protected：STAFF、可信tenant/principal/session、authorizationVersion/sessionEpoch、有效门店和逐权限 dataScope、identity/employees/list、标准化条件。不能只按租户缓存，不包含秘密。当前正式me完整返回逐权限范围，后端 CurrentIdentity.of 已核对；不凭扁平权限猜范围。
 
@@ -61,8 +61,12 @@ Query Key 复用 authKeys.protected：STAFF、可信tenant/principal/session、a
 3. 模块内实现可读URL规则和官方Form/列；复用原始search解析、分页安全转换与字段格式化，不把员工字段套成通用业务配置。
 4. 复用 authKeys.protected/runtime/queryRetry，传 signal，禁止跨scope placeholder；声明范围重验和错误owner。
 5. 用确定性测试证明参数/竞争/超限，再用正式认证/隔离PG/Redis/真实浏览器核对集合total、范围、桌面/窄屏/键盘；保留失败、命令和恢复证据。
-6. 更新本模块契约及验收；详情返回状态单独依独立detail权限接入，写入/批量按后续任务冻结。正式工程模板留 P11。
+6. 更新本模块契约及验收；详情/写入依独立权限用单层弹框接入，批量/删除依后续真实接口。正式工程模板留 P11。
 
 ## P07-03 已接详情入口（2026-10-09）
 
 前文“未实现详情/不放详情链接”为P07-02历史。当前列表额外有明确官方“查看详情”按钮，仅按独立identity:user:detail显示，不能证明该行在详情范围内。只携规范化已提交URL为受限returnTo，草稿不带出；确定返回、刷新与历史恢复、撤list权限安全去向及页越界复用见[详情规范](WEB-DETAIL-PAGES.md)。六字段排序/查询/total适配未改，返回列表聚焦标题；未增加写入或选择框。
+
+## 当前统一布局（2026-10-09）
+
+员工、角色、组织、平台账号、租户和租户详情内门店共六个表格使用 ProTable。查询失败、空态、刷新和分页状态保留各模块语义；服务端排序、安全字符串 total 与末页一次纠正继续使用原适配器。新增、详情、编辑、授权、敏感操作使用页面本地模式，见 [弹框规范](WEB-DETAIL-PAGES.md)。上述 P07-02/03 段落是历史接入证据，不表示当前仍是独立详情页或没有写入。

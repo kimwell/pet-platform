@@ -21,7 +21,7 @@ try {
     const types = '/** 自动生成：后端OpenAPI → openapi-typescript；禁止手改。 */\n' + astToString(await openapiTS(JSON.parse(schema), { alphabetize: true }));
     artifacts.set('packages/api-contracts/openapi/' + name + '.openapi.json', schema);
     artifacts.set('packages/api-contracts/' + output, types);
-    if (name === 'backend') artifacts.set('apps/wechat-miniprogram/miniprogram/types/generated/api.d.ts', miniDeclaration(types));
+    if (name === 'backend') artifacts.set('apps/wechat-miniprogram/types/generated/api.d.ts', miniDeclaration(types));
   }
   // 写入或比较之前完整生成；check从不覆盖仓库文件。
   if (mode === 'check') {

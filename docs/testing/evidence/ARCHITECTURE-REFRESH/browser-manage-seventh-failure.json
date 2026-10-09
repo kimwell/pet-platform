@@ -1,0 +1,337 @@
+{
+  "status": "FAIL",
+  "scenarios": [
+    {
+      "name": "员工编辑取消返回详情，单层弹框",
+      "status": "PASS"
+    },
+    {
+      "name": "员工资料保存刷新详情和背景列表",
+      "status": "PASS"
+    },
+    {
+      "name": "员工启停仍保留正式独立权限与版本检查",
+      "status": "PASS"
+    },
+    {
+      "name": "员工门店授权保存后回到详情",
+      "status": "PASS"
+    },
+    {
+      "name": "员工敏感操作保留操作者密码确认与独立权限",
+      "status": "PASS"
+    },
+    {
+      "name": "旧员工详情链接校验后替换列表，保留筛选，刷新关闭弹框",
+      "status": "PASS"
+    },
+    {
+      "name": "筛选提交、浏览器后退与草稿同步",
+      "status": "PASS"
+    },
+    {
+      "name": "角色正式新增后打开详情",
+      "status": "PASS"
+    },
+    {
+      "name": "角色编辑取消和保存回到详情",
+      "status": "PASS"
+    }
+  ],
+  "requests": [
+    {
+      "path": "/api/admin/auth/me",
+      "status": 401,
+      "code": "SESSION_REVOKED"
+    },
+    {
+      "path": "/api/admin/auth/me",
+      "status": 401,
+      "code": "AUTH_REQUIRED"
+    },
+    {
+      "path": "/api/admin/auth/csrf",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/auth/login",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/auth/csrf",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/identity/users",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/identity/users",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/identity/users",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/identity/users/1cc4a4fe-06fc-439d-b2a1-c873388cf554",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/identity/users/1cc4a4fe-06fc-439d-b2a1-c873388cf554/management",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/auth/csrf",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/identity/users/1cc4a4fe-06fc-439d-b2a1-c873388cf554",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/identity/users/1cc4a4fe-06fc-439d-b2a1-c873388cf554",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/identity/users",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/identity/users/1cc4a4fe-06fc-439d-b2a1-c873388cf554/management",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/identity/users/1cc4a4fe-06fc-439d-b2a1-c873388cf554/status",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/identity/users/1cc4a4fe-06fc-439d-b2a1-c873388cf554",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/identity/users",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/identity/users/1cc4a4fe-06fc-439d-b2a1-c873388cf554/management",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/identity/users/1cc4a4fe-06fc-439d-b2a1-c873388cf554/status",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/identity/users/1cc4a4fe-06fc-439d-b2a1-c873388cf554",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/identity/users",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/identity/users/1cc4a4fe-06fc-439d-b2a1-c873388cf554/management",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/platform/stores/options",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/identity/users/1cc4a4fe-06fc-439d-b2a1-c873388cf554/stores",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/identity/users/1cc4a4fe-06fc-439d-b2a1-c873388cf554",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/identity/users",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/platform/stores/options",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/identity/users/1cc4a4fe-06fc-439d-b2a1-c873388cf554/management",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/identity/users/1cc4a4fe-06fc-439d-b2a1-c873388cf554/password",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/identity/users/1cc4a4fe-06fc-439d-b2a1-c873388cf554",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/identity/users",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/identity/users/1cc4a4fe-06fc-439d-b2a1-c873388cf554/management",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/identity/users/1cc4a4fe-06fc-439d-b2a1-c873388cf554/revoke-sessions",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/identity/users/1cc4a4fe-06fc-439d-b2a1-c873388cf554",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/identity/users",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/identity/users/1cc4a4fe-06fc-439d-b2a1-c873388cf554/management",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/identity/users/1cc4a4fe-06fc-439d-b2a1-c873388cf554",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/identity/users",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/identity/users/1cc4a4fe-06fc-439d-b2a1-c873388cf554/management",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/identity/users",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/identity/users",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/identity/roles",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/identity/roles",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/auth/csrf",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/identity/roles",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/identity/roles",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/identity/roles/0c54b7b2-91ed-46a4-8920-a79084cf1a4a",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/identity/permissions",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/identity/roles",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/identity/roles/0c54b7b2-91ed-46a4-8920-a79084cf1a4a",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/identity/permissions",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/identity/roles/0c54b7b2-91ed-46a4-8920-a79084cf1a4a",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/identity/roles",
+      "status": 200
+    }
+  ],
+  "pageErrors": [],
+  "failedStage": "roles",
+  "diagnostic": "locator.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('.ant-select-dropdown:visible .ant-select-item-option').filter({ hasText: 'identity:user:detail' })\u001b[22m\n",
+  "dom": "- dialog \"配置权限与范围\":\n  - button \"关闭\":\n    - img \"close\"\n  - text: 配置权限与范围\n  - heading \"权限与数据范围\" [level=2]\n  - text: \"* 权限\"\n  - combobox \"* 权限\" [expanded]:\n    - listbox:\n      - option \"组织管理：创建（identity:organization:create）\": identity:organization:create\n      - option \"组织管理：查看详情（identity:organization:detail）\": identity:organization:detail\n  - img \"search\"\n  - text: \"* 数据范围\"\n  - combobox \"* 数据范围\"\n  - img \"down\"\n  - button \"移除此项权限\"\n  - button \"添加权限范围\"\n  - text: 同一权限的门店与本人范围可取并集；不同权限分别授权。清空后撤销该角色全部权限。\n  - button \"保存权限与范围\"\n  - button \"取 消\""
+}

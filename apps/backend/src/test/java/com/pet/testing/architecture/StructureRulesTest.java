@@ -107,6 +107,10 @@ class StructureRulesTest {
         return parts[0].equals("modules") && parts.length > 1 ? "modules/" + parts[1] : parts[0];
     }
     @Test void controlPlanePortsAndDatabaseAdaptersHaveExactBoundaries(){
+        for (String executor : List.of("StaffManagementExecutor", "PlatformManagementExecutor")) {
+            assertFalse(violations(new Symbols(ROOT+"identity/application/management/UnregisteredService", Set.of(ROOT+"identity/application/management/"+executor), Set.of()), Set.of()).isEmpty());
+            assertFalse(violations(new Symbols(ROOT+"modules/example/application/UnregisteredService", Set.of(ROOT+"identity/application/management/"+executor), Set.of()), Set.of()).isEmpty());
+        }
         assertFalse(violations(new Symbols(ROOT+"identity/application/OtherService",Set.of(ROOT+"identity/application/management/ControlAccountStore"),Set.of()),Set.of()).isEmpty());
         assertFalse(violations(new Symbols(ROOT+"platform/infrastructure/OtherJdbc",Set.of(),Set.of("org/springframework/jdbc/core/JdbcTemplate#query")),Set.of()).isEmpty());
         assertFalse(violations(new Symbols(ROOT+"modules/orders/application/OtherService",Set.of(ROOT+"platform/application/ControlTenantStore"),Set.of()),Set.of()).isEmpty());
@@ -171,9 +175,12 @@ class StructureRulesTest {
                     || symbols.name().startsWith(ROOT + "identity/infrastructure/session/");
             boolean restrictedBootstrap = target.startsWith(ROOT + "identity/application/bootstrap/") || target.startsWith(ROOT + "identity/infrastructure/bootstrap/");
             boolean bootstrapCaller = symbols.name().startsWith(ROOT + "identity/application/bootstrap/") || symbols.name().startsWith(ROOT + "identity/infrastructure/bootstrap/");
+            boolean restrictedManagementExecutor = Set.of(ROOT+"identity/application/management/StaffManagementExecutor",ROOT+"identity/application/management/PlatformManagementExecutor").contains(target);
+            boolean managementExecutorCaller = Set.of(ROOT+"identity/application/management/EmployeeManagementService",ROOT+"identity/application/management/RoleManagementService",ROOT+"identity/application/management/OrganizationManagementService",ROOT+"identity/application/management/ControlAccountManagement",ROOT+"identity/application/management/ControlTenantManagement").contains(symbols.name());
             boolean controlPort = Set.of(ROOT+"platform/application/ControlTenantStore",ROOT+"identity/application/management/ControlAccountStore").contains(target);
-            boolean controlCaller = Set.of(ROOT+"identity/application/management/ControlManagement",ROOT+"identity/infrastructure/ControlAccountJdbc",ROOT+"platform/infrastructure/ControlTenantJdbc").contains(symbols.name());
-            if(controlPort && !controlCaller) rule="未批准调用控制面管理入口";
+            boolean controlCaller = Set.of(ROOT+"identity/application/management/PlatformManagementExecutor",ROOT+"identity/application/management/ControlTenantManagement",ROOT+"identity/application/management/ControlAccountManagement",ROOT+"identity/infrastructure/ControlAccountJdbc",ROOT+"platform/infrastructure/ControlTenantJdbc").contains(symbols.name());
+            if(restrictedManagementExecutor && !managementExecutorCaller) rule="未批准调用管理事务执行器";
+            else if(controlPort && !controlCaller) rule="未批准调用控制面管理入口";
             else if (restrictedCustomer && !customerAuthCaller) rule = "未批准调用客户认证入口";
             else if ((target.startsWith("cn/binarywang/wx/") || target.startsWith("me/chanjar/weixin/")) && !symbols.name().startsWith(ROOT+"customeridentity/infrastructure/WxJavaMiniProgramGateway")) rule = "绕过微信Gateway";
             else if (rawSa && !saAdapter && !symbols.name().equals(ROOT + "Application")) rule = "绕过身份会话适配器";

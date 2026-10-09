@@ -1,0 +1,123 @@
+{
+  "status": "FAIL",
+  "scenarios": [
+    {
+      "name": "参考截图框架实测：64px通栏、240/64px侧栏、独立滚动与白色卡片",
+      "status": "PASS"
+    },
+    {
+      "name": "平台账号启停与单层详情恢复",
+      "status": "PASS"
+    },
+    {
+      "name": "平台账号重置与全部会话撤销保留正式权限",
+      "status": "PASS"
+    },
+    {
+      "name": "租户启停正式接口、旧详情地址替换和单层恢复",
+      "status": "PASS"
+    }
+  ],
+  "errors": [],
+  "layout": [
+    {
+      "key": "platform-accounts",
+      "viewport": {
+        "width": 1827,
+        "height": 1075
+      },
+      "header": {
+        "left": 0,
+        "top": 0,
+        "width": 1827,
+        "height": 64,
+        "background": "rgb(255, 255, 255)",
+        "overflowY": "visible"
+      },
+      "sidebar": {
+        "left": 0,
+        "top": 64,
+        "width": 240,
+        "height": 1011,
+        "background": "rgb(255, 255, 255)",
+        "overflowY": "visible"
+      },
+      "breadcrumb": {
+        "left": 256,
+        "top": 64,
+        "width": 1555,
+        "height": 40,
+        "background": "rgba(0, 0, 0, 0)",
+        "overflowY": "visible"
+      },
+      "card": {
+        "left": 256,
+        "top": 104,
+        "width": 1555,
+        "height": 381.265625,
+        "background": "rgb(255, 255, 255)",
+        "overflowY": "visible"
+      },
+      "scroll": {
+        "left": 240,
+        "top": 64,
+        "width": 1587,
+        "height": 1011,
+        "background": "rgba(0, 0, 0, 0)",
+        "overflowY": "auto"
+      },
+      "noPageOverflow": true
+    },
+    {
+      "key": "collapsed",
+      "viewport": {
+        "width": 1827,
+        "height": 1075
+      },
+      "header": {
+        "left": 0,
+        "top": 0,
+        "width": 1827,
+        "height": 64,
+        "background": "rgb(255, 255, 255)",
+        "overflowY": "visible"
+      },
+      "sidebar": {
+        "left": 0,
+        "top": 64,
+        "width": 64,
+        "height": 1011,
+        "background": "rgb(255, 255, 255)",
+        "overflowY": "visible"
+      },
+      "breadcrumb": {
+        "left": 80,
+        "top": 64,
+        "width": 1731,
+        "height": 40,
+        "background": "rgba(0, 0, 0, 0)",
+        "overflowY": "visible"
+      },
+      "card": {
+        "left": 80,
+        "top": 104,
+        "width": 1731,
+        "height": 381.265625,
+        "background": "rgb(255, 255, 255)",
+        "overflowY": "visible"
+      },
+      "scroll": {
+        "left": 64,
+        "top": 64,
+        "width": 1763,
+        "height": 1011,
+        "background": "rgba(0, 0, 0, 0)",
+        "overflowY": "auto"
+      },
+      "noPageOverflow": true
+    }
+  ],
+  "failedStage": "platform",
+  "diagnostic": "locator.waitFor: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('dialog').getByText('操作未确认或资源已变化，请关闭并重新读取后操作', { exact: true }) to be visible\u001b[22m\n",
+  "dom": "- dialog \"修改租户资料\":\n  - button \"关闭\":\n    - img \"close\"\n  - text: 修改租户资料 租户名称\n  - textbox \"租户名称\" [disabled]: 离线保留的非敏感草稿\n  - button \"loading 保存资料\":\n    - img \"loading\"\n    - text: 保存资料\n  - button \"取 消\" [disabled]"
+}

@@ -2,6 +2,19 @@
 
 日期：2026-10-09；当前实例 `/admin/identity/users/$employeeId`。员工字段与行范围唯一见[员工管理契约](../contracts/EMPLOYEE-MANAGEMENT.md)，状态归属见[WEB-STATE](WEB-STATE.md)，列表参数唯一沿用[WEB-LIST-PAGES](WEB-LIST-PAGES.md)，本轮验证见[P07-03](../testing/P07-03-VERIFICATION.md)。模块内直接组合官方 Ant Design Button/Descriptions/Tag/Spin/Alert/Result；不创建 BaseDetail、配置框架或透传 Wrapper。
 
+
+## 当前单层弹框规则（2026-10-09）
+
+新增、详情、编辑、角色/门店/平台授权及敏感操作均由页面本地状态控制，共用一个官方 Modal。ResourceDialog 保留父详情查询和状态，DialogPanel 只注册模式及业务关闭守卫；子操作替换同一容器，取消回到父详情，租户内门店操作完成或取消回到租户详情。不用 URL 持久化模式、对象或秘密，刷新后关闭。下面 P07-03 独立路由与返回描述是历史方案。
+
+旧员工、角色、组织、租户、平台账号详情地址继续校验当前身份、独立 detail 权限、UUID 和受限 returnTo，再 replace 为对应列表地址，通过一次性 history state 打开详情并清除该标记。非法目标仅提示，不请求详情。列表 URL 保持已提交筛选、排序及分页；同一列表的 SPA 旧链接也能一次打开，后退不重复弹出。
+
+list/detail/create/edit/grant/敏感操作权限独立。仅 detail 的身份可以打开已授权详情；背景列表显示无权限且不请求 list，列表导航不暴露 list 能力。详情对象来自自己的正式 Query，不能用背景行代替。保存后刷新相关列表及详情；权限不足不显示对应操作，服务端仍最终复核目标与范围。
+
+表单保留草稿离开保护：未保存取消需官方确认；这是丢弃确认，不是第二层业务页面。版本冲突和写入结果不确定保留非敏感草稿，禁止盲目重放，重新读取后才允许新操作；密码按原规则在提交结束/取消/身份变化时清除。身份代际、授权事实、主体、会话变化取消请求、清缓存并销毁弹框模式。普通同身份刷新不销毁未保存输入。
+
+模式切换将焦点放入当前面板，关闭整层官方 Modal 恢复触发按钮焦点，Escape 走同一关闭守卫。无实际列表触发器的旧链接采用列表标题/可达内容恢复。可访问性验证范围见 [本轮报告](../testing/ARCHITECTURE-REFRESH-VERIFICATION.md)，不宣称完整 WCAG 或真实辅助技术覆盖。
+
 ## 独立入口与路由
 
 员工详情独立要求 STAFF `identity:user:detail`，列表 `identity:user:list` 不授详情，详情也不授列表；PLATFORM 不借该路径或权限。sessionPages 同时拥有访问条件，`navigation:false` 表示带目标参数的页面不创建无目标静态菜单。列表只在当前详情权限有效时显示可键盘操作的“查看详情”按钮，不整行隐式点击，不表示此行一定处于详情操作范围。

@@ -46,7 +46,7 @@ cd apps/backend
 
 Windows 使用 mvnw.cmd。无需全局 Maven，首次下载需网络；默认回环监听。后端沿用既有三身份认证及凭据安全路径，新增两条正式员工读取路径，详见[员工读取契约](docs/contracts/EMPLOYEE-MANAGEMENT.md)；其他企业管理Controller按后续任务开发；访问 / 返回标准错误信封404；/error仅为框架错误兜底。P03-02 已暴露 /actuator/health、/liveness、/readiness 工具格式健康端点，完整路径见本地开发；local 启动需要真实 PostgreSQL 和必填数据源配置。协议测试端点不会进入生产JAR。Java 不自动加载 .env；通过进程环境/外部 Spring 配置设置，prod 模板不提供开发回退或秘密值。
 
-小程序在根执行 `pnpm check:miniprogram`，然后用矩阵中的微信开发者工具导入 apps/wechat-miniprogram，复制私有配置示例、填写实际 AppID，执行“工具 → 构建 npm”，再编译。依赖统一由根 pnpm 安装，产物为 miniprogram/miniprogram_npm；TypeScript 转换由工具插件负责，typecheck 不是小程序真实编译。没有实际 AppID或目标工具时，工具编译/预览不能声明 PASS。
+小程序在根执行 `pnpm check:miniprogram`，然后用矩阵中的微信开发者工具导入 apps/wechat-miniprogram，复制私有配置示例、填写实际 AppID，执行“工具 → 构建 npm”，再编译。依赖统一由根 pnpm 安装，产物为 apps/wechat-miniprogram/miniprogram_npm；TypeScript 转换由工具插件负责，typecheck 不是小程序真实编译。没有实际 AppID或目标工具时，工具编译/预览不能声明 PASS。
 
 本地 PostgreSQL、Redis、RabbitMQ 配置见 [基础设施说明](infra/local/README.md)：先复制 infra/local/.env.example 为同目录 .env，在本机填写专用凭据，再执行 `pnpm check:infra`、`pnpm dev:infra`、`pnpm stop:infra`。端口可调且只绑定回环，named volumes 保留数据；不复用生产凭据，不删除其他项目容器/卷。
 
@@ -91,3 +91,13 @@ P04-03与P04整体 COMPLETE，当前范围与限制见[P04-03验证](docs/testin
 本轮已核对原P06/A06条件、补齐原生跨标签/连接失败/取消/390px/键盘及P07接入，修复入口、表单定位、菜单焦点、敏感草稿/退出通知和窄屏页头。P06-03/P06 COMPLETE，G01～G14 PASS，见[P06-03](docs/testing/P06-03-VERIFICATION.md)、[P06总验收及P07接入](docs/testing/P06-ACCEPTANCE.md)。本轮没有后端/契约/依赖改动，421项完整后端为历史；P07未启动，不提交/推送/部署。各早期IN_PROGRESS及P06-02的“下一P06-03”为当时历史，不删除或覆盖旧报告。
 
 P07-03 已接 STAFF 员工详情 `/admin/identity/users/$employeeId` 与独立 `identity:user:detail`，列表仅按该权限展示明确入口，详情 URL 保存受限的已提交列表查询并支持刷新/历史返回。接入见[Web详情规范](docs/conventions/WEB-DETAIL-PAGES.md)。[P07-03验证](docs/testing/P07-03-VERIFICATION.md)记录正式浏览器与技术测试、命令及剩余Docker/Testcontainers契约门禁；P07-03/P07当前仍IN_PROGRESS，不含员工写入或角色/门店关系管理。
+
+## 当前三端架构（2026-10-09）
+
+Web 源码按 api/components/config/hooks/layouts/pages/router/stores/styles/types/utils 组织；BasicLayout 使用 TanStack Router Outlet，240/64px 图标侧栏、官方移动 Drawer、通栏品牌头部、面包屑及白色列表卡片。现有六处业务表格统一 ProTable，新增/详情/编辑/授权/敏感操作共用单层官方 Modal，本地模式刷新关闭。旧详情链接校验后一次性打开。
+
+后端仍为一个 Module 和固定 com.pet.platform，员工、角色、组织、平台账号、租户门店 Controller/应用用例按职责拆分，两个受限执行器保留原事务及身份重验；路径、契约及迁移兼容。
+
+小程序源码直接位于 apps/wechat-miniprogram 根下，没有 miniprogram 中间目录。客户四个原生 Tab 页面展示公共导航和未开放状态，中间助手只是提示操作；自定义 navigator-bar、TabBar 和底部安全区已搭建。请求、会话、登录、员工分包与正文业务后续开发，不能视为完整小程序使用端。
+
+[当前目录](docs/architecture/PROJECT-STRUCTURE.md)、[列表规范](docs/conventions/WEB-LIST-PAGES.md)、[弹框规范](docs/conventions/WEB-DETAIL-PAGES.md)、[小程序规范](docs/conventions/MINIPROGRAM-PAGES.md)、[改造验收](docs/testing/ARCHITECTURE-REFRESH-VERIFICATION.md)。历史验收保留；未提交、推送、发布或部署。

@@ -1,0 +1,20 @@
+{
+  "from": "apps/wechat-miniprogram/miniprogram/",
+  "to": "apps/wechat-miniprogram/",
+  "entries": [
+    "types",
+    "app.json",
+    "custom-tab-bar",
+    "app.ts",
+    "constants",
+    "miniprogram_npm",
+    "utils",
+    "app.wxss",
+    "styles",
+    "components",
+    "sitemap.json",
+    "assets",
+    "pages"
+  ],
+  "conflicts": []
+}

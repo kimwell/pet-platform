@@ -1,6 +1,0 @@
-<view class="entry">
-  <view class="entry-title">系统工程入口</view>
-  <view class="entry-description">当前用于确认原生小程序页面与官方组件接入。</view>
-  <t-button theme="primary" block bind:tap="showEngineeringNotice">查看工程状态</t-button>
-  <view wx:if="{{showNotice}}" class="entry-notice">认证、客户与员工会话、租户隔离及正式业务尚未实现。</view>
-</view>

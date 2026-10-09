@@ -325,3 +325,12 @@ P05-04补充安全修复：真实编码登录路径无CSRF探针观察到200，�
 | Docker故障仅采用本轮回环字节隧道支持真实业务联调 | 正式迁移/生产JAR/受限PG/Redis/STAFF真实43项通过，隧道不替换协议或查询 | 默认Docker/Testcontainers契约命令仍单独记失败/未完成，不将环境替代写成该命令PASS |
 
 当前P07-03门禁状态与失败修复、资源保全见[P07-03验证](../testing/P07-03-VERIFICATION.md)，P07整体仍IN_PROGRESS，不自动授权后续写入。
+
+## 三端统一架构与布局（2026-10-09）
+
+- 当前用户明确批准三端改造，覆盖早期 P02 最小工程范围。保持应用根目录、包名、版本及已有业务规则；不进入 PDOS，不新增接口/迁移或正式小程序业务。
+- Web 参考师生项目和用户补充截图的公共框架，保留 TanStack Router/Query 与官方 Form，以 Outlet 承载页面；所有六处表格用有明确列表状态职责的 ProTable。页面本地状态在同一官方 Modal 切换详情/编辑/授权，旧详情地址作为兼容入口。
+- 默认客户小程序四个 Tab 页面及五列视觉入口，中间助手提示未开放。用户补充要求源码移至 wechat-miniprogram 最外层，miniprogramRoot/npm 输出均为 ./；公共导航、实际资源引用及生成类型路径同步调整。
+- identity 控制面编排和 platform 应用端口方向不变，STAFF/PLATFORM 事务与身份重验集中到包内受限执行器，拆五组 Controller/用例，原 OpenAPI tag 显式保留以保持契约字节一致。
+- 实际断网写入发现 Query 默认暂停且联网自动执行；公共 Mutation 设置 networkMode:always、retry:false，离线立即形成未确认状态，恢复不得重放。新增行为回归及真实浏览器验证。
+- 参考资料只影响布局、职责与目录思想，业务权限及数据不复制。已有 ui、迁移和历史报告摘要保全；本轮验证范围见 [报告](../testing/ARCHITECTURE-REFRESH-VERIFICATION.md)。不自动关闭 B02 外部客户门禁、B03/B04，也不提交、推送、发布或部署。

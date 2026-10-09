@@ -1,0 +1,361 @@
+Window: "pet-platform-miniprogram-local", App: 微信开发者工具.
+0 标准窗口 pet-platform-miniprogram-local, Secondary Actions: Raise
+	1 HTML 内容 file:///Users/kimwell/Applications/WechatDevTools-2.02.2608080.app/Contents/Resources/app.asar/html/electron-project.html?projectpath=%2FUsers%2Fkimwell%2Fwork%2Fpet-platform%2Fapps%2Fwechat-miniprogram&projectname=pet-platform-miniprogram-local&projectid=%2FUsers%2Fkimwell%2Fwork%2Fpet-platform%2Fapps%2Fwechat-miniprogram&theme=dark&skeletonPath=%2FUsers%2Fkimwell%2FLibrary%2FApplication%20Support%2F%E5%BE%AE%E4%BF%A1%E5%BC%80%E5%8F%91%E8%80%85%E5%B7%A5%E5%85%B7%2Fb0dc668933a0edaedd558a9f59ae66b5%2FWeappCache%2FskeletonCache%2F1a347ab98c653c1ba55887dc4e81fa9a%2Fpageskeleton.html&trustProject=1&openSource=cli&autoPort=60909&frame=0&devid=s0&runtimeid=0&devtype=miniprogram&proxyPort=53172&userDataPath=%2FUsers%2Fkimwell%2FLibrary%2FApplication%2520Support%2F%25E5%25BE%25AE%25E4%25BF%25A1%25E5%25BC%2580%25E5%258F%2591%25E8%2580%2585%25E5%25B7%25A5%25E5%2585%25B7%2Fb0dc668933a0edaedd558a9f59ae66b5&appVersion=2.02.2608080&appVersionType=0
+		2 container
+			3 文本 微信开发者工具 Stable 2.02.2608080
+			4 container
+				5 text 小程序模式
+			6 文本 预览
+			7 文本 真机调试
+			8 文本 上传
+			9 未加标签的图片 要获取缺失的图片说明，请打开上下文菜单。
+			10 container
+				11 container
+					12 container
+						13 text 预览 编辑
+					14 container
+						15 text 普通编译
+					16 container
+						17 container
+							18 text 17 : 11
+						19 container
+							20 链接
+							21 链接
+						22 HTML 内容 Webview: pages/customer/home/index, URL: 127.0.0.1:49709/__pageframe__/pages/customer/home/index
+							23 container 客户主导航
+								24 按钮 首页，当前页面
+									25 图像
+									26 文本 首页
+								27 按钮 找房
+									28 图像
+									29 文本 找房
+								30 按钮 宠物智能助手，功能暂未开放
+								31 按钮 订单
+									32 图像
+									33 文本 订单
+								34 按钮 我的
+									35 图像
+									36 文本 我的
+							37 container 页面导航
+								38 文本 爪伴寄养
+							39 文本 功能暂未开放
+							40 文本 首页服务正在准备中
+						41 HTML 内容 小程序逻辑层, URL: 127.0.0.1:49709/appservice/s0/_sessionId/simulator-app-session-s0/mainframe?load
+							42 container
+								43 HTML 内容 小程序逻辑层, URL: 127.0.0.1:49709/appservice/instanceframe?s=1791536037575&autoload#id_1
+								44 HTML 内容 127.0.0.1:49709/appservice/appContext?contextName=app&id=ifr-1_2#id_1
+								45 HTML 内容 127.0.0.1:49709/appservice/app_xrframe_renderContext?contextName=app_xrframe_render&id=ifr-1_3&empty=true#id_1
+								46 HTML 内容 127.0.0.1:49709/appservice/app_sub_debugContext?contextName=app_sub_debug&id=ifr-1_4&empty=true#id_1
+								47 HTML 内容 小程序逻辑层, URL: 127.0.0.1:49709/appservice/instanceframe?s=1791536037575#id_2
+						48 container
+							49 链接
+							50 链接
+					51 container
+						52 文本 iPhone 14 Pro Max 65% 16
+					53 container
+						54 文本 页面路径
+					55 文本 pages/customer/home/index
+					56 链接 复制
+				57 container
+					58 container
+						59 container
+							60 文本 wechat-miniprogram
+							61 工具栏
+								62 按钮 Toggle Primary Side Bar (⌘K ⌘B)
+									63 文本 
+								64 按钮 切换面板 (⌘J)
+									65 文本 
+								66 按钮 Toggle Secondary Side Bar (⌥⌘B)
+									67 文本 
+						68 container
+							69 container
+								70 标签页组 活动视图切换器
+									71 标签 (selected) Description: 资源管理器 (⌘K ⇧⌘E), Value: 1
+										72 container 资源管理器 (⌘K ⇧⌘E)
+											73 文本 
+									74 标签 (settable, integer) Search (⇧⌘F), Value: 0
+										75 container Search (⇧⌘F)
+											76 文本 
+									77 标签 (settable, integer) Description: 源代码管理 (⌃⇧G) - 413 个挂起的更改, Value: 0
+										78 文本 
+									79 标签 (settable, integer) 扩展 (⇧⌘X), Value: 0
+										80 container 扩展 (⇧⌘X)
+											81 文本 
+									82 弹出式按钮 其他视图
+										83 文本 
+								84 container
+									85 标题 资源管理器, Help: 资源管理器 (⌘K ⇧⌘E), Value: 2
+										86 文本 资源管理器
+									87 内容列表 资源管理器操作
+										88 弹出式按钮 Views and More Actions...
+									89 container
+										90 container
+											91 按钮 文件资源管理器部分
+												92 文本 
+												93 标题 Description: 文件资源管理器部分, Help: wechat-miniprogram, Value: 3
+													94 文本 WECHAT-MINIPROGRAM
+											95 外框 树
+												96 container
+													97 row assets
+														98 container
+															99 文本 
+															100 container ~/work/pet-platform/apps/wechat-miniprogram/assets • 包含强调项
+																101 文本 assets
+																102 文本 
+													103 row components
+														104 container
+															105 文本 
+															106 container ~/work/pet-platform/apps/wechat-miniprogram/components • 包含强调项
+																107 文本 components
+																108 文本 
+													109 row constants
+														110 container
+															111 文本 
+															112 container ~/work/pet-platform/apps/wechat-miniprogram/constants • 包含强调项
+																113 文本 constants
+																114 文本 
+													115 row custom-tab-bar
+														116 container
+															117 文本 
+															118 container ~/work/pet-platform/apps/wechat-miniprogram/custom-tab-bar • 包含强调项
+																119 文本 custom-tab-bar
+																120 文本 
+													121 row miniprogram_npm
+														122 container
+															123 文本 
+															124 文本 miniprogram_npm
+													125 row node_modules
+														126 container
+															127 文本 
+															128 文本 node_modules
+													129 row (selected) pages
+														130 container
+															131 文本 
+															132 文本 pages
+													133 row styles
+														134 container
+															135 文本 
+															136 container ~/work/pet-platform/apps/wechat-miniprogram/styles • 包含强调项
+																137 文本 styles
+																138 文本 
+													139 row types
+														140 container
+															141 文本 
+															142 container ~/work/pet-platform/apps/wechat-miniprogram/types • 包含强调项
+																143 文本 types
+																144 文本 
+													145 row utils
+														146 container
+															147 文本 
+															148 container ~/work/pet-platform/apps/wechat-miniprogram/utils • 包含强调项
+																149 文本 utils
+																150 文本 
+													151 row navigation.ts
+														152 container
+															153 container ~/work/pet-platform/apps/wechat-miniprogram/utils/navigation.ts • Untracked
+																154 文本 navigation.ts
+																155 文本 U
+													156 row app.json
+														157 container
+															158 container ~/work/pet-platform/apps/wechat-miniprogram/app.json • Untracked
+																159 文本 app.json
+																160 文本 U
+													161 row app.ts
+														162 container
+															163 container ~/work/pet-platform/apps/wechat-miniprogram/app.ts • Untracked
+																164 文本 app.ts
+																165 文本 U
+													166 row app.wxss
+														167 container
+															168 container ~/work/pet-platform/apps/wechat-miniprogram/app.wxss • Untracked
+																169 文本 app.wxss
+																170 文本 U
+													171 row package.json
+														172 container
+															173 container ~/work/pet-platform/apps/wechat-miniprogram/package.json • Modified
+																174 文本 package.json
+																175 文本 M
+													176 row project.config.json
+														177 container
+															178 container ~/work/pet-platform/apps/wechat-miniprogram/project.config.json • Modified
+																179 文本 project.config.json
+																180 文本 M
+													181 row project.private.config.json
+														182 container
+															183 文本 project.private.config.json
+													184 row project.private.config.json.example
+														185 container
+															186 文本 project.private.config.json.example
+													187 row sitemap.json
+														188 container
+															189 container ~/work/pet-platform/apps/wechat-miniprogram/sitemap.json • Untracked
+																190 文本 sitemap.json
+																191 文本 U
+													192 row tsconfig.json
+														193 container
+															194 container ~/work/pet-platform/apps/wechat-miniprogram/tsconfig.json • Modified
+																195 文本 tsconfig.json
+																196 文本 M
+										197 按钮 大纲 Section
+											198 文本 
+											199 标题 大纲, Value: 3
+												200 文本 大纲
+										201 按钮 时间线 Section
+											202 文本 
+											203 标题 时间线, Value: 3
+												204 文本 时间线
+							205 container
+								206 container
+									207 container 第 1 组 (空)
+										208 container
+											209 定义列表
+												210 container 显示所有命令
+													211 文本 显示所有命令
+												212 container Command+K Command+P
+													213 text ⌘ K ⌘ P
+											214 定义列表
+												215 container Go to File
+													216 文本 Go to File
+												217 container Command+P
+													218 text ⌘ P
+											219 定义列表
+												220 container 在文件中查找
+													221 文本 在文件中查找
+												222 container Shift+Command+F
+													223 text ⇧ ⌘ F
+											224 定义列表
+												225 container 开始调试
+													226 文本 开始调试
+												227 文本 F5
+											228 定义列表
+												229 container 切换终端
+													230 文本 切换终端
+												231 container Control+`
+													232 text ⌃ `
+								233 container
+									234 标签页组 活动视图切换器
+										235 标签 (settable, integer) 构建, Value: 0
+											236 container 构建
+												237 文本 构建
+										238 标签 (selected) Description: 调试器 - Errors: 0, Warnings: 9, Value: 1
+											239 文本 调试器
+											240 文本 9
+										241 标签 (settable, integer) Description: 问题 (⌘K ⇧⌘M) - 总计 0 个问题, Value: 0
+											242 文本 问题
+										243 标签 (settable, integer) Description: 输出, Value: 0
+											244 文本 输出
+										245 标签 (settable, integer) Description: 调试控制台 (⇧⌘Y), Value: 0
+											246 文本 调试控制台
+										247 标签 (settable, integer) 终端 (⌃`), Value: 0
+											248 container 终端 (⌃`)
+												249 文本 终端
+										250 标签 (settable, integer) 代码质量, Value: 0
+											251 container 代码质量
+												252 文本 代码质量
+									253 工具栏 调试器操作
+									254 工具栏
+										255 按钮 最大化面板大小
+											256 文本 
+										257 按钮 关闭面板
+											258 文本 
+									259 container
+										260 container
+											261 HTML 内容 devtools://devtools/bundled/devtools_app.html?remoteBase=https://chrome-devtools-frontend.appspot.com/serve_file/@61dafe6541432a46304ba3c84a0a6135b7cddd69/&can_dock=&toolbarColor=rgba(223,223,223,1)&textColor=rgba(0,0,0,1)&experiments=true
+												262 container
+													263 container
+														264 切换按钮 Description: Select an element in the page to inspect it, Value: 0
+														265 标签页组 Panels
+															266 标签 (settable, integer) Description: Wxml, Value: 0
+															267 标签 (selected) Description: Console, Value: 1
+															268 标签 (settable, integer) Description: Sources, Value: 0
+															269 标签 (settable, integer) Description: Network, Value: 0
+															270 标签 (settable, integer) Description: Performance, Value: 0
+															271 标签 (settable, integer) Description: Memory, Value: 0
+														272 弹出式按钮 More tabs
+														273 container
+															274 container 9 warnings
+														275 按钮 Settings
+														276 弹出式按钮 Customize and control DevTools
+														277 container Undock into separate window
+														278 container Console panel
+															279 container console
+																280 container
+																	281 按钮 Show console sidebar
+																	282 按钮 Clear console
+																	283 按钮 JavaScript context: top
+																	284 按钮 Create live expression
+																	285 弹出式按钮 Log level: Default levels
+																		286 文本 Default levels
+																	287 切换按钮 Description: Console settings, Value: 0
+																	288 container
+																		289 container
+																			290 container Warning Repeat 7
+																				291 文本 7
+																			292 文本 [自动热重载] 已开启代码文件保存后自动热重载
+																			293 container
+																				294 链接 WAServiceMainContext…t=wechat&v=3.17.2:1
+																					295 文本 WAServiceMainContext
+																					296 文本 …
+																					297 文本 t=wechat&v=3.17.2:1
+																				298 text [system] WeChatLib: 3.17.2 (2026.9.22 14:40:14)
+																			299 container
+																				300 链接 WAServiceMainContext…t=wechat&v=3.17.2:1
+																					301 文本 WAServiceMainContext
+																					302 文本 …
+																					303 文本 t=wechat&v=3.17.2:1
+																				304 text [system] Subpackages: N/A
+																			305 container
+																				306 链接 WAServiceMainContext…t=wechat&v=3.17.2:1
+																					307 文本 WAServiceMainContext
+																					308 文本 …
+																					309 文本 t=wechat&v=3.17.2:1
+																				310 text [system] LazyCodeLoading: false
+																			311 container
+																				312 container Warning
+																				313 文本 The resource 
+																				314 链接 http://127.0.0.1:49709/__dev__/WAAutoService.js?t=wechat&v=3.17.2
+																					315 文本 http://127.0.0.1:49709/__dev__/WAAutoService.js?t=wechat&v=3.17.2
+																				316 文本  was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+																			317 container
+																				318 container Warning
+																				319 文本 The resource 
+																				320 链接 http://127.0.0.1:49709/__dev__/WAServiceMainContext.js?t=wechat&v=3.17.2
+																					321 文本 http://127.0.0.1:49709/__dev__/WAServiceMainContext.js?t=wechat&v=3.17.2
+																				322 文本  was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+																		323 container
+																			324 container
+																				325 文本输入区 (settable) Console prompt
+						326 container
+							327 container pet-platform (Git) - main*, Checkout Branch/Tag...
+								328 按钮 pet-platform (Git) - main*, Checkout Branch/Tag...
+									329 文本 
+									330 文本  main*
+							331 container pet-platform (Git) - Synchronize Changes
+								332 按钮 pet-platform (Git) - Synchronize Changes
+							333 container 没有问题
+								334 按钮 没有问题
+									335 文本 
+									336 文本  0 
+									337 文本 
+									338 文本  0
+							339 container 进度和简要通知
+							340 container 已为屏幕阅读器优化
+								341 按钮 已为屏幕阅读器优化
+							342 container undefined
+	343 关闭按钮
+	344 全屏幕按钮 Help: 此按钮也可以执行缩放窗口的操作, Secondary Actions: 缩放窗口
+	345 最小化按钮
+346 menu bar
+	347 微信开发者工具
+	348 项目
+	349 文件
+	350 编辑
+	351 工具
+	352 跳转
+	353 选择
+	354 界面
+	355 设置
+	356 插件
+	357 帮助
+
+The focused UI element is 261 HTML 内容 devtools://devtools/bundled/devtools_app.html?remoteBase=https://chrome-devtools-frontend.appspot.com/serve_file/@61dafe6541432a46304ba3c84a0a6135b7cddd69/&can_dock=&toolbarColor=rgba(223,223,223,1)&textColor=rgba(0,0,0,1)&experiments=true

@@ -1,0 +1,59 @@
+{
+  "styleSummary": "终审稿公共框架：暖白桃色背景，左对齐深灰粗体标题，白底五列等宽导航，橙色选中线性图标与文字，中间浅蓝圆形助手原素材上浮；由微信绘制状态栏及胶囊。",
+  "sourceVisuals": [
+    "ui/exports/final-review-2026-09-25/ZIU38.png",
+    "ui/exports/final-review-2026-09-25/XSHGN.png",
+    "ui/exports/final-review-2026-09-25/yqq6i.png",
+    "ui/exports/final-review-2026-09-25/GMAwX.png"
+  ],
+  "scope": "仅标题、背景、公共导航、间距及安全区；未开放正文不与业务样例比较",
+  "dimensions": [
+    {
+      "id": "palette",
+      "weight": 25,
+      "evidence": "暖白桃渐变、深灰标题、白底导航、橙色选中、灰色未选中",
+      "question": "公共区域配色是否忠于稿件？"
+    },
+    {
+      "id": "geometry",
+      "weight": 25,
+      "evidence": "左侧20pt标题；底部五列等宽，助手蓝圆上浮",
+      "question": "区域尺寸、对齐和间距是否一致？"
+    },
+    {
+      "id": "icons",
+      "weight": 25,
+      "evidence": "线性房屋、日历、订单、人物及原机器人圆形图标",
+      "question": "图标轮廓、大小和原助手素材是否保留？"
+    },
+    {
+      "id": "typography",
+      "weight": 10,
+      "evidence": "标题深灰粗体，导航文字灰/橙色，选中加粗",
+      "question": "字号、颜色和字重是否一致？"
+    },
+    {
+      "id": "platformSafety",
+      "weight": 15,
+      "evidence": "导航预留原生胶囊位置、正文与底部安全区分离",
+      "question": "各窗口是否没有胶囊与底部遮挡？"
+    }
+  ],
+  "criticalFailures": [
+    {
+      "id": "capsuleOverlap",
+      "cap": 0
+    },
+    {
+      "id": "bottomOverlap",
+      "cap": 0
+    },
+    {
+      "id": "missingTabOrAssistant",
+      "cap": 70
+    }
+  ],
+  "thresholds": {
+    "minStyleScore": 95
+  }
+}

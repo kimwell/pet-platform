@@ -1,0 +1,149 @@
+{
+  "status": "FAIL",
+  "scenarios": [
+    {
+      "name": "员工正式页面新增，列表URL不变并打开详情",
+      "status": "PASS"
+    },
+    {
+      "name": "员工编辑取消返回详情，单层弹框",
+      "status": "PASS"
+    },
+    {
+      "name": "员工资料保存刷新详情和背景列表",
+      "status": "PASS"
+    },
+    {
+      "name": "员工启停仍保留正式独立权限与版本检查",
+      "status": "PASS"
+    }
+  ],
+  "requests": [
+    {
+      "path": "/api/admin/auth/me",
+      "status": 401,
+      "code": "SESSION_REVOKED"
+    },
+    {
+      "path": "/api/admin/auth/me",
+      "status": 401,
+      "code": "AUTH_REQUIRED"
+    },
+    {
+      "path": "/api/admin/auth/csrf",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/auth/login",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/auth/csrf",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/identity/users",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/identity/users",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/auth/csrf",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/identity/users",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/identity/users",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/identity/users/1cc4a4fe-06fc-439d-b2a1-c873388cf554",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/identity/users/1cc4a4fe-06fc-439d-b2a1-c873388cf554/management",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/identity/users",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/identity/users/1cc4a4fe-06fc-439d-b2a1-c873388cf554",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/identity/users",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/identity/users/1cc4a4fe-06fc-439d-b2a1-c873388cf554",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/identity/users/1cc4a4fe-06fc-439d-b2a1-c873388cf554/management",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/identity/users/1cc4a4fe-06fc-439d-b2a1-c873388cf554/status",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/identity/users/1cc4a4fe-06fc-439d-b2a1-c873388cf554",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/identity/users",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/identity/users/1cc4a4fe-06fc-439d-b2a1-c873388cf554/management",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/identity/users/1cc4a4fe-06fc-439d-b2a1-c873388cf554/status",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/identity/users/1cc4a4fe-06fc-439d-b2a1-c873388cf554",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/identity/users",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/identity/users/1cc4a4fe-06fc-439d-b2a1-c873388cf554/management",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/platform/stores/options",
+      "status": 200
+    }
+  ],
+  "pageErrors": [],
+  "failedStage": "employees",
+  "diagnostic": "locator.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('option').filter({ hasText: '架构正式门店' }).first()\u001b[22m\n",
+  "dom": "- dialog \"配置员工门店\":\n  - button \"关闭\":\n    - img \"close\"\n  - text: 配置员工门店 门店\n  - combobox \"门店\" [expanded]:\n    - listbox:\n      - option \"架构正式门店（main）\": c06c18e4-5046-4f1a-9000-4fae3f76323f\n  - img \"search\"\n  - text: 完整替换所选关联；清空会撤销全部关联。保存后员工须重新登录。\n  - button \"保 存\"\n  - button \"取 消\""
+}

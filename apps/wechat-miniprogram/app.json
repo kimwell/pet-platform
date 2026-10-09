@@ -1,0 +1,40 @@
+{
+  "pages": [
+    "pages/customer/home/index",
+    "pages/customer/rooms/index",
+    "pages/customer/orders/index",
+    "pages/customer/mine/index",
+    "pages/system/entry/index"
+  ],
+  "window": {
+    "navigationStyle": "custom",
+    "navigationBarTextStyle": "black",
+    "backgroundColor": "#FBF8F3"
+  },
+  "tabBar": {
+    "custom": true,
+    "color": "#9EA3A7",
+    "selectedColor": "#C94D1A",
+    "backgroundColor": "#FFFFFF",
+    "list": [
+      {
+        "pagePath": "pages/customer/home/index",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/customer/rooms/index",
+        "text": "找房"
+      },
+      {
+        "pagePath": "pages/customer/orders/index",
+        "text": "订单"
+      },
+      {
+        "pagePath": "pages/customer/mine/index",
+        "text": "我的"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

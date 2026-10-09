@@ -1,0 +1,40 @@
+
+> pet-platform@0.0.0 build:web /Users/kimwell/work/pet-platform
+> pnpm --filter @pet/admin-web build
+
+
+> @pet/admin-web@0.0.0 build /Users/kimwell/work/pet-platform/apps/admin-web
+> tsc --noEmit && vite build
+
+vite v7.3.7 building client environment for production...
+transforming...
+✓ 1723 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                             0.41 kB │ gzip:   0.31 kB
+dist/assets/index-DqYehf_g.css             10.52 kB │ gzip:   3.20 kB
+dist/assets/SessionFailure-DLAYo8KG.js      0.94 kB │ gzip:   0.57 kB
+dist/assets/AccountHome-CxLfko2t.js         0.96 kB │ gzip:   0.58 kB
+dist/assets/securityForm-B5_-J1xz.js        1.17 kB │ gzip:   0.80 kB
+dist/assets/LoginPage-CiZiUNxn.js           3.70 kB │ gzip:   1.84 kB
+dist/assets/AccountSecurity-DXHsdgse.js     4.08 kB │ gzip:   1.95 kB
+dist/assets/useMutation-kf3JzAU1.js         4.62 kB │ gzip:   1.82 kB
+dist/assets/index-Bpc57jIp.js               5.45 kB │ gzip:   2.52 kB
+dist/assets/index-DHCAGnKk.js               6.85 kB │ gzip:   2.84 kB
+dist/assets/index-Cljg6BbB.js               7.92 kB │ gzip:   2.81 kB
+dist/assets/index-CosPUgya.js               8.66 kB │ gzip:   3.41 kB
+dist/assets/RolesPage-Dfh22Z0I.js          10.38 kB │ gzip:   4.13 kB
+dist/assets/index-DIhTsb0F.js              10.86 kB │ gzip:   4.07 kB
+dist/assets/index-Cn-3KuA9.js              11.55 kB │ gzip:   4.35 kB
+dist/assets/EmployeeListPage-BiJROANW.js   21.47 kB │ gzip:   7.69 kB
+dist/assets/index-kEe1Fcla.js              36.41 kB │ gzip:  13.78 kB
+dist/assets/index-DKk8t2Nx.js              49.02 kB │ gzip:  18.83 kB
+dist/assets/index-BOCT10G2.js              83.60 kB │ gzip:  25.53 kB
+dist/assets/index-BlYJ4fOh.js             264.08 kB │ gzip:  86.03 kB
+dist/assets/index-qJzJr90J.js             738.11 kB │ gzip: 243.48 kB
+
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+✓ built in 3.89s

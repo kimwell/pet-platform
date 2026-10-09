@@ -1,8 +1,8 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import { RouterProvider } from '@tanstack/react-router';
-import { AppProviders } from './app/providers/AppProviders';
-import { router, services } from './app/router/router';
+import { AppProviders } from './config/AppProviders';
+import { router, services } from './router/router';
 import 'antd/dist/reset.css';
 import './styles/global.css';
 

@@ -1,0 +1,41 @@
+{
+  "status": "PASS",
+  "preservedFiles": 533,
+  "changedHistoricalFiles": [],
+  "frozenSources": [
+    {
+      "file": "package.json",
+      "unchanged": true,
+      "sha256": "42513d4567388b1b2696000a7050e1cc11ab64daa5bea880a317056135c993f0"
+    },
+    {
+      "file": "pnpm-lock.yaml",
+      "unchanged": true,
+      "sha256": "2fd074d15a9c72032eb8b826c8789f792e2dd1bd06a83aa33fbe9b0b74b5b86d"
+    },
+    {
+      "file": "docs/development/VERSION-MATRIX.md",
+      "unchanged": true,
+      "sha256": "497b889028a09fcb68a2d8d3fbea1c80fa5951102a004a6ac9859bd5004c0731"
+    },
+    {
+      "file": "apps/backend/pom.xml",
+      "unchanged": true,
+      "sha256": "e1587b608279de1be4cedd860e4eb41a9ae0b7ab8f39a429cf94c82065df9099"
+    },
+    {
+      "file": "apps/admin-web/package.json",
+      "unchanged": true,
+      "sha256": "1b325995002de7acabd73163b411e5a3a5a63397079432a379868dbb3349ea38"
+    },
+    {
+      "file": "packages/api-contracts/openapi/backend.openapi.json",
+      "unchanged": true,
+      "sha256": "49b4b04ca2c11ae259a963d3d6b8a9788b235e426539fdb9ee1943e4d04cb659"
+    }
+  ],
+  "miniDeclarationMovedByteIdentically": true,
+  "miniIntermediateDirectoryRemoved": true,
+  "privateValueLeakFiles": [],
+  "brokenChangedDocumentLinks": []
+}

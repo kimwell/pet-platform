@@ -1,0 +1,14 @@
+
+> pet-platform@0.0.0 check:miniprogram /Users/kimwell/work/pet-platform
+> pnpm --filter @pet/wechat-miniprogram typecheck && pnpm --filter @pet/wechat-miniprogram lint
+
+
+> @pet/wechat-miniprogram@0.0.0 typecheck /Users/kimwell/work/pet-platform/apps/wechat-miniprogram
+> tsc --noEmit
+
+miniprogram/utils/navigation.ts(18,4): error TS2352: Conversion of type 'TrivialInstance' to type 'CustomerTabBar | undefined' may be a mistake because neither type sufficiently overlaps with the other. If this was intentional, convert the expression to 'unknown' first.
+  Property 'syncRoute' is missing in type 'InstanceProperties & InstanceMethods<IAnyObject> & IAnyObject & Omit<IAnyObject, "properties" | "methods" | "data"> & { ...; }' but required in type 'CustomerTabBar'.
+/Users/kimwell/work/pet-platform/apps/wechat-miniprogram:
+ ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL  @pet/wechat-miniprogram@0.0.0 typecheck: `tsc --noEmit`
+Exit status 2
+ ELIFECYCLE  Command failed with exit code 2.

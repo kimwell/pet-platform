@@ -1,0 +1,13 @@
+
+> pet-platform@0.0.0 check:web /Users/kimwell/work/pet-platform
+> pnpm --filter @pet/admin-web typecheck && pnpm --filter @pet/admin-web lint && pnpm --filter @pet/admin-web test
+
+
+> @pet/admin-web@0.0.0 typecheck /Users/kimwell/work/pet-platform/apps/admin-web
+> tsc --noEmit
+
+src/router/router.ts(27,22): error TS6133: 'space' is declared but its value is never read.
+/Users/kimwell/work/pet-platform/apps/admin-web:
+ ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL  @pet/admin-web@0.0.0 typecheck: `tsc --noEmit`
+Exit status 2
+ ELIFECYCLE  Command failed with exit code 2.

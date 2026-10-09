@@ -1,0 +1,7 @@
+<view wx:if="{{placeholder}}" class="navigator-placeholder" style="height:{{geometry.totalHeight}}px" />
+<view class="navigator" style="padding-top:{{geometry.statusBarHeight}}px" aria-role="navigation" aria-label="页面导航">
+  <view class="navigator-content" style="height:{{geometry.barHeight}}px;padding-right:{{geometry.contentRight}}px">
+    <button wx:if="{{back}}" class="navigator-back" aria-label="返回上一页" bindtap="goBack"><view class="back-chevron" /></button>
+    <view class="navigator-title"><slot name="title" /><text wx:if="{{title}}">{{title}}</text></view><slot />
+  </view>
+</view>

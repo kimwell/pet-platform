@@ -3,14 +3,23 @@
     "target": "ES2020",
     "module": "CommonJS",
     "moduleResolution": "Node",
-    "lib": ["ES2020"],
-    "types": ["miniprogram-api-typings"],
+    "lib": [
+      "ES2020"
+    ],
+    "types": [
+      "miniprogram-api-typings"
+    ],
     "strict": true,
     "skipLibCheck": true,
     "noEmit": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true
   },
-  "include": ["miniprogram/**/*.ts"],
-  "exclude": ["miniprogram/miniprogram_npm"]
+  "include": [
+    "**/*.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "miniprogram_npm"
+  ]
 }

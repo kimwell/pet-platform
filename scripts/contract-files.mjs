@@ -22,16 +22,16 @@ export async function differences(root, artifacts) {
     try { actual = await readFile(join(root, path), 'utf8'); } catch (error) { if (error.code !== 'ENOENT') throw error; }
     if (actual !== expected) changed.push(path);
   }
-  const mini = join(root, 'apps/wechat-miniprogram/miniprogram/types/generated');
+  const mini = join(root, 'apps/wechat-miniprogram/types/generated');
   try {
-    for (const file of await readdir(mini)) if (file !== 'api.d.ts') changed.push('apps/wechat-miniprogram/miniprogram/types/generated/' + file);
+    for (const file of await readdir(mini)) if (file !== 'api.d.ts') changed.push('apps/wechat-miniprogram/types/generated/' + file);
   } catch (error) { if (error.code !== 'ENOENT') throw error; }
   return changed.sort();
 }
 export async function syncMini(root, declaration) {
   // 删除范围是固定的类型生成目录；拒绝符号链接、子目录和未标记的手写文件。
-  const directory = join(root, 'apps/wechat-miniprogram/miniprogram/types/generated');
-  for (const ancestor of ['apps', 'apps/wechat-miniprogram', 'apps/wechat-miniprogram/miniprogram', 'apps/wechat-miniprogram/miniprogram/types', 'apps/wechat-miniprogram/miniprogram/types/generated']) {
+  const directory = join(root, 'apps/wechat-miniprogram/types/generated');
+  for (const ancestor of ['apps', 'apps/wechat-miniprogram', 'apps/wechat-miniprogram/types', 'apps/wechat-miniprogram/types/generated']) {
     try {
       if ((await lstat(join(root, ancestor))).isSymbolicLink()) throw new Error('小程序生成路径禁止符号链接');
     } catch (error) { if (error.code !== 'ENOENT') throw error; }

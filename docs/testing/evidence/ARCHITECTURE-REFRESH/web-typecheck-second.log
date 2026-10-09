@@ -1,0 +1,72 @@
+
+> @pet/admin-web@0.0.0 typecheck /Users/kimwell/work/pet-platform/apps/admin-web
+> tsc --noEmit
+
+src/pages/admin/identity/roles/RolesPage.tsx(56,9): error TS17014: JSX fragment has no corresponding closing tag.
+src/pages/admin/identity/roles/RolesPage.tsx(66,22): error TS1003: Identifier expected.
+src/pages/admin/identity/roles/RolesPage.tsx(67,1): error TS1381: Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+src/pages/admin/identity/roles/RolesPage.tsx(68,60): error TS1005: '}' expected.
+src/pages/admin/identity/roles/RolesPage.tsx(68,106): error TS1382: Unexpected token. Did you mean `{'>'}` or `&gt;`?
+src/pages/admin/identity/roles/RolesPage.tsx(68,123): error TS1003: Identifier expected.
+src/pages/admin/identity/roles/RolesPage.tsx(68,134): error TS1382: Unexpected token. Did you mean `{'>'}` or `&gt;`?
+src/pages/admin/identity/roles/RolesPage.tsx(68,136): error TS1381: Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+src/pages/admin/identity/roles/RolesPage.tsx(69,3): error TS1109: Expression expected.
+src/pages/admin/identity/roles/RolesPage.tsx(71,36): error TS1003: Identifier expected.
+src/pages/admin/identity/roles/RolesPage.tsx(71,53): error TS1382: Unexpected token. Did you mean `{'>'}` or `&gt;`?
+src/pages/admin/identity/roles/RolesPage.tsx(72,41): error TS1003: Identifier expected.
+src/pages/admin/identity/roles/RolesPage.tsx(72,64): error TS1382: Unexpected token. Did you mean `{'>'}` or `&gt;`?
+src/pages/admin/identity/roles/RolesPage.tsx(73,43): error TS1003: Identifier expected.
+src/pages/admin/identity/roles/RolesPage.tsx(73,68): error TS1382: Unexpected token. Did you mean `{'>'}` or `&gt;`?
+src/pages/admin/identity/roles/RolesPage.tsx(74,81): error TS17008: JSX element 'string' has no corresponding closing tag.
+src/pages/admin/identity/roles/RolesPage.tsx(77,33): error TS1005: '}' expected.
+src/pages/admin/identity/roles/RolesPage.tsx(77,56): error TS1005: '}' expected.
+src/pages/admin/identity/roles/RolesPage.tsx(77,99): error TS1381: Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+src/pages/admin/identity/roles/RolesPage.tsx(77,134): error TS1005: '}' expected.
+src/pages/admin/identity/roles/RolesPage.tsx(77,148): error TS1381: Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+src/pages/admin/identity/roles/RolesPage.tsx(77,151): error TS1381: Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+src/pages/admin/identity/roles/RolesPage.tsx(78,40): error TS1382: Unexpected token. Did you mean `{'>'}` or `&gt;`?
+src/pages/admin/identity/roles/RolesPage.tsx(79,39): error TS1005: '}' expected.
+src/pages/admin/identity/roles/RolesPage.tsx(79,95): error TS1005: '}' expected.
+src/pages/admin/identity/roles/RolesPage.tsx(79,195): error TS1381: Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+src/pages/admin/identity/roles/RolesPage.tsx(79,199): error TS1382: Unexpected token. Did you mean `{'>'}` or `&gt;`?
+src/pages/admin/identity/roles/RolesPage.tsx(79,222): error TS17008: JSX element 'MutationResult' has no corresponding closing tag.
+src/pages/admin/identity/roles/RolesPage.tsx(79,333): error TS1005: '}' expected.
+src/pages/admin/identity/roles/RolesPage.tsx(79,367): error TS1005: '}' expected.
+src/pages/admin/identity/roles/RolesPage.tsx(79,391): error TS1381: Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+src/pages/admin/identity/roles/RolesPage.tsx(79,393): error TS1381: Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+src/pages/admin/identity/roles/RolesPage.tsx(80,43): error TS1382: Unexpected token. Did you mean `{'>'}` or `&gt;`?
+src/pages/admin/identity/roles/RolesPage.tsx(80,85): error TS1005: '}' expected.
+src/pages/admin/identity/roles/RolesPage.tsx(80,377): error TS1005: '}' expected.
+src/pages/admin/identity/roles/RolesPage.tsx(80,382): error TS1382: Unexpected token. Did you mean `{'>'}` or `&gt;`?
+src/pages/admin/identity/roles/RolesPage.tsx(80,413): error TS1381: Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+src/pages/admin/identity/roles/RolesPage.tsx(80,417): error TS1381: Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+src/pages/admin/identity/roles/RolesPage.tsx(81,21): error TS1382: Unexpected token. Did you mean `{'>'}` or `&gt;`?
+src/pages/admin/identity/roles/RolesPage.tsx(81,89): error TS1005: '}' expected.
+src/pages/admin/identity/roles/RolesPage.tsx(81,174): error TS1381: Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+src/pages/admin/identity/roles/RolesPage.tsx(81,192): error TS1382: Unexpected token. Did you mean `{'>'}` or `&gt;`?
+src/pages/admin/identity/roles/RolesPage.tsx(81,222): error TS1005: '}' expected.
+src/pages/admin/identity/roles/RolesPage.tsx(81,224): error TS1381: Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+src/pages/admin/identity/roles/RolesPage.tsx(81,226): error TS1381: Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+src/pages/admin/identity/roles/RolesPage.tsx(84,123): error TS1382: Unexpected token. Did you mean `{'>'}` or `&gt;`?
+src/pages/admin/identity/roles/RolesPage.tsx(84,127): error TS1109: Expression expected.
+src/pages/admin/identity/roles/RolesPage.tsx(84,341): error TS1381: Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+src/pages/admin/identity/roles/RolesPage.tsx(85,33): error TS1382: Unexpected token. Did you mean `{'>'}` or `&gt;`?
+src/pages/admin/identity/roles/RolesPage.tsx(85,37): error TS1109: Expression expected.
+src/pages/admin/identity/roles/RolesPage.tsx(85,183): error TS1381: Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+src/pages/admin/identity/roles/RolesPage.tsx(86,44): error TS1382: Unexpected token. Did you mean `{'>'}` or `&gt;`?
+src/pages/admin/identity/roles/RolesPage.tsx(87,76): error TS1005: '}' expected.
+src/pages/admin/identity/roles/RolesPage.tsx(87,108): error TS1005: '}' expected.
+src/pages/admin/identity/roles/RolesPage.tsx(87,122): error TS1381: Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+src/pages/admin/identity/roles/RolesPage.tsx(88,30): error TS1005: '}' expected.
+src/pages/admin/identity/roles/RolesPage.tsx(88,127): error TS1381: Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+src/pages/admin/identity/roles/RolesPage.tsx(90,3): error TS1381: Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+src/pages/admin/identity/roles/RolesPage.tsx(116,1): error TS1381: Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+src/pages/admin/identity/roles/RolesPage.tsx(118,53): error TS1005: '}' expected.
+src/pages/admin/identity/roles/RolesPage.tsx(118,86): error TS1109: Expression expected.
+src/pages/admin/identity/roles/RolesPage.tsx(118,95): error TS1005: '}' expected.
+src/pages/admin/identity/roles/RolesPage.tsx(118,120): error TS1381: Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+src/pages/admin/identity/roles/RolesPage.tsx(118,122): error TS1381: Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+src/pages/admin/identity/roles/RolesPage.tsx(119,1): error TS1005: '</' expected.
+/Users/kimwell/work/pet-platform/apps/admin-web:
+ ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL  @pet/admin-web@0.0.0 typecheck: `tsc --noEmit`
+Exit status 2

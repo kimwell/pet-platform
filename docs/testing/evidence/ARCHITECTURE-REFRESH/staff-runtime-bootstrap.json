@@ -1,0 +1,53 @@
+[
+  {
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "scripts/backend-identity.sh",
+      "bootstrap",
+      "--tenant-code",
+      "arch-staff",
+      "--tenant-name",
+      "架构员工授权验收租户",
+      "--store-code",
+      "main",
+      "--store-name",
+      "架构正式门店",
+      "--admin-login",
+      "admin",
+      "--password-stdin"
+    ],
+    "exitCode": 0,
+    "summary": "初始化成功：tenantId=9f65ffcc-9ff4-48d4-a92f-682908cdda6c employeeId=7b405420-9800-4edd-b592-d7d326f5482a storeId=c06c18e4-5046-4f1a-9000-4fae3f76323f\n"
+  },
+  {
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "scripts/backend-identity.sh",
+      "identity-management-upgrade"
+    ],
+    "exitCode": 2,
+    "summary": "员工与角色管理权限升级失败；核对命令选项、初始化角色、迁移及保留角色\n"
+  },
+  {
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "scripts/backend-identity.sh",
+      "identity-management-upgrade",
+      "--tenant-id",
+      "9f65ffcc-9ff4-48d4-a92f-682908cdda6c"
+    ],
+    "exitCode": 0,
+    "summary": "员工与角色管理权限升级完成，新增范围条数=8\n"
+  },
+  {
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "scripts/backend-identity.sh",
+      "organization-upgrade",
+      "--tenant-id",
+      "9f65ffcc-9ff4-48d4-a92f-682908cdda6c"
+    ],
+    "exitCode": 0,
+    "summary": "组织管理权限升级完成，新增范围条数=6\n"
+  }
+]

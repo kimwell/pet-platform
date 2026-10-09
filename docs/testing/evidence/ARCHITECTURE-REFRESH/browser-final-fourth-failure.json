@@ -1,0 +1,111 @@
+{
+  "status": "FAIL",
+  "scenarios": [
+    {
+      "name": "参考截图框架实测：64px通栏、240/64px侧栏、独立滚动与白色卡片",
+      "status": "PASS"
+    }
+  ],
+  "errors": [],
+  "layout": [
+    {
+      "key": "platform-accounts",
+      "viewport": {
+        "width": 1827,
+        "height": 1075
+      },
+      "header": {
+        "left": 0,
+        "top": 0,
+        "width": 1827,
+        "height": 64,
+        "background": "rgb(255, 255, 255)",
+        "overflowY": "visible"
+      },
+      "sidebar": {
+        "left": 0,
+        "top": 64,
+        "width": 240,
+        "height": 1011,
+        "background": "rgb(255, 255, 255)",
+        "overflowY": "visible"
+      },
+      "breadcrumb": {
+        "left": 256,
+        "top": 64,
+        "width": 1555,
+        "height": 40,
+        "background": "rgba(0, 0, 0, 0)",
+        "overflowY": "visible"
+      },
+      "card": {
+        "left": 256,
+        "top": 104,
+        "width": 1555,
+        "height": 381.265625,
+        "background": "rgb(255, 255, 255)",
+        "overflowY": "visible"
+      },
+      "scroll": {
+        "left": 240,
+        "top": 64,
+        "width": 1587,
+        "height": 1011,
+        "background": "rgba(0, 0, 0, 0)",
+        "overflowY": "auto"
+      },
+      "noPageOverflow": true
+    },
+    {
+      "key": "collapsed",
+      "viewport": {
+        "width": 1827,
+        "height": 1075
+      },
+      "header": {
+        "left": 0,
+        "top": 0,
+        "width": 1827,
+        "height": 64,
+        "background": "rgb(255, 255, 255)",
+        "overflowY": "visible"
+      },
+      "sidebar": {
+        "left": 0,
+        "top": 64,
+        "width": 64,
+        "height": 1011,
+        "background": "rgb(255, 255, 255)",
+        "overflowY": "visible"
+      },
+      "breadcrumb": {
+        "left": 80,
+        "top": 64,
+        "width": 1731,
+        "height": 40,
+        "background": "rgba(0, 0, 0, 0)",
+        "overflowY": "visible"
+      },
+      "card": {
+        "left": 80,
+        "top": 104,
+        "width": 1731,
+        "height": 381.265625,
+        "background": "rgb(255, 255, 255)",
+        "overflowY": "visible"
+      },
+      "scroll": {
+        "left": 64,
+        "top": 64,
+        "width": 1763,
+        "height": 1011,
+        "background": "rgba(0, 0, 0, 0)",
+        "overflowY": "auto"
+      },
+      "noPageOverflow": true
+    }
+  ],
+  "failedStage": "platform",
+  "diagnostic": "locator.waitFor: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('dialog').locator('.ant-modal-title').filter({ hasText: '平台账号详情' }) to be visible\u001b[22m\n",
+  "dom": "- dialog \"确认平台账号状态\":\n  - button \"关闭\":\n    - img \"close\"\n  - text: 确认平台账号状态\n  - alert:\n    - img \"close-circle\"\n    - text: 操作过于频繁，请在 61 秒后重试 排错编号：348aecfe9cd0433a84ac91558568dc32\n    - button \"复制\":\n      - img \"copy\"\n  - alert: 停用会拒绝新登录，并使全部旧平台会话失效；不能移除最后一个有效管理入口。\n  - button \"确认执行\"\n  - button \"取 消\""
+}

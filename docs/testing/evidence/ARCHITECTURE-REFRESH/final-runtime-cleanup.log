@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "/Users/kimwell/work/pet-platform/docs/testing/evidence/ARCHITECTURE-REFRESH/replay/cleanup.py", line 60, in <module>
+    assert run(['docker', 'rm', name]).returncode == 0
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError

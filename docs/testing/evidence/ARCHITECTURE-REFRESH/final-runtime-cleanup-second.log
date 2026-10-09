@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "/Users/kimwell/work/pet-platform/docs/testing/evidence/ARCHITECTURE-REFRESH/replay/cleanup.py", line 57, in <module>
+    assert 'No such object' in observed.stderr, '容器查询失败，不能认定资源已移除'
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 容器查询失败，不能认定资源已移除

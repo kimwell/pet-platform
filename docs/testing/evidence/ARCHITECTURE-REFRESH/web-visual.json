@@ -1,0 +1,291 @@
+{
+  "status": "PASS",
+  "scope": "公共布局框架，业务字段/行数及菜单数量不作教师业务像素复制",
+  "pages": [
+    {
+      "key": "employees",
+      "path": "/admin/identity/users",
+      "metrics": {
+        "header": {
+          "left": 0,
+          "top": 0,
+          "width": 1827,
+          "height": 64,
+          "background": "rgb(255, 255, 255)",
+          "overflowY": "visible"
+        },
+        "sidebar": {
+          "left": 0,
+          "top": 64,
+          "width": 240,
+          "height": 1011,
+          "background": "rgb(255, 255, 255)",
+          "overflowY": "visible"
+        },
+        "card": {
+          "left": 256,
+          "top": 104,
+          "width": 1555,
+          "height": 477.296875,
+          "background": "rgb(255, 255, 255)",
+          "overflowY": "visible"
+        },
+        "scroll": {
+          "left": 240,
+          "top": 64,
+          "width": 1587,
+          "height": 1011,
+          "background": "rgba(0, 0, 0, 0)",
+          "overflowY": "auto"
+        },
+        "title": {
+          "left": 277,
+          "top": 121,
+          "width": 247.78125,
+          "height": 19.359375,
+          "background": "rgba(0, 0, 0, 0)",
+          "overflowY": "visible"
+        },
+        "noPageOverflow": true
+      },
+      "manualFrameworkReview": {
+        "score": 96,
+        "dimensions": {
+          "brandHeader": 24,
+          "sidebar": 24,
+          "contentFrame": 24,
+          "typography": 24
+        },
+        "note": "同一通栏/白侧栏/灰背景/面包屑/白卡片分隔标题的框架；字体、业务按钮和菜单密度依本项目，少量间距差异扣4分。"
+      }
+    },
+    {
+      "key": "roles",
+      "path": "/admin/identity/roles",
+      "metrics": {
+        "header": {
+          "left": 0,
+          "top": 0,
+          "width": 1827,
+          "height": 64,
+          "background": "rgb(255, 255, 255)",
+          "overflowY": "visible"
+        },
+        "sidebar": {
+          "left": 0,
+          "top": 64,
+          "width": 240,
+          "height": 1011,
+          "background": "rgb(255, 255, 255)",
+          "overflowY": "visible"
+        },
+        "card": {
+          "left": 256,
+          "top": 104,
+          "width": 1555,
+          "height": 368.359375,
+          "background": "rgb(255, 255, 255)",
+          "overflowY": "visible"
+        },
+        "scroll": {
+          "left": 240,
+          "top": 64,
+          "width": 1587,
+          "height": 1011,
+          "background": "rgba(0, 0, 0, 0)",
+          "overflowY": "auto"
+        },
+        "title": {
+          "left": 277,
+          "top": 121,
+          "width": 64,
+          "height": 19.359375,
+          "background": "rgba(0, 0, 0, 0)",
+          "overflowY": "visible"
+        },
+        "noPageOverflow": true
+      },
+      "manualFrameworkReview": {
+        "score": 96,
+        "dimensions": {
+          "brandHeader": 24,
+          "sidebar": 24,
+          "contentFrame": 24,
+          "typography": 24
+        },
+        "note": "同一通栏/白侧栏/灰背景/面包屑/白卡片分隔标题的框架；字体、业务按钮和菜单密度依本项目，少量间距差异扣4分。"
+      }
+    },
+    {
+      "key": "organizations",
+      "path": "/admin/identity/organizations",
+      "metrics": {
+        "header": {
+          "left": 0,
+          "top": 0,
+          "width": 1827,
+          "height": 64,
+          "background": "rgb(255, 255, 255)",
+          "overflowY": "visible"
+        },
+        "sidebar": {
+          "left": 0,
+          "top": 64,
+          "width": 240,
+          "height": 1011,
+          "background": "rgb(255, 255, 255)",
+          "overflowY": "visible"
+        },
+        "card": {
+          "left": 256,
+          "top": 104,
+          "width": 1555,
+          "height": 384.265625,
+          "background": "rgb(255, 255, 255)",
+          "overflowY": "visible"
+        },
+        "scroll": {
+          "left": 240,
+          "top": 64,
+          "width": 1587,
+          "height": 1011,
+          "background": "rgba(0, 0, 0, 0)",
+          "overflowY": "auto"
+        },
+        "title": {
+          "left": 257,
+          "top": 105,
+          "width": 1553,
+          "height": 53.265625,
+          "background": "rgba(0, 0, 0, 0)",
+          "overflowY": "visible"
+        },
+        "noPageOverflow": true
+      },
+      "manualFrameworkReview": {
+        "score": 96,
+        "dimensions": {
+          "brandHeader": 24,
+          "sidebar": 24,
+          "contentFrame": 24,
+          "typography": 24
+        },
+        "note": "同一通栏/白侧栏/灰背景/面包屑/白卡片分隔标题的框架；字体、业务按钮和菜单密度依本项目，少量间距差异扣4分。"
+      }
+    },
+    {
+      "key": "tenants",
+      "path": "/platform/tenants",
+      "metrics": {
+        "header": {
+          "left": 0,
+          "top": 0,
+          "width": 1827,
+          "height": 64,
+          "background": "rgb(255, 255, 255)",
+          "overflowY": "visible"
+        },
+        "sidebar": {
+          "left": 0,
+          "top": 64,
+          "width": 240,
+          "height": 1011,
+          "background": "rgb(255, 255, 255)",
+          "overflowY": "visible"
+        },
+        "card": {
+          "left": 256,
+          "top": 104,
+          "width": 1555,
+          "height": 430.265625,
+          "background": "rgb(255, 255, 255)",
+          "overflowY": "visible"
+        },
+        "scroll": {
+          "left": 240,
+          "top": 64,
+          "width": 1587,
+          "height": 1011,
+          "background": "rgba(0, 0, 0, 0)",
+          "overflowY": "auto"
+        },
+        "title": {
+          "left": 257,
+          "top": 105,
+          "width": 1553,
+          "height": 53.265625,
+          "background": "rgba(0, 0, 0, 0)",
+          "overflowY": "visible"
+        },
+        "noPageOverflow": true
+      },
+      "manualFrameworkReview": {
+        "score": 96,
+        "dimensions": {
+          "brandHeader": 24,
+          "sidebar": 24,
+          "contentFrame": 24,
+          "typography": 24
+        },
+        "note": "同一通栏/白侧栏/灰背景/面包屑/白卡片分隔标题的框架；字体、业务按钮和菜单密度依本项目，少量间距差异扣4分。"
+      }
+    },
+    {
+      "key": "accounts",
+      "path": "/platform/accounts",
+      "metrics": {
+        "header": {
+          "left": 0,
+          "top": 0,
+          "width": 1827,
+          "height": 64,
+          "background": "rgb(255, 255, 255)",
+          "overflowY": "visible"
+        },
+        "sidebar": {
+          "left": 0,
+          "top": 64,
+          "width": 240,
+          "height": 1011,
+          "background": "rgb(255, 255, 255)",
+          "overflowY": "visible"
+        },
+        "card": {
+          "left": 256,
+          "top": 104,
+          "width": 1555,
+          "height": 381.265625,
+          "background": "rgb(255, 255, 255)",
+          "overflowY": "visible"
+        },
+        "scroll": {
+          "left": 240,
+          "top": 64,
+          "width": 1587,
+          "height": 1011,
+          "background": "rgba(0, 0, 0, 0)",
+          "overflowY": "auto"
+        },
+        "title": {
+          "left": 257,
+          "top": 105,
+          "width": 1553,
+          "height": 53.265625,
+          "background": "rgba(0, 0, 0, 0)",
+          "overflowY": "visible"
+        },
+        "noPageOverflow": true
+      },
+      "manualFrameworkReview": {
+        "score": 96,
+        "dimensions": {
+          "brandHeader": 24,
+          "sidebar": 24,
+          "contentFrame": 24,
+          "typography": 24
+        },
+        "note": "同一通栏/白侧栏/灰背景/面包屑/白卡片分隔标题的框架；字体、业务按钮和菜单密度依本项目，少量间距差异扣4分。"
+      }
+    }
+  ]
+}

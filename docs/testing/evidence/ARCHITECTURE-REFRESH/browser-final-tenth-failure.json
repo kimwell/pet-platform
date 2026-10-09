@@ -1,0 +1,227 @@
+{
+  "status": "FAIL",
+  "scenarios": [
+    {
+      "name": "参考截图框架实测：64px通栏、240/64px侧栏、独立滚动与白色卡片",
+      "status": "PASS"
+    },
+    {
+      "name": "租户启停正式接口、旧详情地址替换和单层恢复",
+      "status": "PASS"
+    },
+    {
+      "name": "真实浏览器离线写入无确认，草稿保留/禁重放，恢复取消返回详情",
+      "status": "PASS"
+    },
+    {
+      "name": "真实组织总数触发末页一次replace回退",
+      "status": "PASS"
+    },
+    {
+      "name": "组织旧详情链接和启用恢复",
+      "status": "PASS"
+    },
+    {
+      "name": "角色启停和旧详情链接替换，取消/保存仍回父详情",
+      "status": "PASS"
+    },
+    {
+      "name": "非法旧详情目标反馈并拒绝打开弹框",
+      "status": "PASS"
+    }
+  ],
+  "errors": [],
+  "layout": [
+    {
+      "key": "platform-accounts",
+      "viewport": {
+        "width": 1827,
+        "height": 1075
+      },
+      "header": {
+        "left": 0,
+        "top": 0,
+        "width": 1827,
+        "height": 64,
+        "background": "rgb(255, 255, 255)",
+        "overflowY": "visible"
+      },
+      "sidebar": {
+        "left": 0,
+        "top": 64,
+        "width": 240,
+        "height": 1011,
+        "background": "rgb(255, 255, 255)",
+        "overflowY": "visible"
+      },
+      "breadcrumb": {
+        "left": 256,
+        "top": 64,
+        "width": 1555,
+        "height": 40,
+        "background": "rgba(0, 0, 0, 0)",
+        "overflowY": "visible"
+      },
+      "card": {
+        "left": 256,
+        "top": 104,
+        "width": 1555,
+        "height": 381.265625,
+        "background": "rgb(255, 255, 255)",
+        "overflowY": "visible"
+      },
+      "scroll": {
+        "left": 240,
+        "top": 64,
+        "width": 1587,
+        "height": 1011,
+        "background": "rgba(0, 0, 0, 0)",
+        "overflowY": "auto"
+      },
+      "noPageOverflow": true
+    },
+    {
+      "key": "collapsed",
+      "viewport": {
+        "width": 1827,
+        "height": 1075
+      },
+      "header": {
+        "left": 0,
+        "top": 0,
+        "width": 1827,
+        "height": 64,
+        "background": "rgb(255, 255, 255)",
+        "overflowY": "visible"
+      },
+      "sidebar": {
+        "left": 0,
+        "top": 64,
+        "width": 64,
+        "height": 1011,
+        "background": "rgb(255, 255, 255)",
+        "overflowY": "visible"
+      },
+      "breadcrumb": {
+        "left": 80,
+        "top": 64,
+        "width": 1731,
+        "height": 40,
+        "background": "rgba(0, 0, 0, 0)",
+        "overflowY": "visible"
+      },
+      "card": {
+        "left": 80,
+        "top": 104,
+        "width": 1731,
+        "height": 381.265625,
+        "background": "rgb(255, 255, 255)",
+        "overflowY": "visible"
+      },
+      "scroll": {
+        "left": 64,
+        "top": 64,
+        "width": 1763,
+        "height": 1011,
+        "background": "rgba(0, 0, 0, 0)",
+        "overflowY": "auto"
+      },
+      "noPageOverflow": true
+    },
+    {
+      "key": "employees",
+      "viewport": {
+        "width": 1827,
+        "height": 1075
+      },
+      "header": {
+        "left": 0,
+        "top": 0,
+        "width": 1827,
+        "height": 64,
+        "background": "rgb(255, 255, 255)",
+        "overflowY": "visible"
+      },
+      "sidebar": {
+        "left": 0,
+        "top": 64,
+        "width": 240,
+        "height": 1011,
+        "background": "rgb(255, 255, 255)",
+        "overflowY": "visible"
+      },
+      "breadcrumb": {
+        "left": 256,
+        "top": 64,
+        "width": 1555,
+        "height": 40,
+        "background": "rgba(0, 0, 0, 0)",
+        "overflowY": "visible"
+      },
+      "card": {
+        "left": 256,
+        "top": 104,
+        "width": 1555,
+        "height": 477.296875,
+        "background": "rgb(255, 255, 255)",
+        "overflowY": "visible"
+      },
+      "scroll": {
+        "left": 240,
+        "top": 64,
+        "width": 1587,
+        "height": 1011,
+        "background": "rgba(0, 0, 0, 0)",
+        "overflowY": "auto"
+      },
+      "noPageOverflow": true
+    },
+    {
+      "key": "drawer-390",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "header": {
+        "left": 0,
+        "top": 0,
+        "width": 390,
+        "height": 64,
+        "background": "rgb(255, 255, 255)",
+        "overflowY": "visible"
+      },
+      "sidebar": null,
+      "breadcrumb": {
+        "left": 12,
+        "top": 64,
+        "width": 366,
+        "height": 40,
+        "background": "rgba(0, 0, 0, 0)",
+        "overflowY": "visible"
+      },
+      "card": {
+        "left": 12,
+        "top": 156,
+        "width": 366,
+        "height": 583.296875,
+        "background": "rgb(255, 255, 255)",
+        "overflowY": "visible"
+      },
+      "scroll": {
+        "left": 0,
+        "top": 64,
+        "width": 390,
+        "height": 780,
+        "background": "rgba(0, 0, 0, 0)",
+        "overflowY": "auto"
+      },
+      "noPageOverflow": true
+    }
+  ],
+  "accountOperationEvidence": "browser-final-second-failure.json：本轮最终JAR账号启停/重置/全撤销已通过，后续离线失败另计",
+  "failedStage": "platform",
+  "diagnostic": "Drawer恢复焦点",
+  "dom": [
+    "员工导航当前身份账号安全员工列表角色管理内部组织管理"
+  ]
+}

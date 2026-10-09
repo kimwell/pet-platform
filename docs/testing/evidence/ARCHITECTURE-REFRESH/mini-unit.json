@@ -1,0 +1,23 @@
+{
+  "status": "PASS",
+  "evidenceLevel": "UNIT_FIXTURE",
+  "scope": "仅公共导航逻辑，非真实微信/业务验收",
+  "records": [
+    {
+      "name": "实际导航函数的窗口/胶囊计算，375px技术夹具",
+      "status": "PASS"
+    },
+    {
+      "name": "无效胶囊保守留白技术反例",
+      "status": "PASS"
+    },
+    {
+      "name": "有历史返回及失败回首页技术夹具",
+      "status": "PASS"
+    },
+    {
+      "name": "实际TabBar处理器失败保持原选中项并释放pending，wx技术夹具",
+      "status": "PASS"
+    }
+  ]
+}

@@ -17,10 +17,10 @@ test('稳定化只移除动态loopback地址，保留required、null、枚举及
 test('漂移报告包含真实变化且check不覆盖文件；同步只删除带标识的旧生成类型', async () => {
   const root = await mkdtemp(join(tmpdir(), 'pet-contract-files-'));
   try {
-    const generated = join(root, 'apps/wechat-miniprogram/miniprogram/types/generated');
+    const generated = join(root, 'apps/wechat-miniprogram/types/generated');
     await syncMini(root, 'type Total = string;\n');
     await writeFile(join(generated, 'old.d.ts'), miniDeclaration('旧生成文件'));
-    assert.equal((await differences(root, new Map([['apps/wechat-miniprogram/miniprogram/types/generated/api.d.ts', miniDeclaration('type Total = number;\n')]]))).length, 2);
+    assert.equal((await differences(root, new Map([['apps/wechat-miniprogram/types/generated/api.d.ts', miniDeclaration('type Total = number;\n')]]))).length, 2);
     assert.equal(await readFile(join(generated, 'api.d.ts'), 'utf8'), miniDeclaration('type Total = string;\n'));
     await syncMini(root, 'type Total = string;\n');
     await assert.rejects(readFile(join(generated, 'old.d.ts')));

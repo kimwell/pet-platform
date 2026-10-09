@@ -1,0 +1,8 @@
+file:///Users/kimwell/work/pet-platform/docs/testing/evidence/ARCHITECTURE-REFRESH/replay/browser-manage.mjs:42
+}catch(error){result.status='FAIL';result.failedStage=stage;result.diagnostic=Object.values(secret).reduce((s,v)=>s.replaceAll(v,'<私有值>'),String(error.message)).slice(0,800);result.dom=await p.getByRole('dialog').ariaSnapshot().catch(()=> '不可读取');save();await p.screenshot({path:local+'/browser-manage-failure.png',fullPage:true});throw Error('管理页回归失败：'+stage);}finally{await browser.close();}
+                                                                                                                                                                                                                                                                                                                                                 ^
+
+Error: 管理页回归失败：employees
+    at file:///Users/kimwell/work/pet-platform/docs/testing/evidence/ARCHITECTURE-REFRESH/replay/browser-manage.mjs:42:338
+
+Node.js v24.21.0

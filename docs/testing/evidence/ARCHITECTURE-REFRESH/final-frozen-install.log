@@ -1,0 +1,9 @@
+Scope: all 4 workspace projects
+Lockfile is up to date, resolution step is skipped
+Packages: -75
+---------------------------------------------------------------------------
+
+dependencies:
+- miniprogram-automator 0.12.1
+
+Done in 637ms using pnpm v10.34.6

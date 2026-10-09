@@ -1,10 +1,10 @@
-# 小程序双身份、请求与页面
+# 小程序客户框架与后续开发规范
 
-冻结日期：2026-10-07，P01-02。本文拥有原生小程序状态、导航、分页与媒体行为。原生TypeScript、tdesign-miniprogram、页面data和轻量session服务；不用Taro/uni-app/复杂状态库。目录见 [结构](../architecture/PROJECT-STRUCTURE.md)，精确基础库/DevTools目标见 [版本矩阵](../development/VERSION-MATRIX.md)，本轮未运行DevTools/真机。
+冻结日期：2026-10-07，P01-02。本文拥有原生小程序状态、导航、分页与媒体行为。原生TypeScript、tdesign-miniprogram、页面data和轻量session服务；不用Taro/uni-app/复杂状态库。目录见 [结构](../architecture/PROJECT-STRUCTURE.md)，精确基础库/DevTools目标见 [版本矩阵](../development/VERSION-MATRIX.md)，当前框架的 DevTools 验证见 [统一改造验证](../testing/ARCHITECTURE-REFRESH-VERIFICATION.md)，真机及完整使用端未验收。
 
 ## 能力与两个会话槽位
 
-一个工程初始化可CUSTOMER/STAFF/BOTH，默认BOTH。pages/system提供入口、登录与通用状态；pages/customer/staff分别域内功能。能力开关不授权身份，也不伪造微信登录。
+当前一个工程默认 CUSTOMER，源码直接位于 `apps/wechat-miniprogram/` 根下。实际交付四页公共框架及旧 system/entry 跳转；正文显示未开放，设计样例只留在 ui。没有请求、session、登录或员工分包实现。以下会话、请求、分享、分页、附件规则均是后续实现规范，不是本轮已交付能力。
 
 session服务维护独立customer/staff槽位：token、sessionId、expiresAt、identity、epoch。持久化仅必要Token/到期/session标识，键 `pet.session.customer.v1` / `pet.session.staff.v1`，启动后必须me复核，缓存身份不是可信权限。wx本地存储没有本方案可证明的安全加密，不能声称等价HttpOnly；设备风险以有限期限/撤销控制。不记录Token到日志/分享URL。
 
@@ -20,7 +20,11 @@ wx.request返回success回调只代表网络传输；检查statusCode/信封/tra
 
 ## 导航、入口、分享和扫码
 
-不使用混合两身份原生tabBar。两域普通页面+TDesign底部导航分别实现，system入口可切域；跨域导航必须经过session切换，不navigate到员工页面就继承客户数据。
+当前客户首页、找房、订单、我的为四个原生 TabBar 页面，`custom-tab-bar` 展示五列等宽区域。中间复用原助手图标，点击仅提示“功能暂未开放”，不新增第五个路由。页面 onShow 及组件 pageLifetimes.show 同步实际路由；切换成功才更新，失败保留原选中项并提示。
+
+`navigator-bar` 支持 title、back、默认插槽及 placeholder；一级页无返回。使用 getWindowInfo 与 getMenuButtonBoundingClientRect 计算状态栏、标题右侧胶囊留白和底部安全区，异常胶囊采用保守留白；resize/show 重新计算。有历史栈优先 navigateBack，无栈返回客户首页。文本和形状用 WXML/WXSS，图标引用根 assets，不截整页设计当正文。
+
+未来 STAFF 放独立分包并单独导航，不加入客户原生 Tab；跨域必须经过明确 session 切换，不 navigate 到员工页就继承客户数据。
 
 route/query/scene均不可信：只白名单页面、参数名、UUID/稳定code格式、长度（scene解码前后均限制）、单次decodeURIComponent；拒绝双重编码/外链/任意API地址。tenantCode仅入口线索，storeId只表达意图，服务端复核租户/门店，不能靠扫码自动授权。
 

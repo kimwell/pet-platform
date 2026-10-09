@@ -1,0 +1,434 @@
+{
+  "profile": "iphone5",
+  "status": "FAIL",
+  "pages": [
+    {
+      "key": "home",
+      "metrics": {
+        "route": "pages/customer/home/index",
+        "window": {
+          "pixelRatio": 2,
+          "safeArea": {
+            "top": 20,
+            "left": 0,
+            "right": 320,
+            "bottom": 568,
+            "width": 320,
+            "height": 548
+          },
+          "screenWidth": 320,
+          "screenHeight": 568,
+          "screenTop": 0,
+          "windowWidth": 320,
+          "windowHeight": 568,
+          "statusBarHeight": 20
+        },
+        "capsule": {
+          "width": 87,
+          "height": 32,
+          "left": 226,
+          "top": 24,
+          "right": 313,
+          "bottom": 56
+        },
+        "navigation": {
+          "statusBarHeight": 20,
+          "barHeight": 40,
+          "totalHeight": 60,
+          "contentRight": 106,
+          "safeBottom": 0,
+          "windowWidth": 320
+        },
+        "tab": {
+          "tabs": [
+            {
+              "key": "home",
+              "text": "首页",
+              "pagePath": "/pages/customer/home/index",
+              "icon": "/assets/navigation/home-normal.svg",
+              "selectedIcon": "/assets/navigation/home-active.svg"
+            },
+            {
+              "key": "rooms",
+              "text": "找房",
+              "pagePath": "/pages/customer/rooms/index",
+              "icon": "/assets/navigation/rooms-normal.svg",
+              "selectedIcon": "/assets/navigation/rooms-active.svg"
+            },
+            {
+              "key": "orders",
+              "text": "订单",
+              "pagePath": "/pages/customer/orders/index",
+              "icon": "/assets/navigation/orders-normal.svg",
+              "selectedIcon": "/assets/navigation/orders-active.svg"
+            },
+            {
+              "key": "mine",
+              "text": "我的",
+              "pagePath": "/pages/customer/mine/index",
+              "icon": "/assets/navigation/mine-normal.svg",
+              "selectedIcon": "/assets/navigation/mine-active.svg"
+            }
+          ],
+          "selected": "home",
+          "safeBottom": 0,
+          "switching": false
+        },
+        "boxes": [
+          {
+            "id": "",
+            "dataset": {},
+            "left": 0,
+            "right": 320,
+            "top": 60,
+            "bottom": 253,
+            "width": 320,
+            "height": 193
+          },
+          {
+            "id": "",
+            "dataset": {},
+            "left": 17,
+            "right": 77,
+            "top": 29.5,
+            "bottom": 50.5,
+            "width": 60,
+            "height": 21
+          },
+          {
+            "id": "",
+            "dataset": {},
+            "left": 0,
+            "right": 320,
+            "top": 0,
+            "bottom": 60,
+            "width": 320,
+            "height": 60
+          }
+        ]
+      }
+    },
+    {
+      "key": "rooms",
+      "metrics": {
+        "route": "pages/customer/rooms/index",
+        "window": {
+          "pixelRatio": 2,
+          "safeArea": {
+            "top": 20,
+            "left": 0,
+            "right": 320,
+            "bottom": 568,
+            "width": 320,
+            "height": 548
+          },
+          "screenWidth": 320,
+          "screenHeight": 568,
+          "screenTop": 0,
+          "windowWidth": 320,
+          "windowHeight": 568,
+          "statusBarHeight": 20
+        },
+        "capsule": {
+          "width": 87,
+          "height": 32,
+          "left": 226,
+          "top": 24,
+          "right": 313,
+          "bottom": 56
+        },
+        "navigation": {
+          "statusBarHeight": 20,
+          "barHeight": 40,
+          "totalHeight": 60,
+          "contentRight": 106,
+          "safeBottom": 0,
+          "windowWidth": 320
+        },
+        "tab": {
+          "tabs": [
+            {
+              "key": "home",
+              "text": "首页",
+              "pagePath": "/pages/customer/home/index",
+              "icon": "/assets/navigation/home-normal.svg",
+              "selectedIcon": "/assets/navigation/home-active.svg"
+            },
+            {
+              "key": "rooms",
+              "text": "找房",
+              "pagePath": "/pages/customer/rooms/index",
+              "icon": "/assets/navigation/rooms-normal.svg",
+              "selectedIcon": "/assets/navigation/rooms-active.svg"
+            },
+            {
+              "key": "orders",
+              "text": "订单",
+              "pagePath": "/pages/customer/orders/index",
+              "icon": "/assets/navigation/orders-normal.svg",
+              "selectedIcon": "/assets/navigation/orders-active.svg"
+            },
+            {
+              "key": "mine",
+              "text": "我的",
+              "pagePath": "/pages/customer/mine/index",
+              "icon": "/assets/navigation/mine-normal.svg",
+              "selectedIcon": "/assets/navigation/mine-active.svg"
+            }
+          ],
+          "selected": "rooms",
+          "safeBottom": 0,
+          "switching": false
+        },
+        "boxes": [
+          {
+            "id": "",
+            "dataset": {},
+            "left": 0,
+            "right": 320,
+            "top": 60,
+            "bottom": 253,
+            "width": 320,
+            "height": 193
+          },
+          {
+            "id": "",
+            "dataset": {},
+            "left": 17,
+            "right": 47,
+            "top": 29.5,
+            "bottom": 50.5,
+            "width": 30,
+            "height": 21
+          },
+          {
+            "id": "",
+            "dataset": {},
+            "left": 0,
+            "right": 320,
+            "top": 0,
+            "bottom": 60,
+            "width": 320,
+            "height": 60
+          }
+        ]
+      }
+    },
+    {
+      "key": "orders",
+      "metrics": {
+        "route": "pages/customer/orders/index",
+        "window": {
+          "pixelRatio": 2,
+          "safeArea": {
+            "top": 20,
+            "left": 0,
+            "right": 320,
+            "bottom": 568,
+            "width": 320,
+            "height": 548
+          },
+          "screenWidth": 320,
+          "screenHeight": 568,
+          "screenTop": 0,
+          "windowWidth": 320,
+          "windowHeight": 568,
+          "statusBarHeight": 20
+        },
+        "capsule": {
+          "width": 87,
+          "height": 32,
+          "left": 226,
+          "top": 24,
+          "right": 313,
+          "bottom": 56
+        },
+        "navigation": {
+          "statusBarHeight": 20,
+          "barHeight": 40,
+          "totalHeight": 60,
+          "contentRight": 106,
+          "safeBottom": 0,
+          "windowWidth": 320
+        },
+        "tab": {
+          "tabs": [
+            {
+              "key": "home",
+              "text": "首页",
+              "pagePath": "/pages/customer/home/index",
+              "icon": "/assets/navigation/home-normal.svg",
+              "selectedIcon": "/assets/navigation/home-active.svg"
+            },
+            {
+              "key": "rooms",
+              "text": "找房",
+              "pagePath": "/pages/customer/rooms/index",
+              "icon": "/assets/navigation/rooms-normal.svg",
+              "selectedIcon": "/assets/navigation/rooms-active.svg"
+            },
+            {
+              "key": "orders",
+              "text": "订单",
+              "pagePath": "/pages/customer/orders/index",
+              "icon": "/assets/navigation/orders-normal.svg",
+              "selectedIcon": "/assets/navigation/orders-active.svg"
+            },
+            {
+              "key": "mine",
+              "text": "我的",
+              "pagePath": "/pages/customer/mine/index",
+              "icon": "/assets/navigation/mine-normal.svg",
+              "selectedIcon": "/assets/navigation/mine-active.svg"
+            }
+          ],
+          "selected": "orders",
+          "safeBottom": 0,
+          "switching": false
+        },
+        "boxes": [
+          {
+            "id": "",
+            "dataset": {},
+            "left": 0,
+            "right": 320,
+            "top": 60,
+            "bottom": 253,
+            "width": 320,
+            "height": 193
+          },
+          {
+            "id": "",
+            "dataset": {},
+            "left": 17,
+            "right": 77,
+            "top": 29.5,
+            "bottom": 50.5,
+            "width": 60,
+            "height": 21
+          },
+          {
+            "id": "",
+            "dataset": {},
+            "left": 0,
+            "right": 320,
+            "top": 0,
+            "bottom": 60,
+            "width": 320,
+            "height": 60
+          }
+        ]
+      }
+    },
+    {
+      "key": "mine",
+      "metrics": {
+        "route": "pages/customer/mine/index",
+        "window": {
+          "pixelRatio": 2,
+          "safeArea": {
+            "top": 20,
+            "left": 0,
+            "right": 320,
+            "bottom": 568,
+            "width": 320,
+            "height": 548
+          },
+          "screenWidth": 320,
+          "screenHeight": 568,
+          "screenTop": 0,
+          "windowWidth": 320,
+          "windowHeight": 568,
+          "statusBarHeight": 20
+        },
+        "capsule": {
+          "width": 87,
+          "height": 32,
+          "left": 226,
+          "top": 24,
+          "right": 313,
+          "bottom": 56
+        },
+        "navigation": {
+          "statusBarHeight": 20,
+          "barHeight": 40,
+          "totalHeight": 60,
+          "contentRight": 106,
+          "safeBottom": 0,
+          "windowWidth": 320
+        },
+        "tab": {
+          "tabs": [
+            {
+              "key": "home",
+              "text": "首页",
+              "pagePath": "/pages/customer/home/index",
+              "icon": "/assets/navigation/home-normal.svg",
+              "selectedIcon": "/assets/navigation/home-active.svg"
+            },
+            {
+              "key": "rooms",
+              "text": "找房",
+              "pagePath": "/pages/customer/rooms/index",
+              "icon": "/assets/navigation/rooms-normal.svg",
+              "selectedIcon": "/assets/navigation/rooms-active.svg"
+            },
+            {
+              "key": "orders",
+              "text": "订单",
+              "pagePath": "/pages/customer/orders/index",
+              "icon": "/assets/navigation/orders-normal.svg",
+              "selectedIcon": "/assets/navigation/orders-active.svg"
+            },
+            {
+              "key": "mine",
+              "text": "我的",
+              "pagePath": "/pages/customer/mine/index",
+              "icon": "/assets/navigation/mine-normal.svg",
+              "selectedIcon": "/assets/navigation/mine-active.svg"
+            }
+          ],
+          "selected": "mine",
+          "safeBottom": 0,
+          "switching": false
+        },
+        "boxes": [
+          {
+            "id": "",
+            "dataset": {},
+            "left": 0,
+            "right": 320,
+            "top": 60,
+            "bottom": 253,
+            "width": 320,
+            "height": 193
+          },
+          {
+            "id": "",
+            "dataset": {},
+            "left": 17,
+            "right": 47,
+            "top": 29.5,
+            "bottom": 50.5,
+            "width": 30,
+            "height": 21
+          },
+          {
+            "id": "",
+            "dataset": {},
+            "left": 0,
+            "right": 320,
+            "top": 0,
+            "bottom": 60,
+            "width": 320,
+            "height": 60
+          }
+        ]
+      }
+    }
+  ],
+  "exceptions": [],
+  "logs": [],
+  "legacyObserved": "pages/customer/mine/index",
+  "error": "旧入口未回到首页"
+}

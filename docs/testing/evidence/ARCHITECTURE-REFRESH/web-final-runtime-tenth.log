@@ -1,0 +1,8 @@
+file:///Users/kimwell/work/pet-platform/docs/testing/evidence/ARCHITECTURE-REFRESH/replay/browser-final.mjs:21
+}catch(error){result.status='FAIL';result.failedStage=stage;result.diagnostic=Object.values(secret).reduce((s,v)=>s.replaceAll(v,'<私有值>'),String(error.message)).slice(0,700);result.dom=await p.getByRole('dialog').allTextContents().catch(()=> ['不可读取']);save();await p.screenshot({path:local+'/browser-final-failure.png'});throw Error('最终真实服务回归失败')}finally{await ctx.setOffline(false);await browser.close()}
+                                                                                                                                                                                                                                                                                                                                       ^
+
+Error: 最终真实服务回归失败
+    at file:///Users/kimwell/work/pet-platform/docs/testing/evidence/ARCHITECTURE-REFRESH/replay/browser-final.mjs:21:328
+
+Node.js v24.21.0

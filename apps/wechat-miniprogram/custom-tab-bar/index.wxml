@@ -1,0 +1,8 @@
+<view class="customer-tab-bar" style="padding-bottom:{{safeBottom}}px" aria-role="navigation" aria-label="客户主导航">
+  <block wx:for="{{tabs}}" wx:key="key">
+    <button wx:if="{{index === 2}}" class="tab-item assistant-item" bindtap="assistant" aria-label="宠物智能助手，功能暂未开放"><view class="assistant-bump"><image class="assistant-icon" src="/assets/navigation/assistant.png" mode="aspectFit" /></view></button>
+    <button class="tab-item {{selected === item.key ? 'tab-selected' : ''}}" data-key="{{item.key}}" bindtap="switchTab" aria-label="{{item.text}}{{selected === item.key ? '，当前页面' : ''}}">
+      <image class="tab-icon" src="{{selected === item.key ? item.selectedIcon : item.icon}}" mode="aspectFit" /><text>{{item.text}}</text>
+    </button>
+  </block>
+</view>

@@ -1,0 +1,14 @@
+{
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "command": [
+    "/Users/kimwell/.vscode/extensions/redhat.java-1.56.0-darwin-arm64/jre/21.0.12.1-macosx-aarch64/bin/java",
+    "-jar",
+    "/Users/kimwell/work/pet-platform/.local-data/architecture/runtime/backend.jar"
+  ],
+  "previousPid": 70153,
+  "pid": 259,
+  "status": "RUNTIME_VERIFIED",
+  "readiness": 200,
+  "jarSha256": "e2072523ab422d3dc7221ae0ca77b297ccdd7e84de6c90a87b984d63ef53091e",
+  "metadata": "最终Tag注解与兼容契约；正式local配置和原PG/Redis，会话保留"
+}

@@ -1,0 +1,1 @@
+<view class="customer-page"><navigator-bar id="navigator" title="我的" /><view class="customer-body"><view class="unavailable"><view class="unavailable-mark" aria-hidden="true">…</view><text class="unavailable-title">功能暂未开放</text><text class="unavailable-description">个人中心暂未开放</text></view></view></view>

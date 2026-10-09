@@ -1,0 +1,123 @@
+{
+  "status": "FAIL",
+  "scenarios": [
+    {
+      "name": "参考截图框架实测：64px通栏、240/64px侧栏、独立滚动与白色卡片",
+      "status": "PASS"
+    },
+    {
+      "name": "平台账号启停与单层详情恢复",
+      "status": "PASS"
+    },
+    {
+      "name": "平台账号重置与全部会话撤销保留正式权限",
+      "status": "PASS"
+    },
+    {
+      "name": "租户启停正式接口、旧详情地址替换和单层恢复",
+      "status": "PASS"
+    }
+  ],
+  "errors": [],
+  "layout": [
+    {
+      "key": "platform-accounts",
+      "viewport": {
+        "width": 1827,
+        "height": 1075
+      },
+      "header": {
+        "left": 0,
+        "top": 0,
+        "width": 1827,
+        "height": 64,
+        "background": "rgb(255, 255, 255)",
+        "overflowY": "visible"
+      },
+      "sidebar": {
+        "left": 0,
+        "top": 64,
+        "width": 240,
+        "height": 1011,
+        "background": "rgb(255, 255, 255)",
+        "overflowY": "visible"
+      },
+      "breadcrumb": {
+        "left": 256,
+        "top": 64,
+        "width": 1555,
+        "height": 40,
+        "background": "rgba(0, 0, 0, 0)",
+        "overflowY": "visible"
+      },
+      "card": {
+        "left": 256,
+        "top": 104,
+        "width": 1555,
+        "height": 381.265625,
+        "background": "rgb(255, 255, 255)",
+        "overflowY": "visible"
+      },
+      "scroll": {
+        "left": 240,
+        "top": 64,
+        "width": 1587,
+        "height": 1011,
+        "background": "rgba(0, 0, 0, 0)",
+        "overflowY": "auto"
+      },
+      "noPageOverflow": true
+    },
+    {
+      "key": "collapsed",
+      "viewport": {
+        "width": 1827,
+        "height": 1075
+      },
+      "header": {
+        "left": 0,
+        "top": 0,
+        "width": 1827,
+        "height": 64,
+        "background": "rgb(255, 255, 255)",
+        "overflowY": "visible"
+      },
+      "sidebar": {
+        "left": 0,
+        "top": 64,
+        "width": 64,
+        "height": 1011,
+        "background": "rgb(255, 255, 255)",
+        "overflowY": "visible"
+      },
+      "breadcrumb": {
+        "left": 80,
+        "top": 64,
+        "width": 1731,
+        "height": 40,
+        "background": "rgba(0, 0, 0, 0)",
+        "overflowY": "visible"
+      },
+      "card": {
+        "left": 80,
+        "top": 104,
+        "width": 1731,
+        "height": 381.265625,
+        "background": "rgb(255, 255, 255)",
+        "overflowY": "visible"
+      },
+      "scroll": {
+        "left": 64,
+        "top": 64,
+        "width": 1763,
+        "height": 1011,
+        "background": "rgba(0, 0, 0, 0)",
+        "overflowY": "auto"
+      },
+      "noPageOverflow": true
+    }
+  ],
+  "failedStage": "platform",
+  "diagnostic": "locator.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('dialog').filter({ hasText: '放弃未保存内容？' }).getByRole('button', { name: '放弃内容', exact: true })\u001b[22m\n",
+  "dom": "- dialog \"租户详情\":\n  - button \"关闭\":\n    - img \"close\"\n  - text: 租户详情\n  - button \"返回租户列表\"\n  - button \"重新读取详情\"\n  - table:\n    - rowgroup:\n      - row \"租户标识 9a9d92a0-2b65-4db5-94b8-f494b611552d\":\n        - rowheader \"租户标识\"\n        - cell \"9a9d92a0-2b65-4db5-94b8-f494b611552d\"\n      - row \"编码 arch-acceptance\":\n        - rowheader \"编码\"\n        - cell \"arch-acceptance\"\n      - row \"名称 离线保留的非敏感草稿\":\n        - rowheader \"名称\"\n        - cell \"离线保留的非敏感草稿\"\n      - row \"状态 启用\":\n        - rowheader \"状态\"\n        - cell \"启用\"\n      - row \"可使用条件 已完成首位员工初始化；登录仍受状态和权限控制\":\n        - rowheader \"可使用条件\"\n        - cell \"已完成首位员工初始化；登录仍受状态和权限控制\"\n  - button \"修改租户资料\"\n  - button \"停用租户\"\n  - heading \"正式门店目录\" [level=3]\n  - text: 门店是可选经营范围，与内部组织独立。创建不会自动授予员工；在员工授权页面选择正式门店。\n  - button \"新建门店\"\n  - region \"列表表格，可横向滚动\":\n    - table:\n      - rowgroup:\n        - row \"编码 名称 状态 操作\":\n          - columnheader \"编码\"\n          - columnheader \"名称\"\n          - columnheader \"状态\"\n          - columnheader \"操作\"\n      - rowgroup:\n        - row \"main 架构正式门店更新 启用 修改名称 停用门店\":\n          - cell \"main\"\n          - cell \"架构正式门店更新\"\n          - cell \"启用\"\n          - cell \"修改名称 停用门店\":\n            - button \"修改名称\"\n            - button \"停用门店\""
+}

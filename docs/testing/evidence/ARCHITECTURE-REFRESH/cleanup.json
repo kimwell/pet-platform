@@ -1,0 +1,156 @@
+{
+  "status": "PASS",
+  "checkedAt": "2026-10-09T09:14:45.329451+00:00",
+  "evidenceLevel": "RUNTIME_VERIFIED",
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "processes": [
+    {
+      "pid": 259,
+      "result": "已退出"
+    },
+    {
+      "pid": 70196,
+      "result": "已退出"
+    }
+  ],
+  "containers": [
+    {
+      "name": "pet-arch-pg",
+      "result": "已不存在"
+    },
+    {
+      "name": "pet-arch-redis",
+      "result": "本轮 tmpfs 验收容器已移除"
+    }
+  ],
+  "portsReleased": {
+    "18101": true,
+    "18102": true,
+    "57145": true,
+    "57148": true
+  },
+  "originalContainers": {
+    "pet-platform-p02-validation-rabbitmq-1": {
+      "before": "exited",
+      "after": "exited",
+      "unchanged": true
+    },
+    "pet-platform-p02-validation-postgres-1": {
+      "before": "exited",
+      "after": "exited",
+      "unchanged": true
+    },
+    "pet-platform-p02-validation-redis-1": {
+      "before": "exited",
+      "after": "exited",
+      "unchanged": true
+    }
+  },
+  "removedPrivateCopies": [
+    "credentials.json",
+    "command-env.json",
+    "postgres.env",
+    "redis.conf",
+    "wechat.yaml",
+    "worker-password",
+    "platform-reset-password",
+    "root-staff-state.json",
+    "before-lifecycle-state.json",
+    "final-state.json",
+    "browser-final-failure.png",
+    "browser-manage-failure.png",
+    "browser-supplement-failure.png"
+  ],
+  "preserved": [
+    "既有本地服务",
+    "原工程私有微信配置",
+    "ui/",
+    "微信开发者工具"
+  ],
+  "commands": [
+    {
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": [
+        "ps",
+        "-p",
+        "259",
+        "-o",
+        "pid=,pgid=,command="
+      ],
+      "exitCode": 1,
+      "summary": ""
+    },
+    {
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": [
+        "ps",
+        "-p",
+        "70196",
+        "-o",
+        "pid=,pgid=,command="
+      ],
+      "exitCode": 1,
+      "summary": ""
+    },
+    {
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": [
+        "docker",
+        "inspect",
+        "--format",
+        "{{json .Config.Labels}}",
+        "pet-arch-pg"
+      ],
+      "exitCode": 1,
+      "summary": "error: no such object: pet-arch-pg"
+    },
+    {
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": [
+        "docker",
+        "inspect",
+        "--format",
+        "{{json .Config.Labels}}",
+        "pet-arch-redis"
+      ],
+      "exitCode": 0,
+      "summary": "{\"pet.validation\":\"架构改造\"}"
+    },
+    {
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": [
+        "docker",
+        "stop",
+        "--time",
+        "10",
+        "pet-arch-redis"
+      ],
+      "exitCode": 0,
+      "summary": "Flag --time has been deprecated, use --timeout instead\npet-arch-redis"
+    },
+    {
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": [
+        "docker",
+        "inspect",
+        "--format",
+        "{{json .Config.Labels}}",
+        "pet-arch-redis"
+      ],
+      "exitCode": 1,
+      "summary": "error: no such object: pet-arch-redis"
+    },
+    {
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": [
+        "docker",
+        "ps",
+        "-a",
+        "--format",
+        "{{.Names}}\t{{.State}}"
+      ],
+      "exitCode": 0,
+      "summary": "pet-platform-p02-validation-rabbitmq-1\texited\npet-platform-p02-validation-postgres-1\texited\npet-platform-p02-validation-redis-1\texited"
+    }
+  ]
+}

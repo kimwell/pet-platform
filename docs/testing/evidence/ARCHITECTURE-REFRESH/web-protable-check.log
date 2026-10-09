@@ -1,0 +1,13 @@
+
+> pet-platform@0.0.0 check:web /Users/kimwell/work/pet-platform
+> pnpm --filter @pet/admin-web typecheck && pnpm --filter @pet/admin-web lint && pnpm --filter @pet/admin-web test
+
+
+> @pet/admin-web@0.0.0 typecheck /Users/kimwell/work/pet-platform/apps/admin-web
+> tsc --noEmit
+
+src/pages/admin/identity/roles/RolesPage.tsx(41,10): error TS1381: Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+/Users/kimwell/work/pet-platform/apps/admin-web:
+ ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL  @pet/admin-web@0.0.0 typecheck: `tsc --noEmit`
+Exit status 2
+ ELIFECYCLE  Command failed with exit code 2.

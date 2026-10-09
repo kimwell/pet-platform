@@ -1,0 +1,23 @@
+{
+  "status": "FAIL",
+  "realScenarios": [
+    {
+      "name": "TabBar处理器调用真实wx.switchTab，页面显示同步选中",
+      "state": {
+        "route": "pages/customer/rooms/index",
+        "selected": "rooms",
+        "switching": false
+      }
+    },
+    {
+      "name": "navigator返回处理器无历史栈时回客户首页",
+      "state": {
+        "route": "pages/customer/home/index",
+        "selected": "home",
+        "switching": false
+      }
+    }
+  ],
+  "technicalFaultFixture": [],
+  "error": "失败切换改变选中态"
+}

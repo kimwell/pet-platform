@@ -1,0 +1,20 @@
+Progress: resolved 1, reused 0, downloaded 0, added 0
+Progress: resolved 169, reused 169, downloaded 0, added 0
+Progress: resolved 176, reused 175, downloaded 0, added 0
+ WARN  4 deprecated subdependencies found: core-js@2.6.12, mkdirp@0.5.1, phin@2.9.3, phin@3.7.1
+Packages: +75
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Progress: resolved 239, reused 239, downloaded 0, added 59
+Progress: resolved 239, reused 239, downloaded 0, added 75, done
+
+dependencies:
++ miniprogram-automator 0.12.1
+
+╭ Warning ─────────────────────────────────────────────────────────────────────╮
+│                                                                              │
+│   Ignored build scripts: core-js@2.6.12.                                     │
+│   Run "pnpm approve-builds" to pick which dependencies should be allowed     │
+│   to run scripts.                                                            │
+│                                                                              │
+╰──────────────────────────────────────────────────────────────────────────────╯
+Done in 4.4s using pnpm v10.34.6

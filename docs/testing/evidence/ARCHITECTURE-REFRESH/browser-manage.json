@@ -1,0 +1,542 @@
+{
+  "status": "PASS",
+  "scenarios": [
+    {
+      "name": "员工编辑取消返回详情，单层弹框",
+      "status": "PASS"
+    },
+    {
+      "name": "员工资料保存刷新详情和背景列表",
+      "status": "PASS"
+    },
+    {
+      "name": "员工启停仍保留正式独立权限与版本检查",
+      "status": "PASS"
+    },
+    {
+      "name": "员工门店授权保存后回到详情",
+      "status": "PASS"
+    },
+    {
+      "name": "员工敏感操作保留操作者密码确认与独立权限",
+      "status": "PASS"
+    },
+    {
+      "name": "旧员工详情链接校验后替换列表，保留筛选，刷新关闭弹框",
+      "status": "PASS"
+    },
+    {
+      "name": "筛选提交、浏览器后退与草稿同步",
+      "status": "PASS"
+    },
+    {
+      "name": "角色编辑取消和保存回到详情",
+      "status": "PASS"
+    },
+    {
+      "name": "角色授权使用正式权限目录、范围与版本，保存返回详情",
+      "status": "PASS"
+    },
+    {
+      "name": "员工角色授权单层弹框",
+      "status": "PASS"
+    },
+    {
+      "name": "平台账号经正式新增，仅授详情与本人会话权限",
+      "status": "PASS"
+    },
+    {
+      "name": "平台账号资料编辑单层返回详情",
+      "status": "PASS"
+    },
+    {
+      "name": "仅详情权限的旧租户链接可开详情，背景无权限且不请求列表",
+      "status": "PASS"
+    },
+    {
+      "name": "平台撤权使旧会话失效并销毁已开详情",
+      "status": "PASS"
+    },
+    {
+      "name": "移动Drawer切页、Escape关闭和触发焦点恢复，无页面横向溢出",
+      "status": "PASS"
+    }
+  ],
+  "requests": [
+    {
+      "path": "/api/admin/auth/me",
+      "status": 401,
+      "code": "SESSION_REVOKED"
+    },
+    {
+      "path": "/api/admin/auth/me",
+      "status": 401,
+      "code": "AUTH_REQUIRED"
+    },
+    {
+      "path": "/api/admin/auth/csrf",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/auth/login",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/auth/csrf",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/identity/users",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/identity/users",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/identity/users/1cc4a4fe-06fc-439d-b2a1-c873388cf554",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/identity/users",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/identity/users/1cc4a4fe-06fc-439d-b2a1-c873388cf554/management",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/auth/csrf",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/identity/users/1cc4a4fe-06fc-439d-b2a1-c873388cf554",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/identity/users/1cc4a4fe-06fc-439d-b2a1-c873388cf554",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/identity/users",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/identity/users/1cc4a4fe-06fc-439d-b2a1-c873388cf554/management",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/identity/users/1cc4a4fe-06fc-439d-b2a1-c873388cf554/status",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/identity/users/1cc4a4fe-06fc-439d-b2a1-c873388cf554",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/identity/users",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/identity/users/1cc4a4fe-06fc-439d-b2a1-c873388cf554/management",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/identity/users/1cc4a4fe-06fc-439d-b2a1-c873388cf554/status",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/identity/users/1cc4a4fe-06fc-439d-b2a1-c873388cf554",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/identity/users",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/identity/users/1cc4a4fe-06fc-439d-b2a1-c873388cf554/management",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/platform/stores/options",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/identity/users/1cc4a4fe-06fc-439d-b2a1-c873388cf554/stores",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/identity/users/1cc4a4fe-06fc-439d-b2a1-c873388cf554",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/identity/users",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/platform/stores/options",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/identity/users/1cc4a4fe-06fc-439d-b2a1-c873388cf554/management",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/identity/users/1cc4a4fe-06fc-439d-b2a1-c873388cf554/password",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/identity/users/1cc4a4fe-06fc-439d-b2a1-c873388cf554",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/identity/users",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/identity/users/1cc4a4fe-06fc-439d-b2a1-c873388cf554/management",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/identity/users/1cc4a4fe-06fc-439d-b2a1-c873388cf554/revoke-sessions",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/identity/users/1cc4a4fe-06fc-439d-b2a1-c873388cf554",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/identity/users",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/identity/users/1cc4a4fe-06fc-439d-b2a1-c873388cf554/management",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/identity/users/1cc4a4fe-06fc-439d-b2a1-c873388cf554",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/identity/users",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/identity/users/1cc4a4fe-06fc-439d-b2a1-c873388cf554/management",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/identity/users",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/identity/users",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/identity/roles",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/identity/roles",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/identity/roles",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/identity/roles/0c54b7b2-91ed-46a4-8920-a79084cf1a4a",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/identity/permissions",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/auth/csrf",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/identity/roles/0c54b7b2-91ed-46a4-8920-a79084cf1a4a",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/identity/permissions",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/identity/roles",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/identity/roles/0c54b7b2-91ed-46a4-8920-a79084cf1a4a",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/identity/roles/0c54b7b2-91ed-46a4-8920-a79084cf1a4a/grants",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/identity/users/1cc4a4fe-06fc-439d-b2a1-c873388cf554",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/identity/users",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/identity/users/1cc4a4fe-06fc-439d-b2a1-c873388cf554/management",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/identity/roles",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/auth/csrf",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/identity/users/1cc4a4fe-06fc-439d-b2a1-c873388cf554/roles",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/identity/users/1cc4a4fe-06fc-439d-b2a1-c873388cf554",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/identity/users",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/identity/roles",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/identity/users/1cc4a4fe-06fc-439d-b2a1-c873388cf554/management",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/permissions",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/accounts",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/csrf",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/accounts",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/permissions",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/accounts",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/accounts/84f87846-6a14-4495-94b4-d63f5fa3bd2d",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/accounts",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/accounts/84f87846-6a14-4495-94b4-d63f5fa3bd2d",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/permissions",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/accounts/84f87846-6a14-4495-94b4-d63f5fa3bd2d",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/accounts",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/accounts/84f87846-6a14-4495-94b4-d63f5fa3bd2d/permissions",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/permissions",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/accounts/84f87846-6a14-4495-94b4-d63f5fa3bd2d",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/accounts",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/tenants",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/tenants/9a9d92a0-2b65-4db5-94b8-f494b611552d",
+      "status": 200
+    }
+  ],
+  "pageErrors": []
+}

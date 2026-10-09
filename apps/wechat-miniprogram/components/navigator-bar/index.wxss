@@ -1,0 +1,6 @@
+.navigator { position: fixed; top: 0; left: 0; right: 0; z-index: 20; background: linear-gradient(110deg,#fff4ea,#f9eeeb); box-sizing: border-box; }
+.navigator-content { display: flex; align-items: center; padding-left: 40rpx; box-sizing: border-box; }
+.navigator-title { min-width: 0; color: #252B2E; font-size: 36rpx; font-weight: 600; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+.navigator-back { flex: none; width: 64rpx; height: 44px; padding: 0; margin: 0 8rpx 0 -16rpx; background: transparent; display: flex; justify-content: center; align-items: center; border-radius: 0; }
+.navigator-back::after { border: 0; }
+.back-chevron { width: 14rpx; height: 14rpx; border-left: 3rpx solid #252B2E; border-bottom: 3rpx solid #252B2E; transform: rotate(45deg); }

@@ -1,0 +1,7 @@
+page { color: #252B2E; font-size: 28rpx; background: linear-gradient(150deg,#FFF4EA 0%,#FBF8F3 48%,#F8F7F4 100%); min-height: 100%; }
+.customer-page { min-height: 100vh; box-sizing: border-box; padding-bottom: calc(140rpx + env(safe-area-inset-bottom)); }
+.customer-body { padding: 40rpx 32rpx; }
+.unavailable { margin-top: 48rpx; background: #fff; border: 1rpx solid #F0E7DF; border-radius: 32rpx; padding: 56rpx 40rpx; text-align: center; }
+.unavailable-mark { width: 88rpx; height: 88rpx; border-radius: 50%; margin: 0 auto 28rpx; background: #E8F7F1; color: #298775; font-size: 44rpx; line-height: 88rpx; }
+.unavailable-title { display: block; font-size: 32rpx; font-weight: 600; line-height: 48rpx; }
+.unavailable-description { display: block; color: #7E8589; font-size: 26rpx; line-height: 42rpx; margin-top: 16rpx; }

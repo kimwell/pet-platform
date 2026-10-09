@@ -1,0 +1,193 @@
+{
+  "status": "PASS",
+  "previousGoalTurn": "PROGRESS",
+  "objective": "web layout 页面整体布局参考用户截图进行调整",
+  "checkedAt": "2026-10-09T09:20:17.805271+00:00",
+  "scope": "完整公共布局与全部既有管理列表；业务菜单、字段和操作依本项目需求",
+  "reference": {
+    "file": "/Users/kimwell/.codex/attachments/da6a8ec2-477e-475e-93ec-f901d480e950/image-1.png",
+    "sha256": "a1ac0d6e3e970d76b6537f81696498b028b34cd925f0f461599ca6cfde4afacf",
+    "savedEvidence": "web-goal-layout-reference.png"
+  },
+  "requirements": [
+    {
+      "requirement": "通栏 Header：左侧折叠按钮与蓝色品牌，右侧头像/账号/下拉",
+      "sources": [
+        "layouts/BasicLayout/Header.tsx",
+        "layouts/BasicLayout/UserDropdown.tsx",
+        "styles/global.css"
+      ],
+      "evidence": [
+        "web-employees-final.png",
+        "web-accounts-final.png",
+        "web-visual.json"
+      ],
+      "result": "PROVEN"
+    },
+    {
+      "requirement": "白色侧栏、导航图标与选中态；展开240px、折叠64px",
+      "sources": [
+        "layouts/BasicLayout/Sidebar.tsx",
+        "stores/app.store.ts",
+        "styles/global.css"
+      ],
+      "evidence": [
+        "web-visual.json",
+        "browser-final.json"
+      ],
+      "result": "PROVEN"
+    },
+    {
+      "requirement": "浅灰背景、面包屑、白卡片与标题分隔；内容独立滚动",
+      "sources": [
+        "layouts/BasicLayout/index.tsx",
+        "layouts/BasicLayout/Breadcrumb.tsx",
+        "styles/global.css"
+      ],
+      "evidence": [
+        "web-visual.json",
+        "web-employees-final.png",
+        "web-roles-final.png",
+        "web-organizations-final.png",
+        "web-tenants-final.png",
+        "web-accounts-final.png"
+      ],
+      "result": "PROVEN"
+    },
+    {
+      "requirement": "列表筛选、工具栏、表格与分页遵循统一 ProTable；业务内容仍依本项目",
+      "sources": [
+        "components/ProTable/index.tsx",
+        "pages/admin",
+        "pages/platform"
+      ],
+      "evidence": [
+        "browser-manage.json",
+        "browser-final.json",
+        "web-visual.json"
+      ],
+      "result": "PROVEN"
+    },
+    {
+      "requirement": "TanStack Router Outlet 承载页面，拆分布局职责",
+      "sources": [
+        "router/router.ts",
+        "layouts/BasicLayout/index.tsx"
+      ],
+      "evidence": [
+        "final-root-check-after-freeze.log",
+        "final-web-build-after-freeze.log"
+      ],
+      "result": "PROVEN"
+    },
+    {
+      "requirement": "移动端官方 Drawer，菜单导航、Escape、焦点恢复和页面无横向溢出",
+      "sources": [
+        "layouts/BasicLayout/Sidebar.tsx",
+        "styles/global.css"
+      ],
+      "evidence": [
+        "browser-manage.json",
+        "browser-final.json"
+      ],
+      "result": "PROVEN"
+    }
+  ],
+  "remainingRequiredWork": [],
+  "sourceDigests": {
+    "apps/admin-web/src/api/ApiError.ts": "a2442842f4b97b0a1241fe9d197d33d304f7330d20d1795ab771faa09a06e474",
+    "apps/admin-web/src/api/auth/AuthService.ts": "d54ad90771523b95fb9243f13e335faf8127ac75c95d72a26627e580977c454f",
+    "apps/admin-web/src/api/auth/mutations.test.ts": "07a73f90ed49fcf5db8cf5790c4fb42507242d88af30f94d49c9b84dbbe51d74",
+    "apps/admin-web/src/api/auth/queryKeys.ts": "8366990fb7fb4251478d359c24140cd7c4b2fd5467d93087297f5d7ab88e8e61",
+    "apps/admin-web/src/api/control.test.ts": "939e81389f647007f5d58f42d2bcfe039f3d16b7dc583e36498f9fa023d7650e",
+    "apps/admin-web/src/api/control.ts": "3658a6939f50ba0df9ee43d9820e462ab1ce4416a4adbd74ab974de7c6026602",
+    "apps/admin-web/src/api/identity/employees.ts": "ecd5b98de56da25ac009b40a34f2e07cb4cc46b442b5048b9ecb991e349002b2",
+    "apps/admin-web/src/api/identity/management.test.ts": "dce1c91656bfdcd0e6e4977a8bacbb1e4a06edfa39cf7880305fad96dc7eee65",
+    "apps/admin-web/src/api/identity/management.ts": "545ac1b588c09854ab34af7de80c3714fcf3855536a6b7910eb034025e3f766c",
+    "apps/admin-web/src/api/request.test.ts": "1f34530241e4bf74a85021e7e653b56c1922cc3b8b2b4ba271267bb95719bbc3",
+    "apps/admin-web/src/api/request.ts": "8efceae1fd7609b94b3fd2a9bf7ac576388015b2e5a852173b98d6e3c0fd3db1",
+    "apps/admin-web/src/components/ErrorNotice/index.tsx": "53de23d2129e71178099e3d2d87b4e7beeea255747edad0a86e40112378523f2",
+    "apps/admin-web/src/components/PermissionBoundary.tsx": "8056266fba18cf0f4cbce74b29e7053ffe958bd8d228e0faf5613eee946b0980",
+    "apps/admin-web/src/components/ProTable/index.tsx": "3167cc3df4c74814e94a5c9d1bc8d0f8daf65c4abfd7edc6e4e34a51f03f736a",
+    "apps/admin-web/src/components/ResourceDialog/index.tsx": "7adf19b5607bc7c9d6b0e1b949ceb97a51e306a9f2bcac67d5188bf1c865e980",
+    "apps/admin-web/src/components/SessionFailure.tsx": "c96de6eabcdd7129755346a83969915af9068a3092de186daece69cfa40fbb48",
+    "apps/admin-web/src/config/AppProviders.tsx": "16adab27ff6fb02069b94ba9fb34d9ad79b93c6769ca4f0db656b606fe70c3b3",
+    "apps/admin-web/src/config/api.ts": "81871dd19cd69160e49792f615d0e782f1b58af51d9792dc86a8080472943717",
+    "apps/admin-web/src/hooks/identity/employeeQueries.ts": "e5d6f2cde80469c42fa53136f655b8069c60a7ad0f9db7756d2000e565d1dbb3",
+    "apps/admin-web/src/hooks/useDraftGuard.tsx": "d1a60733b3bac902ccd35def45f45dcbc5acb29afc60bc00fd76909c80aaa70a",
+    "apps/admin-web/src/hooks/useLocalDetail.ts": "3d53820327d9663c9a6b320e1ca8ace1199d3a28032c582b3ea3ffd0883c1f50",
+    "apps/admin-web/src/hooks/usePageIdentity.ts": "780ef5913f735ae9b7b969da87eb534317f24ebf589be92ea34201dc704c94f2",
+    "apps/admin-web/src/hooks/useSession.ts": "e173597a434e34ce894d7fc13492278191c172ebcf214cc740cb63bdefe5dcd7",
+    "apps/admin-web/src/layouts/BasicLayout/Breadcrumb.tsx": "03aeb4e3497a2fb5b2ef869360994afe1fe8c0c1ee7c83cf1b65b6b23627e05b",
+    "apps/admin-web/src/layouts/BasicLayout/Header.tsx": "827c44c46cf623970acb6fcd715069714b09415c0d109c76ca0e5a7eb471d73d",
+    "apps/admin-web/src/layouts/BasicLayout/Sidebar.tsx": "79859ac20db2404be8eb6a4e6c527d9de1de1d6c0f2161ffa42e397794fe387e",
+    "apps/admin-web/src/layouts/BasicLayout/UserDropdown.tsx": "6d0d19d77b177d95636d20f23afe37905e4fa82929d52cefa82b54f1e72ba1fc",
+    "apps/admin-web/src/layouts/BasicLayout/index.tsx": "c219a390859fb098d6970e8ca64aab6520ea476cde09c9f91d483d38d6b99292",
+    "apps/admin-web/src/layouts/SystemLayout.tsx": "26887a21bd21775c3a6f6e3372792213f879afd4024f30f7e8cc0c153c0c177f",
+    "apps/admin-web/src/main.tsx": "6625c1c817b958d580d80512c891745cd4f0439598f3a8c0f16417db08677a08",
+    "apps/admin-web/src/pages/account/AccountHome.tsx": "bd8a716fd8726eaac03015a561e8bfdd8a83ef9e8bfa927d8760086d8ffd18a6",
+    "apps/admin-web/src/pages/account/AccountSecurity.tsx": "bc0a38d6a03ab77107be61aa0005f3e9ea5552955b12d4ac0ab01d9583d6b1c0",
+    "apps/admin-web/src/pages/account/security.test.tsx": "50d68924af5ca36a920d39ea72c239c24247b70f5334bdcde5fa2ca25fd3c21d",
+    "apps/admin-web/src/pages/account/securityForm.ts": "b848f6a453526b653ed6f28df838075e6d9c26a11e455dbdce862c2e234ec405",
+    "apps/admin-web/src/pages/admin/identity/organizations/index.tsx": "1e141b1ba816f0862e9e0e2fe1f41b046d9a32fd7b744070944e5f50e4baf617",
+    "apps/admin-web/src/pages/admin/identity/roles/RolesPage.tsx": "e8fd2c82e187da22d8de16bfb2ca8baa8602d4068b09979593d7b15fef054d1f",
+    "apps/admin-web/src/pages/admin/identity/users/EmployeeActions.tsx": "06e19f2020b7d4108f4703659acd30cc386c6e1c661f90b42c572ee7667fa345",
+    "apps/admin-web/src/pages/admin/identity/users/EmployeeCreate.tsx": "b82357b74d2d09a03ac19135d60e3c63d666786f5f9889f12c77888093a7078e",
+    "apps/admin-web/src/pages/admin/identity/users/EmployeeDetailPage.tsx": "a270cb905f69ade1b767800dd19ed17bbda5f7e7866df62bca701b41220658a7",
+    "apps/admin-web/src/pages/admin/identity/users/EmployeeListPage.tsx": "5d5f6e9a74fc4dcf214e97cc5343ae493ab93f96129d52146d301db6177a4ebf",
+    "apps/admin-web/src/pages/auth/LoginPage.tsx": "60b07087a6c5b3d41f2fa37d1fe2b111a8dafc082ce748a7d5daf85fe6552f30",
+    "apps/admin-web/src/pages/platform/accounts/index.tsx": "1a34165bf2b7d4a3d6589b7d037624a99dadf0e92ebb5857a6f97421ac5ddda4",
+    "apps/admin-web/src/pages/platform/tenants/index.tsx": "d4cd4bc69653e01dfb5e87e33ca6751d9c7895516c958b80034393c93cd384af",
+    "apps/admin-web/src/pages/system/SystemEntry.tsx": "f5c4509dee3def48c013e711470b5c159741f14e64e9ec4296e3f88e4a35c881",
+    "apps/admin-web/src/pages/system/SystemError.tsx": "033852640e56bfb0c602d8d2e499dba8932c56d0b95d107d176f181a9a54f605",
+    "apps/admin-web/src/pages/system/SystemNotFound.tsx": "3d8347c2dce548a8b4c3af9d24f3a6cb933ebc3b25387406539a90d5f65058cc",
+    "apps/admin-web/src/router/dev-config.test.ts": "bcad6ebd929a8e391fb305a9a5cd5fe0da9d4262ce10507c5558c3b4dfc3642e",
+    "apps/admin-web/src/router/guards/requireSession.ts": "cab7ac7a0b23078fc2f472d8e0b08e5dec0b1c73e63399c4eb36d5ac269f7fd0",
+    "apps/admin-web/src/router/pageAccess.ts": "b430f00a3670b68f8b38eaee6bc6853c6528c3dd7d830c2096c41c6cc833bdf0",
+    "apps/admin-web/src/router/router.test.tsx": "f9c0af8e1443b8be1fd9b0b374e77b6d64a7ad590cdf6b73c4f905660d7abe70",
+    "apps/admin-web/src/router/router.ts": "6236020581d992fe2479665ef24a94a354a8f478820fdccdb9c35869ccec12c7",
+    "apps/admin-web/src/stores/app.store.ts": "fa0d35663773bfefe1737537e8c6dd4ffc11160ca95f30178832372c2985d86f",
+    "apps/admin-web/src/styles/global.css": "ce0134bd175dd89570e496bcc4c4475242b150b108e3121df42bcff1056e7949",
+    "apps/admin-web/src/test/responses.ts": "62b4903b9a889c1a2e36bf29953e3bf732ca1688084b92e442c5ccfe5e9714a0",
+    "apps/admin-web/src/types/contracts.ts": "f55ede9f828fbe8144386be55ff29ee92241866619aa8960554c7fcb5bbc0785",
+    "apps/admin-web/src/utils/auth/SessionRuntime.test.ts": "bc9ccecc9cd7ca813c80844a342df4a196925797a253d450632928c9903ad992",
+    "apps/admin-web/src/utils/auth/SessionRuntime.ts": "080b978e5eb6e6043a5b21b695b27f519cd5d5415fd884f73ace6348105d2714",
+    "apps/admin-web/src/utils/auth/permissions.ts": "7bc3db178ea2acb7beb1738a043edcb4f8e4d0334939979b072449cf3cf16145",
+    "apps/admin-web/src/utils/auth/returnTo.ts": "e8194d64b18f918735f868534c487d9217fbf3a3d1c0e2e410475a84b72b465c",
+    "apps/admin-web/src/utils/auth/spaces.ts": "6215fa03e253762e82627dad14c108fb8be30f306189e33dafe6e7e9a630e5e1",
+    "apps/admin-web/src/utils/format.ts": "ffe117f6ce263c3aafacc329ac1a6b962fabafddacc3b4ac9c3e456ad0248fa4",
+    "apps/admin-web/src/utils/identity/detail.test.ts": "463a09592e25c8fa0665c3c11e1fa38e6dfdad7f716d76394c5f524ba9afd9d3",
+    "apps/admin-web/src/utils/identity/detailSearch.ts": "3cfed96b686fa7eeac49dc883621773d1268deea25f83a7bdf7aaf8fd7b15365",
+    "apps/admin-web/src/utils/identity/employees.test.ts": "caf87eef023bfa298165a141951ca22e5cd8b3450206bf7048b6399adf2a3100",
+    "apps/admin-web/src/utils/identity/pagination.ts": "e047e7239151c55cc175dd3e8821c20fe9e1e01b1bac7c789f4c96096fab4ec8",
+    "apps/admin-web/src/utils/identity/search.ts": "1a85f0f94fd3257013b0755302072573f82c715286b483b9e7d38e334283a272"
+  },
+  "checks": [
+    {
+      "label": "final-root-check-after-freeze",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": [
+        "pnpm",
+        "check"
+      ],
+      "exitCode": 0,
+      "durationSeconds": 19.36,
+      "log": "final-root-check-after-freeze.log",
+      "startedAt": "2026-10-09T08:53:50.935171+00:00"
+    },
+    {
+      "label": "final-web-build-after-freeze",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": [
+        "pnpm",
+        "build:web"
+      ],
+      "exitCode": 0,
+      "durationSeconds": 12.94,
+      "log": "final-web-build-after-freeze.log",
+      "startedAt": "2026-10-09T08:53:51.792927+00:00"
+    }
+  ],
+  "evidenceLevel": "DOCUMENTED / RUNTIME_VERIFIED",
+  "visualReview": "本轮对最新目标附件与五页实际框架截图逐项人工复核；非自动像素一致性结论。"
+}

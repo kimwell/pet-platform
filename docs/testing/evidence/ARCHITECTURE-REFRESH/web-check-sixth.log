@@ -1,0 +1,48 @@
+
+> pet-platform@0.0.0 check:web /Users/kimwell/work/pet-platform
+> pnpm --filter @pet/admin-web typecheck && pnpm --filter @pet/admin-web lint && pnpm --filter @pet/admin-web test
+
+
+> @pet/admin-web@0.0.0 typecheck /Users/kimwell/work/pet-platform/apps/admin-web
+> tsc --noEmit
+
+
+> @pet/admin-web@0.0.0 lint /Users/kimwell/work/pet-platform/apps/admin-web
+> eslint src vite.config.ts dev-config.ts --max-warnings=0
+
+
+> @pet/admin-web@0.0.0 test /Users/kimwell/work/pet-platform/apps/admin-web
+> vitest run
+
+
+ RUN  v4.1.11 /Users/kimwell/work/pet-platform/apps/admin-web
+
+ ❯ src/utils/identity/detail.test.ts (56 tests | 1 failed) 82ms
+     × 只有detail可直达；无list导航，详情不生成静态菜单 4ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/utils/identity/detail.test.ts > 独立详情权限、正式接口与当前授权缓存 > 只有detail可直达；无list导航，详情不生成静态菜单
+AssertionError: expected undefined to be '/admin/identity/users/$employeeId' // Object.is equality
+
+- Expected:
+"/admin/identity/users/$employeeId"
+
++ Received:
+undefined
+
+ ❯ src/utils/identity/detail.test.ts:56:50
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed | 8 passed (9)
+      Tests  1 failed | 265 passed (266)
+   Start at  15:40:47
+   Duration  1.51s (transform 789ms, setup 0ms, import 5.60s, tests 525ms, environment 1ms)
+
+/Users/kimwell/work/pet-platform/apps/admin-web:
+ ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL  @pet/admin-web@0.0.0 test: `vitest run`
+Exit status 1
+ ELIFECYCLE  Command failed with exit code 1.

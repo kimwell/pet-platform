@@ -1,0 +1,27 @@
+{
+  "status": "PASS",
+  "realScenarios": [
+    {
+      "name": "TabBar处理器调用真实wx.switchTab，页面显示同步选中",
+      "state": {
+        "route": "pages/customer/rooms/index",
+        "selected": "rooms",
+        "switching": false
+      }
+    },
+    {
+      "name": "navigator返回处理器无历史栈时回客户首页",
+      "state": {
+        "route": "pages/customer/home/index",
+        "selected": "home",
+        "switching": false
+      }
+    }
+  ],
+  "technicalFaultFixture": [
+    {
+      "name": "原SDK mock未有效拦截路由，失败轮保留；当前切换失败由mini-unit实际源码技术夹具验证",
+      "status": "NOT_VERIFIED_BY_SDK"
+    }
+  ]
+}

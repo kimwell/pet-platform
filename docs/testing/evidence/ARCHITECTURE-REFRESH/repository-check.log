@@ -1,0 +1,6 @@
+
+> pet-platform@0.0.0 check:repo /Users/kimwell/work/pet-platform
+> node scripts/check-repository.mjs && node scripts/check-miniprogram.mjs
+
+单锁、精确直接依赖、工具链、固定后端入口及秘密特征检查通过。秘密检查不输出匹配值。
+原生小程序页面、自定义导航/TabBar、官方及本地组件、素材和样式引用检查通过；这不是开发者工具编译。

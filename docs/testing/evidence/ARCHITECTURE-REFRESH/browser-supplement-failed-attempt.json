@@ -1,0 +1,76 @@
+{
+  "status": "FAIL",
+  "scenarios": [
+    {
+      "name": "真实租户列表筛选分页排序与详情返回URL保留",
+      "status": "PASS"
+    },
+    {
+      "name": "正式创建重复编码422准确字段错误",
+      "status": "PASS"
+    }
+  ],
+  "requests": [
+    {
+      "path": "/api/platform/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/tenants",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/tenants/9a9d92a0-2b65-4db5-94b8-f494b611552d",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/tenants/9a9d92a0-2b65-4db5-94b8-f494b611552d/stores",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/csrf",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/tenants",
+      "status": 422,
+      "code": "VALIDATION_FAILED"
+    },
+    {
+      "path": "/api/platform/tenants/9a9d92a0-2b65-4db5-94b8-f494b611552d",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/tenants/9a9d92a0-2b65-4db5-94b8-f494b611552d/stores",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/tenants/9a9d92a0-2b65-4db5-94b8-f494b611552d",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/csrf",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/tenants/9a9d92a0-2b65-4db5-94b8-f494b611552d",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/tenants/9a9d92a0-2b65-4db5-94b8-f494b611552d",
+      "status": 409,
+      "code": "VERSION_CONFLICT"
+    }
+  ],
+  "pageErrors": [],
+  "diagnostic": "locator.isDisabled: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('dialog').getByRole('button', { name: '保存资料', exact: true })\u001b[22m\n",
+  "failedStage": "conflict"
+}

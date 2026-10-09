@@ -1,0 +1,314 @@
+{
+  "scope": "仅标题、背景、公共导航、间距及安全区；未开放正文不与业务样例比较",
+  "scoreKind": "MANUAL_REVIEW，诊断像素指标不是风格分",
+  "criticalFailures": [],
+  "devices": [
+    {
+      "device": "320",
+      "page": "home",
+      "windowWidth": 320,
+      "safeBottom": 0,
+      "fiveColumnWidths": [
+        64,
+        64,
+        64,
+        64,
+        64
+      ],
+      "critical": {
+        "capsuleOverlap": 0,
+        "bodyNavigationOverlap": 0,
+        "bottomOverlap": 0,
+        "assistantBottomOverlap": 0
+      }
+    },
+    {
+      "device": "320",
+      "page": "rooms",
+      "windowWidth": 320,
+      "safeBottom": 0,
+      "fiveColumnWidths": [
+        64,
+        64,
+        64,
+        64,
+        64
+      ],
+      "critical": {
+        "capsuleOverlap": 0,
+        "bodyNavigationOverlap": 0,
+        "bottomOverlap": 0,
+        "assistantBottomOverlap": 0
+      }
+    },
+    {
+      "device": "320",
+      "page": "orders",
+      "windowWidth": 320,
+      "safeBottom": 0,
+      "fiveColumnWidths": [
+        64,
+        64,
+        64,
+        64,
+        64
+      ],
+      "critical": {
+        "capsuleOverlap": 0,
+        "bodyNavigationOverlap": 0,
+        "bottomOverlap": 0,
+        "assistantBottomOverlap": 0
+      }
+    },
+    {
+      "device": "320",
+      "page": "mine",
+      "windowWidth": 320,
+      "safeBottom": 0,
+      "fiveColumnWidths": [
+        64,
+        64,
+        64,
+        64,
+        64
+      ],
+      "critical": {
+        "capsuleOverlap": 0,
+        "bodyNavigationOverlap": 0,
+        "bottomOverlap": 0,
+        "assistantBottomOverlap": 0
+      }
+    },
+    {
+      "device": "375",
+      "page": "home",
+      "windowWidth": 375,
+      "safeBottom": 34,
+      "fiveColumnWidths": [
+        75,
+        75,
+        75,
+        75,
+        75
+      ],
+      "critical": {
+        "capsuleOverlap": 0,
+        "bodyNavigationOverlap": 0,
+        "bottomOverlap": 0,
+        "assistantBottomOverlap": 0
+      }
+    },
+    {
+      "device": "375",
+      "page": "rooms",
+      "windowWidth": 375,
+      "safeBottom": 34,
+      "fiveColumnWidths": [
+        75,
+        75,
+        75,
+        75,
+        75
+      ],
+      "critical": {
+        "capsuleOverlap": 0,
+        "bodyNavigationOverlap": 0,
+        "bottomOverlap": 0,
+        "assistantBottomOverlap": 0
+      }
+    },
+    {
+      "device": "375",
+      "page": "orders",
+      "windowWidth": 375,
+      "safeBottom": 34,
+      "fiveColumnWidths": [
+        75,
+        75,
+        75,
+        75,
+        75
+      ],
+      "critical": {
+        "capsuleOverlap": 0,
+        "bodyNavigationOverlap": 0,
+        "bottomOverlap": 0,
+        "assistantBottomOverlap": 0
+      }
+    },
+    {
+      "device": "375",
+      "page": "mine",
+      "windowWidth": 375,
+      "safeBottom": 34,
+      "fiveColumnWidths": [
+        75,
+        75,
+        75,
+        75,
+        75
+      ],
+      "critical": {
+        "capsuleOverlap": 0,
+        "bodyNavigationOverlap": 0,
+        "bottomOverlap": 0,
+        "assistantBottomOverlap": 0
+      }
+    },
+    {
+      "device": "430",
+      "page": "home",
+      "windowWidth": 430,
+      "safeBottom": 34,
+      "fiveColumnWidths": [
+        86,
+        86,
+        86,
+        86,
+        86
+      ],
+      "critical": {
+        "capsuleOverlap": 0,
+        "bodyNavigationOverlap": 0,
+        "bottomOverlap": 0,
+        "assistantBottomOverlap": 0
+      }
+    },
+    {
+      "device": "430",
+      "page": "rooms",
+      "windowWidth": 430,
+      "safeBottom": 34,
+      "fiveColumnWidths": [
+        86,
+        86,
+        86,
+        86,
+        86
+      ],
+      "critical": {
+        "capsuleOverlap": 0,
+        "bodyNavigationOverlap": 0,
+        "bottomOverlap": 0,
+        "assistantBottomOverlap": 0
+      }
+    },
+    {
+      "device": "430",
+      "page": "orders",
+      "windowWidth": 430,
+      "safeBottom": 34,
+      "fiveColumnWidths": [
+        86,
+        86,
+        86,
+        86,
+        86
+      ],
+      "critical": {
+        "capsuleOverlap": 0,
+        "bodyNavigationOverlap": 0,
+        "bottomOverlap": 0,
+        "assistantBottomOverlap": 0
+      }
+    },
+    {
+      "device": "430",
+      "page": "mine",
+      "windowWidth": 430,
+      "safeBottom": 34,
+      "fiveColumnWidths": [
+        86,
+        86,
+        86,
+        86,
+        86
+      ],
+      "critical": {
+        "capsuleOverlap": 0,
+        "bodyNavigationOverlap": 0,
+        "bottomOverlap": 0,
+        "assistantBottomOverlap": 0
+      }
+    }
+  ],
+  "pages": [
+    {
+      "page": "home",
+      "score": 97.0,
+      "dimensions": {
+        "palette": 24.5,
+        "geometry": 24,
+        "icons": 23.5,
+        "typography": 10,
+        "platformSafety": 15
+      },
+      "review": "标题和五列导航保留暖白/橙灰体系、原助手及线性图标；少量图标轮廓、渐变和间距差异扣3分；窗口实测安全区域无交叠。",
+      "pixelMAE_RGB_0_255": 8.712,
+      "pixelMetricLimit": "跨运行时归一化，包含胶囊位置/字体渲染差异，仅诊断，不能充当精确视觉一致性或业务验收",
+      "artifacts": [
+        "visual/home-comparison.png",
+        "visual/home-difference.png"
+      ],
+      "sourceSha256": "21335bf016a5bbfbcf20d9044057d54ca3d4a31fe0888dbbf64a041dc82d8008"
+    },
+    {
+      "page": "rooms",
+      "score": 97.0,
+      "dimensions": {
+        "palette": 24.5,
+        "geometry": 24,
+        "icons": 23.5,
+        "typography": 10,
+        "platformSafety": 15
+      },
+      "review": "标题和五列导航保留暖白/橙灰体系、原助手及线性图标；少量图标轮廓、渐变和间距差异扣3分；窗口实测安全区域无交叠。",
+      "pixelMAE_RGB_0_255": 7.802,
+      "pixelMetricLimit": "跨运行时归一化，包含胶囊位置/字体渲染差异，仅诊断，不能充当精确视觉一致性或业务验收",
+      "artifacts": [
+        "visual/rooms-comparison.png",
+        "visual/rooms-difference.png"
+      ],
+      "sourceSha256": "72574db8262a397408ff406bc504572e73ae22fd4e5a03ce51900acdb04973f8"
+    },
+    {
+      "page": "orders",
+      "score": 97.0,
+      "dimensions": {
+        "palette": 24.5,
+        "geometry": 24,
+        "icons": 23.5,
+        "typography": 10,
+        "platformSafety": 15
+      },
+      "review": "标题和五列导航保留暖白/橙灰体系、原助手及线性图标；少量图标轮廓、渐变和间距差异扣3分；窗口实测安全区域无交叠。",
+      "pixelMAE_RGB_0_255": 9.283,
+      "pixelMetricLimit": "跨运行时归一化，包含胶囊位置/字体渲染差异，仅诊断，不能充当精确视觉一致性或业务验收",
+      "artifacts": [
+        "visual/orders-comparison.png",
+        "visual/orders-difference.png"
+      ],
+      "sourceSha256": "45b038fdcc6c35bca784933799b5b295e54f318182c71b19cfc358d2b7791111"
+    },
+    {
+      "page": "mine",
+      "score": 97.0,
+      "dimensions": {
+        "palette": 24.5,
+        "geometry": 24,
+        "icons": 23.5,
+        "typography": 10,
+        "platformSafety": 15
+      },
+      "review": "标题和五列导航保留暖白/橙灰体系、原助手及线性图标；少量图标轮廓、渐变和间距差异扣3分；窗口实测安全区域无交叠。",
+      "pixelMAE_RGB_0_255": 7.724,
+      "pixelMetricLimit": "跨运行时归一化，包含胶囊位置/字体渲染差异，仅诊断，不能充当精确视觉一致性或业务验收",
+      "artifacts": [
+        "visual/mine-comparison.png",
+        "visual/mine-difference.png"
+      ],
+      "sourceSha256": "2f8efbcb998b4ac8f26b2e166f9e37dfac9efee237854477d3dcdd9ac3840866"
+    }
+  ],
+  "status": "PASS_PUBLIC_FRAMEWORK"
+}

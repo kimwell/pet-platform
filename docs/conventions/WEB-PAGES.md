@@ -2,6 +2,8 @@
 
 冻结日期：2026-10-07，P01-02。本文拥有列表/表单/详情交互；状态与请求见 [Web状态](WEB-STATE.md)，API语义见 [API](../contracts/API.md)。直接使用官方Ant Design Table/Form/Modal/Drawer，不新造万能BaseTable或透传Wrapper。
 
+
+2026-10-09 当前实现覆盖下方历史 P06/P07 记录：统一 BasicLayout/Outlet、官方 Drawer、ProTable 与页面本地单层 Modal。详情旧地址只作校验后一次性弹框兼容入口，刷新关闭弹框。当前目录及具体规则见 [工程结构](../architecture/PROJECT-STRUCTURE.md)、[列表](WEB-LIST-PAGES.md)、[详情与弹框](WEB-DETAIL-PAGES.md)。后文标编号的描述保留历史证据。
 ## 列表
 
 筛选输入保存在Form草稿，提交后规范化写URL；改草稿不立刻查询。查询/重置page=1；重置保留接口默认pageSize/sort，清筛选与选择。URL search在路由入口校验类型/枚举/白名单；非法值规范化为默认并提示一次，未知参数丢弃；不要把非法URL直接发后端。刷新、返回、分享可恢复已提交条件，不保存未提交草稿。

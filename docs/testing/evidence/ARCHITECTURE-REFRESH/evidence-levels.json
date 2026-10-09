@@ -1,0 +1,1362 @@
+[
+  {
+    "label": "web-typecheck-first",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "pnpm",
+      "--filter",
+      "@pet/admin-web",
+      "typecheck"
+    ],
+    "exitCode": 0,
+    "durationSeconds": 2.85,
+    "log": "web-typecheck-first.log",
+    "startedAt": "2026-10-09T07:29:49.544200+00:00",
+    "evidenceLevel": "COMPILED",
+    "result": "PASS（编译或技术检查）"
+  },
+  {
+    "label": "web-typecheck-second",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "pnpm",
+      "--filter",
+      "@pet/admin-web",
+      "typecheck"
+    ],
+    "exitCode": 2,
+    "durationSeconds": 1.44,
+    "log": "web-typecheck-second.log",
+    "startedAt": "2026-10-09T07:31:31.670953+00:00",
+    "evidenceLevel": "NOT_VERIFIED",
+    "result": "FAIL（保留原失败）"
+  },
+  {
+    "label": "web-check-first",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "pnpm",
+      "check:web"
+    ],
+    "exitCode": 1,
+    "durationSeconds": 5.82,
+    "log": "web-check-first.log",
+    "startedAt": "2026-10-09T07:31:46.642754+00:00",
+    "evidenceLevel": "NOT_VERIFIED",
+    "result": "FAIL（保留原失败）"
+  },
+  {
+    "label": "web-check-second",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "pnpm",
+      "check:web"
+    ],
+    "exitCode": 2,
+    "durationSeconds": 1.4,
+    "log": "web-check-second.log",
+    "startedAt": "2026-10-09T07:32:01.780016+00:00",
+    "evidenceLevel": "NOT_VERIFIED",
+    "result": "FAIL（保留原失败）"
+  },
+  {
+    "label": "web-check-third",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "pnpm",
+      "check:web"
+    ],
+    "exitCode": 1,
+    "durationSeconds": 11.02,
+    "log": "web-check-third.log",
+    "startedAt": "2026-10-09T07:32:17.518860+00:00",
+    "evidenceLevel": "NOT_VERIFIED",
+    "result": "FAIL（保留原失败）"
+  },
+  {
+    "label": "backend-compile-first",
+    "cwd": "/Users/kimwell/work/pet-platform/apps/backend",
+    "command": [
+      "./mvnw",
+      "--batch-mode",
+      "-DskipTests",
+      "compile"
+    ],
+    "exitCode": 0,
+    "durationSeconds": 6.07,
+    "log": "backend-compile-first.log",
+    "startedAt": "2026-10-09T07:34:35.029252+00:00",
+    "evidenceLevel": "COMPILED",
+    "result": "PASS（编译或技术检查）"
+  },
+  {
+    "label": "backend-verify-first",
+    "cwd": "/Users/kimwell/work/pet-platform/apps/backend",
+    "command": [
+      "./mvnw",
+      "--batch-mode",
+      "verify"
+    ],
+    "exitCode": 0,
+    "durationSeconds": 247.67,
+    "log": "backend-verify-first.log",
+    "startedAt": "2026-10-09T07:35:13.317808+00:00",
+    "evidenceLevel": "RUNTIME_VERIFIED",
+    "result": "PASS（对应范围）"
+  },
+  {
+    "label": "web-check-fourth",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "pnpm",
+      "--filter",
+      "@pet/admin-web",
+      "check"
+    ],
+    "exitCode": 1,
+    "durationSeconds": 0.37,
+    "log": "web-check-fourth.log",
+    "startedAt": "2026-10-09T07:39:36.932837+00:00",
+    "evidenceLevel": "NOT_VERIFIED",
+    "result": "FAIL（保留原失败）"
+  },
+  {
+    "label": "web-check-fifth",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "pnpm",
+      "check:web"
+    ],
+    "exitCode": 2,
+    "durationSeconds": 2.84,
+    "log": "web-check-fifth.log",
+    "startedAt": "2026-10-09T07:39:49.356036+00:00",
+    "evidenceLevel": "NOT_VERIFIED",
+    "result": "FAIL（保留原失败）"
+  },
+  {
+    "label": "web-check-sixth",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "pnpm",
+      "check:web"
+    ],
+    "exitCode": 1,
+    "durationSeconds": 7.39,
+    "log": "web-check-sixth.log",
+    "startedAt": "2026-10-09T07:40:41.743472+00:00",
+    "evidenceLevel": "NOT_VERIFIED",
+    "result": "FAIL（保留原失败）"
+  },
+  {
+    "label": "web-check-seventh",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "pnpm",
+      "check:web"
+    ],
+    "exitCode": 0,
+    "durationSeconds": 11.66,
+    "log": "web-check-seventh.log",
+    "startedAt": "2026-10-09T07:43:31.249856+00:00",
+    "evidenceLevel": "COMPILED",
+    "result": "PASS（编译或技术检查）"
+  },
+  {
+    "label": "mini-static-first",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "pnpm",
+      "check:miniprogram"
+    ],
+    "exitCode": 2,
+    "durationSeconds": 0.89,
+    "log": "mini-static-first.log",
+    "startedAt": "2026-10-09T07:44:09.547870+00:00",
+    "evidenceLevel": "NOT_VERIFIED",
+    "result": "FAIL（保留原失败）"
+  },
+  {
+    "label": "mini-static-second",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "pnpm",
+      "check:miniprogram"
+    ],
+    "exitCode": 0,
+    "durationSeconds": 3.77,
+    "log": "mini-static-second.log",
+    "startedAt": "2026-10-09T07:44:49.075177+00:00",
+    "evidenceLevel": "COMPILED",
+    "result": "PASS（编译或技术检查）"
+  },
+  {
+    "label": "browser-stage1-first",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "node",
+      "docs/testing/evidence/ARCHITECTURE-REFRESH/replay/browser-stage1.mjs"
+    ],
+    "exitCode": 0,
+    "durationSeconds": 17.0,
+    "log": "browser-stage1-first.log",
+    "startedAt": "2026-10-09T07:44:47.966847+00:00",
+    "evidenceLevel": "RUNTIME_VERIFIED",
+    "result": "PASS（对应范围）"
+  },
+  {
+    "label": "mini-cli-auto-first",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "/Users/kimwell/Applications/WechatDevTools-2.02.2608080.app/Contents/MacOS/cli",
+      "auto",
+      "--project",
+      "/Users/kimwell/work/pet-platform/apps/wechat-miniprogram",
+      "--trust-project"
+    ],
+    "exitCode": 0,
+    "durationSeconds": 4.39,
+    "log": "mini-cli-auto-first.log",
+    "startedAt": "2026-10-09T07:45:31.934298+00:00",
+    "evidenceLevel": "RESOLVED",
+    "result": "PASS（打开自动化连接，不等于页面验证）"
+  },
+  {
+    "label": "web-protable-check",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "pnpm",
+      "check:web"
+    ],
+    "exitCode": 2,
+    "durationSeconds": 4.11,
+    "log": "web-protable-check.log",
+    "startedAt": "2026-10-09T07:46:44.995900+00:00",
+    "evidenceLevel": "NOT_VERIFIED",
+    "result": "FAIL（保留原失败）"
+  },
+  {
+    "label": "mini-npm-build",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "/Users/kimwell/Applications/WechatDevTools-2.02.2608080.app/Contents/MacOS/cli",
+      "build-npm",
+      "--project",
+      "/Users/kimwell/work/pet-platform/apps/wechat-miniprogram"
+    ],
+    "exitCode": 0,
+    "durationSeconds": 2.96,
+    "log": "mini-npm-build.log",
+    "startedAt": "2026-10-09T07:47:15.373301+00:00",
+    "evidenceLevel": "COMPILED",
+    "result": "PASS（编译或技术检查）"
+  },
+  {
+    "label": "mini-automator-tool",
+    "cwd": "/Users/kimwell/work/pet-platform/.local-data/architecture/tools",
+    "command": [
+      "pnpm",
+      "add",
+      "--save-exact",
+      "miniprogram-automator@0.12.1",
+      "--ignore-workspace"
+    ],
+    "exitCode": 0,
+    "durationSeconds": 4.52,
+    "log": "mini-automator-tool.log",
+    "startedAt": "2026-10-09T07:48:20.435910+00:00",
+    "evidenceLevel": "RESOLVED",
+    "result": "PASS（依赖安装，不等于运行验收）"
+  },
+  {
+    "label": "web-protable-check-second",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "pnpm",
+      "check:web"
+    ],
+    "exitCode": 0,
+    "durationSeconds": 14.54,
+    "log": "web-protable-check-second.log",
+    "startedAt": "2026-10-09T07:48:19.367962+00:00",
+    "evidenceLevel": "COMPILED",
+    "result": "PASS（编译或技术检查）"
+  },
+  {
+    "label": "web-build",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "pnpm",
+      "build:web"
+    ],
+    "exitCode": 0,
+    "durationSeconds": 11.26,
+    "log": "web-build.log",
+    "startedAt": "2026-10-09T07:48:55.720602+00:00",
+    "evidenceLevel": "COMPILED",
+    "result": "PASS（编译或技术检查）"
+  },
+  {
+    "label": "contracts-build",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "pnpm",
+      "contracts:check"
+    ],
+    "exitCode": 1,
+    "durationSeconds": 25.74,
+    "log": "contracts-build.log",
+    "startedAt": "2026-10-09T07:48:54.565125+00:00",
+    "evidenceLevel": "NOT_VERIFIED",
+    "result": "FAIL（保留原失败）"
+  },
+  {
+    "label": "mini-automator-isolated",
+    "cwd": "/Users/kimwell/work/pet-platform/.local-data/architecture/tools",
+    "command": [
+      "pnpm",
+      "add",
+      "--save-exact",
+      "miniprogram-automator@0.12.1",
+      "--ignore-workspace"
+    ],
+    "exitCode": 0,
+    "durationSeconds": 3.79,
+    "log": "mini-automator-isolated.log",
+    "startedAt": "2026-10-09T07:49:22.932728+00:00",
+    "evidenceLevel": "RESOLVED",
+    "result": "PASS（依赖安装，不等于运行验收）"
+  },
+  {
+    "label": "mini-runtime-first",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "node",
+      "docs/testing/evidence/ARCHITECTURE-REFRESH/replay/mini-capture.cjs",
+      "iphone12"
+    ],
+    "exitCode": 1,
+    "durationSeconds": 18.67,
+    "log": "mini-runtime-first.log",
+    "startedAt": "2026-10-09T07:50:27.832213+00:00",
+    "evidenceLevel": "NOT_VERIFIED",
+    "result": "FAIL（保留原失败）"
+  },
+  {
+    "label": "contracts-after-tag",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "pnpm",
+      "contracts:check"
+    ],
+    "exitCode": 0,
+    "durationSeconds": 20.76,
+    "log": "contracts-after-tag.log",
+    "startedAt": "2026-10-09T07:51:08.148650+00:00",
+    "evidenceLevel": "COMPILED",
+    "result": "PASS（编译或技术检查）"
+  },
+  {
+    "label": "browser-supplement-first",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "node",
+      "docs/testing/evidence/ARCHITECTURE-REFRESH/replay/browser-supplement.mjs"
+    ],
+    "exitCode": 1,
+    "durationSeconds": 39.01,
+    "log": "browser-supplement-first.log",
+    "startedAt": "2026-10-09T07:51:53.696478+00:00",
+    "evidenceLevel": "NOT_VERIFIED",
+    "result": "FAIL（保留原失败）"
+  },
+  {
+    "label": "mini-runtime-second",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "node",
+      "docs/testing/evidence/ARCHITECTURE-REFRESH/replay/mini-capture.cjs",
+      "iphone12"
+    ],
+    "exitCode": 1,
+    "durationSeconds": 41.87,
+    "log": "mini-runtime-second.log",
+    "startedAt": "2026-10-09T07:51:52.617023+00:00",
+    "evidenceLevel": "NOT_VERIFIED",
+    "result": "FAIL（保留原失败）"
+  },
+  {
+    "label": "repository-check",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "pnpm",
+      "check:repo"
+    ],
+    "exitCode": 0,
+    "durationSeconds": 0.48,
+    "log": "repository-check.log",
+    "startedAt": "2026-10-09T07:52:40.693237+00:00",
+    "evidenceLevel": "COMPILED",
+    "result": "PASS（编译或技术检查）"
+  },
+  {
+    "label": "browser-manage-first",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "node",
+      "docs/testing/evidence/ARCHITECTURE-REFRESH/replay/browser-manage.mjs"
+    ],
+    "exitCode": 1,
+    "durationSeconds": 4.69,
+    "log": "browser-manage-first.log",
+    "startedAt": "2026-10-09T07:55:12.847911+00:00",
+    "evidenceLevel": "NOT_VERIFIED",
+    "result": "FAIL（保留原失败）"
+  },
+  {
+    "label": "mini-runtime-third",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "node",
+      "docs/testing/evidence/ARCHITECTURE-REFRESH/replay/mini-capture.cjs",
+      "iphone12"
+    ],
+    "exitCode": 1,
+    "durationSeconds": 34.27,
+    "log": "mini-runtime-third.log",
+    "startedAt": "2026-10-09T07:55:13.916655+00:00",
+    "evidenceLevel": "NOT_VERIFIED",
+    "result": "FAIL（保留原失败）"
+  },
+  {
+    "label": "browser-manage-second",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "node",
+      "docs/testing/evidence/ARCHITECTURE-REFRESH/replay/browser-manage.mjs"
+    ],
+    "exitCode": 1,
+    "durationSeconds": 35.04,
+    "log": "browser-manage-second.log",
+    "startedAt": "2026-10-09T07:56:22.754440+00:00",
+    "evidenceLevel": "NOT_VERIFIED",
+    "result": "FAIL（保留原失败）"
+  },
+  {
+    "label": "mini-runtime-320",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "node",
+      "docs/testing/evidence/ARCHITECTURE-REFRESH/replay/mini-capture.cjs",
+      "iphone5"
+    ],
+    "exitCode": 1,
+    "durationSeconds": 34.83,
+    "log": "mini-runtime-320.log",
+    "startedAt": "2026-10-09T07:57:43.418469+00:00",
+    "evidenceLevel": "NOT_VERIFIED",
+    "result": "FAIL（保留原失败）"
+  },
+  {
+    "label": "browser-supplement-second",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "node",
+      "docs/testing/evidence/ARCHITECTURE-REFRESH/replay/browser-supplement.mjs"
+    ],
+    "exitCode": 1,
+    "durationSeconds": 11.34,
+    "log": "browser-supplement-second.log",
+    "startedAt": "2026-10-09T07:58:31.080319+00:00",
+    "evidenceLevel": "NOT_VERIFIED",
+    "result": "FAIL（保留原失败）"
+  },
+  {
+    "label": "browser-manage-third",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "node",
+      "docs/testing/evidence/ARCHITECTURE-REFRESH/replay/browser-manage.mjs"
+    ],
+    "exitCode": 1,
+    "durationSeconds": 36.87,
+    "log": "browser-manage-third.log",
+    "startedAt": "2026-10-09T07:58:29.991918+00:00",
+    "evidenceLevel": "NOT_VERIFIED",
+    "result": "FAIL（保留原失败）"
+  },
+  {
+    "label": "mini-legacy-check",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "node",
+      "docs/testing/evidence/ARCHITECTURE-REFRESH/replay/mini-legacy.cjs"
+    ],
+    "exitCode": 1,
+    "durationSeconds": 0.26,
+    "log": "mini-legacy-check.log",
+    "startedAt": "2026-10-09T07:59:09.779039+00:00",
+    "evidenceLevel": "NOT_VERIFIED",
+    "result": "FAIL（保留原失败）"
+  },
+  {
+    "label": "mini-root-check",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "pnpm",
+      "check:miniprogram"
+    ],
+    "exitCode": 0,
+    "durationSeconds": 6.09,
+    "log": "mini-root-check.log",
+    "startedAt": "2026-10-09T08:01:40.738159+00:00",
+    "evidenceLevel": "COMPILED",
+    "result": "PASS（编译或技术检查）"
+  },
+  {
+    "label": "backend-final-verify",
+    "cwd": "/Users/kimwell/work/pet-platform/apps/backend",
+    "command": [
+      "./mvnw",
+      "--batch-mode",
+      "verify"
+    ],
+    "exitCode": 0,
+    "durationSeconds": 282.82,
+    "log": "backend-final-verify.log",
+    "startedAt": "2026-10-09T07:57:44.484871+00:00",
+    "evidenceLevel": "RUNTIME_VERIFIED",
+    "result": "PASS（对应范围）"
+  },
+  {
+    "label": "mini-root-npm",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "/Users/kimwell/Applications/WechatDevTools-2.02.2608080.app/Contents/MacOS/cli",
+      "build-npm",
+      "--project",
+      "/Users/kimwell/work/pet-platform/apps/wechat-miniprogram"
+    ],
+    "exitCode": 0,
+    "durationSeconds": 3.94,
+    "log": "mini-root-npm.log",
+    "startedAt": "2026-10-09T08:03:26.884585+00:00",
+    "evidenceLevel": "COMPILED",
+    "result": "PASS（编译或技术检查）"
+  },
+  {
+    "label": "web-layout-check",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "pnpm",
+      "--filter",
+      "@pet/admin-web",
+      "typecheck"
+    ],
+    "exitCode": 0,
+    "durationSeconds": 2.57,
+    "log": "web-layout-check.log",
+    "startedAt": "2026-10-09T08:11:29.168856+00:00",
+    "evidenceLevel": "COMPILED",
+    "result": "PASS（编译或技术检查）"
+  },
+  {
+    "label": "mini-flat-320",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "node",
+      "docs/testing/evidence/ARCHITECTURE-REFRESH/replay/mini-capture.cjs",
+      "320"
+    ],
+    "exitCode": 1,
+    "durationSeconds": 40.59,
+    "log": "mini-flat-320.log",
+    "startedAt": "2026-10-09T08:11:55.856722+00:00",
+    "evidenceLevel": "NOT_VERIFIED",
+    "result": "FAIL（保留原失败）"
+  },
+  {
+    "label": "root-final-check",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "pnpm",
+      "check"
+    ],
+    "exitCode": 0,
+    "durationSeconds": 10.34,
+    "log": "root-final-check.log",
+    "startedAt": "2026-10-09T08:13:04.972719+00:00",
+    "evidenceLevel": "COMPILED",
+    "result": "PASS（编译或技术检查）"
+  },
+  {
+    "label": "web-manage-fifth",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "node",
+      "docs/testing/evidence/ARCHITECTURE-REFRESH/replay/browser-manage.mjs"
+    ],
+    "exitCode": 1,
+    "durationSeconds": 40.21,
+    "log": "web-manage-fifth.log",
+    "startedAt": "2026-10-09T08:13:41.652692+00:00",
+    "evidenceLevel": "NOT_VERIFIED",
+    "result": "FAIL（保留原失败）"
+  },
+  {
+    "label": "final-web-build",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "pnpm",
+      "build:web"
+    ],
+    "exitCode": 0,
+    "durationSeconds": 7.37,
+    "log": "final-web-build.log",
+    "startedAt": "2026-10-09T08:15:14.620053+00:00",
+    "evidenceLevel": "COMPILED",
+    "result": "PASS（编译或技术检查）"
+  },
+  {
+    "label": "web-supplement-third",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "node",
+      "docs/testing/evidence/ARCHITECTURE-REFRESH/replay/browser-supplement.mjs"
+    ],
+    "exitCode": 0,
+    "durationSeconds": 14.22,
+    "log": "web-supplement-third.log",
+    "startedAt": "2026-10-09T08:15:13.393766+00:00",
+    "evidenceLevel": "RUNTIME_VERIFIED",
+    "result": "PASS（对应范围）"
+  },
+  {
+    "label": "mini-flat-320-second",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "node",
+      "docs/testing/evidence/ARCHITECTURE-REFRESH/replay/mini-capture.cjs",
+      "320"
+    ],
+    "exitCode": 0,
+    "durationSeconds": 34.27,
+    "log": "mini-flat-320-second.log",
+    "startedAt": "2026-10-09T08:15:01.202733+00:00",
+    "evidenceLevel": "RUNTIME_VERIFIED",
+    "result": "PASS（对应范围）"
+  },
+  {
+    "label": "web-manage-sixth",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "node",
+      "docs/testing/evidence/ARCHITECTURE-REFRESH/replay/browser-manage.mjs"
+    ],
+    "exitCode": 1,
+    "durationSeconds": 37.33,
+    "log": "web-manage-sixth.log",
+    "startedAt": "2026-10-09T08:15:34.231944+00:00",
+    "evidenceLevel": "NOT_VERIFIED",
+    "result": "FAIL（保留原失败）"
+  },
+  {
+    "label": "mini-flat-375",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "node",
+      "docs/testing/evidence/ARCHITECTURE-REFRESH/replay/mini-capture.cjs",
+      "375"
+    ],
+    "exitCode": 1,
+    "durationSeconds": 18.89,
+    "log": "mini-flat-375.log",
+    "startedAt": "2026-10-09T08:16:43.495293+00:00",
+    "evidenceLevel": "NOT_VERIFIED",
+    "result": "FAIL（保留原失败）"
+  },
+  {
+    "label": "final-contracts-check",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "pnpm",
+      "contracts:check"
+    ],
+    "exitCode": 0,
+    "durationSeconds": 39.04,
+    "log": "final-contracts-check.log",
+    "startedAt": "2026-10-09T08:16:44.585841+00:00",
+    "evidenceLevel": "COMPILED",
+    "result": "PASS（编译或技术检查）"
+  },
+  {
+    "label": "web-manage-seventh",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "node",
+      "docs/testing/evidence/ARCHITECTURE-REFRESH/replay/browser-manage.mjs"
+    ],
+    "exitCode": 1,
+    "durationSeconds": 47.37,
+    "log": "web-manage-seventh.log",
+    "startedAt": "2026-10-09T08:17:20.005511+00:00",
+    "evidenceLevel": "NOT_VERIFIED",
+    "result": "FAIL（保留原失败）"
+  },
+  {
+    "label": "mini-flat-375-second",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "node",
+      "docs/testing/evidence/ARCHITECTURE-REFRESH/replay/mini-capture.cjs",
+      "375"
+    ],
+    "exitCode": 0,
+    "durationSeconds": 33.78,
+    "log": "mini-flat-375-second.log",
+    "startedAt": "2026-10-09T08:18:22.341315+00:00",
+    "evidenceLevel": "RUNTIME_VERIFIED",
+    "result": "PASS（对应范围）"
+  },
+  {
+    "label": "web-manage-eighth",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "node",
+      "docs/testing/evidence/ARCHITECTURE-REFRESH/replay/browser-manage.mjs"
+    ],
+    "exitCode": 0,
+    "durationSeconds": 27.04,
+    "log": "web-manage-eighth.log",
+    "startedAt": "2026-10-09T08:18:37.818697+00:00",
+    "evidenceLevel": "RUNTIME_VERIFIED",
+    "result": "PASS（对应范围）"
+  },
+  {
+    "label": "final-contracts-tests",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "pnpm",
+      "contracts:test"
+    ],
+    "exitCode": 0,
+    "durationSeconds": 0.3,
+    "log": "final-contracts-tests.log",
+    "startedAt": "2026-10-09T08:21:44.677113+00:00",
+    "evidenceLevel": "COMPILED",
+    "result": "PASS（编译或技术检查）"
+  },
+  {
+    "label": "final-backend-package",
+    "cwd": "/Users/kimwell/work/pet-platform/apps/backend",
+    "command": [
+      "./mvnw",
+      "--batch-mode",
+      "-DskipTests",
+      "package"
+    ],
+    "exitCode": 0,
+    "durationSeconds": 5.88,
+    "log": "final-backend-package.log",
+    "startedAt": "2026-10-09T08:21:56.719538+00:00",
+    "evidenceLevel": "COMPILED",
+    "result": "PASS（编译或技术检查）"
+  },
+  {
+    "label": "mini-flat-430",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "node",
+      "docs/testing/evidence/ARCHITECTURE-REFRESH/replay/mini-capture.cjs",
+      "430"
+    ],
+    "exitCode": 0,
+    "durationSeconds": 33.97,
+    "log": "mini-flat-430.log",
+    "startedAt": "2026-10-09T08:21:43.420284+00:00",
+    "evidenceLevel": "RUNTIME_VERIFIED",
+    "result": "PASS（对应范围）"
+  },
+  {
+    "label": "final-runtime-restart",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "python3",
+      "docs/testing/evidence/ARCHITECTURE-REFRESH/replay/restart-final.py"
+    ],
+    "exitCode": 0,
+    "durationSeconds": 8.52,
+    "log": "final-runtime-restart.log",
+    "startedAt": "2026-10-09T08:23:14.454746+00:00",
+    "evidenceLevel": "RUNTIME_VERIFIED",
+    "result": "PASS（对应范围）"
+  },
+  {
+    "label": "mini-final-430-metrics",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "node",
+      "docs/testing/evidence/ARCHITECTURE-REFRESH/replay/mini-capture.cjs",
+      "430"
+    ],
+    "exitCode": 0,
+    "durationSeconds": 34.13,
+    "log": "mini-final-430-metrics.log",
+    "startedAt": "2026-10-09T08:23:15.591054+00:00",
+    "evidenceLevel": "RUNTIME_VERIFIED",
+    "result": "PASS（对应范围）"
+  },
+  {
+    "label": "web-final-runtime",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "node",
+      "docs/testing/evidence/ARCHITECTURE-REFRESH/replay/browser-final.mjs"
+    ],
+    "exitCode": 1,
+    "durationSeconds": 36.26,
+    "log": "web-final-runtime.log",
+    "startedAt": "2026-10-09T08:25:01.430747+00:00",
+    "evidenceLevel": "NOT_VERIFIED",
+    "result": "FAIL（保留原失败）"
+  },
+  {
+    "label": "mini-navigation",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "node",
+      "docs/testing/evidence/ARCHITECTURE-REFRESH/replay/mini-navigation.cjs"
+    ],
+    "exitCode": 1,
+    "durationSeconds": 18.6,
+    "log": "mini-navigation.log",
+    "startedAt": "2026-10-09T08:26:02.330222+00:00",
+    "evidenceLevel": "NOT_VERIFIED",
+    "result": "FAIL（保留原失败）"
+  },
+  {
+    "label": "web-final-runtime-second",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "node",
+      "docs/testing/evidence/ARCHITECTURE-REFRESH/replay/browser-final.mjs"
+    ],
+    "exitCode": 1,
+    "durationSeconds": 39.83,
+    "log": "web-final-runtime-second.log",
+    "startedAt": "2026-10-09T08:26:36.910816+00:00",
+    "evidenceLevel": "NOT_VERIFIED",
+    "result": "FAIL（保留原失败）"
+  },
+  {
+    "label": "web-final-runtime-third",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "node",
+      "docs/testing/evidence/ARCHITECTURE-REFRESH/replay/browser-final.mjs"
+    ],
+    "exitCode": 1,
+    "durationSeconds": 43.32,
+    "log": "web-final-runtime-third.log",
+    "startedAt": "2026-10-09T08:28:32.204785+00:00",
+    "evidenceLevel": "NOT_VERIFIED",
+    "result": "FAIL（保留原失败）"
+  },
+  {
+    "label": "mini-unit",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "node",
+      "docs/testing/evidence/ARCHITECTURE-REFRESH/replay/mini-unit.cjs"
+    ],
+    "exitCode": 0,
+    "durationSeconds": 0.27,
+    "log": "mini-unit.log",
+    "startedAt": "2026-10-09T08:29:52.795049+00:00",
+    "evidenceLevel": "UNIT_FIXTURE",
+    "result": "PASS（技术夹具）"
+  },
+  {
+    "label": "final-web-build-after-offline",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "pnpm",
+      "build:web"
+    ],
+    "exitCode": 0,
+    "durationSeconds": 7.72,
+    "log": "final-web-build-after-offline.log",
+    "startedAt": "2026-10-09T08:30:03.299924+00:00",
+    "evidenceLevel": "COMPILED",
+    "result": "PASS（编译或技术检查）"
+  },
+  {
+    "label": "final-root-check-after-offline",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "pnpm",
+      "check"
+    ],
+    "exitCode": 0,
+    "durationSeconds": 11.32,
+    "log": "final-root-check-after-offline.log",
+    "startedAt": "2026-10-09T08:30:02.134124+00:00",
+    "evidenceLevel": "COMPILED",
+    "result": "PASS（编译或技术检查）"
+  },
+  {
+    "label": "mini-navigation-real",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "node",
+      "docs/testing/evidence/ARCHITECTURE-REFRESH/replay/mini-navigation.cjs"
+    ],
+    "exitCode": 1,
+    "durationSeconds": 19.04,
+    "log": "mini-navigation-real.log",
+    "startedAt": "2026-10-09T08:30:36.727114+00:00",
+    "evidenceLevel": "NOT_VERIFIED",
+    "result": "FAIL（保留原失败）"
+  },
+  {
+    "label": "web-final-runtime-fourth",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "node",
+      "docs/testing/evidence/ARCHITECTURE-REFRESH/replay/browser-final.mjs"
+    ],
+    "exitCode": 1,
+    "durationSeconds": 38.11,
+    "log": "web-final-runtime-fourth.log",
+    "startedAt": "2026-10-09T08:30:35.533338+00:00",
+    "evidenceLevel": "NOT_VERIFIED",
+    "result": "FAIL（保留原失败）"
+  },
+  {
+    "label": "web-final-runtime-fifth",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "node",
+      "docs/testing/evidence/ARCHITECTURE-REFRESH/replay/browser-final.mjs"
+    ],
+    "exitCode": 1,
+    "durationSeconds": 5.71,
+    "log": "web-final-runtime-fifth.log",
+    "startedAt": "2026-10-09T08:35:11.281089+00:00",
+    "evidenceLevel": "NOT_VERIFIED",
+    "result": "FAIL（保留原失败）"
+  },
+  {
+    "label": "mini-navigation-real-second",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "node",
+      "docs/testing/evidence/ARCHITECTURE-REFRESH/replay/mini-navigation.cjs"
+    ],
+    "exitCode": 0,
+    "durationSeconds": 25.73,
+    "log": "mini-navigation-real-second.log",
+    "startedAt": "2026-10-09T08:35:12.381976+00:00",
+    "evidenceLevel": "RUNTIME_VERIFIED",
+    "result": "PASS（对应范围）"
+  },
+  {
+    "label": "web-final-runtime-sixth",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "node",
+      "docs/testing/evidence/ARCHITECTURE-REFRESH/replay/browser-final.mjs"
+    ],
+    "exitCode": 1,
+    "durationSeconds": 5.74,
+    "log": "web-final-runtime-sixth.log",
+    "startedAt": "2026-10-09T08:36:33.751157+00:00",
+    "evidenceLevel": "NOT_VERIFIED",
+    "result": "FAIL（保留原失败）"
+  },
+  {
+    "label": "mini-final-375-metrics",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "node",
+      "docs/testing/evidence/ARCHITECTURE-REFRESH/replay/mini-capture.cjs",
+      "375"
+    ],
+    "exitCode": 0,
+    "durationSeconds": 33.32,
+    "log": "mini-final-375-metrics.log",
+    "startedAt": "2026-10-09T08:37:01.663508+00:00",
+    "evidenceLevel": "RUNTIME_VERIFIED",
+    "result": "PASS（对应范围）"
+  },
+  {
+    "label": "web-final-runtime-seventh",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "node",
+      "docs/testing/evidence/ARCHITECTURE-REFRESH/replay/browser-final.mjs"
+    ],
+    "exitCode": 1,
+    "durationSeconds": 8.79,
+    "log": "web-final-runtime-seventh.log",
+    "startedAt": "2026-10-09T08:38:03.986083+00:00",
+    "evidenceLevel": "NOT_VERIFIED",
+    "result": "FAIL（保留原失败）"
+  },
+  {
+    "label": "web-final-runtime-eighth",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "node",
+      "docs/testing/evidence/ARCHITECTURE-REFRESH/replay/browser-final.mjs"
+    ],
+    "exitCode": 1,
+    "durationSeconds": 8.49,
+    "log": "web-final-runtime-eighth.log",
+    "startedAt": "2026-10-09T08:39:10.851025+00:00",
+    "evidenceLevel": "NOT_VERIFIED",
+    "result": "FAIL（保留原失败）"
+  },
+  {
+    "label": "web-final-runtime-ninth",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "node",
+      "docs/testing/evidence/ARCHITECTURE-REFRESH/replay/browser-final.mjs"
+    ],
+    "exitCode": 1,
+    "durationSeconds": 40.25,
+    "log": "web-final-runtime-ninth.log",
+    "startedAt": "2026-10-09T08:40:47.828566+00:00",
+    "evidenceLevel": "NOT_VERIFIED",
+    "result": "FAIL（保留原失败）"
+  },
+  {
+    "label": "mini-final-320-metrics",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "node",
+      "docs/testing/evidence/ARCHITECTURE-REFRESH/replay/mini-capture.cjs",
+      "320"
+    ],
+    "exitCode": 0,
+    "durationSeconds": 33.55,
+    "log": "mini-final-320-metrics.log",
+    "startedAt": "2026-10-09T08:41:20.084599+00:00",
+    "evidenceLevel": "RUNTIME_VERIFIED",
+    "result": "PASS（对应范围）"
+  },
+  {
+    "label": "final-web-build-after-pagination",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "pnpm",
+      "build:web"
+    ],
+    "exitCode": 0,
+    "durationSeconds": 6.7,
+    "log": "final-web-build-after-pagination.log",
+    "startedAt": "2026-10-09T08:42:26.428473+00:00",
+    "evidenceLevel": "COMPILED",
+    "result": "PASS（编译或技术检查）"
+  },
+  {
+    "label": "final-root-check-after-pagination",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "pnpm",
+      "check"
+    ],
+    "exitCode": 0,
+    "durationSeconds": 11.37,
+    "log": "final-root-check-after-pagination.log",
+    "startedAt": "2026-10-09T08:42:25.353758+00:00",
+    "evidenceLevel": "COMPILED",
+    "result": "PASS（编译或技术检查）"
+  },
+  {
+    "label": "web-final-runtime-tenth",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "node",
+      "docs/testing/evidence/ARCHITECTURE-REFRESH/replay/browser-final.mjs"
+    ],
+    "exitCode": 1,
+    "durationSeconds": 16.62,
+    "log": "web-final-runtime-tenth.log",
+    "startedAt": "2026-10-09T08:43:28.847490+00:00",
+    "evidenceLevel": "NOT_VERIFIED",
+    "result": "FAIL（保留原失败）"
+  },
+  {
+    "label": "visual-review",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "python3",
+      "docs/testing/evidence/ARCHITECTURE-REFRESH/replay/visual-review.py"
+    ],
+    "exitCode": 0,
+    "durationSeconds": 1.2,
+    "log": "visual-review.log",
+    "startedAt": "2026-10-09T08:44:36.023146+00:00",
+    "evidenceLevel": "DOCUMENTED / RUNTIME_VERIFIED",
+    "result": "PASS（人工评分 / 真实安全指标）"
+  },
+  {
+    "label": "web-final-runtime-eleventh",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "node",
+      "docs/testing/evidence/ARCHITECTURE-REFRESH/replay/browser-final.mjs"
+    ],
+    "exitCode": 0,
+    "durationSeconds": 18.94,
+    "log": "web-final-runtime-eleventh.log",
+    "startedAt": "2026-10-09T08:46:16.707648+00:00",
+    "evidenceLevel": "RUNTIME_VERIFIED",
+    "result": "PASS（对应范围）"
+  },
+  {
+    "label": "mini-final-320-visual",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "node",
+      "docs/testing/evidence/ARCHITECTURE-REFRESH/replay/mini-capture.cjs",
+      "320"
+    ],
+    "exitCode": 0,
+    "durationSeconds": 35.4,
+    "log": "mini-final-320-visual.log",
+    "startedAt": "2026-10-09T08:46:17.825494+00:00",
+    "evidenceLevel": "RUNTIME_VERIFIED",
+    "result": "PASS（对应范围）"
+  },
+  {
+    "label": "web-visual",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "node",
+      "docs/testing/evidence/ARCHITECTURE-REFRESH/replay/web-visual.mjs"
+    ],
+    "exitCode": 0,
+    "durationSeconds": 9.58,
+    "log": "web-visual.log",
+    "startedAt": "2026-10-09T08:49:02.621274+00:00",
+    "evidenceLevel": "RUNTIME_VERIFIED",
+    "result": "PASS（真实公共框架布局）"
+  },
+  {
+    "label": "final-frozen-install",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "pnpm",
+      "install",
+      "--frozen-lockfile"
+    ],
+    "exitCode": 0,
+    "durationSeconds": 0.68,
+    "log": "final-frozen-install.log",
+    "startedAt": "2026-10-09T08:50:51.780945+00:00",
+    "evidenceLevel": "RESOLVED",
+    "result": "PASS（依赖安装，不等于运行验收）"
+  },
+  {
+    "label": "mini-final-375-visual",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "node",
+      "docs/testing/evidence/ARCHITECTURE-REFRESH/replay/mini-capture.cjs",
+      "375"
+    ],
+    "exitCode": 0,
+    "durationSeconds": 35.34,
+    "log": "mini-final-375-visual.log",
+    "startedAt": "2026-10-09T08:50:50.715087+00:00",
+    "evidenceLevel": "RUNTIME_VERIFIED",
+    "result": "PASS（对应范围）"
+  },
+  {
+    "label": "final-whitespace-check",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "git",
+      "diff",
+      "--check"
+    ],
+    "exitCode": 0,
+    "durationSeconds": 0.06,
+    "log": "final-whitespace-check.log",
+    "startedAt": "2026-10-09T08:52:28.895032+00:00",
+    "evidenceLevel": "DOCUMENTED",
+    "result": "PASS（保全或文档检查）"
+  },
+  {
+    "label": "final-web-build-after-freeze",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "pnpm",
+      "build:web"
+    ],
+    "exitCode": 0,
+    "durationSeconds": 12.94,
+    "log": "final-web-build-after-freeze.log",
+    "startedAt": "2026-10-09T08:53:51.792927+00:00",
+    "evidenceLevel": "COMPILED",
+    "result": "PASS（编译或技术检查）"
+  },
+  {
+    "label": "final-root-check-after-freeze",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "pnpm",
+      "check"
+    ],
+    "exitCode": 0,
+    "durationSeconds": 19.36,
+    "log": "final-root-check-after-freeze.log",
+    "startedAt": "2026-10-09T08:53:50.935171+00:00",
+    "evidenceLevel": "COMPILED",
+    "result": "PASS（编译或技术检查）"
+  },
+  {
+    "label": "mini-final-430-visual",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "node",
+      "docs/testing/evidence/ARCHITECTURE-REFRESH/replay/mini-capture.cjs",
+      "430"
+    ],
+    "exitCode": 0,
+    "durationSeconds": 33.63,
+    "log": "mini-final-430-visual.log",
+    "startedAt": "2026-10-09T08:53:49.443771+00:00",
+    "evidenceLevel": "RUNTIME_VERIFIED",
+    "result": "PASS（对应范围）"
+  },
+  {
+    "label": "final-visual-review",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "python3",
+      "docs/testing/evidence/ARCHITECTURE-REFRESH/replay/visual-review.py"
+    ],
+    "exitCode": 0,
+    "durationSeconds": 0.35,
+    "log": "final-visual-review.log",
+    "startedAt": "2026-10-09T08:56:38.650430+00:00",
+    "evidenceLevel": "DOCUMENTED / RUNTIME_VERIFIED",
+    "result": "PASS（人工评分 / 真实安全指标）"
+  },
+  {
+    "label": "final-source-audit",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "python3",
+      "docs/testing/evidence/ARCHITECTURE-REFRESH/replay/source-audit.py"
+    ],
+    "exitCode": 0,
+    "durationSeconds": 0.56,
+    "log": "final-source-audit.log",
+    "startedAt": "2026-10-09T09:08:31.741727+00:00",
+    "evidenceLevel": "DOCUMENTED",
+    "result": "PASS（保全或文档检查）"
+  },
+  {
+    "label": "final-runtime-cleanup",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "python3",
+      "docs/testing/evidence/ARCHITECTURE-REFRESH/replay/cleanup.py"
+    ],
+    "exitCode": 1,
+    "durationSeconds": 1.13,
+    "log": "final-runtime-cleanup.log",
+    "startedAt": "2026-10-09T09:13:30.984608+00:00",
+    "evidenceLevel": "NOT_VERIFIED",
+    "result": "FAIL（保留原失败）"
+  },
+  {
+    "label": "final-runtime-cleanup-second",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "python3",
+      "docs/testing/evidence/ARCHITECTURE-REFRESH/replay/cleanup.py"
+    ],
+    "exitCode": 1,
+    "durationSeconds": 0.37,
+    "log": "final-runtime-cleanup-second.log",
+    "startedAt": "2026-10-09T09:14:25.165240+00:00",
+    "evidenceLevel": "NOT_VERIFIED",
+    "result": "FAIL（保留原失败）"
+  },
+  {
+    "label": "final-runtime-cleanup-third",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "python3",
+      "docs/testing/evidence/ARCHITECTURE-REFRESH/replay/cleanup.py"
+    ],
+    "exitCode": 1,
+    "durationSeconds": 0.11,
+    "log": "final-runtime-cleanup-third.log",
+    "startedAt": "2026-10-09T09:14:34.918107+00:00",
+    "evidenceLevel": "NOT_VERIFIED",
+    "result": "FAIL（保留原失败）"
+  },
+  {
+    "label": "final-runtime-cleanup-fourth",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "python3",
+      "docs/testing/evidence/ARCHITECTURE-REFRESH/replay/cleanup.py"
+    ],
+    "exitCode": 0,
+    "durationSeconds": 0.55,
+    "log": "final-runtime-cleanup-fourth.log",
+    "startedAt": "2026-10-09T09:14:44.785415+00:00",
+    "evidenceLevel": "RUNTIME_VERIFIED",
+    "result": "PASS（对应范围）"
+  },
+  {
+    "label": "final-document-check",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "python3",
+      "docs/testing/evidence/ARCHITECTURE-REFRESH/replay/document-check.py"
+    ],
+    "exitCode": 0,
+    "durationSeconds": 0.62,
+    "log": "final-document-check.log",
+    "startedAt": "2026-10-09T09:16:45.454924+00:00",
+    "evidenceLevel": "DOCUMENTED",
+    "result": "PASS（保全或文档检查）"
+  },
+  {
+    "label": "web-layout-completion-audit",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "python3",
+      "docs/testing/evidence/ARCHITECTURE-REFRESH/replay/web-completion-audit.py"
+    ],
+    "exitCode": 0,
+    "durationSeconds": 0.07,
+    "log": "web-layout-completion-audit.log",
+    "startedAt": "2026-10-09T09:20:17.750373+00:00",
+    "evidenceLevel": "DOCUMENTED",
+    "result": "PASS（保全或文档检查）"
+  },
+  {
+    "label": "final-document-check-after-layout-audit",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "python3",
+      "docs/testing/evidence/ARCHITECTURE-REFRESH/replay/document-check.py"
+    ],
+    "exitCode": 0,
+    "durationSeconds": 0.51,
+    "log": "final-document-check-after-layout-audit.log",
+    "startedAt": "2026-10-09T09:20:43.716120+00:00",
+    "evidenceLevel": "COMPILED",
+    "result": "PASS（编译或技术检查）"
+  }
+]

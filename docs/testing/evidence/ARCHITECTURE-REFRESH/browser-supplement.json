@@ -1,0 +1,249 @@
+{
+  "status": "PASS",
+  "scenarios": [
+    {
+      "name": "真实租户列表筛选分页排序与详情返回URL保留",
+      "status": "PASS"
+    },
+    {
+      "name": "正式创建重复编码422准确字段错误",
+      "status": "PASS"
+    },
+    {
+      "name": "真实API并发修改触发页面409，禁重试并保留权威资料",
+      "status": "PASS"
+    },
+    {
+      "name": "最小正式门店页面资料编辑与启停",
+      "status": "PASS"
+    },
+    {
+      "name": "正式404、非法状态422、tenantId未知参数400",
+      "status": "PASS"
+    },
+    {
+      "name": "真实PG执行权限故障503，页面错误不伪装空列表且不误退出",
+      "status": "PASS"
+    },
+    {
+      "name": "PG入口恢复后正式列表恢复",
+      "status": "PASS"
+    },
+    {
+      "name": "真实Redis暂停时控制面安全拒绝503",
+      "status": "PASS"
+    },
+    {
+      "name": "Redis恢复后平台会话有效",
+      "status": "PASS"
+    },
+    {
+      "name": "真实浏览器断网显示故障且不误退出",
+      "status": "PASS"
+    },
+    {
+      "name": "浏览器网络恢复",
+      "status": "PASS"
+    },
+    {
+      "name": "390px列表无页面横向溢出，键盘筛选Enter可用",
+      "status": "PASS"
+    }
+  ],
+  "requests": [
+    {
+      "path": "/api/platform/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/tenants",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/tenants/9a9d92a0-2b65-4db5-94b8-f494b611552d",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/tenants/9a9d92a0-2b65-4db5-94b8-f494b611552d/stores",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/csrf",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/tenants",
+      "status": 422,
+      "code": "VALIDATION_FAILED"
+    },
+    {
+      "path": "/api/platform/tenants/9a9d92a0-2b65-4db5-94b8-f494b611552d",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/tenants/9a9d92a0-2b65-4db5-94b8-f494b611552d/stores",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/tenants/9a9d92a0-2b65-4db5-94b8-f494b611552d",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/csrf",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/tenants/9a9d92a0-2b65-4db5-94b8-f494b611552d",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/tenants/9a9d92a0-2b65-4db5-94b8-f494b611552d",
+      "status": 409,
+      "code": "VERSION_CONFLICT"
+    },
+    {
+      "path": "/api/platform/tenants/9a9d92a0-2b65-4db5-94b8-f494b611552d",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/tenants/9a9d92a0-2b65-4db5-94b8-f494b611552d/stores/dcdf36c3-a567-4c75-910a-a982568ab9a2",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/tenants/9a9d92a0-2b65-4db5-94b8-f494b611552d",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/tenants",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/tenants/9a9d92a0-2b65-4db5-94b8-f494b611552d/stores",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/tenants/9a9d92a0-2b65-4db5-94b8-f494b611552d/stores/dcdf36c3-a567-4c75-910a-a982568ab9a2/status",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/tenants/9a9d92a0-2b65-4db5-94b8-f494b611552d/stores",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/tenants/9a9d92a0-2b65-4db5-94b8-f494b611552d",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/tenants",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/tenants/9a9d92a0-2b65-4db5-94b8-f494b611552d/stores/dcdf36c3-a567-4c75-910a-a982568ab9a2/status",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/tenants/9a9d92a0-2b65-4db5-94b8-f494b611552d/stores",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/tenants/9a9d92a0-2b65-4db5-94b8-f494b611552d",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/tenants",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/tenants/00000000-0000-4000-8000-000000000001",
+      "status": 404,
+      "code": "RESOURCE_NOT_FOUND"
+    },
+    {
+      "path": "/api/platform/tenants/9a9d92a0-2b65-4db5-94b8-f494b611552d",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/csrf",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/tenants/9a9d92a0-2b65-4db5-94b8-f494b611552d/status",
+      "status": 422,
+      "code": "VALIDATION_FAILED"
+    },
+    {
+      "path": "/api/platform/tenants",
+      "status": 400,
+      "code": "BAD_REQUEST"
+    },
+    {
+      "path": "/api/platform/tenants",
+      "status": 503,
+      "code": "DEPENDENCY_UNAVAILABLE"
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/tenants",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/tenants",
+      "status": 503,
+      "code": "DEPENDENCY_UNAVAILABLE"
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/tenants",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/auth/me",
+      "status": 401,
+      "code": "SESSION_REVOKED"
+    },
+    {
+      "path": "/api/admin/auth/me",
+      "status": 401,
+      "code": "AUTH_REQUIRED"
+    },
+    {
+      "path": "/api/admin/auth/csrf",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/auth/login",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/auth/csrf",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/auth/me",
+      "status": 200
+    }
+  ],
+  "pageErrors": []
+}
