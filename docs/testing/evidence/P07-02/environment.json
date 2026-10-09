@@ -1,0 +1,293 @@
+[
+  {
+    "label": "已有容器保全基线",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "docker",
+      "ps",
+      "-a",
+      "--format",
+      "{{.Names}}\t{{.State}}"
+    ],
+    "startedAt": "2026-10-09T10:33:26.280615+08:00",
+    "exitCode": 0,
+    "summary": "agent-os-platform-document-parser-worker-1\trunning\nagent-os-platform-worker-1\trunning\nagent-os-platform-web-1\trunning\nagent-os-platform-postgres-1\trunning\nagent-os-platform-agent-runtime-1\trunning\nagent-os-platform-api-1\trunning\nagent-os-platform-api-migrate-1\texited\nagent-os-platform-redis-1\trunning\npet-platform-p02-validation-rabbitmq-1\texited\npet-platform-p02-validation-postgres-1\texited\npet-platform-p02-validation-redis-1\texited\n"
+  },
+  {
+    "label": "独立冻结PostgreSQL",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "docker",
+      "run",
+      "-d",
+      "--rm",
+      "--name",
+      "pet-p07-02-pg",
+      "--label",
+      "pet.validation=P07-02",
+      "--tmpfs",
+      "/var/lib/postgresql/data",
+      "--env-file",
+      "/Users/kimwell/work/pet-platform/.local-data/p07-02/postgres.env",
+      "-p",
+      "127.0.0.1::5432",
+      "postgres:17.11-bookworm@sha256:3645570cccdfa447589da9f57dd740faa29b30938e861289a5574b6ca6b03826",
+      "-c",
+      "log_statement=none",
+      "-c",
+      "log_min_error_statement=panic",
+      "-c",
+      "log_parameter_max_length=0",
+      "-c",
+      "log_parameter_max_length_on_error=0"
+    ],
+    "startedAt": "2026-10-09T10:33:26.421104+08:00",
+    "exitCode": 0,
+    "summary": "7b68060c0768ac415f1e929cea0a2866b3d6a3d1331515b54d8400cb79dda65c\n"
+  },
+  {
+    "label": "独立冻结Redis",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "docker",
+      "run",
+      "-d",
+      "--rm",
+      "--name",
+      "pet-p07-02-redis",
+      "--label",
+      "pet.validation=P07-02",
+      "--tmpfs",
+      "/data",
+      "-v",
+      "/Users/kimwell/work/pet-platform/.local-data/p07-02/redis.conf:/tmp/validation.conf:ro",
+      "-p",
+      "127.0.0.1::6379",
+      "redis:8.2.10-bookworm@sha256:47670742d7924adbcdb404d1288b6327815b23141969c0939b8e5d61f78c2634",
+      "redis-server",
+      "/tmp/validation.conf"
+    ],
+    "startedAt": "2026-10-09T10:33:26.739189+08:00",
+    "exitCode": 0,
+    "summary": "68e3b696df388f0be46f364853755fa049c07356a651b9a0ffea28c6607bd423\n"
+  },
+  {
+    "label": "PostgreSQL回环端口",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "docker",
+      "port",
+      "pet-p07-02-pg",
+      "5432"
+    ],
+    "startedAt": "2026-10-09T10:33:28.319262+08:00",
+    "exitCode": 0,
+    "summary": "127.0.0.1:52773\n"
+  },
+  {
+    "label": "Redis回环端口",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "docker",
+      "port",
+      "pet-p07-02-redis",
+      "6379"
+    ],
+    "startedAt": "2026-10-09T10:33:28.340558+08:00",
+    "exitCode": 0,
+    "summary": "127.0.0.1:52774\n"
+  },
+  {
+    "label": "正式角色:identity",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "docker",
+      "exec",
+      "-i",
+      "pet-p07-02-pg",
+      "psql",
+      "-X",
+      "-qAt",
+      "-v",
+      "ON_ERROR_STOP=1",
+      "-U",
+      "postgres",
+      "-d",
+      "p07_02_acceptance"
+    ],
+    "startedAt": "2026-10-09T10:33:28.365686+08:00",
+    "exitCode": 0,
+    "summary": ""
+  },
+  {
+    "label": "正式角色:platform",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "docker",
+      "exec",
+      "-i",
+      "pet-p07-02-pg",
+      "psql",
+      "-X",
+      "-qAt",
+      "-v",
+      "ON_ERROR_STOP=1",
+      "-U",
+      "postgres",
+      "-d",
+      "p07_02_acceptance"
+    ],
+    "startedAt": "2026-10-09T10:33:28.458157+08:00",
+    "exitCode": 0,
+    "summary": ""
+  },
+  {
+    "label": "正式角色:customer",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "docker",
+      "exec",
+      "-i",
+      "pet-p07-02-pg",
+      "psql",
+      "-X",
+      "-qAt",
+      "-v",
+      "ON_ERROR_STOP=1",
+      "-U",
+      "postgres",
+      "-d",
+      "p07_02_acceptance"
+    ],
+    "startedAt": "2026-10-09T10:33:28.578992+08:00",
+    "exitCode": 0,
+    "summary": ""
+  },
+  {
+    "label": "独立受限登录角色",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "docker",
+      "exec",
+      "-i",
+      "pet-p07-02-pg",
+      "psql",
+      "-X",
+      "-qAt",
+      "-v",
+      "ON_ERROR_STOP=1",
+      "-U",
+      "postgres",
+      "-d",
+      "p07_02_acceptance"
+    ],
+    "startedAt": "2026-10-09T10:33:28.672997+08:00",
+    "exitCode": 0,
+    "summary": ""
+  },
+  {
+    "label": "正式独立迁移",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "scripts/backend-identity.sh",
+      "migrate"
+    ],
+    "startedAt": "2026-10-09T10:33:28.788368+08:00",
+    "exitCode": 0,
+    "summary": "d.DbValidate -- Successfully validated 5 migrations (execution time 00:00.023s)\n10:33:29.976 [main] INFO org.flywaydb.core.internal.schemahistory.JdbcTableSchemaHistory -- Creating Schema History table \"public\".\"flyway_schema_history\" ...\n10:33:30.016 [main] INFO org.flywaydb.core.internal.command.DbMigrate -- Current version of schema \"public\": << Empty Schema >>\n10:33:30.038 [main] INFO org.flywaydb.core.internal.command.DbMigrate -- Migrating schema \"public\" to version \"1 - platform identity foundation\"\n10:33:30.047 [main] WARN org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor -- DB: no privileges were granted for \"public\" (SQL State: 01007 - Error Code: 0)\n10:33:30.136 [main] INFO org.flywaydb.core.internal.command.DbMigrate -- Migrating schema \"public\" to version \"2 - staff credential security\"\n10:33:30.172 [main] INFO org.flywaydb.core.internal.command.DbMigrate -- Migrating schema \"public\" to version \"3 - platform administrator\"\n10:33:30.220 [main] INFO org.flywaydb.core.internal.command.DbMigrate -- Migrating schema \"public\" to version \"4 - customer wechat identity\"\n10:33:30.223 [main] WARN org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor -- DB: no privileges were granted for \"public\" (SQL State: 01007 - Error Code: 0)\n10:33:30.259 [main] INFO org.flywaydb.core.internal.command.DbMigrate -- Migrating schema \"public\" to version \"5 - employee read contract\"\n10:33:30.283 [main] INFO org.flywaydb.core.internal.command.DbMigrate -- Successfully applied 5 migrations to schema \"public\", now at version v5 (execution time 00:00.186s)\n正式迁移成功：本次执行数量=5\n"
+  },
+  {
+    "label": "正式员工初始化",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "scripts/backend-identity.sh",
+      "bootstrap",
+      "--tenant-code",
+      "p07-02-acceptance",
+      "--tenant-name",
+      "P07-02隔离验收",
+      "--admin-login",
+      "<受控员工账号>",
+      "--store-code",
+      "store-a",
+      "--store-name",
+      "验收门店A",
+      "--password-stdin"
+    ],
+    "startedAt": "2026-10-09T10:33:30.299437+08:00",
+    "exitCode": 0,
+    "summary": "初始化成功：tenantId=5cbec184-3a76-47a7-ae4c-b060178aec67 employeeId=b642d236-dd6c-4d77-bb2a-23aeeb4f8fa8 storeId=54fc46e0-85f5-4b03-ad19-a582cf256112\n"
+  },
+  {
+    "label": "正式第二租户员工初始化",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "scripts/backend-identity.sh",
+      "bootstrap",
+      "--tenant-code",
+      "p07-02-second",
+      "--tenant-name",
+      "P07-02第二隔离租户",
+      "--admin-login",
+      "<受控员工账号>",
+      "--store-code",
+      "store-a",
+      "--store-name",
+      "验收门店A",
+      "--password-stdin"
+    ],
+    "startedAt": "2026-10-09T10:33:31.022873+08:00",
+    "exitCode": 0,
+    "summary": "初始化成功：tenantId=b780a647-2ba4-456a-9464-c38ecc6a6996 employeeId=e2698695-b991-49b9-b0b5-c8db6dd173d4 storeId=dd914974-749e-45ec-b351-5cb31522c57b\n"
+  },
+  {
+    "label": "正式平台初始化",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "scripts/backend-identity.sh",
+      "platform-bootstrap",
+      "--admin-login",
+      "<受控平台账号>",
+      "--admin-name",
+      "P07-02验收平台管理员",
+      "--password-stdin"
+    ],
+    "startedAt": "2026-10-09T10:33:31.729708+08:00",
+    "exitCode": 0,
+    "summary": "平台初始化成功：principalId=051a2aac-4685-4f1e-8675-97987c1d4edd\n"
+  },
+  {
+    "label": "迁移与受限身份白名单",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "docker",
+      "exec",
+      "-i",
+      "pet-p07-02-pg",
+      "psql",
+      "-X",
+      "-qAt",
+      "-v",
+      "ON_ERROR_STOP=1",
+      "-U",
+      "postgres",
+      "-d",
+      "p07_02_acceptance"
+    ],
+    "startedAt": "2026-10-09T10:33:32.400682+08:00",
+    "exitCode": 0,
+    "summary": "1|t\n2|t\n3|t\n4|t\n5|t\np07_runtime|f|f\n"
+  },
+  {
+    "label": "正式生产JAR local启动",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "/Users/kimwell/.vscode/extensions/redhat.java-1.56.0-darwin-arm64/jre/21.0.12.1-macosx-aarch64/bin/java",
+      "-jar",
+      "/Users/kimwell/work/pet-platform/.local-data/p07-02/backend.jar"
+    ],
+    "exitCode": null,
+    "status": "RUNTIME_VERIFIED",
+    "summary": "readiness=200 UP;受限runtime/正式迁移;微信关闭;无测试profile/Gateway"
+  }
+]

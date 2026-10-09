@@ -1,0 +1,1229 @@
+{
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "command": [
+    "node",
+    ".local-data/p07-02/browser-real.mjs"
+  ],
+  "exitCode": 1,
+  "environment": "正式生产JAR/local、受限runtime、独立PG/Redis、正式bootstrap；目标/授权SQL隔离夹具；无网络替身",
+  "scenarios": [
+    {
+      "name": "TENANT显示与正式安全接口一致",
+      "result": "PASS",
+      "total": "56",
+      "displayed": 20
+    },
+    {
+      "name": "数据库独立租户统计一致",
+      "result": "PASS"
+    },
+    {
+      "name": "筛选草稿不触发请求且URL未变化",
+      "result": "PASS"
+    },
+    {
+      "name": "Enter一次提交关键词",
+      "result": "PASS",
+      "total": "55",
+      "displayed": 20
+    },
+    {
+      "name": "Enter无重复列表请求",
+      "result": "PASS",
+      "note": "1次页面查询+1次独立API核对"
+    },
+    {
+      "name": "服务端第二页",
+      "result": "PASS",
+      "total": "55",
+      "displayed": 20
+    },
+    {
+      "name": "查询回第一页",
+      "result": "PASS",
+      "total": "1",
+      "displayed": 1
+    },
+    {
+      "name": "后退恢复条件与表单",
+      "result": "PASS"
+    },
+    {
+      "name": "前进恢复实际提交条件",
+      "result": "PASS"
+    },
+    {
+      "name": "重置筛选分页与排序",
+      "result": "PASS",
+      "total": "56",
+      "displayed": 20
+    },
+    {
+      "name": "重置表单同步",
+      "result": "PASS"
+    },
+    {
+      "name": "状态草稿未立即查询",
+      "result": "PASS"
+    },
+    {
+      "name": "真实状态筛选",
+      "result": "PASS",
+      "total": "13",
+      "displayed": 13
+    },
+    {
+      "name": "pageSize变化回第一页",
+      "result": "PASS",
+      "total": "56",
+      "displayed": 10
+    },
+    {
+      "name": "每页10条",
+      "result": "PASS"
+    },
+    {
+      "name": "id升序",
+      "result": "PASS",
+      "total": "56",
+      "displayed": 10
+    },
+    {
+      "name": "id排序箭头升序",
+      "result": "PASS"
+    },
+    {
+      "name": "id降序",
+      "result": "PASS",
+      "total": "56",
+      "displayed": 10
+    },
+    {
+      "name": "id刷新恢复排序箭头",
+      "result": "PASS"
+    },
+    {
+      "name": "id清除恢复默认",
+      "result": "PASS"
+    },
+    {
+      "name": "loginName升序",
+      "result": "PASS",
+      "total": "56",
+      "displayed": 10
+    },
+    {
+      "name": "loginName排序箭头升序",
+      "result": "PASS"
+    },
+    {
+      "name": "loginName降序",
+      "result": "PASS",
+      "total": "56",
+      "displayed": 10
+    },
+    {
+      "name": "loginName刷新恢复排序箭头",
+      "result": "PASS"
+    },
+    {
+      "name": "loginName清除恢复默认",
+      "result": "PASS"
+    },
+    {
+      "name": "displayName升序",
+      "result": "PASS",
+      "total": "56",
+      "displayed": 10
+    },
+    {
+      "name": "displayName排序箭头升序",
+      "result": "PASS"
+    },
+    {
+      "name": "displayName降序",
+      "result": "PASS",
+      "total": "56",
+      "displayed": 10
+    },
+    {
+      "name": "displayName刷新恢复排序箭头",
+      "result": "PASS"
+    },
+    {
+      "name": "displayName清除恢复默认",
+      "result": "PASS"
+    },
+    {
+      "name": "status升序",
+      "result": "PASS",
+      "total": "56",
+      "displayed": 10
+    },
+    {
+      "name": "status排序箭头升序",
+      "result": "PASS"
+    },
+    {
+      "name": "status降序",
+      "result": "PASS",
+      "total": "56",
+      "displayed": 10
+    },
+    {
+      "name": "status刷新恢复排序箭头",
+      "result": "PASS"
+    },
+    {
+      "name": "status清除恢复默认",
+      "result": "PASS"
+    },
+    {
+      "name": "createdAt升序",
+      "result": "PASS",
+      "total": "56",
+      "displayed": 10
+    },
+    {
+      "name": "createdAt排序箭头升序",
+      "result": "PASS"
+    },
+    {
+      "name": "createdAt降序",
+      "result": "PASS",
+      "total": "56",
+      "displayed": 10
+    },
+    {
+      "name": "createdAt刷新恢复排序箭头",
+      "result": "PASS"
+    },
+    {
+      "name": "createdAt清除恢复默认",
+      "result": "PASS"
+    },
+    {
+      "name": "updatedAt升序",
+      "result": "PASS",
+      "total": "56",
+      "displayed": 10
+    },
+    {
+      "name": "updatedAt排序箭头升序",
+      "result": "PASS"
+    },
+    {
+      "name": "updatedAt降序",
+      "result": "PASS",
+      "total": "56",
+      "displayed": 10
+    },
+    {
+      "name": "updatedAt刷新恢复排序箭头",
+      "result": "PASS"
+    },
+    {
+      "name": "updatedAt清除恢复默认",
+      "result": "PASS"
+    },
+    {
+      "name": "直接带search地址与刷新恢复",
+      "result": "PASS",
+      "total": "1",
+      "displayed": 1
+    },
+    {
+      "name": "刷新表单恢复",
+      "result": "PASS"
+    },
+    {
+      "name": "特殊关键词按字面量匹配",
+      "result": "PASS",
+      "total": "1",
+      "displayed": 1
+    },
+    {
+      "name": "真实空筛选结果",
+      "result": "PASS",
+      "total": "0",
+      "displayed": 0
+    },
+    {
+      "name": "筛选空态区别失败",
+      "result": "PASS"
+    },
+    {
+      "name": "真实超末页replace回退",
+      "result": "PASS",
+      "total": "56",
+      "displayed": 16
+    },
+    {
+      "name": "末页纠正有界",
+      "result": "PASS"
+    },
+    {
+      "name": "total零回第一页",
+      "result": "PASS",
+      "total": "0",
+      "displayed": 0
+    },
+    {
+      "name": "零总数纠正到1",
+      "result": "PASS"
+    },
+    {
+      "name": "重复URL恢复默认且有提示",
+      "result": "PASS",
+      "total": "56",
+      "displayed": 20
+    },
+    {
+      "name": "重复敏感参数提示可见",
+      "result": "FAIL"
+    }
+  ],
+  "requests": [
+    {
+      "query": "?page=1&pageSize=20&sortBy=createdAt&sortOrder=desc"
+    },
+    {
+      "query": "?page=1&pageSize=20&sortBy=createdAt&sortOrder=desc"
+    },
+    {
+      "query": ""
+    },
+    {
+      "query": "?keyword=%E9%AA%8C%E6%94%B6%E5%91%98%E5%B7%A5&page=1&pageSize=20&sortBy=createdAt&sortOrder=desc"
+    },
+    {
+      "query": "?keyword=%E9%AA%8C%E6%94%B6%E5%91%98%E5%B7%A5"
+    },
+    {
+      "query": "?keyword=%E9%AA%8C%E6%94%B6%E5%91%98%E5%B7%A5&page=2&pageSize=20&sortBy=createdAt&sortOrder=desc"
+    },
+    {
+      "query": "?keyword=%E9%AA%8C%E6%94%B6%E5%91%98%E5%B7%A5&page=2"
+    },
+    {
+      "query": "?keyword=employee-01"
+    },
+    {
+      "query": "?keyword=employee-01&page=1&pageSize=20&sortBy=createdAt&sortOrder=desc"
+    },
+    {
+      "query": ""
+    },
+    {
+      "query": "?status=DISABLED"
+    },
+    {
+      "query": "?status=DISABLED&page=1&pageSize=20&sortBy=createdAt&sortOrder=desc"
+    },
+    {
+      "query": "?page=3&pageSize=20&sortBy=createdAt&sortOrder=desc"
+    },
+    {
+      "query": "?pageSize=10"
+    },
+    {
+      "query": "?pageSize=10&page=1&sortBy=createdAt&sortOrder=desc"
+    },
+    {
+      "query": "?page=2&pageSize=10&sortBy=createdAt&sortOrder=desc"
+    },
+    {
+      "query": "?page=2&pageSize=10&sortBy=createdAt&sortOrder=desc"
+    },
+    {
+      "query": "?pageSize=10&sortBy=id&sortOrder=asc&page=1"
+    },
+    {
+      "query": "?pageSize=10&sortBy=id&sortOrder=asc"
+    },
+    {
+      "query": "?pageSize=10&sortBy=id&sortOrder=desc&page=1"
+    },
+    {
+      "query": "?pageSize=10&sortBy=id&sortOrder=desc"
+    },
+    {
+      "query": "?pageSize=10&sortBy=id&sortOrder=desc&page=1"
+    },
+    {
+      "query": "?pageSize=10&sortBy=id&sortOrder=desc&page=1"
+    },
+    {
+      "query": "?page=2&pageSize=10&sortBy=createdAt&sortOrder=desc"
+    },
+    {
+      "query": "?page=2&pageSize=10&sortBy=createdAt&sortOrder=desc"
+    },
+    {
+      "query": "?pageSize=10&sortBy=loginName&sortOrder=asc"
+    },
+    {
+      "query": "?pageSize=10&sortBy=loginName&sortOrder=asc&page=1"
+    },
+    {
+      "query": "?pageSize=10&sortBy=loginName&sortOrder=desc"
+    },
+    {
+      "query": "?pageSize=10&sortBy=loginName&sortOrder=desc&page=1"
+    },
+    {
+      "query": "?pageSize=10&sortBy=loginName&sortOrder=desc&page=1"
+    },
+    {
+      "query": "?pageSize=10&sortBy=loginName&sortOrder=desc&page=1"
+    },
+    {
+      "query": "?pageSize=10&page=1&sortBy=createdAt&sortOrder=desc"
+    },
+    {
+      "query": "?page=2&pageSize=10&sortBy=createdAt&sortOrder=desc"
+    },
+    {
+      "query": "?page=2&pageSize=10&sortBy=createdAt&sortOrder=desc"
+    },
+    {
+      "query": "?pageSize=10&sortBy=displayName&sortOrder=asc&page=1"
+    },
+    {
+      "query": "?pageSize=10&sortBy=displayName&sortOrder=asc"
+    },
+    {
+      "query": "?pageSize=10&sortBy=displayName&sortOrder=desc&page=1"
+    },
+    {
+      "query": "?pageSize=10&sortBy=displayName&sortOrder=desc"
+    },
+    {
+      "query": "?pageSize=10&sortBy=displayName&sortOrder=desc&page=1"
+    },
+    {
+      "query": "?pageSize=10&sortBy=displayName&sortOrder=desc&page=1"
+    },
+    {
+      "query": "?page=2&pageSize=10&sortBy=createdAt&sortOrder=desc"
+    },
+    {
+      "query": "?page=2&pageSize=10&sortBy=createdAt&sortOrder=desc"
+    },
+    {
+      "query": "?pageSize=10&sortBy=status&sortOrder=asc&page=1"
+    },
+    {
+      "query": "?pageSize=10&sortBy=status&sortOrder=asc"
+    },
+    {
+      "query": "?pageSize=10&sortBy=status&sortOrder=desc"
+    },
+    {
+      "query": "?pageSize=10&sortBy=status&sortOrder=desc&page=1"
+    },
+    {
+      "query": "?pageSize=10&sortBy=status&sortOrder=desc&page=1"
+    },
+    {
+      "query": "?pageSize=10&sortBy=status&sortOrder=desc&page=1"
+    },
+    {
+      "query": "?page=2&pageSize=10&sortBy=createdAt&sortOrder=desc"
+    },
+    {
+      "query": "?page=2&pageSize=10&sortBy=createdAt&sortOrder=desc"
+    },
+    {
+      "query": "?pageSize=10&sortBy=createdAt&sortOrder=asc"
+    },
+    {
+      "query": "?pageSize=10&sortBy=createdAt&sortOrder=asc&page=1"
+    },
+    {
+      "query": "?pageSize=10"
+    },
+    {
+      "query": "?pageSize=10&page=1&sortBy=createdAt&sortOrder=desc"
+    },
+    {
+      "query": "?pageSize=10&page=1&sortBy=createdAt&sortOrder=desc"
+    },
+    {
+      "query": "?pageSize=10&page=1&sortBy=createdAt&sortOrder=desc"
+    },
+    {
+      "query": "?page=2&pageSize=10&sortBy=createdAt&sortOrder=desc"
+    },
+    {
+      "query": "?page=2&pageSize=10&sortBy=createdAt&sortOrder=desc"
+    },
+    {
+      "query": "?pageSize=10&sortBy=updatedAt&sortOrder=asc"
+    },
+    {
+      "query": "?pageSize=10&sortBy=updatedAt&sortOrder=asc&page=1"
+    },
+    {
+      "query": "?pageSize=10&sortBy=updatedAt&sortOrder=desc&page=1"
+    },
+    {
+      "query": "?pageSize=10&sortBy=updatedAt&sortOrder=desc"
+    },
+    {
+      "query": "?pageSize=10&sortBy=updatedAt&sortOrder=desc&page=1"
+    },
+    {
+      "query": "?pageSize=10&sortBy=updatedAt&sortOrder=desc&page=1"
+    },
+    {
+      "query": "?pageSize=10&page=1&sortBy=createdAt&sortOrder=desc"
+    },
+    {
+      "query": "?keyword=employee-01&status=ACTIVE&pageSize=10&sortBy=loginName&sortOrder=asc&page=1"
+    },
+    {
+      "query": "?keyword=employee-01&status=ACTIVE&pageSize=10&sortBy=loginName&sortOrder=asc&page=1"
+    },
+    {
+      "query": "?keyword=employee-01&status=ACTIVE&pageSize=10&sortBy=loginName&sortOrder=asc"
+    },
+    {
+      "query": "?keyword=employee-01&status=ACTIVE&pageSize=10&sortBy=loginName&sortOrder=asc&page=1"
+    },
+    {
+      "query": "?keyword=employee-01&status=ACTIVE&pageSize=10&sortBy=loginName&sortOrder=asc&page=1"
+    },
+    {
+      "query": "?keyword=%25_&page=1&pageSize=20&sortBy=createdAt&sortOrder=desc"
+    },
+    {
+      "query": "?keyword=%25_&page=1&pageSize=20&sortBy=createdAt&sortOrder=desc"
+    },
+    {
+      "query": "?keyword=%25_"
+    },
+    {
+      "query": "?keyword=%E4%B8%8D%E5%AD%98%E5%9C%A8%E7%9A%84%E6%8A%80%E6%9C%AF%E5%91%98%E5%B7%A5&page=1&pageSize=20&sortBy=createdAt&sortOrder=desc"
+    },
+    {
+      "query": "?keyword=%E4%B8%8D%E5%AD%98%E5%9C%A8%E7%9A%84%E6%8A%80%E6%9C%AF%E5%91%98%E5%B7%A5&page=1&pageSize=20&sortBy=createdAt&sortOrder=desc"
+    },
+    {
+      "query": "?keyword=%E4%B8%8D%E5%AD%98%E5%9C%A8%E7%9A%84%E6%8A%80%E6%9C%AF%E5%91%98%E5%B7%A5"
+    },
+    {
+      "query": "?page=99&pageSize=20&sortBy=createdAt&sortOrder=desc"
+    },
+    {
+      "query": "?page=99&pageSize=20&sortBy=createdAt&sortOrder=desc"
+    },
+    {
+      "query": "?page=3&pageSize=20&sortBy=createdAt&sortOrder=desc"
+    },
+    {
+      "query": "?page=3"
+    },
+    {
+      "query": "?keyword=%E4%B8%8D%E5%AD%98%E5%9C%A8%E7%9A%84%E6%8A%80%E6%9C%AF%E5%91%98%E5%B7%A5&page=99&pageSize=20&sortBy=createdAt&sortOrder=desc"
+    },
+    {
+      "query": "?keyword=%E4%B8%8D%E5%AD%98%E5%9C%A8%E7%9A%84%E6%8A%80%E6%9C%AF%E5%91%98%E5%B7%A5&page=99&pageSize=20&sortBy=createdAt&sortOrder=desc"
+    },
+    {
+      "query": "?keyword=%E4%B8%8D%E5%AD%98%E5%9C%A8%E7%9A%84%E6%8A%80%E6%9C%AF%E5%91%98%E5%B7%A5&page=1&pageSize=20&sortBy=createdAt&sortOrder=desc"
+    },
+    {
+      "query": "?keyword=%E4%B8%8D%E5%AD%98%E5%9C%A8%E7%9A%84%E6%8A%80%E6%9C%AF%E5%91%98%E5%B7%A5"
+    },
+    {
+      "query": "?page=1&pageSize=20&sortBy=createdAt&sortOrder=desc"
+    },
+    {
+      "query": "?page=1&pageSize=20&sortBy=createdAt&sortOrder=desc"
+    },
+    {
+      "query": ""
+    }
+  ],
+  "consoleErrors": [
+    "Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+    "Failed to load resource: the server responded with a status of 401 (Unauthorized)"
+  ],
+  "pageErrors": [],
+  "snapshots": [
+    {
+      "name": "TENANT显示与正式安全接口一致",
+      "query": "",
+      "total": "56",
+      "page": 1,
+      "pageSize": 20,
+      "ids": [
+        "581f985c-6ad0-4577-9308-754683ff4d03",
+        "ed1985db-43d0-4194-a8fe-e250cc714933",
+        "c23dcff2-63c0-4f9b-99f2-c16e8538e9e3",
+        "97ff7fd2-e75e-44f2-a572-dfb98ca63561",
+        "45545e24-5884-4bcd-ac53-dfae47fc1ff4",
+        "caab338d-fe85-43cb-af0f-fa565eecd6e0",
+        "3aa9712b-1365-46a8-a052-0fa03271383a",
+        "dcddd474-57bc-4cc9-9005-c4f51ff81258",
+        "89234a6f-612a-4b1a-9264-1c07c26bad12",
+        "cbcad99d-1078-4993-a002-1546622c82c2",
+        "943c791a-c39e-42f8-a19f-f87bb642442d",
+        "9e240a0b-e2aa-43b2-ae40-9ba3626e75c5",
+        "28a45843-d46d-49b9-93d4-663e00afa1b3",
+        "c55482a0-6980-4415-b897-2408369b5e3e",
+        "962da30d-1f0d-4310-9bbf-cdddc0a178bc",
+        "8b78a45d-f82d-49a5-add7-2216938b1a19",
+        "fa9c0ea9-b45c-4294-8712-ffe1d05a1d46",
+        "f87c5ad3-7882-4614-bf2b-a19321624fae",
+        "1bbf5f84-28a2-4598-a737-43d03f9d2112",
+        "4ca95030-99e7-4494-80cd-8d7a74844967"
+      ],
+      "fields": [
+        "id",
+        "loginName",
+        "displayName",
+        "status",
+        "createdAt",
+        "updatedAt"
+      ]
+    },
+    {
+      "name": "Enter一次提交关键词",
+      "query": "?keyword=%E9%AA%8C%E6%94%B6%E5%91%98%E5%B7%A5",
+      "total": "55",
+      "page": 1,
+      "pageSize": 20,
+      "ids": [
+        "ed1985db-43d0-4194-a8fe-e250cc714933",
+        "c23dcff2-63c0-4f9b-99f2-c16e8538e9e3",
+        "97ff7fd2-e75e-44f2-a572-dfb98ca63561",
+        "45545e24-5884-4bcd-ac53-dfae47fc1ff4",
+        "caab338d-fe85-43cb-af0f-fa565eecd6e0",
+        "3aa9712b-1365-46a8-a052-0fa03271383a",
+        "dcddd474-57bc-4cc9-9005-c4f51ff81258",
+        "89234a6f-612a-4b1a-9264-1c07c26bad12",
+        "cbcad99d-1078-4993-a002-1546622c82c2",
+        "943c791a-c39e-42f8-a19f-f87bb642442d",
+        "9e240a0b-e2aa-43b2-ae40-9ba3626e75c5",
+        "28a45843-d46d-49b9-93d4-663e00afa1b3",
+        "c55482a0-6980-4415-b897-2408369b5e3e",
+        "962da30d-1f0d-4310-9bbf-cdddc0a178bc",
+        "8b78a45d-f82d-49a5-add7-2216938b1a19",
+        "fa9c0ea9-b45c-4294-8712-ffe1d05a1d46",
+        "f87c5ad3-7882-4614-bf2b-a19321624fae",
+        "1bbf5f84-28a2-4598-a737-43d03f9d2112",
+        "4ca95030-99e7-4494-80cd-8d7a74844967",
+        "b7ec0043-3028-4015-8280-effdecba01cd"
+      ],
+      "fields": [
+        "id",
+        "loginName",
+        "displayName",
+        "status",
+        "createdAt",
+        "updatedAt"
+      ]
+    },
+    {
+      "name": "服务端第二页",
+      "query": "?keyword=%E9%AA%8C%E6%94%B6%E5%91%98%E5%B7%A5&page=2",
+      "total": "55",
+      "page": 2,
+      "pageSize": 20,
+      "ids": [
+        "1f1abe8c-b6d9-4a8b-82f2-90352ee87733",
+        "5bb5231c-63d1-4289-80ae-ca03200ad323",
+        "a642078d-cf7d-4c3d-8dc2-41fd27b5ce34",
+        "313c8d6b-cb83-4d95-b868-34333ed9354a",
+        "06a6cae1-db8f-4004-8812-420737fb38f4",
+        "dc0f2369-9d4a-4bf6-9042-1e546d5c032c",
+        "d5641e05-1604-44ad-8591-9c7145b5d20d",
+        "793f10e1-3df2-47b7-8bff-147166434482",
+        "7226ac9e-04a5-4b7f-b20a-52cc5dd68d1a",
+        "a131fc89-a1a0-4f04-bd6a-0360f96daa26",
+        "ef6a9083-0352-41fa-bc39-2679b484ce2a",
+        "bd1f25d0-a094-4589-8e85-caeee742f592",
+        "756952e0-a9a7-4db9-ba4a-086ced8ccf78",
+        "0fde6657-5c68-40c9-8ff9-e4a3fce7f26a",
+        "fd6773f5-73a7-46d7-b4a6-05628d1306a9",
+        "594904ac-f868-498e-b84f-7f675b2c46a7",
+        "b29e8d4c-c33d-4ae1-a72c-c0b7dd1a9a1b",
+        "48c1b975-f64f-409c-95e6-7e5e4bbf735c",
+        "ca0f12fd-d945-45f1-b7bf-27b1851d3729",
+        "fe7de96c-d3b0-4d5a-8634-721851fcc5fe"
+      ],
+      "fields": [
+        "id",
+        "loginName",
+        "displayName",
+        "status",
+        "createdAt",
+        "updatedAt"
+      ]
+    },
+    {
+      "name": "查询回第一页",
+      "query": "?keyword=employee-01",
+      "total": "1",
+      "page": 1,
+      "pageSize": 20,
+      "ids": [
+        "534f71d2-94a5-459e-9f2d-a3c327752c67"
+      ],
+      "fields": [
+        "id",
+        "loginName",
+        "displayName",
+        "status",
+        "createdAt",
+        "updatedAt"
+      ]
+    },
+    {
+      "name": "重置筛选分页与排序",
+      "query": "",
+      "total": "56",
+      "page": 1,
+      "pageSize": 20,
+      "ids": [
+        "581f985c-6ad0-4577-9308-754683ff4d03",
+        "ed1985db-43d0-4194-a8fe-e250cc714933",
+        "c23dcff2-63c0-4f9b-99f2-c16e8538e9e3",
+        "97ff7fd2-e75e-44f2-a572-dfb98ca63561",
+        "45545e24-5884-4bcd-ac53-dfae47fc1ff4",
+        "caab338d-fe85-43cb-af0f-fa565eecd6e0",
+        "3aa9712b-1365-46a8-a052-0fa03271383a",
+        "dcddd474-57bc-4cc9-9005-c4f51ff81258",
+        "89234a6f-612a-4b1a-9264-1c07c26bad12",
+        "cbcad99d-1078-4993-a002-1546622c82c2",
+        "943c791a-c39e-42f8-a19f-f87bb642442d",
+        "9e240a0b-e2aa-43b2-ae40-9ba3626e75c5",
+        "28a45843-d46d-49b9-93d4-663e00afa1b3",
+        "c55482a0-6980-4415-b897-2408369b5e3e",
+        "962da30d-1f0d-4310-9bbf-cdddc0a178bc",
+        "8b78a45d-f82d-49a5-add7-2216938b1a19",
+        "fa9c0ea9-b45c-4294-8712-ffe1d05a1d46",
+        "f87c5ad3-7882-4614-bf2b-a19321624fae",
+        "1bbf5f84-28a2-4598-a737-43d03f9d2112",
+        "4ca95030-99e7-4494-80cd-8d7a74844967"
+      ],
+      "fields": [
+        "id",
+        "loginName",
+        "displayName",
+        "status",
+        "createdAt",
+        "updatedAt"
+      ]
+    },
+    {
+      "name": "真实状态筛选",
+      "query": "?status=DISABLED",
+      "total": "13",
+      "page": 1,
+      "pageSize": 20,
+      "ids": [
+        "45545e24-5884-4bcd-ac53-dfae47fc1ff4",
+        "89234a6f-612a-4b1a-9264-1c07c26bad12",
+        "28a45843-d46d-49b9-93d4-663e00afa1b3",
+        "fa9c0ea9-b45c-4294-8712-ffe1d05a1d46",
+        "b7ec0043-3028-4015-8280-effdecba01cd",
+        "313c8d6b-cb83-4d95-b868-34333ed9354a",
+        "793f10e1-3df2-47b7-8bff-147166434482",
+        "bd1f25d0-a094-4589-8e85-caeee742f592",
+        "594904ac-f868-498e-b84f-7f675b2c46a7",
+        "fe7de96c-d3b0-4d5a-8634-721851fcc5fe",
+        "b3d5971a-3cfb-4f76-bff8-5a713476de0b",
+        "29b90034-3d0b-4a25-bde0-967baa4e2bc0",
+        "1ab481b2-6ccd-4878-a587-85eec8539ff3"
+      ],
+      "fields": [
+        "id",
+        "loginName",
+        "displayName",
+        "status",
+        "createdAt",
+        "updatedAt"
+      ]
+    },
+    {
+      "name": "pageSize变化回第一页",
+      "query": "?pageSize=10",
+      "total": "56",
+      "page": 1,
+      "pageSize": 10,
+      "ids": [
+        "581f985c-6ad0-4577-9308-754683ff4d03",
+        "ed1985db-43d0-4194-a8fe-e250cc714933",
+        "c23dcff2-63c0-4f9b-99f2-c16e8538e9e3",
+        "97ff7fd2-e75e-44f2-a572-dfb98ca63561",
+        "45545e24-5884-4bcd-ac53-dfae47fc1ff4",
+        "caab338d-fe85-43cb-af0f-fa565eecd6e0",
+        "3aa9712b-1365-46a8-a052-0fa03271383a",
+        "dcddd474-57bc-4cc9-9005-c4f51ff81258",
+        "89234a6f-612a-4b1a-9264-1c07c26bad12",
+        "cbcad99d-1078-4993-a002-1546622c82c2"
+      ],
+      "fields": [
+        "id",
+        "loginName",
+        "displayName",
+        "status",
+        "createdAt",
+        "updatedAt"
+      ]
+    },
+    {
+      "name": "id升序",
+      "query": "?pageSize=10&sortBy=id&sortOrder=asc",
+      "total": "56",
+      "page": 1,
+      "pageSize": 10,
+      "ids": [
+        "06a6cae1-db8f-4004-8812-420737fb38f4",
+        "0fde6657-5c68-40c9-8ff9-e4a3fce7f26a",
+        "1ab481b2-6ccd-4878-a587-85eec8539ff3",
+        "1bbf5f84-28a2-4598-a737-43d03f9d2112",
+        "1f1abe8c-b6d9-4a8b-82f2-90352ee87733",
+        "28a45843-d46d-49b9-93d4-663e00afa1b3",
+        "29b90034-3d0b-4a25-bde0-967baa4e2bc0",
+        "313c8d6b-cb83-4d95-b868-34333ed9354a",
+        "3aa9712b-1365-46a8-a052-0fa03271383a",
+        "45545e24-5884-4bcd-ac53-dfae47fc1ff4"
+      ],
+      "fields": [
+        "id",
+        "loginName",
+        "displayName",
+        "status",
+        "createdAt",
+        "updatedAt"
+      ]
+    },
+    {
+      "name": "id降序",
+      "query": "?pageSize=10&sortBy=id&sortOrder=desc",
+      "total": "56",
+      "page": 1,
+      "pageSize": 10,
+      "ids": [
+        "fe7de96c-d3b0-4d5a-8634-721851fcc5fe",
+        "fd6773f5-73a7-46d7-b4a6-05628d1306a9",
+        "fa9c0ea9-b45c-4294-8712-ffe1d05a1d46",
+        "f87c5ad3-7882-4614-bf2b-a19321624fae",
+        "f43aa8ad-6cba-4145-988b-b2d344ea63b6",
+        "ef6a9083-0352-41fa-bc39-2679b484ce2a",
+        "eeaf6838-5ea0-48c8-9453-77300f7db242",
+        "ed1985db-43d0-4194-a8fe-e250cc714933",
+        "e22d92f7-7cba-4500-a990-0ff18cc7bb65",
+        "dcddd474-57bc-4cc9-9005-c4f51ff81258"
+      ],
+      "fields": [
+        "id",
+        "loginName",
+        "displayName",
+        "status",
+        "createdAt",
+        "updatedAt"
+      ]
+    },
+    {
+      "name": "loginName升序",
+      "query": "?pageSize=10&sortBy=loginName&sortOrder=asc",
+      "total": "56",
+      "page": 1,
+      "pageSize": 10,
+      "ids": [
+        "534f71d2-94a5-459e-9f2d-a3c327752c67",
+        "e22d92f7-7cba-4500-a990-0ff18cc7bb65",
+        "90e1f6b6-d79b-4673-87c3-1a1f7587fc13",
+        "1ab481b2-6ccd-4878-a587-85eec8539ff3",
+        "6075d690-9c88-4123-80da-7a2b1472cffc",
+        "d5b1be45-9d5c-4704-b9b7-d587281da06b",
+        "8d652177-3c96-4293-a96c-c166b4c9a930",
+        "29b90034-3d0b-4a25-bde0-967baa4e2bc0",
+        "9c7855e9-cea8-45ca-9d21-cc19911ea851",
+        "f43aa8ad-6cba-4145-988b-b2d344ea63b6"
+      ],
+      "fields": [
+        "id",
+        "loginName",
+        "displayName",
+        "status",
+        "createdAt",
+        "updatedAt"
+      ]
+    },
+    {
+      "name": "loginName降序",
+      "query": "?pageSize=10&sortBy=loginName&sortOrder=desc",
+      "total": "56",
+      "page": 1,
+      "pageSize": 10,
+      "ids": [
+        "581f985c-6ad0-4577-9308-754683ff4d03",
+        "ed1985db-43d0-4194-a8fe-e250cc714933",
+        "c23dcff2-63c0-4f9b-99f2-c16e8538e9e3",
+        "97ff7fd2-e75e-44f2-a572-dfb98ca63561",
+        "45545e24-5884-4bcd-ac53-dfae47fc1ff4",
+        "caab338d-fe85-43cb-af0f-fa565eecd6e0",
+        "3aa9712b-1365-46a8-a052-0fa03271383a",
+        "dcddd474-57bc-4cc9-9005-c4f51ff81258",
+        "89234a6f-612a-4b1a-9264-1c07c26bad12",
+        "cbcad99d-1078-4993-a002-1546622c82c2"
+      ],
+      "fields": [
+        "id",
+        "loginName",
+        "displayName",
+        "status",
+        "createdAt",
+        "updatedAt"
+      ]
+    },
+    {
+      "name": "displayName升序",
+      "query": "?pageSize=10&sortBy=displayName&sortOrder=asc",
+      "total": "56",
+      "page": 1,
+      "pageSize": 10,
+      "ids": [
+        "581f985c-6ad0-4577-9308-754683ff4d03",
+        "534f71d2-94a5-459e-9f2d-a3c327752c67",
+        "e22d92f7-7cba-4500-a990-0ff18cc7bb65",
+        "90e1f6b6-d79b-4673-87c3-1a1f7587fc13",
+        "1ab481b2-6ccd-4878-a587-85eec8539ff3",
+        "6075d690-9c88-4123-80da-7a2b1472cffc",
+        "d5b1be45-9d5c-4704-b9b7-d587281da06b",
+        "8d652177-3c96-4293-a96c-c166b4c9a930",
+        "29b90034-3d0b-4a25-bde0-967baa4e2bc0",
+        "9c7855e9-cea8-45ca-9d21-cc19911ea851"
+      ],
+      "fields": [
+        "id",
+        "loginName",
+        "displayName",
+        "status",
+        "createdAt",
+        "updatedAt"
+      ]
+    },
+    {
+      "name": "displayName降序",
+      "query": "?pageSize=10&sortBy=displayName&sortOrder=desc",
+      "total": "56",
+      "page": 1,
+      "pageSize": 10,
+      "ids": [
+        "ed1985db-43d0-4194-a8fe-e250cc714933",
+        "c23dcff2-63c0-4f9b-99f2-c16e8538e9e3",
+        "97ff7fd2-e75e-44f2-a572-dfb98ca63561",
+        "45545e24-5884-4bcd-ac53-dfae47fc1ff4",
+        "caab338d-fe85-43cb-af0f-fa565eecd6e0",
+        "3aa9712b-1365-46a8-a052-0fa03271383a",
+        "dcddd474-57bc-4cc9-9005-c4f51ff81258",
+        "89234a6f-612a-4b1a-9264-1c07c26bad12",
+        "cbcad99d-1078-4993-a002-1546622c82c2",
+        "943c791a-c39e-42f8-a19f-f87bb642442d"
+      ],
+      "fields": [
+        "id",
+        "loginName",
+        "displayName",
+        "status",
+        "createdAt",
+        "updatedAt"
+      ]
+    },
+    {
+      "name": "status升序",
+      "query": "?pageSize=10&sortBy=status&sortOrder=asc",
+      "total": "56",
+      "page": 1,
+      "pageSize": 10,
+      "ids": [
+        "06a6cae1-db8f-4004-8812-420737fb38f4",
+        "0fde6657-5c68-40c9-8ff9-e4a3fce7f26a",
+        "1bbf5f84-28a2-4598-a737-43d03f9d2112",
+        "1f1abe8c-b6d9-4a8b-82f2-90352ee87733",
+        "3aa9712b-1365-46a8-a052-0fa03271383a",
+        "48c1b975-f64f-409c-95e6-7e5e4bbf735c",
+        "4ca95030-99e7-4494-80cd-8d7a74844967",
+        "534f71d2-94a5-459e-9f2d-a3c327752c67",
+        "55331b53-1a1e-4ef3-85cb-4f4b12e71bf3",
+        "581f985c-6ad0-4577-9308-754683ff4d03"
+      ],
+      "fields": [
+        "id",
+        "loginName",
+        "displayName",
+        "status",
+        "createdAt",
+        "updatedAt"
+      ]
+    },
+    {
+      "name": "status降序",
+      "query": "?pageSize=10&sortBy=status&sortOrder=desc",
+      "total": "56",
+      "page": 1,
+      "pageSize": 10,
+      "ids": [
+        "fe7de96c-d3b0-4d5a-8634-721851fcc5fe",
+        "fa9c0ea9-b45c-4294-8712-ffe1d05a1d46",
+        "bd1f25d0-a094-4589-8e85-caeee742f592",
+        "b7ec0043-3028-4015-8280-effdecba01cd",
+        "b3d5971a-3cfb-4f76-bff8-5a713476de0b",
+        "89234a6f-612a-4b1a-9264-1c07c26bad12",
+        "793f10e1-3df2-47b7-8bff-147166434482",
+        "594904ac-f868-498e-b84f-7f675b2c46a7",
+        "45545e24-5884-4bcd-ac53-dfae47fc1ff4",
+        "313c8d6b-cb83-4d95-b868-34333ed9354a"
+      ],
+      "fields": [
+        "id",
+        "loginName",
+        "displayName",
+        "status",
+        "createdAt",
+        "updatedAt"
+      ]
+    },
+    {
+      "name": "createdAt升序",
+      "query": "?pageSize=10&sortBy=createdAt&sortOrder=asc",
+      "total": "56",
+      "page": 1,
+      "pageSize": 10,
+      "ids": [
+        "534f71d2-94a5-459e-9f2d-a3c327752c67",
+        "e22d92f7-7cba-4500-a990-0ff18cc7bb65",
+        "90e1f6b6-d79b-4673-87c3-1a1f7587fc13",
+        "1ab481b2-6ccd-4878-a587-85eec8539ff3",
+        "6075d690-9c88-4123-80da-7a2b1472cffc",
+        "d5b1be45-9d5c-4704-b9b7-d587281da06b",
+        "8d652177-3c96-4293-a96c-c166b4c9a930",
+        "29b90034-3d0b-4a25-bde0-967baa4e2bc0",
+        "9c7855e9-cea8-45ca-9d21-cc19911ea851",
+        "f43aa8ad-6cba-4145-988b-b2d344ea63b6"
+      ],
+      "fields": [
+        "id",
+        "loginName",
+        "displayName",
+        "status",
+        "createdAt",
+        "updatedAt"
+      ]
+    },
+    {
+      "name": "createdAt降序",
+      "query": "?pageSize=10",
+      "total": "56",
+      "page": 1,
+      "pageSize": 10,
+      "ids": [
+        "581f985c-6ad0-4577-9308-754683ff4d03",
+        "ed1985db-43d0-4194-a8fe-e250cc714933",
+        "c23dcff2-63c0-4f9b-99f2-c16e8538e9e3",
+        "97ff7fd2-e75e-44f2-a572-dfb98ca63561",
+        "45545e24-5884-4bcd-ac53-dfae47fc1ff4",
+        "caab338d-fe85-43cb-af0f-fa565eecd6e0",
+        "3aa9712b-1365-46a8-a052-0fa03271383a",
+        "dcddd474-57bc-4cc9-9005-c4f51ff81258",
+        "89234a6f-612a-4b1a-9264-1c07c26bad12",
+        "cbcad99d-1078-4993-a002-1546622c82c2"
+      ],
+      "fields": [
+        "id",
+        "loginName",
+        "displayName",
+        "status",
+        "createdAt",
+        "updatedAt"
+      ]
+    },
+    {
+      "name": "updatedAt升序",
+      "query": "?pageSize=10&sortBy=updatedAt&sortOrder=asc",
+      "total": "56",
+      "page": 1,
+      "pageSize": 10,
+      "ids": [
+        "534f71d2-94a5-459e-9f2d-a3c327752c67",
+        "e22d92f7-7cba-4500-a990-0ff18cc7bb65",
+        "90e1f6b6-d79b-4673-87c3-1a1f7587fc13",
+        "1ab481b2-6ccd-4878-a587-85eec8539ff3",
+        "6075d690-9c88-4123-80da-7a2b1472cffc",
+        "d5b1be45-9d5c-4704-b9b7-d587281da06b",
+        "8d652177-3c96-4293-a96c-c166b4c9a930",
+        "29b90034-3d0b-4a25-bde0-967baa4e2bc0",
+        "9c7855e9-cea8-45ca-9d21-cc19911ea851",
+        "f43aa8ad-6cba-4145-988b-b2d344ea63b6"
+      ],
+      "fields": [
+        "id",
+        "loginName",
+        "displayName",
+        "status",
+        "createdAt",
+        "updatedAt"
+      ]
+    },
+    {
+      "name": "updatedAt降序",
+      "query": "?pageSize=10&sortBy=updatedAt&sortOrder=desc",
+      "total": "56",
+      "page": 1,
+      "pageSize": 10,
+      "ids": [
+        "581f985c-6ad0-4577-9308-754683ff4d03",
+        "ed1985db-43d0-4194-a8fe-e250cc714933",
+        "c23dcff2-63c0-4f9b-99f2-c16e8538e9e3",
+        "97ff7fd2-e75e-44f2-a572-dfb98ca63561",
+        "45545e24-5884-4bcd-ac53-dfae47fc1ff4",
+        "caab338d-fe85-43cb-af0f-fa565eecd6e0",
+        "3aa9712b-1365-46a8-a052-0fa03271383a",
+        "dcddd474-57bc-4cc9-9005-c4f51ff81258",
+        "89234a6f-612a-4b1a-9264-1c07c26bad12",
+        "cbcad99d-1078-4993-a002-1546622c82c2"
+      ],
+      "fields": [
+        "id",
+        "loginName",
+        "displayName",
+        "status",
+        "createdAt",
+        "updatedAt"
+      ]
+    },
+    {
+      "name": "直接带search地址与刷新恢复",
+      "query": "?keyword=employee-01&status=ACTIVE&pageSize=10&sortBy=loginName&sortOrder=asc",
+      "total": "1",
+      "page": 1,
+      "pageSize": 10,
+      "ids": [
+        "534f71d2-94a5-459e-9f2d-a3c327752c67"
+      ],
+      "fields": [
+        "id",
+        "loginName",
+        "displayName",
+        "status",
+        "createdAt",
+        "updatedAt"
+      ]
+    },
+    {
+      "name": "特殊关键词按字面量匹配",
+      "query": "?keyword=%25_",
+      "total": "1",
+      "page": 1,
+      "pageSize": 20,
+      "ids": [
+        "534f71d2-94a5-459e-9f2d-a3c327752c67"
+      ],
+      "fields": [
+        "id",
+        "loginName",
+        "displayName",
+        "status",
+        "createdAt",
+        "updatedAt"
+      ]
+    },
+    {
+      "name": "真实空筛选结果",
+      "query": "?keyword=%E4%B8%8D%E5%AD%98%E5%9C%A8%E7%9A%84%E6%8A%80%E6%9C%AF%E5%91%98%E5%B7%A5",
+      "total": "0",
+      "page": 1,
+      "pageSize": 20,
+      "ids": [],
+      "fields": []
+    },
+    {
+      "name": "真实超末页replace回退",
+      "query": "?page=3",
+      "total": "56",
+      "page": 3,
+      "pageSize": 20,
+      "ids": [
+        "fe7de96c-d3b0-4d5a-8634-721851fcc5fe",
+        "aeec85e5-ec4d-46ae-90af-5194a047e30d",
+        "eeaf6838-5ea0-48c8-9453-77300f7db242",
+        "c3c52aa9-5123-4499-a3a6-c065999fe6ae",
+        "b3d5971a-3cfb-4f76-bff8-5a713476de0b",
+        "55331b53-1a1e-4ef3-85cb-4f4b12e71bf3",
+        "f43aa8ad-6cba-4145-988b-b2d344ea63b6",
+        "9c7855e9-cea8-45ca-9d21-cc19911ea851",
+        "29b90034-3d0b-4a25-bde0-967baa4e2bc0",
+        "8d652177-3c96-4293-a96c-c166b4c9a930",
+        "d5b1be45-9d5c-4704-b9b7-d587281da06b",
+        "6075d690-9c88-4123-80da-7a2b1472cffc",
+        "1ab481b2-6ccd-4878-a587-85eec8539ff3",
+        "90e1f6b6-d79b-4673-87c3-1a1f7587fc13",
+        "e22d92f7-7cba-4500-a990-0ff18cc7bb65",
+        "534f71d2-94a5-459e-9f2d-a3c327752c67"
+      ],
+      "fields": [
+        "id",
+        "loginName",
+        "displayName",
+        "status",
+        "createdAt",
+        "updatedAt"
+      ]
+    },
+    {
+      "name": "total零回第一页",
+      "query": "?keyword=%E4%B8%8D%E5%AD%98%E5%9C%A8%E7%9A%84%E6%8A%80%E6%9C%AF%E5%91%98%E5%B7%A5",
+      "total": "0",
+      "page": 1,
+      "pageSize": 20,
+      "ids": [],
+      "fields": []
+    },
+    {
+      "name": "重复URL恢复默认且有提示",
+      "query": "",
+      "total": "56",
+      "page": 1,
+      "pageSize": 20,
+      "ids": [
+        "581f985c-6ad0-4577-9308-754683ff4d03",
+        "ed1985db-43d0-4194-a8fe-e250cc714933",
+        "c23dcff2-63c0-4f9b-99f2-c16e8538e9e3",
+        "97ff7fd2-e75e-44f2-a572-dfb98ca63561",
+        "45545e24-5884-4bcd-ac53-dfae47fc1ff4",
+        "caab338d-fe85-43cb-af0f-fa565eecd6e0",
+        "3aa9712b-1365-46a8-a052-0fa03271383a",
+        "dcddd474-57bc-4cc9-9005-c4f51ff81258",
+        "89234a6f-612a-4b1a-9264-1c07c26bad12",
+        "cbcad99d-1078-4993-a002-1546622c82c2",
+        "943c791a-c39e-42f8-a19f-f87bb642442d",
+        "9e240a0b-e2aa-43b2-ae40-9ba3626e75c5",
+        "28a45843-d46d-49b9-93d4-663e00afa1b3",
+        "c55482a0-6980-4415-b897-2408369b5e3e",
+        "962da30d-1f0d-4310-9bbf-cdddc0a178bc",
+        "8b78a45d-f82d-49a5-add7-2216938b1a19",
+        "fa9c0ea9-b45c-4294-8712-ffe1d05a1d46",
+        "f87c5ad3-7882-4614-bf2b-a19321624fae",
+        "1bbf5f84-28a2-4598-a737-43d03f9d2112",
+        "4ca95030-99e7-4494-80cd-8d7a74844967"
+      ],
+      "fields": [
+        "id",
+        "loginName",
+        "displayName",
+        "status",
+        "createdAt",
+        "updatedAt"
+      ]
+    }
+  ],
+  "error": "重复敏感参数提示可见"
+}

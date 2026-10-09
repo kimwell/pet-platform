@@ -22,6 +22,17 @@ body { background: #f5f5f5; }
 .page-heading { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
 .page-heading h1 { font-size: 28px; margin-top: 0; }
 .system-links { display: flex; gap: 24px; padding-block: 16px; }
+.employee-list { min-width: 0; display: flex; flex-direction: column; gap: 20px; }
+.employee-list .page-heading h1 { margin-bottom: 8px; }
+.employee-list .page-heading .ant-typography { margin-bottom: 0; }
+.employee-filters { display: grid; grid-template-columns: minmax(200px, 1fr) 180px auto; gap: 16px; align-items: end; padding: 20px; background: #fff; border: 1px solid #e5e7eb; border-radius: 8px; }
+.employee-filters .ant-form-item { margin-bottom: 0; min-width: 0; }
+.employee-filter-actions { padding-bottom: 0; }
+.employee-table-region { min-width: 0; max-width: 100%; overflow: auto; background: #fff; border-radius: 8px; }
+.employee-table-region .ant-typography { max-width: 100%; }
+.employee-query-error { display: flex; flex-direction: column; align-items: flex-start; gap: 12px; }
+.employee-query-error > .ant-alert { width: 100%; box-sizing: border-box; }
+.employee-pagination { display: flex; flex-wrap: wrap; gap: 8px; }
 @media (max-width: 600px) { .system-content { padding: 24px 16px; } }
 @media (max-width: 760px) {
   .entry-grid { grid-template-columns: 1fr; }
@@ -34,4 +45,8 @@ body { background: #f5f5f5; }
   .session-header > .ant-btn { max-width: 100%; height: auto; min-height: 32px; white-space: normal; }
   .session-content { padding: 20px 16px; }
   .page-heading { align-items: flex-start; flex-direction: column; }
+  .employee-filters { grid-template-columns: minmax(0, 1fr); padding: 16px; }
+  .employee-list .ant-pagination-options { margin-inline-start: 0; }
+  /* 官方默认会在窄屏隐藏 options；本页保留每页大小与跳页，允许自然换行。 */
+  .employee-list .employee-pagination .ant-pagination-options { display: flex; flex-wrap: wrap; gap: 8px; }
 }

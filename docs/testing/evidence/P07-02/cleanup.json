@@ -1,0 +1,177 @@
+{
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "command": [
+    "python3",
+    ".local-data/p07-02/cleanup.py"
+  ],
+  "exitCode": 0,
+  "completedAt": "2026-10-09T02:37:10.792997+00:00",
+  "records": [
+    {
+      "label": "隔离授权与关联恢复核对",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": [
+        "docker",
+        "exec",
+        "-i",
+        "pet-p07-02-pg",
+        "psql",
+        "-X",
+        "-qAt",
+        "-v",
+        "ON_ERROR_STOP=1",
+        "-U",
+        "postgres",
+        "-d",
+        "p07_02_acceptance"
+      ],
+      "exitCode": 0,
+      "summary": "{\"listGrantTenant\" : 1, \"otherListScopes\" : 0}\n1\n6"
+    },
+    {
+      "label": "本轮PostgreSQL端口",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": [
+        "docker",
+        "port",
+        "pet-p07-02-pg",
+        "5432"
+      ],
+      "exitCode": 0,
+      "summary": "127.0.0.1:52773"
+    },
+    {
+      "label": "收尾前卷清单",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": [
+        "docker",
+        "volume",
+        "ls",
+        "--format",
+        "{{.Name}}"
+      ],
+      "exitCode": 0,
+      "summary": "2f0cb1b43942984d58c21106fc837a7bcd98b4dacbf44ec26a1e4a9a0148f17b\n5cb37b53c5928c8f4f737b744ac423a9de4cefb960877ac2393ec707ee5ae885\n7e8a427e33b700123b7558bef3e44a3ecc2fffe9179fcee0569059d29023e012\n8f6a61721226d88201ab5a33e7a19e7f491882c88211f40b1a8082ded1d10a55\n40a6c79baa0f35024bf15c16dc1eb00aa47c394ca87a4be067560a34a87af6ad\n059c53c40bf888d6635045cc0b100dc072242b6f90831d34af2a5469b2a5e233\n923b5bb0df8e2bb9a7a4a1da6e2b6fc4b15a8066bd954b9eabc2b6714fa0053b\nagent-os-platform_api-storage\nagent-os-platform_artifact-storage\nagent-os-platform_postgres-data\nagent-os-platform_redis-data\nb174c4df1595b3857673ccfae1a93a488ce62fd4330122a513f08fdb44f26478\nd84ff1d2cdc05ebaf6970d272c5c0d2f36348000fb1caebebfbad08748d6b36b\npet-platform-p02-validation_postgres-data\npet-platform-p02-validation_rabbitmq-data\npet-platform-p02-validation_redis-data"
+    },
+    {
+      "label": "专用后端",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": [
+        "kill",
+        "-TERM",
+        "process-group",
+        "50611"
+      ],
+      "exitCode": 0,
+      "summary": "验证专用PID/独立进程组后停止；未读取/输出进程环境"
+    },
+    {
+      "label": "专用Web",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": [
+        "kill",
+        "-TERM",
+        "process-group",
+        "48732"
+      ],
+      "exitCode": 0,
+      "summary": "验证专用PID/独立进程组后停止；未读取/输出进程环境"
+    },
+    {
+      "label": "停止并移除本轮tmpfs容器",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": [
+        "docker",
+        "stop",
+        "pet-p07-02-redis",
+        "pet-p07-02-pg"
+      ],
+      "exitCode": 0,
+      "summary": "pet-p07-02-redis\npet-p07-02-pg"
+    },
+    {
+      "label": "已有容器状态核对",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": [
+        "docker",
+        "ps",
+        "-a",
+        "--format",
+        "{{.Names}}\t{{.State}}"
+      ],
+      "exitCode": 0,
+      "summary": "agent-os-platform-document-parser-worker-1\trunning\nagent-os-platform-worker-1\trunning\nagent-os-platform-web-1\trunning\nagent-os-platform-postgres-1\trunning\nagent-os-platform-agent-runtime-1\trunning\nagent-os-platform-api-1\trunning\nagent-os-platform-api-migrate-1\texited\nagent-os-platform-redis-1\trunning\npet-platform-p02-validation-rabbitmq-1\texited\npet-platform-p02-validation-postgres-1\texited\npet-platform-p02-validation-redis-1\texited"
+    },
+    {
+      "label": "收尾后卷清单",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": [
+        "docker",
+        "volume",
+        "ls",
+        "--format",
+        "{{.Name}}"
+      ],
+      "exitCode": 0,
+      "summary": "2f0cb1b43942984d58c21106fc837a7bcd98b4dacbf44ec26a1e4a9a0148f17b\n5cb37b53c5928c8f4f737b744ac423a9de4cefb960877ac2393ec707ee5ae885\n7e8a427e33b700123b7558bef3e44a3ecc2fffe9179fcee0569059d29023e012\n8f6a61721226d88201ab5a33e7a19e7f491882c88211f40b1a8082ded1d10a55\n40a6c79baa0f35024bf15c16dc1eb00aa47c394ca87a4be067560a34a87af6ad\n059c53c40bf888d6635045cc0b100dc072242b6f90831d34af2a5469b2a5e233\n923b5bb0df8e2bb9a7a4a1da6e2b6fc4b15a8066bd954b9eabc2b6714fa0053b\nagent-os-platform_api-storage\nagent-os-platform_artifact-storage\nagent-os-platform_postgres-data\nagent-os-platform_redis-data\nb174c4df1595b3857673ccfae1a93a488ce62fd4330122a513f08fdb44f26478\nd84ff1d2cdc05ebaf6970d272c5c0d2f36348000fb1caebebfbad08748d6b36b\npet-platform-p02-validation_postgres-data\npet-platform-p02-validation_rabbitmq-data\npet-platform-p02-validation_redis-data"
+    }
+  ],
+  "restoredGrantAndStoreAndSelect": true,
+  "originalJarSHA256": "50ded25e2927b2423f7c2d8844d85a980f3f10ee055d721dc7a09345d7975c10",
+  "artifactMatchesOriginal": true,
+  "removedSecretInputs": [
+    "staff-password",
+    "platform-password",
+    "postgres.env",
+    "redis.conf",
+    "staff-new-password",
+    "staff-final-password",
+    "platform-new-password"
+  ],
+  "remainingSecretInputs": [],
+  "closedPorts": {
+    "5173": true,
+    "18090": true,
+    "52774": true,
+    "52773": true
+  },
+  "existingContainersPreserved": true,
+  "volumesBefore": [
+    "2f0cb1b43942984d58c21106fc837a7bcd98b4dacbf44ec26a1e4a9a0148f17b",
+    "5cb37b53c5928c8f4f737b744ac423a9de4cefb960877ac2393ec707ee5ae885",
+    "7e8a427e33b700123b7558bef3e44a3ecc2fffe9179fcee0569059d29023e012",
+    "8f6a61721226d88201ab5a33e7a19e7f491882c88211f40b1a8082ded1d10a55",
+    "40a6c79baa0f35024bf15c16dc1eb00aa47c394ca87a4be067560a34a87af6ad",
+    "059c53c40bf888d6635045cc0b100dc072242b6f90831d34af2a5469b2a5e233",
+    "923b5bb0df8e2bb9a7a4a1da6e2b6fc4b15a8066bd954b9eabc2b6714fa0053b",
+    "agent-os-platform_api-storage",
+    "agent-os-platform_artifact-storage",
+    "agent-os-platform_postgres-data",
+    "agent-os-platform_redis-data",
+    "b174c4df1595b3857673ccfae1a93a488ce62fd4330122a513f08fdb44f26478",
+    "d84ff1d2cdc05ebaf6970d272c5c0d2f36348000fb1caebebfbad08748d6b36b",
+    "pet-platform-p02-validation_postgres-data",
+    "pet-platform-p02-validation_rabbitmq-data",
+    "pet-platform-p02-validation_redis-data"
+  ],
+  "volumesAfter": [
+    "2f0cb1b43942984d58c21106fc837a7bcd98b4dacbf44ec26a1e4a9a0148f17b",
+    "5cb37b53c5928c8f4f737b744ac423a9de4cefb960877ac2393ec707ee5ae885",
+    "7e8a427e33b700123b7558bef3e44a3ecc2fffe9179fcee0569059d29023e012",
+    "8f6a61721226d88201ab5a33e7a19e7f491882c88211f40b1a8082ded1d10a55",
+    "40a6c79baa0f35024bf15c16dc1eb00aa47c394ca87a4be067560a34a87af6ad",
+    "059c53c40bf888d6635045cc0b100dc072242b6f90831d34af2a5469b2a5e233",
+    "923b5bb0df8e2bb9a7a4a1da6e2b6fc4b15a8066bd954b9eabc2b6714fa0053b",
+    "agent-os-platform_api-storage",
+    "agent-os-platform_artifact-storage",
+    "agent-os-platform_postgres-data",
+    "agent-os-platform_redis-data",
+    "b174c4df1595b3857673ccfae1a93a488ce62fd4330122a513f08fdb44f26478",
+    "d84ff1d2cdc05ebaf6970d272c5c0d2f36348000fb1caebebfbad08748d6b36b",
+    "pet-platform-p02-validation_postgres-data",
+    "pet-platform-p02-validation_rabbitmq-data",
+    "pet-platform-p02-validation_redis-data"
+  ],
+  "namedVolumesDeleted": false,
+  "summary": "只停止本轮生产JAR/Web/两个tmpfs容器并移除秘密输入；未删除既有数据库卷"
+}

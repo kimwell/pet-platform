@@ -1,0 +1,1 @@
+{"exitCode":1,"scenarios":[{"name":"TENANT显示与正式安全接口一致","result":"PASS"},{"name":"数据库独立租户统计一致","result":"PASS"},{"name":"筛选草稿不触发请求且URL未变化","result":"PASS"},{"name":"Enter一次提交关键词","result":"FAIL"}],"error":"Enter一次提交关键词"}

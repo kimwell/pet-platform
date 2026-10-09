@@ -1,0 +1,1 @@
+{"cwd":"/Users/kimwell/work/pet-platform","command":["node",".local-data/p07-02/browser-narrow.mjs"],"exitCode":1,"scenarios":[{"name":"390px保留真实每页大小与跳页控件","result":"PASS"},{"name":"390px键盘切换pageSize回第1页","result":"PASS"}],"error":"page.waitForURL: Timeout 30000ms exceeded."}

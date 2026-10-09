@@ -1,0 +1,52 @@
+{
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "command": [
+    "node",
+    "docs/testing/evidence/P07-02/browser-components.mjs"
+  ],
+  "exitCode": 1,
+  "evidenceType": "确定性组件/受控网络替身，非真实业务联调",
+  "scenarios": [
+    {
+      "name": "首次加载无旧行",
+      "result": "PASS"
+    },
+    {
+      "name": "Form草稿与已提交URL分离",
+      "result": "PASS",
+      "before": 2,
+      "after": 2,
+      "url": "http://127.0.0.1:5173/admin/identity/users"
+    },
+    {
+      "name": "关键词码点长度校验阻止请求并聚焦",
+      "result": "PASS"
+    },
+    {
+      "name": "重置清表单错误和草稿",
+      "result": "PASS"
+    },
+    {
+      "name": "超MAX_SAFE精确总数可见且分页组件不接收不安全值",
+      "result": "PASS"
+    },
+    {
+      "name": "连续total收缩只纠正一次不循环",
+      "result": "PASS"
+    },
+    {
+      "name": "切换条件清空旧结果而无placeholder",
+      "result": "PASS"
+    },
+    {
+      "name": "晚到旧响应不能覆盖当前新结果",
+      "result": "PASS"
+    },
+    {
+      "name": "422准确查询参数提示且不假装空结果",
+      "result": "PASS"
+    }
+  ],
+  "errors": [],
+  "error": "locator.waitFor: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByText('当前账号没有访问权限', { exact: true }) to be visible\u001b[22m\n"
+}

@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { lazy, Suspense, useEffect } from 'react';
 import { useMutation } from '@tanstack/react-query';
 import { Link, useRouter, useRouteContext, useLocation } from '@tanstack/react-router';
 import { Alert, Avatar, Breadcrumb, Button, Dropdown, Layout, Menu, Space, Spin, Typography } from 'antd';
@@ -12,6 +12,7 @@ import { SessionFailure } from '../../shared/auth/SessionFailure';
 import { canManageSelf, isRestricted } from '../../shared/auth/permissions';
 import { canAccessPage, navigationFor, pageFor } from '../router/pageAccess';
 import { AccountSecurity } from '../../features/account/AccountSecurity';
+const EmployeeListPage = lazy(() => import('../../features/identity/users/pages/EmployeeListPage').then(module => ({ default: module.EmployeeListPage })));
 
 function SessionLayout({ space }: { space: AuthSpace }) {
   const router = useRouter();
@@ -61,7 +62,8 @@ function SessionLayout({ space }: { space: AuthSpace }) {
           // 同源标签可改变Cookie；新身份/授权范围不能沿用旧主体的敏感草稿。
           key={JSON.stringify([identity.principalId, identity.tenantId, identity.sessionId, identity.authorizationVersion,
             [...identity.permissionCodes].sort(), [...identity.authorizedStoreIds].sort(), identity.dataScope, isRestricted(identity)])}
-          identity={identity} disabled={session.busy} refreshing={session.isFetching} refresh={() => void session.refetch()} /> : <AccountHome identity={identity} refreshing={session.isFetching} refresh={() => void session.refetch()} />}
+          identity={identity} disabled={session.busy} refreshing={session.isFetching} refresh={() => void session.refetch()} /> : page.path === '/admin/identity/users' ? <Suspense fallback={<div role="status"><Spin /> 正在加载员工列表页面…</div>}><EmployeeListPage
+            key={`${identity.principalId}:${runtime.epoch(space)}`} identity={identity} /></Suspense> : <AccountHome identity={identity} refreshing={session.isFetching} refresh={() => void session.refetch()} />}
         {isRestricted(identity) && <Typography.Text type="secondary">请完成密码修改后继续使用工作台。</Typography.Text>}
         <div className="system-links"><Link to="/">系统入口</Link><Link to={space === 'STAFF' ? '/platform' : '/admin'}>{space === 'STAFF' ? '平台控制台' : '员工工作台'}</Link></div>
       </Layout.Content>

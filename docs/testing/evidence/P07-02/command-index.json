@@ -1,0 +1,1706 @@
+{
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "generatedAt": "2026-10-09T02:39:19.548198+00:00",
+  "latestRequiredEvidence": {
+    "typecheck": "typecheck-final-accepted",
+    "lint": "lint-final-accepted",
+    "test": "test-final-accepted",
+    "build": "build-boundary-final",
+    "contracts": "contracts-check",
+    "repository": "check-repo-final-accepted",
+    "diff": "diff-check-final-accepted",
+    "realBrowser": "browser-real-boundary-final",
+    "narrowBrowser": "browser-narrow-boundary-final",
+    "components": "browser-components-boundary-final",
+    "staged": "staged-check"
+  },
+  "commands": [
+    {
+      "source": "browser-components-12-accepted-observations.json",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": [
+        "node",
+        "docs/testing/evidence/P07-02/browser-components.mjs"
+      ],
+      "exitCode": 0
+    },
+    {
+      "source": "browser-components-accepted.json",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": [
+        "node",
+        "docs/testing/evidence/P07-02/browser-components.mjs"
+      ],
+      "exitCode": 0,
+      "startedAt": "2026-10-09T02:11:14.567873+00:00",
+      "completedAt": "2026-10-09T02:11:34.764616+00:00",
+      "log": "browser-components-accepted.log"
+    },
+    {
+      "source": "browser-components-boundary-final.json",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": [
+        "node",
+        "docs/testing/evidence/P07-02/browser-components.mjs"
+      ],
+      "exitCode": 0,
+      "startedAt": "2026-10-09T02:32:54.853643+00:00",
+      "completedAt": "2026-10-09T02:33:17.700009+00:00",
+      "log": "browser-components-boundary-final.log"
+    },
+    {
+      "source": "browser-components-fifth.json",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": [
+        "node",
+        "docs/testing/evidence/P07-02/browser-components.mjs"
+      ],
+      "exitCode": 0,
+      "startedAt": "2026-10-09T02:05:57.276999+00:00",
+      "completedAt": "2026-10-09T02:06:50.955307+00:00",
+      "log": "browser-components-fifth.log"
+    },
+    {
+      "source": "browser-components-final.json",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": [
+        "node",
+        "docs/testing/evidence/P07-02/browser-components.mjs"
+      ],
+      "exitCode": 0,
+      "startedAt": "2026-10-09T02:26:51.283791+00:00",
+      "completedAt": "2026-10-09T02:27:07.374769+00:00",
+      "log": "browser-components-final.log"
+    },
+    {
+      "source": "browser-components-first.json",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": [
+        "node",
+        "docs/testing/evidence/P07-02/browser-components.mjs"
+      ],
+      "exitCode": 1,
+      "startedAt": "2026-10-09T01:58:24.931609+00:00",
+      "completedAt": "2026-10-09T01:58:27.199420+00:00",
+      "log": "browser-components-first.log"
+    },
+    {
+      "source": "browser-components-fourth-observations.json",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": [
+        "node",
+        "docs/testing/evidence/P07-02/browser-components.mjs"
+      ],
+      "exitCode": 1
+    },
+    {
+      "source": "browser-components-fourth.json",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": [
+        "node",
+        "docs/testing/evidence/P07-02/browser-components.mjs"
+      ],
+      "exitCode": 1,
+      "startedAt": "2026-10-09T02:03:56.468332+00:00",
+      "completedAt": "2026-10-09T02:04:39.459136+00:00",
+      "log": "browser-components-fourth.log"
+    },
+    {
+      "source": "browser-components-second-observations.json",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": [
+        "node",
+        "docs/testing/evidence/P07-02/browser-components.mjs"
+      ],
+      "exitCode": 1
+    },
+    {
+      "source": "browser-components-second.json",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": [
+        "node",
+        "docs/testing/evidence/P07-02/browser-components.mjs"
+      ],
+      "exitCode": 1,
+      "startedAt": "2026-10-09T01:59:17.077892+00:00",
+      "completedAt": "2026-10-09T01:59:20.483911+00:00",
+      "log": "browser-components-second.log"
+    },
+    {
+      "source": "browser-components-third-observations.json",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": [
+        "node",
+        "docs/testing/evidence/P07-02/browser-components.mjs"
+      ],
+      "exitCode": 1
+    },
+    {
+      "source": "browser-components-third.json",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": [
+        "node",
+        "docs/testing/evidence/P07-02/browser-components.mjs"
+      ],
+      "exitCode": 1,
+      "startedAt": "2026-10-09T02:01:57.294116+00:00",
+      "completedAt": "2026-10-09T02:02:05.526230+00:00",
+      "log": "browser-components-third.log"
+    },
+    {
+      "source": "browser-components.json",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": [
+        "node",
+        "docs/testing/evidence/P07-02/browser-components.mjs"
+      ],
+      "exitCode": 0
+    },
+    {
+      "source": "browser-login-diagnosis.json",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": [
+        "node",
+        ".local-data/p07-02/smoke.mjs"
+      ],
+      "exitCode": 1,
+      "startedAt": "2026-10-09T02:01:24.300288+00:00",
+      "completedAt": "2026-10-09T02:01:49.785425+00:00",
+      "log": "browser-login-diagnosis.log"
+    },
+    {
+      "source": "browser-narrow-accepted.json",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": [
+        "node",
+        ".local-data/p07-02/browser-narrow.mjs"
+      ],
+      "exitCode": 0,
+      "startedAt": "2026-10-09T02:22:07.195888+00:00",
+      "completedAt": "2026-10-09T02:22:15.542975+00:00",
+      "log": "browser-narrow-accepted.log"
+    },
+    {
+      "source": "browser-narrow-before-boundary-reverification.json",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": [
+        "node",
+        ".local-data/p07-02/browser-narrow.mjs"
+      ],
+      "exitCode": 0
+    },
+    {
+      "source": "browser-narrow-boundary-final.json",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": [
+        "node",
+        ".local-data/p07-02/browser-narrow.mjs"
+      ],
+      "exitCode": 0,
+      "startedAt": "2026-10-09T02:36:09.608177+00:00",
+      "completedAt": "2026-10-09T02:36:14.772605+00:00",
+      "log": "browser-narrow-boundary-final.log"
+    },
+    {
+      "source": "browser-narrow-first-observations.json",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": [
+        "node",
+        ".local-data/p07-02/browser-narrow.mjs"
+      ],
+      "exitCode": 1,
+      "startedAt": "2026-10-09T02:17:27.220075+00:00",
+      "completedAt": "2026-10-09T02:18:03.908507+00:00",
+      "log": "browser-narrow.log"
+    },
+    {
+      "source": "browser-narrow.json",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": [
+        "node",
+        ".local-data/p07-02/browser-narrow.mjs"
+      ],
+      "exitCode": 0
+    },
+    {
+      "source": "browser-real-before-boundary-reverification.json",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": [
+        "node",
+        ".local-data/p07-02/browser-real.mjs"
+      ],
+      "exitCode": 0
+    },
+    {
+      "source": "browser-real-boundary-final.json",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": [
+        "node",
+        ".local-data/p07-02/browser-real.mjs"
+      ],
+      "exitCode": 0,
+      "startedAt": "2026-10-09T02:34:13.583237+00:00",
+      "completedAt": "2026-10-09T02:35:31.946644+00:00",
+      "log": "browser-real-boundary-final.log"
+    },
+    {
+      "source": "browser-real-eighth-observations.json",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": [
+        "node",
+        ".local-data/p07-02/browser-real.mjs"
+      ],
+      "exitCode": 1
+    },
+    {
+      "source": "browser-real-eighth.json",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": [
+        "node",
+        ".local-data/p07-02/browser-real.mjs"
+      ],
+      "exitCode": 1,
+      "startedAt": "2026-10-09T02:04:28.637395+00:00",
+      "completedAt": "2026-10-09T02:05:26.051518+00:00",
+      "log": "browser-real-eighth.log"
+    },
+    {
+      "source": "browser-real-eleventh-observations.json",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": [
+        "node",
+        ".local-data/p07-02/browser-real.mjs"
+      ],
+      "exitCode": 1
+    },
+    {
+      "source": "browser-real-eleventh.json",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": [
+        "node",
+        ".local-data/p07-02/browser-real.mjs"
+      ],
+      "exitCode": 1,
+      "startedAt": "2026-10-09T02:13:50.973921+00:00",
+      "completedAt": "2026-10-09T02:15:01.058797+00:00",
+      "log": "browser-real-eleventh.log"
+    },
+    {
+      "source": "browser-real-fifth-observations.json",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": [
+        "node",
+        ".local-data/p07-02/browser-real.mjs"
+      ],
+      "exitCode": 1
+    },
+    {
+      "source": "browser-real-fifth.json",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": [
+        "node",
+        ".local-data/p07-02/browser-real.mjs"
+      ],
+      "exitCode": 1,
+      "startedAt": "2026-10-09T01:58:23.489286+00:00",
+      "completedAt": "2026-10-09T01:58:32.197987+00:00",
+      "log": "browser-real-fifth.log"
+    },
+    {
+      "source": "browser-real-first.json",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": [
+        "node",
+        ".local-data/p07-02/browser-real.mjs"
+      ],
+      "exitCode": 1,
+      "startedAt": "2026-10-09T01:54:29.230966+00:00",
+      "completedAt": "2026-10-09T01:54:29.390838+00:00",
+      "log": "browser-real-first.log"
+    },
+    {
+      "source": "browser-real-fourth-observations.json",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": [
+        "node",
+        ".local-data/p07-02/browser-real.mjs"
+      ],
+      "exitCode": 1
+    },
+    {
+      "source": "browser-real-fourth.json",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": [
+        "node",
+        ".local-data/p07-02/browser-real.mjs"
+      ],
+      "exitCode": 1,
+      "startedAt": "2026-10-09T01:56:40.900448+00:00",
+      "completedAt": "2026-10-09T01:56:53.184750+00:00",
+      "log": "browser-real-fourth.log"
+    },
+    {
+      "source": "browser-real-ninth-observations.json",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": [
+        "node",
+        ".local-data/p07-02/browser-real.mjs"
+      ],
+      "exitCode": 1
+    },
+    {
+      "source": "browser-real-ninth.json",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": [
+        "node",
+        ".local-data/p07-02/browser-real.mjs"
+      ],
+      "exitCode": 1,
+      "startedAt": "2026-10-09T02:06:46.248061+00:00",
+      "completedAt": "2026-10-09T02:08:05.601820+00:00",
+      "log": "browser-real-ninth.log"
+    },
+    {
+      "source": "browser-real-second-observations.json",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": [
+        "node",
+        ".local-data/p07-02/browser-real.mjs"
+      ],
+      "exitCode": 1
+    },
+    {
+      "source": "browser-real-second.json",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": [
+        "node",
+        ".local-data/p07-02/browser-real.mjs"
+      ],
+      "exitCode": 1,
+      "startedAt": "2026-10-09T01:54:42.581731+00:00",
+      "completedAt": "2026-10-09T01:54:57.361038+00:00",
+      "log": "browser-real-second.log"
+    },
+    {
+      "source": "browser-real-seventh-observations.json",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": [
+        "node",
+        ".local-data/p07-02/browser-real.mjs"
+      ],
+      "exitCode": 1
+    },
+    {
+      "source": "browser-real-seventh.json",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": [
+        "node",
+        ".local-data/p07-02/browser-real.mjs"
+      ],
+      "exitCode": 1,
+      "startedAt": "2026-10-09T02:01:56.918438+00:00",
+      "completedAt": "2026-10-09T02:02:22.501931+00:00",
+      "log": "browser-real-seventh.log"
+    },
+    {
+      "source": "browser-real-sixth-observations.json",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": [
+        "node",
+        ".local-data/p07-02/browser-real.mjs"
+      ],
+      "exitCode": 1
+    },
+    {
+      "source": "browser-real-sixth.json",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": [
+        "node",
+        ".local-data/p07-02/browser-real.mjs"
+      ],
+      "exitCode": 1,
+      "startedAt": "2026-10-09T01:59:15.743169+00:00",
+      "completedAt": "2026-10-09T01:59:39.752402+00:00",
+      "log": "browser-real-sixth.log"
+    },
+    {
+      "source": "browser-real-tenth-observations.json",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": [
+        "node",
+        ".local-data/p07-02/browser-real.mjs"
+      ],
+      "exitCode": 1
+    },
+    {
+      "source": "browser-real-tenth.json",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": [
+        "node",
+        ".local-data/p07-02/browser-real.mjs"
+      ],
+      "exitCode": 1,
+      "startedAt": "2026-10-09T02:11:13.493897+00:00",
+      "completedAt": "2026-10-09T02:12:10.910790+00:00",
+      "log": "browser-real-tenth.log"
+    },
+    {
+      "source": "browser-real-third-observations.json",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": [
+        "node",
+        ".local-data/p07-02/browser-real.mjs"
+      ],
+      "exitCode": 1
+    },
+    {
+      "source": "browser-real-third.json",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": [
+        "node",
+        ".local-data/p07-02/browser-real.mjs"
+      ],
+      "exitCode": 1,
+      "startedAt": "2026-10-09T01:55:34.040676+00:00",
+      "completedAt": "2026-10-09T01:56:22.702149+00:00",
+      "log": "browser-real-third.log"
+    },
+    {
+      "source": "browser-real-twelfth.json",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": [
+        "node",
+        ".local-data/p07-02/browser-real.mjs"
+      ],
+      "exitCode": 0,
+      "startedAt": "2026-10-09T02:16:01.890713+00:00",
+      "completedAt": "2026-10-09T02:17:20.703621+00:00",
+      "log": "browser-real-twelfth.log"
+    },
+    {
+      "source": "browser-real.json",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": [
+        "node",
+        ".local-data/p07-02/browser-real.mjs"
+      ],
+      "exitCode": 0
+    },
+    {
+      "source": "browser-smoke.json",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": [
+        "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/tools/node-v24.21.0-darwin-arm64/bin/node",
+        ".local-data/p07-02/smoke.mjs"
+      ],
+      "exitCode": 0,
+      "startedAt": "2026-10-09T01:51:31.804373+00:00",
+      "completedAt": "2026-10-09T01:51:37.598608+00:00",
+      "log": "browser-smoke.log"
+    },
+    {
+      "source": "browser-url-confirmed.json",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": [
+        "node",
+        ".local-data/p07-02/url-diagnosis.mjs"
+      ],
+      "exitCode": 0,
+      "startedAt": "2026-10-09T02:10:37.187550+00:00",
+      "completedAt": "2026-10-09T02:10:47.623352+00:00",
+      "log": "browser-url-confirmed.log"
+    },
+    {
+      "source": "browser-url-diagnosis.json",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": [
+        "node",
+        ".local-data/p07-02/url-diagnosis.mjs"
+      ],
+      "exitCode": 0,
+      "startedAt": "2026-10-09T02:09:24.452023+00:00",
+      "completedAt": "2026-10-09T02:09:34.358491+00:00",
+      "log": "browser-url-diagnosis.log"
+    },
+    {
+      "source": "browser-url-final.json",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": [
+        "node",
+        ".local-data/p07-02/url-diagnosis.mjs"
+      ],
+      "exitCode": 0,
+      "startedAt": "2026-10-09T02:13:21.024497+00:00",
+      "completedAt": "2026-10-09T02:13:28.578240+00:00",
+      "log": "browser-url-final.log"
+    },
+    {
+      "source": "build-accepted.json",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": [
+        "pnpm",
+        "--filter",
+        "@pet/admin-web",
+        "build"
+      ],
+      "exitCode": 0,
+      "startedAt": "2026-10-09T02:13:51.543936+00:00",
+      "completedAt": "2026-10-09T02:14:01.907165+00:00",
+      "log": "build-accepted.log"
+    },
+    {
+      "source": "build-boundary-final.json",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": [
+        "pnpm",
+        "--filter",
+        "@pet/admin-web",
+        "build"
+      ],
+      "exitCode": 0,
+      "startedAt": "2026-10-09T02:32:53.570037+00:00",
+      "completedAt": "2026-10-09T02:33:09.887256+00:00",
+      "log": "build-boundary-final.log"
+    },
+    {
+      "source": "build-final-accepted.json",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": [
+        "pnpm",
+        "--filter",
+        "@pet/admin-web",
+        "build"
+      ],
+      "exitCode": 0,
+      "startedAt": "2026-10-09T02:24:12.121933+00:00",
+      "completedAt": "2026-10-09T02:24:20.340079+00:00",
+      "log": "build-final-accepted.log"
+    },
+    {
+      "source": "build-final.json",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": [
+        "pnpm",
+        "--filter",
+        "@pet-platform/admin-web",
+        "build"
+      ],
+      "exitCode": 1,
+      "startedAt": "2026-10-09T02:22:08.349526+00:00",
+      "completedAt": "2026-10-09T02:22:09.656687+00:00",
+      "log": "build-final.log"
+    },
+    {
+      "source": "build-first.json",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": [
+        "pnpm",
+        "--filter",
+        "@pet/admin-web",
+        "build"
+      ],
+      "exitCode": 0,
+      "startedAt": "2026-10-09T01:54:44.207148+00:00",
+      "completedAt": "2026-10-09T01:55:06.554265+00:00",
+      "log": "build-first.log"
+    },
+    {
+      "source": "check-repo-final-accepted.json",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": [
+        "pnpm",
+        "check:repo"
+      ],
+      "exitCode": 0,
+      "startedAt": "2026-10-09T02:38:34.366597+00:00",
+      "completedAt": "2026-10-09T02:38:34.995225+00:00",
+      "log": "check-repo-final-accepted.log"
+    },
+    {
+      "source": "check-repo-final.json",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": [
+        "pnpm",
+        "check:repo"
+      ],
+      "exitCode": 0,
+      "startedAt": "2026-10-09T02:27:39.131141+00:00",
+      "completedAt": "2026-10-09T02:27:39.808468+00:00",
+      "log": "check-repo-final.log"
+    },
+    {
+      "source": "check-repo-first.json",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": [
+        "pnpm",
+        "check:repo"
+      ],
+      "exitCode": 0,
+      "startedAt": "2026-10-09T02:07:42.945784+00:00",
+      "completedAt": "2026-10-09T02:07:44.335374+00:00",
+      "log": "check-repo-first.log"
+    },
+    {
+      "source": "cleanup-before-boundary-reverification.json",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": [
+        "python3",
+        "isolated cleanup resume audit"
+      ],
+      "exitCode": 0,
+      "completedAt": "2026-10-09T02:31:02.175219+00:00"
+    },
+    {
+      "source": "cleanup-first.json",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": [
+        "python3",
+        ".local-data/p07-02/cleanup.py"
+      ],
+      "exitCode": 1,
+      "summary": "授权/关联/列SELECT恢复核对通过；专用后端SIGTERM发送后，macOS killpg(group,0)探测返回EPERM；未操作其他进程。改用ps确认专用PID及进程组消失，再继续清理。"
+    },
+    {
+      "source": "cleanup-initial-accepted.json",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": [
+        "python3",
+        "isolated cleanup resume audit"
+      ],
+      "exitCode": 0,
+      "completedAt": "2026-10-09T02:31:02.175219+00:00"
+    },
+    {
+      "source": "cleanup-second.json",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": [
+        "python3",
+        ".local-data/p07-02/cleanup.py"
+      ],
+      "exitCode": 1,
+      "summary": "授权/关联/列SELECT恢复和JAR摘要核对通过；仅专用tmpfs容器停止成功、秘密文件已删除、服务端口关闭。末尾容器清单严格全等断言失败：其他项目在期间新增容器。改按原三容器子集及本轮专用容器不存在核对，不操作其他项目。"
+    },
+    {
+      "source": "cleanup.json",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": [
+        "python3",
+        ".local-data/p07-02/cleanup.py"
+      ],
+      "exitCode": 0,
+      "completedAt": "2026-10-09T02:37:10.792997+00:00",
+      "summary": "只停止本轮生产JAR/Web/两个tmpfs容器并移除秘密输入；未删除既有数据库卷"
+    },
+    {
+      "source": "contracts-check.json",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": [
+        "pnpm",
+        "contracts:check"
+      ],
+      "exitCode": 0,
+      "startedAt": "2026-10-09T01:54:44.210626+00:00",
+      "completedAt": "2026-10-09T01:55:50.609722+00:00",
+      "log": "contracts-check.log"
+    },
+    {
+      "source": "data-preparation-before-boundary-reverification.json",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": [
+        "docker",
+        "exec",
+        "-i",
+        "pet-p07-02-pg",
+        "psql",
+        "-X",
+        "-qAt",
+        "-v",
+        "ON_ERROR_STOP=1",
+        "-U",
+        "postgres",
+        "-d",
+        "p07_02_acceptance"
+      ],
+      "exitCode": 0,
+      "summary": "{\"total\" : \"56\", \"disabled\" : \"13\"}\n"
+    },
+    {
+      "source": "data-preparation.json",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": [
+        "docker",
+        "exec",
+        "-i",
+        "pet-p07-02-pg",
+        "psql",
+        "-X",
+        "-qAt",
+        "-v",
+        "ON_ERROR_STOP=1",
+        "-U",
+        "postgres",
+        "-d",
+        "p07_02_acceptance"
+      ],
+      "exitCode": 0,
+      "summary": "{\"total\" : \"56\", \"disabled\" : \"13\"}\n"
+    },
+    {
+      "source": "diff-check-final-accepted.json",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exitCode": 0,
+      "startedAt": "2026-10-09T02:38:34.366597+00:00",
+      "completedAt": "2026-10-09T02:38:34.411863+00:00",
+      "log": "diff-check-final-accepted.log"
+    },
+    {
+      "source": "diff-check-final.json",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exitCode": 0,
+      "startedAt": "2026-10-09T02:27:39.882070+00:00",
+      "completedAt": "2026-10-09T02:27:39.904393+00:00",
+      "log": "diff-check-final.log"
+    },
+    {
+      "source": "environment-before-boundary-reverification.json",
+      "label": "已有容器保全基线",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": [
+        "docker",
+        "ps",
+        "-a",
+        "--format",
+        "{{.Names}}\t{{.State}}"
+      ],
+      "startedAt": "2026-10-09T09:50:15.267883+08:00",
+      "exitCode": 0,
+      "summary": "pet-platform-p02-validation-rabbitmq-1\texited\npet-platform-p02-validation-postgres-1\texited\npet-platform-p02-validation-redis-1\texited\n"
+    },
+    {
+      "source": "environment-before-boundary-reverification.json",
+      "label": "独立冻结PostgreSQL",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": [
+        "docker",
+        "run",
+        "-d",
+        "--rm",
+        "--name",
+        "pet-p07-02-pg",
+        "--label",
+        "pet.validation=P07-02",
+        "--tmpfs",
+        "/var/lib/postgresql/data",
+        "--env-file",
+        "/Users/kimwell/work/pet-platform/.local-data/p07-02/postgres.env",
+        "-p",
+        "127.0.0.1::5432",
+        "postgres:17.11-bookworm@sha256:3645570cccdfa447589da9f57dd740faa29b30938e861289a5574b6ca6b03826",
+        "-c",
+        "log_statement=none",
+        "-c",
+        "log_min_error_statement=panic",
+        "-c",
+        "log_parameter_max_length=0",
+        "-c",
+        "log_parameter_max_length_on_error=0"
+      ],
+      "startedAt": "2026-10-09T09:50:15.353247+08:00",
+      "exitCode": 0,
+      "summary": "54ff250bd6ebb8f76cb6a232eede9132f63561e458d82a72913a2134d70cdac7\n"
+    },
+    {
+      "source": "environment-before-boundary-reverification.json",
+      "label": "独立冻结Redis",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": [
+        "docker",
+        "run",
+        "-d",
+        "--rm",
+        "--name",
+        "pet-p07-02-redis",
+        "--label",
+        "pet.validation=P07-02",
+        "--tmpfs",
+        "/data",
+        "-v",
+        "/Users/kimwell/work/pet-platform/.local-data/p07-02/redis.conf:/tmp/validation.conf:ro",
+        "-p",
+        "127.0.0.1::6379",
+        "redis:8.2.10-bookworm@sha256:47670742d7924adbcdb404d1288b6327815b23141969c0939b8e5d61f78c2634",
+        "redis-server",
+        "/tmp/validation.conf"
+      ],
+      "startedAt": "2026-10-09T09:50:17.638027+08:00",
+      "exitCode": 0,
+      "summary": "46644bdb78241ce970d8ce35c5cce123d9cb4050ec6f8c280dc9f797589ae123\n"
+    },
+    {
+      "source": "environment-before-boundary-reverification.json",
+      "label": "PostgreSQL回环端口",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": [
+        "docker",
+        "port",
+        "pet-p07-02-pg",
+        "5432"
+      ],
+      "startedAt": "2026-10-09T09:50:18.509707+08:00",
+      "exitCode": 0,
+      "summary": "127.0.0.1:54288\n"
+    },
+    {
+      "source": "environment-before-boundary-reverification.json",
+      "label": "Redis回环端口",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": [
+        "docker",
+        "port",
+        "pet-p07-02-redis",
+        "6379"
+      ],
+      "startedAt": "2026-10-09T09:50:18.529383+08:00",
+      "exitCode": 0,
+      "summary": "127.0.0.1:54289\n"
+    },
+    {
+      "source": "environment-before-boundary-reverification.json",
+      "label": "正式角色:identity",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": [
+        "docker",
+        "exec",
+        "-i",
+        "pet-p07-02-pg",
+        "psql",
+        "-X",
+        "-qAt",
+        "-v",
+        "ON_ERROR_STOP=1",
+        "-U",
+        "postgres",
+        "-d",
+        "p07_02_acceptance"
+      ],
+      "startedAt": "2026-10-09T09:50:18.549639+08:00",
+      "exitCode": 0,
+      "summary": ""
+    },
+    {
+      "source": "environment-before-boundary-reverification.json",
+      "label": "正式角色:platform",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": [
+        "docker",
+        "exec",
+        "-i",
+        "pet-p07-02-pg",
+        "psql",
+        "-X",
+        "-qAt",
+        "-v",
+        "ON_ERROR_STOP=1",
+        "-U",
+        "postgres",
+        "-d",
+        "p07_02_acceptance"
+      ],
+      "startedAt": "2026-10-09T09:50:18.632186+08:00",
+      "exitCode": 0,
+      "summary": ""
+    },
+    {
+      "source": "environment-before-boundary-reverification.json",
+      "label": "正式角色:customer",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": [
+        "docker",
+        "exec",
+        "-i",
+        "pet-p07-02-pg",
+        "psql",
+        "-X",
+        "-qAt",
+        "-v",
+        "ON_ERROR_STOP=1",
+        "-U",
+        "postgres",
+        "-d",
+        "p07_02_acceptance"
+      ],
+      "startedAt": "2026-10-09T09:50:18.705550+08:00",
+      "exitCode": 0,
+      "summary": ""
+    },
+    {
+      "source": "environment-before-boundary-reverification.json",
+      "label": "独立受限登录角色",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": [
+        "docker",
+        "exec",
+        "-i",
+        "pet-p07-02-pg",
+        "psql",
+        "-X",
+        "-qAt",
+        "-v",
+        "ON_ERROR_STOP=1",
+        "-U",
+        "postgres",
+        "-d",
+        "p07_02_acceptance"
+      ],
+      "startedAt": "2026-10-09T09:50:18.779714+08:00",
+      "exitCode": 0,
+      "summary": ""
+    },
+    {
+      "source": "environment-before-boundary-reverification.json",
+      "label": "正式独立迁移",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": [
+        "scripts/backend-identity.sh",
+        "migrate"
+      ],
+      "startedAt": "2026-10-09T09:50:18.874513+08:00",
+      "exitCode": 0,
+      "summary": "d.DbValidate -- Successfully validated 5 migrations (execution time 00:00.017s)\n09:50:19.901 [main] INFO org.flywaydb.core.internal.schemahistory.JdbcTableSchemaHistory -- Creating Schema History table \"public\".\"flyway_schema_history\" ...\n09:50:19.943 [main] INFO org.flywaydb.core.internal.command.DbMigrate -- Current version of schema \"public\": << Empty Schema >>\n09:50:19.970 [main] INFO org.flywaydb.core.internal.command.DbMigrate -- Migrating schema \"public\" to version \"1 - platform identity foundation\"\n09:50:19.986 [main] WARN org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor -- DB: no privileges were granted for \"public\" (SQL State: 01007 - Error Code: 0)\n09:50:20.081 [main] INFO org.flywaydb.core.internal.command.DbMigrate -- Migrating schema \"public\" to version \"2 - staff credential security\"\n09:50:20.113 [main] INFO org.flywaydb.core.internal.command.DbMigrate -- Migrating schema \"public\" to version \"3 - platform administrator\"\n09:50:20.154 [main] INFO org.flywaydb.core.internal.command.DbMigrate -- Migrating schema \"public\" to version \"4 - customer wechat identity\"\n09:50:20.157 [main] WARN org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor -- DB: no privileges were granted for \"public\" (SQL State: 01007 - Error Code: 0)\n09:50:20.188 [main] INFO org.flywaydb.core.internal.command.DbMigrate -- Migrating schema \"public\" to version \"5 - employee read contract\"\n09:50:20.208 [main] INFO org.flywaydb.core.internal.command.DbMigrate -- Successfully applied 5 migrations to schema \"public\", now at version v5 (execution time 00:00.187s)\n正式迁移成功：本次执行数量=5\n"
+    },
+    {
+      "source": "environment-before-boundary-reverification.json",
+      "label": "正式员工初始化",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": [
+        "scripts/backend-identity.sh",
+        "bootstrap",
+        "--tenant-code",
+        "p07-02-acceptance",
+        "--tenant-name",
+        "P07-02隔离验收",
+        "--admin-login",
+        "<受控员工账号>",
+        "--store-code",
+        "store-a",
+        "--store-name",
+        "验收门店A",
+        "--password-stdin"
+      ],
+      "startedAt": "2026-10-09T09:50:20.232139+08:00",
+      "exitCode": 0,
+      "summary": "初始化成功：tenantId=da79273a-7371-4ab6-9b5d-2c7133d7b595 employeeId=581f985c-6ad0-4577-9308-754683ff4d03 storeId=61247564-7052-4984-a9ae-1076ba1cda54\n"
+    },
+    {
+      "source": "environment-before-boundary-reverification.json",
+      "label": "正式第二租户员工初始化",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": [
+        "scripts/backend-identity.sh",
+        "bootstrap",
+        "--tenant-code",
+        "p07-02-second",
+        "--tenant-name",
+        "P07-02第二隔离租户",
+        "--admin-login",
+        "<受控员工账号>",
+        "--store-code",
+        "store-a",
+        "--store-name",
+        "验收门店A",
+        "--password-stdin"
+      ],
+      "startedAt": "2026-10-09T09:50:20.875198+08:00",
+      "exitCode": 0,
+      "summary": "初始化成功：tenantId=0dfb482c-37cd-4aab-a2a1-f6b4e6ff633e employeeId=053f6014-838c-4c81-bf3a-53636596cc5f storeId=696c5567-11fe-4428-9274-16477a00c70e\n"
+    },
+    {
+      "source": "environment-before-boundary-reverification.json",
+      "label": "正式平台初始化",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": [
+        "scripts/backend-identity.sh",
+        "platform-bootstrap",
+        "--admin-login",
+        "<受控平台账号>",
+        "--admin-name",
+        "P07-02验收平台管理员",
+        "--password-stdin"
+      ],
+      "startedAt": "2026-10-09T09:50:21.596158+08:00",
+      "exitCode": 0,
+      "summary": "平台初始化成功：principalId=35c2d0fb-271a-455b-9eac-9ae157f53ca6\n"
+    },
+    {
+      "source": "environment-before-boundary-reverification.json",
+      "label": "迁移与受限身份白名单",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": [
+        "docker",
+        "exec",
+        "-i",
+        "pet-p07-02-pg",
+        "psql",
+        "-X",
+        "-qAt",
+        "-v",
+        "ON_ERROR_STOP=1",
+        "-U",
+        "postgres",
+        "-d",
+        "p07_02_acceptance"
+      ],
+      "startedAt": "2026-10-09T09:50:22.245198+08:00",
+      "exitCode": 0,
+      "summary": "1|t\n2|t\n3|t\n4|t\n5|t\np07_runtime|f|f\n"
+    },
+    {
+      "source": "environment-before-boundary-reverification.json",
+      "label": "正式生产JAR local启动",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": [
+        "/Users/kimwell/.vscode/extensions/redhat.java-1.56.0-darwin-arm64/jre/21.0.12.1-macosx-aarch64/bin/java",
+        "-jar",
+        "/Users/kimwell/work/pet-platform/.local-data/p07-02/backend.jar"
+      ],
+      "exitCode": null,
+      "status": "RUNTIME_VERIFIED",
+      "summary": "readiness=200 UP;受限runtime/正式迁移;微信关闭;无测试profile/Gateway"
+    },
+    {
+      "source": "environment-recovery.json",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": [
+        "/Users/kimwell/.vscode/extensions/redhat.java-1.56.0-darwin-arm64/jre/21.0.12.1-macosx-aarch64/bin/java",
+        "-jar",
+        "/Users/kimwell/work/pet-platform/.local-data/p07-02/backend.jar"
+      ],
+      "exitCode": 0
+    },
+    {
+      "source": "environment.json",
+      "label": "已有容器保全基线",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": [
+        "docker",
+        "ps",
+        "-a",
+        "--format",
+        "{{.Names}}\t{{.State}}"
+      ],
+      "startedAt": "2026-10-09T10:33:26.280615+08:00",
+      "exitCode": 0,
+      "summary": "agent-os-platform-document-parser-worker-1\trunning\nagent-os-platform-worker-1\trunning\nagent-os-platform-web-1\trunning\nagent-os-platform-postgres-1\trunning\nagent-os-platform-agent-runtime-1\trunning\nagent-os-platform-api-1\trunning\nagent-os-platform-api-migrate-1\texited\nagent-os-platform-redis-1\trunning\npet-platform-p02-validation-rabbitmq-1\texited\npet-platform-p02-validation-postgres-1\texited\npet-platform-p02-validation-redis-1\texited\n"
+    },
+    {
+      "source": "environment.json",
+      "label": "独立冻结PostgreSQL",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": [
+        "docker",
+        "run",
+        "-d",
+        "--rm",
+        "--name",
+        "pet-p07-02-pg",
+        "--label",
+        "pet.validation=P07-02",
+        "--tmpfs",
+        "/var/lib/postgresql/data",
+        "--env-file",
+        "/Users/kimwell/work/pet-platform/.local-data/p07-02/postgres.env",
+        "-p",
+        "127.0.0.1::5432",
+        "postgres:17.11-bookworm@sha256:3645570cccdfa447589da9f57dd740faa29b30938e861289a5574b6ca6b03826",
+        "-c",
+        "log_statement=none",
+        "-c",
+        "log_min_error_statement=panic",
+        "-c",
+        "log_parameter_max_length=0",
+        "-c",
+        "log_parameter_max_length_on_error=0"
+      ],
+      "startedAt": "2026-10-09T10:33:26.421104+08:00",
+      "exitCode": 0,
+      "summary": "7b68060c0768ac415f1e929cea0a2866b3d6a3d1331515b54d8400cb79dda65c\n"
+    },
+    {
+      "source": "environment.json",
+      "label": "独立冻结Redis",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": [
+        "docker",
+        "run",
+        "-d",
+        "--rm",
+        "--name",
+        "pet-p07-02-redis",
+        "--label",
+        "pet.validation=P07-02",
+        "--tmpfs",
+        "/data",
+        "-v",
+        "/Users/kimwell/work/pet-platform/.local-data/p07-02/redis.conf:/tmp/validation.conf:ro",
+        "-p",
+        "127.0.0.1::6379",
+        "redis:8.2.10-bookworm@sha256:47670742d7924adbcdb404d1288b6327815b23141969c0939b8e5d61f78c2634",
+        "redis-server",
+        "/tmp/validation.conf"
+      ],
+      "startedAt": "2026-10-09T10:33:26.739189+08:00",
+      "exitCode": 0,
+      "summary": "68e3b696df388f0be46f364853755fa049c07356a651b9a0ffea28c6607bd423\n"
+    },
+    {
+      "source": "environment.json",
+      "label": "PostgreSQL回环端口",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": [
+        "docker",
+        "port",
+        "pet-p07-02-pg",
+        "5432"
+      ],
+      "startedAt": "2026-10-09T10:33:28.319262+08:00",
+      "exitCode": 0,
+      "summary": "127.0.0.1:52773\n"
+    },
+    {
+      "source": "environment.json",
+      "label": "Redis回环端口",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": [
+        "docker",
+        "port",
+        "pet-p07-02-redis",
+        "6379"
+      ],
+      "startedAt": "2026-10-09T10:33:28.340558+08:00",
+      "exitCode": 0,
+      "summary": "127.0.0.1:52774\n"
+    },
+    {
+      "source": "environment.json",
+      "label": "正式角色:identity",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": [
+        "docker",
+        "exec",
+        "-i",
+        "pet-p07-02-pg",
+        "psql",
+        "-X",
+        "-qAt",
+        "-v",
+        "ON_ERROR_STOP=1",
+        "-U",
+        "postgres",
+        "-d",
+        "p07_02_acceptance"
+      ],
+      "startedAt": "2026-10-09T10:33:28.365686+08:00",
+      "exitCode": 0,
+      "summary": ""
+    },
+    {
+      "source": "environment.json",
+      "label": "正式角色:platform",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": [
+        "docker",
+        "exec",
+        "-i",
+        "pet-p07-02-pg",
+        "psql",
+        "-X",
+        "-qAt",
+        "-v",
+        "ON_ERROR_STOP=1",
+        "-U",
+        "postgres",
+        "-d",
+        "p07_02_acceptance"
+      ],
+      "startedAt": "2026-10-09T10:33:28.458157+08:00",
+      "exitCode": 0,
+      "summary": ""
+    },
+    {
+      "source": "environment.json",
+      "label": "正式角色:customer",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": [
+        "docker",
+        "exec",
+        "-i",
+        "pet-p07-02-pg",
+        "psql",
+        "-X",
+        "-qAt",
+        "-v",
+        "ON_ERROR_STOP=1",
+        "-U",
+        "postgres",
+        "-d",
+        "p07_02_acceptance"
+      ],
+      "startedAt": "2026-10-09T10:33:28.578992+08:00",
+      "exitCode": 0,
+      "summary": ""
+    },
+    {
+      "source": "environment.json",
+      "label": "独立受限登录角色",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": [
+        "docker",
+        "exec",
+        "-i",
+        "pet-p07-02-pg",
+        "psql",
+        "-X",
+        "-qAt",
+        "-v",
+        "ON_ERROR_STOP=1",
+        "-U",
+        "postgres",
+        "-d",
+        "p07_02_acceptance"
+      ],
+      "startedAt": "2026-10-09T10:33:28.672997+08:00",
+      "exitCode": 0,
+      "summary": ""
+    },
+    {
+      "source": "environment.json",
+      "label": "正式独立迁移",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": [
+        "scripts/backend-identity.sh",
+        "migrate"
+      ],
+      "startedAt": "2026-10-09T10:33:28.788368+08:00",
+      "exitCode": 0,
+      "summary": "d.DbValidate -- Successfully validated 5 migrations (execution time 00:00.023s)\n10:33:29.976 [main] INFO org.flywaydb.core.internal.schemahistory.JdbcTableSchemaHistory -- Creating Schema History table \"public\".\"flyway_schema_history\" ...\n10:33:30.016 [main] INFO org.flywaydb.core.internal.command.DbMigrate -- Current version of schema \"public\": << Empty Schema >>\n10:33:30.038 [main] INFO org.flywaydb.core.internal.command.DbMigrate -- Migrating schema \"public\" to version \"1 - platform identity foundation\"\n10:33:30.047 [main] WARN org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor -- DB: no privileges were granted for \"public\" (SQL State: 01007 - Error Code: 0)\n10:33:30.136 [main] INFO org.flywaydb.core.internal.command.DbMigrate -- Migrating schema \"public\" to version \"2 - staff credential security\"\n10:33:30.172 [main] INFO org.flywaydb.core.internal.command.DbMigrate -- Migrating schema \"public\" to version \"3 - platform administrator\"\n10:33:30.220 [main] INFO org.flywaydb.core.internal.command.DbMigrate -- Migrating schema \"public\" to version \"4 - customer wechat identity\"\n10:33:30.223 [main] WARN org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor -- DB: no privileges were granted for \"public\" (SQL State: 01007 - Error Code: 0)\n10:33:30.259 [main] INFO org.flywaydb.core.internal.command.DbMigrate -- Migrating schema \"public\" to version \"5 - employee read contract\"\n10:33:30.283 [main] INFO org.flywaydb.core.internal.command.DbMigrate -- Successfully applied 5 migrations to schema \"public\", now at version v5 (execution time 00:00.186s)\n正式迁移成功：本次执行数量=5\n"
+    },
+    {
+      "source": "environment.json",
+      "label": "正式员工初始化",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": [
+        "scripts/backend-identity.sh",
+        "bootstrap",
+        "--tenant-code",
+        "p07-02-acceptance",
+        "--tenant-name",
+        "P07-02隔离验收",
+        "--admin-login",
+        "<受控员工账号>",
+        "--store-code",
+        "store-a",
+        "--store-name",
+        "验收门店A",
+        "--password-stdin"
+      ],
+      "startedAt": "2026-10-09T10:33:30.299437+08:00",
+      "exitCode": 0,
+      "summary": "初始化成功：tenantId=5cbec184-3a76-47a7-ae4c-b060178aec67 employeeId=b642d236-dd6c-4d77-bb2a-23aeeb4f8fa8 storeId=54fc46e0-85f5-4b03-ad19-a582cf256112\n"
+    },
+    {
+      "source": "environment.json",
+      "label": "正式第二租户员工初始化",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": [
+        "scripts/backend-identity.sh",
+        "bootstrap",
+        "--tenant-code",
+        "p07-02-second",
+        "--tenant-name",
+        "P07-02第二隔离租户",
+        "--admin-login",
+        "<受控员工账号>",
+        "--store-code",
+        "store-a",
+        "--store-name",
+        "验收门店A",
+        "--password-stdin"
+      ],
+      "startedAt": "2026-10-09T10:33:31.022873+08:00",
+      "exitCode": 0,
+      "summary": "初始化成功：tenantId=b780a647-2ba4-456a-9464-c38ecc6a6996 employeeId=e2698695-b991-49b9-b0b5-c8db6dd173d4 storeId=dd914974-749e-45ec-b351-5cb31522c57b\n"
+    },
+    {
+      "source": "environment.json",
+      "label": "正式平台初始化",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": [
+        "scripts/backend-identity.sh",
+        "platform-bootstrap",
+        "--admin-login",
+        "<受控平台账号>",
+        "--admin-name",
+        "P07-02验收平台管理员",
+        "--password-stdin"
+      ],
+      "startedAt": "2026-10-09T10:33:31.729708+08:00",
+      "exitCode": 0,
+      "summary": "平台初始化成功：principalId=051a2aac-4685-4f1e-8675-97987c1d4edd\n"
+    },
+    {
+      "source": "environment.json",
+      "label": "迁移与受限身份白名单",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": [
+        "docker",
+        "exec",
+        "-i",
+        "pet-p07-02-pg",
+        "psql",
+        "-X",
+        "-qAt",
+        "-v",
+        "ON_ERROR_STOP=1",
+        "-U",
+        "postgres",
+        "-d",
+        "p07_02_acceptance"
+      ],
+      "startedAt": "2026-10-09T10:33:32.400682+08:00",
+      "exitCode": 0,
+      "summary": "1|t\n2|t\n3|t\n4|t\n5|t\np07_runtime|f|f\n"
+    },
+    {
+      "source": "environment.json",
+      "label": "正式生产JAR local启动",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": [
+        "/Users/kimwell/.vscode/extensions/redhat.java-1.56.0-darwin-arm64/jre/21.0.12.1-macosx-aarch64/bin/java",
+        "-jar",
+        "/Users/kimwell/work/pet-platform/.local-data/p07-02/backend.jar"
+      ],
+      "exitCode": null,
+      "status": "RUNTIME_VERIFIED",
+      "summary": "readiness=200 UP;受限runtime/正式迁移;微信关闭;无测试profile/Gateway"
+    },
+    {
+      "source": "lint-accepted.json",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": [
+        "pnpm",
+        "--filter",
+        "@pet/admin-web",
+        "lint"
+      ],
+      "exitCode": 0,
+      "startedAt": "2026-10-09T02:13:51.544484+00:00",
+      "completedAt": "2026-10-09T02:13:57.528798+00:00",
+      "log": "lint-accepted.log"
+    },
+    {
+      "source": "lint-final-accepted.json",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": [
+        "pnpm",
+        "--filter",
+        "@pet/admin-web",
+        "lint"
+      ],
+      "exitCode": 0,
+      "startedAt": "2026-10-09T02:32:53.570067+00:00",
+      "completedAt": "2026-10-09T02:33:03.228555+00:00",
+      "log": "lint-final-accepted.log"
+    },
+    {
+      "source": "lint-first.json",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": [
+        "pnpm",
+        "--filter",
+        "@pet/admin-web",
+        "lint"
+      ],
+      "exitCode": 1,
+      "startedAt": "2026-10-09T01:50:34.939990+00:00",
+      "completedAt": "2026-10-09T01:50:37.142432+00:00",
+      "log": "lint-first.log"
+    },
+    {
+      "source": "lint-second.json",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": [
+        "pnpm",
+        "--filter",
+        "@pet/admin-web",
+        "lint"
+      ],
+      "exitCode": 0,
+      "startedAt": "2026-10-09T01:51:43.443904+00:00",
+      "completedAt": "2026-10-09T01:51:45.445800+00:00",
+      "log": "lint-second.log"
+    },
+    {
+      "source": "secret-value-scan-initial-accepted.json",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": [
+        "python3",
+        "per-file byte comparison against generated private credential values"
+      ],
+      "exitCode": 0,
+      "summary": "在删除秘密输入前核对所有当时新增/修改的145个文件，已知STAFF/PLATFORM/PG/Redis秘密值匹配文件0；不输出秘密值。后续仅文档与审计，无秘密再输入。",
+      "status": "RUNTIME_VERIFIED"
+    },
+    {
+      "source": "secret-value-scan.json",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": [
+        "python3",
+        "-"
+      ],
+      "exitCode": 0,
+      "completedAt": "2026-10-09T02:37:09.297546+00:00",
+      "summary": "已知本轮随机STAFF/PLATFORM/PG/Redis凭据值逐文件字节比对，不输出值；此前第一环境扫描另外留存。",
+      "status": "RUNTIME_VERIFIED"
+    },
+    {
+      "source": "staged-check.json",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": [
+        "git",
+        "diff",
+        "--cached",
+        "--quiet"
+      ],
+      "exitCode": 0,
+      "startedAt": "2026-10-09T02:38:34.366614+00:00",
+      "completedAt": "2026-10-09T02:38:34.400322+00:00",
+      "log": "staged-check.log"
+    },
+    {
+      "source": "temporary-redis-reset.json",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": [
+        "docker",
+        "restart",
+        "pet-p07-02-redis"
+      ],
+      "exitCode": 0,
+      "startedAt": "2026-10-09T02:01:56.253528+00:00",
+      "completedAt": "2026-10-09T02:01:56.853355+00:00",
+      "log": "temporary-redis-reset.log"
+    },
+    {
+      "source": "test-188-final.json",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": [
+        "pnpm",
+        "--filter",
+        "@pet/admin-web",
+        "test"
+      ],
+      "exitCode": 0,
+      "startedAt": "2026-10-09T02:14:48.285303+00:00",
+      "completedAt": "2026-10-09T02:14:50.696058+00:00",
+      "log": "test-188-final.log"
+    },
+    {
+      "source": "test-accepted.json",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": [
+        "pnpm",
+        "--filter",
+        "@pet/admin-web",
+        "test"
+      ],
+      "exitCode": 0,
+      "startedAt": "2026-10-09T02:10:38.301706+00:00",
+      "completedAt": "2026-10-09T02:10:43.899989+00:00",
+      "log": "test-accepted.log"
+    },
+    {
+      "source": "test-final-accepted.json",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": [
+        "pnpm",
+        "--filter",
+        "@pet/admin-web",
+        "test"
+      ],
+      "exitCode": 0,
+      "startedAt": "2026-10-09T02:32:53.570110+00:00",
+      "completedAt": "2026-10-09T02:33:00.775517+00:00",
+      "log": "test-final-accepted.log"
+    },
+    {
+      "source": "test-final.json",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": [
+        "pnpm",
+        "--filter",
+        "@pet/admin-web",
+        "test"
+      ],
+      "exitCode": 0,
+      "startedAt": "2026-10-09T01:55:35.383334+00:00",
+      "completedAt": "2026-10-09T01:55:42.153994+00:00",
+      "log": "test-final.log"
+    },
+    {
+      "source": "test-first.json",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": [
+        "pnpm",
+        "--filter",
+        "@pet/admin-web",
+        "test"
+      ],
+      "exitCode": 1,
+      "startedAt": "2026-10-09T01:48:58.018263+00:00",
+      "completedAt": "2026-10-09T01:49:00.265073+00:00",
+      "log": "test-first.log"
+    },
+    {
+      "source": "test-second.json",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": [
+        "pnpm",
+        "--filter",
+        "@pet/admin-web",
+        "test"
+      ],
+      "exitCode": 0,
+      "startedAt": "2026-10-09T01:50:12.826651+00:00",
+      "completedAt": "2026-10-09T01:50:15.017431+00:00",
+      "log": "test-second.log"
+    },
+    {
+      "source": "tool-chrome-version.json",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": [
+        "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+        "--version"
+      ],
+      "exitCode": 0,
+      "startedAt": "2026-10-09T02:35:58.462300+00:00",
+      "completedAt": "2026-10-09T02:35:58.502924+00:00",
+      "log": "tool-chrome-version.log"
+    },
+    {
+      "source": "tool-java-version.json",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": [
+        "java",
+        "-version"
+      ],
+      "exitCode": 0,
+      "startedAt": "2026-10-09T02:35:58.319437+00:00",
+      "completedAt": "2026-10-09T02:35:58.353840+00:00",
+      "log": "tool-java-version.log"
+    },
+    {
+      "source": "tool-node-version.json",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": [
+        "node",
+        "--version"
+      ],
+      "exitCode": 0,
+      "startedAt": "2026-10-09T02:35:57.853780+00:00",
+      "completedAt": "2026-10-09T02:35:57.878833+00:00",
+      "log": "tool-node-version.log"
+    },
+    {
+      "source": "tool-pnpm-version.json",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": [
+        "pnpm",
+        "--version"
+      ],
+      "exitCode": 0,
+      "startedAt": "2026-10-09T02:35:57.985258+00:00",
+      "completedAt": "2026-10-09T02:35:58.236651+00:00",
+      "log": "tool-pnpm-version.log"
+    },
+    {
+      "source": "typecheck-accepted.json",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": [
+        "pnpm",
+        "--filter",
+        "@pet/admin-web",
+        "typecheck"
+      ],
+      "exitCode": 0,
+      "startedAt": "2026-10-09T02:13:51.548643+00:00",
+      "completedAt": "2026-10-09T02:13:57.530556+00:00",
+      "log": "typecheck-accepted.log"
+    },
+    {
+      "source": "typecheck-final-accepted.json",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": [
+        "pnpm",
+        "--filter",
+        "@pet/admin-web",
+        "typecheck"
+      ],
+      "exitCode": 0,
+      "startedAt": "2026-10-09T02:32:53.570023+00:00",
+      "completedAt": "2026-10-09T02:33:04.434763+00:00",
+      "log": "typecheck-final-accepted.log"
+    },
+    {
+      "source": "typecheck-final.json",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": [
+        "pnpm",
+        "--filter",
+        "@pet/admin-web",
+        "typecheck"
+      ],
+      "exitCode": 0,
+      "startedAt": "2026-10-09T01:54:44.207035+00:00",
+      "completedAt": "2026-10-09T01:54:56.293697+00:00",
+      "log": "typecheck-final.log"
+    },
+    {
+      "source": "typecheck-first.json",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": [
+        "pnpm",
+        "--filter",
+        "@pet/admin-web",
+        "typecheck"
+      ],
+      "exitCode": 0,
+      "startedAt": "2026-10-09T01:46:57.439319+00:00",
+      "completedAt": "2026-10-09T01:46:59.850679+00:00",
+      "log": "typecheck-first.log"
+    },
+    {
+      "source": "typecheck-second.json",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": [
+        "pnpm",
+        "--filter",
+        "@pet/admin-web",
+        "typecheck"
+      ],
+      "exitCode": 2,
+      "startedAt": "2026-10-09T01:51:29.436095+00:00",
+      "completedAt": "2026-10-09T01:51:31.728037+00:00",
+      "log": "typecheck-second.log"
+    }
+  ],
+  "summary": "保留成功、失败及运行中exitCode=null；进程启动/HTTP readiness不伪造终止退出码。"
+}

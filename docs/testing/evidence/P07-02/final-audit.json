@@ -1,0 +1,105 @@
+{
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "command": [
+    "python3",
+    ".local-data/p07-02/finalize-evidence.py"
+  ],
+  "exitCode": 0,
+  "generatedAt": "2026-10-09T02:39:19.548198+00:00",
+  "baselineTrackedFiles": 4505,
+  "missingBaselineFiles": [],
+  "changedBaselineFiles": [
+    "README.md",
+    "apps/admin-web/src/app/layout/SessionLayout.tsx",
+    "apps/admin-web/src/app/router/pageAccess.ts",
+    "apps/admin-web/src/app/router/router.ts",
+    "apps/admin-web/src/shared/auth/returnTo.ts",
+    "apps/admin-web/src/styles/global.css",
+    "docs/contracts/EMPLOYEE-MANAGEMENT.md",
+    "docs/conventions/WEB-PAGES.md",
+    "docs/conventions/WEB-STATE.md",
+    "docs/development/DECISION-LOG.md",
+    "docs/development/ROADMAP.md",
+    "docs/testing/ACCEPTANCE-MATRIX.md"
+  ],
+  "newApplicationAndDocumentationFiles": [
+    "apps/admin-web/src/features/identity/users/api/employees.ts",
+    "apps/admin-web/src/features/identity/users/pages/EmployeeListPage.tsx",
+    "apps/admin-web/src/features/identity/users/queries/employees.test.ts",
+    "apps/admin-web/src/features/identity/users/queries/employees.ts",
+    "apps/admin-web/src/features/identity/users/queries/pagination.ts",
+    "apps/admin-web/src/features/identity/users/queries/search.ts",
+    "apps/admin-web/src/shared/format.ts",
+    "docs/conventions/WEB-LIST-PAGES.md",
+    "docs/testing/P07-02-VERIFICATION.md"
+  ],
+  "protected": {
+    "ui/": {
+      "baselineFiles": 270,
+      "unchanged": true
+    },
+    "apps/backend/": {
+      "baselineFiles": 223,
+      "unchanged": true
+    },
+    "apps/wechat-miniprogram/": {
+      "baselineFiles": 14,
+      "unchanged": true
+    },
+    "infra/": {
+      "baselineFiles": 6,
+      "unchanged": true
+    },
+    "packages/": {
+      "baselineFiles": 9,
+      "unchanged": true
+    },
+    "docs/testing/evidence/": {
+      "baselineFiles": 3865,
+      "unchanged": true
+    },
+    "frozenConfiguration": {
+      "paths": [
+        "pnpm-lock.yaml",
+        "package.json",
+        "apps/admin-web/package.json",
+        ".nvmrc",
+        "docs/development/VERSION-MATRIX.md"
+      ],
+      "unchanged": true
+    }
+  },
+  "localMarkdownLinksChecked": 315,
+  "invalidLocalLinks": [],
+  "generatedTypesAndFrozenDependenciesChanged": false,
+  "backendRegression": "本轮未重跑完整455项；仅10契约导出/模型检查，生产JAR摘要保全。",
+  "testCount": 188,
+  "realBrowserScenarios": 79,
+  "narrowBrowserScenarios": 4,
+  "technicalComponentScenarios": 13,
+  "secretValueScanEvidence": "secret-value-scan.json",
+  "secretValuesPrinted": false,
+  "stagedChanges": false,
+  "diffCheckExitCode": 0,
+  "cleanupEvidence": "cleanup.json",
+  "gateResults": {
+    "G01": "PASS",
+    "G02": "PASS",
+    "G03": "PASS",
+    "G04": "PASS",
+    "G05": "PASS",
+    "G06": "PASS",
+    "G07": "PASS",
+    "G08": "PASS",
+    "G09": "PASS",
+    "G10": "PASS",
+    "G11": "PASS",
+    "G12": "PASS",
+    "G13": "PASS",
+    "G14": "PASS"
+  },
+  "P07-02": "COMPLETE",
+  "P07": "IN_PROGRESS",
+  "nextTask": "P07-03建议，NOT_STARTED，未执行",
+  "gitStatus": " M README.md\n M apps/admin-web/src/app/layout/SessionLayout.tsx\n M apps/admin-web/src/app/router/pageAccess.ts\n M apps/admin-web/src/app/router/router.ts\n M apps/admin-web/src/shared/auth/returnTo.ts\n M apps/admin-web/src/styles/global.css\n M docs/contracts/EMPLOYEE-MANAGEMENT.md\n M docs/conventions/WEB-PAGES.md\n M docs/conventions/WEB-STATE.md\n M docs/development/DECISION-LOG.md\n M docs/development/ROADMAP.md\n M docs/testing/ACCEPTANCE-MATRIX.md\n?? apps/admin-web/src/features/identity/\n?? apps/admin-web/src/shared/format.ts\n?? docs/conventions/WEB-LIST-PAGES.md\n?? docs/testing/P07-02-VERIFICATION.md\n?? docs/testing/evidence/P07-02/\n"
+}

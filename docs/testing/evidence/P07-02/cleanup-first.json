@@ -1,0 +1,9 @@
+{
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "command": [
+    "python3",
+    ".local-data/p07-02/cleanup.py"
+  ],
+  "exitCode": 1,
+  "summary": "授权/关联/列SELECT恢复核对通过；专用后端SIGTERM发送后，macOS killpg(group,0)探测返回EPERM；未操作其他进程。改用ps确认专用PID及进程组消失，再继续清理。"
+}

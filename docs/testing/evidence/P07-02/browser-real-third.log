@@ -1,0 +1,1 @@
+{"exitCode":1,"scenarios":[{"name":"TENANT显示与正式安全接口一致","result":"PASS"},{"name":"数据库独立租户统计一致","result":"PASS"},{"name":"筛选草稿不触发请求且URL未变化","result":"PASS"},{"name":"Enter一次提交关键词","result":"PASS"},{"name":"Enter无重复列表请求","result":"PASS"},{"name":"服务端第二页","result":"PASS"}],"error":"locator.click: Timeout 30000ms exceeded."}

@@ -1,0 +1,18 @@
+{
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "command": [
+    "pnpm",
+    "--filter",
+    "@pet/admin-web",
+    "typecheck"
+  ],
+  "toolchain": {
+    "JAVA_HOME": "/Users/kimwell/.vscode/extensions/redhat.java-1.56.0-darwin-arm64/jre/21.0.12.1-macosx-aarch64",
+    "nodeBin": "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/tools/node-v24.21.0-darwin-arm64/bin",
+    "pnpmBin": "/tmp/pet-p07-tools/bin"
+  },
+  "exitCode": 2,
+  "startedAt": "2026-10-09T01:51:29.436095+00:00",
+  "completedAt": "2026-10-09T01:51:31.728037+00:00",
+  "log": "typecheck-second.log"
+}

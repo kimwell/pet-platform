@@ -1,0 +1,63 @@
+{
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "command": [
+    "node",
+    "docs/testing/evidence/P07-02/browser-components.mjs"
+  ],
+  "exitCode": 0,
+  "evidenceType": "确定性组件/受控网络替身，非真实业务联调",
+  "scenarios": [
+    {
+      "name": "首次加载无旧行",
+      "result": "PASS"
+    },
+    {
+      "name": "Form草稿与已提交URL分离",
+      "result": "PASS",
+      "before": 2,
+      "after": 2,
+      "url": "http://127.0.0.1:5173/admin/identity/users"
+    },
+    {
+      "name": "关键词码点长度校验阻止请求并聚焦",
+      "result": "PASS"
+    },
+    {
+      "name": "重置清表单错误和草稿",
+      "result": "PASS"
+    },
+    {
+      "name": "超MAX_SAFE精确总数可见且分页组件不接收不安全值",
+      "result": "PASS"
+    },
+    {
+      "name": "连续total收缩只纠正一次不循环",
+      "result": "PASS"
+    },
+    {
+      "name": "切换条件清空旧结果而无placeholder",
+      "result": "PASS"
+    },
+    {
+      "name": "晚到旧响应不能覆盖当前新结果",
+      "result": "PASS"
+    },
+    {
+      "name": "422准确查询参数提示且不假装空结果",
+      "result": "PASS"
+    },
+    {
+      "name": "重验撤权隐藏旧行并清列表缓存",
+      "result": "PASS"
+    },
+    {
+      "name": "同租户不同主体清旧缓存重新请求",
+      "result": "PASS"
+    },
+    {
+      "name": "确定性组件无JavaScript异常",
+      "result": "PASS"
+    }
+  ],
+  "errors": []
+}

@@ -1,0 +1,8 @@
+{
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "reason": "原 /tmp/pet-p07-tools/bin 已不存在，未修改全局工具；精确下载冻结 pnpm 10.34.6 到本轮忽略目录。",
+  "url": "https://registry.npmjs.org/pnpm/-/pnpm-10.34.6.tgz",
+  "sha256": "44d7db90fcbb2315b581f85989a913466765421fc656c28e80fac1b7ab5be456",
+  "expectedVersion": "10.34.6",
+  "status": "RESOLVED"
+}

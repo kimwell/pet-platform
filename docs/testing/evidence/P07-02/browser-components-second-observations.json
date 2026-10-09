@@ -1,0 +1,21 @@
+{
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "command": [
+    "node",
+    "docs/testing/evidence/P07-02/browser-components.mjs"
+  ],
+  "exitCode": 1,
+  "evidenceType": "确定性组件/受控网络替身，非真实业务联调",
+  "scenarios": [
+    {
+      "name": "首次加载无旧行",
+      "result": "PASS"
+    },
+    {
+      "name": "Form草稿与已提交URL分离",
+      "result": "FAIL"
+    }
+  ],
+  "errors": [],
+  "error": "Form草稿与已提交URL分离"
+}

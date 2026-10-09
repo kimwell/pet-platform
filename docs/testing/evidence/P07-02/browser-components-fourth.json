@@ -1,0 +1,16 @@
+{
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "command": [
+    "node",
+    "docs/testing/evidence/P07-02/browser-components.mjs"
+  ],
+  "toolchain": {
+    "JAVA_HOME": "/Users/kimwell/.vscode/extensions/redhat.java-1.56.0-darwin-arm64/jre/21.0.12.1-macosx-aarch64",
+    "nodeBin": "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/tools/node-v24.21.0-darwin-arm64/bin",
+    "pnpmBin": "/tmp/pet-p07-tools/bin"
+  },
+  "exitCode": 1,
+  "startedAt": "2026-10-09T02:03:56.468332+00:00",
+  "completedAt": "2026-10-09T02:04:39.459136+00:00",
+  "log": "browser-components-fourth.log"
+}

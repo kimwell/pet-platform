@@ -1,0 +1,77 @@
+
+> @pet/admin-web@0.0.0 test /Users/kimwell/work/pet-platform/apps/admin-web
+> vitest run
+
+
+ RUN  v4.1.11 /Users/kimwell/work/pet-platform/apps/admin-web
+
+ ❯ src/features/identity/users/queries/employees.test.ts (60 tests | 3 failed) 40ms
+     × 无独立list权限导航/直接页一致且不请求列表 undefined 20ms
+     × 无独立list权限导航/直接页一致且不请求列表 "identity:user:detail" 2ms
+     × 原始非法/重复URL replace规范化且安全默认不请求非法值 2ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 3 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/features/identity/users/queries/employees.test.ts > 路由与缓存授权（受控传输，非业务联调） > 无独立list权限导航/直接页一致且不请求列表 undefined
+TypeError: Cannot read properties of undefined (reading 'includes')
+ ❯ hasPermission src/shared/auth/permissions.ts:9:123
+      7| /** 只判断明确代码，数据范围仍由后端按每权限 grant 授权，不取跨权限最大范围。 */
+      8| export function hasPermission(identity: WebIdentity | null | undefined…
+      9|   return Boolean(identity?.principalType === space && !isRestricted(id…
+       |                                                                                                                           ^
+     10| }
+     11| export type SelfAction = 'password' | 'logout-all' | 'logout';
+ ❯ src/app/router/pageAccess.ts:15:62
+ ❯ canAccessPage src/app/router/pageAccess.ts:15:48
+ ❯ src/features/identity/users/queries/employees.test.ts:49:12
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/3]⎯
+
+ FAIL  src/features/identity/users/queries/employees.test.ts > 路由与缓存授权（受控传输，非业务联调） > 无独立list权限导航/直接页一致且不请求列表 "identity:user:detail"
+AssertionError: expected undefined to match object { Object (sessionError) }
+
+- Expected:
+{
+  "sessionError": {
+    "code": "PERMISSION_DENIED",
+  },
+}
+
++ Received:
+undefined
+
+ ❯ src/features/identity/users/queries/employees.test.ts:51:50
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/3]⎯
+
+ FAIL  src/features/identity/users/queries/employees.test.ts > 路由与缓存授权（受控传输，非业务联调） > 原始非法/重复URL replace规范化且安全默认不请求非法值
+AssertionError: expected { …(3) } to match object { href: '/admin/identity/users', …(2) }
+(10 matching properties omitted from actual)
+
+- Expected
++ Received
+
+  {
+-   "href": "/admin/identity/users",
+-   "replace": true,
+-   "state": {
+-     "employeeUrlNotice": Any<String>,
+-   },
++   "href": "/admin/identity/users?page=1&pageSize=20&sortBy=createdAt&sortOrder=desc",
+  }
+
+ ❯ src/features/identity/users/queries/employees.test.ts:54:491
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/3]⎯
+
+
+ Test Files  1 failed | 5 passed (6)
+      Tests  3 failed | 184 passed (187)
+   Start at  09:48:58
+   Duration  1.50s (transform 575ms, setup 0ms, import 4.08s, tests 346ms, environment 1ms)
+
+/Users/kimwell/work/pet-platform/apps/admin-web:
+ ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL  @pet/admin-web@0.0.0 test: `vitest run`
+Exit status 1

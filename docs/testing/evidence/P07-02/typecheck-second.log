@@ -1,0 +1,10 @@
+
+> @pet/admin-web@0.0.0 typecheck /Users/kimwell/work/pet-platform/apps/admin-web
+> tsc --noEmit
+
+src/app/router/router.ts(54,27): error TS2322: Type '({ search, next }: SearchMiddlewareContext<EmployeeSearch>) => Record<string, unknown>' is not assignable to type 'SearchMiddleware<EmployeeSearch>'.
+  Type 'Record<string, unknown>' is not assignable to type 'EmployeeSearch'.
+    Type 'Record<string, unknown>' is missing the following properties from type 'Required<Pick<{ keyword?: string | undefined; page?: number | undefined; pageSize?: number | undefined; sortBy?: "displayName" | "id" | "status" | "loginName" | "createdAt" | "updatedAt" | undefined; sortOrder?: "asc" | ... 1 more ... | undefined; status?: "ACTIVE" | ... 1 more ... | undefined; storeId?: string | un...': page, pageSize, sortBy, sortOrder
+/Users/kimwell/work/pet-platform/apps/admin-web:
+ ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL  @pet/admin-web@0.0.0 typecheck: `tsc --noEmit`
+Exit status 2

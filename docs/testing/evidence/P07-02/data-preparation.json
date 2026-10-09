@@ -1,0 +1,21 @@
+{
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "command": [
+    "docker",
+    "exec",
+    "-i",
+    "pet-p07-02-pg",
+    "psql",
+    "-X",
+    "-qAt",
+    "-v",
+    "ON_ERROR_STOP=1",
+    "-U",
+    "postgres",
+    "-d",
+    "p07_02_acceptance"
+  ],
+  "exitCode": 0,
+  "summary": "{\"total\" : \"56\", \"disabled\" : \"13\"}\n",
+  "purpose": "正式bootstrap操作者与第二租户；55名目标通过隔离SQL准备，不是员工创建功能验收；正式JAR/唯一Provider，无测试profile"
+}

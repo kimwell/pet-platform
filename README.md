@@ -2,7 +2,9 @@
 
 项目直接在 `/Users/kimwell/work/pet-platform` 建设，既有ui保留原位，不创建enterprise-app-scaffold子目录，不使用Product Delivery OS。后端固定 `com.pet.platform`，三端结构见文档；模板不包含宠物/订单等行业业务。
 
-**最新：P07-01 COMPLETE；P07 IN_PROGRESS；G01～G14 PASS。** 正式员工列表/详情、独立读取权限、TENANT/STORES/SELF、六字段DTO和受控分页查询完成；本轮完整后端455项（原421逐项保留+34）0失败/错误/跳过，OpenAPI三端生成/一致性及类型检查通过。见[员工读取契约](docs/contracts/EMPLOYEE-MANAGEMENT.md)与[P07-01验证](docs/testing/P07-01-VERIFICATION.md)。下一建议P07-02企业级员工列表页、URL筛选分页排序与查询状态基础，仅报告，不自动执行；未提交、推送或部署。
+**最新：P07-02 COMPLETE；P07 IN_PROGRESS；G01～G14 PASS。** `/admin/identity/users` 接入正式员工列表，完成URL校验/历史恢复、Form草稿、服务端分页与六字段排序、精确total安全适配和身份范围缓存清理。Web188项、79项真实浏览器检查、13项确定性组件场景和4项390px补验通过；命令、原始失败、资源恢复及边界见[P07-02验证](docs/testing/P07-02-VERIFICATION.md)和[列表接入规则](docs/conventions/WEB-LIST-PAGES.md)。下一建议P07-03员工详情页与列表返回状态，未执行；未提交、推送或部署。
+
+**P07-01历史：P07-01 COMPLETE；P07 IN_PROGRESS；G01～G14 PASS。** 正式列表/详情读取接口、独立权限、TENANT/STORES/SELF、六字段DTO完成；完整后端455项为P07-01历史，本轮后端未改，只执行10项契约导出/模型检查，详见[员工读取契约](docs/contracts/EMPLOYEE-MANAGEMENT.md)与[P07-01验证](docs/testing/P07-01-VERIFICATION.md)。
 
 **P06-03历史：P06-03 COMPLETE；P06 COMPLETE；G01～G14 PASS。** 25项覆盖矩阵对照原P06路线，补齐真实网络/取消、跨标签与限定窄屏/键盘验收，完成最小修复；5个文件127项Web测试、六项检查及diff/保全审计通过。见[P06-03验证](docs/testing/P06-03-VERIFICATION.md)与[P06总验收及P07接入](docs/testing/P06-ACCEPTANCE.md)。421项完整后端为历史，本轮只运行10项契约导出/模型检查。P07 NOT_STARTED，首项建议为员工管理后端查询与授权契约，不自动执行、提交、推送或部署。
 
@@ -32,7 +34,7 @@ pnpm dev:web
 pnpm preview:web
 ```
 
-Web 开发入口为 http://127.0.0.1:5173，构建后的预览为 http://127.0.0.1:4173；当前包含系统入口、/admin/login、/platform/login、对应受保护身份壳、/admin/security、/platform/security、错误和NotFound，开发 /api 经同源代理。预览不使用开发代理，Vite preview 不代表生产部署；生产静态服务器须配置 SPA fallback。apps/admin-web/.env.example 可复制为同目录 .env.local；仅公开配置允许进入 VITE_*。
+Web 开发入口为 http://127.0.0.1:5173，构建后的预览为 http://127.0.0.1:4173；当前包含系统入口、/admin/login、/platform/login、对应受保护身份壳、/admin/security、/platform/security、/admin/identity/users、错误和NotFound，开发 /api 经同源代理。预览不使用开发代理，Vite preview 不代表生产部署；生产静态服务器须配置 SPA fallback。apps/admin-web/.env.example 可复制为同目录 .env.local；仅公开配置允许进入 VITE_*。
 
 ```sh
 cd apps/backend

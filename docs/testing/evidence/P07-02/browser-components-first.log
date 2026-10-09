@@ -1,0 +1,17 @@
+file:///Users/kimwell/work/pet-platform/docs/testing/evidence/P07-02/browser-components.mjs:13
+async function fixture(handler){const context=await browser.newContext({viewport:{width:1280,height:900}}),page=await context.newPage();page.on('pageerror',e=>result.errors.push(e.message));let me={...identity},count=0;await page.route('**/api/**',async route=>{const u=new URL(route.request().url());if(u.pathname==='/api/admin/auth/me')return route.fulfill(pass(me));if(u.pathname==='/api/admin/identity/users'){count++;return handler(route,u,count);}throw Error('组件测试出现未登记接口')});return {page,context,setMe:value=>{me=value},count:()=>count};}
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                           ^
+
+Error: 组件测试出现未登记接口
+    at file:///Users/kimwell/work/pet-platform/docs/testing/evidence/P07-02/browser-components.mjs:13:460
+    at RouteHandler._handleInternal (/Users/kimwell/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright-core/lib/coreBundle.js:59786:11)
+    at RouteHandler._handleImpl (/Users/kimwell/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright-core/lib/coreBundle.js:59753:29)
+    at /Users/kimwell/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright-core/lib/coreBundle.js:59747:59
+    at AsyncLocalStorage.run (node:internal/async_local_storage/async_context_frame:65:14)
+    at _Zone.run (/Users/kimwell/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright-core/lib/coreBundle.js:10149:40)
+    at RouteHandler.handle (/Users/kimwell/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright-core/lib/coreBundle.js:59747:38)
+    at _Page._onRoute (/Users/kimwell/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright-core/lib/coreBundle.js:61037:46)
+    at Proxy.<anonymous> (/Users/kimwell/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright-core/lib/coreBundle.js:60984:63)
+    at Proxy._callHandler (/Users/kimwell/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright-core/lib/coreBundle.js:10746:33)
+
+Node.js v24.21.0

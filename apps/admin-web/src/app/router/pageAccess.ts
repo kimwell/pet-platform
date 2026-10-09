@@ -5,6 +5,7 @@ export type PageAccess = { space: AuthSpace; path: string; title: string; condit
 export const sessionPages: readonly PageAccess[] = [
   { space: 'STAFF', path: '/admin', title: '当前身份', condition: 'session', allowRestricted: false },
   { space: 'STAFF', path: '/admin/security', title: '账号安全', condition: 'self-session', allowRestricted: true },
+  { space: 'STAFF', path: '/admin/identity/users', title: '员工列表', condition: 'session', permissions: ['identity:user:list'], allowRestricted: false },
   { space: 'PLATFORM', path: '/platform', title: '当前身份', condition: 'session', permissions: ['platform:session:manage'], allowRestricted: false },
   { space: 'PLATFORM', path: '/platform/security', title: '账号安全', condition: 'self-session', allowRestricted: false },
 ];

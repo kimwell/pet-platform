@@ -1,0 +1,25 @@
+{
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "command": [
+    "python3",
+    ".local-data/p07-02/cleanup.py"
+  ],
+  "exitCode": 1,
+  "summary": "授权/关联/列SELECT恢复和JAR摘要核对通过；仅专用tmpfs容器停止成功、秘密文件已删除、服务端口关闭。末尾容器清单严格全等断言失败：其他项目在期间新增容器。改按原三容器子集及本轮专用容器不存在核对，不操作其他项目。",
+  "completedSteps": {
+    "restoredListGrantTenant": 1,
+    "otherListScopes": 0,
+    "restoredOperatorStoreAssociations": 1,
+    "restoredSelectColumns": 6,
+    "dockerStopExitCode": 0,
+    "removedSecretInputs": [
+      "postgres.env",
+      "redis.conf",
+      "staff-password",
+      "staff-new-password",
+      "staff-final-password",
+      "platform-password",
+      "platform-new-password"
+    ]
+  }
+}

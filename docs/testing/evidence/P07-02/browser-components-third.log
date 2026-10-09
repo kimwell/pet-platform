@@ -1,0 +1,1 @@
+{"exitCode":1,"scenarios":[{"name":"首次加载无旧行","result":"PASS"},{"name":"Form草稿与已提交URL分离","result":"PASS","before":2,"after":2,"url":"http://127.0.0.1:5173/admin/identity/users"},{"name":"关键词码点长度校验阻止请求并聚焦","result":"PASS"},{"name":"重置清表单错误和草稿","result":"FAIL"}],"error":"重置清表单错误和草稿"}

@@ -61,3 +61,9 @@ STAFF 真实 passwordChangeRequired=true 时，登录成功依据刚取得的 me
 安全页普通同身份成功重验保留草稿；主体、租户、会话或授权版本/权限/门店/dataScope/受限事实变化后重建Form并清敏感字段。普通业务表单提交失败/409保留输入的原规则不变；登录/安全密码字段依敏感规则清空。页面/Modal/Table模式原P07按真实接口接入；不新增假业务页面。
 
 桌面/390px、键盘/首错误/菜单恢复的限定范围、系统错误技术故障与真实服务故障的区别见[P06-03](../testing/P06-03-VERIFICATION.md)。没有真实辅助技术全标准验收；未实现Modal/Drawer的焦点恢复不能提前称通过。P07详细接入索引见[总验收](../testing/P06-ACCEPTANCE.md#p07业务接入清单)，本页继续拥有普通列表/表单行为。
+
+## P07-02 当前员工列表（2026-10-09）
+
+新增 `/admin/identity/users`，真实 GET `/api/admin/identity/users`，要求STAFF的identity:user:list；导航和beforeLoad共用sessionPages。官方Form筛选、Table六公开列、受控Pagination、中文空态/错误/状态和默认时区展示已接入；没有详情链接、行选择、新建/编辑/停用/导出/角色管理按钮。本人安全页独立，不借平台登录身份。
+
+URL只有keyword/status/page/pageSize/sortBy/sortOrder；草稿不立即请求，提交/重置/排序/改变pageSize回第一页；已冻结非法URL安全恢复默认并一次提示，未知参数丢弃；重复敏感参数不取首值。原始字符串解析保留数字/布尔样式字面量，关键词不trim；浏览器历史覆盖草稿。条件变化清旧数据，同条件刷新保留并明确旧结果；total超安全范围保真显示且禁用页码组件，超末页最多一次replace纠正。完整拥有者和边界见[WEB-LIST-PAGES](WEB-LIST-PAGES.md)，本轮证据见[P07-02](../testing/P07-02-VERIFICATION.md)。列偏好/详情返回状态/写入与正式模板继续后续任务。

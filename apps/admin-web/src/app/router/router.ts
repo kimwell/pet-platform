@@ -11,6 +11,7 @@ import type { AuthSpace } from '../../shared/auth/spaces';
 import { ApiError } from '../../shared/api/ApiError';
 import { isRestricted } from '../../shared/auth/permissions';
 import { spaces } from '../../shared/auth/spaces';
+import { employeeHref, employeeSearchValues, initialEmployeeHistoryState, normalizeSearch, parseWebSearch, stringifyWebSearch } from '../../features/identity/users/queries/search';
 
 const rootRoute = createRootRouteWithContext<Services>()({ component: SystemLayout, errorComponent: SystemError, notFoundComponent: SystemNotFound });
 const entryRoute = createRoute({ getParentRoute: () => rootRoute, path: '/', component: SystemEntry });
@@ -48,11 +49,33 @@ const platformSecurity = createRoute({ getParentRoute: () => rootRoute, path: '/
   beforeLoad: ({ context, location }) => requireSession(context.auth, 'PLATFORM', location.href),
   component: lazyRouteComponent(() => import('../layout/SessionLayout'), 'PlatformLayout'),
 });
-export const routeTree = rootRoute.addChildren([entryRoute, staffLogin, platformLogin, staff, platform, staffSecurity, platformSecurity]);
+const staffUsers = createRoute({ getParentRoute: () => rootRoute, path: '/admin/identity/users',
+  validateSearch: (search: Record<string, unknown>) => normalizeSearch(search).query,
+  search: { middlewares: [({ search, next }) => {
+    // 路由可能合并原 search；只序列化允许字段，防止残留未知参数引发二次纠正并覆盖提示。
+    return employeeSearchValues(normalizeSearch(next(search)).query) as typeof search;
+  }] },
+  beforeLoad: async ({ context, location }) => {
+    const access = await requireSession(context.auth, 'STAFF', location.href);
+    if (access.sessionError) return access;
+    const parsed = normalizeSearch(parseWebSearch(location.searchStr));
+    const canonical = employeeHref(parsed.query);
+    if (location.pathname + location.searchStr !== canonical) throw redirect({ href: canonical, replace: true,
+      state: { employeeUrlNotice: parsed.notice } });
+    return access;
+  }, component: lazyRouteComponent(() => import('../layout/SessionLayout'), 'StaffLayout'),
+});
+export const routeTree = rootRoute.addChildren([entryRoute, staffLogin, platformLogin, staff, platform, staffSecurity, platformSecurity, staffUsers]);
 export const services = createServices();
 export const router = createRouter({ routeTree, context: services, defaultPreload: false,
+  parseSearch: parseWebSearch, stringifySearch: stringifyWebSearch,
   defaultPendingMs: 0, defaultPendingComponent: () => '正在确认当前会话…', defaultStaleTime: 0,
 });
+if (typeof document !== 'undefined') {
+  const location = router.history.location;
+  const state = initialEmployeeHistoryState(location.href, location.state);
+  if (state !== location.state) router.history.replace(location.href, state);
+}
 // 身份变化时重算路由；过渡中的查询会等待结束。只重算当前路由所属空间。
 services.auth.runtime.subscribe(() => {
   const path = router.state.location.pathname;

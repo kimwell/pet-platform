@@ -1,0 +1,185 @@
+{
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "command": [
+    "node",
+    ".local-data/p07-02/browser-real.mjs"
+  ],
+  "exitCode": 1,
+  "environment": "正式生产JAR/local、受限runtime、独立PG/Redis、正式bootstrap；目标/授权SQL隔离夹具；无网络替身",
+  "scenarios": [
+    {
+      "name": "TENANT显示与正式安全接口一致",
+      "result": "PASS",
+      "total": "56",
+      "displayed": 20
+    },
+    {
+      "name": "数据库独立租户统计一致",
+      "result": "PASS"
+    },
+    {
+      "name": "筛选草稿不触发请求且URL未变化",
+      "result": "PASS"
+    },
+    {
+      "name": "Enter一次提交关键词",
+      "result": "PASS",
+      "total": "55",
+      "displayed": 20
+    },
+    {
+      "name": "Enter无重复列表请求",
+      "result": "PASS",
+      "note": "1次页面查询+1次独立API核对"
+    },
+    {
+      "name": "服务端第二页",
+      "result": "PASS",
+      "total": "55",
+      "displayed": 20
+    }
+  ],
+  "requests": [
+    {
+      "query": "?page=1&pageSize=20&sortBy=createdAt&sortOrder=desc"
+    },
+    {
+      "query": "?page=1&pageSize=20&sortBy=createdAt&sortOrder=desc"
+    },
+    {
+      "query": ""
+    },
+    {
+      "query": "?keyword=%E9%AA%8C%E6%94%B6%E5%91%98%E5%B7%A5&page=1&pageSize=20&sortBy=createdAt&sortOrder=desc"
+    },
+    {
+      "query": "?keyword=%E9%AA%8C%E6%94%B6%E5%91%98%E5%B7%A5"
+    },
+    {
+      "query": "?keyword=%E9%AA%8C%E6%94%B6%E5%91%98%E5%B7%A5&page=2&pageSize=20&sortBy=createdAt&sortOrder=desc"
+    },
+    {
+      "query": "?keyword=%E9%AA%8C%E6%94%B6%E5%91%98%E5%B7%A5&page=2"
+    }
+  ],
+  "consoleErrors": [
+    "Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+    "Failed to load resource: the server responded with a status of 401 (Unauthorized)"
+  ],
+  "pageErrors": [],
+  "snapshots": [
+    {
+      "name": "TENANT显示与正式安全接口一致",
+      "query": "",
+      "total": "56",
+      "page": 1,
+      "pageSize": 20,
+      "ids": [
+        "581f985c-6ad0-4577-9308-754683ff4d03",
+        "ed1985db-43d0-4194-a8fe-e250cc714933",
+        "c23dcff2-63c0-4f9b-99f2-c16e8538e9e3",
+        "97ff7fd2-e75e-44f2-a572-dfb98ca63561",
+        "45545e24-5884-4bcd-ac53-dfae47fc1ff4",
+        "caab338d-fe85-43cb-af0f-fa565eecd6e0",
+        "3aa9712b-1365-46a8-a052-0fa03271383a",
+        "dcddd474-57bc-4cc9-9005-c4f51ff81258",
+        "89234a6f-612a-4b1a-9264-1c07c26bad12",
+        "cbcad99d-1078-4993-a002-1546622c82c2",
+        "943c791a-c39e-42f8-a19f-f87bb642442d",
+        "9e240a0b-e2aa-43b2-ae40-9ba3626e75c5",
+        "28a45843-d46d-49b9-93d4-663e00afa1b3",
+        "c55482a0-6980-4415-b897-2408369b5e3e",
+        "962da30d-1f0d-4310-9bbf-cdddc0a178bc",
+        "8b78a45d-f82d-49a5-add7-2216938b1a19",
+        "fa9c0ea9-b45c-4294-8712-ffe1d05a1d46",
+        "f87c5ad3-7882-4614-bf2b-a19321624fae",
+        "1bbf5f84-28a2-4598-a737-43d03f9d2112",
+        "4ca95030-99e7-4494-80cd-8d7a74844967"
+      ],
+      "fields": [
+        "id",
+        "loginName",
+        "displayName",
+        "status",
+        "createdAt",
+        "updatedAt"
+      ]
+    },
+    {
+      "name": "Enter一次提交关键词",
+      "query": "?keyword=%E9%AA%8C%E6%94%B6%E5%91%98%E5%B7%A5",
+      "total": "55",
+      "page": 1,
+      "pageSize": 20,
+      "ids": [
+        "ed1985db-43d0-4194-a8fe-e250cc714933",
+        "c23dcff2-63c0-4f9b-99f2-c16e8538e9e3",
+        "97ff7fd2-e75e-44f2-a572-dfb98ca63561",
+        "45545e24-5884-4bcd-ac53-dfae47fc1ff4",
+        "caab338d-fe85-43cb-af0f-fa565eecd6e0",
+        "3aa9712b-1365-46a8-a052-0fa03271383a",
+        "dcddd474-57bc-4cc9-9005-c4f51ff81258",
+        "89234a6f-612a-4b1a-9264-1c07c26bad12",
+        "cbcad99d-1078-4993-a002-1546622c82c2",
+        "943c791a-c39e-42f8-a19f-f87bb642442d",
+        "9e240a0b-e2aa-43b2-ae40-9ba3626e75c5",
+        "28a45843-d46d-49b9-93d4-663e00afa1b3",
+        "c55482a0-6980-4415-b897-2408369b5e3e",
+        "962da30d-1f0d-4310-9bbf-cdddc0a178bc",
+        "8b78a45d-f82d-49a5-add7-2216938b1a19",
+        "fa9c0ea9-b45c-4294-8712-ffe1d05a1d46",
+        "f87c5ad3-7882-4614-bf2b-a19321624fae",
+        "1bbf5f84-28a2-4598-a737-43d03f9d2112",
+        "4ca95030-99e7-4494-80cd-8d7a74844967",
+        "b7ec0043-3028-4015-8280-effdecba01cd"
+      ],
+      "fields": [
+        "id",
+        "loginName",
+        "displayName",
+        "status",
+        "createdAt",
+        "updatedAt"
+      ]
+    },
+    {
+      "name": "服务端第二页",
+      "query": "?keyword=%E9%AA%8C%E6%94%B6%E5%91%98%E5%B7%A5&page=2",
+      "total": "55",
+      "page": 2,
+      "pageSize": 20,
+      "ids": [
+        "1f1abe8c-b6d9-4a8b-82f2-90352ee87733",
+        "5bb5231c-63d1-4289-80ae-ca03200ad323",
+        "a642078d-cf7d-4c3d-8dc2-41fd27b5ce34",
+        "313c8d6b-cb83-4d95-b868-34333ed9354a",
+        "06a6cae1-db8f-4004-8812-420737fb38f4",
+        "dc0f2369-9d4a-4bf6-9042-1e546d5c032c",
+        "d5641e05-1604-44ad-8591-9c7145b5d20d",
+        "793f10e1-3df2-47b7-8bff-147166434482",
+        "7226ac9e-04a5-4b7f-b20a-52cc5dd68d1a",
+        "a131fc89-a1a0-4f04-bd6a-0360f96daa26",
+        "ef6a9083-0352-41fa-bc39-2679b484ce2a",
+        "bd1f25d0-a094-4589-8e85-caeee742f592",
+        "756952e0-a9a7-4db9-ba4a-086ced8ccf78",
+        "0fde6657-5c68-40c9-8ff9-e4a3fce7f26a",
+        "fd6773f5-73a7-46d7-b4a6-05628d1306a9",
+        "594904ac-f868-498e-b84f-7f675b2c46a7",
+        "b29e8d4c-c33d-4ae1-a72c-c0b7dd1a9a1b",
+        "48c1b975-f64f-409c-95e6-7e5e4bbf735c",
+        "ca0f12fd-d945-45f1-b7bf-27b1851d3729",
+        "fe7de96c-d3b0-4d5a-8634-721851fcc5fe"
+      ],
+      "fields": [
+        "id",
+        "loginName",
+        "displayName",
+        "status",
+        "createdAt",
+        "updatedAt"
+      ]
+    }
+  ],
+  "error": "locator.click: Timeout 30000ms exceeded."
+}

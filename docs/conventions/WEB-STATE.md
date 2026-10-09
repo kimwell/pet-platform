@@ -81,3 +81,9 @@ P06-02前轮状态（历史）为IN_PROGRESS：原生窗口focus真实触发补�
 业务queryFn经Router context中的 `auth.runtime.request` 传递signal，路径是本空间契约相对路径（/admin或/platform，不再加/api）；使用 `authKeys.protected` 加真实身份/范围和当前epoch。P07在服务旁声明模块key、合法URL参数规范化和成功后的定向失效；不得自己写第二套fetch/401/身份状态。当前安全操作清整个本空间，不等于普通业务mutation的默认策略。
 
 分页/金额/日期仍遵循各契约，total在转换AntD number前必须校验规范十进制及MAX_SAFE_INTEGER范围；实际Table和复杂字段NamePath适配原P07实施。十项接入步骤集中在[P06总验收](../testing/P06-ACCEPTANCE.md#p07业务接入清单)，不复制一套互相矛盾的工具规则。
+
+## P07-02 员工列表查询（2026-10-09）
+
+当前真实列表 `/admin/identity/users`：Form草稿/Router已提交条件/Query响应三个owner；模块定义前端EmployeeSearch，请求/响应/行类型使用正式生成契约。queryFn传signal，复用authKeys.protected完整可信STAFF/主体/租户/会话/授权代际、有效门店、逐权限dataScope和标准化条件；不保存行数据到Zustand，不使用placeholderData。当前正式me完整逐权限范围已核对，不猜扁平权限范围；me授权事实变化（即使版本不增）沿用SessionRuntime取消和移除本空间旧scope，新epoch响应方可写回。
+
+list PERMISSION_DENIED/PASSWORD_CHANGE_REQUIRED立即隐藏旧行并清当前Query，由既有runtime重验；无权限guard与导航同源。列表自身不先于me进行focus刷新，相关身份重验变化后新key读取；没有即时推送保证。同条件刷新保留合法数据并标注，失败保留旧结果+重试；新条件/新身份清旧展示；401统一失效，CSRF403/422/503/取消各自区分。GET重试沿用现有规则，敏感写规则未改。URL、total字符串安全转换、页数/offset上限、有限replace纠正、页面错误与下一列表接入见[列表规范](WEB-LIST-PAGES.md)及[P07-02验证](../testing/P07-02-VERIFICATION.md)。此前“业务列表尚未实现”为P06历史；详情/写入/批量仍未实施。

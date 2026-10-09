@@ -1,0 +1,28 @@
+
+> @pet/admin-web@0.0.0 lint /Users/kimwell/work/pet-platform/apps/admin-web
+> eslint src vite.config.ts dev-config.ts --max-warnings=0
+
+
+/Users/kimwell/work/pet-platform/apps/admin-web/src/features/identity/users/pages/EmployeeListPage.tsx
+  33:5  error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+/Users/kimwell/work/pet-platform/apps/admin-web/src/features/identity/users/pages/EmployeeListPage.tsx:33:5
+  31 |     form.setFieldsValue({ keyword: search.keyword ?? '', status: search.status });
+  32 |     form.setFields([{ name: 'keyword', errors: [] }, { name: 'status', errors: [] }]);
+> 33 |     setPageNotice(undefined);
+     |     ^^^^^^^^^^^^^ Avoid calling setState() directly within an effect
+  34 |   }, [form, search.keyword, search.status, fingerprint]);
+  35 |   useEffect(() => {
+  36 |     if (forbidden) {  react-hooks/set-state-in-effect
+
+✖ 1 problem (1 error, 0 warnings)
+
+/Users/kimwell/work/pet-platform/apps/admin-web:
+ ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL  @pet/admin-web@0.0.0 lint: `eslint src vite.config.ts dev-config.ts --max-warnings=0`
+Exit status 1

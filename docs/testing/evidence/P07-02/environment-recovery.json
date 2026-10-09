@@ -1,0 +1,12 @@
+{
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "command": [
+    "/Users/kimwell/.vscode/extensions/redhat.java-1.56.0-darwin-arm64/jre/21.0.12.1-macosx-aarch64/bin/java",
+    "-jar",
+    "/Users/kimwell/work/pet-platform/.local-data/p07-02/backend.jar"
+  ],
+  "exitCode": 0,
+  "reason": "专用tmpfs Redis重启重分配回环端口；更新本轮JAR子进程端口后就绪，未放宽正式认证/未操作既有容器卷",
+  "redisPort": 58518,
+  "readiness": 200
+}

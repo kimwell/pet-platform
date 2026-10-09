@@ -1,0 +1,17 @@
+file:///Users/kimwell/work/pet-platform/.local-data/p07-02/browser-real.mjs:88
+ const b=await context.newPage();await b.goto(url+'/admin');await b.getByRole('button',{name:'当前账号菜单'}).click();await b.getByRole('menuitem',{name:'退出当前会话',exact:true}).click();await b.waitForURL('**/admin/login*');await login(b,'admin','p07-02-second');await p.getByRole('link',{name:'当前身份',exact:true}).click();await p.getByRole('heading',{name:'当前身份',exact:true}).waitFor();await p.getByRole('link',{name:'员工列表',exact:true}).click();await oracle('同源切换租户不沿用旧员工占位',1);record('跨身份缓存无旧租户', (await cache()).every(q=>q.scope.tenantId!==tid));await b.close();
+       ^
+
+SyntaxError: Identifier 'b' has already been declared
+    at compileSourceTextModule (node:internal/modules/esm/utils:319:16)
+    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:89:18)
+    at #translate (node:internal/modules/esm/loader:438:20)
+    at afterLoad (node:internal/modules/esm/loader:506:29)
+    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:511:12)
+    at #getOrCreateModuleJobAfterResolve (node:internal/modules/esm/loader:564:36)
+    at afterResolve (node:internal/modules/esm/loader:611:52)
+    at ModuleLoader.getOrCreateModuleJob (node:internal/modules/esm/loader:617:12)
+    at node:internal/modules/esm/loader:636:32
+    at TracingChannel.tracePromise (node:diagnostics_channel:362:14)
+
+Node.js v24.21.0

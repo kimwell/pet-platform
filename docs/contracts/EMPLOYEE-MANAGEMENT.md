@@ -99,6 +99,14 @@ scripts/backend-identity.sh employee-read-upgrade --tenant-id <目标租户UUID-
 
 函数SECURITY DEFINER owner沿用独立NOLOGIN `pet_bootstrap_owner`，固定search_path、显式schema和RLS租户条件，PUBLIC/runtime无EXECUTE，runtime无owner成员或SET ROLE。这是受限离线能力，不是任意员工读取或完整角色管理API；普通角色的授权修改留后续任务。
 
-## 后续页面依赖
+## P07-01 后续页面依赖（历史）
 
 P07-02可复用生成 `paths` 中listEmployees/getEmployee及 `EmployeeView`；URL筛选分页排序使用上述字段和错误，Query key须含P06完整身份范围。两读取权限分开呈现；不能凭角色名称或list权限显示详情。门店事实/选择器尚无本轮新增公开目录API，页面不得凭任意UUID生成扩权筛选。创建/编辑/停用、组织/角色授权、批量/导入导出、客户资料、Web Table均未在本轮实现。
+
+## P07-02 Web 列表接入（2026-10-09）
+
+STAFF页面 `/admin/identity/users` 已接正式listEmployees生成类型和真实列表接口，权限identity:user:list，与导航和直接路由共同判断；六字段中文展示，不放详情链接，不返回或补造角色/门店/管理能力。本人安全入口独立。
+
+本页只提交keyword/status/page/pageSize/sortBy/sortOrder。后端storeId能力仍按上文保持，但本页没有可信公开门店选择事实，URL中的storeId作为本页不支持参数移除并提示；不新增roleId/日期或sort别名。关键词提交空输入省略；非空按后端字面量保持，不trim/改大小写。非法/重复已知URL参数恢复整组默认并提示，未知移除，所有canonical用replace；不将后端400/422本身改成成功。
+
+total协议与生成string完全未改；BigInt无损检查后仅安全值给官方Pagination，超MAX_SAFE保留精确总数和分页限制；页数/int32/offset边界及最多一次末页replace纠正见[列表规范](../conventions/WEB-LIST-PAGES.md)。Query安全范围来自当前正式me逐权限grants及既有身份代际，前端不承担最终授权。详情独立detail权限、完整详情页、返回列表状态、写入/批量/授权修改均尚未实现；当前验证边界见[P07-02](../testing/P07-02-VERIFICATION.md)。

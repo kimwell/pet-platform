@@ -6,7 +6,8 @@ export function safeReturnTo(space: AuthSpace, input: unknown): string {
   if (typeof input !== 'string' || input.length > 2048 || !input.startsWith('/') || input.startsWith('//') || /[\\\u0000-\u0020]/.test(input)) return home;
   try {
     const url = new URL(input, 'https://local.invalid');
-    if (url.origin !== 'https://local.invalid' || !([home, spaces[space].security] as readonly string[]).includes(url.pathname) || /%|;/.test(url.pathname) || url.hash) return home;
+    const paths = [home, spaces[space].security, ...(space === 'STAFF' ? ['/admin/identity/users'] : [])];
+    if (url.origin !== 'https://local.invalid' || !paths.includes(url.pathname) || /%|;/.test(url.pathname) || url.hash) return home;
     for (const [key, value] of url.searchParams) {
       if (/password|token|secret|csrf|credential|returnto|redirect/i.test(key) || /(?:bearer\s|[?&](?:token|password)=)/i.test(value)) return home;
     }

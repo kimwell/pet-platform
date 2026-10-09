@@ -1,0 +1,30 @@
+{
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "command": [
+    "node",
+    ".local-data/p07-02/browser-narrow.mjs"
+  ],
+  "exitCode": 0,
+  "scenarios": [
+    {
+      "name": "390px保留真实每页大小与跳页控件",
+      "result": "PASS"
+    },
+    {
+      "name": "390px键盘切换pageSize回第1页",
+      "result": "PASS"
+    },
+    {
+      "name": "390px键盘跳页",
+      "result": "PASS"
+    },
+    {
+      "name": "分页控件换行无整体溢出且表格可滚动",
+      "result": "PASS",
+      "width": 390,
+      "scroll": 390,
+      "tableWidth": 1230,
+      "tableClient": 358
+    }
+  ]
+}
