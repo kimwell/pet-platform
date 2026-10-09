@@ -1,5 +1,7 @@
 # 身份字段与认证接口
 
+P07-01正式员工管理读取契约见[EMPLOYEE-MANAGEMENT](EMPLOYEE-MANAGEMENT.md)，与本文件本人/auth会话接口分开；不把读取员工能力等同敏感管理能力。
+
 冻结日期：2026-10-07，P01-02。本文拥有身份DTO及端点。Cookie/CSRF/Token名称、期限、载体冲突唯一在 [认证](../architecture/AUTHENTICATION.md)；授权范围语义见 [授权](../architecture/AUTHORIZATION.md)。下文原冻结清单包含后续计划；当前STAFF九个实际接口和PLATFORM六个接口以文末P05-02/P05-03/P05-04清单为准。
 
 ## 当前身份 CurrentIdentity

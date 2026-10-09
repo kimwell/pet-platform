@@ -1,0 +1,196 @@
+Window: "企业应用工程入口", App: Google Chrome.
+0 标准窗口 企业应用工程入口 - Google Chrome（无痕）, URL: 127.0.0.1:5173/admin/login?returnTo=%2Fadmin%2Fsecurity, Secondary Actions: Raise
+	1 container 企业应用工程入口 - Google Chrome（无痕）, URL: 127.0.0.1:5173/admin/login?returnTo=%2Fadmin%2Fsecurity
+		2 container
+			3 工具栏
+				4 按钮 返回
+				5 按钮 (disabled) 前进
+				6 按钮 重新加载
+				7 按钮 首页
+				8 container
+					9 弹出式按钮 查看网站信息
+					10 文本栏 (settable) 地址和搜索栏, Value: 127.0.0.1:5173/admin/login?returnTo=%2Fadmin%2Fsecurity, Placeholder: 在 百度 中搜索，或输入网址
+					11 按钮 为此标签页添加书签
+				12 按钮 无痕模式
+				13 弹出式按钮 Chrome
+			14 工具栏 书签
+				15 书签文件夹按钮 new
+				16 书签文件夹按钮 work
+				17 书签文件夹按钮 blog
+				18 书签文件夹按钮 ui
+				19 书签文件夹按钮 flutter
+				20 书签文件夹按钮 nodes
+				21 书签文件夹按钮 ai
+				22 书签文件夹按钮 git
+				23 书签按钮 百度一下，你就知道
+				24 书签按钮 Google
+				25 书签按钮 Errors & Outages — sentry — Sentry
+			26 container
+				27 滚动区
+					28 HTML 内容 DevTools, URL: devtools://devtools/bundled/devtools_app.html?remoteBase=https://chrome-devtools-frontend.appspot.com/serve_file/@b859317bf11f6be47f9b7799ec690a0a42a1fb33/&targetType=tab&can_dock=true
+						29 container
+							30 container
+								31 container
+									32 container Main toolbar
+										33 工具栏
+											34 container Select an element in the page to inspect it, Help: Select an element in the page to inspect it - ⌘ ⇧ C
+												35 切换按钮 Select an element in the page to inspect it - ⌘ ⇧ C, Value: 0
+											36 container Toggle device toolbar, Help: Toggle device toolbar - ⌘ ⇧ M
+												37 切换按钮 Toggle device toolbar - ⌘ ⇧ M, Value: 0
+										38 container
+											39 标签页组 Panels
+												40 标签 (settable, integer) Elements, Value: 0
+												41 标签 (selected) Console, Value: 1
+												42 标签 (settable, integer) Network, Value: 0
+												43 标签 (settable, integer) Application, Value: 0
+												44 标签 (settable, integer) Sources, Value: 0
+												45 标签 (settable, integer) Performance, Value: 0
+												46 标签 (settable, integer) Memory, Value: 0
+												47 标签 (settable, integer) Lighthouse, Value: 0
+										48 工具栏
+											49 container Open Console to view 3 errors
+												50 按钮 Open Console to view 3 errors
+											51 按钮  AI assistance, Help: Open AI assistance panel
+											52 container Settings, Help: Settings - F1 - ⇧ ?
+												53 按钮 Settings - F1 - ⇧ ?
+											54 弹出式按钮 Customize and control DevTools
+												55 按钮 Customize and control DevTools
+											56 container Close
+												57 按钮 Close
+									58 container Console panel
+										59 container console
+											60 container
+												61 工具栏
+													62 container Show Console sidebar
+														63 按钮 Show Console sidebar
+													64 container Clear console, Help: Clear console - Ctrl L - ⌘ K
+														65 按钮 Clear console - Ctrl L - ⌘ K
+													66 container Collapse all
+														67 按钮 Collapse all
+													68 按钮 JavaScript context: top
+													69 container Create live expression
+														70 按钮 Create live expression
+													71 文本输入区 (settable) Filter
+														72 文本 Filter
+													73 弹出式按钮 Log level: Default levels
+														74 文本 Default levels
+													75 container Some problems no longer generate console messages, but are surfaced in the Issues tab. Click to go to the Issues tab
+														76 按钮 Some problems no longer generate console messages, but are surfaced in the Issues tab. Click to go to the Issues tab
+													77 文本 7 hidden
+													78 container Console settings
+														79 切换按钮 Console settings, Value: 0
+													80 container 0 messages in console
+												81 container
+													82 container
+														83 container %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools
+															84 container
+																85 文本 07:33:40.868
+																86 container  Download the React DevTools for a better development experience: https://react.dev/link/react-devtools Stack table collapsed
+																	87 container
+																		88 链接 chunk-72A2ILAT.js?v=3974157c:20103, Help: http://127.0.0.1:5173/node_modules/.vite/deps/chunk-72A2ILAT.js?v=3974157c:20103
+																			89 文本 chunk-72A2ILAT.js?v=3974157c:20103
+																		90 text Download the React DevTools for a better development experience: 
+																		91 链接 https://react.dev/link/react-devtools
+																			92 文本 https://react.dev/link/react-devtools
+														93 container Failed to load resource: the server responded with a status of 401 (Unauthorized)
+															94 container
+																95 文本 07:34:29.478
+																96 container Error
+																97 container  GET http://127.0.0.1:5173/api/admin/auth/me 401 (Unauthorized) Stack table collapsed
+																	98 container
+																		99 链接 request.ts:29, Help: http://127.0.0.1:5173/src/shared/api/request.ts:29
+																			100 文本 request.ts:29
+																		101 文本  
+																		102 按钮 Click to open the Network panel and show request for URL: http://127.0.0.1:5173/api/admin/auth/me
+																		103 文本  
+																		104 文本 GET 
+																		105 链接 http://127.0.0.1:5173/api/admin/auth/me
+																			106 文本 http://127.0.0.1:5173/api/admin/auth/me
+																		107 文本  
+																		108 文本 401
+																		109 文本  (
+																		110 文本 Unauthorized
+																		111 文本 )
+														112 container Failed to load resource: the server responded with a status of 401 (Unauthorized)
+															113 container
+																114 文本 07:34:29.502
+																115 container Error
+																116 container  GET http://127.0.0.1:5173/api/admin/auth/me 401 (Unauthorized) Stack table collapsed
+																	117 container
+																		118 链接 request.ts:29, Help: http://127.0.0.1:5173/src/shared/api/request.ts:29
+																			119 文本 request.ts:29
+																		120 文本  
+																		121 按钮 Click to open the Network panel and show request for URL: http://127.0.0.1:5173/api/admin/auth/me
+																		122 文本  
+																		123 文本 GET 
+																		124 链接 http://127.0.0.1:5173/api/admin/auth/me
+																			125 文本 http://127.0.0.1:5173/api/admin/auth/me
+																		126 文本  
+																		127 文本 401
+																		128 文本  (
+																		129 文本 Unauthorized
+																		130 文本 )
+														131 container Failed to load resource: the server responded with a status of 401 (Unauthorized)
+															132 container
+																133 文本 07:34:29.517
+																134 container Error
+																135 container  GET http://127.0.0.1:5173/api/admin/auth/me 401 (Unauthorized) Stack table collapsed
+																	136 container
+																		137 链接 request.ts:29, Help: http://127.0.0.1:5173/src/shared/api/request.ts:29
+																			138 文本 request.ts:29
+																		139 文本  
+																		140 按钮 Click to open the Network panel and show request for URL: http://127.0.0.1:5173/api/admin/auth/me
+																		141 文本  
+																		142 文本 GET 
+																		143 链接 http://127.0.0.1:5173/api/admin/auth/me
+																			144 文本 http://127.0.0.1:5173/api/admin/auth/me
+																		145 文本  
+																		146 文本 401
+																		147 文本  (
+																		148 文本 Unauthorized
+																		149 文本 )
+													150 container
+														151 文本输入区 (settable) Console prompt, Value: 
+
+							152 文本 Network data available 
+				153 滚动区
+					154 HTML 内容 企业应用工程入口, URL: 127.0.0.1:5173/admin/login?returnTo=%2Fadmin%2Fsecurity
+						155 container
+							156 link 企业应用, Value: 127.0.0.1:5173/
+							157 text 员工 入口
+							158 标题 员工登录, Value: 1
+								159 文本 员工登录
+							160 文本 使用所属租户的员工账号登录
+							161 container
+								162 文本 租户编码
+								163 文本栏 (settable) 租户编码
+								164 文本 账号
+								165 文本栏 (settable) 账号
+								166 文本 密码
+								167 安全文本栏 (settable) 密码
+								168 按钮 登 录
+								169 link 前往平台管理员登录, Value: 127.0.0.1:5173/platform/login
+			170 弹出式按钮 标签页搜索
+			171 container
+				172 标签页组
+					173 标签 (selected, settable, boolean) 企业应用工程入口 - 内存用量 - 129 MB, Value: on
+						174 按钮 关闭
+					175 标签 (settable, boolean) 企业应用工程入口 - 内存用量 - 134 MB, Value: off
+						176 按钮 关闭
+			177 按钮 新标签页
+	178 关闭按钮
+	179 全屏幕按钮 Help: 此按钮也可以执行缩放窗口的操作, Secondary Actions: 缩放窗口
+	180 最小化按钮
+181 menu bar
+	182 Chrome
+	183 文件
+	184 编辑
+	185 显示
+	186 历史记录
+	187 书签
+	188 个人资料
+	189 标签页
+	190 窗口
+	191 帮助
+
+The focused UI element is 154 HTML 内容 企业应用工程入口, URL: 127.0.0.1:5173/admin/login?returnTo=%2Fadmin%2Fsecurity

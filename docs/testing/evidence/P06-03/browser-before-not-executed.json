@@ -1,0 +1,13 @@
+{
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "command": [
+    "node",
+    ".local-data/p06-03/browser-before.mjs"
+  ],
+  "exitCode": 1,
+  "browser": "154.0.8037.98",
+  "scenarios": [],
+  "errorType": "Error",
+  "error": "浏览器步骤未完成；不记录原始工具错误或输入",
+  "http": []
+}

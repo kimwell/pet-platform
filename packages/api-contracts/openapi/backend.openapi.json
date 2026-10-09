@@ -367,6 +367,48 @@
         ],
         "type": "object"
       },
+      "EmployeeView": {
+        "additionalProperties": false,
+        "properties": {
+          "createdAt": {
+            "description": "输入必须带Z或offset、最多3位小数；输出UTC且固定3位毫秒",
+            "format": "date-time",
+            "type": "string"
+          },
+          "displayName": {
+            "type": "string"
+          },
+          "id": {
+            "format": "uuid",
+            "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$",
+            "type": "string"
+          },
+          "loginName": {
+            "type": "string"
+          },
+          "status": {
+            "enum": [
+              "ACTIVE",
+              "DISABLED"
+            ],
+            "type": "string"
+          },
+          "updatedAt": {
+            "description": "输入必须带Z或offset、最多3位小数；输出UTC且固定3位毫秒",
+            "format": "date-time",
+            "type": "string"
+          }
+        },
+        "required": [
+          "createdAt",
+          "displayName",
+          "id",
+          "loginName",
+          "status",
+          "updatedAt"
+        ],
+        "type": "object"
+      },
       "Failure": {
         "additionalProperties": false,
         "properties": {
@@ -475,6 +517,40 @@
         "required": [
           "page",
           "pageSize"
+        ],
+        "type": "object"
+      },
+      "PageResponseEmployeeView": {
+        "additionalProperties": false,
+        "properties": {
+          "items": {
+            "items": {
+              "$ref": "#/components/schemas/EmployeeView"
+            },
+            "type": "array"
+          },
+          "page": {
+            "format": "int32",
+            "maximum": 2147483647,
+            "minimum": 1,
+            "type": "integer"
+          },
+          "pageSize": {
+            "format": "int32",
+            "maximum": 100,
+            "minimum": 1,
+            "type": "integer"
+          },
+          "total": {
+            "pattern": "^(0|[1-9][0-9]*)$",
+            "type": "string"
+          }
+        },
+        "required": [
+          "items",
+          "page",
+          "pageSize",
+          "total"
         ],
         "type": "object"
       },
@@ -842,6 +918,35 @@
         ],
         "type": "object"
       },
+      "SuccessEmployeeView": {
+        "additionalProperties": false,
+        "properties": {
+          "data": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/EmployeeView"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "success": {
+            "const": true,
+            "type": "boolean"
+          },
+          "traceId": {
+            "pattern": "^[0-9a-f]{32}$",
+            "type": "string"
+          }
+        },
+        "required": [
+          "data",
+          "success",
+          "traceId"
+        ],
+        "type": "object"
+      },
       "SuccessFieldErrorDetail": {
         "additionalProperties": false,
         "properties": {
@@ -849,6 +954,35 @@
             "anyOf": [
               {
                 "$ref": "#/components/schemas/FieldErrorDetail"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "success": {
+            "const": true,
+            "type": "boolean"
+          },
+          "traceId": {
+            "pattern": "^[0-9a-f]{32}$",
+            "type": "string"
+          }
+        },
+        "required": [
+          "data",
+          "success",
+          "traceId"
+        ],
+        "type": "object"
+      },
+      "SuccessPageResponseEmployeeView": {
+        "additionalProperties": false,
+        "properties": {
+          "data": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/PageResponseEmployeeView"
               },
               {
                 "type": "null"
@@ -1829,6 +1963,280 @@
         "summary": "员工小程序账号密码登录",
         "tags": [
           "staff-authentication-controller"
+        ]
+      }
+    },
+    "/api/admin/identity/users": {
+      "get": {
+        "description": "identity:user:list；TENANT本租户、STORES有效授权门店与目标关系任一交集、SELF本人；同权限并集。账号和姓名大小写不敏感的字面量包含匹配。列表及count同一快照，total十进制字符串；不输出角色、门店关系或写能力。",
+        "operationId": "listEmployees",
+        "parameters": [
+          {
+            "description": "1～100个Unicode码点，不能全空白；不trim；%、_、反斜线按字面量",
+            "in": "query",
+            "name": "keyword",
+            "schema": {
+              "maxLength": 100,
+              "minLength": 1,
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "status",
+            "schema": {
+              "enum": [
+                "ACTIVE",
+                "DISABLED"
+              ],
+              "type": "string"
+            }
+          },
+          {
+            "description": "有效本租户门店且当前操作范围和身份门店上限均允许；仅SELF拒绝404",
+            "in": "query",
+            "name": "storeId",
+            "schema": {
+              "format": "uuid",
+              "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$",
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "page",
+            "schema": {
+              "default": 1,
+              "maximum": 2147483647,
+              "minimum": 1,
+              "type": "integer"
+            }
+          },
+          {
+            "in": "query",
+            "name": "pageSize",
+            "schema": {
+              "default": 20,
+              "maximum": 100,
+              "minimum": 1,
+              "type": "integer"
+            }
+          },
+          {
+            "in": "query",
+            "name": "sortBy",
+            "schema": {
+              "default": "createdAt",
+              "enum": [
+                "id",
+                "loginName",
+                "displayName",
+                "status",
+                "createdAt",
+                "updatedAt"
+              ],
+              "type": "string"
+            }
+          },
+          {
+            "description": "有方向须有sortBy；同向追加id，NULLS LAST",
+            "in": "query",
+            "name": "sortOrder",
+            "schema": {
+              "default": "desc",
+              "enum": [
+                "asc",
+                "desc"
+              ],
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/SuccessPageResponseEmployeeView"
+                }
+              }
+            },
+            "description": "成功，统一响应信封"
+          },
+          "400": {
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/Failure"
+                }
+              }
+            },
+            "description": "未知/重复查询字段、非法状态、ID、分页或排序"
+          },
+          "401": {
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/Failure"
+                }
+              }
+            },
+            "description": "未登录、会话失效或身份域错误"
+          },
+          "403": {
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/Failure"
+                }
+              }
+            },
+            "description": "缺少当前读取权限或强制改密限制"
+          },
+          "404": {
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/Failure"
+                }
+              }
+            },
+            "description": "不存在或当前操作范围不可访问"
+          },
+          "422": {
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/Failure"
+                }
+              }
+            },
+            "description": "keyword约束失败或分页offset过深"
+          },
+          "503": {
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/Failure"
+                }
+              }
+            },
+            "description": "数据库或认证依赖不可用"
+          }
+        },
+        "security": [
+          {
+            "StaffCookie": []
+          },
+          {
+            "StaffToken": []
+          }
+        ],
+        "summary": "员工分页查询",
+        "tags": [
+          "employee-controller"
+        ]
+      }
+    },
+    "/api/admin/identity/users/{employeeId}": {
+      "get": {
+        "description": "独立identity:user:detail及其自身范围；字段与列表一致。不存在、跨租户、范围外统一404；不授权任何修改或凭据操作。",
+        "operationId": "getEmployee",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "employeeId",
+            "required": true,
+            "schema": {
+              "format": "uuid",
+              "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/SuccessEmployeeView"
+                }
+              }
+            },
+            "description": "成功，统一响应信封"
+          },
+          "400": {
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/Failure"
+                }
+              }
+            },
+            "description": "未知/重复查询字段、非法状态、ID、分页或排序"
+          },
+          "401": {
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/Failure"
+                }
+              }
+            },
+            "description": "未登录、会话失效或身份域错误"
+          },
+          "403": {
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/Failure"
+                }
+              }
+            },
+            "description": "缺少当前读取权限或强制改密限制"
+          },
+          "404": {
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/Failure"
+                }
+              }
+            },
+            "description": "不存在或当前操作范围不可访问"
+          },
+          "422": {
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/Failure"
+                }
+              }
+            },
+            "description": "keyword约束失败或分页offset过深"
+          },
+          "503": {
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/Failure"
+                }
+              }
+            },
+            "description": "数据库或认证依赖不可用"
+          }
+        },
+        "security": [
+          {
+            "StaffCookie": []
+          },
+          {
+            "StaffToken": []
+          }
+        ],
+        "summary": "员工详情查询",
+        "tags": [
+          "employee-controller"
         ]
       }
     },

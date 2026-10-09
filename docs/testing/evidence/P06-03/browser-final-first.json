@@ -1,0 +1,450 @@
+{
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "command": [
+    "node",
+    ".local-data/p06-03/browser-final.mjs"
+  ],
+  "exitCode": 1,
+  "browser": "154.0.8037.98",
+  "viewport": [
+    1280,
+    900
+  ],
+  "scenarios": [
+    {
+      "name": "entry-390",
+      "result": "PASS",
+      "width": 390,
+      "scroll": 390
+    },
+    {
+      "name": "系统入口只有两个键盘停止点",
+      "result": "PASS",
+      "order": [
+        {
+          "tag": "BUTTON",
+          "id": "",
+          "label": "进入员工工作台",
+          "focusVisible": true,
+          "outlineStyle": "solid",
+          "outlineWidth": "3px",
+          "boxShadow": "rgba(5, 145, 255, 0.1) 0px 2px 0px 0px"
+        },
+        {
+          "tag": "BUTTON",
+          "id": "",
+          "label": "进入平台控制台",
+          "focusVisible": true,
+          "outlineStyle": "solid",
+          "outlineWidth": "3px",
+          "boxShadow": "rgba(0, 0, 0, 0.02) 0px 2px 0px 0px"
+        }
+      ]
+    },
+    {
+      "name": "入口Enter可进入平台登录",
+      "result": "PASS"
+    },
+    {
+      "name": "platform-login-390",
+      "result": "PASS",
+      "width": 390,
+      "scroll": 390
+    },
+    {
+      "name": "平台登录label关联",
+      "result": "PASS"
+    },
+    {
+      "name": "staff-login-390",
+      "result": "PASS",
+      "width": 390,
+      "scroll": 390
+    },
+    {
+      "name": "员工登录键盘顺序",
+      "result": "FAIL",
+      "order": [
+        {
+          "tag": "BODY",
+          "id": "",
+          "label": "正在确认当前会话…",
+          "focusVisible": false,
+          "outlineStyle": "none",
+          "outlineWidth": "3px",
+          "boxShadow": "none"
+        },
+        {
+          "tag": "BODY",
+          "id": "",
+          "label": "正在确认当前会话…",
+          "focusVisible": false,
+          "outlineStyle": "none",
+          "outlineWidth": "3px",
+          "boxShadow": "none"
+        },
+        {
+          "tag": "BODY",
+          "id": "",
+          "label": "正在确认当前会话…",
+          "focusVisible": false,
+          "outlineStyle": "none",
+          "outlineWidth": "3px",
+          "boxShadow": "none"
+        },
+        {
+          "tag": "BODY",
+          "id": "",
+          "label": "正在确认当前会话…",
+          "focusVisible": false,
+          "outlineStyle": "none",
+          "outlineWidth": "3px",
+          "boxShadow": "none"
+        },
+        {
+          "tag": "BODY",
+          "id": "",
+          "label": "正在确认当前会话…",
+          "focusVisible": false,
+          "outlineStyle": "none",
+          "outlineWidth": "3px",
+          "boxShadow": "none"
+        },
+        {
+          "tag": "BODY",
+          "id": "",
+          "label": "正在确认当前会话…",
+          "focusVisible": false,
+          "outlineStyle": "none",
+          "outlineWidth": "3px",
+          "boxShadow": "none"
+        }
+      ]
+    },
+    {
+      "name": "登录校验焦点及文字错误可定位",
+      "result": "PASS",
+      "focused": true,
+      "invalid": "true",
+      "described": "tenantCode_help",
+      "text": "请输入租户编码"
+    },
+    {
+      "name": "员工Enter登录真实后端",
+      "result": "PASS"
+    },
+    {
+      "name": "双Cookie身份并存",
+      "result": "PASS"
+    }
+  ],
+  "http": [
+    {
+      "tab": "A",
+      "method": "GET",
+      "path": "/src/features/auth/api/AuthService.ts",
+      "status": 200
+    },
+    {
+      "tab": "A",
+      "method": "GET",
+      "path": "/src/shared/api/ApiError.ts",
+      "status": 200
+    },
+    {
+      "tab": "A",
+      "method": "GET",
+      "path": "/src/shared/api/ErrorNotice.tsx",
+      "status": 200
+    },
+    {
+      "tab": "A",
+      "method": "GET",
+      "path": "/src/shared/api/request.ts",
+      "status": 200
+    },
+    {
+      "tab": "A",
+      "method": "GET",
+      "path": "/src/features/auth/api/queryKeys.ts",
+      "status": 200
+    },
+    {
+      "tab": "A",
+      "method": "GET",
+      "path": "/api/platform/auth/me",
+      "status": 401
+    },
+    {
+      "tab": "A",
+      "method": "GET",
+      "path": "/api/platform/auth/me",
+      "status": 401
+    },
+    {
+      "tab": "A",
+      "method": "GET",
+      "path": "/api/platform/auth/me",
+      "status": 401
+    },
+    {
+      "tab": "A",
+      "method": "GET",
+      "path": "/src/shared/api/ApiError.ts",
+      "status": 304
+    },
+    {
+      "tab": "A",
+      "method": "GET",
+      "path": "/src/features/auth/api/AuthService.ts",
+      "status": 304
+    },
+    {
+      "tab": "A",
+      "method": "GET",
+      "path": "/src/shared/api/ErrorNotice.tsx",
+      "status": 304
+    },
+    {
+      "tab": "A",
+      "method": "GET",
+      "path": "/src/shared/api/request.ts",
+      "status": 304
+    },
+    {
+      "tab": "A",
+      "method": "GET",
+      "path": "/src/features/auth/api/queryKeys.ts",
+      "status": 304
+    },
+    {
+      "tab": "A",
+      "method": "GET",
+      "path": "/api/admin/auth/me",
+      "status": 401
+    },
+    {
+      "tab": "A",
+      "method": "GET",
+      "path": "/api/admin/auth/me",
+      "status": 401
+    },
+    {
+      "tab": "A",
+      "method": "GET",
+      "path": "/src/features/auth/api/AuthService.ts",
+      "status": 200
+    },
+    {
+      "tab": "A",
+      "method": "GET",
+      "path": "/src/shared/api/ApiError.ts",
+      "status": 200
+    },
+    {
+      "tab": "A",
+      "method": "GET",
+      "path": "/src/shared/api/ErrorNotice.tsx",
+      "status": 200
+    },
+    {
+      "tab": "A",
+      "method": "GET",
+      "path": "/src/shared/api/request.ts",
+      "status": 200
+    },
+    {
+      "tab": "A",
+      "method": "GET",
+      "path": "/src/features/auth/api/queryKeys.ts",
+      "status": 200
+    },
+    {
+      "tab": "A",
+      "method": "GET",
+      "path": "/api/admin/auth/me",
+      "status": 401
+    },
+    {
+      "tab": "A",
+      "method": "GET",
+      "path": "/api/admin/auth/me",
+      "status": 401
+    },
+    {
+      "tab": "A",
+      "method": "GET",
+      "path": "/api/admin/auth/csrf",
+      "status": 200
+    },
+    {
+      "tab": "A",
+      "method": "POST",
+      "path": "/api/admin/auth/login",
+      "status": 200
+    },
+    {
+      "tab": "A",
+      "method": "GET",
+      "path": "/api/admin/auth/csrf",
+      "status": 200
+    },
+    {
+      "tab": "A",
+      "method": "GET",
+      "path": "/api/admin/auth/me",
+      "status": 200
+    },
+    {
+      "tab": "A",
+      "method": "GET",
+      "path": "/api/admin/auth/me",
+      "status": 200
+    },
+    {
+      "tab": "A",
+      "method": "GET",
+      "path": "/api/admin/auth/me",
+      "status": 200
+    },
+    {
+      "tab": "B",
+      "method": "GET",
+      "path": "/src/shared/api/ApiError.ts",
+      "status": 200
+    },
+    {
+      "tab": "B",
+      "method": "GET",
+      "path": "/src/shared/api/ErrorNotice.tsx",
+      "status": 200
+    },
+    {
+      "tab": "B",
+      "method": "GET",
+      "path": "/src/features/auth/api/AuthService.ts",
+      "status": 200
+    },
+    {
+      "tab": "B",
+      "method": "GET",
+      "path": "/src/shared/api/request.ts",
+      "status": 200
+    },
+    {
+      "tab": "B",
+      "method": "GET",
+      "path": "/src/features/auth/api/queryKeys.ts",
+      "status": 200
+    },
+    {
+      "tab": "B",
+      "method": "GET",
+      "path": "/api/platform/auth/me",
+      "status": 401
+    },
+    {
+      "tab": "B",
+      "method": "GET",
+      "path": "/api/platform/auth/me",
+      "status": 401
+    },
+    {
+      "tab": "B",
+      "method": "GET",
+      "path": "/api/platform/auth/csrf",
+      "status": 200
+    },
+    {
+      "tab": "B",
+      "method": "POST",
+      "path": "/api/platform/auth/login",
+      "status": 200
+    },
+    {
+      "tab": "B",
+      "method": "GET",
+      "path": "/api/platform/auth/csrf",
+      "status": 200
+    },
+    {
+      "tab": "B",
+      "method": "GET",
+      "path": "/api/platform/auth/me",
+      "status": 200
+    },
+    {
+      "tab": "B",
+      "method": "GET",
+      "path": "/api/platform/auth/me",
+      "status": 200
+    },
+    {
+      "tab": "B",
+      "method": "GET",
+      "path": "/api/platform/auth/me",
+      "status": 200
+    },
+    {
+      "tab": "A",
+      "method": "GET",
+      "path": "/src/features/auth/api/AuthService.ts",
+      "status": 304
+    },
+    {
+      "tab": "A",
+      "method": "GET",
+      "path": "/src/shared/api/ApiError.ts",
+      "status": 304
+    },
+    {
+      "tab": "A",
+      "method": "GET",
+      "path": "/src/shared/api/ErrorNotice.tsx",
+      "status": 304
+    },
+    {
+      "tab": "A",
+      "method": "GET",
+      "path": "/src/shared/api/request.ts",
+      "status": 304
+    },
+    {
+      "tab": "A",
+      "method": "GET",
+      "path": "/src/features/auth/api/queryKeys.ts",
+      "status": 304
+    },
+    {
+      "tab": "A",
+      "method": "GET",
+      "path": "/api/admin/auth/me",
+      "status": 200
+    },
+    {
+      "tab": "A",
+      "method": "GET",
+      "path": "/api/admin/auth/me",
+      "status": 200
+    }
+  ],
+  "events": [
+    {
+      "tab": "A",
+      "type": "blur",
+      "isTrusted": true,
+      "visibility": "visible",
+      "time": "2026-10-08T23:13:34.147Z"
+    },
+    {
+      "tab": "A",
+      "type": "focus",
+      "isTrusted": true,
+      "visibility": "visible",
+      "time": "2026-10-08T23:13:34.959Z"
+    }
+  ],
+  "consoleErrors": [],
+  "errorType": "Error",
+  "error": "步骤未完成；只记录类型，不保留可能包含输入的原始工具错误。"
+}

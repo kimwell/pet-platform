@@ -1,0 +1,11 @@
+{
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "command": [
+    "kill",
+    "-TERM",
+    "--process-group",
+    "63618"
+  ],
+  "exitCode": 0,
+  "purpose": "系统入口已真实加载，新标签首次保护页的动态模块连接失败；不注入假页面/假返回"
+}

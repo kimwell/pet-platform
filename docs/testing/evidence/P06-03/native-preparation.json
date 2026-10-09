@@ -1,0 +1,13 @@
+{
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "command": [
+    "docker",
+    "exec",
+    "-i",
+    "pet-p06-03-pg",
+    "psql",
+    "..."
+  ],
+  "exitCode": 0,
+  "summary": "仅正式隔离库准备甲/乙可辨认显示名，并递增安全代际使旧验收会话失效；不操作日常库。"
+}

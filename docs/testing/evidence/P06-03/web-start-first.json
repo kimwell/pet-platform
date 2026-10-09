@@ -1,0 +1,10 @@
+{
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "command": [
+    "python3",
+    ".local-data/p06-03/start-web.py"
+  ],
+  "exitCode": 1,
+  "summary": "旧冻结pnpm临时路径已不存在，Web未启动，首轮浏览器未执行产品场景。",
+  "log": "web-start-first.log"
+}

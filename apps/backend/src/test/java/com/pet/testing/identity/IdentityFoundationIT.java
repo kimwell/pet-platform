@@ -101,7 +101,7 @@ class IdentityFoundationIT {
         grants.forEach((permission,scope) -> owner.update("insert into public.identity_role_permission(id,tenant_id,role_id,permission_code,scope_type) values (?,?,?,?,?)",UUID.randomUUID(),staff.tenantId(),id,permission,scope));return id;
     }
     @Test void formalMigrationRepeatedAndJpaValidationWithSevenModels() {
-        assertEquals(10,factory.getMetamodel().getEntities().size());assertEquals(4,flyway.info().applied().length);
+        assertEquals(10,factory.getMetamodel().getEntities().size());assertEquals(5,flyway.info().applied().length);
         assertEquals(0,flyway.migrate().migrationsExecuted);assertTrue(flyway.validateWithResult().validationSuccessful);
         assertEquals(7,owner.queryForObject("select count(*) from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname='public' and c.relname in ('platform_tenant','platform_store','identity_employee','identity_role','identity_employee_role','identity_role_permission','identity_employee_store') and c.relrowsecurity and c.relforcerowsecurity and c.relowner='pet_migrator'::regrole",Integer.class));
     }
@@ -167,9 +167,10 @@ class IdentityFoundationIT {
     }
     @Test void authenticationFunctionsOwnedByMinimalNoLoginRolesAndNotPublic() {
         var functions=owner.queryForList("select p.proname,p.prosecdef,p.proconfig,r.rolname,r.rolcanlogin,r.rolsuper,r.rolbypassrls,exists (select 1 from aclexplode(p.proacl) acl where acl.grantee=0 and acl.privilege_type='EXECUTE') as public_execute from pg_proc p join pg_namespace n on n.oid=p.pronamespace join pg_roles r on r.oid=p.proowner where n.nspname='pet_identity'");
-        assertEquals(5,functions.size());
+        assertEquals(6,functions.size());
         for(var f:functions) { assertEquals(true,f.get("prosecdef"));assertEquals(false,f.get("rolcanlogin"));assertEquals(false,f.get("rolsuper"));assertEquals(false,f.get("rolbypassrls"));assertEquals(false,f.get("public_execute"));assertTrue(f.get("proconfig").toString().contains("pg_catalog, pg_temp")); }
         assertEquals(false,runtime.queryForObject("select has_function_privilege(current_user,'pet_identity.bootstrap_tenant(text,text,text,text,text,text)','EXECUTE')",Boolean.class));
+        assertEquals(false,runtime.queryForObject("select has_function_privilege(current_user,'pet_identity.upgrade_employee_read(uuid)','EXECUTE')",Boolean.class));
     }
     @Test void authenticationBeforeContextReturnsMinimalCredentialWithoutSerialization() throws Exception {
         initialize("tenant-a","admin",false);

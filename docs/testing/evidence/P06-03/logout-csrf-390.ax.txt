@@ -1,0 +1,360 @@
+Window: "企业应用工程入口", App: Google Chrome.
+0 标准窗口 企业应用工程入口 - Google Chrome（无痕）, URL: 127.0.0.1:5173/platform, Secondary Actions: Raise
+	1 container 企业应用工程入口 - Google Chrome（无痕）, URL: 127.0.0.1:5173/platform
+		2 container
+			3 工具栏
+				4 按钮 返回
+				5 按钮 (disabled) 前进
+				6 按钮 重新加载
+				7 按钮 首页
+				8 container
+					9 弹出式按钮 查看网站信息
+					10 文本栏 (settable) 地址和搜索栏, Value: 127.0.0.1:5173/platform, Placeholder: 在 百度 中搜索，或输入网址
+					11 按钮 为此标签页添加书签
+				12 按钮 无痕模式
+				13 弹出式按钮 Chrome
+			14 工具栏 书签
+				15 书签文件夹按钮 new
+				16 书签文件夹按钮 work
+				17 书签文件夹按钮 blog
+				18 书签文件夹按钮 ui
+				19 书签文件夹按钮 flutter
+				20 书签文件夹按钮 nodes
+				21 书签文件夹按钮 ai
+				22 书签文件夹按钮 git
+				23 书签按钮 百度一下，你就知道
+				24 书签按钮 Google
+				25 书签按钮 Errors & Outages — sentry — Sentry
+			26 container
+				27 滚动区
+					28 HTML 内容 DevTools, URL: devtools://devtools/bundled/devtools_app.html?remoteBase=https://chrome-devtools-frontend.appspot.com/serve_file/@b859317bf11f6be47f9b7799ec690a0a42a1fb33/&targetType=tab&can_dock=true
+						29 container
+							30 container
+								31 container
+									32 工具栏
+										33 文本 Dimensions:
+										34 弹出式按钮 Device type, Value: Responsive
+											35 (selected) Responsive
+										36 步进器 (settable, float) Width, Value: 390
+										37 文本 ×
+										38 步进器 (settable, float) Height (leave empty for full), Value: 844, Placeholder: 494
+										39 弹出式按钮 Zoom, Value: 100%
+											40 (selected) 100%
+										41 弹出式按钮 Throttling, Value: Disabled: No throttling
+											42 (selected) Disabled: No throttling
+										43 弹出式按钮 'Save-Data': default
+											44 (selected) 'Save-Data': default
+										45 按钮 Rotate
+									46 工具栏
+										47 按钮 More options
+									48 container
+								49 container
+									50 container Main toolbar
+										51 工具栏
+											52 container Select an element in the page to inspect it, Help: Select an element in the page to inspect it - ⌘ ⇧ C
+												53 切换按钮 Select an element in the page to inspect it - ⌘ ⇧ C, Value: 0
+											54 container Toggle device toolbar, Help: Toggle device toolbar - ⌘ ⇧ M
+												55 切换按钮 Toggle device toolbar - ⌘ ⇧ M, Value: 1
+										56 container
+											57 标签页组 Panels
+												58 标签 (settable, integer) Elements, Value: 0
+												59 标签 (settable, integer) Console, Value: 0
+												60 标签 (selected) Network, Value: 1
+												61 标签 (settable, integer) Application, Value: 0
+												62 标签 (settable, integer) Sources, Value: 0
+												63 标签 (settable, integer) Performance, Value: 0
+												64 标签 (settable, integer) Memory, Value: 0
+												65 标签 (settable, integer) Lighthouse, Value: 0
+										66 工具栏
+											67 container Open Console to view 1 error
+												68 按钮 Open Console to view 1 error
+											69 按钮  AI assistance, Help: Open AI assistance panel
+											70 container Settings, Help: Settings - F1 - ⇧ ?
+												71 按钮 Settings - F1 - ⇧ ?
+											72 弹出式按钮 Customize and control DevTools
+												73 按钮 Customize and control DevTools
+											74 container Close
+												75 按钮 Close
+									76 container Network panel
+										77 container network
+											78 container
+												79 工具栏
+													80 container Stop recording network log, Help: Stop recording network log - ⌘ E
+														81 切换按钮 Stop recording network log - ⌘ E, Value: 1
+													82 container Clear network log, Help: Clear network log - Ctrl L - ⌘ K
+														83 按钮 Clear network log - Ctrl L - ⌘ K
+													84 container Filter
+														85 切换按钮 Filter, Value: 0
+													86 container Search
+														87 切换按钮 Search, Value: 0
+													88 container
+														89 复选框 Keep log, Value: 0
+														90 文本 Keep log
+													91 container
+														92 复选框 Disable cache, Value: 1
+														93 文本 Disable cache
+													94 弹出式按钮 Throttling, Value: Disabled: No throttling
+														95 (selected) Disabled: No throttling
+													96 container More network conditions…
+														97 按钮 More network conditions…
+													98 container Import HAR file…
+														99 按钮 Import HAR file…
+													100 container Export HAR (sanitized)…
+														101 按钮 Export HAR (sanitized)…
+													102 container Network settings
+														103 切换按钮 Network settings, Value: 0
+												104 container
+													105 container
+														106 表格
+															107 row
+																108 列标题 Name - Sortable column. Press enter to apply sorting filter
+																	109 文本 Name
+																110 列标题 Path - Sortable column. Press enter to apply sorting filter
+																	111 文本 Path
+																112 列标题 Method - Sortable column. Press enter to apply sorting filter
+																	113 文本 Method
+																114 列标题 Status - Sortable column. Press enter to apply sorting filter
+																	115 文本 Status
+																116 列标题 Scheme - Sortable column. Press enter to apply sorting filter
+																	117 文本 Scheme
+																118 列标题 Type - Sortable column. Press enter to apply sorting filter
+																	119 文本 Type
+																120 列标题 Size - Sortable column. Press enter to apply sorting filter
+																	121 文本 Size
+																122 列标题 Time - Sortable column. Press enter to apply sorting filter
+																	123 文本 Time
+																124 列标题 Priority - Sortable column. Press enter to apply sorting filter
+																	125 文本 Priority
+															126 row
+																127 单元格 http://127.0.0.1:5173/api/platform/auth/me
+																	128 图像 Fetch
+																	129 文本 me
+																130 单元格
+																	131 文本 /api/platform/auth/me
+																132 单元格
+																	133 文本 GET
+																134 单元格 200 OK
+																	135 文本 200
+																136 单元格
+																	137 文本 http
+																138 单元格
+																	139 文本 fetch
+																140 单元格 0.8 kB transferred over network, resource size: 0.5 kB
+																	141 文本 0.8 kB
+																142 单元格
+																	143 文本 52 ms
+																144 单元格 High, Initial priority: High
+																	145 文本 High
+															146 row
+																147 单元格 http://127.0.0.1:5173/api/platform/auth/me
+																	148 图像 Fetch
+																	149 文本 me
+																150 单元格
+																	151 文本 /api/platform/auth/me
+																152 单元格
+																	153 文本 GET
+																154 单元格 200 OK
+																	155 文本 200
+																156 单元格
+																	157 文本 http
+																158 单元格
+																	159 文本 fetch
+																160 单元格 0.8 kB transferred over network, resource size: 0.5 kB
+																	161 文本 0.8 kB
+																162 单元格
+																	163 文本 29 ms
+																164 单元格 High, Initial priority: High
+																	165 文本 High
+															166 row
+																167 单元格 http://127.0.0.1:5173/api/platform/auth/me
+																	168 图像 Fetch
+																	169 文本 me
+																170 单元格
+																	171 文本 /api/platform/auth/me
+																172 单元格
+																	173 文本 GET
+																174 单元格 200 OK
+																	175 文本 200
+																176 单元格
+																	177 文本 http
+																178 单元格
+																	179 文本 fetch
+																180 单元格 0.8 kB transferred over network, resource size: 0.5 kB
+																	181 文本 0.8 kB
+																182 单元格
+																	183 文本 120 ms
+																184 单元格 High, Initial priority: High
+																	185 文本 High
+															186 row
+																187 单元格 http://127.0.0.1:5173/api/platform/auth/me
+																	188 图像 Fetch
+																	189 文本 me
+																190 单元格
+																	191 文本 /api/platform/auth/me
+																192 单元格
+																	193 文本 GET
+																194 单元格 200 OK
+																	195 文本 200
+																196 单元格
+																	197 文本 http
+																198 单元格
+																	199 文本 fetch
+																200 单元格 0.8 kB transferred over network, resource size: 0.5 kB
+																	201 文本 0.8 kB
+																202 单元格
+																	203 文本 141 ms
+																204 单元格 High, Initial priority: High
+																	205 文本 High
+															206 row
+																207 单元格 http://127.0.0.1:5173/api/platform/auth/me
+																	208 图像 Fetch
+																	209 文本 me
+																210 单元格
+																	211 文本 /api/platform/auth/me
+																212 单元格
+																	213 文本 GET
+																214 单元格 200 OK
+																	215 文本 200
+																216 单元格
+																	217 文本 http
+																218 单元格
+																	219 文本 fetch
+																220 单元格 0.8 kB transferred over network, resource size: 0.5 kB
+																	221 文本 0.8 kB
+																222 单元格
+																	223 文本 53 ms
+																224 单元格 High, Initial priority: High
+																	225 文本 High
+															226 row
+																227 单元格 http://127.0.0.1:5173/api/platform/auth/csrf
+																	228 图像 Fetch
+																	229 文本 csrf
+																230 单元格
+																	231 文本 /api/platform/auth/csrf
+																232 单元格
+																	233 文本 GET
+																234 单元格 200 OK
+																	235 文本 200
+																236 单元格
+																	237 文本 http
+																238 单元格
+																	239 文本 fetch
+																240 单元格 0.5 kB transferred over network, resource size: 0.2 kB
+																	241 文本 0.5 kB
+																242 单元格
+																	243 文本 49 ms
+																244 单元格 High, Initial priority: High
+																	245 文本 High
+															246 row
+																247 单元格 http://127.0.0.1:5173/api/platform/auth/logout
+																	248 图像 Fetch request failed
+																	249 文本 logout
+																250 单元格
+																	251 文本 /api/platform/auth/logout
+																252 单元格
+																	253 文本 POST
+																254 单元格 403 Forbidden
+																	255 文本 403
+																256 单元格
+																	257 文本 http
+																258 单元格
+																	259 文本 fetch
+																260 单元格 0.5 kB transferred over network, resource size: 0.1 kB
+																	261 文本 0.5 kB
+																262 单元格
+																	263 文本 24 ms
+																264 单元格 High, Initial priority: High
+																	265 文本 High
+															266 row
+																267 单元格 http://127.0.0.1:5173/api/platform/auth/me
+																	268 图像 Fetch
+																	269 文本 me
+																270 单元格
+																	271 文本 /api/platform/auth/me
+																272 单元格
+																	273 文本 GET
+																274 单元格 200 OK
+																	275 文本 200
+																276 单元格
+																	277 文本 http
+																278 单元格
+																	279 文本 fetch
+																280 单元格 0.8 kB transferred over network, resource size: 0.5 kB
+																	281 文本 0.8 kB
+																282 单元格
+																	283 文本 42 ms
+																284 单元格 High, Initial priority: High
+																	285 文本 High
+													286 container 8 / 54 requests
+														287 文本 8 / 54 requests
+													288 container 5760 B / 5798221 B transferred over network
+														289 文本 5.8 kB / 5,798 kB transferred
+													290 container 3277 B / 5782444 B resources loaded by the page
+														291 文本 3.3 kB / 5,782 kB resources
+													292 container Finish: 33.80 s
+														293 文本 Finish: 33.80 s
+													294 container DOMContentLoaded: 1.19 s
+														295 文本 DOMContentLoaded: 1.19 s
+													296 container Load: 1.19 s
+														297 文本 Load: 1.19 s
+							298 文本 Network data available
+				299 滚动区
+					300 HTML 内容 企业应用工程入口, URL: 127.0.0.1:5173/platform
+						301 container
+							302 文本 平台控制台
+							303 菜单 Secondary Actions: Cancel
+								304 当前身份
+									305 link 当前身份, Value: 127.0.0.1:5173/platform
+								306 账号安全
+									307 link 账号安全, Value: 127.0.0.1:5173/platform/security
+							308 按钮 折叠菜单
+							309 container
+								310 text 平台管理员 空间
+							311 按钮 当前账号菜单
+							312 内容列表
+								313 文本 平台控制台
+								314 文本 当前身份
+							315 container
+								316 图像 close-circle
+								317 text 退出未确认，服务端会话可能仍有效，请重试退出 排错编号： acb299c7e6c042649c78b6eb82741ebe
+								318 按钮 复制
+							319 标题 你好，P06-03验收平台管理员, Value: 1
+								320 text 你好， P06-03验收平台管理员
+							321 文本 当前已进入平台控制台
+							322 按钮 刷新当前身份
+							323 container
+								324 文本 当前身份
+								325 container 姓名 : P06-03验收平台管理员
+									326 文本 姓名
+									327 文本 :
+									328 文本 P06-03验收平台管理员
+								329 container 身份空间 : 平台管理员
+									330 文本 身份空间
+									331 文本 :
+									332 文本 平台管理员
+							333 link 系统入口, Value: 127.0.0.1:5173/
+							334 link 员工工作台, Value: 127.0.0.1:5173/admin
+			335 弹出式按钮 标签页搜索
+			336 container
+				337 标签页组
+					338 标签 (selected, settable, boolean) 企业应用工程入口 - 内存用量 - 181 MB, Value: on
+						339 按钮 关闭
+					340 标签 (settable, boolean) 企业应用工程入口 - 内存用量 - 97.7 MB, Value: off
+						341 按钮 关闭
+			342 按钮 新标签页
+	343 关闭按钮
+	344 全屏幕按钮 Help: 此按钮也可以执行缩放窗口的操作, Secondary Actions: 缩放窗口
+	345 最小化按钮
+346 menu bar
+	347 Chrome
+	348 文件
+	349 编辑
+	350 显示
+	351 历史记录
+	352 书签
+	353 个人资料
+	354 标签页
+	355 窗口
+	356 帮助
+
+The focused UI element is 300 HTML 内容 企业应用工程入口, URL: 127.0.0.1:5173/platform

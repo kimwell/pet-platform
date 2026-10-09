@@ -73,3 +73,11 @@ P06-02前轮状态（历史）为IN_PROGRESS：原生窗口focus真实触发补�
 ## P06-02 原生focus续验结论（2026-10-08）
 
 原生Chrome窗口菜单切出/切回产生trusted blur/focus，visibility始终visible且无visibilitychange；返回后仅当前PLATFORM me重验，权限不足403不清STAFF会话。最小化恢复另由可见性机制重验，两个触发点均有真实证据。临时监听器只观察事件，收尾已移除；没有跨标签主动推送的承诺。G11已补齐、P06-02 COMPLETE，P06仍IN_PROGRESS；[实际事件及门禁](../testing/P06-02-VERIFICATION.md)。
+
+## P06-03 跨标签及业务接入边界（2026-10-09）
+
+同源标签共享Cookie，各标签自己的Query、CSRF和代际内存不共享。当前保护空间恢复focus/可见性、进入保护路由或手动重验时重新me；确认主体/会话/授权事实改变后统一推进本空间、清旧Query/敏感草稿并重算路由导航。后台标签在重验开始/完成前可能暂时展示上次身份；确认失败改为受控错误页，网络不能伪称退出。每次后端按真实Cookie和数据库授权；CSRF失配不会自动重放写操作。没有BroadcastChannel，不承诺即时同步；若未来确有即时要求，消息只能是重验信号，不能承载可信身份/权限或Token/密码/CSRF。
+
+业务queryFn经Router context中的 `auth.runtime.request` 传递signal，路径是本空间契约相对路径（/admin或/platform，不再加/api）；使用 `authKeys.protected` 加真实身份/范围和当前epoch。P07在服务旁声明模块key、合法URL参数规范化和成功后的定向失效；不得自己写第二套fetch/401/身份状态。当前安全操作清整个本空间，不等于普通业务mutation的默认策略。
+
+分页/金额/日期仍遵循各契约，total在转换AntD number前必须校验规范十进制及MAX_SAFE_INTEGER范围；实际Table和复杂字段NamePath适配原P07实施。十项接入步骤集中在[P06总验收](../testing/P06-ACCEPTANCE.md#p07业务接入清单)，不复制一套互相矛盾的工具规则。

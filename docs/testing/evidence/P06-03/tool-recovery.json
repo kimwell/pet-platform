@@ -1,0 +1,10 @@
+{
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "command": [
+    "Python urllib.request download/extract official pnpm 10.34.6"
+  ],
+  "exitCode": 0,
+  "source": "https://registry.npmjs.org/pnpm/-/pnpm-10.34.6.tgz",
+  "sha256": "44d7db90fcbb2315b581f85989a913466765421fc656c28e80fac1b7ab5be456",
+  "summary": "仅本轮忽略临时目录，未改全局配置/工程依赖/锁。"
+}

@@ -1,0 +1,101 @@
+Window: "企业应用工程入口", App: Google Chrome.
+0 标准窗口 企业应用工程入口 - Google Chrome（无痕）, URL: 127.0.0.1:5173/admin/security, Secondary Actions: Raise
+	1 container 企业应用工程入口 - Google Chrome（无痕）, URL: 127.0.0.1:5173/admin/security
+		2 container
+			3 工具栏
+				4 按钮 返回
+				5 按钮 (disabled) 前进
+				6 按钮 重新加载
+				7 按钮 首页
+				8 container
+					9 弹出式按钮 查看网站信息
+					10 文本栏 (settable) 地址和搜索栏, Value: 127.0.0.1:5173/admin/security, Placeholder: 在 百度 中搜索，或输入网址
+					11 按钮 为此标签页添加书签
+				12 按钮 无痕模式
+				13 弹出式按钮 Chrome
+			14 工具栏 书签
+				15 书签文件夹按钮 new
+				16 书签文件夹按钮 work
+				17 书签文件夹按钮 blog
+				18 书签文件夹按钮 ui
+				19 书签文件夹按钮 flutter
+				20 书签文件夹按钮 nodes
+				21 书签文件夹按钮 ai
+				22 书签文件夹按钮 git
+				23 书签按钮 百度一下，你就知道
+				24 书签按钮 Google
+				25 书签按钮 Errors & Outages — sentry — Sentry
+			26 container
+				27 滚动区
+					28 HTML 内容 企业应用工程入口, URL: 127.0.0.1:5173/admin/security
+						29 container
+							30 文本 员工工作台
+							31 菜单 Secondary Actions: Cancel
+								32 当前身份
+									33 link 当前身份, Value: 127.0.0.1:5173/admin
+								34 账号安全
+									35 link 账号安全, Value: 127.0.0.1:5173/admin/security
+							36 按钮 折叠菜单
+							37 container
+								38 text 员工 空间
+							39 按钮 当前账号菜单
+							40 内容列表
+								41 文本 员工工作台
+								42 文本 账号安全
+							43 标题 账号安全, Value: 1
+								44 文本 账号安全
+							45 文本 管理本人密码与登录会话
+							46 按钮 刷新当前身份
+							47 container
+								48 文本 本人身份
+								49 container 姓名 : P06乙验收员工
+									50 文本 姓名
+									51 文本 :
+									52 文本 P06乙验收员工
+								53 container 身份空间 : 员工
+									54 文本 身份空间
+									55 文本 :
+									56 文本 员工
+							57 container
+								58 文本 修改密码
+								59 container
+									60 文本 当前密码
+									61 安全文本栏 (settable) 当前密码
+									62 文本 新密码
+									63 安全文本栏 (settable) 新密码
+									64 文本 12至128个字符，保留空格和大小写
+									65 文本 确认新密码
+									66 安全文本栏 (settable) 确认新密码
+									67 按钮 修改密码并重新登录
+							68 container
+								69 text 退出全部设备 将退出当前账号的全部设备，包括当前设备。请再次输入当前密码确认。
+								70 container
+									71 文本 当前密码
+									72 安全文本栏 (settable) 当前密码
+									73 按钮 确认退出全部设备
+							74 link 系统入口, Value: 127.0.0.1:5173/
+							75 link 平台控制台, Value: 127.0.0.1:5173/platform
+			76 弹出式按钮 标签页搜索
+			77 container
+				78 标签页组
+					79 标签 (selected, settable, boolean) 企业应用工程入口 - 内存用量 - 93.5 MB, Value: on
+						80 按钮 关闭
+					81 标签 (settable, boolean) 企业应用工程入口 - 内存用量 - 97.7 MB, Value: off
+						82 按钮 关闭
+			83 按钮 新标签页
+	84 关闭按钮
+	85 全屏幕按钮 Help: 此按钮也可以执行缩放窗口的操作, Secondary Actions: 缩放窗口
+	86 最小化按钮
+87 menu bar
+	88 Chrome
+	89 文件
+	90 编辑
+	91 显示
+	92 历史记录
+	93 书签
+	94 个人资料
+	95 标签页
+	96 窗口
+	97 帮助
+
+The focused UI element is 46 按钮 刷新当前身份

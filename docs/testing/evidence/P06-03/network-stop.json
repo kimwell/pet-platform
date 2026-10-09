@@ -1,0 +1,11 @@
+{
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "command": [
+    "kill",
+    "-TERM",
+    "--process-group",
+    "57379"
+  ],
+  "exitCode": 0,
+  "summary": "仅停止本轮Web服务以产生浏览器连接失败，后端及Cookie会话未撤销"
+}

@@ -62,7 +62,7 @@ function LoginPage({ space }: { space: AuthSpace }) {
       <Space orientation="vertical" className="full-width" size="middle">
         {notice && <Alert type="info" showIcon title={notice} />}
         {mutation.isError && <ErrorNotice error={mutation.error} messages={unmappedMessages} />}
-        <Form form={form} layout="vertical" onFinish={() => void submit()} disabled={pending} clearOnDestroy requiredMark={false} autoComplete="on">
+        <Form form={form} layout="vertical" scrollToFirstError={{ focus: true }} onFinish={() => void submit()} disabled={pending} clearOnDestroy requiredMark={false} autoComplete="on">
           {space === 'STAFF' && <Form.Item name="tenantCode" label="租户编码" rules={[
             { required: true, message: '请输入租户编码' },
             { validator: (_, value: string | undefined) => !value || /^[a-z0-9][a-z0-9-]{0,31}$/.test(normalizeName(value))

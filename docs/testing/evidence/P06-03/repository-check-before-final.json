@@ -1,0 +1,11 @@
+{
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "command": [
+    "pnpm",
+    "check:repo"
+  ],
+  "exitCode": 0,
+  "durationSeconds": 0.49,
+  "log": "repository-check-before-final.log",
+  "summary": "\n> pet-platform@0.0.0 check:repo /Users/kimwell/work/pet-platform\n> node scripts/check-repository.mjs && node scripts/check-miniprogram.mjs\n\n单锁、精确直接依赖、工具链、固定后端入口及秘密特征检查通过。秘密检查不输出匹配值。\n原生小程序结构、页面和官方组件引用检查通过；这不是开发者工具编译。\n"
+}

@@ -1,0 +1,61 @@
+Window: "企业应用工程入口", App: Google Chrome.
+0 标准窗口 企业应用工程入口 - Google Chrome（无痕）, URL: 127.0.0.1:5173/admin/security, Secondary Actions: Raise
+	1 container 企业应用工程入口 - Google Chrome（无痕）, URL: 127.0.0.1:5173/admin/security
+		2 container
+			3 工具栏
+				4 按钮 返回
+				5 按钮 (disabled) 前进
+				6 按钮 重新加载
+				7 按钮 首页
+				8 container
+					9 弹出式按钮 查看网站信息
+					10 文本栏 (settable) 地址和搜索栏, Value: 127.0.0.1:5173/admin/security, Placeholder: 在 百度 中搜索，或输入网址
+					11 按钮 为此标签页添加书签
+				12 按钮 无痕模式
+				13 弹出式按钮 Chrome
+			14 工具栏 书签
+				15 书签文件夹按钮 new
+				16 书签文件夹按钮 work
+				17 书签文件夹按钮 blog
+				18 书签文件夹按钮 ui
+				19 书签文件夹按钮 flutter
+				20 书签文件夹按钮 nodes
+				21 书签文件夹按钮 ai
+				22 书签文件夹按钮 git
+				23 书签按钮 百度一下，你就知道
+				24 书签按钮 Google
+				25 书签按钮 Errors & Outages — sentry — Sentry
+			26 container
+				27 滚动区
+					28 HTML 内容 企业应用工程入口, URL: 127.0.0.1:5173/admin/security
+						29 container
+							30 图像 close-circle
+							31 text 当前身份暂时无法确认 会话未被视为退出，请重试。
+							32 按钮 重 试
+							33 link 返回系统入口, Value: 127.0.0.1:5173/
+							34 图像 close-circle
+							35 文本 网络连接失败，请检查网络后重试
+			36 弹出式按钮 标签页搜索
+			37 container
+				38 标签页组
+					39 标签 (selected, settable, boolean) 企业应用工程入口 - 内存用量 - 103 MB, Value: on
+						40 按钮 关闭
+					41 标签 (settable, boolean) 企业应用工程入口 - 内存用量 - 97.7 MB, Value: off
+						42 按钮 关闭
+			43 按钮 新标签页
+	44 关闭按钮
+	45 全屏幕按钮 Help: 此按钮也可以执行缩放窗口的操作, Secondary Actions: 缩放窗口
+	46 最小化按钮
+47 menu bar
+	48 Chrome
+	49 文件
+	50 编辑
+	51 显示
+	52 历史记录
+	53 书签
+	54 个人资料
+	55 标签页
+	56 窗口
+	57 帮助
+
+The focused UI element is 28 HTML 内容 企业应用工程入口, URL: 127.0.0.1:5173/admin/security

@@ -1,0 +1,108 @@
+{
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "date": "2026-10-09T07:32:55.466709+08:00",
+  "command": "CUA原生Google Chrome独立无痕窗口：点击、Tab/Enter/Escape、原生标签恢复及DevTools只读Network；服务器故障由独立命令准备",
+  "exitCode": null,
+  "toolStatus": "COMPLETED",
+  "level": "RUNTIME_VERIFIED",
+  "browser": "Google Chrome 154.0.8037.98 / macOS",
+  "scenarios": [
+    {
+      "name": "原生同源标签账号切换",
+      "result": "PASS",
+      "summary": "第一标签甲安全页已有当前密码确认草稿；第二标签退出甲并登录乙；原生点击返回第一标签，me后显示乙且四个密码字段无Value，旧主体草稿清空。",
+      "evidence": "native-cross-switch.ax.txt"
+    },
+    {
+      "name": "原生同源标签退出",
+      "result": "PASS",
+      "summary": "第二标签退出乙；原生恢复第一标签进入/admin/login?returnTo=/admin/security，旧身份/表单不可见。",
+      "evidence": "native-cross-logout.ax.txt"
+    },
+    {
+      "name": "账号菜单聚焦和关闭",
+      "result": "PASS",
+      "summary": "autoFocus后焦点进入账号安全菜单项；Escape后焦点回到当前账号按钮、菜单随后消失；另一次Down+Enter执行退出。",
+      "evidence": "native-menu-escape.ax.txt"
+    },
+    {
+      "name": "浏览器实际连接失败",
+      "result": "PASS",
+      "summary": "只停本轮Web服务，已加载页面重验出现NETWORK中文错误，保持/admin/security且未视为退出。",
+      "evidence": "native-network.ax.txt"
+    },
+    {
+      "name": "连接恢复保留会话",
+      "result": "PASS",
+      "summary": "Web重启并恢复后甲身份重新呈现；未输入凭据或重新登录。Vite重连发生页面重载，不能宣称此处是重试按钮单独作用。",
+      "evidence": "native-network-recovered.ax.txt"
+    },
+    {
+      "name": "真实Query取消",
+      "result": "PASS",
+      "summary": "只暂停本轮正式后端；刷新me记录pending，点击系统入口离开后Network记录canceled(2.89s)，入口正常，无取消错误横幅；后端CONT恢复。",
+      "evidence": "native-cancel.ax.txt"
+    },
+    {
+      "name": "390px NotFound",
+      "result": "PASS",
+      "summary": "原生DevTools Responsive宽度确认为390，NotFound和返回入口可用，观察无横向破坏。",
+      "evidence": "not-found-390.ax.txt"
+    },
+    {
+      "name": "390px安全表单校验",
+      "result": "PASS",
+      "summary": "空提交显示中文字段错误，焦点自动到当前密码；没有发出密码写请求；同类键盘顺序/label/Enter另有局部脚本证据。",
+      "evidence": "native-security-errors-390.png"
+    },
+    {
+      "name": "390px受限改密",
+      "result": "PASS",
+      "summary": "隔离库正式受限标志由me200重验，导航只剩账号安全，提示换行、本人操作保留；没有提交新密码。",
+      "evidence": "restricted-390.ax.txt"
+    },
+    {
+      "name": "390px平台登录Enter",
+      "result": "PASS",
+      "summary": "空密码截图后使用隔离技术账号现有凭据Enter提交；正式csrf/login/me为200，平台主壳恢复。",
+      "evidence": "native-platform-login-390.png"
+    },
+    {
+      "name": "390px退出CSRF反例及单次提示",
+      "result": "PASS",
+      "summary": "回环代理仅移除平台logout的CSRF Header，正式后端403、me200；只一次logout、不自动重放，页面未退出、仅一条未确认中文提示和traceId，长文案换行。",
+      "evidence": "logout-csrf-390.ax.txt"
+    },
+    {
+      "name": "390px平台无权限",
+      "result": "PASS",
+      "summary": "仅隔离库减少session:manage并增加授权版本；原生刷新me403，无权限页取代旧主壳/导航，Tab到重验及系统入口。",
+      "evidence": "permission-390.ax.txt"
+    },
+    {
+      "name": "原生跨标签退出全部设备",
+      "result": "PASS",
+      "summary": "第一标签保留甲受限安全页；第二标签以当前密码实际logout-all200；原生恢复第一标签触发me401后进入登录，旧安全页不残留。未输入新密码。",
+      "evidence": "native-cross-logout-all.ax.txt"
+    },
+    {
+      "name": "SystemError技术前端故障/390px/恢复",
+      "result": "PASS",
+      "summary": "仅新标签临时替换现有/admin beforeLoad为非协议异常，已有SystemError真实渲染；恢复原handler后点击重试，正式me401进入登录；随后关窗。不是后端真实异常、不是Mock页面或新接口。",
+      "evidence": "system-error-390.ax.txt"
+    },
+    {
+      "name": "390px平台长名称及长错误修复后复验",
+      "result": "PASS",
+      "summary": "真实平台Cookie/me200；页头允许两行、height101/line-height21，document宽和scrollWidth均390、headerContentFits=true；CSRF退出403/me200，只有一条提示。修复前原图FAIL仍保留。",
+      "evidence": "visual-audit-final.json"
+    }
+  ],
+  "boundaries": [
+    "不存在BroadcastChannel；未承诺跨标签即时同步。恢复focus/visibility后才重验，待重验期间仍可能短暂显示上次身份；成功确认后清旧投影，失败显示受控故障页。",
+    "另标签实际改密PUT200和后续401存在browser-final-third记录，但该批A标签失效等待超时，未将该组合计PASS。全设备逻辑撤销链路复用P06-02第二独立上下文旧会话401；本轮原生证明共享Cookie失效/切换的恢复机制。",
+    "受保护业务缓存为受控技术测试，不存在真实业务Table数据；动态导入缓存探针不能作为实际Query实例验收依据。",
+    "没有真实屏幕阅读器/全套WCAG、其他OS/浏览器、生产TLS/跨源/远程CI、首屏性能测量。",
+    "SystemError属于前端技术故障运行，冷模块断网触发一次Router整页reload另为OBSERVED，不冒充正式服务异常。修复前平台页头裁切在visual-audit-before中为FAIL，已由最终原生390尺寸/截图补齐。"
+  ]
+}

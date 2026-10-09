@@ -1,0 +1,19 @@
+{
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "command": "Pillow裁去原生截图空白桌面区域",
+  "exitCode": 0,
+  "source": "logout-csrf-390-fixed.png",
+  "sourceSize": [
+    2982,
+    2218
+  ],
+  "cropBox": [
+    0,
+    0,
+    1491,
+    1109
+  ],
+  "output": "browser-window-390-fixed.png",
+  "sourceSHA256": "5c37af522df64ad3b24ee17a984312ecb25a371915c666d73708880193176120",
+  "summary": "只裁边界，不重绘、不改变浏览器窗口像素；原图保留。"
+}

@@ -1,0 +1,201 @@
+Window: "企业应用工程入口", App: Google Chrome.
+0 标准窗口 企业应用工程入口 - Google Chrome（无痕）, URL: 127.0.0.1:5173/admin, Secondary Actions: Raise
+	1 container 企业应用工程入口 - Google Chrome（无痕）, URL: 127.0.0.1:5173/admin
+		2 container
+			3 工具栏
+				4 按钮 返回
+				5 按钮 (disabled) 前进
+				6 按钮 重新加载
+				7 按钮 首页
+				8 container
+					9 弹出式按钮 查看网站信息
+					10 文本栏 (settable) 地址和搜索栏, Value: 127.0.0.1:5173/admin, Placeholder: 在 百度 中搜索，或输入网址
+					11 按钮 为此标签页添加书签
+				12 按钮 无痕模式
+				13 弹出式按钮 Chrome
+			14 工具栏 书签
+				15 书签文件夹按钮 new
+				16 书签文件夹按钮 work
+				17 书签文件夹按钮 blog
+				18 书签文件夹按钮 ui
+				19 书签文件夹按钮 flutter
+				20 书签文件夹按钮 nodes
+				21 书签文件夹按钮 ai
+				22 书签文件夹按钮 git
+				23 书签按钮 百度一下，你就知道
+				24 书签按钮 Google
+				25 书签按钮 Errors & Outages — sentry — Sentry
+			26 container
+				27 滚动区
+					28 HTML 内容 DevTools, URL: devtools://devtools/bundled/devtools_app.html?remoteBase=https://chrome-devtools-frontend.appspot.com/serve_file/@b859317bf11f6be47f9b7799ec690a0a42a1fb33/&targetType=tab&can_dock=true
+						29 container
+							30 container
+								31 container
+									32 工具栏
+										33 文本 Dimensions:
+										34 弹出式按钮 Device type, Value: Responsive
+											35 (selected) Responsive
+										36 步进器 (settable, float) Width, Value: 390
+										37 文本 ×
+										38 步进器 (settable) Height (leave empty for full), Placeholder: 494
+										39 弹出式按钮 Zoom, Value: 100%
+											40 (selected) 100%
+										41 弹出式按钮 Throttling, Value: Disabled: No throttling
+											42 (selected) Disabled: No throttling
+										43 弹出式按钮 'Save-Data': default
+											44 (selected) 'Save-Data': default
+										45 按钮 Rotate
+									46 工具栏
+										47 按钮 More options
+									48 container
+								49 container
+									50 container Main toolbar
+										51 工具栏
+											52 container Select an element in the page to inspect it, Help: Select an element in the page to inspect it - ⌘ ⇧ C
+												53 切换按钮 Select an element in the page to inspect it - ⌘ ⇧ C, Value: 0
+											54 container Toggle device toolbar, Help: Toggle device toolbar - ⌘ ⇧ M
+												55 切换按钮 Toggle device toolbar - ⌘ ⇧ M, Value: 1
+										56 container
+											57 标签页组 Panels
+												58 标签 (settable, integer) Elements, Value: 0
+												59 标签 (selected) Console, Value: 1
+												60 标签 (settable, integer) Network, Value: 0
+												61 标签 (settable, integer) Application, Value: 0
+												62 标签 (settable, integer) Sources, Value: 0
+												63 标签 (settable, integer) Performance, Value: 0
+												64 标签 (settable, integer) Memory, Value: 0
+												65 标签 (settable, integer) Lighthouse, Value: 0
+										66 工具栏
+											67 container
+												68 container Open Console to view 1 error, 1 warning
+													69 按钮 Open Console to view 1 error, 1 warning
+												70 container Open Issues to view 3 issues: 3 possible improvements
+													71 按钮 Open Issues to view 3 issues: 3 possible improvements
+											72 按钮  AI assistance, Help: Open AI assistance panel
+											73 container Settings, Help: Settings - F1 - ⇧ ?
+												74 按钮 Settings - F1 - ⇧ ?
+											75 弹出式按钮 Customize and control DevTools
+												76 按钮 Customize and control DevTools
+											77 container Close
+												78 按钮 Close
+									79 container Console panel
+										80 container console
+											81 container
+												82 工具栏
+													83 container Show Console sidebar
+														84 按钮 Show Console sidebar
+													85 container Clear console, Help: Clear console - Ctrl L - ⌘ K
+														86 按钮 Clear console - Ctrl L - ⌘ K
+													87 container Collapse all
+														88 按钮 Collapse all
+													89 按钮 JavaScript context: top
+													90 container Create live expression
+														91 按钮 Create live expression
+													92 文本输入区 (settable) Filter
+														93 文本 Filter
+													94 弹出式按钮 Log level: Default levels
+														95 文本 Default levels
+													96 container Some problems no longer generate console messages, but are surfaced in the Issues tab. Click to view 3 possible improvements
+														97 按钮 Some problems no longer generate console messages, but are surfaced in the Issues tab. Click to view 3 possible improvements
+													98 文本 2 hidden
+													99 container Console settings
+														100 切换按钮 Console settings, Value: 0
+													101 container 0 messages in console
+												102 container
+													103 container
+														104 container %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools
+															105 container
+																106 文本 07:35:48.356
+																107 container  Download the React DevTools for a better development experience: https://react.dev/link/react-devtools Stack table collapsed
+																	108 container
+																		109 链接 chunk-72A2ILAT.js?v=3974157c:20103, Help: http://127.0.0.1:5173/node_modules/.vite/deps/chunk-72A2ILAT.js?v=3974157c:20103
+																			110 文本 chunk-72A2ILAT.js?v=3974157c:20103
+																		111 text Download the React DevTools for a better development experience: 
+																		112 链接 https://react.dev/link/react-devtools
+																			113 文本 https://react.dev/link/react-devtools
+														114 container
+															115 文本 07:35:59.355
+															116 text var p06FaultRouter =( await import ( '/src/app/router/router.ts' )). router ;  var p06FaultBefore = p06FaultRouter . routesById [ '/admin' ]. options . beforeLoad ;  p06FaultRouter . routesById [ '/admin' ]. options . beforeLoad =()=>{ throw new Error ( 'P06-03' )};  await p06FaultRouter . navigate ({ to : '/admin' });
+														117 container %o %s %s 
+															118 container
+																119 文本 07:35:59.889
+																120 container Error
+																121 container  The above error occurred in the <MatchInnerImpl> component. React will try to recreate this component tree from scratch using the error boundary you provided, CatchBoundary. Stack table collapsed
+																	122 container
+																		123 链接 SystemLayout.tsx:4, Help: http://127.0.0.1:5173/src/app/layout/SystemLayout.tsx:4
+																			124 文本 SystemLayout.tsx:4
+																		125 文本  
+																		126 文本 Error: P06-03
+																		127 文本 
+
+																		128 文本     at 
+																		129 文本 p06FaultRouter.routesById./admin.options.beforeLoad
+																		130 文本  (
+																		131 链接 <anonymous>:1:213, Help: <anonymous>
+																			132 文本 <anonymous>:1:213
+																		133 文本 )
+																		134 文本 
+
+																		135 文本 
+
+The above error occurred in the <MatchInnerImpl> component.
+
+React will try to recreate this component tree from scratch using the error boundary you provided, CatchBoundary.
+
+																	136 表格
+																		137 row
+																			138 单元格
+																				139 文本 Show ignore-listed frames
+														140 container Warning: Error in route match: __root__/
+															141 container
+																142 文本 07:35:59.890
+																143 container Warning
+																144 container  Warning: Error in route match: __root__/ Stack table collapsed
+																	145 container
+																		146 链接 main.tsx:13, Help: http://127.0.0.1:5173/src/main.tsx:13
+																			147 文本 main.tsx:13
+																		148 文本  
+																		149 文本 Warning: Error in route match: __root__/
+														150 container
+															151 文本 07:35:59.905
+															152 container undefined Stack table collapsed
+																153 文本 undefined
+													154 container
+														155 文本输入区 (settable) Console prompt, Value: 
+
+							156 文本 Console cleared 
+				157 滚动区
+					158 HTML 内容 企业应用工程入口, URL: 127.0.0.1:5173/admin
+						159 container
+							160 图像 close-circle
+							161 text 页面暂时无法加载 当前身份未能确认，请重试。
+							162 按钮 重 试
+							163 link 返回系统入口, Value: 127.0.0.1:5173/
+							164 图像 close-circle
+							165 文本 页面暂时无法加载，请稍后重试
+			166 弹出式按钮 标签页搜索
+			167 container
+				168 标签页组
+					169 标签 (settable, boolean) 企业应用工程入口 - 内存用量 - 129 MB, Value: off
+						170 按钮 关闭
+					171 标签 (settable, boolean) 企业应用工程入口 - 内存用量 - 134 MB, Value: off
+						172 按钮 关闭
+					173 标签 (selected, settable, boolean) 企业应用工程入口 - 内存用量 - 305 MB, Value: on
+						174 按钮 关闭
+			175 按钮 新标签页
+	176 关闭按钮
+	177 全屏幕按钮 Help: 此按钮也可以执行缩放窗口的操作, Secondary Actions: 缩放窗口
+	178 最小化按钮
+179 menu bar
+	180 Chrome
+	181 文件
+	182 编辑
+	183 显示
+	184 历史记录
+	185 书签
+	186 个人资料
+	187 标签页
+	188 窗口
+	189 帮助
+
+The focused UI element is 34 弹出式按钮 Device type, Value: Responsive

@@ -32,6 +32,7 @@
 | A05-05 | credentials / P05 | PBKDF2版本/盐/参数/Unicode、密码不日志、登录枚举/限流 | JDK已冻结版本、真实HTTP、性能/并发限流；技术密码夹具 | [身份](../contracts/IDENTITY.md) |
 | A06-01 | Web / P06 | fetch Cookie/CSRF/signal/非JSON/网络与401区分、并发401一次处理 | 真实后端+浏览器并发/断网/取消；旧epoch响应拒绝 | [Web状态](../conventions/WEB-STATE.md) |
 | A06-02 | Web / P06 | Query key含身份/范围、mutation精确失效、身份变化不残留数据 | 真账号切换/权限变化、请求与缓存观察 | 同上 |
+| A07-00 | identity / P07-01 | 正式员工列表/详情独立权限、TENANT/STORES/SELF、多门店EXISTS、同范围count/DTO、字面量keyword/排序分页、撤销/跨域/RLS/显式升级 | 正式PG/Redis/Sa/HTTP与生产schema，结果及证据见[P07-01](P07-01-VERIFICATION.md)；页面/写入未实施 | [员工读取](../contracts/EMPLOYEE-MANAGEMENT.md)、[授权](../architecture/AUTHORIZATION.md) |
 | A07-01 | Web / P07 | URL筛选恢复、草稿分离、空态vs失败、刷新保留、末页删除回退 | 真员工基础API/浏览器；可访问性/键盘验证 | [Web页面](../conventions/WEB-PAGES.md) |
 | A07-02 | identity/Web / P07 | 字段错误、重复提交、未保存、Modal清理、版本冲突保留草稿、批量部分失败 | 真PG/HTTP/浏览器并发；成功失败计数核对 | [API](../contracts/API.md)、[页面](../conventions/WEB-PAGES.md) |
 | A08-01 | attachment / P08 | 伪MIME/扩展/大小/内容、穿越/符号链接/并发替换 | 真磁盘+PG，恶意技术文件夹具与清理 | [存储](../architecture/FILE-STORAGE.md) |
@@ -116,3 +117,22 @@ P06-02 IN_PROGRESS、P06 IN_PROGRESS。下一合法任务仅P06-02原生focus续
 | 检查/保全 | 无源码/公开契约/依赖变化，原5文件120项Web及六命令退出0继续有效；新增check:repo、摘要/链接审计、已知技术输入扫描退出0。仅本轮资源恢复，原用户窗口及三容器保全 |
 
 最新P06-02 COMPLETE、P06 IN_PROGRESS。前轮PARTIAL/NOT_EXECUTED与工具失败作为历史保留；不把手动刷新或源码存在等价为focus通过。下一建议P06 Web阶段综合验收（建议拆为P06-03，NOT_STARTED），不自动执行。生产TLS/跨源、远程CI、多OS、实时推送与未来业务边界不变。
+
+## P06-03 综合验收收敛（2026-10-09）
+
+| 项 | 当前证据与边界 |
+| --- | --- |
+| A06-01 | 正式Cookie/CSRF主链复用P06-01/02；本轮原生实际连接失败不退出、恢复、signal查询canceled，两个独立正式logout缺CSRF反例各手动一次403/me200，无额外重放。七HTTP状态、Body超时/旧响应/并发401为127受控技术测试，不伪称全为真实故障 |
+| A06-02 | 原生同源标签甲→乙后旧敏感草稿/身份投影清理；另一标签当前/全部退出后恢复转登录；权限重验路由/导航一致。受保护缓存清理仍是作用域技术测试，未来真实业务关联失效原P07 |
+| G01～G14 | PASS；[逐项门禁](P06-03-VERIFICATION.md#完成门禁)、[25项总矩阵](P06-ACCEPTANCE.md)保留等级及复用证据 |
+| 页面/保全 | 390px页头裁切失败留证，最小修复后原生尺寸/截图补验PASS；原生/技术SystemError/工具失败分别注明。基线4020tracked中4007项不变、13项白名单修改，270ui及旧报告/证据保全；生产TLS/跨源/多OS/远程CI/辅助技术全标准/首屏性能未验证 |
+
+P06-03/P06 COMPLETE，原P06/A06所有必选条件与证据已核对；P07 NOT_STARTED，不自动执行或提交/推送/部署。上方历史PARTIAL/IN_PROGRESS及续验不改写。
+
+## P07-01 当前读取验收（2026-10-09）
+
+A07-00 **PASS**，P07-01 COMPLETE，G01～G14全部PASS，完整结果见[P07-01验证](P07-01-VERIFICATION.md)。正式HTTP/PG/Redis会话测试核对实际集合、total和字段；TENANT/STORES/SELF、空与多门店、独立权限/撤销、筛选/排序/重复参数、稳定分页、范围外与不存在同404、受限RLS/凭据列、单连接/身份复用、DTO无关系泄漏、公开schema和JSON一致均通过。后端455项（原421逐项保留+34）0失败/错误/跳过；generate/check及三端typecheck、3项生成器测试通过。
+
+新增34项：EmployeeDirectoryIT 32、EmployeeReadMigrationIT 1、EmployeeReadUpgradeRuntimeIT 1；正式初始化操作者、目标/授权为明确SQL技术夹具，不通过TestProvider替换认证。客户外部Gateway为测试边界，不声明本轮外部微信完成。生产包不含测试Provider/数据/接口；V4升级保留旧checksum和九项授权，新增detail须显式受限补充，不自动给全部角色加权限。
+
+P07仍 **IN_PROGRESS**。A07-01～03业务页面/写入/表单/批量验收尚待后续；本轮没有Table/假业务页，生产部署/TLS/代理/远程CI/多OS/真实性能NOT_VERIFIED。Web127项仍为P06历史，本轮只执行Web类型检查。下一仅建议P07-02企业员工列表及URL/查询状态基础，NOT_STARTED，不自动执行。

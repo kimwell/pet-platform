@@ -49,15 +49,19 @@ function SessionLayout({ space }: { space: AuthSpace }) {
     <Layout>
       <Layout.Header className="session-header">
         <Space><Button aria-label={collapsed ? '展开菜单' : '折叠菜单'} onClick={() => toggle(space)}>{collapsed ? '展开' : '收起'}</Button><Typography.Text>{spaces[space].label}空间</Typography.Text></Space>
-        <Dropdown menu={{ items: [{ key: 'security', label: <Link to={spaces[space].security}>账号安全</Link> }, ...(canManageSelf(identity, space, 'logout') ? [{ key: 'logout', label: '退出当前会话', disabled: logout.isPending || session.busy }] : [])], onClick: ({ key }) => { if (key === 'logout' && !logout.isPending && !session.auth.runtime.isBusy(space)) logout.mutate(); } }} trigger={['click']}>
+        <Dropdown autoFocus menu={{ items: [{ key: 'security', label: <Link to={spaces[space].security}>账号安全</Link> }, ...(canManageSelf(identity, space, 'logout') ? [{ key: 'logout', label: '退出当前会话', disabled: logout.isPending || session.busy }] : [])], onClick: ({ key }) => { if (key === 'logout' && !logout.isPending && !session.auth.runtime.isBusy(space)) logout.mutate(); } }} trigger={['click']}>
           <Button type="text" aria-label="当前账号菜单"><Avatar size="small">{identity.displayName.slice(0, 1)}</Avatar> {identity.displayName}</Button>
         </Dropdown>
       </Layout.Header>
       <Layout.Content className="session-content">
         <Breadcrumb items={[{ title: spaces[space].title }, { title: page.title }]} />
-        {session.notice && <Alert showIcon type="warning" title={session.notice} />}
-        {logout.isError && <ErrorNotice error={logout.error} title="退出未确认，请重试退出" />}
-        {page.path === spaces[space].security ? <AccountSecurity identity={identity} disabled={session.busy} refreshing={session.isFetching} refresh={() => void session.refetch()} /> : <AccountHome identity={identity} refreshing={session.isFetching} refresh={() => void session.refetch()} />}
+        {session.notice && !logout.isError && <Alert showIcon type="warning" title={session.notice} />}
+        {logout.isError && <ErrorNotice error={logout.error} title={session.notice ?? '退出未确认，请重试退出'} />}
+        {page.path === spaces[space].security ? <AccountSecurity
+          // 同源标签可改变Cookie；新身份/授权范围不能沿用旧主体的敏感草稿。
+          key={JSON.stringify([identity.principalId, identity.tenantId, identity.sessionId, identity.authorizationVersion,
+            [...identity.permissionCodes].sort(), [...identity.authorizedStoreIds].sort(), identity.dataScope, isRestricted(identity)])}
+          identity={identity} disabled={session.busy} refreshing={session.isFetching} refresh={() => void session.refetch()} /> : <AccountHome identity={identity} refreshing={session.isFetching} refresh={() => void session.refetch()} />}
         {isRestricted(identity) && <Typography.Text type="secondary">请完成密码修改后继续使用工作台。</Typography.Text>}
         <div className="system-links"><Link to="/">系统入口</Link><Link to={space === 'STAFF' ? '/platform' : '/admin'}>{space === 'STAFF' ? '平台控制台' : '员工工作台'}</Link></div>
       </Layout.Content>

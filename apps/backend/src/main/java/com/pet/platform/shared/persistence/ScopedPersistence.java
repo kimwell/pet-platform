@@ -15,6 +15,8 @@ import org.springframework.data.domain.*;
 public abstract class ScopedPersistence<T extends TenantScopedEntity> {
     @FunctionalInterface
     public interface BusinessCondition<T> { Predicate predicate(Root<T> root, CriteriaBuilder cb); }
+    @FunctionalInterface
+    public interface QueryCondition<T> { Predicate predicate(Root<T> root, CriteriaBuilder cb, CommonAbstractCriteria query); }
     private final EntityManager em;
     private final String permissionCode;
     private final Class<T> entityType;
@@ -33,16 +35,19 @@ public abstract class ScopedPersistence<T extends TenantScopedEntity> {
         com.pet.platform.shared.tenancy.TenantScopeGuard.requirePermission(permissionCode);
         return ScopedTransaction.enter(em);
     }
-    private Predicate secured(Root<T> root, CriteriaBuilder cb, BusinessCondition<T> business) {
+    private Predicate secured(Root<T> root, CriteriaBuilder cb, CommonAbstractCriteria query, BusinessCondition<T> business) {
+        return securedProjection(root, cb, query, business == null ? null : (r, builder, parent) -> business.predicate(r, builder));
+    }
+    private Predicate securedProjection(Root<T> root, CriteriaBuilder cb, CommonAbstractCriteria query, QueryCondition<T> business) {
         var context = enter();
         policy.validate(context);
-        Predicate condition = business == null ? cb.conjunction() : Objects.requireNonNull(business.predicate(root, cb));
+        Predicate condition = business == null ? cb.conjunction() : Objects.requireNonNull(business.predicate(root, cb, query));
         // 业务OR始终位于此AND内部，不能替换或短路安全条件。
-        return cb.and(policy.predicate(root, cb, context), condition);
+        return cb.and(policy.predicate(root, cb, query, context), condition);
     }
     private TypedQuery<T> query(BusinessCondition<T> condition) {
         var cb = em.getCriteriaBuilder(); var query = cb.createQuery(entityType); var root = query.from(entityType);
-        query.select(root).where(secured(root, cb, condition));
+        query.select(root).where(secured(root, cb, query, condition));
         return em.createQuery(query);
     }
     /** 仅登记的正式Store事实适配器使用，不授权业务行；Guard随后检查门店上限/操作范围。 */
@@ -59,7 +64,7 @@ public abstract class ScopedPersistence<T extends TenantScopedEntity> {
     protected final T require(UUID id) { return find(id).orElseThrow(TenantAccessDeniedException::new); }
     protected final long count(BusinessCondition<T> business) {
         var cb = em.getCriteriaBuilder(); var query = cb.createQuery(Long.class); var root = query.from(entityType);
-        query.select(cb.count(root)).where(secured(root, cb, business));
+        query.select(cb.count(root)).where(secured(root, cb, query, business));
         return em.createQuery(query).getSingleResult();
     }
     protected final boolean exists(UUID id) { return count((root, cb) -> cb.equal(root.get("id"), id)) != 0; }
@@ -71,7 +76,7 @@ public abstract class ScopedPersistence<T extends TenantScopedEntity> {
         enter();
         if (pageable.isUnpaged() || pageable.getOffset() > Integer.MAX_VALUE || pageable.getPageSize() > 100) throw new IllegalArgumentException("分页必须来自受控分页适配器");
         var cb = em.getCriteriaBuilder(); var query = cb.createQuery(entityType); var root = query.from(entityType);
-        query.select(root).where(secured(root, cb, business));
+        query.select(root).where(secured(root, cb, query, business));
         var orders = new ArrayList<Order>();
         for (var order : pageable.getSort()) {
             if (!order.getProperty().matches("[a-zA-Z][a-zA-Z0-9]*")) throw new IllegalArgumentException("排序仅允许固定单层属性");
@@ -81,6 +86,39 @@ public abstract class ScopedPersistence<T extends TenantScopedEntity> {
         query.orderBy(orders);
         var items = em.createQuery(query).setFirstResult((int) pageable.getOffset()).setMaxResults(pageable.getPageSize()).getResultList();
         return new PageImpl<>(items, pageable, count(business));
+    }
+    /** 静态DTO构造投影；不加载整个Entity，尤其不读取运行角色禁止的凭据列。 */
+    private <D> CriteriaQuery<D> projection(Class<D> dto, List<String> attributes, QueryCondition<T> business, Pageable pageable) {
+        enter();
+        var cb = em.getCriteriaBuilder(); var query = cb.createQuery(dto); var root = query.from(entityType);
+        var fields = attributes.stream().map(a -> {
+            if (!a.matches("[a-zA-Z][a-zA-Z0-9]*")) throw new IllegalArgumentException("投影字段必须静态登记");
+            return (Selection<?>) root.get(a);
+        }).toArray(Selection<?>[]::new);
+        query.select(cb.construct(dto, fields)).where(securedProjection(root, cb, query, business));
+        if (pageable != null) {
+            var orders = new ArrayList<Order>();
+            for (var order : pageable.getSort()) {
+                if (!attributes.contains(order.getProperty())) throw new IllegalArgumentException("排序必须来自公开投影白名单");
+                orders.add(order.isAscending() ? cb.asc(root.get(order.getProperty()), Nulls.LAST)
+                        : cb.desc(root.get(order.getProperty()), Nulls.LAST));
+            }
+            query.orderBy(orders);
+        }
+        return query;
+    }
+    protected final <D> Page<D> projectedPage(Class<D> dto, List<String> attributes, QueryCondition<T> business, Pageable pageable) {
+        if (pageable.isUnpaged() || pageable.getOffset() > Integer.MAX_VALUE || pageable.getPageSize() > 100)
+            throw new IllegalArgumentException("分页必须来自受控分页适配器");
+        var items = em.createQuery(projection(dto, attributes, business, pageable))
+                .setFirstResult((int) pageable.getOffset()).setMaxResults(pageable.getPageSize()).getResultList();
+        var cb = em.getCriteriaBuilder(); var query = cb.createQuery(Long.class); var root = query.from(entityType);
+        query.select(cb.count(root)).where(securedProjection(root, cb, query, business));
+        return new PageImpl<>(items, pageable, em.createQuery(query).getSingleResult());
+    }
+    protected final <D> D projectedRequired(UUID id, Class<D> dto, List<String> attributes) {
+        return em.createQuery(projection(dto, attributes, (root, cb, query) -> cb.equal(root.get("id"), id), null))
+                .getResultStream().findFirst().orElseThrow(TenantAccessDeniedException::new);
     }
     protected final T insertNew(Supplier<T> factory) {
         var context = enter(); policy.validate(context);
@@ -110,7 +148,7 @@ public abstract class ScopedPersistence<T extends TenantScopedEntity> {
         update.set(root.get(attribute), value);
         update.set(root.get("updatedAt"), clock.instant().truncatedTo(ChronoUnit.MILLIS));
         update.set(root.<Long>get("version"), cb.sum(root.<Long>get("version"), 1L));
-        update.where(secured(root, cb, (r, builder) -> r.get("id").in(targets)));
+        update.where(secured(root, cb, update, (r, builder) -> r.get("id").in(targets)));
         int affected = em.createQuery(update).executeUpdate();
         checkAffected(affected, targets.size()); em.clear();
         return affected;
@@ -118,7 +156,7 @@ public abstract class ScopedPersistence<T extends TenantScopedEntity> {
     protected final int deleteBatch(Collection<UUID> ids) {
         var targets = lockAll(ids); em.flush();
         var cb = em.getCriteriaBuilder(); var delete = cb.createCriteriaDelete(entityType); var root = delete.from(entityType);
-        delete.where(secured(root, cb, (r, builder) -> r.get("id").in(targets)));
+        delete.where(secured(root, cb, delete, (r, builder) -> r.get("id").in(targets)));
         int affected = em.createQuery(delete).executeUpdate();
         checkAffected(affected, targets.size()); em.clear();
         return affected;

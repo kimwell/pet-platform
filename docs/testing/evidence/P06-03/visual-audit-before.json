@@ -1,0 +1,8 @@
+{
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "command": "view_image复核原生390px截图",
+  "exitCode": null,
+  "result": "FAIL",
+  "summary": "平台长账号名称挤压空间文字；Layout.Header固定高度及继承line-height导致换行裁切。原logout-csrf-390.png保留；错误只展示一次的功能PASS不表示窄屏布局PASS。",
+  "fix": "只在已有窄屏media query允许页头换行、自适应高度和正常行高，无新组件/设计系统"
+}

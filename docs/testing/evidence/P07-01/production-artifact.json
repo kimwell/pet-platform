@@ -1,0 +1,17 @@
+{
+  "jar": "apps/backend/target/pet-platform-backend-0.0.0-SNAPSHOT.jar",
+  "sha256": "d8f33538422e1c16e97c4ec87efb009691321a71a8c6ca723304310f544ee2e1",
+  "size": 94927885,
+  "productionClassCount": 222,
+  "testClassCount": 112,
+  "testClassOverlap": [],
+  "invalidCompilationMarkers": [],
+  "migrations": [
+    "BOOT-INF/classes/db/migration/V4__customer_wechat_identity.sql",
+    "BOOT-INF/classes/db/migration/V2__staff_credential_security.sql",
+    "BOOT-INF/classes/db/migration/V1__platform_identity_foundation.sql",
+    "BOOT-INF/classes/db/migration/V5__employee_read_contract.sql",
+    "BOOT-INF/classes/db/migration/V3__platform_administrator.sql"
+  ],
+  "grade": "COMPILED / RUNTIME_VERIFIED via ProductionArtifactIT, PackagedDocumentPolicyIT, EmployeeReadUpgradeRuntimeIT"
+}

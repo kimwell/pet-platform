@@ -1,6 +1,8 @@
 # 持久化与事务约定
 
-当前实施状态见本文P05-01章节及[P05-01验证](../testing/P05-01-VERIFICATION.md)。旧阶段“尚未实现”描述保留为历史范围；冻结安全契约不变。
+P07-01新增受控DTO构造投影及多对多门店/主体本人策略，员工真实读取见[契约](../contracts/EMPLOYEE-MANAGEMENT.md)和[验证](../testing/P07-01-VERIFICATION.md)。历史P03/P04“无正式业务查询”按当时范围保留。
+
+当前员工查询实施见本文P07-01章节及[P07-01验证](../testing/P07-01-VERIFICATION.md)；正式身份基础见P05章节。旧阶段“尚未实现”描述保留为历史范围；冻结安全契约不变。
 P03-02 实施日期：2026-10-08。当前实现位于 `com.pet.platform.shared.persistence`；单 Module 和模块公开接口规则见 [模块边界](../architecture/MODULE-BOUNDARIES.md)。数据库是 PostgreSQL，正式结构由 [Flyway](DATABASE-MIGRATION.md) 管理。
 
 `BaseEntity` 是 `@MappedSuperclass`，只有 `UUID id`、`Instant createdAt`、`Instant updatedAt`。首次 persist 时由 JDK `UUID.randomUUID()` 生成 UUID v4，数据库列为 uuid；没有外部 ID 框架。未持久化时 id 为 null，使 Spring Data 能正确识别新实体。没有主键或时间公共 setter，也没有依赖可变字段的 equals/hashCode；当前保持 Java 对象身份语义，跨会话需要显式比较非空 ID。
@@ -123,3 +125,15 @@ identity_security_event只保存UUID、tenant、操作者、请求目标、四�
 identity_session_cleanup在变更事务内保存tenant/employee/revoke_before，唯一约束同主体同代际；不含Token或密码。完成后同事务标completed/completed_at，只有索引内物理记录全部清理返回后才标完成。runtime只SELECT/INSERT及UPDATE完成字段；未完成记录在合法me和同目标安全操作中合并补偿。没有跨租户全表扫描、消息平台或定时清理。保持PENDING是实际可观察状态，不以期限存在宣称已经清理。
 
 空库V1+V2及已有V1真实初始化数据升级V2均需实际容器测试；V1 checksum及数据/原九权限不变，重复迁移0变化，无用户数据库清理。生产升级仍走既有独立迁移命令，部署未执行。
+
+## P07-01 受控投影与关系范围
+
+ScopedPersistence新增protected final projectedPage/projectedRequired，仍只在登记基础实现持有EntityManager。模块静态登记DTO类型与单层字段白名单，不从HTTP透传类型/属性/Criteria。projection/count/详情都由基类强制tenant AND 当前权限范围 AND business。普通裸EntityManager/native/JDBC禁令和原find/count/exists/批次策略不变。
+
+ResourceAccessPolicy.relatedStoresAndSelf接受模块静态关系实体、目标引用属性和明确主体域，不依赖identity实现。STORES用同tenant、关系目标ID=根ID且storeId在当前权限集合的EXISTS；TENANT仅本租户、SELF用明确主体域与根ID。业务storeId过滤另一个受控EXISTS，因此多对多不增加根行数或count。拒绝全量内存过滤和分页后权限裁剪。
+
+员工仅构造EmployeeView六公开字段，不加载含password_hash的Entity；运行角色无密码SELECT仍保持。应用服务用TransactionTemplate显式只读REPEATABLE_READ，**先建立范围再开启事务，完整提交后关闭范围**，沿用ScopedTransaction同JPA连接局部GUC及beforeCommit。显式事务模板是本用例的选择，不能把事务放到Controller。列表两条查询共享快照，独立HTTP翻页没有跨页快照承诺。
+
+V5增加(tenant_id,created_at DESC,id DESC)默认分页索引，关系已有唯一(tenant_id,employee_id,store_id)和门店索引复用；没有为所有筛选建立无依据索引。keyword字面量包含不保证大规模扫描成本或生产性能。数据库FORCE RLS限租户、应用另限操作/SELF/STORES/字段；生产角色部署另验。
+
+V5显式详情权限补充复用独立NOLOGIN bootstrap函数owner，精确追加必要SELECT/员工授权版本列UPDATE及当前tenant政策，无密码读取。BootstrapJdbc登记原固定SQL适配器新增一个固定命令函数调用，其他普通SQL白名单不扩展；runtime启动新增检查该函数不可执行。迁移不执行补授权，V1～V4不改写。带V4正式初始化数据升级及并发/幂等/受限角色反例见验证报告。

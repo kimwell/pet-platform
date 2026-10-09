@@ -1,0 +1,19 @@
+{
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "command": [
+    "docker",
+    "exec",
+    "-i",
+    "pet-p06-03-pg",
+    "psql",
+    "-U",
+    "postgres",
+    "-d",
+    "p06_03_acceptance",
+    "-v",
+    "ON_ERROR_STOP=1"
+  ],
+  "purpose": "只在本轮隔离库准备真实受限标志，不是管理API验收",
+  "exitCode": 0,
+  "summary": "UPDATE 1\n"
+}

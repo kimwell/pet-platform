@@ -1,0 +1,13 @@
+{
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "command": [
+    "pnpm",
+    "--filter",
+    "@pet/admin-web",
+    "build"
+  ],
+  "exitCode": 0,
+  "durationSeconds": 6.24,
+  "log": "build-complete.log",
+  "summary": "\n> @pet/admin-web@0.0.0 build /Users/kimwell/work/pet-platform/apps/admin-web\n> tsc --noEmit && vite build\n\nvite v7.3.7 building client environment for production...\ntransforming...\n✓ 1698 modules transformed.\nrendering chunks...\ncomputing gzip size...\ndist/index.html                           0.41 kB │ gzip:   0.31 kB\ndist/assets/index-D4QxOI-R.css            5.00 kB │ gzip:   1.76 kB\ndist/assets/LoginPage-Bd2AnKGA.js         3.60 kB │ gzip:   1.79 kB\ndist/assets/SessionFailure-DNcZovHk.js   61.01 kB │ gzip:  22.83 kB\ndist/assets/SessionLayout-DDFTuO0o.js    94.09 kB │ gzip:  29.58 kB\ndist/assets/index-ugTHV8ok.js           714.56 kB │ gzip: 235.62 kB\n\n(!) Some chunks are larger than 500 kB after minification. Consider:\n- Using dynamic import() to code-split the application\n- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks\n- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.\n✓ built in 3.31s\n"
+}

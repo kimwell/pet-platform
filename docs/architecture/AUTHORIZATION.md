@@ -1,5 +1,7 @@
 # 权限与授权执行
 
+P07-01员工读取当前规则见[EMPLOYEE-MANAGEMENT](../contracts/EMPLOYEE-MANAGEMENT.md)：list/detail为独立操作权限，Employee按租户级主体、多对多门店关系及STAFF本人ID映射，不能套单一storeId策略；敏感管理仍沿用P05-03完整目标策略。
+
 当前STAFF认证及敏感操作实施见本文P05-02/P05-03章节及[P05-03验证](../testing/P05-03-VERIFICATION.md)。旧阶段叙述保留为历史范围；本轮渠道/输入细化见当前章节。
 冻结日期：2026-10-07，P01-02。本文拥有权限注册、范围组合、授权顺序；字段见 [身份契约](../contracts/IDENTITY.md)，隔离执行见 [多租户](MULTI-TENANCY.md)。
 
@@ -85,3 +87,13 @@ CUSTOMER只拥有customer:session:manage本人会话能力，DataScope的princip
 登录入口知道有效tenantCode只意味着服务端允许在该租户独立建立微信客户，不能获取员工或其他客户权限；共享AppID同OpenID跨租户独立主体。入口当前显式允许公开注册，没有虚构邀请/成员策略，也没有把tenantCode当强身份认证。后续有邀请要求必须实现明确策略。
 
 客户每请求从正式PG重验客户/租户/绑定状态和安全代际，SELF后续资源仍须登记正确owner+主体域且经ScopedPersistence/RLS；本轮仅身份/会话，没有客户业务资源CRUD。CUSTOMER任务入口提交前403拒绝，不生成可排队证明。完整员工/角色/权限管理API仍未实现，阶段归属及未完成项逐项见[P05总验收](../testing/P05-ACCEPTANCE.md)。
+
+## P07-01 员工读取策略（2026-10-09）
+
+`identity:user:list`复用已有声明；新增`identity:user:detail`（查看员工详情），均支持TENANT/STORES/SELF，逐权限取当前权威授权。列表TENANT不会扩大详情SELF或任何敏感管理范围；没有隐含管理员全权。本人改密/退出不依赖读取权限。
+
+Employee没有单一门店归属。TENANT允许当前租户员工（含无门店/停用）；SELF仅STAFF且Employee.id=principalId；STORES要求目标任一EmployeeStore与当前权限有效门店集合相交。无门店目标不通过STORES；操作者无有效门店时STORES无行；同权限STORES+SELF并集可保留无门店本人。目标多门店的基础读取不等于管理接管，也不返回其他门店/角色关系；列表/详情六字段白名单相同。
+
+storeId过滤先核对ACTIVE本租户事实、身份门店上限与本操作范围，仅SELF拒绝门店筛选，过滤继续AND既有行范围。不同读取权限可有不同**行**范围；不可通过详情扩大字段范围。状态和权限每请求重验，已开始读取保留当次快照，不能声称即时撤回在途响应。
+
+新详情权限只声明、不改原九项ADMIN_PERMISSIONS，不在迁移或启动自动补授权。V5新增独立bootstrap角色可执行的固定保留管理员补充函数/命令，指定租户、只复制该角色已存在的list范围到detail，关联员工版本同事务递增；runtime无EXECUTE。普通角色管理仍后续P07，详见[显式补充](../contracts/EMPLOYEE-MANAGEMENT.md#新详情权限的显式补充)。

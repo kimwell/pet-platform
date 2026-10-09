@@ -1,0 +1,168 @@
+Window: "企业应用工程入口", App: Google Chrome.
+0 标准窗口 企业应用工程入口 - Google Chrome（无痕）, URL: 127.0.0.1:5173/missing-p06-03, Secondary Actions: Raise
+	1 container 企业应用工程入口 - Google Chrome（无痕）, URL: 127.0.0.1:5173/missing-p06-03
+		2 container
+			3 工具栏
+				4 按钮 返回
+				5 按钮 (disabled) 前进
+				6 按钮 重新加载
+				7 按钮 首页
+				8 container
+					9 弹出式按钮 查看网站信息
+					10 文本栏 (settable) 地址和搜索栏, Value: 127.0.0.1:5173/missing-p06-03, Placeholder: 在 百度 中搜索，或输入网址
+					11 按钮 为此标签页添加书签
+				12 按钮 无痕模式
+				13 弹出式按钮 Chrome
+			14 工具栏 书签
+				15 书签文件夹按钮 new
+				16 书签文件夹按钮 work
+				17 书签文件夹按钮 blog
+				18 书签文件夹按钮 ui
+				19 书签文件夹按钮 flutter
+				20 书签文件夹按钮 nodes
+				21 书签文件夹按钮 ai
+				22 书签文件夹按钮 git
+				23 书签按钮 百度一下，你就知道
+				24 书签按钮 Google
+				25 书签按钮 Errors & Outages — sentry — Sentry
+			26 container
+				27 滚动区
+					28 HTML 内容 DevTools, URL: devtools://devtools/bundled/devtools_app.html?remoteBase=https://chrome-devtools-frontend.appspot.com/serve_file/@b859317bf11f6be47f9b7799ec690a0a42a1fb33/&targetType=tab&can_dock=true
+						29 container
+							30 container
+								31 container
+									32 工具栏
+										33 文本 Dimensions:
+										34 弹出式按钮 Device type, Value: Responsive
+											35 (selected) Responsive
+										36 步进器 (settable, float) Width, Value: 390
+										37 文本 ×
+										38 步进器 (settable, float) Height (leave empty for full), Value: 844, Placeholder: 494
+										39 弹出式按钮 Zoom, Value: 100%
+											40 (selected) 100%
+										41 弹出式按钮 Throttling, Value: Disabled: No throttling
+											42 (selected) Disabled: No throttling
+										43 弹出式按钮 'Save-Data': default
+											44 (selected) 'Save-Data': default
+										45 按钮 Rotate
+									46 工具栏
+										47 按钮 More options
+									48 container
+								49 container
+									50 container Main toolbar
+										51 工具栏
+											52 container Select an element in the page to inspect it, Help: Select an element in the page to inspect it - ⌘ ⇧ C
+												53 切换按钮 Select an element in the page to inspect it - ⌘ ⇧ C, Value: 0
+											54 container Toggle device toolbar, Help: Toggle device toolbar - ⌘ ⇧ M
+												55 切换按钮 Toggle device toolbar - ⌘ ⇧ M, Value: 1
+										56 container
+											57 标签页组 Panels
+												58 标签 (settable, integer) Elements, Value: 0
+												59 标签 (settable, integer) Console, Value: 0
+												60 标签 (selected) Network, Value: 1
+												61 标签 (settable, integer) Application, Value: 0
+												62 标签 (settable, integer) Sources, Value: 0
+												63 标签 (settable, integer) Performance, Value: 0
+												64 标签 (settable, integer) Memory, Value: 0
+												65 标签 (settable, integer) Lighthouse, Value: 0
+										66 工具栏
+											67 按钮  AI assistance, Help: Open AI assistance panel
+											68 container Settings, Help: Settings - F1 - ⇧ ?
+												69 按钮 Settings - F1 - ⇧ ?
+											70 弹出式按钮 Customize and control DevTools
+												71 按钮 Customize and control DevTools
+											72 container Close
+												73 按钮 Close
+									74 container Network panel
+										75 container network
+											76 container
+												77 工具栏
+													78 container Stop recording network log, Help: Stop recording network log - ⌘ E
+														79 切换按钮 Stop recording network log - ⌘ E, Value: 1
+													80 container Clear network log, Help: Clear network log - Ctrl L - ⌘ K
+														81 按钮 Clear network log - Ctrl L - ⌘ K
+													82 container Filter
+														83 切换按钮 Filter, Value: 0
+													84 container Search
+														85 切换按钮 Search, Value: 0
+													86 container
+														87 复选框 Keep log, Value: 0
+														88 文本 Keep log
+													89 container
+														90 复选框 Disable cache, Value: 1
+														91 文本 Disable cache
+													92 弹出式按钮 Throttling, Value: Disabled: No throttling
+														93 (selected) Disabled: No throttling
+													94 container More network conditions…
+														95 按钮 More network conditions…
+													96 container Import HAR file…
+														97 按钮 Import HAR file…
+													98 container Export HAR (sanitized)…
+														99 按钮 Export HAR (sanitized)…
+													100 container Network settings
+														101 切换按钮 Network settings, Value: 0
+												102 container
+													103 container
+														104 表格
+															105 row
+																106 列标题 Name - Sortable column. Press enter to apply sorting filter
+																	107 文本 Name
+																108 列标题 Path - Sortable column. Press enter to apply sorting filter
+																	109 文本 Path
+																110 列标题 Method - Sortable column. Press enter to apply sorting filter
+																	111 文本 Method
+																112 列标题 Status - Sortable column. Press enter to apply sorting filter
+																	113 文本 Status
+																114 列标题 Scheme - Sortable column. Press enter to apply sorting filter
+																	115 文本 Scheme
+																116 列标题 Type - Sortable column. Press enter to apply sorting filter
+																	117 文本 Type
+																118 列标题 Size - Sortable column. Press enter to apply sorting filter
+																	119 文本 Size
+																120 列标题 Time - Sortable column. Press enter to apply sorting filter
+																	121 文本 Time
+																122 列标题 Priority - Sortable column. Press enter to apply sorting filter
+																	123 文本 Priority
+													124 container 0 / 41 requests
+														125 文本 0 / 41 requests
+													126 container 0 B / 5705593 B transferred over network
+														127 文本 0.0 kB / 5,706 kB transferred
+													128 container 0 B / 5693755 B resources loaded by the page
+														129 文本 0.0 kB / 5,694 kB resources
+													130 container Finish: 137 ms
+														131 文本 Finish: 137 ms
+													132 container DOMContentLoaded: 266 ms
+														133 文本 DOMContentLoaded: 266 ms
+													134 container Load: 267 ms
+														135 文本 Load: 267 ms
+							136 文本 Network data available
+				137 滚动区
+					138 HTML 内容 企业应用工程入口, URL: 127.0.0.1:5173/missing-p06-03
+						139 container
+							140 图像 No Found
+							141 text 页面不存在 请检查访问地址。
+							142 link 返回系统入口, Value: 127.0.0.1:5173/
+			143 弹出式按钮 标签页搜索
+			144 container
+				145 标签页组
+					146 标签 (selected, settable, boolean) 企业应用工程入口 - 内存用量 - 126 MB, Value: on
+						147 按钮 关闭
+					148 标签 (settable, boolean) 企业应用工程入口 - 内存用量 - 97.7 MB, Value: off
+						149 按钮 关闭
+			150 按钮 新标签页
+	151 关闭按钮
+	152 全屏幕按钮 Help: 此按钮也可以执行缩放窗口的操作, Secondary Actions: 缩放窗口
+	153 最小化按钮
+154 menu bar
+	155 Chrome
+	156 文件
+	157 编辑
+	158 显示
+	159 历史记录
+	160 书签
+	161 个人资料
+	162 标签页
+	163 窗口
+	164 帮助
+
+The focused UI element is 36 步进器 (settable, float) Width, Value: 390

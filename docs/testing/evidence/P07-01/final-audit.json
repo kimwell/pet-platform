@@ -1,0 +1,57 @@
+{
+  "date": "2026-10-09T00:27:26.089888+00:00",
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "sourceModified": 24,
+  "sourceAdded": 13,
+  "missingInitialFiles": [],
+  "protectedGroups": {
+    "ui": {
+      "checked": 270,
+      "changedOrMissing": []
+    },
+    "adminWebAll": {
+      "checked": 42,
+      "changedOrMissing": []
+    },
+    "historicalEvidence": {
+      "checked": 3498,
+      "changedOrMissing": []
+    },
+    "P06Reports": {
+      "checked": 2,
+      "changedOrMissing": []
+    },
+    "existingUserOtherDocs": {
+      "checked": 3,
+      "changedOrMissing": []
+    },
+    "frozenDependencies": {
+      "checked": 8,
+      "changedOrMissing": []
+    },
+    "oldMigrations": {
+      "checked": 4,
+      "changedOrMissing": []
+    }
+  },
+  "localLinksChecked": 341,
+  "brokenLocalLinks": [],
+  "gitDiffCheck": {
+    "command": [
+      "git",
+      "diff",
+      "--check"
+    ],
+    "exitCode": 0,
+    "output": ""
+  },
+  "requiredCommandsAllZero": true,
+  "formalTests": 455,
+  "historicalBaselineRetained": 421,
+  "newTests": 34,
+  "privateConfiguration": "未读取/改写忽略的秘密配置；不声称对它们完成哈希比较",
+  "productionDeploy": "NOT_EXECUTED",
+  "nextTask": "P07-02 NOT_STARTED",
+  "P07-01": "COMPLETE",
+  "P07": "IN_PROGRESS"
+}

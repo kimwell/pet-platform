@@ -1,0 +1,106 @@
+{
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "command": "归属校验后SIGTERM本轮三个进程组；docker stop两个本轮--rm/tmpfs容器；探测回环端口",
+  "time": "2026-10-09T07:50:39.242803+08:00",
+  "processes": [
+    {
+      "pid": 65511,
+      "pgid": 65511,
+      "expectedOwnedPath": "/.local-data/p06-03/tools/pnpm/",
+      "stopped": true
+    },
+    {
+      "pid": 63616,
+      "pgid": 63616,
+      "expectedOwnedPath": "/.local-data/p06-03/proxy.py",
+      "stopped": true
+    },
+    {
+      "pid": 56356,
+      "pgid": 56356,
+      "expectedOwnedPath": "/.local-data/p06-03/backend.jar",
+      "stopped": true
+    }
+  ],
+  "containerCommands": [
+    {
+      "command": [
+        "docker",
+        "stop",
+        "pet-p06-03-pg"
+      ],
+      "exitCode": 0,
+      "summary": "pet-p06-03-pg"
+    },
+    {
+      "command": [
+        "docker",
+        "stop",
+        "pet-p06-03-redis"
+      ],
+      "exitCode": 0,
+      "summary": "pet-p06-03-redis"
+    }
+  ],
+  "ownedContainersAbsent": true,
+  "otherContainersBefore": [
+    {
+      "id": "aaf4a5757d7b",
+      "name": "pet-platform-p02-validation-rabbitmq-1",
+      "state": "exited"
+    },
+    {
+      "id": "220b713e01b2",
+      "name": "pet-platform-p02-validation-postgres-1",
+      "state": "exited"
+    },
+    {
+      "id": "c32b316136a1",
+      "name": "pet-platform-p02-validation-redis-1",
+      "state": "exited"
+    }
+  ],
+  "otherContainersAfter": [
+    {
+      "id": "aaf4a5757d7b",
+      "name": "pet-platform-p02-validation-rabbitmq-1",
+      "state": "exited"
+    },
+    {
+      "id": "220b713e01b2",
+      "name": "pet-platform-p02-validation-postgres-1",
+      "state": "exited"
+    },
+    {
+      "id": "c32b316136a1",
+      "name": "pet-platform-p02-validation-redis-1",
+      "state": "exited"
+    }
+  ],
+  "otherContainerStatesUnchanged": true,
+  "closedLoopbackPorts": {
+    "5173": true,
+    "18090": true,
+    "18091": true
+  },
+  "browserCleanup": {
+    "result": "COMPLETED",
+    "summary": "CUA只关闭两个本轮原生无痕窗口及本轮IAB标签，恢复设备模式/限速/面板预设，JS会话reset；未向普通Chrome窗口发送关闭动作，不推断其页面标题始终不变。"
+  },
+  "secretInputs": {
+    "result": "REMOVED",
+    "fileNames": [
+      "platform-new-password",
+      "platform-password",
+      "staff-final-password",
+      "staff-new-password",
+      "staff-password",
+      "postgres.env",
+      "redis.conf"
+    ],
+    "allAbsent": true,
+    "knownValueCount": 7,
+    "summary": "最终精确扫描通过后移除本轮5个技术密码文件及PostgreSQL/Redis凭据配置；源值不写入记录。"
+  },
+  "exitCode": 0
+}

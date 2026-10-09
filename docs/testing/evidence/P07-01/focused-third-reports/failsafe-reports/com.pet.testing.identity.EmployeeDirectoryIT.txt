@@ -1,0 +1,59 @@
+-------------------------------------------------------------------------------
+Test set: com.pet.testing.identity.EmployeeDirectoryIT
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.005 s <<< FAILURE! -- in com.pet.testing.identity.EmployeeDirectoryIT
+com.pet.testing.identity.EmployeeDirectoryIT -- Time elapsed: 0.005 s <<< ERROR!
+java.lang.Error: 
+Unresolved compilation problems: 
+	PostgresIntegrationSupport cannot be resolved to a type
+	POSTGRES cannot be resolved
+	POSTGRES cannot be resolved
+	POSTGRES cannot be resolved
+	POSTGRES cannot be resolved
+	IdentityDatabaseSupport cannot be resolved to a variable
+	POSTGRES cannot be resolved
+	The resource type Object does not implement java.lang.AutoCloseable
+	POSTGRES cannot be resolved
+	IdentityDatabaseSupport cannot be resolved to a variable
+	POSTGRES cannot be resolved
+	The resource type Object does not implement java.lang.AutoCloseable
+	The type Object is not visible
+	The resource type Object does not implement java.lang.AutoCloseable
+	The type Object is not visible
+	The type Object is not visible
+	POSTGRES cannot be resolved
+	IdentityDatabaseSupport cannot be resolved to a variable
+	POSTGRES cannot be resolved
+	The resource type Object does not implement java.lang.AutoCloseable
+	POSTGRES cannot be resolved
+	IdentityDatabaseSupport cannot be resolved to a variable
+	POSTGRES cannot be resolved
+	The resource type Object does not implement java.lang.AutoCloseable
+	The type Object is not visible
+	The resource type Object does not implement java.lang.AutoCloseable
+	The type Object is not visible
+	The type Object is not visible
+	The type Object is not visible
+	The resource type Object does not implement java.lang.AutoCloseable
+	The type Object is not visible
+	The type Object is not visible
+	The type Object is not visible
+	The resource type Object does not implement java.lang.AutoCloseable
+	The type Object is not visible
+	The type Object is not visible
+	The type Object is not visible
+	The resource type Object does not implement java.lang.AutoCloseable
+	The type Object is not visible
+	The type Object is not visible
+	The type Object is not visible
+	The type Object is not visible
+	The type Object is not visible
+	The type Object is not visible
+	The type Object is not visible
+	The type Object is not visible
+	The resource type Object does not implement java.lang.AutoCloseable
+	The type Object is not visible
+	The type Object is not visible
+
+	at com.pet.testing.identity.EmployeeDirectoryIT.<init>(EmployeeDirectoryIT.java:39)
+

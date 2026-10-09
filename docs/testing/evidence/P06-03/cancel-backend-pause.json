@@ -1,0 +1,10 @@
+{
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "command": [
+    "kill",
+    "-STOP",
+    "56356"
+  ],
+  "exitCode": 0,
+  "summary": "仅暂停本轮正式后端进程，准备请求取消，随后必须CONT恢复"
+}

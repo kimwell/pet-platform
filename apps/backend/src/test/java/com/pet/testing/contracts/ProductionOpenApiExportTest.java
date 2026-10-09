@@ -27,7 +27,9 @@ class ProductionOpenApiExportTest extends PostgresIntegrationSupport {
         assertEquals(200, response.statusCode());
         var doc = mapper.readTree(response.body());
         assertEquals("3.1.0", doc.path("openapi").asText());
-        assertEquals(19, doc.path("paths").size());
+        assertEquals(21, doc.path("paths").size());
+        assertTrue(doc.path("paths").has("/api/admin/identity/users"));
+        assertTrue(doc.path("paths").has("/api/admin/identity/users/{employeeId}"));
         for(String path:java.util.List.of("/api/admin/auth/csrf","/api/admin/auth/login","/api/admin/auth/token/login","/api/admin/auth/me","/api/admin/auth/logout","/api/admin/auth/password","/api/admin/auth/logout-all","/api/admin/identity/users/{employeeId}/password","/api/admin/identity/users/{employeeId}/revoke-sessions"))assertTrue(doc.path("paths").has(path));
         assertEquals("__Secure-pet_staff_sid",doc.path("components").path("securitySchemes").path("StaffCookie").path("name").asText());
         assertEquals("X-Staff-Token",doc.path("components").path("securitySchemes").path("StaffToken").path("name").asText());

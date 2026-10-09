@@ -48,7 +48,7 @@ class PackagedDocumentPolicyIT extends PostgresIntegrationSupport {
                     assertEquals(expected, response.statusCode(), profile + " " + path);
                     if (path.equals("/v3/api-docs") && response.statusCode() == 200) {
                         var doc = JsonMapper.builder().build().readTree(response.body());
-                        assertEquals(19, doc.path("paths").size()); assertFalse(response.body().contains("ScalarInput"));
+                        assertEquals(21, doc.path("paths").size()); assertFalse(response.body().contains("ScalarInput"));
                     }
                     records.add(profile + " " + path + " " + response.statusCode());
                 }

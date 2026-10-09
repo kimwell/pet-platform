@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.pet.testing.identity.EmployeeReadUpgradeRuntimeIT
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.015 s -- in com.pet.testing.identity.EmployeeReadUpgradeRuntimeIT

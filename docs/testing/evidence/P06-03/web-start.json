@@ -1,0 +1,10 @@
+{
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "command": [
+    "pnpm",
+    "dev:web"
+  ],
+  "devBackendOrigin": "http://127.0.0.1:18091",
+  "status": "RUNTIME_VERIFIED",
+  "summary": "127.0.0.1:5173 HTML 200；进程独立，待本轮收尾"
+}

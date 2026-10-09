@@ -325,3 +325,13 @@ P06-02最终命令均退出0，5文件120项；入口714.55kB/gzip235.61kB，相
 CUA原生Chrome创建新无痕窗口，Window菜单切换后可信focus且visibility始终visible，平台me403及员工200分别留证；最小化恢复也通过。没有合成focus、HAR/录像/请求体或密码截图，事件探针仅观察且已移除。7个已知技术输入精确扫描无命中；未保留角色口令/旧轮密码不能重扫，不承诺物理内存擦除。三进程组已停止、5173/18088/18089关闭、两tmpfs容器及秘密输入清理，用户原窗口/已有三容器保全。[收尾](../testing/evidence/P06-02/resume-native-focus-2026-10-08/cleanup.json)。
 
 本轮无源码/契约/依赖变化，不重复完整421项或六项Web构建检查；既有120项及构建体积714.55kB证据继续有效，新增check:repo与保全审计。G01～G14 PASS，P06-02 COMPLETE/P06 IN_PROGRESS，下一仅建议P06综合验收，不自动执行。
+
+## P06-03 综合验收环境（2026-10-09）
+
+本轮新专用tmpfs pet-p06-03-pg/redis、正式角色/V1～V4、两租户及平台stdin技术初始化，受限runtime同源正式JAR复用P06-01产物（后端未改）；后端18090、Vite5173。末段18091只透传白名单观察，针对平台logout移除CSRF形成正式拒绝反例，不模拟响应。初始化/权限和受限数据准备仅在该隔离库，不是员工管理API验收。
+
+原冻结pnpm临时目录曾缺失，保留启动失败，官方注册表同版10.34.6临时工具恢复并留SHA；不修改全局Node/Java/pnpm。全部检查使用冻结环境，Web测试127项、10项契约导出；本轮不重跑421项后端或微信。构建500kB警告保留，最终原始/gzip值见[本轮报告](../testing/P06-03-VERIFICATION.md)。
+
+真实浏览器连接失败由仅停止本轮Web产生；Query取消由仅暂停本轮后端、离开保护页产生，随后恢复。未知前端错误使用新标签临时handler故障，恢复handler后重试并关闭；它是前端技术运行证据，不能代替后端业务。专用资源/已知输入收尾见报告和证据，不复用本轮账号或凭据。生产TLS/跨源、多OS和远程CI分别NOT_EXECUTED，不因本机PASS而推断。
+
+本轮最终typecheck/lint/127测试/build、10项contracts检查及仓库/diff/保全审计退出0，P06-03/P06 COMPLETE。三个专用进程组和5173/18090/18091已关闭，两tmpfs容器和7项已知秘密输入清理，原三个exited容器状态保全；仅关闭本轮无痕窗口和IAB标签，未向普通Chrome窗口发送关闭动作。见[资源收尾](../testing/evidence/P06-03/cleanup.json)、[秘密扫描和移除](../testing/evidence/P06-03/secret-cleanup-audit.json)。普通窗口页面可能变化，不将标题始终不变作为未证明结论。P07仍NOT_STARTED，不自动执行。

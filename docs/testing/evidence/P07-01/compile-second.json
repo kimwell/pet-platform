@@ -1,0 +1,12 @@
+{
+  "cwd": "/Users/kimwell/work/pet-platform/apps/backend",
+  "command": [
+    "./mvnw",
+    "-DskipTests",
+    "compile"
+  ],
+  "exitCode": 0,
+  "log": "compile-second.log",
+  "metadataSource": "本轮原始工具执行结果与日志补记；未补造时间",
+  "frozenToolchain": "NOT_VERIFIED; preliminary diagnosis only"
+}

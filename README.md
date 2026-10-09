@@ -2,7 +2,11 @@
 
 项目直接在 `/Users/kimwell/work/pet-platform` 建设，既有ui保留原位，不创建enterprise-app-scaffold子目录，不使用Product Delivery OS。后端固定 `com.pet.platform`，三端结构见文档；模板不包含宠物/订单等行业业务。
 
-**最新：P06-02 COMPLETE；P06整体IN_PROGRESS。** 权限呈现、强制改密与本人改密/全部设备退出已实现并真实联调；5个文件120项Web测试通过。原生窗口focus续验已确认可信可见focus、平台权限收缩与员工空间保全，G01～G14 PASS，详见[P06-02验证](docs/testing/P06-02-VERIFICATION.md)。下一建议为P06 Web阶段综合验收（建议拆为P06-03），只报告、不自动执行或提交/推送/部署。P06-01 COMPLETE、P05 COMPLETE；421项为最近完整后端基线，本轮没有后端/公开契约修改或完整后端回归。下方P01～P05旧描述保留阶段历史。P01 整体 COMPLETE，P02-01 COMPLETE；P02-02 已完成，工程基础验收见 [P02-02 验证报告](docs/testing/P02-02-VERIFICATION.md)。P02-02 COMPLETE，P02整体COMPLETE：后端、Web、基础设施真实启停及冻结微信工具npm/源码编译/模拟器入口通过；基础真机预览有用户反馈，完整P09验收尚未执行。P03-01 已 COMPLETE，公共响应/错误/trace/分页排序见 [P03-01 验证报告](docs/testing/P03-01-VERIFICATION.md)，P03-02、P03-03及P03整体 COMPLETE，完整标量/OpenAPI/类型与结构结果见 [P03-03](docs/testing/P03-03-VERIFICATION.md)。历史初始化结论见 [P02-01](docs/testing/P02-01-VERIFICATION.md)。三端最小工程、单锁、Wrapper、配置、CI 和本地 Compose 已建立；P03-02 已接入 PostgreSQL/JPA/Flyway 与持久化基础，P04隔离基础已完成；本轮已实现客户微信认证后端，真实外部认证仍待验证，完整用户/角色/租户 CRUD、附件和消息业务尚未实现。当前是Git仓库，P04-01启动时已有提交且工作区干净；本轮不自动提交/推送/发布/部署。
+**最新：P07-01 COMPLETE；P07 IN_PROGRESS；G01～G14 PASS。** 正式员工列表/详情、独立读取权限、TENANT/STORES/SELF、六字段DTO和受控分页查询完成；本轮完整后端455项（原421逐项保留+34）0失败/错误/跳过，OpenAPI三端生成/一致性及类型检查通过。见[员工读取契约](docs/contracts/EMPLOYEE-MANAGEMENT.md)与[P07-01验证](docs/testing/P07-01-VERIFICATION.md)。下一建议P07-02企业级员工列表页、URL筛选分页排序与查询状态基础，仅报告，不自动执行；未提交、推送或部署。
+
+**P06-03历史：P06-03 COMPLETE；P06 COMPLETE；G01～G14 PASS。** 25项覆盖矩阵对照原P06路线，补齐真实网络/取消、跨标签与限定窄屏/键盘验收，完成最小修复；5个文件127项Web测试、六项检查及diff/保全审计通过。见[P06-03验证](docs/testing/P06-03-VERIFICATION.md)与[P06总验收及P07接入](docs/testing/P06-ACCEPTANCE.md)。421项完整后端为历史，本轮只运行10项契约导出/模型检查。P07 NOT_STARTED，首项建议为员工管理后端查询与授权契约，不自动执行、提交、推送或部署。
+
+以下为此前阶段历史记录：P06-01 COMPLETE、P05 COMPLETE；421项为最近完整后端基线，本轮没有后端/公开契约修改或完整后端回归。下方P01～P05旧描述保留阶段历史。P01 整体 COMPLETE，P02-01 COMPLETE；P02-02 已完成，工程基础验收见 [P02-02 验证报告](docs/testing/P02-02-VERIFICATION.md)。P02-02 COMPLETE，P02整体COMPLETE：后端、Web、基础设施真实启停及冻结微信工具npm/源码编译/模拟器入口通过；基础真机预览有用户反馈，完整P09验收尚未执行。P03-01 已 COMPLETE，公共响应/错误/trace/分页排序见 [P03-01 验证报告](docs/testing/P03-01-VERIFICATION.md)，P03-02、P03-03及P03整体 COMPLETE，完整标量/OpenAPI/类型与结构结果见 [P03-03](docs/testing/P03-03-VERIFICATION.md)。历史初始化结论见 [P02-01](docs/testing/P02-01-VERIFICATION.md)。三端最小工程、单锁、Wrapper、配置、CI 和本地 Compose 已建立；P03-02 已接入 PostgreSQL/JPA/Flyway 与持久化基础，P04隔离基础已完成；本轮已实现客户微信认证后端，真实外部认证仍待验证，完整用户/角色/租户 CRUD、附件和消息业务尚未实现。当前是Git仓库，P04-01启动时已有提交且工作区干净；本轮不自动提交/推送/发布/部署。
 
 ## 阅读入口
 
@@ -36,7 +40,7 @@ cd apps/backend
 ./mvnw spring-boot:run -Dspring-boot.run.profiles=local
 ```
 
-Windows 使用 mvnw.cmd。无需全局 Maven，首次下载需网络；默认回环监听。后端已提供九条STAFF认证/凭据安全路径，其他企业业务Controller尚未开发；访问 / 返回标准错误信封404；/error仅为框架错误兜底。P03-02 已暴露 /actuator/health、/liveness、/readiness 工具格式健康端点，完整路径见本地开发；local 启动需要真实 PostgreSQL 和必填数据源配置。协议测试端点不会进入生产JAR。Java 不自动加载 .env；通过进程环境/外部 Spring 配置设置，prod 模板不提供开发回退或秘密值。
+Windows 使用 mvnw.cmd。无需全局 Maven，首次下载需网络；默认回环监听。后端沿用既有三身份认证及凭据安全路径，新增两条正式员工读取路径，详见[员工读取契约](docs/contracts/EMPLOYEE-MANAGEMENT.md)；其他企业管理Controller按后续任务开发；访问 / 返回标准错误信封404；/error仅为框架错误兜底。P03-02 已暴露 /actuator/health、/liveness、/readiness 工具格式健康端点，完整路径见本地开发；local 启动需要真实 PostgreSQL 和必填数据源配置。协议测试端点不会进入生产JAR。Java 不自动加载 .env；通过进程环境/外部 Spring 配置设置，prod 模板不提供开发回退或秘密值。
 
 小程序在根执行 `pnpm check:miniprogram`，然后用矩阵中的微信开发者工具导入 apps/wechat-miniprogram，复制私有配置示例、填写实际 AppID，执行“工具 → 构建 npm”，再编译。依赖统一由根 pnpm 安装，产物为 miniprogram/miniprogram_npm；TypeScript 转换由工具插件负责，typecheck 不是小程序真实编译。没有实际 AppID或目标工具时，工具编译/预览不能声明 PASS。
 
@@ -77,3 +81,7 @@ P04-03与P04整体 COMPLETE，当前范围与限制见[P04-03验证](docs/testin
 ## P05-05 客户微信认证
 
 正式CustomerSubject/WechatBinding、追加V4和受限角色、服务端入口配置/冻结WxJava Gateway、四客户接口、CUSTOMER Sa/Redis/SELF与三域隔离已落地。三端只生成类型，客户身份/会话HTTP以[IDENTITY](docs/contracts/IDENTITY.md#p05-05-客户正式接口2026-10-08)为准。应用默认关闭微信且无AppID/秘密默认；真实联调需安全外部配置和新鲜code。[P05-05报告](docs/testing/P05-05-VERIFICATION.md)区分自动化真实PG/Redis与外部Gateway替身、真实微信未执行、失败历史/门禁；[P05总验收](docs/testing/P05-ACCEPTANCE.md)保留剩余阶段限制。
+
+## P06-03 综合验收（2026-10-09）
+
+本轮已核对原P06/A06条件、补齐原生跨标签/连接失败/取消/390px/键盘及P07接入，修复入口、表单定位、菜单焦点、敏感草稿/退出通知和窄屏页头。P06-03/P06 COMPLETE，G01～G14 PASS，见[P06-03](docs/testing/P06-03-VERIFICATION.md)、[P06总验收及P07接入](docs/testing/P06-ACCEPTANCE.md)。本轮没有后端/契约/依赖改动，421项完整后端为历史；P07未启动，不提交/推送/部署。各早期IN_PROGRESS及P06-02的“下一P06-03”为当时历史，不删除或覆盖旧报告。

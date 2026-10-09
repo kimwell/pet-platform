@@ -1,0 +1,314 @@
+Window: "企业应用工程入口", App: Google Chrome.
+0 标准窗口 企业应用工程入口 - Google Chrome（无痕）, URL: 127.0.0.1:5173/admin/login?returnTo=%2Fadmin, Secondary Actions: Raise
+	1 container 企业应用工程入口 - Google Chrome（无痕）, URL: 127.0.0.1:5173/admin/login?returnTo=%2Fadmin
+		2 container
+			3 工具栏
+				4 按钮 返回
+				5 按钮 (disabled) 前进
+				6 按钮 重新加载
+				7 按钮 首页
+				8 container
+					9 弹出式按钮 查看网站信息
+					10 文本栏 (settable) 地址和搜索栏, Value: 127.0.0.1:5173/admin/login?returnTo=%2Fadmin, Placeholder: 在 百度 中搜索，或输入网址
+					11 按钮 为此标签页添加书签
+				12 按钮 无痕模式
+				13 弹出式按钮 Chrome
+			14 工具栏 书签
+				15 书签文件夹按钮 new
+				16 书签文件夹按钮 work
+				17 书签文件夹按钮 blog
+				18 书签文件夹按钮 ui
+				19 书签文件夹按钮 flutter
+				20 书签文件夹按钮 nodes
+				21 书签文件夹按钮 ai
+				22 书签文件夹按钮 git
+				23 书签按钮 百度一下，你就知道
+				24 书签按钮 Google
+				25 书签按钮 Errors & Outages — sentry — Sentry
+			26 container
+				27 滚动区
+					28 HTML 内容 DevTools, URL: devtools://devtools/bundled/devtools_app.html?remoteBase=https://chrome-devtools-frontend.appspot.com/serve_file/@b859317bf11f6be47f9b7799ec690a0a42a1fb33/&targetType=tab&can_dock=true
+						29 container
+							30 container
+								31 container
+									32 工具栏
+										33 文本 Dimensions:
+										34 弹出式按钮 Device type, Value: Responsive
+											35 (selected) Responsive
+										36 步进器 (settable, float) Width, Value: 390
+										37 文本 ×
+										38 步进器 (settable) Height (leave empty for full), Placeholder: 494
+										39 弹出式按钮 Zoom, Value: 100%
+											40 (selected) 100%
+										41 弹出式按钮 Throttling, Value: Disabled: No throttling
+											42 (selected) Disabled: No throttling
+										43 弹出式按钮 'Save-Data': default
+											44 (selected) 'Save-Data': default
+										45 按钮 Rotate
+									46 工具栏
+										47 按钮 More options
+									48 container
+								49 container
+									50 container Main toolbar
+										51 工具栏
+											52 container Select an element in the page to inspect it, Help: Select an element in the page to inspect it - ⌘ ⇧ C
+												53 切换按钮 Select an element in the page to inspect it - ⌘ ⇧ C, Value: 0
+											54 container Toggle device toolbar, Help: Toggle device toolbar - ⌘ ⇧ M
+												55 切换按钮 Toggle device toolbar - ⌘ ⇧ M, Value: 1
+										56 container
+											57 标签页组 Panels
+												58 标签 (settable, integer) Elements, Value: 0
+												59 标签 (selected) Console, Value: 1
+												60 标签 (settable, integer) Network, Value: 0
+												61 标签 (settable, integer) Application, Value: 0
+												62 标签 (settable, integer) Sources, Value: 0
+												63 标签 (settable, integer) Performance, Value: 0
+												64 标签 (settable, integer) Memory, Value: 0
+												65 标签 (settable, integer) Lighthouse, Value: 0
+										66 工具栏
+											67 container
+												68 container Open Console to view 5 errors, 2 warnings
+													69 按钮 Open Console to view 5 errors, 2 warnings
+												70 container Open Issues to view 3 issues: 3 possible improvements
+													71 按钮 Open Issues to view 3 issues: 3 possible improvements
+											72 按钮  AI assistance, Help: Open AI assistance panel
+											73 container Settings, Help: Settings - F1 - ⇧ ?
+												74 按钮 Settings - F1 - ⇧ ?
+											75 弹出式按钮 Customize and control DevTools
+												76 按钮 Customize and control DevTools
+											77 container Close
+												78 按钮 Close
+									79 container Console panel
+										80 container console
+											81 container
+												82 工具栏
+													83 container Show Console sidebar
+														84 按钮 Show Console sidebar
+													85 container Clear console, Help: Clear console - Ctrl L - ⌘ K
+														86 按钮 Clear console - Ctrl L - ⌘ K
+													87 container Collapse all
+														88 按钮 Collapse all
+													89 按钮 JavaScript context: top
+													90 container Create live expression
+														91 按钮 Create live expression
+													92 文本输入区 (settable) Filter
+														93 文本 Filter
+													94 弹出式按钮 Log level: Default levels
+														95 文本 Default levels
+													96 container Some problems no longer generate console messages, but are surfaced in the Issues tab. Click to view 3 possible improvements
+														97 按钮 Some problems no longer generate console messages, but are surfaced in the Issues tab. Click to view 3 possible improvements
+													98 文本 3 hidden
+													99 container Console settings
+														100 切换按钮 Console settings, Value: 0
+													101 container 0 messages in console
+												102 container
+													103 container
+														104 container %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools
+															105 container
+																106 文本 07:35:48.356
+																107 container  Download the React DevTools for a better development experience: https://react.dev/link/react-devtools Stack table collapsed
+																	108 container
+																		109 链接 chunk-72A2ILAT.js?v=3974157c:20103, Help: http://127.0.0.1:5173/node_modules/.vite/deps/chunk-72A2ILAT.js?v=3974157c:20103
+																			110 文本 chunk-72A2ILAT.js?v=3974157c:20103
+																		111 text Download the React DevTools for a better development experience: 
+																		112 链接 https://react.dev/link/react-devtools
+																			113 文本 https://react.dev/link/react-devtools
+														114 container
+															115 文本 07:35:59.355
+															116 text var p06FaultRouter =( await import ( '/src/app/router/router.ts' )). router ;  var p06FaultBefore = p06FaultRouter . routesById [ '/admin' ]. options . beforeLoad ;  p06FaultRouter . routesById [ '/admin' ]. options . beforeLoad =()=>{ throw new Error ( 'P06-03' )};  await p06FaultRouter . navigate ({ to : '/admin' });
+														117 container %o %s %s 
+															118 container
+																119 文本 07:35:59.889
+																120 container Error
+																121 container  The above error occurred in the <MatchInnerImpl> component. React will try to recreate this component tree from scratch using the error boundary you provided, CatchBoundary. Stack table collapsed
+																	122 container
+																		123 链接 SystemLayout.tsx:4, Help: http://127.0.0.1:5173/src/app/layout/SystemLayout.tsx:4
+																			124 文本 SystemLayout.tsx:4
+																		125 文本  
+																		126 文本 Error: P06-03
+																		127 文本 
+
+																		128 文本     at 
+																		129 文本 p06FaultRouter.routesById./admin.options.beforeLoad
+																		130 文本  (
+																		131 链接 <anonymous>:1:213, Help: <anonymous>
+																			132 文本 <anonymous>:1:213
+																		133 文本 )
+																		134 文本 
+
+																		135 文本 
+
+The above error occurred in the <MatchInnerImpl> component.
+
+React will try to recreate this component tree from scratch using the error boundary you provided, CatchBoundary.
+
+																	136 表格
+																		137 row
+																			138 单元格
+																				139 文本 Show ignore-listed frames
+														140 container Warning: Error in route match: __root__/
+															141 container
+																142 文本 07:35:59.890
+																143 container Warning
+																144 container  Warning: Error in route match: __root__/ Stack table collapsed
+																	145 container
+																		146 链接 main.tsx:13, Help: http://127.0.0.1:5173/src/main.tsx:13
+																			147 文本 main.tsx:13
+																		148 文本  
+																		149 文本 Warning: Error in route match: __root__/
+														150 container
+															151 文本 07:35:59.905
+															152 container undefined Stack table collapsed
+																153 文本 undefined
+														154 container
+															155 文本 07:36:44.575
+															156 text p06FaultRouter . routesById [ '/admin' ]. options . beforeLoad = p06FaultBefore ;
+														157 container
+															158 文本 07:36:44.578
+															159 container  Stack table collapsed
+																160 文本 ({ context, location }) => requireSession(context.auth, "STAFF", location.href)
+														161 container %o %s %s 
+															162 container
+																163 文本 07:36:47.550
+																164 container Error
+																165 container  The above error occurred in the <MatchInnerImpl> component. React will try to recreate this component tree from scratch using the error boundary you provided, CatchBoundary. Stack table collapsed
+																	166 container
+																		167 链接 SystemLayout.tsx:4, Help: http://127.0.0.1:5173/src/app/layout/SystemLayout.tsx:4
+																			168 文本 SystemLayout.tsx:4
+																		169 文本  
+																		170 文本 Error: P06-03
+																		171 文本 
+
+																		172 文本     at 
+																		173 文本 p06FaultRouter.routesById./admin.options.beforeLoad
+																		174 文本  (
+																		175 链接 <anonymous>:1:213, Help: <anonymous>
+																			176 文本 <anonymous>:1:213
+																		177 文本 )
+																		178 文本 
+
+																		179 文本 
+
+The above error occurred in the <MatchInnerImpl> component.
+
+React will try to recreate this component tree from scratch using the error boundary you provided, CatchBoundary.
+
+																	180 表格
+																		181 row
+																			182 单元格
+																				183 文本 Show ignore-listed frames
+															184 按钮 Understand this error
+														185 container Warning: Error in route match: __root__/
+															186 container
+																187 文本 07:36:47.551
+																188 container Warning
+																189 container  Warning: Error in route match: __root__/ Stack table collapsed
+																	190 container
+																		191 链接 main.tsx:13, Help: http://127.0.0.1:5173/src/main.tsx:13
+																			192 文本 main.tsx:13
+																		193 文本  
+																		194 文本 Warning: Error in route match: __root__/
+														195 container Failed to load resource: the server responded with a status of 401 (Unauthorized)
+															196 container
+																197 文本 07:36:47.585
+																198 container Error
+																199 container  GET http://127.0.0.1:5173/api/admin/auth/me 401 (Unauthorized) Stack table collapsed
+																	200 container
+																		201 链接 request.ts:29, Help: http://127.0.0.1:5173/src/shared/api/request.ts:29
+																			202 文本 request.ts:29
+																		203 文本  
+																		204 按钮 Click to open the Network panel and show request for URL: http://127.0.0.1:5173/api/admin/auth/me
+																		205 文本  
+																		206 文本 GET 
+																		207 链接 http://127.0.0.1:5173/api/admin/auth/me
+																			208 文本 http://127.0.0.1:5173/api/admin/auth/me
+																		209 文本  
+																		210 文本 401
+																		211 文本  (
+																		212 文本 Unauthorized
+																		213 文本 )
+														214 container Failed to load resource: the server responded with a status of 401 (Unauthorized)
+															215 container
+																216 文本 07:36:47.597
+																217 container Error
+																218 container  GET http://127.0.0.1:5173/api/admin/auth/me 401 (Unauthorized) Stack table collapsed
+																	219 container
+																		220 链接 request.ts:29, Help: http://127.0.0.1:5173/src/shared/api/request.ts:29
+																			221 文本 request.ts:29
+																		222 文本  
+																		223 按钮 Click to open the Network panel and show request for URL: http://127.0.0.1:5173/api/admin/auth/me
+																		224 文本  
+																		225 文本 GET 
+																		226 链接 http://127.0.0.1:5173/api/admin/auth/me
+																			227 文本 http://127.0.0.1:5173/api/admin/auth/me
+																		228 文本  
+																		229 文本 401
+																		230 文本  (
+																		231 文本 Unauthorized
+																		232 文本 )
+														233 container Failed to load resource: the server responded with a status of 401 (Unauthorized)
+															234 container
+																235 文本 07:36:47.650
+																236 container Error
+																237 container  GET http://127.0.0.1:5173/api/admin/auth/me 401 (Unauthorized) Stack table collapsed
+																	238 container
+																		239 链接 request.ts:29, Help: http://127.0.0.1:5173/src/shared/api/request.ts:29
+																			240 文本 request.ts:29
+																		241 文本  
+																		242 按钮 Click to open the Network panel and show request for URL: http://127.0.0.1:5173/api/admin/auth/me
+																		243 文本  
+																		244 文本 GET 
+																		245 链接 http://127.0.0.1:5173/api/admin/auth/me
+																			246 文本 http://127.0.0.1:5173/api/admin/auth/me
+																		247 文本  
+																		248 文本 401
+																		249 文本  (
+																		250 文本 Unauthorized
+																		251 文本 )
+													252 container
+														253 文本输入区 (settable) Console prompt, Value: 
+
+							254 文本 Console cleared 
+				255 滚动区
+					256 HTML 内容 企业应用工程入口, URL: 127.0.0.1:5173/admin/login?returnTo=%2Fadmin
+						257 container
+							258 link 企业应用, Value: 127.0.0.1:5173/
+							259 text 员工 入口
+							260 标题 员工登录, Value: 1
+								261 文本 员工登录
+							262 文本 使用所属租户的员工账号登录
+							263 container
+								264 文本 租户编码
+								265 文本栏 (settable) 租户编码
+								266 文本 账号
+								267 文本栏 (settable) 账号
+								268 文本 密码
+								269 安全文本栏 (settable) 密码
+								270 按钮 登 录
+								271 link 前往平台管理员登录, Value: 127.0.0.1:5173/platform/login
+			272 弹出式按钮 标签页搜索
+			273 container
+				274 标签页组
+					275 标签 (settable, boolean) 企业应用工程入口 - 内存用量 - 129 MB, Value: off
+						276 按钮 关闭
+					277 标签 (settable, boolean) 企业应用工程入口 - 内存用量 - 134 MB, Value: off
+						278 按钮 关闭
+					279 标签 (selected, settable, boolean) 企业应用工程入口 - 内存用量 - 305 MB, Value: on
+						280 按钮 关闭
+			281 按钮 新标签页
+	282 关闭按钮
+	283 全屏幕按钮 Help: 此按钮也可以执行缩放窗口的操作, Secondary Actions: 缩放窗口
+	284 最小化按钮
+285 menu bar
+	286 Chrome
+	287 文件
+	288 编辑
+	289 显示
+	290 历史记录
+	291 书签
+	292 个人资料
+	293 标签页
+	294 窗口
+	295 帮助
+
+The focused UI element is 256 HTML 内容 企业应用工程入口, URL: 127.0.0.1:5173/admin/login?returnTo=%2Fadmin

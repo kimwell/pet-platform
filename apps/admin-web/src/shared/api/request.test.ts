@@ -27,6 +27,13 @@ describe('统一fetch协议（受控网络替身）', () => {
     await expect(client.request('/admin/auth/login')).rejects.toMatchObject({ kind: 'HTTP', status: 422, code: 'VALIDATION_FAILED', fieldErrors: fields, traceId });
     try { await new RequestClient(vi.fn().mockResolvedValue(fail(429, 'RATE_LIMITED'))).request('/admin/auth/login'); } catch (error) { expect(errorText(error)).toContain('17 秒'); }
   });
+  it.each([
+    [400, 'BAD_REQUEST'], [401, 'SESSION_EXPIRED'], [403, 'PERMISSION_DENIED'],
+    [409, 'VERSION_CONFLICT'], [422, 'VALIDATION_FAILED'], [429, 'RATE_LIMITED'], [503, 'DEPENDENCY_UNAVAILABLE'],
+  ])('标准状态%d保留错误代码和trace，不转换为网络故障', async (status, code) => {
+    await expect(new RequestClient(vi.fn().mockResolvedValue(fail(status, code))).request('/admin/auth/me'))
+      .rejects.toMatchObject({ kind: 'HTTP', status, code, traceId });
+  });
   it.each([401, 502])('非JSON错误页%d不能冒充会话失效或显示HTML', async status => {
     const client = new RequestClient(vi.fn().mockResolvedValue(new Response('<html>内部配置</html>', { status, headers: { 'Content-Type': 'text/html' } })));
     await expect(client.request('/admin/auth/me')).rejects.toMatchObject({ kind: 'PROTOCOL', status, message: '服务响应格式异常，请稍后重试' });

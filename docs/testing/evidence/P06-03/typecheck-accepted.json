@@ -1,0 +1,13 @@
+{
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "command": [
+    "pnpm",
+    "--filter",
+    "@pet/admin-web",
+    "typecheck"
+  ],
+  "exitCode": 0,
+  "durationSeconds": 5.58,
+  "log": "typecheck-accepted.log",
+  "summary": "\n> @pet/admin-web@0.0.0 typecheck /Users/kimwell/work/pet-platform/apps/admin-web\n> tsc --noEmit\n\n"
+}

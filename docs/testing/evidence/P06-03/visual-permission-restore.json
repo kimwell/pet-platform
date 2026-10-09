@@ -1,0 +1,19 @@
+{
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "command": [
+    "docker",
+    "exec",
+    "-i",
+    "pet-p06-03-pg",
+    "psql",
+    "-U",
+    "postgres",
+    "-d",
+    "p06_03_acceptance",
+    "-v",
+    "ON_ERROR_STOP=1"
+  ],
+  "exitCode": 0,
+  "summary": "INSERT 0 1\nUPDATE 1\n",
+  "purpose": "只恢复专用技术账号原有权限，以补验平台真实主壳；无新用户/生产授权"
+}

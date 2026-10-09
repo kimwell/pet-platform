@@ -1,0 +1,10 @@
+{
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "command": [
+    "kill",
+    "-CONT",
+    "56356"
+  ],
+  "exitCode": 0,
+  "summary": "正式后端恢复；取消只证明客户端中止，不能证明服务端事务回滚"
+}

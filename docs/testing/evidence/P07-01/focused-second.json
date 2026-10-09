@@ -1,0 +1,15 @@
+{
+  "cwd": "/Users/kimwell/work/pet-platform/apps/backend",
+  "command": [
+    "./mvnw",
+    "-Dtest=StructureRulesTest,ProductionOpenApiExportTest",
+    "-Dit.test=EmployeeDirectoryIT,EmployeeReadMigrationIT",
+    "test",
+    "failsafe:integration-test",
+    "failsafe:verify"
+  ],
+  "exitCode": 1,
+  "log": "focused-second.log",
+  "metadataSource": "本轮原始工具执行结果与日志补记；未补造时间",
+  "frozenToolchain": "NOT_VERIFIED; preliminary diagnosis only"
+}

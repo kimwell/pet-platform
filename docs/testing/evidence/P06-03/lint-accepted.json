@@ -1,0 +1,13 @@
+{
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "command": [
+    "pnpm",
+    "--filter",
+    "@pet/admin-web",
+    "lint"
+  ],
+  "exitCode": 0,
+  "durationSeconds": 5.12,
+  "log": "lint-accepted.log",
+  "summary": "\n> @pet/admin-web@0.0.0 lint /Users/kimwell/work/pet-platform/apps/admin-web\n> eslint src vite.config.ts dev-config.ts --max-warnings=0\n\n"
+}

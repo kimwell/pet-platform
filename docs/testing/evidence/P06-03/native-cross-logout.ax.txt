@@ -1,0 +1,69 @@
+Window: "企业应用工程入口", App: Google Chrome.
+0 标准窗口 企业应用工程入口 - Google Chrome（无痕）, URL: 127.0.0.1:5173/admin/login?returnTo=%2Fadmin%2Fsecurity, Secondary Actions: Raise
+	1 container 企业应用工程入口 - Google Chrome（无痕）, URL: 127.0.0.1:5173/admin/login?returnTo=%2Fadmin%2Fsecurity
+		2 container
+			3 工具栏
+				4 按钮 返回
+				5 按钮 (disabled) 前进
+				6 按钮 重新加载
+				7 按钮 首页
+				8 container
+					9 弹出式按钮 查看网站信息
+					10 文本栏 (settable) 地址和搜索栏, Value: 127.0.0.1:5173/admin/login?returnTo=%2Fadmin%2Fsecurity, Placeholder: 在 百度 中搜索，或输入网址
+					11 按钮 为此标签页添加书签
+				12 按钮 无痕模式
+				13 弹出式按钮 Chrome
+			14 工具栏 书签
+				15 书签文件夹按钮 new
+				16 书签文件夹按钮 work
+				17 书签文件夹按钮 blog
+				18 书签文件夹按钮 ui
+				19 书签文件夹按钮 flutter
+				20 书签文件夹按钮 nodes
+				21 书签文件夹按钮 ai
+				22 书签文件夹按钮 git
+				23 书签按钮 百度一下，你就知道
+				24 书签按钮 Google
+				25 书签按钮 Errors & Outages — sentry — Sentry
+			26 container
+				27 滚动区
+					28 HTML 内容 企业应用工程入口, URL: 127.0.0.1:5173/admin/login?returnTo=%2Fadmin%2Fsecurity
+						29 container
+							30 link 企业应用, Value: 127.0.0.1:5173/
+							31 text 员工 入口
+							32 标题 员工登录, Value: 1
+								33 文本 员工登录
+							34 文本 使用所属租户的员工账号登录
+							35 container
+								36 文本 租户编码
+								37 文本栏 (settable) 租户编码
+								38 文本 账号
+								39 文本栏 (settable) 账号
+								40 文本 密码
+								41 安全文本栏 (settable) 密码
+								42 按钮 登 录
+								43 link 前往平台管理员登录, Value: 127.0.0.1:5173/platform/login
+			44 弹出式按钮 标签页搜索
+			45 container
+				46 标签页组
+					47 标签 (selected, settable, boolean) 企业应用工程入口 - 内存用量 - 108 MB, Value: on
+						48 按钮 关闭
+					49 标签 (settable, boolean) 企业应用工程入口 - 内存用量 - 97.7 MB, Value: off
+						50 按钮 关闭
+			51 按钮 新标签页
+	52 关闭按钮
+	53 全屏幕按钮 Help: 此按钮也可以执行缩放窗口的操作, Secondary Actions: 缩放窗口
+	54 最小化按钮
+55 menu bar
+	56 Chrome
+	57 文件
+	58 编辑
+	59 显示
+	60 历史记录
+	61 书签
+	62 个人资料
+	63 标签页
+	64 窗口
+	65 帮助
+
+The focused UI element is 28 HTML 内容 企业应用工程入口, URL: 127.0.0.1:5173/admin/login?returnTo=%2Fadmin%2Fsecurity

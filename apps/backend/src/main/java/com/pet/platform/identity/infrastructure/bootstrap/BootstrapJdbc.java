@@ -9,6 +9,21 @@ import java.util.UUID;
 public final class BootstrapJdbc implements BootstrapWriter {
     private final Map<String,String> environment;
     public BootstrapJdbc(Map<String,String> environment) { this.environment=Map.copyOf(environment); }
+    /** 只补充指定租户保留角色的详情读取，不接受权限/角色/范围参数。 */
+    public int upgradeEmployeeRead(UUID tenantId) {
+        try(var c=CommandDatabase.connect(environment,"PET_BOOTSTRAP","pet_bootstrap")) {
+            c.setAutoCommit(false);
+            try {
+                try(var s=c.createStatement()) { s.execute("SET LOCAL ROLE pet_bootstrap"); }
+                int changed;
+                try(var q=c.prepareStatement("select pet_identity.upgrade_employee_read(?)")) {
+                    q.setObject(1,tenantId);
+                    try(var r=q.executeQuery()) { r.next();changed=r.getInt(1); }
+                }
+                c.commit();return changed;
+            } catch(SQLException | RuntimeException failure) { c.rollback();throw failure; }
+        } catch(SQLException failure) { throw new IllegalStateException("员工读取权限补充未确认成功；请核查独立初始化角色、迁移及保留管理员角色"); }
+    }
     @Override public BootstrapResult initialize(String code,String name,String login,String hash,String storeCode,String storeName) {
         try(var c=CommandDatabase.connect(environment,"PET_BOOTSTRAP","pet_bootstrap")) {
             c.setAutoCommit(false);

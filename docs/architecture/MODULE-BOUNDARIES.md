@@ -1,6 +1,8 @@
 # 后端模块边界
 
-当前实施状态见本文最新P05章节及[P05-03验证](../testing/P05-03-VERIFICATION.md)。旧阶段“尚未实现”描述保留为历史范围；冻结安全契约不变。
+P07-01身份模块已实现EmployeeDirectory/EmployeeQueryStore固定应用读取契约、EmployeeView投影及identity.infrastructure.EmployeeQueries；shared只提供无具体模块依赖的范围/DTO查询基础。实际字段与权限见[员工读取契约](../contracts/EMPLOYEE-MANAGEMENT.md)。
+
+当前员工读取实施见[P07-01验证](../testing/P07-01-VERIFICATION.md)，身份装配沿用文末P05章节。旧阶段“尚未实现”描述保留为历史范围；冻结安全契约不变。
 冻结日期：2026-10-07，P01-02。本文拥有职责、数据归属、依赖和事务边界。一个 Spring Boot 应用、一个 Maven Module、一个 PostgreSQL 主库；使用 JPA/Flyway，不增加服务或独立数据库。包及目录见 [工程结构](PROJECT-STRUCTURE.md)。
 
 接口名均是拟定契约名，不代表已有 Java 类型；只在真实用例需要时创建，输出稳定 DTO，不泄露 Entity/Repository/凭据或 SDK 对象。

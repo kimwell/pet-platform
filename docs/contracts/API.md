@@ -1,6 +1,6 @@
 # API、错误与写入协议
 
-冻结日期：2026-10-07，P01-02。本文是 HTTP分区、响应、错误、追踪、写入和批量行为的权威定义。业务接口仍未实现；P03-01 已落地公共响应、异常与 trace，示例只说明协议，不提供生产演示接口。分页和标量分别见 [分页](PAGINATION.md)、[数据类型](DATA-TYPES.md)。
+冻结日期：2026-10-07，P01-02。本文是 HTTP分区、响应、错误、追踪、写入和批量行为的权威定义。P03-01 已落地公共响应、异常与 trace；P07-01正式员工读取见[员工契约](EMPLOYEE-MANAGEMENT.md)，原冻结示例只说明协议，不提供生产演示接口。分页和标量分别见 [分页](PAGINATION.md)、[数据类型](DATA-TYPES.md)。
 
 ## 分区与接口索引
 
@@ -13,6 +13,8 @@
 | /api/integrations/attachments/access/{ticket} | 受限附件票据兑换 | 专用凭据例外，见[附件](ATTACHMENTS.md) |
 
 员工小程序复用 /api/admin，因为身份域、操作权限、数据范围和资源归属完全相同；不得复制一个权限宽松的mobile API。基础接口清单分别在 [身份](IDENTITY.md)、[附件](ATTACHMENTS.md)、[任务](ASYNC-TASKS.md) 定义；不在此复制参数形成竞争事实源。租户/门店/员工/角色 CRUD 在后续实施按 owner schema登记，本轮不伪造完整业务接口。
+
+P07-01正式员工列表/详情读取位于`/api/admin/identity/users`及其ID子资源，独立list/detail权限与多对多范围、字段、错误及排序唯一见[员工管理读取](EMPLOYEE-MANAGEMENT.md)。历史“尚未实现业务接口”为此前阶段边界；本轮没有新增创建/修改/停用或完整CRUD。
 
 ## 响应与状态
 

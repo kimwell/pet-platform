@@ -1,0 +1,407 @@
+[
+  {
+    "name": "api-types",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "pnpm",
+      "--filter",
+      "@pet/api-contracts",
+      "typecheck"
+    ],
+    "toolchain": {
+      "JAVA_HOME": "/Users/kimwell/.vscode/extensions/redhat.java-1.56.0-darwin-arm64/jre/21.0.12.1-macosx-aarch64",
+      "nodeBin": "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/tools/node-v24.21.0-darwin-arm64/bin",
+      "pnpmBin": "/tmp/pet-p07-tools/bin"
+    },
+    "exitCode": 0,
+    "startedAt": "2026-10-09T00:22:21.847266+00:00",
+    "completedAt": "2026-10-09T00:22:23.031110+00:00",
+    "log": "api-types.log"
+  },
+  {
+    "name": "artifact-final",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "python3",
+      "/tmp/pet-p07-artifact.py"
+    ],
+    "toolchain": {
+      "JAVA_HOME": "/Users/kimwell/.vscode/extensions/redhat.java-1.56.0-darwin-arm64/jre/21.0.12.1-macosx-aarch64",
+      "nodeBin": "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/tools/node-v24.21.0-darwin-arm64/bin",
+      "pnpmBin": "/tmp/pet-p07-tools/bin"
+    },
+    "exitCode": 0,
+    "startedAt": "2026-10-09T00:27:24.660109+00:00",
+    "completedAt": "2026-10-09T00:27:24.915619+00:00",
+    "log": "artifact-final.log"
+  },
+  {
+    "name": "audit-complete",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "python3",
+      "/tmp/pet-p07-audit.py"
+    ],
+    "toolchain": {
+      "JAVA_HOME": "/Users/kimwell/.vscode/extensions/redhat.java-1.56.0-darwin-arm64/jre/21.0.12.1-macosx-aarch64",
+      "nodeBin": "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/tools/node-v24.21.0-darwin-arm64/bin",
+      "pnpmBin": "/tmp/pet-p07-tools/bin"
+    },
+    "exitCode": 0,
+    "startedAt": "2026-10-09T00:27:25.012350+00:00",
+    "completedAt": "2026-10-09T00:27:26.136349+00:00",
+    "log": "audit-complete.log"
+  },
+  {
+    "name": "audit-final",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "python3",
+      "/tmp/pet-p07-audit.py"
+    ],
+    "toolchain": {
+      "JAVA_HOME": "/Users/kimwell/.vscode/extensions/redhat.java-1.56.0-darwin-arm64/jre/21.0.12.1-macosx-aarch64",
+      "nodeBin": "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/tools/node-v24.21.0-darwin-arm64/bin",
+      "pnpmBin": "/tmp/pet-p07-tools/bin"
+    },
+    "exitCode": 0,
+    "startedAt": "2026-10-09T00:25:10.845894+00:00",
+    "completedAt": "2026-10-09T00:25:11.930400+00:00",
+    "log": "audit-final.log"
+  },
+  {
+    "name": "audit-first",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "python3",
+      "/tmp/pet-p07-audit.py"
+    ],
+    "toolchain": {
+      "JAVA_HOME": "/Users/kimwell/.vscode/extensions/redhat.java-1.56.0-darwin-arm64/jre/21.0.12.1-macosx-aarch64",
+      "nodeBin": "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/tools/node-v24.21.0-darwin-arm64/bin",
+      "pnpmBin": "/tmp/pet-p07-tools/bin"
+    },
+    "exitCode": 1,
+    "startedAt": "2026-10-09T00:24:48.788095+00:00",
+    "completedAt": "2026-10-09T00:24:49.874597+00:00",
+    "log": "audit-first.log"
+  },
+  {
+    "name": "compile-first",
+    "cwd": "/Users/kimwell/work/pet-platform/apps/backend",
+    "command": [
+      "./mvnw",
+      "-DskipTests",
+      "compile"
+    ],
+    "exitCode": 1,
+    "log": "compile-first.log",
+    "metadataSource": "本轮原始工具执行结果与日志补记；未补造时间",
+    "frozenToolchain": "NOT_VERIFIED; preliminary diagnosis only"
+  },
+  {
+    "name": "compile-second",
+    "cwd": "/Users/kimwell/work/pet-platform/apps/backend",
+    "command": [
+      "./mvnw",
+      "-DskipTests",
+      "compile"
+    ],
+    "exitCode": 0,
+    "log": "compile-second.log",
+    "metadataSource": "本轮原始工具执行结果与日志补记；未补造时间",
+    "frozenToolchain": "NOT_VERIFIED; preliminary diagnosis only"
+  },
+  {
+    "name": "contracts-check",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "pnpm",
+      "contracts:check"
+    ],
+    "toolchain": {
+      "JAVA_HOME": "/Users/kimwell/.vscode/extensions/redhat.java-1.56.0-darwin-arm64/jre/21.0.12.1-macosx-aarch64",
+      "nodeBin": "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/tools/node-v24.21.0-darwin-arm64/bin",
+      "pnpmBin": "/tmp/pet-p07-tools/bin"
+    },
+    "exitCode": 0,
+    "startedAt": "2026-10-09T00:22:20.676825+00:00",
+    "completedAt": "2026-10-09T00:22:38.883012+00:00",
+    "log": "contracts-check.log"
+  },
+  {
+    "name": "contracts-generate",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "pnpm",
+      "contracts:generate"
+    ],
+    "toolchain": {
+      "JAVA_HOME": "/Users/kimwell/.vscode/extensions/redhat.java-1.56.0-darwin-arm64/jre/21.0.12.1-macosx-aarch64",
+      "nodeBin": "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/tools/node-v24.21.0-darwin-arm64/bin",
+      "pnpmBin": "/tmp/pet-p07-tools/bin"
+    },
+    "exitCode": 0,
+    "startedAt": "2026-10-09T00:21:42.221322+00:00",
+    "completedAt": "2026-10-09T00:22:00.779884+00:00",
+    "log": "contracts-generate.log"
+  },
+  {
+    "name": "contracts-tests",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "pnpm",
+      "contracts:test"
+    ],
+    "toolchain": {
+      "JAVA_HOME": "/Users/kimwell/.vscode/extensions/redhat.java-1.56.0-darwin-arm64/jre/21.0.12.1-macosx-aarch64",
+      "nodeBin": "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/tools/node-v24.21.0-darwin-arm64/bin",
+      "pnpmBin": "/tmp/pet-p07-tools/bin"
+    },
+    "exitCode": 0,
+    "startedAt": "2026-10-09T00:22:21.847265+00:00",
+    "completedAt": "2026-10-09T00:22:22.773086+00:00",
+    "log": "contracts-tests.log"
+  },
+  {
+    "name": "focused-first",
+    "cwd": "/Users/kimwell/work/pet-platform/apps/backend",
+    "command": [
+      "./mvnw",
+      "-Dtest=StructureRulesTest,ProductionOpenApiExportTest",
+      "-Dit.test=EmployeeDirectoryIT",
+      "test-compile",
+      "failsafe:integration-test",
+      "failsafe:verify"
+    ],
+    "exitCode": 1,
+    "log": "focused-first.log",
+    "metadataSource": "本轮原始工具执行结果与日志补记；未补造时间",
+    "frozenToolchain": "NOT_VERIFIED; preliminary diagnosis only"
+  },
+  {
+    "name": "focused-fourth",
+    "cwd": "/Users/kimwell/work/pet-platform/apps/backend",
+    "command": [
+      "./mvnw",
+      "clean",
+      "-Dtest=StructureRulesTest,ProductionOpenApiExportTest",
+      "-Dit.test=EmployeeDirectoryIT,EmployeeReadMigrationIT",
+      "test",
+      "failsafe:integration-test",
+      "failsafe:verify"
+    ],
+    "exitCode": 1,
+    "startedAt": "2026-10-09T00:08:49.083362+00:00",
+    "completedAt": "2026-10-09T00:09:35.385939+00:00",
+    "log": "focused-fourth.log"
+  },
+  {
+    "name": "focused-second",
+    "cwd": "/Users/kimwell/work/pet-platform/apps/backend",
+    "command": [
+      "./mvnw",
+      "-Dtest=StructureRulesTest,ProductionOpenApiExportTest",
+      "-Dit.test=EmployeeDirectoryIT,EmployeeReadMigrationIT",
+      "test",
+      "failsafe:integration-test",
+      "failsafe:verify"
+    ],
+    "exitCode": 1,
+    "log": "focused-second.log",
+    "metadataSource": "本轮原始工具执行结果与日志补记；未补造时间",
+    "frozenToolchain": "NOT_VERIFIED; preliminary diagnosis only"
+  },
+  {
+    "name": "focused-third",
+    "cwd": "/Users/kimwell/work/pet-platform/apps/backend",
+    "command": [
+      "./mvnw",
+      "-Dtest=StructureRulesTest,ProductionOpenApiExportTest",
+      "-Dit.test=EmployeeDirectoryIT,EmployeeReadMigrationIT",
+      "test",
+      "failsafe:integration-test",
+      "failsafe:verify"
+    ],
+    "exitCode": 1,
+    "startedAt": "2026-10-09T00:06:22.871199+00:00",
+    "completedAt": "2026-10-09T00:06:41.228893+00:00",
+    "log": "focused-third.log"
+  },
+  {
+    "name": "mini-types",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "pnpm",
+      "--filter",
+      "@pet/wechat-miniprogram",
+      "typecheck"
+    ],
+    "toolchain": {
+      "JAVA_HOME": "/Users/kimwell/.vscode/extensions/redhat.java-1.56.0-darwin-arm64/jre/21.0.12.1-macosx-aarch64",
+      "nodeBin": "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/tools/node-v24.21.0-darwin-arm64/bin",
+      "pnpmBin": "/tmp/pet-p07-tools/bin"
+    },
+    "exitCode": 0,
+    "startedAt": "2026-10-09T00:22:21.847223+00:00",
+    "completedAt": "2026-10-09T00:22:23.134918+00:00",
+    "log": "mini-types.log"
+  },
+  {
+    "name": "package-check",
+    "cwd": "/Users/kimwell/work/pet-platform/apps/backend",
+    "command": [
+      "./mvnw",
+      "-Dit.test=ProductionArtifactIT,EmployeeReadUpgradeRuntimeIT",
+      "failsafe:integration-test",
+      "failsafe:verify"
+    ],
+    "toolchain": {
+      "JAVA_HOME": "/Users/kimwell/.vscode/extensions/redhat.java-1.56.0-darwin-arm64/jre/21.0.12.1-macosx-aarch64",
+      "nodeBin": "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/tools/node-v24.21.0-darwin-arm64/bin",
+      "pnpmBin": "/tmp/pet-p07-tools/bin"
+    },
+    "exitCode": 0,
+    "startedAt": "2026-10-09T00:26:03.907468+00:00",
+    "completedAt": "2026-10-09T00:26:11.042458+00:00",
+    "log": "package-check.log"
+  },
+  {
+    "name": "package-final",
+    "cwd": "/Users/kimwell/work/pet-platform/apps/backend",
+    "command": [
+      "./mvnw",
+      "-DskipTests",
+      "package"
+    ],
+    "toolchain": {
+      "JAVA_HOME": "/Users/kimwell/.vscode/extensions/redhat.java-1.56.0-darwin-arm64/jre/21.0.12.1-macosx-aarch64",
+      "nodeBin": "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/tools/node-v24.21.0-darwin-arm64/bin",
+      "pnpmBin": "/tmp/pet-p07-tools/bin"
+    },
+    "exitCode": 0,
+    "startedAt": "2026-10-09T00:25:48.480073+00:00",
+    "completedAt": "2026-10-09T00:25:52.247201+00:00",
+    "log": "package-final.log"
+  },
+  {
+    "name": "repo-check",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "pnpm",
+      "check:repo"
+    ],
+    "toolchain": {
+      "JAVA_HOME": "/Users/kimwell/.vscode/extensions/redhat.java-1.56.0-darwin-arm64/jre/21.0.12.1-macosx-aarch64",
+      "nodeBin": "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/tools/node-v24.21.0-darwin-arm64/bin",
+      "pnpmBin": "/tmp/pet-p07-tools/bin"
+    },
+    "exitCode": 0,
+    "startedAt": "2026-10-09T00:24:06.427171+00:00",
+    "completedAt": "2026-10-09T00:24:07.049430+00:00",
+    "log": "repo-check.log"
+  },
+  {
+    "name": "snapshot-final",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "python3",
+      "/tmp/pet-p07-snapshot.py"
+    ],
+    "toolchain": {
+      "JAVA_HOME": "/Users/kimwell/.vscode/extensions/redhat.java-1.56.0-darwin-arm64/jre/21.0.12.1-macosx-aarch64",
+      "nodeBin": "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/tools/node-v24.21.0-darwin-arm64/bin",
+      "pnpmBin": "/tmp/pet-p07-tools/bin"
+    },
+    "exitCode": 0,
+    "startedAt": "2026-10-09T00:21:41.782768+00:00",
+    "completedAt": "2026-10-09T00:21:42.144359+00:00",
+    "log": "snapshot-final.log"
+  },
+  {
+    "name": "toolchain-final",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "python3",
+      "-c",
+      "import subprocess; [subprocess.run(x,check=True) for x in ((\"java\",\"-version\"),(\"javac\",\"-version\"),(\"node\",\"--version\"),(\"pnpm\",\"--version\"),(\"apps/backend/mvnw\",\"-version\"))]"
+    ],
+    "toolchain": {
+      "JAVA_HOME": "/Users/kimwell/.vscode/extensions/redhat.java-1.56.0-darwin-arm64/jre/21.0.12.1-macosx-aarch64",
+      "nodeBin": "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/tools/node-v24.21.0-darwin-arm64/bin",
+      "pnpmBin": "/tmp/pet-p07-tools/bin"
+    },
+    "exitCode": 0,
+    "startedAt": "2026-10-09T00:17:30.605441+00:00",
+    "completedAt": "2026-10-09T00:17:32.142631+00:00",
+    "log": "toolchain-final.log"
+  },
+  {
+    "name": "toolchain",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "python3",
+      "-c",
+      "import subprocess; [subprocess.run(x,check=True) for x in ((\"java\",\"-version\"),(\"javac\",\"-version\"),(\"node\",\"--version\"),(\"pnpm\",\"--version\"),(\"apps/backend/mvnw\",\"-version\"))]"
+    ],
+    "toolchain": {
+      "JAVA_HOME": "/Users/kimwell/.vscode/extensions/redhat.java-1.56.0-darwin-arm64/jre/21.0.12.1-macosx-aarch64",
+      "nodeBin": "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/tools/node-v24.21.0-darwin-arm64/bin",
+      "pnpmBin": "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/pet-platform-p02-02-_qb1x3n7/bin"
+    },
+    "exitCode": 1,
+    "startedAt": "2026-10-09T00:17:08.199418+00:00",
+    "completedAt": "2026-10-09T00:17:08.626577+00:00",
+    "log": "toolchain.log"
+  },
+  {
+    "name": "verify-final",
+    "cwd": "/Users/kimwell/work/pet-platform/apps/backend",
+    "command": [
+      "./mvnw",
+      "clean",
+      "verify"
+    ],
+    "toolchain": {
+      "JAVA_HOME": "/Users/kimwell/.vscode/extensions/redhat.java-1.56.0-darwin-arm64/jre/21.0.12.1-macosx-aarch64",
+      "nodeBin": "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/tools/node-v24.21.0-darwin-arm64/bin",
+      "pnpmBin": "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/pet-platform-p02-02-_qb1x3n7/bin"
+    },
+    "exitCode": 0,
+    "startedAt": "2026-10-09T00:17:14.901580+00:00",
+    "completedAt": "2026-10-09T00:20:47.071345+00:00",
+    "log": "verify-final.log"
+  },
+  {
+    "name": "verify-first",
+    "cwd": "/Users/kimwell/work/pet-platform/apps/backend",
+    "command": [
+      "./mvnw",
+      "clean",
+      "verify"
+    ],
+    "exitCode": 1,
+    "startedAt": "2026-10-09T00:11:28.186042+00:00",
+    "completedAt": "2026-10-09T00:15:25.980447+00:00",
+    "log": "verify-first.log"
+  },
+  {
+    "name": "web-types",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "pnpm",
+      "--filter",
+      "@pet/admin-web",
+      "typecheck"
+    ],
+    "toolchain": {
+      "JAVA_HOME": "/Users/kimwell/.vscode/extensions/redhat.java-1.56.0-darwin-arm64/jre/21.0.12.1-macosx-aarch64",
+      "nodeBin": "/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/enterprise-scaffold-p01-01-plwt53cm/tools/node-v24.21.0-darwin-arm64/bin",
+      "pnpmBin": "/tmp/pet-p07-tools/bin"
+    },
+    "exitCode": 0,
+    "startedAt": "2026-10-09T00:22:21.847228+00:00",
+    "completedAt": "2026-10-09T00:22:24.749222+00:00",
+    "log": "web-types.log"
+  }
+]

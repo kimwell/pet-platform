@@ -1,0 +1,15 @@
+{
+  "cwd": "/Users/kimwell/work/pet-platform/apps/backend",
+  "command": [
+    "./mvnw",
+    "-Dtest=StructureRulesTest,ProductionOpenApiExportTest",
+    "-Dit.test=EmployeeDirectoryIT,EmployeeReadMigrationIT",
+    "test",
+    "failsafe:integration-test",
+    "failsafe:verify"
+  ],
+  "exitCode": 1,
+  "startedAt": "2026-10-09T00:06:22.871199+00:00",
+  "completedAt": "2026-10-09T00:06:41.228893+00:00",
+  "log": "focused-third.log"
+}

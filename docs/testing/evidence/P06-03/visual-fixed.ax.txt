@@ -1,0 +1,239 @@
+Window: "企业应用工程入口", App: Google Chrome.
+0 标准窗口 企业应用工程入口 - Google Chrome（无痕）, URL: 127.0.0.1:5173/platform, Secondary Actions: Raise
+	1 container 企业应用工程入口 - Google Chrome（无痕）, URL: 127.0.0.1:5173/platform
+		2 container
+			3 工具栏
+				4 按钮 返回
+				5 按钮 (disabled) 前进
+				6 按钮 重新加载
+				7 按钮 首页
+				8 container
+					9 弹出式按钮 查看网站信息
+					10 文本栏 (settable) 地址和搜索栏, Value: 127.0.0.1:5173/platform, Placeholder: 在 百度 中搜索，或输入网址
+					11 按钮 为此标签页添加书签
+				12 按钮 无痕模式
+				13 弹出式按钮 Chrome
+			14 工具栏 书签
+				15 书签文件夹按钮 new
+				16 书签文件夹按钮 work
+				17 书签文件夹按钮 blog
+				18 书签文件夹按钮 ui
+				19 书签文件夹按钮 flutter
+				20 书签文件夹按钮 nodes
+				21 书签文件夹按钮 ai
+				22 书签文件夹按钮 git
+				23 书签按钮 百度一下，你就知道
+				24 书签按钮 Google
+				25 书签按钮 Errors & Outages — sentry — Sentry
+			26 container
+				27 滚动区
+					28 HTML 内容 DevTools, URL: devtools://devtools/bundled/devtools_app.html?remoteBase=https://chrome-devtools-frontend.appspot.com/serve_file/@b859317bf11f6be47f9b7799ec690a0a42a1fb33/&targetType=tab&can_dock=true
+						29 container
+							30 container
+								31 container
+									32 工具栏
+										33 文本 Dimensions:
+										34 弹出式按钮 Device type, Value: Responsive
+											35 (selected) Responsive
+										36 步进器 (settable, float) Width, Value: 390
+										37 文本 ×
+										38 步进器 (settable) Height (leave empty for full), Placeholder: 494
+										39 弹出式按钮 Zoom, Value: 100%
+											40 (selected) 100%
+										41 弹出式按钮 Throttling, Value: Disabled: No throttling
+											42 (selected) Disabled: No throttling
+										43 弹出式按钮 'Save-Data': default
+											44 (selected) 'Save-Data': default
+										45 按钮 Rotate
+									46 工具栏
+										47 按钮 More options
+									48 container
+								49 container
+									50 container Main toolbar
+										51 工具栏
+											52 container Select an element in the page to inspect it, Help: Select an element in the page to inspect it - ⌘ ⇧ C
+												53 切换按钮 Select an element in the page to inspect it - ⌘ ⇧ C, Value: 0
+											54 container Toggle device toolbar, Help: Toggle device toolbar - ⌘ ⇧ M
+												55 切换按钮 Toggle device toolbar - ⌘ ⇧ M, Value: 1
+										56 container
+											57 标签页组 Panels
+												58 标签 (settable, integer) Elements, Value: 0
+												59 标签 (selected) Console, Value: 1
+												60 标签 (settable, integer) Network, Value: 0
+												61 标签 (settable, integer) Application, Value: 0
+												62 标签 (settable, integer) Sources, Value: 0
+												63 标签 (settable, integer) Performance, Value: 0
+												64 标签 (settable, integer) Memory, Value: 0
+												65 标签 (settable, integer) Lighthouse, Value: 0
+										66 工具栏
+											67 container Open Console to view 4 errors
+												68 按钮 Open Console to view 4 errors
+											69 按钮  AI assistance, Help: Open AI assistance panel
+											70 container Settings, Help: Settings - F1 - ⇧ ?
+												71 按钮 Settings - F1 - ⇧ ?
+											72 弹出式按钮 Customize and control DevTools
+												73 按钮 Customize and control DevTools
+											74 container Close
+												75 按钮 Close
+									76 container Console panel
+										77 container console
+											78 container
+												79 工具栏
+													80 container Show Console sidebar
+														81 按钮 Show Console sidebar
+													82 container Clear console, Help: Clear console - Ctrl L - ⌘ K
+														83 按钮 Clear console - Ctrl L - ⌘ K
+													84 container Expand all
+														85 按钮 Expand all
+													86 按钮 JavaScript context: top
+													87 container Create live expression
+														88 按钮 Create live expression
+													89 文本输入区 (settable) Filter
+														90 文本 Filter
+													91 弹出式按钮 Log level: Default levels
+														92 文本 Default levels
+													93 container Some problems no longer generate console messages, but are surfaced in the Issues tab. Click to go to the Issues tab
+														94 按钮 Some problems no longer generate console messages, but are surfaced in the Issues tab. Click to go to the Issues tab
+													95 文本 2 hidden
+													96 container Console settings
+														97 切换按钮 Console settings, Value: 0
+													98 container 7 messages in console
+												99 container
+													100 container
+														101 container %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools
+															102 container
+																103 文本 07:39:20.434
+																104 container  Download the React DevTools for a better development experience: https://react.dev/link/react-devtools Stack table collapsed
+																	105 container
+																		106 按钮 chunk-72A2ILAT.js?v=3974157c:20103, Help: http://127.0.0.1:5173/node_modules/.vite/deps/chunk-72A2ILAT.js?v=3974157c:20103
+																		107 text Download the React DevTools for a better development experience: 
+																		108 链接 https://react.dev/link/react-devtools
+																			109 文本 https://react.dev/link/react-devtools
+														110 container Failed to load resource: the server responded with a status of 404 (Not Found)
+															111 container
+																112 文本 07:39:20.500
+																113 container Error
+																114 container favicon.ico:1 Failed to load resource: the server responded with a status of 404 (Not Found) Stack table collapsed
+																	115 container
+																		116 链接 favicon.ico:1, Help: http://127.0.0.1:5173/favicon.ico
+																			117 文本 favicon.ico:1
+																		118 文本  
+																		119 按钮 Request unavailable in the Network panel. Try reloading the inspected page
+																		120 text Failed to load resource: the server responded with a status of 404 (Not Found)
+														121 container Failed to load resource: the server responded with a status of 401 (Unauthorized)
+															122 container
+																123 文本 07:39:20.508
+																124 container Error
+																125 container api/platform/auth/me:1 Failed to load resource: the server responded with a status of 401 (Unauthorized) Stack table collapsed
+																	126 container
+																		127 链接 api/platform/auth/me:1, Help: http://127.0.0.1:5173/api/platform/auth/me
+																			128 文本 api/platform/auth/me:1
+																		129 文本  
+																		130 按钮 Request unavailable in the Network panel. Try reloading the inspected page
+																		131 text Failed to load resource: the server responded with a status of 401 (Unauthorized)
+														132 container Failed to load resource: the server responded with a status of 401 (Unauthorized)
+															133 container
+																134 文本 07:39:20.520
+																135 container Error
+																136 container api/platform/auth/me:1 Failed to load resource: the server responded with a status of 401 (Unauthorized) Stack table collapsed
+																	137 container
+																		138 链接 api/platform/auth/me:1, Help: http://127.0.0.1:5173/api/platform/auth/me
+																			139 文本 api/platform/auth/me:1
+																		140 文本  
+																		141 按钮 Request unavailable in the Network panel. Try reloading the inspected page
+																		142 text Failed to load resource: the server responded with a status of 401 (Unauthorized)
+														143 container
+															144 文本 07:44:42.985
+															145 text JSON . stringify ({ width : document . documentElement . clientWidth , scrollWidth : document . documentElement . scrollWidth , headerHeight : document . querySelector ( 'header' ). getBoundingClientRect (). height , headerLineHeight : getComputedStyle ( document . querySelector ( 'header' )). lineHeight })
+														146 container
+															147 文本 07:44:42.992
+															148 container '{"width":390,"scrollWidth":390,"headerHeight":101,"headerLineHeight":"21px"}' Stack table collapsed
+																149 文本 '{"width":390,"scrollWidth":390,"headerHeight":101,"headerLineHeight":"21px"}'
+														150 container Failed to load resource: the server responded with a status of 403 (Forbidden)
+															151 container
+																152 文本 07:45:03.720
+																153 container Error
+																154 container  POST http://127.0.0.1:5173/api/platform/auth/logout 403 (Forbidden) Stack table collapsed
+																	155 container
+																		156 链接 request.ts:29, Help: http://127.0.0.1:5173/src/shared/api/request.ts:29
+																			157 文本 request.ts:29
+																		158 文本  
+																		159 按钮 Click to open the Network panel and show request for URL: http://127.0.0.1:5173/api/platform/auth/logout
+																		160 文本  
+																		161 文本 POST 
+																		162 链接 http://127.0.0.1:5173/api/platform/auth/logout
+																			163 文本 http://127.0.0.1:5173/api/platform/auth/logout
+																		164 文本  
+																		165 文本 403
+																		166 文本  (
+																		167 文本 Forbidden
+																		168 文本 )
+														169 container
+															170 文本 07:45:20.048
+															171 text JSON . stringify ({ width : document . documentElement . clientWidth , scrollWidth : document . documentElement . scrollWidth , headerHeight : document . querySelector ( 'header' ). getBoundingClientRect (). height , headerContentFits :[... document . querySelector ( 'header' ). children ]. every ( e => e . getBoundingClientRect (). top >= document . querySelector ( 'header' ). getBoundingClientRect (). top && e . getBoundingClientRect (). bottom <= document . querySelector ( 'header' ). getBoundingClientRect (). bottom )})
+														172 container
+															173 文本 07:45:20.074
+															174 container '{"width":390,"scrollWidth":390,"headerHeight":101,"headerContentFits":true}' Stack table collapsed
+																175 文本 '{"width":390,"scrollWidth":390,"headerHeight":101,"headerContentFits":true}'
+													176 container
+														177 文本输入区 (settable) Console prompt, Value: 
+
+							178 文本 DevTools is docked to bottom 
+				179 滚动区
+					180 HTML 内容 企业应用工程入口, URL: 127.0.0.1:5173/platform
+						181 container
+							182 文本 平台控制台
+							183 菜单 Secondary Actions: Cancel
+								184 当前身份
+									185 link 当前身份, Value: 127.0.0.1:5173/platform
+								186 账号安全
+									187 link 账号安全, Value: 127.0.0.1:5173/platform/security
+							188 按钮 折叠菜单
+							189 container
+								190 text 平台管理员 空间
+							191 按钮 当前账号菜单
+							192 内容列表
+								193 文本 平台控制台
+								194 文本 当前身份
+							195 container
+								196 图像 close-circle
+								197 text 退出未确认，服务端会话可能仍有效，请重试退出 排错编号： be4fad66f184451588be6c1ada97a60d
+								198 按钮 复制
+							199 标题 你好，P06-03验收平台管理员, Value: 1
+								200 text 你好， P06-03验收平台管理员
+							201 文本 当前已进入平台控制台
+							202 按钮 刷新当前身份
+							203 container
+								204 文本 当前身份
+								205 container 姓名 : P06-03验收平台管理员
+									206 文本 姓名
+									207 文本 :
+									208 文本 P06-03验收平台管理员
+								209 container 身份空间 : 平台管理员
+									210 文本 身份空间
+									211 文本 :
+									212 文本 平台管理员
+							213 link 系统入口, Value: 127.0.0.1:5173/
+							214 link 员工工作台, Value: 127.0.0.1:5173/admin
+			215 弹出式按钮 标签页搜索
+			216 container
+				217 标签页组
+					218 标签 (selected, settable, boolean) 企业应用工程入口 - 内存用量 - 95.8 MB, Value: on
+						219 按钮 关闭
+			220 按钮 新标签页
+	221 关闭按钮
+	222 全屏幕按钮 Help: 此按钮也可以执行缩放窗口的操作, Secondary Actions: 缩放窗口
+	223 最小化按钮
+224 menu bar
+	225 Chrome
+	226 文件
+	227 编辑
+	228 显示
+	229 历史记录
+	230 书签
+	231 个人资料
+	232 标签页
+	233 窗口
+	234 帮助
+
+The focused UI element is 177 文本输入区 (settable) Console prompt, Value: 

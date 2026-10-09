@@ -1,0 +1,230 @@
+{
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "command": [
+    "node",
+    ".local-data/p06-03/browser-before.mjs"
+  ],
+  "exitCode": 0,
+  "browser": "154.0.8037.98",
+  "scenarios": [
+    {
+      "name": "同源Tab切换到第二租户员工后安全表单草稿",
+      "identityChanged": true,
+      "passwordDraftEmpty": false,
+      "result": "FAIL",
+      "impact": "旧身份草稿沿用到新身份表单"
+    },
+    {
+      "name": "系统入口嵌套交互",
+      "nestedInteractive": 0,
+      "result": "PASS"
+    }
+  ],
+  "http": [
+    {
+      "method": "GET",
+      "path": "/src/features/auth/api/AuthService.ts",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/src/shared/api/ApiError.ts",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/src/shared/api/ErrorNotice.tsx",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/src/shared/api/request.ts",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/src/features/auth/api/queryKeys.ts",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/admin/auth/me",
+      "status": 401
+    },
+    {
+      "method": "GET",
+      "path": "/api/admin/auth/me",
+      "status": 401
+    },
+    {
+      "method": "GET",
+      "path": "/api/admin/auth/csrf",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "/api/admin/auth/login",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/admin/auth/csrf",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/admin/auth/me",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/src/shared/api/ApiError.ts",
+      "status": 304
+    },
+    {
+      "method": "GET",
+      "path": "/src/features/auth/api/AuthService.ts",
+      "status": 304
+    },
+    {
+      "method": "GET",
+      "path": "/src/shared/api/ErrorNotice.tsx",
+      "status": 304
+    },
+    {
+      "method": "GET",
+      "path": "/src/shared/api/request.ts",
+      "status": 304
+    },
+    {
+      "method": "GET",
+      "path": "/src/features/auth/api/queryKeys.ts",
+      "status": 304
+    },
+    {
+      "method": "GET",
+      "path": "/api/admin/auth/me",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/admin/auth/me",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/src/features/auth/api/AuthService.ts",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/src/shared/api/ApiError.ts",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/src/shared/api/ErrorNotice.tsx",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/src/shared/api/request.ts",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/src/features/auth/api/queryKeys.ts",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/admin/auth/me",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/admin/auth/me",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/admin/auth/csrf",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "/api/admin/auth/logout",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/admin/auth/me",
+      "status": 401
+    },
+    {
+      "method": "GET",
+      "path": "/api/admin/auth/me",
+      "status": 401
+    },
+    {
+      "method": "GET",
+      "path": "/api/admin/auth/me",
+      "status": 401
+    },
+    {
+      "method": "GET",
+      "path": "/api/admin/auth/csrf",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "/api/admin/auth/login",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/admin/auth/csrf",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/admin/auth/me",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/admin/auth/me",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/admin/auth/me",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/src/features/auth/api/AuthService.ts",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/src/shared/api/ApiError.ts",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/src/shared/api/ErrorNotice.tsx",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/src/shared/api/request.ts",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/src/features/auth/api/queryKeys.ts",
+      "status": 200
+    }
+  ]
+}

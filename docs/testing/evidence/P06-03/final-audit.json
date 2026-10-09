@@ -1,0 +1,45 @@
+{
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "command": "python3 .local-data/p06-03/audit.py",
+  "exitCode": 0,
+  "time": "2026-10-09T07:52:11.440025+08:00",
+  "baselineFiles": 4020,
+  "changedAllowedTracked": [
+    "README.md",
+    "apps/admin-web/src/app/layout/SessionLayout.tsx",
+    "apps/admin-web/src/features/account/AccountSecurity.tsx",
+    "apps/admin-web/src/features/auth/pages/LoginPage.tsx",
+    "apps/admin-web/src/shared/SystemEntry.tsx",
+    "apps/admin-web/src/shared/api/request.test.ts",
+    "apps/admin-web/src/styles/global.css",
+    "docs/conventions/WEB-PAGES.md",
+    "docs/conventions/WEB-STATE.md",
+    "docs/development/DECISION-LOG.md",
+    "docs/development/LOCAL-DEVELOPMENT.md",
+    "docs/development/ROADMAP.md",
+    "docs/testing/ACCEPTANCE-MATRIX.md"
+  ],
+  "unrelatedChanged": [],
+  "missing": [],
+  "unchangedTracked": 4007,
+  "unchangedUi": 270,
+  "sourceScan": {
+    "fileCount": 30,
+    "fetchFiles": [
+      "apps/admin-web/src/shared/api/request.ts"
+    ],
+    "appStorageFiles": [],
+    "credentialLogFiles": [],
+    "generatedContractRule": "apps/admin-web/src/contracts.ts纯类型导入+契约导出检查；无模型改动"
+  },
+  "knownSecretCount": 7,
+  "secretScanFileCount": 100,
+  "secretMatchFiles": [],
+  "secretBoundary": "仅能精确扫描保留的7项技术输入；未保留的运行/初始化数据库角色口令及浏览器Token不能重新精确扫描。未保存Body/Cookie/Token/HAR。不能推断未知外部日志。",
+  "relativeLinkCount": 321,
+  "badLinks": [],
+  "headUnchanged": true,
+  "secretCleanupAudit": "secret-cleanup-audit.json",
+  "resourceCleanup": "cleanup.json",
+  "knownInputsRemoved": true
+}

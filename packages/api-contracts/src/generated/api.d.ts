@@ -140,6 +140,46 @@ export interface paths {
         patch?: never;
         trace?: never;
     };
+    "/api/admin/identity/users": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /**
+         * 员工分页查询
+         * @description identity:user:list；TENANT本租户、STORES有效授权门店与目标关系任一交集、SELF本人；同权限并集。账号和姓名大小写不敏感的字面量包含匹配。列表及count同一快照，total十进制字符串；不输出角色、门店关系或写能力。
+         */
+        get: operations["listEmployees"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/api/admin/identity/users/{employeeId}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /**
+         * 员工详情查询
+         * @description 独立identity:user:detail及其自身范围；字段与列表一致。不存在、跨租户、范围外统一404；不授权任何修改或凭据操作。
+         */
+        get: operations["getEmployee"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
     "/api/admin/identity/users/{employeeId}/password": {
         parameters: {
             query?: never;
@@ -479,6 +519,24 @@ export interface components {
             headerName: "X-Customer-Token";
             value: string;
         };
+        EmployeeView: {
+            /**
+             * Format: date-time
+             * @description 输入必须带Z或offset、最多3位小数；输出UTC且固定3位毫秒
+             */
+            createdAt: string;
+            displayName: string;
+            /** Format: uuid */
+            id: string;
+            loginName: string;
+            /** @enum {string} */
+            status: "ACTIVE" | "DISABLED";
+            /**
+             * Format: date-time
+             * @description 输入必须带Z或offset、最多3位小数；输出UTC且固定3位毫秒
+             */
+            updatedAt: string;
+        };
         Failure: {
             error: components["schemas"]["ApiError"];
             /** @constant */
@@ -505,6 +563,14 @@ export interface components {
             page: number;
             /** Format: int32 */
             pageSize: number;
+        };
+        PageResponseEmployeeView: {
+            items: components["schemas"]["EmployeeView"][];
+            /** Format: int32 */
+            page: number;
+            /** Format: int32 */
+            pageSize: number;
+            total: string;
         };
         PageResponseFieldErrorDetail: {
             items: components["schemas"]["FieldErrorDetail"][];
@@ -592,8 +658,20 @@ export interface components {
             success: true;
             traceId: string;
         };
+        SuccessEmployeeView: {
+            data: components["schemas"]["EmployeeView"] | null;
+            /** @constant */
+            success: true;
+            traceId: string;
+        };
         SuccessFieldErrorDetail: {
             data: components["schemas"]["FieldErrorDetail"] | null;
+            /** @constant */
+            success: true;
+            traceId: string;
+        };
+        SuccessPageResponseEmployeeView: {
+            data: components["schemas"]["PageResponseEmployeeView"] | null;
             /** @constant */
             success: true;
             traceId: string;
@@ -1242,6 +1320,167 @@ export interface operations {
                 };
             };
             /** @description 数据库或Redis不可用 */
+            503: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "*/*": components["schemas"]["Failure"];
+                };
+            };
+        };
+    };
+    listEmployees: {
+        parameters: {
+            query?: {
+                /** @description 1～100个Unicode码点，不能全空白；不trim；%、_、反斜线按字面量 */
+                keyword?: string;
+                page?: number;
+                pageSize?: number;
+                sortBy?: "id" | "loginName" | "displayName" | "status" | "createdAt" | "updatedAt";
+                /** @description 有方向须有sortBy；同向追加id，NULLS LAST */
+                sortOrder?: "asc" | "desc";
+                status?: "ACTIVE" | "DISABLED";
+                /** @description 有效本租户门店且当前操作范围和身份门店上限均允许；仅SELF拒绝404 */
+                storeId?: string;
+            };
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description 成功，统一响应信封 */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "*/*": components["schemas"]["SuccessPageResponseEmployeeView"];
+                };
+            };
+            /** @description 未知/重复查询字段、非法状态、ID、分页或排序 */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "*/*": components["schemas"]["Failure"];
+                };
+            };
+            /** @description 未登录、会话失效或身份域错误 */
+            401: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "*/*": components["schemas"]["Failure"];
+                };
+            };
+            /** @description 缺少当前读取权限或强制改密限制 */
+            403: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "*/*": components["schemas"]["Failure"];
+                };
+            };
+            /** @description 不存在或当前操作范围不可访问 */
+            404: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "*/*": components["schemas"]["Failure"];
+                };
+            };
+            /** @description keyword约束失败或分页offset过深 */
+            422: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "*/*": components["schemas"]["Failure"];
+                };
+            };
+            /** @description 数据库或认证依赖不可用 */
+            503: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "*/*": components["schemas"]["Failure"];
+                };
+            };
+        };
+    };
+    getEmployee: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                employeeId: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description 成功，统一响应信封 */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "*/*": components["schemas"]["SuccessEmployeeView"];
+                };
+            };
+            /** @description 未知/重复查询字段、非法状态、ID、分页或排序 */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "*/*": components["schemas"]["Failure"];
+                };
+            };
+            /** @description 未登录、会话失效或身份域错误 */
+            401: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "*/*": components["schemas"]["Failure"];
+                };
+            };
+            /** @description 缺少当前读取权限或强制改密限制 */
+            403: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "*/*": components["schemas"]["Failure"];
+                };
+            };
+            /** @description 不存在或当前操作范围不可访问 */
+            404: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "*/*": components["schemas"]["Failure"];
+                };
+            };
+            /** @description keyword约束失败或分页offset过深 */
+            422: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "*/*": components["schemas"]["Failure"];
+                };
+            };
+            /** @description 数据库或认证依赖不可用 */
             503: {
                 headers: {
                     [name: string]: unknown;

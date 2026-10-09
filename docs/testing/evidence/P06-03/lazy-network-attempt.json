@@ -1,0 +1,8 @@
+{
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "command": "CUA原生新标签：已加载入口后停Web，进入首次保护路由",
+  "exitCode": null,
+  "result": "OBSERVED",
+  "summary": "冷动态模块连接失败后，冻结Router的lazyRouteComponent先自动整页reload，服务未恢复时进入Chrome ERR_CONNECTION_REFUSED；不能将其计为SystemError边界PASS。服务随后恢复。恢复地址输入曾被截断而进入默认搜索，已纠正，仅含本地地址，无凭据；不计验收。",
+  "source": "apps/admin-web/node_modules/@tanstack/react-router/src/lazyRouteComponent.tsx:62-66"
+}

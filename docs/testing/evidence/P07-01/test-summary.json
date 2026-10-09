@@ -1,0 +1,470 @@
+{
+  "actual": {
+    "tests": 455,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "historicalBaseline": {
+    "tests": 421,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "originalCasesRetained": true,
+  "missingCases": [],
+  "addedCases": [
+    [
+      "com.pet.testing.identity.EmployeeDirectoryIT",
+      "invalidPaginationAndSortFollowFrozenErrors",
+      1
+    ],
+    [
+      "com.pet.testing.identity.EmployeeDirectoryIT",
+      "tenantListAndDetailContainOnlyThisTenant",
+      1
+    ],
+    [
+      "com.pet.testing.identity.EmployeeDirectoryIT",
+      "targetStatusDoesNotGrantOrRemoveReadVisibility",
+      1
+    ],
+    [
+      "com.pet.testing.identity.EmployeeDirectoryIT",
+      "tenantMixedWithOtherScopesNormalizesWithoutCrossTenant",
+      1
+    ],
+    [
+      "com.pet.testing.identity.EmployeeDirectoryIT",
+      "publicOpenApiSchemaMatchesActualDtoAndQueryFields",
+      1
+    ],
+    [
+      "com.pet.testing.identity.EmployeeDirectoryIT",
+      "permissionAndRoleRemovalImmediatelyAffectNewRequests",
+      1
+    ],
+    [
+      "com.pet.testing.identity.EmployeeDirectoryIT",
+      "databaseReadFailureReturns503ThenRecovers",
+      1
+    ],
+    [
+      "com.pet.testing.identity.EmployeeDirectoryIT",
+      "missingIndependentReadPermissionsAre403",
+      1
+    ],
+    [
+      "com.pet.testing.identity.EmployeeDirectoryIT",
+      "accountAndSingleConnectionReuseNeverMixTenantRows",
+      1
+    ],
+    [
+      "com.pet.testing.identity.EmployeeDirectoryIT",
+      "noAuthorizedStoresMeansEmptyStoresScope",
+      1
+    ],
+    [
+      "com.pet.testing.identity.EmployeeDirectoryIT",
+      "tenantStoreFilterStillChecksIdentityStoreCeiling",
+      1
+    ],
+    [
+      "com.pet.testing.identity.EmployeeDirectoryIT",
+      "validCustomerAndPlatformCredentialsCannotReadStaffDirectory",
+      1
+    ],
+    [
+      "com.pet.testing.identity.EmployeeDirectoryIT",
+      "explicitUpgradeIsLimitedIdempotentAndChangesCurrentAuthority",
+      1
+    ],
+    [
+      "com.pet.testing.identity.EmployeeDirectoryIT",
+      "nextRequestRechecksStoreAssignmentEvenWithoutVersionBump",
+      1
+    ],
+    [
+      "com.pet.testing.identity.EmployeeDirectoryIT",
+      "webCookieUsesTheSameFormalReadContract",
+      1
+    ],
+    [
+      "com.pet.testing.identity.EmployeeDirectoryIT",
+      "rlsRestrictedRoleDefaultsToNoRowsAndCannotSelectCredentials",
+      1
+    ],
+    [
+      "com.pet.testing.identity.EmployeeDirectoryIT",
+      "listAndDetailProjectionHaveNoNPlusOne",
+      1
+    ],
+    [
+      "com.pet.testing.identity.EmployeeDirectoryIT",
+      "storesUseAnySharedActiveAuthorizedStoreWithoutRelationLeak",
+      1
+    ],
+    [
+      "com.pet.testing.identity.EmployeeDirectoryIT",
+      "emptyFilterAndBeyondLastPagePreserveTotalAndRequestedPage",
+      1
+    ],
+    [
+      "com.pet.testing.identity.EmployeeDirectoryIT",
+      "illegalStatusIdUnknownAndRepeatedFiltersAre400",
+      1
+    ],
+    [
+      "com.pet.testing.identity.EmployeeDirectoryIT",
+      "sameValueSortAndManyToManyPagesHaveStableUniqueIds",
+      1
+    ],
+    [
+      "com.pet.testing.identity.EmployeeDirectoryIT",
+      "keywordMatchesAccountAndNameIgnoringCaseLiterally",
+      1
+    ],
+    [
+      "com.pet.testing.identity.EmployeeDirectoryIT",
+      "storeFilterNeverEnlargesCurrentScope",
+      1
+    ],
+    [
+      "com.pet.testing.identity.EmployeeDirectoryIT",
+      "listScopeCannotEnlargeDetailOrSensitiveManagement",
+      1
+    ],
+    [
+      "com.pet.testing.identity.EmployeeDirectoryIT",
+      "selfListAndDetailMapToStaffSubjectId",
+      1
+    ],
+    [
+      "com.pet.testing.identity.EmployeeDirectoryIT",
+      "inactiveStoreRevokesStoresVisibilityOnNextRequest",
+      1
+    ],
+    [
+      "com.pet.testing.identity.EmployeeDirectoryIT",
+      "noReadPermissionDoesNotBlockSelfPasswordChange",
+      1
+    ],
+    [
+      "com.pet.testing.identity.EmployeeDirectoryIT",
+      "hiddenUnknownAndForeignDetailsHaveIdenticalErrors",
+      1
+    ],
+    [
+      "com.pet.testing.identity.EmployeeDirectoryIT",
+      "keywordLengthAndBlankBoundaries",
+      1
+    ],
+    [
+      "com.pet.testing.identity.EmployeeDirectoryIT",
+      "anonymousListAndDetailRequireIdentity",
+      1
+    ],
+    [
+      "com.pet.testing.identity.EmployeeDirectoryIT",
+      "allPublicSortFieldsWorkInBothDirections",
+      1
+    ],
+    [
+      "com.pet.testing.identity.EmployeeDirectoryIT",
+      "storesAndSelfUnionIncludesNoStoreSelfOnly",
+      1
+    ],
+    [
+      "com.pet.testing.identity.EmployeeReadMigrationIT",
+      "versionFourDataIsPreservedAndOnlyExplicitUpgradeAddsDetail",
+      1
+    ],
+    [
+      "com.pet.testing.identity.EmployeeReadUpgradeRuntimeIT",
+      "packagedExplicitCommandRunsAndRejectsRuntimeCredentials(Path)",
+      1
+    ]
+  ],
+  "suites": [
+    {
+      "suite": "com.pet.platform.protocol.ApiProtocolIT",
+      "tests": 2,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "suite": "com.pet.platform.shared.redis.RedisIsolationIT",
+      "tests": 17,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "suite": "com.pet.testing.RedisHealthIT",
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "suite": "com.pet.testing.architecture.ProductionArtifactIT",
+      "tests": 2,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "suite": "com.pet.testing.authentication.CustomerAuthenticationIT",
+      "tests": 39,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "suite": "com.pet.testing.authentication.PlatformAuthenticationIT",
+      "tests": 36,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "suite": "com.pet.testing.authentication.StaffAuthenticationIT",
+      "tests": 31,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "suite": "com.pet.testing.authentication.StaffCredentialSecurityIT",
+      "tests": 34,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "suite": "com.pet.testing.authentication.StaffSessionRuntimeIT",
+      "tests": 4,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "suite": "com.pet.testing.contracts.PackagedDocumentPolicyIT",
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "suite": "com.pet.testing.contracts.ScalarPostgresIT",
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "suite": "com.pet.testing.identity.CustomerMigrationIT",
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "suite": "com.pet.testing.identity.EmployeeDirectoryIT",
+      "tests": 32,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "suite": "com.pet.testing.identity.EmployeeReadMigrationIT",
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "suite": "com.pet.testing.identity.EmployeeReadUpgradeRuntimeIT",
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "suite": "com.pet.testing.identity.IdentityFoundationIT",
+      "tests": 27,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "suite": "com.pet.testing.identity.IdentityMigrationIT",
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "suite": "com.pet.testing.identity.PlatformBootstrapRuntimeIT",
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "suite": "com.pet.testing.identity.PlatformMigrationIT",
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "suite": "com.pet.testing.identity.StaffSecurityMigrationIT",
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "suite": "com.pet.testing.persistence.JpaPersistenceIT",
+      "tests": 12,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "suite": "com.pet.testing.persistence.MigrationSafetyIT",
+      "tests": 5,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "suite": "com.pet.testing.tenancy.TenantHttpIT",
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "suite": "com.pet.testing.tenantpersistence.AsyncTenantPersistenceIT",
+      "tests": 9,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "suite": "com.pet.testing.tenantpersistence.TenantPersistenceIT",
+      "tests": 48,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "suite": "com.pet.platform.ApplicationTest",
+      "tests": 3,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "suite": "com.pet.platform.customeridentity.infrastructure.WechatConfigTest",
+      "tests": 5,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "suite": "com.pet.platform.customeridentity.infrastructure.WxJavaGatewayTest",
+      "tests": 8,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "suite": "com.pet.platform.protocol.ApiProtocolTest",
+      "tests": 30,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "suite": "com.pet.platform.shared.persistence.DatabaseConfigurationRulesTest",
+      "tests": 6,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "suite": "com.pet.platform.shared.persistence.JpaPageAdapterTest",
+      "tests": 5,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "suite": "com.pet.platform.shared.redis.RedisConfigurationTest",
+      "tests": 2,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "suite": "com.pet.platform.shared.tenancy.TenantTaskExecutorTest",
+      "tests": 23,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "suite": "com.pet.testing.architecture.StructureRulesTest",
+      "tests": 15,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "suite": "com.pet.testing.contracts.ContractExportTest",
+      "tests": 9,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "suite": "com.pet.testing.contracts.DocumentPolicyTest",
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "suite": "com.pet.testing.contracts.ProductionOpenApiExportTest",
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "suite": "com.pet.testing.identity.PasswordServiceTest",
+      "tests": 6,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "suite": "com.pet.testing.tenancy.TenantExecutionTest",
+      "tests": 19,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "suite": "com.pet.testing.tenancy.TenantMvcTest",
+      "tests": 13,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    }
+  ]
+}

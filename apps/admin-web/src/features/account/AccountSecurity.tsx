@@ -47,7 +47,7 @@ function SecurityForm({ identity, operation, disabled }: { identity: WebIdentity
   return <Space orientation="vertical" className="full-width" size="middle">
     {failure && !uncertain && <ErrorNotice error={failure} title={securityErrorText(failure)} messages={securityUnmappedErrors(failure)} />}
     {uncertain && <Button onClick={() => { void auth.current(space).then(value => { if (value && mounted.current) setFailure(undefined); return router.invalidate(); }).catch(() => { /* 保持未确认状态。 */ }); }}>重新确认当前身份</Button>}
-    <Form form={form} name={`${space.toLowerCase()}-${operation}`} layout="vertical" requiredMark={false} clearOnDestroy disabled={disabled || mutation.isPending} onFinish={() => void submit()}>
+    <Form form={form} name={`${space.toLowerCase()}-${operation}`} layout="vertical" scrollToFirstError={{ focus: true }} requiredMark={false} clearOnDestroy disabled={disabled || mutation.isPending} onFinish={() => void submit()}>
       <Form.Item name="currentPassword" label="当前密码" rules={[passwordRule]}><Input.Password autoComplete="current-password" visibilityToggle={false} maxLength={256} /></Form.Item>
       {operation === 'password' && <>
         <Form.Item name="newPassword" label="新密码" rules={[passwordRule]} extra="12至128个字符，保留空格和大小写"><Input.Password autoComplete="new-password" visibilityToggle={false} maxLength={256} /></Form.Item>

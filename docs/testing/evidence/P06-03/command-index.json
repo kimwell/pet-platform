@@ -1,0 +1,605 @@
+{
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "result": "FINAL_CHECKS_PASS_WITH_PRESERVED_FAILURES",
+  "acceptedCommandRecords": [
+    "typecheck-accepted.json",
+    "lint-accepted.json",
+    "test-accepted.json",
+    "build-accepted.json",
+    "contracts-check.json",
+    "repository-check-accepted.json",
+    "diff-check.json",
+    "final-audit.json",
+    "cleanup.json",
+    "secret-cleanup-audit.json"
+  ],
+  "browserAcceptance": "browser-native-complete.json内15个独立补验PASS，进程退出码不适用于CUA工具，保留null/toolStatus；原整批失败不改称PASS。",
+  "historicalFailures": "browser-attempts-audit.json与本索引各非0/null原记录保留，不用最终局部结果覆盖旧整批边界。",
+  "records": [
+    {
+      "file": "browser-attempts-audit.json",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": null,
+      "exitCode": 0,
+      "toolStatus": null,
+      "result": null,
+      "log": null
+    },
+    {
+      "file": "browser-baseline-reproduced.json",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": [
+        "node",
+        ".local-data/p06-03/browser-before.mjs"
+      ],
+      "exitCode": 0,
+      "toolStatus": null,
+      "result": null,
+      "log": null
+    },
+    {
+      "file": "browser-before-not-executed.json",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": [
+        "node",
+        ".local-data/p06-03/browser-before.mjs"
+      ],
+      "exitCode": 1,
+      "toolStatus": null,
+      "result": null,
+      "log": null
+    },
+    {
+      "file": "browser-before.json",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": [
+        "node",
+        ".local-data/p06-03/browser-before.mjs"
+      ],
+      "exitCode": 0,
+      "toolStatus": null,
+      "result": null,
+      "log": null
+    },
+    {
+      "file": "browser-final-first.json",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": [
+        "node",
+        ".local-data/p06-03/browser-final.mjs"
+      ],
+      "exitCode": 1,
+      "toolStatus": null,
+      "result": null,
+      "log": null
+    },
+    {
+      "file": "browser-final-second.json",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": [
+        "node",
+        ".local-data/p06-03/browser-final.mjs"
+      ],
+      "exitCode": 1,
+      "toolStatus": null,
+      "result": null,
+      "log": null
+    },
+    {
+      "file": "browser-final-third.json",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": [
+        "node",
+        ".local-data/p06-03/browser-final.mjs"
+      ],
+      "exitCode": 1,
+      "toolStatus": null,
+      "result": null,
+      "log": null
+    },
+    {
+      "file": "browser-final.json",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": [
+        "node",
+        ".local-data/p06-03/browser-final.mjs"
+      ],
+      "exitCode": 1,
+      "toolStatus": null,
+      "result": null,
+      "log": null
+    },
+    {
+      "file": "browser-native-complete.json",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": "CUA原生Google Chrome独立无痕窗口：点击、Tab/Enter/Escape、原生标签恢复及DevTools只读Network；服务器故障由独立命令准备",
+      "exitCode": null,
+      "toolStatus": "COMPLETED",
+      "result": null,
+      "log": null
+    },
+    {
+      "file": "build-accepted.json",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": [
+        "pnpm",
+        "--filter",
+        "@pet/admin-web",
+        "build"
+      ],
+      "exitCode": 0,
+      "toolStatus": null,
+      "result": null,
+      "log": "build-accepted.log"
+    },
+    {
+      "file": "build-complete.json",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": [
+        "pnpm",
+        "--filter",
+        "@pet/admin-web",
+        "build"
+      ],
+      "exitCode": 0,
+      "toolStatus": null,
+      "result": null,
+      "log": "build-complete.log"
+    },
+    {
+      "file": "build-final.json",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": [
+        "pnpm",
+        "--filter",
+        "@pet/admin-web",
+        "build"
+      ],
+      "exitCode": 0,
+      "toolStatus": null,
+      "result": null,
+      "log": "build-final.log"
+    },
+    {
+      "file": "cancel-backend-pause.json",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": [
+        "kill",
+        "-STOP",
+        "56356"
+      ],
+      "exitCode": 0,
+      "toolStatus": null,
+      "result": null,
+      "log": null
+    },
+    {
+      "file": "cancel-backend-resume.json",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": [
+        "kill",
+        "-CONT",
+        "56356"
+      ],
+      "exitCode": 0,
+      "toolStatus": null,
+      "result": null,
+      "log": null
+    },
+    {
+      "file": "cleanup.json",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": "归属校验后SIGTERM本轮三个进程组；docker stop两个本轮--rm/tmpfs容器；探测回环端口",
+      "exitCode": 0,
+      "toolStatus": null,
+      "result": null,
+      "log": null
+    },
+    {
+      "file": "contracts-check.json",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": [
+        "pnpm",
+        "contracts:check"
+      ],
+      "exitCode": 0,
+      "toolStatus": null,
+      "result": null,
+      "log": "contracts-check.log"
+    },
+    {
+      "file": "csrf-proxy-start.json",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": [
+        "python3",
+        ".local-data/p06-03/proxy.py"
+      ],
+      "exitCode": 0,
+      "toolStatus": null,
+      "result": null,
+      "log": null
+    },
+    {
+      "file": "diff-check.json",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exitCode": 0,
+      "toolStatus": null,
+      "result": null,
+      "log": "diff-check.log"
+    },
+    {
+      "file": "error-once-audit.json",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": "Python核对已保存原生AX与白名单正式转发日志",
+      "exitCode": 0,
+      "toolStatus": null,
+      "result": null,
+      "log": null
+    },
+    {
+      "file": "final-audit.json",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": "python3 .local-data/p06-03/audit.py",
+      "exitCode": 0,
+      "toolStatus": null,
+      "result": null,
+      "log": null
+    },
+    {
+      "file": "lazy-network-attempt.json",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": "CUA原生新标签：已加载入口后停Web，进入首次保护路由",
+      "exitCode": null,
+      "toolStatus": null,
+      "result": "OBSERVED",
+      "log": null
+    },
+    {
+      "file": "lazy-network-stop.json",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": [
+        "kill",
+        "-TERM",
+        "--process-group",
+        "63618"
+      ],
+      "exitCode": 0,
+      "toolStatus": null,
+      "result": null,
+      "log": null
+    },
+    {
+      "file": "lint-accepted.json",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": [
+        "pnpm",
+        "--filter",
+        "@pet/admin-web",
+        "lint"
+      ],
+      "exitCode": 0,
+      "toolStatus": null,
+      "result": null,
+      "log": "lint-accepted.log"
+    },
+    {
+      "file": "lint-complete.json",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": [
+        "pnpm",
+        "--filter",
+        "@pet/admin-web",
+        "lint"
+      ],
+      "exitCode": 0,
+      "toolStatus": null,
+      "result": null,
+      "log": "lint-complete.log"
+    },
+    {
+      "file": "lint-final.json",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": [
+        "pnpm",
+        "--filter",
+        "@pet/admin-web",
+        "lint"
+      ],
+      "exitCode": 0,
+      "toolStatus": null,
+      "result": null,
+      "log": "lint-final.log"
+    },
+    {
+      "file": "native-preparation.json",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": [
+        "docker",
+        "exec",
+        "-i",
+        "pet-p06-03-pg",
+        "psql",
+        "..."
+      ],
+      "exitCode": 0,
+      "toolStatus": null,
+      "result": null,
+      "log": null
+    },
+    {
+      "file": "network-stop.json",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": [
+        "kill",
+        "-TERM",
+        "--process-group",
+        "57379"
+      ],
+      "exitCode": 0,
+      "toolStatus": null,
+      "result": null,
+      "log": null
+    },
+    {
+      "file": "permission-preparation.json",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": [
+        "docker",
+        "exec",
+        "-i",
+        "pet-p06-03-pg",
+        "psql",
+        "-U",
+        "postgres",
+        "-d",
+        "p06_03_acceptance",
+        "-v",
+        "ON_ERROR_STOP=1"
+      ],
+      "exitCode": 0,
+      "toolStatus": null,
+      "result": null,
+      "log": null
+    },
+    {
+      "file": "repository-check-accepted.json",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": [
+        "pnpm",
+        "check:repo"
+      ],
+      "exitCode": 0,
+      "toolStatus": null,
+      "result": null,
+      "log": "repository-check-accepted.log"
+    },
+    {
+      "file": "repository-check-before-final.json",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": [
+        "pnpm",
+        "check:repo"
+      ],
+      "exitCode": 0,
+      "toolStatus": null,
+      "result": null,
+      "log": "repository-check-before-final.log"
+    },
+    {
+      "file": "restricted-preparation.json",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": [
+        "docker",
+        "exec",
+        "-i",
+        "pet-p06-03-pg",
+        "psql",
+        "-U",
+        "postgres",
+        "-d",
+        "p06_03_acceptance",
+        "-v",
+        "ON_ERROR_STOP=1"
+      ],
+      "exitCode": 0,
+      "toolStatus": null,
+      "result": null,
+      "log": null
+    },
+    {
+      "file": "screenshot-crop.json",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": "Pillow裁去原生截图空白桌面区域",
+      "exitCode": 0,
+      "toolStatus": null,
+      "result": null,
+      "log": null
+    },
+    {
+      "file": "secret-cleanup-audit.json",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": "python3 .local-data/p06-03/finalize-evidence.py（7项保留技术输入精确扫描、移除、生成索引/摘要后复扫）",
+      "exitCode": 0,
+      "toolStatus": null,
+      "result": null,
+      "log": null
+    },
+    {
+      "file": "test-accepted.json",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": [
+        "pnpm",
+        "--filter",
+        "@pet/admin-web",
+        "test"
+      ],
+      "exitCode": 0,
+      "toolStatus": null,
+      "result": null,
+      "log": "test-accepted.log"
+    },
+    {
+      "file": "test-complete.json",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": [
+        "pnpm",
+        "--filter",
+        "@pet/admin-web",
+        "test"
+      ],
+      "exitCode": 0,
+      "toolStatus": null,
+      "result": null,
+      "log": "test-complete.log"
+    },
+    {
+      "file": "test-final.json",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": [
+        "pnpm",
+        "--filter",
+        "@pet/admin-web",
+        "test"
+      ],
+      "exitCode": 0,
+      "toolStatus": null,
+      "result": null,
+      "log": "test-final.log"
+    },
+    {
+      "file": "test-initial.json",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": [
+        "pnpm",
+        "--filter",
+        "@pet/admin-web",
+        "test"
+      ],
+      "exitCode": 0,
+      "toolStatus": null,
+      "result": null,
+      "log": "test-initial.log"
+    },
+    {
+      "file": "tool-recovery.json",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": [
+        "Python urllib.request download/extract official pnpm 10.34.6"
+      ],
+      "exitCode": 0,
+      "toolStatus": null,
+      "result": null,
+      "log": null
+    },
+    {
+      "file": "typecheck-accepted.json",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": [
+        "pnpm",
+        "--filter",
+        "@pet/admin-web",
+        "typecheck"
+      ],
+      "exitCode": 0,
+      "toolStatus": null,
+      "result": null,
+      "log": "typecheck-accepted.log"
+    },
+    {
+      "file": "typecheck-complete.json",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": [
+        "pnpm",
+        "--filter",
+        "@pet/admin-web",
+        "typecheck"
+      ],
+      "exitCode": 0,
+      "toolStatus": null,
+      "result": null,
+      "log": "typecheck-complete.log"
+    },
+    {
+      "file": "typecheck-final.json",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": [
+        "pnpm",
+        "--filter",
+        "@pet/admin-web",
+        "typecheck"
+      ],
+      "exitCode": 0,
+      "toolStatus": null,
+      "result": null,
+      "log": "typecheck-final.log"
+    },
+    {
+      "file": "visual-audit-before.json",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": "view_image复核原生390px截图",
+      "exitCode": null,
+      "toolStatus": null,
+      "result": "FAIL",
+      "log": null
+    },
+    {
+      "file": "visual-audit-final.json",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": "CUA原生390px截图+控制台只读DOM测量+白名单转发日志/AX核对",
+      "exitCode": 0,
+      "toolStatus": null,
+      "result": "PASS",
+      "log": null
+    },
+    {
+      "file": "visual-permission-restore.json",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": [
+        "docker",
+        "exec",
+        "-i",
+        "pet-p06-03-pg",
+        "psql",
+        "-U",
+        "postgres",
+        "-d",
+        "p06_03_acceptance",
+        "-v",
+        "ON_ERROR_STOP=1"
+      ],
+      "exitCode": 0,
+      "toolStatus": null,
+      "result": null,
+      "log": null
+    },
+    {
+      "file": "web-start-first.json",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": [
+        "python3",
+        ".local-data/p06-03/start-web.py"
+      ],
+      "exitCode": 1,
+      "toolStatus": null,
+      "result": null,
+      "log": "web-start-first.log"
+    },
+    {
+      "file": "web-start.json",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": [
+        "pnpm",
+        "dev:web"
+      ],
+      "exitCode": null,
+      "toolStatus": null,
+      "result": null,
+      "log": null
+    }
+  ]
+}

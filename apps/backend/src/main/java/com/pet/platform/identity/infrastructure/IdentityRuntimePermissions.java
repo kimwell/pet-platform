@@ -31,6 +31,7 @@ public final class IdentityRuntimePermissions implements InitializingBean {
             and not has_table_privilege(current_user,'pet_control.platform_account','SELECT')
             and not has_column_privilege(current_user,'pet_control.platform_account','password_hash','SELECT')
             and not has_function_privilege(current_user,'pet_control.bootstrap_platform(uuid,text,text,text)','EXECUTE')
+            and not has_function_privilege(current_user,'pet_identity.upgrade_employee_read(uuid)','EXECUTE')
             and not exists (select 1 from pg_catalog.pg_class c join pg_catalog.pg_namespace n on n.oid=c.relnamespace
                 where n.nspname='pet_control' and c.relkind='r'
                 and (pg_has_role(current_user,c.relowner,'MEMBER') or not c.relrowsecurity or not c.relforcerowsecurity or has_table_privilege(current_user,c.oid,'TRUNCATE')))

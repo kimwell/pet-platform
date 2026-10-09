@@ -1,0 +1,10 @@
+{
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "command": "Python核对已保存原生AX与白名单正式转发日志",
+  "exitCode": 0,
+  "logoutRequestCount": 1,
+  "logoutStatus": 403,
+  "unconfirmedNoticeCount": 1,
+  "traceVisible": true,
+  "level": "RUNTIME_VERIFIED（限定该真实CSRF反例）"
+}

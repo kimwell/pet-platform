@@ -1,0 +1,47 @@
+ M README.md
+ M apps/admin-web/src/app/layout/SessionLayout.tsx
+ M apps/admin-web/src/features/account/AccountSecurity.tsx
+ M apps/admin-web/src/features/auth/pages/LoginPage.tsx
+ M apps/admin-web/src/shared/SystemEntry.tsx
+ M apps/admin-web/src/shared/api/request.test.ts
+ M apps/admin-web/src/styles/global.css
+ M apps/backend/src/main/java/com/pet/platform/identity/application/PermissionCatalog.java
+ M apps/backend/src/main/java/com/pet/platform/identity/infrastructure/IdentityRuntimePermissions.java
+ M apps/backend/src/main/java/com/pet/platform/identity/infrastructure/bootstrap/BootstrapJdbc.java
+ M apps/backend/src/main/java/com/pet/platform/shared/persistence/ResourceAccessPolicy.java
+ M apps/backend/src/main/java/com/pet/platform/shared/persistence/ScopedPersistence.java
+ M apps/backend/src/test/java/com/pet/testing/contracts/ContractExportTest.java
+ M apps/backend/src/test/java/com/pet/testing/contracts/PackagedDocumentPolicyIT.java
+ M apps/backend/src/test/java/com/pet/testing/contracts/ProductionOpenApiExportTest.java
+ M apps/backend/src/test/java/com/pet/testing/identity/CustomerMigrationIT.java
+ M apps/backend/src/test/java/com/pet/testing/identity/IdentityFoundationIT.java
+ M apps/backend/src/test/java/com/pet/testing/identity/IdentityMigrationIT.java
+ M apps/wechat-miniprogram/miniprogram/types/generated/api.d.ts
+ M docs/architecture/AUTHORIZATION.md
+ M docs/architecture/MODULE-BOUNDARIES.md
+ M docs/contracts/API.md
+ M docs/contracts/IDENTITY.md
+ M docs/conventions/PERSISTENCE.md
+ M docs/conventions/WEB-PAGES.md
+ M docs/conventions/WEB-STATE.md
+ M docs/development/DECISION-LOG.md
+ M docs/development/LOCAL-DEVELOPMENT.md
+ M docs/development/ROADMAP.md
+ M docs/testing/ACCEPTANCE-MATRIX.md
+ M packages/api-contracts/openapi/backend.openapi.json
+ M packages/api-contracts/src/generated/api.d.ts
+ M scripts/backend-identity.sh
+?? apps/backend/src/main/java/com/pet/platform/identity/api/employee/
+?? apps/backend/src/main/java/com/pet/platform/identity/application/employee/
+?? apps/backend/src/main/java/com/pet/platform/identity/infrastructure/EmployeeQueries.java
+?? apps/backend/src/main/java/com/pet/platform/identity/infrastructure/bootstrap/EmployeeReadUpgradeCommand.java
+?? apps/backend/src/main/resources/db/migration/V5__employee_read_contract.sql
+?? apps/backend/src/test/java/com/pet/testing/identity/EmployeeDirectoryIT.java
+?? apps/backend/src/test/java/com/pet/testing/identity/EmployeeReadMigrationIT.java
+?? apps/backend/src/test/java/com/pet/testing/identity/EmployeeReadUpgradeRuntimeIT.java
+?? docs/contracts/EMPLOYEE-MANAGEMENT.md
+?? docs/testing/P06-03-VERIFICATION.md
+?? docs/testing/P06-ACCEPTANCE.md
+?? docs/testing/P07-01-VERIFICATION.md
+?? docs/testing/evidence/P06-03/
+?? docs/testing/evidence/P07-01/

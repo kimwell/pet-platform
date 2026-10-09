@@ -1,0 +1,9 @@
+{
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "command": [
+    "python3",
+    ".local-data/p06-03/proxy.py"
+  ],
+  "exitCode": 0,
+  "summary": "回环18091只将平台logout的X-CSRF-Token移除，其余透传正式后端。白名单日志只有method/path/status/csrfRemoved，无Body、Cookie或Token。不是Mock响应。"
+}

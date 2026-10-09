@@ -1,0 +1,19 @@
+{
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "command": "CUA原生390px截图+控制台只读DOM测量+白名单转发日志/AX核对",
+  "exitCode": 0,
+  "result": "PASS",
+  "width": 390,
+  "scrollWidth": 390,
+  "headerHeight": 101,
+  "headerContentFits": true,
+  "unconfirmedNoticeCount": 1,
+  "explicitLogoutActions": 2,
+  "totalLogoutRequests": 2,
+  "summary": "两个独立反例各手动一次，均正式403/me200，没有额外logout重放。修复后空间文字、长名称及长中文错误完整换行；原裁切FAIL截图保留。",
+  "evidence": [
+    "visual-fixed.ax.txt",
+    "logout-csrf-390-fixed.png",
+    "platform-header-390-fixed.png"
+  ]
+}

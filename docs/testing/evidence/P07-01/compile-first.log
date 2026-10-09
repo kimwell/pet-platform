@@ -1,0 +1,105 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ---------------< com.pet.platform:pet-platform-backend >----------------
+[INFO] Building pet-platform-backend 0.0.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ pet-platform-backend ---
+[INFO] Copying 3 resources from src/main/resources to target/classes
+[INFO] Copying 6 resources from src/main/resources to target/classes
+[INFO] 
+[INFO] --- compiler:3.14.1:compile (default-compile) @ pet-platform-backend ---
+[INFO] Recompiling the module because of added or removed source files.
+[INFO] Compiling 146 source files with javac [debug parameters release 21] to target/classes
+[INFO] /Users/kimwell/work/pet-platform/apps/backend/src/main/java/com/pet/platform/customeridentity/api/CustomerAuthenticationController.java: 某些输入文件使用或覆盖了已过时的 API。
+[INFO] /Users/kimwell/work/pet-platform/apps/backend/src/main/java/com/pet/platform/customeridentity/api/CustomerAuthenticationController.java: 有关详细信息, 请使用 -Xlint:deprecation 重新编译。
+[INFO] /Users/kimwell/work/pet-platform/apps/backend/src/main/java/com/pet/platform/customeridentity/infrastructure/WxJavaMiniProgramGateway.java: 某些输入文件使用了未经检查或不安全的操作。
+[INFO] /Users/kimwell/work/pet-platform/apps/backend/src/main/java/com/pet/platform/customeridentity/infrastructure/WxJavaMiniProgramGateway.java: 有关详细信息, 请使用 -Xlint:unchecked 重新编译。
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/main/java/com/pet/platform/identity/api/employee/EmployeeController.java:[36,12] 对ApiResponse的引用不明确
+  io.swagger.v3.oas.annotations.responses 中的类 io.swagger.v3.oas.annotations.responses.ApiResponse 和 com.pet.platform.shared.api 中的类 com.pet.platform.shared.api.ApiResponse 都匹配
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/main/java/com/pet/platform/identity/api/employee/EmployeeController.java:[41,12] 对ApiResponse的引用不明确
+  io.swagger.v3.oas.annotations.responses 中的类 io.swagger.v3.oas.annotations.responses.ApiResponse 和 com.pet.platform.shared.api 中的类 com.pet.platform.shared.api.ApiResponse 都匹配
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/main/java/com/pet/platform/identity/api/employee/EmployeeController.java:[17,17] 对ApiResponse的引用不明确
+  io.swagger.v3.oas.annotations.responses 中的类 io.swagger.v3.oas.annotations.responses.ApiResponse 和 com.pet.platform.shared.api 中的类 com.pet.platform.shared.api.ApiResponse 都匹配
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/main/java/com/pet/platform/identity/api/employee/EmployeeController.java:[18,10] 对ApiResponse的引用不明确
+  io.swagger.v3.oas.annotations.responses 中的类 io.swagger.v3.oas.annotations.responses.ApiResponse 和 com.pet.platform.shared.api 中的类 com.pet.platform.shared.api.ApiResponse 都匹配
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/main/java/com/pet/platform/identity/api/employee/EmployeeController.java:[18,126] 对ApiResponse的引用不明确
+  io.swagger.v3.oas.annotations.responses 中的类 io.swagger.v3.oas.annotations.responses.ApiResponse 和 com.pet.platform.shared.api 中的类 com.pet.platform.shared.api.ApiResponse 都匹配
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/main/java/com/pet/platform/identity/api/employee/EmployeeController.java:[19,10] 对ApiResponse的引用不明确
+  io.swagger.v3.oas.annotations.responses 中的类 io.swagger.v3.oas.annotations.responses.ApiResponse 和 com.pet.platform.shared.api 中的类 com.pet.platform.shared.api.ApiResponse 都匹配
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/main/java/com/pet/platform/identity/api/employee/EmployeeController.java:[19,117] 对ApiResponse的引用不明确
+  io.swagger.v3.oas.annotations.responses 中的类 io.swagger.v3.oas.annotations.responses.ApiResponse 和 com.pet.platform.shared.api 中的类 com.pet.platform.shared.api.ApiResponse 都匹配
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/main/java/com/pet/platform/identity/api/employee/EmployeeController.java:[20,10] 对ApiResponse的引用不明确
+  io.swagger.v3.oas.annotations.responses 中的类 io.swagger.v3.oas.annotations.responses.ApiResponse 和 com.pet.platform.shared.api 中的类 com.pet.platform.shared.api.ApiResponse 都匹配
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/main/java/com/pet/platform/identity/api/employee/EmployeeController.java:[20,118] 对ApiResponse的引用不明确
+  io.swagger.v3.oas.annotations.responses 中的类 io.swagger.v3.oas.annotations.responses.ApiResponse 和 com.pet.platform.shared.api 中的类 com.pet.platform.shared.api.ApiResponse 都匹配
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/main/java/com/pet/platform/identity/api/employee/EmployeeController.java:[21,10] 对ApiResponse的引用不明确
+  io.swagger.v3.oas.annotations.responses 中的类 io.swagger.v3.oas.annotations.responses.ApiResponse 和 com.pet.platform.shared.api 中的类 com.pet.platform.shared.api.ApiResponse 都匹配
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/main/java/com/pet/platform/identity/api/employee/EmployeeController.java:[21,117] 对ApiResponse的引用不明确
+  io.swagger.v3.oas.annotations.responses 中的类 io.swagger.v3.oas.annotations.responses.ApiResponse 和 com.pet.platform.shared.api 中的类 com.pet.platform.shared.api.ApiResponse 都匹配
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/main/java/com/pet/platform/identity/api/employee/EmployeeController.java:[22,10] 对ApiResponse的引用不明确
+  io.swagger.v3.oas.annotations.responses 中的类 io.swagger.v3.oas.annotations.responses.ApiResponse 和 com.pet.platform.shared.api 中的类 com.pet.platform.shared.api.ApiResponse 都匹配
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/main/java/com/pet/platform/identity/api/employee/EmployeeController.java:[22,125] 对ApiResponse的引用不明确
+  io.swagger.v3.oas.annotations.responses 中的类 io.swagger.v3.oas.annotations.responses.ApiResponse 和 com.pet.platform.shared.api 中的类 com.pet.platform.shared.api.ApiResponse 都匹配
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/main/java/com/pet/platform/identity/api/employee/EmployeeController.java:[23,10] 对ApiResponse的引用不明确
+  io.swagger.v3.oas.annotations.responses 中的类 io.swagger.v3.oas.annotations.responses.ApiResponse 和 com.pet.platform.shared.api 中的类 com.pet.platform.shared.api.ApiResponse 都匹配
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/main/java/com/pet/platform/identity/api/employee/EmployeeController.java:[23,114] 对ApiResponse的引用不明确
+  io.swagger.v3.oas.annotations.responses 中的类 io.swagger.v3.oas.annotations.responses.ApiResponse 和 com.pet.platform.shared.api 中的类 com.pet.platform.shared.api.ApiResponse 都匹配
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/main/java/com/pet/platform/identity/api/employee/EmployeeController.java:[37,16] 对ApiResponse的引用不明确
+  io.swagger.v3.oas.annotations.responses 中的类 io.swagger.v3.oas.annotations.responses.ApiResponse 和 com.pet.platform.shared.api 中的类 com.pet.platform.shared.api.ApiResponse 都匹配
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/main/java/com/pet/platform/identity/api/employee/EmployeeController.java:[43,16] 对ApiResponse的引用不明确
+  io.swagger.v3.oas.annotations.responses 中的类 io.swagger.v3.oas.annotations.responses.ApiResponse 和 com.pet.platform.shared.api 中的类 com.pet.platform.shared.api.ApiResponse 都匹配
+[INFO] 17 errors 
+[INFO] -------------------------------------------------------------
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  3.136 s
+[INFO] Finished at: 2026-10-09T08:01:48+08:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.14.1:compile (default-compile) on project pet-platform-backend: Compilation failure: Compilation failure: 
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/main/java/com/pet/platform/identity/api/employee/EmployeeController.java:[36,12] 对ApiResponse的引用不明确
+[ERROR]   io.swagger.v3.oas.annotations.responses 中的类 io.swagger.v3.oas.annotations.responses.ApiResponse 和 com.pet.platform.shared.api 中的类 com.pet.platform.shared.api.ApiResponse 都匹配
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/main/java/com/pet/platform/identity/api/employee/EmployeeController.java:[41,12] 对ApiResponse的引用不明确
+[ERROR]   io.swagger.v3.oas.annotations.responses 中的类 io.swagger.v3.oas.annotations.responses.ApiResponse 和 com.pet.platform.shared.api 中的类 com.pet.platform.shared.api.ApiResponse 都匹配
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/main/java/com/pet/platform/identity/api/employee/EmployeeController.java:[17,17] 对ApiResponse的引用不明确
+[ERROR]   io.swagger.v3.oas.annotations.responses 中的类 io.swagger.v3.oas.annotations.responses.ApiResponse 和 com.pet.platform.shared.api 中的类 com.pet.platform.shared.api.ApiResponse 都匹配
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/main/java/com/pet/platform/identity/api/employee/EmployeeController.java:[18,10] 对ApiResponse的引用不明确
+[ERROR]   io.swagger.v3.oas.annotations.responses 中的类 io.swagger.v3.oas.annotations.responses.ApiResponse 和 com.pet.platform.shared.api 中的类 com.pet.platform.shared.api.ApiResponse 都匹配
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/main/java/com/pet/platform/identity/api/employee/EmployeeController.java:[18,126] 对ApiResponse的引用不明确
+[ERROR]   io.swagger.v3.oas.annotations.responses 中的类 io.swagger.v3.oas.annotations.responses.ApiResponse 和 com.pet.platform.shared.api 中的类 com.pet.platform.shared.api.ApiResponse 都匹配
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/main/java/com/pet/platform/identity/api/employee/EmployeeController.java:[19,10] 对ApiResponse的引用不明确
+[ERROR]   io.swagger.v3.oas.annotations.responses 中的类 io.swagger.v3.oas.annotations.responses.ApiResponse 和 com.pet.platform.shared.api 中的类 com.pet.platform.shared.api.ApiResponse 都匹配
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/main/java/com/pet/platform/identity/api/employee/EmployeeController.java:[19,117] 对ApiResponse的引用不明确
+[ERROR]   io.swagger.v3.oas.annotations.responses 中的类 io.swagger.v3.oas.annotations.responses.ApiResponse 和 com.pet.platform.shared.api 中的类 com.pet.platform.shared.api.ApiResponse 都匹配
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/main/java/com/pet/platform/identity/api/employee/EmployeeController.java:[20,10] 对ApiResponse的引用不明确
+[ERROR]   io.swagger.v3.oas.annotations.responses 中的类 io.swagger.v3.oas.annotations.responses.ApiResponse 和 com.pet.platform.shared.api 中的类 com.pet.platform.shared.api.ApiResponse 都匹配
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/main/java/com/pet/platform/identity/api/employee/EmployeeController.java:[20,118] 对ApiResponse的引用不明确
+[ERROR]   io.swagger.v3.oas.annotations.responses 中的类 io.swagger.v3.oas.annotations.responses.ApiResponse 和 com.pet.platform.shared.api 中的类 com.pet.platform.shared.api.ApiResponse 都匹配
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/main/java/com/pet/platform/identity/api/employee/EmployeeController.java:[21,10] 对ApiResponse的引用不明确
+[ERROR]   io.swagger.v3.oas.annotations.responses 中的类 io.swagger.v3.oas.annotations.responses.ApiResponse 和 com.pet.platform.shared.api 中的类 com.pet.platform.shared.api.ApiResponse 都匹配
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/main/java/com/pet/platform/identity/api/employee/EmployeeController.java:[21,117] 对ApiResponse的引用不明确
+[ERROR]   io.swagger.v3.oas.annotations.responses 中的类 io.swagger.v3.oas.annotations.responses.ApiResponse 和 com.pet.platform.shared.api 中的类 com.pet.platform.shared.api.ApiResponse 都匹配
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/main/java/com/pet/platform/identity/api/employee/EmployeeController.java:[22,10] 对ApiResponse的引用不明确
+[ERROR]   io.swagger.v3.oas.annotations.responses 中的类 io.swagger.v3.oas.annotations.responses.ApiResponse 和 com.pet.platform.shared.api 中的类 com.pet.platform.shared.api.ApiResponse 都匹配
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/main/java/com/pet/platform/identity/api/employee/EmployeeController.java:[22,125] 对ApiResponse的引用不明确
+[ERROR]   io.swagger.v3.oas.annotations.responses 中的类 io.swagger.v3.oas.annotations.responses.ApiResponse 和 com.pet.platform.shared.api 中的类 com.pet.platform.shared.api.ApiResponse 都匹配
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/main/java/com/pet/platform/identity/api/employee/EmployeeController.java:[23,10] 对ApiResponse的引用不明确
+[ERROR]   io.swagger.v3.oas.annotations.responses 中的类 io.swagger.v3.oas.annotations.responses.ApiResponse 和 com.pet.platform.shared.api 中的类 com.pet.platform.shared.api.ApiResponse 都匹配
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/main/java/com/pet/platform/identity/api/employee/EmployeeController.java:[23,114] 对ApiResponse的引用不明确
+[ERROR]   io.swagger.v3.oas.annotations.responses 中的类 io.swagger.v3.oas.annotations.responses.ApiResponse 和 com.pet.platform.shared.api 中的类 com.pet.platform.shared.api.ApiResponse 都匹配
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/main/java/com/pet/platform/identity/api/employee/EmployeeController.java:[37,16] 对ApiResponse的引用不明确
+[ERROR]   io.swagger.v3.oas.annotations.responses 中的类 io.swagger.v3.oas.annotations.responses.ApiResponse 和 com.pet.platform.shared.api 中的类 com.pet.platform.shared.api.ApiResponse 都匹配
+[ERROR] /Users/kimwell/work/pet-platform/apps/backend/src/main/java/com/pet/platform/identity/api/employee/EmployeeController.java:[43,16] 对ApiResponse的引用不明确
+[ERROR]   io.swagger.v3.oas.annotations.responses 中的类 io.swagger.v3.oas.annotations.responses.ApiResponse 和 com.pet.platform.shared.api 中的类 com.pet.platform.shared.api.ApiResponse 都匹配
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
