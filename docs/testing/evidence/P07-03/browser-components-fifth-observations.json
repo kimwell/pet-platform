@@ -1,0 +1,302 @@
+{
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "command": [
+    "node",
+    "docs/testing/evidence/P07-03/browser-components.mjs"
+  ],
+  "evidenceType": "确定性组件测试（网络替身），不能替代正式业务联调",
+  "exitCode": 1,
+  "scenarios": [
+    {
+      "name": "首次加载无详情且标题聚焦",
+      "result": "PASS"
+    },
+    {
+      "name": "仅六个契约字段，时间与状态中文",
+      "result": "PASS"
+    },
+    {
+      "name": "同身份目标刷新保留合法内容并标识",
+      "result": "PASS"
+    },
+    {
+      "name": "404不存在刷新停止展示旧详情且缓存无数据",
+      "result": "PASS"
+    },
+    {
+      "name": "404不存在保留trace且无重复错误",
+      "result": "PASS"
+    },
+    {
+      "name": "404跨租户刷新停止展示旧详情且缓存无数据",
+      "result": "PASS"
+    },
+    {
+      "name": "404跨租户保留trace且无重复错误",
+      "result": "PASS"
+    },
+    {
+      "name": "404详情范围外刷新停止展示旧详情且缓存无数据",
+      "result": "PASS"
+    },
+    {
+      "name": "404详情范围外保留trace且无重复错误",
+      "result": "PASS"
+    },
+    {
+      "name": "403权限刷新停止展示旧详情且缓存无数据",
+      "result": "PASS"
+    },
+    {
+      "name": "403权限保留trace且无重复错误",
+      "result": "PASS"
+    },
+    {
+      "name": "403其他正式码刷新停止展示旧详情且缓存无数据",
+      "result": "PASS"
+    },
+    {
+      "name": "403其他正式码保留trace且无重复错误",
+      "result": "PASS"
+    },
+    {
+      "name": "503刷新保留内容并明确失败、不退出",
+      "result": "PASS"
+    },
+    {
+      "name": "503恢复重试",
+      "result": "PASS"
+    },
+    {
+      "name": "网络故障刷新保留内容并明确失败、不退出",
+      "result": "PASS"
+    },
+    {
+      "name": "网络故障恢复重试",
+      "result": "PASS"
+    },
+    {
+      "name": "响应格式错误刷新保留内容并明确失败、不退出",
+      "result": "PASS"
+    },
+    {
+      "name": "响应格式错误恢复重试",
+      "result": "PASS"
+    },
+    {
+      "name": "首次503无旧内容并提供重试",
+      "result": "PASS"
+    },
+    {
+      "name": "详情401复用统一失效并清旧内容",
+      "result": "PASS"
+    },
+    {
+      "name": "快速切目标取消旧查询，无占位/旧响应/取消错误",
+      "result": "PASS"
+    },
+    {
+      "name": "list不授detail且无行入口",
+      "result": "PASS"
+    },
+    {
+      "name": "无detail直达不请求",
+      "result": "PASS"
+    },
+    {
+      "name": "detail不授list且提供当前身份去向",
+      "result": "PASS"
+    },
+    {
+      "name": "安全返回当前身份",
+      "result": "PASS"
+    },
+    {
+      "name": "非法ID页面反馈且零详情请求",
+      "result": "PASS"
+    },
+    {
+      "name": "长姓名/账号/UUID完整，390px无页面溢出",
+      "result": "PASS"
+    },
+    {
+      "name": "空文本按已有格式显示破折号，null仍协议错误",
+      "result": "PASS"
+    },
+    {
+      "name": "进入详情只携带URL已提交查询不带Form草稿",
+      "result": "PASS"
+    },
+    {
+      "name": "详情刷新后确定返回六查询并恢复Form",
+      "result": "PASS"
+    },
+    {
+      "name": "浏览器后退前进与URL同步",
+      "result": "PASS"
+    },
+    {
+      "name": "返回前撤list权限，替换为安全去向",
+      "result": "PASS"
+    },
+    {
+      "name": "无或非法返回信息安全回列表 undefined",
+      "result": "PASS"
+    },
+    {
+      "name": "无或非法返回信息安全回列表 https://evil.example",
+      "result": "PASS"
+    },
+    {
+      "name": "无或非法返回信息安全回列表 //evil.example/admin/identity/users",
+      "result": "PASS"
+    },
+    {
+      "name": "无或非法返回信息安全回列表 /platform",
+      "result": "PASS"
+    },
+    {
+      "name": "无或非法返回信息安全回列表 /admin/security",
+      "result": "PASS"
+    },
+    {
+      "name": "无或非法返回信息安全回列表 /admin/identity/users?page=2&page=3",
+      "result": "PASS"
+    },
+    {
+      "name": "返回原页越界复用一次纠正不循环",
+      "result": "FAIL"
+    }
+  ],
+  "pageErrors": [],
+  "consoleErrors": [
+    "Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "Failed to load resource: the server responded with a status of 403 (Forbidden)",
+    "Failed to load resource: the server responded with a status of 403 (Forbidden)",
+    "Failed to load resource: the server responded with a status of 503 (Service Unavailable)",
+    "Failed to load resource: the server responded with a status of 503 (Service Unavailable)",
+    "Failed to load resource: the server responded with a status of 503 (Service Unavailable)",
+    "Failed to load resource: net::ERR_FAILED",
+    "Failed to load resource: net::ERR_FAILED",
+    "Failed to load resource: net::ERR_FAILED",
+    "Failed to load resource: the server responded with a status of 503 (Service Unavailable)",
+    "Failed to load resource: the server responded with a status of 503 (Service Unavailable)",
+    "Failed to load resource: the server responded with a status of 503 (Service Unavailable)",
+    "Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+    "Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+    "Failed to load resource: the server responded with a status of 401 (Unauthorized)"
+  ],
+  "failurePageText": "员工工作台\n当前身份\n账号安全\n员工列表\n收 起\n员工空间\n组\n组件技术夹具\n员工工作台\n/\n员工列表\n员工列表\n当前授权范围内的员工。时间：Asia/Shanghai\n刷新列表\n数据数量已变化，已返回有效页。\n关键词\n状态\n全部状态\n查 询\n重 置\n 正在加载员工列表…\n系统入口\n平台控制台",
+  "failureQueries": [
+    {
+      "key": [
+        {
+          "principalType": "STAFF",
+          "sessionEpoch": 0
+        },
+        "auth",
+        "me",
+        "current"
+      ],
+      "observers": 2,
+      "status": "success",
+      "fetchStatus": "idle",
+      "error": null
+    },
+    {
+      "key": [
+        {
+          "principalType": "STAFF",
+          "tenantId": "b9dd5dbf-4d0c-4a3f-b2a4-20440f8f8a2c",
+          "principalId": "b9dd5dbf-4d0c-4a3f-b2a4-20440f8f8a2b",
+          "sessionId": "b9dd5dbf-4d0c-4a3f-b2a4-20440f8f8a2d",
+          "authorizationVersion": "0",
+          "sessionEpoch": 0,
+          "authorizedStoreIds": [],
+          "dataScope": {
+            "grants": [
+              {
+                "permissionCode": "identity:user:list",
+                "scopes": [
+                  {
+                    "type": "TENANT"
+                  }
+                ]
+              },
+              {
+                "permissionCode": "identity:user:detail",
+                "scopes": [
+                  {
+                    "type": "TENANT"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        "identity",
+        "employees",
+        "list",
+        {
+          "page": 99,
+          "pageSize": 20,
+          "sortBy": "createdAt",
+          "sortOrder": "desc"
+        }
+      ],
+      "observers": 0,
+      "status": "success",
+      "fetchStatus": "idle",
+      "error": null
+    },
+    {
+      "key": [
+        {
+          "principalType": "STAFF",
+          "tenantId": "b9dd5dbf-4d0c-4a3f-b2a4-20440f8f8a2c",
+          "principalId": "b9dd5dbf-4d0c-4a3f-b2a4-20440f8f8a2b",
+          "sessionId": "b9dd5dbf-4d0c-4a3f-b2a4-20440f8f8a2d",
+          "authorizationVersion": "0",
+          "sessionEpoch": 0,
+          "authorizedStoreIds": [],
+          "dataScope": {
+            "grants": [
+              {
+                "permissionCode": "identity:user:list",
+                "scopes": [
+                  {
+                    "type": "TENANT"
+                  }
+                ]
+              },
+              {
+                "permissionCode": "identity:user:detail",
+                "scopes": [
+                  {
+                    "type": "TENANT"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        "identity",
+        "employees",
+        "list",
+        {
+          "page": 1,
+          "pageSize": 20,
+          "sortBy": "createdAt",
+          "sortOrder": "desc"
+        }
+      ],
+      "observers": 1,
+      "status": "success",
+      "fetchStatus": "idle",
+      "error": null
+    }
+  ],
+  "error": "返回原页越界复用一次纠正不循环"
+}

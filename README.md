@@ -2,9 +2,11 @@
 
 项目直接在 `/Users/kimwell/work/pet-platform` 建设，既有ui保留原位，不创建enterprise-app-scaffold子目录，不使用Product Delivery OS。后端固定 `com.pet.platform`，三端结构见文档；模板不包含宠物/订单等行业业务。
 
-**最新：P07-02 COMPLETE；P07 IN_PROGRESS；G01～G14 PASS。** `/admin/identity/users` 接入正式员工列表，完成URL校验/历史恢复、Form草稿、服务端分页与六字段排序、精确total安全适配和身份范围缓存清理。Web188项、79项真实浏览器检查、13项确定性组件场景和4项390px补验通过；命令、原始失败、资源恢复及边界见[P07-02验证](docs/testing/P07-02-VERIFICATION.md)和[列表接入规则](docs/conventions/WEB-LIST-PAGES.md)。下一建议P07-03员工详情页与列表返回状态，未执行；未提交、推送或部署。
+**最新：P07-03 IN_PROGRESS；P07 IN_PROGRESS。** 员工详情与受限列表返回已实现，Web7文件244项、41项确定性页面和43项正式浏览器场景通过；G13的Docker/Testcontainers契约检查仍未通过。实际命令、环境失败和逐项门禁见[P07-03验证](docs/testing/P07-03-VERIFICATION.md)，接入规则见[WEB-DETAIL-PAGES](docs/conventions/WEB-DETAIL-PAGES.md)。下一仅建议本项契约续验；未提交、推送、发布或部署。
 
-**P07-01历史：P07-01 COMPLETE；P07 IN_PROGRESS；G01～G14 PASS。** 正式列表/详情读取接口、独立权限、TENANT/STORES/SELF、六字段DTO完成；完整后端455项为P07-01历史，本轮后端未改，只执行10项契约导出/模型检查，详见[员工读取契约](docs/contracts/EMPLOYEE-MANAGEMENT.md)与[P07-01验证](docs/testing/P07-01-VERIFICATION.md)。
+**P07-02历史：P07-02 COMPLETE；P07 IN_PROGRESS；G01～G14 PASS。** `/admin/identity/users` 接入正式员工列表，完成URL校验/历史恢复、Form草稿、服务端分页与六字段排序、精确total安全适配和身份范围缓存清理。Web188项、79项真实浏览器检查、13项确定性组件场景和4项390px补验通过；命令、原始失败、资源恢复及边界见[P07-02验证](docs/testing/P07-02-VERIFICATION.md)和[列表接入规则](docs/conventions/WEB-LIST-PAGES.md)。当时下一建议为尚未执行的P07-03员工详情页与列表返回状态；未提交、推送或部署。
+
+**P07-01历史：P07-01 COMPLETE；P07 IN_PROGRESS；G01～G14 PASS。** 正式列表/详情读取接口、独立权限、TENANT/STORES/SELF、六字段DTO完成；完整后端455项为P07-01历史，P07-02后端未改，只执行10项契约导出/模型检查，详见[员工读取契约](docs/contracts/EMPLOYEE-MANAGEMENT.md)与[P07-01验证](docs/testing/P07-01-VERIFICATION.md)。
 
 **P06-03历史：P06-03 COMPLETE；P06 COMPLETE；G01～G14 PASS。** 25项覆盖矩阵对照原P06路线，补齐真实网络/取消、跨标签与限定窄屏/键盘验收，完成最小修复；5个文件127项Web测试、六项检查及diff/保全审计通过。见[P06-03验证](docs/testing/P06-03-VERIFICATION.md)与[P06总验收及P07接入](docs/testing/P06-ACCEPTANCE.md)。421项完整后端为历史，本轮只运行10项契约导出/模型检查。P07 NOT_STARTED，首项建议为员工管理后端查询与授权契约，不自动执行、提交、推送或部署。
 
@@ -87,3 +89,5 @@ P04-03与P04整体 COMPLETE，当前范围与限制见[P04-03验证](docs/testin
 ## P06-03 综合验收（2026-10-09）
 
 本轮已核对原P06/A06条件、补齐原生跨标签/连接失败/取消/390px/键盘及P07接入，修复入口、表单定位、菜单焦点、敏感草稿/退出通知和窄屏页头。P06-03/P06 COMPLETE，G01～G14 PASS，见[P06-03](docs/testing/P06-03-VERIFICATION.md)、[P06总验收及P07接入](docs/testing/P06-ACCEPTANCE.md)。本轮没有后端/契约/依赖改动，421项完整后端为历史；P07未启动，不提交/推送/部署。各早期IN_PROGRESS及P06-02的“下一P06-03”为当时历史，不删除或覆盖旧报告。
+
+P07-03 已接 STAFF 员工详情 `/admin/identity/users/$employeeId` 与独立 `identity:user:detail`，列表仅按该权限展示明确入口，详情 URL 保存受限的已提交列表查询并支持刷新/历史返回。接入见[Web详情规范](docs/conventions/WEB-DETAIL-PAGES.md)。[P07-03验证](docs/testing/P07-03-VERIFICATION.md)记录正式浏览器与技术测试、命令及剩余Docker/Testcontainers契约门禁；P07-03/P07当前仍IN_PROGRESS，不含员工写入或角色/门店关系管理。

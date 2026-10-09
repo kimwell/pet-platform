@@ -87,3 +87,7 @@ P06-02前轮状态（历史）为IN_PROGRESS：原生窗口focus真实触发补�
 当前真实列表 `/admin/identity/users`：Form草稿/Router已提交条件/Query响应三个owner；模块定义前端EmployeeSearch，请求/响应/行类型使用正式生成契约。queryFn传signal，复用authKeys.protected完整可信STAFF/主体/租户/会话/授权代际、有效门店、逐权限dataScope和标准化条件；不保存行数据到Zustand，不使用placeholderData。当前正式me完整逐权限范围已核对，不猜扁平权限范围；me授权事实变化（即使版本不增）沿用SessionRuntime取消和移除本空间旧scope，新epoch响应方可写回。
 
 list PERMISSION_DENIED/PASSWORD_CHANGE_REQUIRED立即隐藏旧行并清当前Query，由既有runtime重验；无权限guard与导航同源。列表自身不先于me进行focus刷新，相关身份重验变化后新key读取；没有即时推送保证。同条件刷新保留合法数据并标注，失败保留旧结果+重试；新条件/新身份清旧展示；401统一失效，CSRF403/422/503/取消各自区分。GET重试沿用现有规则，敏感写规则未改。URL、total字符串安全转换、页数/offset上限、有限replace纠正、页面错误与下一列表接入见[列表规范](WEB-LIST-PAGES.md)及[P07-02验证](../testing/P07-02-VERIFICATION.md)。此前“业务列表尚未实现”为P06历史；详情/写入/批量仍未实施。
+
+## P07-03 独立详情查询（2026-10-09）
+
+EmployeeView 详情使用正式生成getEmployee参数/响应、当前完整STAFF身份Key及employeeId；与list权限/范围互不扩权，不用列表DTO占位或预热。目标离开后取消/清独立Query，身份/租户/会话/真实授权事实变化复用既有空间代际清理；401/403/404刷新不保留旧详情。普通网络/503/超时/协议刷新失败可保留仍合法内容但明确标上次成功及失败；详情networkMode=always防止离线暂停被显示成新成功。返回已提交查询仅放受限URL，复用P07-02解析规范化，不新增Zustand/行对象/location.state事实源。完整规则见[详情规范](WEB-DETAIL-PAGES.md)；无跨标签即时同步承诺。

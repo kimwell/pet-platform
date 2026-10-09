@@ -1,0 +1,138 @@
+{
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "createdAt": "2026-10-09T03:57:39.798567+00:00",
+  "head": "d7c6f9c594cb57873b85d4732c6ffafdcad9881c",
+  "headUnchanged": true,
+  "baselineFiles": 4688,
+  "changedBaselineFiles": [
+    "README.md",
+    "apps/admin-web/src/app/layout/SessionLayout.tsx",
+    "apps/admin-web/src/app/router/pageAccess.ts",
+    "apps/admin-web/src/app/router/router.ts",
+    "apps/admin-web/src/features/identity/users/api/employees.ts",
+    "apps/admin-web/src/features/identity/users/pages/EmployeeListPage.tsx",
+    "apps/admin-web/src/features/identity/users/queries/employees.ts",
+    "apps/admin-web/src/shared/auth/returnTo.ts",
+    "apps/admin-web/src/shared/format.ts",
+    "apps/admin-web/src/styles/global.css",
+    "docs/contracts/EMPLOYEE-MANAGEMENT.md",
+    "docs/conventions/WEB-LIST-PAGES.md",
+    "docs/conventions/WEB-PAGES.md",
+    "docs/conventions/WEB-STATE.md",
+    "docs/development/DECISION-LOG.md",
+    "docs/development/ROADMAP.md",
+    "docs/testing/ACCEPTANCE-MATRIX.md"
+  ],
+  "normalizationOnly": [
+    {
+      "file": "docs/testing/evidence/P05-05/smoke-first.log",
+      "headRawSHA256": "87f8e7f089ae03611be94d43c48f1bddd2a11909376bd0350b5c8772d73ee6e8",
+      "workingSHA256": "bdada934f6bedaef8a982919d0e809966e1a161f7ae7dcb4688f2fba4416da05",
+      "normalizedBlob": "066e0ea65b2042feeba41a662bb4b4cb52438596",
+      "status": "UNCHANGED_GIT_CONTENT"
+    },
+    {
+      "file": "docs/testing/evidence/P01-01/TEST-probe.CompatibilityTest.xml",
+      "headRawSHA256": "641995e51547e3bc8fc889f5bb15a1e7a6a8a5e70248d5670a809e48f4543797",
+      "workingSHA256": "6e166084d774b400a5174faba15313b6d6abc3bb675ae423adae04652d71cc81",
+      "normalizedBlob": "da74ae44f408359785338a25be273046c5d65c50",
+      "status": "UNCHANGED_GIT_CONTENT"
+    },
+    {
+      "file": "docs/testing/evidence/P01-01/backend-tests.log",
+      "headRawSHA256": "4ca669db619e6baed4455cea5176cfe9785d76ed42533d34a51a4bf73ecdc2a2",
+      "workingSHA256": "ed50f279b24549dad7e079a50f8f50a45f2d4fb0d01372a4e277850ff1975ee8",
+      "normalizedBlob": "285be3b7e16a26451e223ec88c7369cd31ca7681",
+      "status": "UNCHANGED_GIT_CONTENT"
+    },
+    {
+      "file": "apps/backend/mvnw.cmd",
+      "headRawSHA256": "4a361e1374a3e5ad6d03e18e9adc0cf181ac5058ac6203b76f0ba3b456b56481",
+      "workingSHA256": "46eedb8419bd14fe70d5bb2916d7b6f51806e51b39d5b76a42610384ca929c1c",
+      "normalizedBlob": "92450f93273470af42eeee491874afb2039b700a",
+      "status": "UNCHANGED_GIT_CONTENT"
+    }
+  ],
+  "preserved": {
+    "ui": {
+      "baselineFiles": 270,
+      "changedFiles": [],
+      "status": "PASS"
+    },
+    "backendIncludingFrozenMigrations": {
+      "baselineFiles": 223,
+      "changedFiles": [],
+      "status": "PASS"
+    },
+    "generatedAndSharedContracts": {
+      "baselineFiles": 9,
+      "changedFiles": [],
+      "status": "PASS"
+    },
+    "miniprogram": {
+      "baselineFiles": 14,
+      "changedFiles": [],
+      "status": "PASS"
+    },
+    "dependenciesAndVersions": {
+      "baselineFiles": 7,
+      "changedFiles": [],
+      "status": "PASS"
+    },
+    "priorVerification": {
+      "baselineFiles": 4062,
+      "changedFiles": [],
+      "status": "PASS"
+    }
+  },
+  "localMarkdownLinks": {
+    "checked": 330,
+    "missing": [],
+    "status": "PASS"
+  },
+  "productionFixtureAndUnescapedHtmlScan": {
+    "files": 11,
+    "matchingFiles": [],
+    "distFiles": 9,
+    "matchingDistFiles": [],
+    "status": "PASS"
+  },
+  "secretScan": {
+    "source": "secret-value-scan.json",
+    "matchingFiles": [],
+    "method": "清理前本轮已知随机凭据精确值；截图另目视"
+  },
+  "resources": {
+    "source": "cleanup.json",
+    "status": "PASS"
+  },
+  "requiredChecks": {
+    "webRepoDiff": "PASS",
+    "contracts": "FAIL",
+    "contractExitCodes": [
+      1,
+      1,
+      1
+    ]
+  },
+  "gates": {
+    "G01": "PASS",
+    "G02": "PASS",
+    "G03": "PASS",
+    "G04": "PASS",
+    "G05": "PASS",
+    "G06": "PASS",
+    "G07": "PASS",
+    "G08": "PASS",
+    "G09": "PASS",
+    "G10": "PASS",
+    "G11": "PASS",
+    "G12": "PASS",
+    "G13": "PARTIAL",
+    "G14": "PASS"
+  },
+  "taskStatus": "IN_PROGRESS",
+  "phaseStatus": "IN_PROGRESS",
+  "remaining": "G13标准Docker/Testcontainers契约检查未完成；不以既有生成文件或历史10项代替本轮PASS",
+  "noAutomaticCommitPushReleaseDeploy": true
+}

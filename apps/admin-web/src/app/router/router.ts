@@ -12,6 +12,7 @@ import { ApiError } from '../../shared/api/ApiError';
 import { isRestricted } from '../../shared/auth/permissions';
 import { spaces } from '../../shared/auth/spaces';
 import { employeeHref, employeeSearchValues, initialEmployeeHistoryState, normalizeSearch, parseWebSearch, stringifyWebSearch } from '../../features/identity/users/queries/search';
+import { detailSearch, employeeDetailPath } from '../../features/identity/users/queries/detailSearch';
 
 const rootRoute = createRootRouteWithContext<Services>()({ component: SystemLayout, errorComponent: SystemError, notFoundComponent: SystemNotFound });
 const entryRoute = createRoute({ getParentRoute: () => rootRoute, path: '/', component: SystemEntry });
@@ -65,7 +66,13 @@ const staffUsers = createRoute({ getParentRoute: () => rootRoute, path: '/admin/
     return access;
   }, component: lazyRouteComponent(() => import('../layout/SessionLayout'), 'StaffLayout'),
 });
-export const routeTree = rootRoute.addChildren([entryRoute, staffLogin, platformLogin, staff, platform, staffSecurity, platformSecurity, staffUsers]);
+const staffUserDetail = createRoute({ getParentRoute: () => rootRoute, path: employeeDetailPath,
+  validateSearch: detailSearch,
+  search: { middlewares: [({ search, next }) => detailSearch(next(search))] },
+  beforeLoad: ({ context, location }) => requireSession(context.auth, 'STAFF', location.href),
+  component: lazyRouteComponent(() => import('../layout/SessionLayout'), 'StaffLayout'),
+});
+export const routeTree = rootRoute.addChildren([entryRoute, staffLogin, platformLogin, staff, platform, staffSecurity, platformSecurity, staffUsers, staffUserDetail]);
 export const services = createServices();
 export const router = createRouter({ routeTree, context: services, defaultPreload: false,
   parseSearch: parseWebSearch, stringifySearch: stringifyWebSearch,

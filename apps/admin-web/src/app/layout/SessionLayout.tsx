@@ -12,7 +12,9 @@ import { SessionFailure } from '../../shared/auth/SessionFailure';
 import { canManageSelf, isRestricted } from '../../shared/auth/permissions';
 import { canAccessPage, navigationFor, pageFor } from '../router/pageAccess';
 import { AccountSecurity } from '../../features/account/AccountSecurity';
+import { employeeDetailPath } from '../../features/identity/users/queries/detailSearch';
 const EmployeeListPage = lazy(() => import('../../features/identity/users/pages/EmployeeListPage').then(module => ({ default: module.EmployeeListPage })));
+const EmployeeDetailPage = lazy(() => import('../../features/identity/users/pages/EmployeeDetailPage').then(module => ({ default: module.EmployeeDetailPage })));
 
 function SessionLayout({ space }: { space: AuthSpace }) {
   const router = useRouter();
@@ -63,7 +65,8 @@ function SessionLayout({ space }: { space: AuthSpace }) {
           key={JSON.stringify([identity.principalId, identity.tenantId, identity.sessionId, identity.authorizationVersion,
             [...identity.permissionCodes].sort(), [...identity.authorizedStoreIds].sort(), identity.dataScope, isRestricted(identity)])}
           identity={identity} disabled={session.busy} refreshing={session.isFetching} refresh={() => void session.refetch()} /> : page.path === '/admin/identity/users' ? <Suspense fallback={<div role="status"><Spin /> 正在加载员工列表页面…</div>}><EmployeeListPage
-            key={`${identity.principalId}:${runtime.epoch(space)}`} identity={identity} /></Suspense> : <AccountHome identity={identity} refreshing={session.isFetching} refresh={() => void session.refetch()} />}
+            key={`${identity.principalId}:${runtime.epoch(space)}`} identity={identity} /></Suspense> : page.path === employeeDetailPath ? <Suspense fallback={<div role="status"><Spin /> 正在加载员工详情页面…</div>}><EmployeeDetailPage
+              key={`${identity.principalId}:${runtime.epoch(space)}:${location.pathname}`} identity={identity} /></Suspense> : <AccountHome identity={identity} refreshing={session.isFetching} refresh={() => void session.refetch()} />}
         {isRestricted(identity) && <Typography.Text type="secondary">请完成密码修改后继续使用工作台。</Typography.Text>}
         <div className="system-links"><Link to="/">系统入口</Link><Link to={space === 'STAFF' ? '/platform' : '/admin'}>{space === 'STAFF' ? '平台控制台' : '员工工作台'}</Link></div>
       </Layout.Content>

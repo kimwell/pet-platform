@@ -1,0 +1,9 @@
+{
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "command": [
+    "python3",
+    "docs/testing/evidence/P07-03/finalize.py"
+  ],
+  "exitCode": 1,
+  "reason": "初次基线摘要与Git差异全等断言失败；正在核对摘要算法，不跳过保全检查"
+}

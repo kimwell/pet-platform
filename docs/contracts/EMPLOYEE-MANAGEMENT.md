@@ -110,3 +110,9 @@ STAFF页面 `/admin/identity/users` 已接正式listEmployees生成类型和真�
 本页只提交keyword/status/page/pageSize/sortBy/sortOrder。后端storeId能力仍按上文保持，但本页没有可信公开门店选择事实，URL中的storeId作为本页不支持参数移除并提示；不新增roleId/日期或sort别名。关键词提交空输入省略；非空按后端字面量保持，不trim/改大小写。非法/重复已知URL参数恢复整组默认并提示，未知移除，所有canonical用replace；不将后端400/422本身改成成功。
 
 total协议与生成string完全未改；BigInt无损检查后仅安全值给官方Pagination，超MAX_SAFE保留精确总数和分页限制；页数/int32/offset边界及最多一次末页replace纠正见[列表规范](../conventions/WEB-LIST-PAGES.md)。Query安全范围来自当前正式me逐权限grants及既有身份代际，前端不承担最终授权。详情独立detail权限、完整详情页、返回列表状态、写入/批量/授权修改均尚未实现；当前验证边界见[P07-02](../testing/P07-02-VERIFICATION.md)。
+
+## P07-03 Web 详情接入（2026-10-09）
+
+STAFF页面 `/admin/identity/users/$employeeId` 已接现有正式getEmployee/EmployeeView与独立identity:user:detail，只有detail可合法直达；list不授detail，detail不授list，PLATFORM不借STAFF路由。UUID v4校验失败不请求；后端详情仍不接受Query，页面returnTo仅供路由使用，不发送给接口。六字段及非null/时间/枚举契约、公开接口、行范围和默认角色授权均未改。
+
+列表仅按当前detail权限显示明确入口；列表可见而详情范围外统一“员工不存在或不可访问”。目标独立Query包含完整正式身份/授权/代际，无列表DTO占位；重验清理和错误处理见[详情规范](../conventions/WEB-DETAIL-PAGES.md)。返回仅当前员工列表及原六参数白名单，复用P07-02规范化；没有list权限返回当前身份。详情刷新/原生历史保留已提交URL，不承诺草稿/滚动位置。正式浏览器与未执行门禁见[P07-03验证](../testing/P07-03-VERIFICATION.md)。没有任何写入、角色/门店关系或管理能力字段。

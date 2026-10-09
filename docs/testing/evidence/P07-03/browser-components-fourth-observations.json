@@ -1,0 +1,130 @@
+{
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "command": [
+    "node",
+    "docs/testing/evidence/P07-03/browser-components.mjs"
+  ],
+  "evidenceType": "确定性组件测试（网络替身），不能替代正式业务联调",
+  "exitCode": 1,
+  "scenarios": [
+    {
+      "name": "首次加载无详情且标题聚焦",
+      "result": "PASS"
+    },
+    {
+      "name": "仅六个契约字段，时间与状态中文",
+      "result": "PASS"
+    },
+    {
+      "name": "同身份目标刷新保留合法内容并标识",
+      "result": "PASS"
+    },
+    {
+      "name": "404不存在刷新停止展示旧详情且缓存无数据",
+      "result": "PASS"
+    },
+    {
+      "name": "404不存在保留trace且无重复错误",
+      "result": "PASS"
+    },
+    {
+      "name": "404跨租户刷新停止展示旧详情且缓存无数据",
+      "result": "PASS"
+    },
+    {
+      "name": "404跨租户保留trace且无重复错误",
+      "result": "PASS"
+    },
+    {
+      "name": "404详情范围外刷新停止展示旧详情且缓存无数据",
+      "result": "PASS"
+    },
+    {
+      "name": "404详情范围外保留trace且无重复错误",
+      "result": "PASS"
+    },
+    {
+      "name": "403权限刷新停止展示旧详情且缓存无数据",
+      "result": "PASS"
+    },
+    {
+      "name": "403权限保留trace且无重复错误",
+      "result": "PASS"
+    },
+    {
+      "name": "403其他正式码刷新停止展示旧详情且缓存无数据",
+      "result": "PASS"
+    },
+    {
+      "name": "403其他正式码保留trace且无重复错误",
+      "result": "PASS"
+    },
+    {
+      "name": "503刷新保留内容并明确失败、不退出",
+      "result": "PASS"
+    },
+    {
+      "name": "503恢复重试",
+      "result": "PASS"
+    },
+    {
+      "name": "网络故障刷新保留内容并明确失败、不退出",
+      "result": "PASS"
+    },
+    {
+      "name": "网络故障恢复重试",
+      "result": "PASS"
+    },
+    {
+      "name": "响应格式错误刷新保留内容并明确失败、不退出",
+      "result": "PASS"
+    },
+    {
+      "name": "响应格式错误恢复重试",
+      "result": "PASS"
+    },
+    {
+      "name": "首次503无旧内容并提供重试",
+      "result": "PASS"
+    }
+  ],
+  "pageErrors": [],
+  "consoleErrors": [
+    "Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "Failed to load resource: the server responded with a status of 403 (Forbidden)",
+    "Failed to load resource: the server responded with a status of 403 (Forbidden)",
+    "Failed to load resource: the server responded with a status of 503 (Service Unavailable)",
+    "Failed to load resource: the server responded with a status of 503 (Service Unavailable)",
+    "Failed to load resource: the server responded with a status of 503 (Service Unavailable)",
+    "Failed to load resource: net::ERR_FAILED",
+    "Failed to load resource: net::ERR_FAILED",
+    "Failed to load resource: net::ERR_FAILED",
+    "Failed to load resource: the server responded with a status of 503 (Service Unavailable)",
+    "Failed to load resource: the server responded with a status of 503 (Service Unavailable)",
+    "Failed to load resource: the server responded with a status of 503 (Service Unavailable)",
+    "Failed to load resource: the server responded with a status of 401 (Unauthorized)"
+  ],
+  "failurePageText": "当前身份暂时无法确认\n会话未被视为退出，请重试。\n重 试\n 返回系统入口\n身份响应格式异常，请重试\n当前会话已失效，请重新登录",
+  "failureQueries": [
+    {
+      "key": [
+        {
+          "principalType": "STAFF",
+          "sessionEpoch": 1
+        },
+        "auth",
+        "me",
+        "current"
+      ],
+      "observers": 1,
+      "status": "error",
+      "fetchStatus": "idle",
+      "error": {
+        "kind": "PROTOCOL"
+      }
+    }
+  ],
+  "error": "page.waitForURL: Timeout 30000ms exceeded.\n=========================== logs ===========================\nwaiting for navigation to \"**/admin/login*\" until \"load\"\n============================================================"
+}

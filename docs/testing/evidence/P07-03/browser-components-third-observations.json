@@ -1,0 +1,143 @@
+{
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "command": [
+    "node",
+    "docs/testing/evidence/P07-03/browser-components.mjs"
+  ],
+  "evidenceType": "确定性组件测试（网络替身），不能替代正式业务联调",
+  "exitCode": 1,
+  "scenarios": [
+    {
+      "name": "首次加载无详情且标题聚焦",
+      "result": "PASS"
+    },
+    {
+      "name": "仅六个契约字段，时间与状态中文",
+      "result": "PASS"
+    },
+    {
+      "name": "同身份目标刷新保留合法内容并标识",
+      "result": "PASS"
+    },
+    {
+      "name": "404不存在刷新停止展示旧详情且缓存无数据",
+      "result": "PASS"
+    },
+    {
+      "name": "404不存在保留trace且无重复错误",
+      "result": "PASS"
+    },
+    {
+      "name": "404跨租户刷新停止展示旧详情且缓存无数据",
+      "result": "PASS"
+    },
+    {
+      "name": "404跨租户保留trace且无重复错误",
+      "result": "PASS"
+    },
+    {
+      "name": "404详情范围外刷新停止展示旧详情且缓存无数据",
+      "result": "PASS"
+    },
+    {
+      "name": "404详情范围外保留trace且无重复错误",
+      "result": "PASS"
+    },
+    {
+      "name": "403权限刷新停止展示旧详情且缓存无数据",
+      "result": "PASS"
+    },
+    {
+      "name": "403权限保留trace且无重复错误",
+      "result": "PASS"
+    },
+    {
+      "name": "403其他正式码刷新停止展示旧详情且缓存无数据",
+      "result": "PASS"
+    },
+    {
+      "name": "403其他正式码保留trace且无重复错误",
+      "result": "PASS"
+    },
+    {
+      "name": "503刷新保留内容并明确失败、不退出",
+      "result": "PASS"
+    }
+  ],
+  "pageErrors": [],
+  "consoleErrors": [
+    "Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "Failed to load resource: the server responded with a status of 403 (Forbidden)",
+    "Failed to load resource: the server responded with a status of 403 (Forbidden)",
+    "Failed to load resource: the server responded with a status of 503 (Service Unavailable)",
+    "Failed to load resource: the server responded with a status of 503 (Service Unavailable)",
+    "Failed to load resource: the server responded with a status of 503 (Service Unavailable)"
+  ],
+  "failurePageText": "员工工作台\n当前身份\n账号安全\n员工列表\n收 起\n员工空间\n组\n组件技术夹具\n员工工作台\n/\n员工详情\n员工详情\n当前详情操作授权范围内的员工。时间：Asia/Shanghai\n返回列表\n刷新失败，以下仍为上次成功结果\n技术故障场景\n排错编号：aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\n重 试\n刷新失败，以下仍为上次成功结果。\n刷新详情\n员工 ID\tb9dd5dbf-4d0c-4a3f-b2a4-20440f8f8a2b\t账号\tfixture-account\n姓名\t组件技术夹具员工\t状态\t启用\n创建时间\t2026/10/09 08:00:00\t更新时间\t2026/10/09 08:00:00\n系统入口\n平台控制台",
+  "failureQueries": [
+    {
+      "key": [
+        {
+          "principalType": "STAFF",
+          "sessionEpoch": 0
+        },
+        "auth",
+        "me",
+        "current"
+      ],
+      "observers": 2,
+      "status": "success",
+      "fetchStatus": "idle",
+      "error": null
+    },
+    {
+      "key": [
+        {
+          "principalType": "STAFF",
+          "tenantId": "b9dd5dbf-4d0c-4a3f-b2a4-20440f8f8a2c",
+          "principalId": "b9dd5dbf-4d0c-4a3f-b2a4-20440f8f8a2b",
+          "sessionId": "b9dd5dbf-4d0c-4a3f-b2a4-20440f8f8a2d",
+          "authorizationVersion": "0",
+          "sessionEpoch": 0,
+          "authorizedStoreIds": [],
+          "dataScope": {
+            "grants": [
+              {
+                "permissionCode": "identity:user:list",
+                "scopes": [
+                  {
+                    "type": "TENANT"
+                  }
+                ]
+              },
+              {
+                "permissionCode": "identity:user:detail",
+                "scopes": [
+                  {
+                    "type": "TENANT"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        "identity",
+        "employees",
+        "detail",
+        {
+          "employeeId": "b9dd5dbf-4d0c-4a3f-b2a4-20440f8f8a2b"
+        }
+      ],
+      "observers": 1,
+      "status": "error",
+      "fetchStatus": "idle",
+      "error": {
+        "kind": "HTTP",
+        "status": 503
+      }
+    }
+  ],
+  "error": "locator.waitFor: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: '重试', exact: true }) to be visible\u001b[22m\n"
+}

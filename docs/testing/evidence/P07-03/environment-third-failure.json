@@ -1,0 +1,9 @@
+{
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "command": [
+    "python3",
+    "docs/testing/evidence/P07-03/setup.py"
+  ],
+  "exitCode": 1,
+  "reason": "Docker create成功，start客户端完成后钩子45秒超时；专用容器实际running。改用引擎HTTP start避免Docker Desktop钩子，既有资源不操作"
+}

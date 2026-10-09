@@ -1,0 +1,9 @@
+{
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "command": [
+    "python3",
+    "docs/testing/evidence/P07-03/setup.py"
+  ],
+  "exitCode": 1,
+  "reason": "Docker run默认连接45秒超时，但专用PG已建立；明确-H引擎socket安全连接后仅停止该专用PG重建；既有资源未操作"
+}

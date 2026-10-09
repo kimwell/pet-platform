@@ -1,0 +1,26 @@
+-------------------------------------------------------------------------------
+Test set: com.pet.testing.contracts.ProductionOpenApiExportTest
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.048 s <<< FAILURE! -- in com.pet.testing.contracts.ProductionOpenApiExportTest
+com.pet.testing.contracts.ProductionOpenApiExportTest.exportsActualProductionModelsWithoutTestPaths -- Time elapsed: 0.001 s <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class com.pet.testing.PostgresIntegrationSupport
+	at java.base/jdk.internal.misc.Unsafe.ensureClassInitialized0(Native Method)
+	at java.base/jdk.internal.misc.Unsafe.ensureClassInitialized(Unknown Source)
+	at java.base/java.lang.reflect.Constructor.acquireConstructorAccessor(Unknown Source)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Unknown Source)
+	at java.base/java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at java.base/java.util.Optional.orElseGet(Unknown Source)
+	at java.base/java.util.ArrayList.forEach(Unknown Source)
+	at java.base/java.util.ArrayList.forEach(Unknown Source)
+Caused by: java.lang.ExceptionInInitializerError: Exception org.testcontainers.containers.ContainerLaunchException: Container startup failed for image testcontainers/ryuk:0.14.0 [in thread "main"]
+	at org.testcontainers.containers.GenericContainer.doStart(GenericContainer.java:346)
+	at org.testcontainers.containers.GenericContainer.start(GenericContainer.java:317)
+	at org.testcontainers.utility.RyukResourceReaper.maybeStart(RyukResourceReaper.java:78)
+	at org.testcontainers.utility.RyukResourceReaper.init(RyukResourceReaper.java:42)
+	at org.testcontainers.DockerClientFactory.client(DockerClientFactory.java:245)
+	at org.testcontainers.DockerClientFactory$1.getDockerClient(DockerClientFactory.java:108)
+	at com.github.dockerjava.api.DockerClientDelegate.authConfig(DockerClientDelegate.java:111)
+	at org.testcontainers.containers.GenericContainer.start(GenericContainer.java:316)
+	at com.pet.testing.PostgresIntegrationSupport.<clinit>(PostgresIntegrationSupport.java:16)
+	... 8 more
+

@@ -67,3 +67,7 @@ STAFF 真实 passwordChangeRequired=true 时，登录成功依据刚取得的 me
 新增 `/admin/identity/users`，真实 GET `/api/admin/identity/users`，要求STAFF的identity:user:list；导航和beforeLoad共用sessionPages。官方Form筛选、Table六公开列、受控Pagination、中文空态/错误/状态和默认时区展示已接入；没有详情链接、行选择、新建/编辑/停用/导出/角色管理按钮。本人安全页独立，不借平台登录身份。
 
 URL只有keyword/status/page/pageSize/sortBy/sortOrder；草稿不立即请求，提交/重置/排序/改变pageSize回第一页；已冻结非法URL安全恢复默认并一次提示，未知参数丢弃；重复敏感参数不取首值。原始字符串解析保留数字/布尔样式字面量，关键词不trim；浏览器历史覆盖草稿。条件变化清旧数据，同条件刷新保留并明确旧结果；total超安全范围保真显示且禁用页码组件，超末页最多一次replace纠正。完整拥有者和边界见[WEB-LIST-PAGES](WEB-LIST-PAGES.md)，本轮证据见[P07-02](../testing/P07-02-VERIFICATION.md)。列偏好/详情返回状态/写入与正式模板继续后续任务。
+
+## P07-03 员工详情与返回（2026-10-09）
+
+新增 STAFF `/admin/identity/users/$employeeId`，独立 `identity:user:detail`，不依赖list；只有detail的员工可直达且返回当前身份页。列表仅在detail权限有效时显示官方键盘按钮，不整行点击。正式详情只显示六字段、独立加载/刷新/错误/统一404，目标和受限returnTo均校验。列表URL已提交查询可往返、详情刷新和原生历史恢复；不恢复草稿/滚动位置。进入详情、错误变化和返回列表合理聚焦标题，长文本完整换行。当前接入规则与验证边界分别见[WEB-DETAIL-PAGES](WEB-DETAIL-PAGES.md)与[P07-03](../testing/P07-03-VERIFICATION.md)，未添加写入/关系管理。

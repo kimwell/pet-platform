@@ -1,0 +1,1060 @@
+{
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "command": [
+    "node",
+    "docs/testing/evidence/P07-03/browser-real.mjs"
+  ],
+  "exitCode": 0,
+  "evidenceType": "正式生产JAR/local、受限PostgreSQL/Redis、正式bootstrap/STAFF认证；隔离SQL目标和授权；无网络响应替身",
+  "scenarios": [
+    {
+      "name": "筛选排序分页后键盘进入详情、只保留已提交URL",
+      "result": "PASS"
+    },
+    {
+      "name": "正式六字段与详情API一致",
+      "result": "PASS"
+    },
+    {
+      "name": "详情标题合理聚焦",
+      "result": "PASS"
+    },
+    {
+      "name": "键盘返回恢复六查询及URLForm，不恢复草稿",
+      "result": "PASS"
+    },
+    {
+      "name": "详情刷新后的确定返回地址仍一致",
+      "result": "PASS"
+    },
+    {
+      "name": "正式浏览器原生后退前进恢复列表与详情",
+      "result": "PASS"
+    },
+    {
+      "name": "真实长账号姓名及UUID字段",
+      "result": "PASS"
+    },
+    {
+      "name": "正式390px长文本无页面级横向溢出",
+      "result": "PASS",
+      "width": 390,
+      "scroll": 390
+    },
+    {
+      "name": "直接访问无返回安全回退默认员工列表",
+      "result": "PASS"
+    },
+    {
+      "name": "外部returnTo安全回退默认员工列表",
+      "result": "PASS"
+    },
+    {
+      "name": "协议相对returnTo安全回退默认员工列表",
+      "result": "PASS"
+    },
+    {
+      "name": "跨空间returnTo安全回退默认员工列表",
+      "result": "PASS"
+    },
+    {
+      "name": "重复参数returnTo安全回退默认员工列表",
+      "result": "PASS"
+    },
+    {
+      "name": "正式会话下非法UUID无详情请求",
+      "result": "PASS"
+    },
+    {
+      "name": "不存在统一404",
+      "result": "PASS"
+    },
+    {
+      "name": "跨租户统一404",
+      "result": "PASS"
+    },
+    {
+      "name": "list TENANT可见但detail SELF范围外统一404",
+      "result": "PASS"
+    },
+    {
+      "name": "SELF仅本人正式详情",
+      "result": "PASS"
+    },
+    {
+      "name": "SELF清旧TENANT详情缓存且没有版本虚构",
+      "result": "PASS"
+    },
+    {
+      "name": "STORES任一已授权门店正式详情",
+      "result": "PASS"
+    },
+    {
+      "name": "STORES范围外统一404",
+      "result": "PASS"
+    },
+    {
+      "name": "同一detail STORES+SELF并集保留无门店本人",
+      "result": "PASS"
+    },
+    {
+      "name": "无有效门店时STORES不扩大SELF",
+      "result": "PASS"
+    },
+    {
+      "name": "同一detail范围并集恢复门店目标",
+      "result": "PASS"
+    },
+    {
+      "name": "打开详情撤门店重验后旧详情清除",
+      "result": "PASS"
+    },
+    {
+      "name": "详情撤权403重验后旧详情和缓存清除",
+      "result": "PASS"
+    },
+    {
+      "name": "只有list直达详情无接口请求",
+      "result": "PASS"
+    },
+    {
+      "name": "只有list员工列表无详情入口",
+      "result": "PASS"
+    },
+    {
+      "name": "仅detail权限STAFF合法直达成功",
+      "result": "PASS"
+    },
+    {
+      "name": "仅detail无列表导航且提供当前身份去向",
+      "result": "PASS"
+    },
+    {
+      "name": "仅detail确定返回当前身份",
+      "result": "PASS"
+    },
+    {
+      "name": "返回前list撤权不再展示列表返回",
+      "result": "PASS"
+    },
+    {
+      "name": "真实浏览器断网保留合法内容、标刷新失败且不退出",
+      "result": "PASS"
+    },
+    {
+      "name": "真实网络恢复键盘重试成功且错误消失",
+      "result": "PASS"
+    },
+    {
+      "name": "正式Redis故障为503保留会话、trace和合法旧内容",
+      "result": "PASS"
+    },
+    {
+      "name": "正式Redis恢复无需重新登录",
+      "result": "PASS"
+    },
+    {
+      "name": "真实接口快速目标切换与取消、当前仅新目标",
+      "result": "PASS"
+    },
+    {
+      "name": "另标签正式退出后保护路由重验清详情",
+      "result": "PASS"
+    },
+    {
+      "name": "正式退出重新登录不复用旧会话详情",
+      "result": "PASS"
+    },
+    {
+      "name": "同源切换租户身份清旧详情且不借旧授权",
+      "result": "PASS"
+    },
+    {
+      "name": "仅PLATFORM认证不能访问STAFF详情、无详情请求",
+      "result": "PASS"
+    },
+    {
+      "name": "返回后实际total变零，P07-02有限replace纠正不循环",
+      "result": "PASS"
+    },
+    {
+      "name": "真实浏览器无新增JS或组件错误",
+      "result": "PASS",
+      "expectedNegativeHttpAndNetwork": 39,
+      "pageErrors": 0,
+      "unexpected": []
+    }
+  ],
+  "requests": [
+    {
+      "path": "/api/admin/identity/users",
+      "query": "?keyword=employee&status=ACTIVE&page=2&pageSize=10&sortBy=loginName&sortOrder=asc"
+    },
+    {
+      "path": "/api/admin/identity/users",
+      "query": "?keyword=employee&status=ACTIVE&page=2&pageSize=10&sortBy=loginName&sortOrder=asc"
+    },
+    {
+      "path": "/api/admin/identity/users/268bac4a-10bc-4a51-849e-556c7091fa9a",
+      "query": ""
+    },
+    {
+      "path": "/api/admin/identity/users/268bac4a-10bc-4a51-849e-556c7091fa9a",
+      "query": ""
+    },
+    {
+      "path": "/api/admin/identity/users/268bac4a-10bc-4a51-849e-556c7091fa9a",
+      "query": ""
+    },
+    {
+      "path": "/api/admin/identity/users/268bac4a-10bc-4a51-849e-556c7091fa9a",
+      "query": ""
+    },
+    {
+      "path": "/api/admin/identity/users/268bac4a-10bc-4a51-849e-556c7091fa9a",
+      "query": ""
+    },
+    {
+      "path": "/api/admin/identity/users/268bac4a-10bc-4a51-849e-556c7091fa9a",
+      "query": ""
+    },
+    {
+      "path": "/api/admin/identity/users/268bac4a-10bc-4a51-849e-556c7091fa9a",
+      "query": ""
+    },
+    {
+      "path": "/api/admin/identity/users/7e4f8481-e684-48a0-b165-a4b24454d427",
+      "query": ""
+    },
+    {
+      "path": "/api/admin/identity/users/7e4f8481-e684-48a0-b165-a4b24454d427",
+      "query": ""
+    },
+    {
+      "path": "/api/admin/identity/users/7e4f8481-e684-48a0-b165-a4b24454d427",
+      "query": ""
+    },
+    {
+      "path": "/api/admin/identity/users/22c62d49-fc53-4999-b416-cc2927c6de30",
+      "query": ""
+    },
+    {
+      "path": "/api/admin/identity/users/22c62d49-fc53-4999-b416-cc2927c6de30",
+      "query": ""
+    },
+    {
+      "path": "/api/admin/identity/users/b9dd5dbf-4d0c-4a3f-b2a4-20440f8f8a2b",
+      "query": ""
+    },
+    {
+      "path": "/api/admin/identity/users/b9dd5dbf-4d0c-4a3f-b2a4-20440f8f8a2b",
+      "query": ""
+    },
+    {
+      "path": "/api/admin/identity/users/a27bd901-0307-4e56-b729-d66f2f5a7a2a",
+      "query": ""
+    },
+    {
+      "path": "/api/admin/identity/users/a27bd901-0307-4e56-b729-d66f2f5a7a2a",
+      "query": ""
+    },
+    {
+      "path": "/api/admin/identity/users/a27bd901-0307-4e56-b729-d66f2f5a7a2a",
+      "query": ""
+    },
+    {
+      "path": "/api/admin/identity/users/a27bd901-0307-4e56-b729-d66f2f5a7a2a",
+      "query": ""
+    },
+    {
+      "path": "/api/admin/identity/users/22c62d49-fc53-4999-b416-cc2927c6de30",
+      "query": ""
+    },
+    {
+      "path": "/api/admin/identity/users/22c62d49-fc53-4999-b416-cc2927c6de30",
+      "query": ""
+    },
+    {
+      "path": "/api/admin/identity/users/5627e948-78d7-4410-9bd4-9b4fd2ff2814",
+      "query": ""
+    },
+    {
+      "path": "/api/admin/identity/users/5627e948-78d7-4410-9bd4-9b4fd2ff2814",
+      "query": ""
+    },
+    {
+      "path": "/api/admin/identity/users/5627e948-78d7-4410-9bd4-9b4fd2ff2814",
+      "query": ""
+    },
+    {
+      "path": "/api/admin/identity/users/5627e948-78d7-4410-9bd4-9b4fd2ff2814",
+      "query": ""
+    },
+    {
+      "path": "/api/admin/identity/users/5627e948-78d7-4410-9bd4-9b4fd2ff2814",
+      "query": ""
+    },
+    {
+      "path": "/api/admin/identity/users/22c62d49-fc53-4999-b416-cc2927c6de30",
+      "query": ""
+    },
+    {
+      "path": "/api/admin/identity/users/22c62d49-fc53-4999-b416-cc2927c6de30",
+      "query": ""
+    },
+    {
+      "path": "/api/admin/identity/users/22c62d49-fc53-4999-b416-cc2927c6de30",
+      "query": ""
+    },
+    {
+      "path": "/api/admin/identity/users/f4b2d549-014f-498e-9502-2e59aff86f5b",
+      "query": ""
+    },
+    {
+      "path": "/api/admin/identity/users/f4b2d549-014f-498e-9502-2e59aff86f5b",
+      "query": ""
+    },
+    {
+      "path": "/api/admin/identity/users/f4b2d549-014f-498e-9502-2e59aff86f5b",
+      "query": ""
+    },
+    {
+      "path": "/api/admin/identity/users/f4b2d549-014f-498e-9502-2e59aff86f5b",
+      "query": ""
+    },
+    {
+      "path": "/api/admin/identity/users/5627e948-78d7-4410-9bd4-9b4fd2ff2814",
+      "query": ""
+    },
+    {
+      "path": "/api/admin/identity/users/5627e948-78d7-4410-9bd4-9b4fd2ff2814",
+      "query": ""
+    },
+    {
+      "path": "/api/admin/identity/users/5627e948-78d7-4410-9bd4-9b4fd2ff2814",
+      "query": ""
+    },
+    {
+      "path": "/api/admin/identity/users/22c62d49-fc53-4999-b416-cc2927c6de30",
+      "query": ""
+    },
+    {
+      "path": "/api/admin/identity/users/22c62d49-fc53-4999-b416-cc2927c6de30",
+      "query": ""
+    },
+    {
+      "path": "/api/admin/identity/users/22c62d49-fc53-4999-b416-cc2927c6de30",
+      "query": ""
+    },
+    {
+      "path": "/api/admin/identity/users/22c62d49-fc53-4999-b416-cc2927c6de30",
+      "query": ""
+    },
+    {
+      "path": "/api/admin/identity/users/22c62d49-fc53-4999-b416-cc2927c6de30",
+      "query": ""
+    },
+    {
+      "path": "/api/admin/identity/users/22c62d49-fc53-4999-b416-cc2927c6de30",
+      "query": ""
+    },
+    {
+      "path": "/api/admin/identity/users/22c62d49-fc53-4999-b416-cc2927c6de30",
+      "query": ""
+    },
+    {
+      "path": "/api/admin/identity/users/22c62d49-fc53-4999-b416-cc2927c6de30",
+      "query": ""
+    },
+    {
+      "path": "/api/admin/identity/users/22c62d49-fc53-4999-b416-cc2927c6de30",
+      "query": ""
+    },
+    {
+      "path": "/api/admin/identity/users/22c62d49-fc53-4999-b416-cc2927c6de30",
+      "query": ""
+    },
+    {
+      "path": "/api/admin/identity/users/22c62d49-fc53-4999-b416-cc2927c6de30",
+      "query": ""
+    },
+    {
+      "path": "/api/admin/identity/users/22c62d49-fc53-4999-b416-cc2927c6de30",
+      "query": ""
+    },
+    {
+      "path": "/api/admin/identity/users",
+      "query": "?page=1&pageSize=20&sortBy=createdAt&sortOrder=desc"
+    },
+    {
+      "path": "/api/admin/identity/users",
+      "query": "?page=1&pageSize=20&sortBy=createdAt&sortOrder=desc"
+    },
+    {
+      "path": "/api/admin/identity/users/22c62d49-fc53-4999-b416-cc2927c6de30",
+      "query": ""
+    },
+    {
+      "path": "/api/admin/identity/users/22c62d49-fc53-4999-b416-cc2927c6de30",
+      "query": ""
+    },
+    {
+      "path": "/api/admin/identity/users/22c62d49-fc53-4999-b416-cc2927c6de30",
+      "query": ""
+    },
+    {
+      "path": "/api/admin/identity/users/22c62d49-fc53-4999-b416-cc2927c6de30",
+      "query": ""
+    },
+    {
+      "path": "/api/admin/identity/users/22c62d49-fc53-4999-b416-cc2927c6de30",
+      "query": ""
+    },
+    {
+      "path": "/api/admin/identity/users/22c62d49-fc53-4999-b416-cc2927c6de30",
+      "query": ""
+    },
+    {
+      "path": "/api/admin/identity/users/22c62d49-fc53-4999-b416-cc2927c6de30",
+      "query": ""
+    },
+    {
+      "path": "/api/admin/identity/users/22c62d49-fc53-4999-b416-cc2927c6de30",
+      "query": ""
+    },
+    {
+      "path": "/api/admin/identity/users/22c62d49-fc53-4999-b416-cc2927c6de30",
+      "query": ""
+    },
+    {
+      "path": "/api/admin/identity/users/22c62d49-fc53-4999-b416-cc2927c6de30",
+      "query": ""
+    },
+    {
+      "path": "/api/admin/identity/users/22c62d49-fc53-4999-b416-cc2927c6de30",
+      "query": ""
+    },
+    {
+      "path": "/api/admin/identity/users/22c62d49-fc53-4999-b416-cc2927c6de30",
+      "query": ""
+    },
+    {
+      "path": "/api/admin/identity/users/22c62d49-fc53-4999-b416-cc2927c6de30",
+      "query": ""
+    },
+    {
+      "path": "/api/admin/identity/users/22c62d49-fc53-4999-b416-cc2927c6de30",
+      "query": ""
+    },
+    {
+      "path": "/api/admin/identity/users/22c62d49-fc53-4999-b416-cc2927c6de30",
+      "query": ""
+    },
+    {
+      "path": "/api/admin/identity/users/22c62d49-fc53-4999-b416-cc2927c6de30",
+      "query": ""
+    },
+    {
+      "path": "/api/admin/identity/users/22c62d49-fc53-4999-b416-cc2927c6de30",
+      "query": ""
+    },
+    {
+      "path": "/api/admin/identity/users/f4b2d549-014f-498e-9502-2e59aff86f5b",
+      "query": ""
+    },
+    {
+      "path": "/api/admin/identity/users/f4b2d549-014f-498e-9502-2e59aff86f5b",
+      "query": ""
+    },
+    {
+      "path": "/api/admin/identity/users/22c62d49-fc53-4999-b416-cc2927c6de30",
+      "query": ""
+    },
+    {
+      "path": "/api/admin/identity/users/22c62d49-fc53-4999-b416-cc2927c6de30",
+      "query": ""
+    },
+    {
+      "path": "/api/admin/identity/users/22c62d49-fc53-4999-b416-cc2927c6de30",
+      "query": ""
+    },
+    {
+      "path": "/api/admin/identity/users/22c62d49-fc53-4999-b416-cc2927c6de30",
+      "query": ""
+    },
+    {
+      "path": "/api/admin/identity/users/22c62d49-fc53-4999-b416-cc2927c6de30",
+      "query": ""
+    },
+    {
+      "path": "/api/admin/identity/users/22c62d49-fc53-4999-b416-cc2927c6de30",
+      "query": ""
+    },
+    {
+      "path": "/api/admin/identity/users",
+      "query": "?status=DISABLED&page=2&pageSize=10&sortBy=createdAt&sortOrder=desc"
+    },
+    {
+      "path": "/api/admin/identity/users",
+      "query": "?status=DISABLED&page=2&pageSize=10&sortBy=createdAt&sortOrder=desc"
+    },
+    {
+      "path": "/api/admin/identity/users",
+      "query": "?status=DISABLED&pageSize=10&page=1&sortBy=createdAt&sortOrder=desc"
+    }
+  ],
+  "responses": [
+    {
+      "path": "/api/admin/identity/users",
+      "status": 200,
+      "traceId": "3c7d1c96b3c84b4e848621a32bd58c9b"
+    },
+    {
+      "path": "/api/admin/identity/users/268bac4a-10bc-4a51-849e-556c7091fa9a",
+      "status": 200,
+      "traceId": "c39cd13a38c8428aa6ba4f38d8023220"
+    },
+    {
+      "path": "/api/admin/identity/users/268bac4a-10bc-4a51-849e-556c7091fa9a",
+      "status": 200,
+      "traceId": "bc33a2e7e5044512994ee32305a27bf9"
+    },
+    {
+      "path": "/api/admin/identity/users/268bac4a-10bc-4a51-849e-556c7091fa9a",
+      "status": 200,
+      "traceId": "967b850bfaad4f728c9559397413e201"
+    },
+    {
+      "path": "/api/admin/identity/users/268bac4a-10bc-4a51-849e-556c7091fa9a",
+      "status": 200,
+      "traceId": "2a0b3ca617e441e6a02ad9d45b1e62ff"
+    },
+    {
+      "path": "/api/admin/identity/users/7e4f8481-e684-48a0-b165-a4b24454d427",
+      "status": 200,
+      "traceId": "2622c0e59007487bbf690f72955917c2"
+    },
+    {
+      "path": "/api/admin/identity/users/7e4f8481-e684-48a0-b165-a4b24454d427",
+      "status": 200,
+      "traceId": "3255408fc7eb4c8db722fdf18c81138b"
+    },
+    {
+      "path": "/api/admin/identity/users/22c62d49-fc53-4999-b416-cc2927c6de30",
+      "status": 200,
+      "traceId": "b3b32012dae74c2eb4216afe88af4a91"
+    },
+    {
+      "path": "/api/admin/identity/users/b9dd5dbf-4d0c-4a3f-b2a4-20440f8f8a2b",
+      "status": 404,
+      "code": "RESOURCE_NOT_FOUND",
+      "traceId": "1e1a3afab12740389a8f440f73cce906"
+    },
+    {
+      "path": "/api/admin/identity/users/a27bd901-0307-4e56-b729-d66f2f5a7a2a",
+      "status": 404,
+      "code": "RESOURCE_NOT_FOUND",
+      "traceId": "fd4e43f3ba554a04b40dbb8c50dcf935"
+    },
+    {
+      "path": "/api/admin/identity/users/a27bd901-0307-4e56-b729-d66f2f5a7a2a",
+      "status": 404,
+      "code": "RESOURCE_NOT_FOUND",
+      "traceId": "1f077344dfdd499c87f74dbb4c039fd8"
+    },
+    {
+      "path": "/api/admin/identity/users/22c62d49-fc53-4999-b416-cc2927c6de30",
+      "status": 404,
+      "code": "RESOURCE_NOT_FOUND",
+      "traceId": "ad2be27ca644422cb72fcf9784c83560"
+    },
+    {
+      "path": "/api/admin/identity/users/5627e948-78d7-4410-9bd4-9b4fd2ff2814",
+      "status": 200,
+      "traceId": "61bf38e2ecba403d898f0b55e08519ff"
+    },
+    {
+      "path": "/api/admin/identity/users/5627e948-78d7-4410-9bd4-9b4fd2ff2814",
+      "status": 200,
+      "traceId": "a6b58bfd36ac4f5184a1951f3b26a096"
+    },
+    {
+      "path": "/api/admin/identity/users/5627e948-78d7-4410-9bd4-9b4fd2ff2814",
+      "status": 200,
+      "traceId": "f5a160cfea90495eb01b37b967798e67"
+    },
+    {
+      "path": "/api/admin/identity/users/22c62d49-fc53-4999-b416-cc2927c6de30",
+      "status": 200,
+      "traceId": "34d236f681db488caedb7a804b8ea166"
+    },
+    {
+      "path": "/api/admin/identity/users/22c62d49-fc53-4999-b416-cc2927c6de30",
+      "status": 200,
+      "traceId": "0ba7affea9184e9cad1da7a308286786"
+    },
+    {
+      "path": "/api/admin/identity/users/f4b2d549-014f-498e-9502-2e59aff86f5b",
+      "status": 404,
+      "code": "RESOURCE_NOT_FOUND",
+      "traceId": "bbf44db928d443859b7a96838ba9c420"
+    },
+    {
+      "path": "/api/admin/identity/users/f4b2d549-014f-498e-9502-2e59aff86f5b",
+      "status": 404,
+      "code": "RESOURCE_NOT_FOUND",
+      "traceId": "179880f0aeb343618ad97b9b75f9f7b3"
+    },
+    {
+      "path": "/api/admin/identity/users/5627e948-78d7-4410-9bd4-9b4fd2ff2814",
+      "status": 200,
+      "traceId": "c4044f2f636048609ed118d380aa43c6"
+    },
+    {
+      "path": "/api/admin/identity/users/5627e948-78d7-4410-9bd4-9b4fd2ff2814",
+      "status": 200,
+      "traceId": "2c7cb15ec85c4c2b81aa9c0265fc11fa"
+    },
+    {
+      "path": "/api/admin/identity/users/22c62d49-fc53-4999-b416-cc2927c6de30",
+      "status": 404,
+      "code": "RESOURCE_NOT_FOUND",
+      "traceId": "1dfdd9c3e0664d5f9a95c7c6d1665ff0"
+    },
+    {
+      "path": "/api/admin/identity/users/22c62d49-fc53-4999-b416-cc2927c6de30",
+      "status": 200,
+      "traceId": "2b5c9f77fad74155992a9431a245c6d4"
+    },
+    {
+      "path": "/api/admin/identity/users/22c62d49-fc53-4999-b416-cc2927c6de30",
+      "status": 200,
+      "traceId": "4f362ac15a5540d7bcb97ececf1c82bd"
+    },
+    {
+      "path": "/api/admin/identity/users/22c62d49-fc53-4999-b416-cc2927c6de30",
+      "status": 200,
+      "traceId": "e62042d056264d359c4b24f8b60f03fa"
+    },
+    {
+      "path": "/api/admin/identity/users/22c62d49-fc53-4999-b416-cc2927c6de30",
+      "status": 404,
+      "code": "RESOURCE_NOT_FOUND",
+      "traceId": "f00622e54c084848ac561356acba8e71"
+    },
+    {
+      "path": "/api/admin/identity/users/22c62d49-fc53-4999-b416-cc2927c6de30",
+      "status": 200,
+      "traceId": "a06cc80ad9bb4632888a80e1040015a4"
+    },
+    {
+      "path": "/api/admin/identity/users/22c62d49-fc53-4999-b416-cc2927c6de30",
+      "status": 403,
+      "code": "PERMISSION_DENIED",
+      "traceId": "85d192e88ca84737a7973cf612ddc6a2"
+    },
+    {
+      "path": "/api/admin/identity/users",
+      "status": 200,
+      "traceId": "a74ff1504d994aca84e5157e8fdca3f7"
+    },
+    {
+      "path": "/api/admin/identity/users/22c62d49-fc53-4999-b416-cc2927c6de30",
+      "status": 200,
+      "traceId": "b4eafe3ffeb648e3b0c83305045ad76e"
+    },
+    {
+      "path": "/api/admin/identity/users/22c62d49-fc53-4999-b416-cc2927c6de30",
+      "status": 200,
+      "traceId": "920773972be44953b8d197a4ffcb4941"
+    },
+    {
+      "path": "/api/admin/identity/users/22c62d49-fc53-4999-b416-cc2927c6de30",
+      "status": 200,
+      "traceId": "f15f9bb6188b4ceeb82b869f1e7dbbfe"
+    },
+    {
+      "path": "/api/admin/identity/users/22c62d49-fc53-4999-b416-cc2927c6de30",
+      "status": 200,
+      "traceId": "7cac2ab4ce42431d9bc9420324fa7ca4"
+    },
+    {
+      "path": "/api/admin/identity/users/22c62d49-fc53-4999-b416-cc2927c6de30",
+      "status": 200,
+      "traceId": "ff47e0a0ac6f44bfbc3ff6715ec7fabd"
+    },
+    {
+      "path": "/api/admin/identity/users/22c62d49-fc53-4999-b416-cc2927c6de30",
+      "status": 200,
+      "traceId": "becafb5649fe4c00b3d2fc75cdb06a2c"
+    },
+    {
+      "path": "/api/admin/identity/users/22c62d49-fc53-4999-b416-cc2927c6de30",
+      "status": 503,
+      "code": "DEPENDENCY_UNAVAILABLE",
+      "traceId": "7dcefe89cd6c43839abae7af54380adf"
+    },
+    {
+      "path": "/api/admin/identity/users/22c62d49-fc53-4999-b416-cc2927c6de30",
+      "status": 503,
+      "code": "DEPENDENCY_UNAVAILABLE",
+      "traceId": "290905134bf0436691d006e786dd8c6c"
+    },
+    {
+      "path": "/api/admin/identity/users/22c62d49-fc53-4999-b416-cc2927c6de30",
+      "status": 503,
+      "code": "DEPENDENCY_UNAVAILABLE",
+      "traceId": "ad2e79c6d83c4201bdce3a67713099cc"
+    },
+    {
+      "path": "/api/admin/identity/users/22c62d49-fc53-4999-b416-cc2927c6de30",
+      "status": 200,
+      "traceId": "3dfabff026254af88996f24109fd34ca"
+    },
+    {
+      "path": "/api/admin/identity/users/f4b2d549-014f-498e-9502-2e59aff86f5b",
+      "status": 200,
+      "traceId": "b5e4ef24f479446e92a88765dfddc859"
+    },
+    {
+      "path": "/api/admin/identity/users/22c62d49-fc53-4999-b416-cc2927c6de30",
+      "status": 200,
+      "traceId": "3979ef36753d403393193623d3f2b290"
+    },
+    {
+      "path": "/api/admin/identity/users/22c62d49-fc53-4999-b416-cc2927c6de30",
+      "status": 200,
+      "traceId": "64b8ad7515d44a6c8769dcf687943f44"
+    },
+    {
+      "path": "/api/admin/identity/users/22c62d49-fc53-4999-b416-cc2927c6de30",
+      "status": 200,
+      "traceId": "1011fd946d79481087254d9ea4d20693"
+    },
+    {
+      "path": "/api/admin/identity/users",
+      "status": 200,
+      "traceId": "08a706a95de2432486250aef9b7ac0ff"
+    },
+    {
+      "path": "/api/admin/identity/users",
+      "status": 200,
+      "traceId": "e46dd6f28cf64ac4a7540084734f471f"
+    }
+  ],
+  "aborts": [
+    {
+      "path": "/api/admin/identity/users",
+      "reason": "net::ERR_ABORTED"
+    },
+    {
+      "path": "/api/admin/identity/users/268bac4a-10bc-4a51-849e-556c7091fa9a",
+      "reason": "net::ERR_ABORTED"
+    },
+    {
+      "path": "/api/admin/identity/users/268bac4a-10bc-4a51-849e-556c7091fa9a",
+      "reason": "net::ERR_ABORTED"
+    },
+    {
+      "path": "/api/admin/identity/users/268bac4a-10bc-4a51-849e-556c7091fa9a",
+      "reason": "net::ERR_ABORTED"
+    },
+    {
+      "path": "/api/admin/identity/users/7e4f8481-e684-48a0-b165-a4b24454d427",
+      "reason": "net::ERR_ABORTED"
+    },
+    {
+      "path": "/api/admin/identity/users/22c62d49-fc53-4999-b416-cc2927c6de30",
+      "reason": "net::ERR_ABORTED"
+    },
+    {
+      "path": "/api/admin/identity/users/b9dd5dbf-4d0c-4a3f-b2a4-20440f8f8a2b",
+      "reason": "net::ERR_ABORTED"
+    },
+    {
+      "path": "/api/admin/identity/users/a27bd901-0307-4e56-b729-d66f2f5a7a2a",
+      "reason": "net::ERR_ABORTED"
+    },
+    {
+      "path": "/api/admin/identity/users/a27bd901-0307-4e56-b729-d66f2f5a7a2a",
+      "reason": "net::ERR_ABORTED"
+    },
+    {
+      "path": "/api/admin/identity/users/22c62d49-fc53-4999-b416-cc2927c6de30",
+      "reason": "net::ERR_ABORTED"
+    },
+    {
+      "path": "/api/admin/identity/users/5627e948-78d7-4410-9bd4-9b4fd2ff2814",
+      "reason": "net::ERR_ABORTED"
+    },
+    {
+      "path": "/api/admin/identity/users/5627e948-78d7-4410-9bd4-9b4fd2ff2814",
+      "reason": "net::ERR_ABORTED"
+    },
+    {
+      "path": "/api/admin/identity/users/22c62d49-fc53-4999-b416-cc2927c6de30",
+      "reason": "net::ERR_ABORTED"
+    },
+    {
+      "path": "/api/admin/identity/users/f4b2d549-014f-498e-9502-2e59aff86f5b",
+      "reason": "net::ERR_ABORTED"
+    },
+    {
+      "path": "/api/admin/identity/users/f4b2d549-014f-498e-9502-2e59aff86f5b",
+      "reason": "net::ERR_ABORTED"
+    },
+    {
+      "path": "/api/admin/identity/users/5627e948-78d7-4410-9bd4-9b4fd2ff2814",
+      "reason": "net::ERR_ABORTED"
+    },
+    {
+      "path": "/api/admin/identity/users/22c62d49-fc53-4999-b416-cc2927c6de30",
+      "reason": "net::ERR_ABORTED"
+    },
+    {
+      "path": "/api/admin/identity/users/22c62d49-fc53-4999-b416-cc2927c6de30",
+      "reason": "net::ERR_ABORTED"
+    },
+    {
+      "path": "/api/admin/identity/users/22c62d49-fc53-4999-b416-cc2927c6de30",
+      "reason": "net::ERR_ABORTED"
+    },
+    {
+      "path": "/api/admin/identity/users/22c62d49-fc53-4999-b416-cc2927c6de30",
+      "reason": "net::ERR_ABORTED"
+    },
+    {
+      "path": "/api/admin/identity/users/22c62d49-fc53-4999-b416-cc2927c6de30",
+      "reason": "net::ERR_ABORTED"
+    },
+    {
+      "path": "/api/admin/identity/users",
+      "reason": "net::ERR_ABORTED"
+    },
+    {
+      "path": "/api/admin/identity/users/22c62d49-fc53-4999-b416-cc2927c6de30",
+      "reason": "net::ERR_ABORTED"
+    },
+    {
+      "path": "/api/admin/identity/users/22c62d49-fc53-4999-b416-cc2927c6de30",
+      "reason": "net::ERR_ABORTED"
+    },
+    {
+      "path": "/api/admin/identity/users/22c62d49-fc53-4999-b416-cc2927c6de30",
+      "reason": "net::ERR_ABORTED"
+    },
+    {
+      "path": "/api/admin/identity/users/22c62d49-fc53-4999-b416-cc2927c6de30",
+      "reason": "net::ERR_ABORTED"
+    },
+    {
+      "path": "/api/admin/identity/users/22c62d49-fc53-4999-b416-cc2927c6de30",
+      "reason": "net::ERR_INTERNET_DISCONNECTED"
+    },
+    {
+      "path": "/api/admin/identity/users/22c62d49-fc53-4999-b416-cc2927c6de30",
+      "reason": "net::ERR_INTERNET_DISCONNECTED"
+    },
+    {
+      "path": "/api/admin/identity/users/22c62d49-fc53-4999-b416-cc2927c6de30",
+      "reason": "net::ERR_INTERNET_DISCONNECTED"
+    },
+    {
+      "path": "/api/admin/identity/users/f4b2d549-014f-498e-9502-2e59aff86f5b",
+      "reason": "net::ERR_ABORTED"
+    },
+    {
+      "path": "/api/admin/identity/users/22c62d49-fc53-4999-b416-cc2927c6de30",
+      "reason": "net::ERR_ABORTED"
+    },
+    {
+      "path": "/api/admin/identity/users/22c62d49-fc53-4999-b416-cc2927c6de30",
+      "reason": "net::ERR_ABORTED"
+    },
+    {
+      "path": "/api/admin/identity/users/22c62d49-fc53-4999-b416-cc2927c6de30",
+      "reason": "net::ERR_ABORTED"
+    },
+    {
+      "path": "/api/admin/identity/users",
+      "reason": "net::ERR_ABORTED"
+    }
+  ],
+  "pageErrors": [],
+  "consoleErrors": [
+    "Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+    "Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+    "Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "Failed to load resource: the server responded with a status of 403 (Forbidden)",
+    "Failed to load resource: net::ERR_INTERNET_DISCONNECTED",
+    "Failed to load resource: net::ERR_INTERNET_DISCONNECTED",
+    "Failed to load resource: net::ERR_INTERNET_DISCONNECTED",
+    "Failed to load resource: the server responded with a status of 503 (Service Unavailable)",
+    "Failed to load resource: the server responded with a status of 503 (Service Unavailable)",
+    "Failed to load resource: the server responded with a status of 503 (Service Unavailable)",
+    "Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+    "Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+    "Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+    "Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+    "Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+    "Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+    "Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+    "Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+    "Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+    "Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+    "Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+    "Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+    "Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+    "Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+    "Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+    "Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+    "Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+    "Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+    "Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+    "Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+    "Failed to load resource: the server responded with a status of 401 (Unauthorized)"
+  ],
+  "snapshots": [
+    {
+      "name": "正式六字段与详情API一致",
+      "data": {
+        "id": "268bac4a-10bc-4a51-849e-556c7091fa9a",
+        "loginName": "employee-15",
+        "displayName": "验收员工15",
+        "status": "ACTIVE",
+        "createdAt": "2026-10-01T15:00:00.000Z",
+        "updatedAt": "2026-10-02T15:00:00.000Z"
+      },
+      "displayed": [
+        "268bac4a-10bc-4a51-849e-556c7091fa9a",
+        "employee-15",
+        "验收员工15",
+        "启用",
+        "2026/10/01 23:00:00",
+        "2026/10/02 23:00:00"
+      ]
+    },
+    {
+      "name": "真实长账号姓名及UUID字段",
+      "data": {
+        "id": "7e4f8481-e684-48a0-b165-a4b24454d427",
+        "loginName": "long-account-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "displayName": "验收员工02长姓名长姓名长姓名长姓名长姓名长姓名长姓名长姓名长姓名长姓名长姓名长姓名长姓名长姓名长姓名长姓名长姓名长姓名长姓名长姓名长姓名长姓名长姓名长姓名长姓名",
+        "status": "ACTIVE",
+        "createdAt": "2026-10-01T02:00:00.000Z",
+        "updatedAt": "2026-10-02T02:00:00.000Z"
+      },
+      "displayed": [
+        "7e4f8481-e684-48a0-b165-a4b24454d427",
+        "long-account-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "验收员工02长姓名长姓名长姓名长姓名长姓名长姓名长姓名长姓名长姓名长姓名长姓名长姓名长姓名长姓名长姓名长姓名长姓名长姓名长姓名长姓名长姓名长姓名长姓名长姓名长姓名",
+        "启用",
+        "2026/10/01 10:00:00",
+        "2026/10/02 10:00:00"
+      ]
+    },
+    {
+      "name": "SELF仅本人正式详情",
+      "data": {
+        "id": "5627e948-78d7-4410-9bd4-9b4fd2ff2814",
+        "loginName": "p07-staff",
+        "displayName": "租户管理员",
+        "status": "ACTIVE",
+        "createdAt": "2026-10-09T03:37:25.150Z",
+        "updatedAt": "2026-10-09T03:37:27.850Z"
+      },
+      "displayed": [
+        "5627e948-78d7-4410-9bd4-9b4fd2ff2814",
+        "p07-staff",
+        "租户管理员",
+        "启用",
+        "2026/10/09 11:37:25",
+        "2026/10/09 11:37:27"
+      ]
+    },
+    {
+      "name": "STORES任一已授权门店正式详情",
+      "data": {
+        "id": "22c62d49-fc53-4999-b416-cc2927c6de30",
+        "loginName": "employee-03",
+        "displayName": "验收员工03",
+        "status": "ACTIVE",
+        "createdAt": "2026-10-01T03:00:00.000Z",
+        "updatedAt": "2026-10-02T03:00:00.000Z"
+      },
+      "displayed": [
+        "22c62d49-fc53-4999-b416-cc2927c6de30",
+        "employee-03",
+        "验收员工03",
+        "启用",
+        "2026/10/01 11:00:00",
+        "2026/10/02 11:00:00"
+      ]
+    },
+    {
+      "name": "同一detail STORES+SELF并集保留无门店本人",
+      "data": {
+        "id": "5627e948-78d7-4410-9bd4-9b4fd2ff2814",
+        "loginName": "p07-staff",
+        "displayName": "租户管理员",
+        "status": "ACTIVE",
+        "createdAt": "2026-10-09T03:37:25.150Z",
+        "updatedAt": "2026-10-09T03:37:27.850Z"
+      },
+      "displayed": [
+        "5627e948-78d7-4410-9bd4-9b4fd2ff2814",
+        "p07-staff",
+        "租户管理员",
+        "启用",
+        "2026/10/09 11:37:25",
+        "2026/10/09 11:37:27"
+      ]
+    },
+    {
+      "name": "同一detail范围并集恢复门店目标",
+      "data": {
+        "id": "22c62d49-fc53-4999-b416-cc2927c6de30",
+        "loginName": "employee-03",
+        "displayName": "验收员工03",
+        "status": "ACTIVE",
+        "createdAt": "2026-10-01T03:00:00.000Z",
+        "updatedAt": "2026-10-02T03:00:00.000Z"
+      },
+      "displayed": [
+        "22c62d49-fc53-4999-b416-cc2927c6de30",
+        "employee-03",
+        "验收员工03",
+        "启用",
+        "2026/10/01 11:00:00",
+        "2026/10/02 11:00:00"
+      ]
+    },
+    {
+      "name": "仅detail权限STAFF合法直达成功",
+      "data": {
+        "id": "22c62d49-fc53-4999-b416-cc2927c6de30",
+        "loginName": "employee-03",
+        "displayName": "验收员工03",
+        "status": "ACTIVE",
+        "createdAt": "2026-10-01T03:00:00.000Z",
+        "updatedAt": "2026-10-02T03:00:00.000Z"
+      },
+      "displayed": [
+        "22c62d49-fc53-4999-b416-cc2927c6de30",
+        "employee-03",
+        "验收员工03",
+        "启用",
+        "2026/10/01 11:00:00",
+        "2026/10/02 11:00:00"
+      ]
+    }
+  ]
+}

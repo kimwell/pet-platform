@@ -1,0 +1,9 @@
+{
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "command": [
+    "python3",
+    "docs/testing/evidence/P07-03/setup.py"
+  ],
+  "exitCode": 1,
+  "reason": "显式-H引擎socket下run已建立容器，但Docker Desktop客户端创建后钩子仍超时45秒；改用引擎create/start与状态核对，保留超时事实"
+}

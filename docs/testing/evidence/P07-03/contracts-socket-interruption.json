@@ -1,0 +1,14 @@
+{
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "records": [
+    {
+      "command": [
+        "kill",
+        "-TERM",
+        95811
+      ],
+      "exitCode": 0,
+      "reason": "本轮标准socket override重验卡在专用Ryuk启动/宿主机端口转发；仅结束该契约子JVM"
+    }
+  ]
+}

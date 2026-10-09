@@ -1,0 +1,24 @@
+[
+  {
+    "command": [
+      "docker",
+      "desktop",
+      "status"
+    ],
+    "status": "NOT_EXECUTED",
+    "reason": "timeout 10s"
+  },
+  {
+    "command": [
+      "curl",
+      "--max-time",
+      "8",
+      "--unix-socket",
+      "/Users/kimwell/.docker/run/docker.sock",
+      "-s",
+      "http://localhost/_ping"
+    ],
+    "exitCode": 28,
+    "output": ""
+  }
+]

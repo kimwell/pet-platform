@@ -1,0 +1,22 @@
+{
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "command": [
+    "node",
+    "docs/testing/evidence/P07-03/browser-components.mjs"
+  ],
+  "evidenceType": "确定性组件测试（网络替身），不能替代正式业务联调",
+  "exitCode": 1,
+  "scenarios": [
+    {
+      "name": "返回原页越界复用一次纠正不循环",
+      "result": "FAIL",
+      "listQueries": [
+        "?page=99&pageSize=20&sortBy=createdAt&sortOrder=desc",
+        "?page=99&pageSize=20&sortBy=createdAt&sortOrder=desc"
+      ]
+    }
+  ],
+  "pageErrors": [],
+  "consoleErrors": [],
+  "error": "返回原页越界复用一次纠正不循环"
+}

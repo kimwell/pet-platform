@@ -1,0 +1,62 @@
+
+> @pet/admin-web@0.0.0 test /Users/kimwell/work/pet-platform/apps/admin-web
+> vitest run
+
+
+ RUN  v4.1.11 /Users/kimwell/work/pet-platform/apps/admin-web
+
+ ❯ src/features/identity/users/queries/detail.test.ts (55 tests | 2 failed) 77ms
+     × 无detail undefined 导航/直达/Query均拒绝且不请求详情 50ms
+     × 无detail "identity:user:list" 导航/直达/Query均拒绝且不请求详情 4ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/features/identity/users/queries/detail.test.ts > 独立详情权限、正式接口与当前授权缓存 > 无detail undefined 导航/直达/Query均拒绝且不请求详情
+TypeError: Cannot read properties of undefined (reading 'includes')
+ ❯ hasPermission src/shared/auth/permissions.ts:9:123
+      7| /** 只判断明确代码，数据范围仍由后端按每权限 grant 授权，不取跨权限最大范围。 */
+      8| export function hasPermission(identity: WebIdentity | null | undefined…
+      9|   return Boolean(identity?.principalType === space && !isRestricted(id…
+       |                                                                                                                           ^
+     10| }
+     11| export type SelfAction = 'password' | 'logout-all' | 'logout';
+ ❯ src/app/router/pageAccess.ts:17:62
+ ❯ canAccessPage src/app/router/pageAccess.ts:17:48
+ ❯ src/features/identity/users/queries/detail.test.ts:48:12
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  src/features/identity/users/queries/detail.test.ts > 独立详情权限、正式接口与当前授权缓存 > 无detail "identity:user:list" 导航/直达/Query均拒绝且不请求详情
+AssertionError: expected { queryClient: QueryClient{}, …(2) } to match object { Object (sessionError) }
+(10 matching properties omitted from actual)
+
+- Expected
++ Received
+
+  {
+-   "sessionError": {
+-     "code": "PERMISSION_DENIED",
++   "sessionError": ApiError {
++     "code": undefined,
+    },
+  }
+
+ ❯ src/features/identity/users/queries/detail.test.ts:49:50
+     47|     const router = createRouter({routeTree, context:services, history:…
+     48|     expect(canAccessPage(pageFor('STAFF', employeeDetailHref(id)), ide…
+     49|     expect(router.state.matches.at(-1)?.context).toMatchObject({sessio…
+       |                                                  ^
+     50|     const options = employeeDetailOptions(services.auth, identity, id)…
+     51|     await expect(services.queryClient.fetchQuery({ ...options, retry:f…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+
+ Test Files  1 failed | 6 passed (7)
+      Tests  2 failed | 241 passed (243)
+   Start at  11:25:04
+   Duration  1.69s (transform 896ms, setup 0ms, import 5.94s, tests 446ms, environment 1ms)
+
+/Users/kimwell/work/pet-platform/apps/admin-web:
+ ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL  @pet/admin-web@0.0.0 test: `vitest run`
+Exit status 1

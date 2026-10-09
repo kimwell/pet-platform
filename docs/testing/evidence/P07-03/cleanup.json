@@ -1,0 +1,171 @@
+{
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "command": [
+    "python3",
+    "docs/testing/evidence/P07-03/cleanup.py"
+  ],
+  "exitCode": 0,
+  "completedAt": "2026-10-09T03:48:35.524206+00:00",
+  "records": [
+    {
+      "label": "仅本轮授权/关联/数据准备状态恢复核对",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": [
+        "docker",
+        "-H",
+        "unix:///Users/kimwell/Library/Containers/com.docker.docker/Data/docker.raw.sock",
+        "exec",
+        "-i",
+        "pet-p07-03-pg",
+        "psql",
+        "-X",
+        "-qAt",
+        "-v",
+        "ON_ERROR_STOP=1",
+        "-U",
+        "postgres",
+        "-d",
+        "p07_03_acceptance"
+      ],
+      "exitCode": 0,
+      "summary": "{\"listGrantTenant\" : 1, \"detailGrantTenant\" : 1, \"otherReadScopes\" : 0}\n1\n13\n"
+    },
+    {
+      "label": "停止本轮后端",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": [
+        "kill",
+        "-TERM",
+        "process-group",
+        85831
+      ],
+      "exitCode": 0
+    },
+    {
+      "label": "停止本轮Web",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": [
+        "kill",
+        "-TERM",
+        "process-group",
+        79579
+      ],
+      "exitCode": 0
+    },
+    {
+      "label": "停止本轮字节隧道",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": [
+        "kill",
+        "-TERM",
+        "process-group",
+        85657
+      ],
+      "exitCode": 0
+    },
+    {
+      "label": "收尾前容器名",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": [
+        "docker",
+        "-H",
+        "unix:///Users/kimwell/Library/Containers/com.docker.docker/Data/docker.raw.sock",
+        "ps",
+        "-a",
+        "--format",
+        "{{.Names}}"
+      ],
+      "exitCode": 0,
+      "summary": "pet-p07-03-redis\npet-p07-03-pg\nagent-os-platform-document-parser-worker-1\nagent-os-platform-worker-1\nagent-os-platform-web-1\nagent-os-platform-postgres-1\nagent-os-platform-agent-runtime-1\nagent-os-platform-api-1\nagent-os-platform-api-migrate-1\nagent-os-platform-redis-1\npet-platform-p02-validation-rabbitmq-1\npet-platform-p02-validation-postgres-1\npet-platform-p02-validation-redis-1\n"
+    },
+    {
+      "label": "停止本轮专用tmpfs容器",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": [
+        "docker",
+        "-H",
+        "unix:///Users/kimwell/Library/Containers/com.docker.docker/Data/docker.raw.sock",
+        "stop",
+        "pet-p07-03-redis",
+        "pet-p07-03-pg"
+      ],
+      "exitCode": 0,
+      "summary": "pet-p07-03-redis\npet-p07-03-pg\n"
+    },
+    {
+      "label": "既有容器状态与本轮清理核对",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": [
+        "docker",
+        "-H",
+        "unix:///Users/kimwell/Library/Containers/com.docker.docker/Data/docker.raw.sock",
+        "ps",
+        "-a",
+        "--format",
+        "{{.Names}}\t{{.State}}"
+      ],
+      "exitCode": 0,
+      "summary": "agent-os-platform-document-parser-worker-1\trunning\nagent-os-platform-worker-1\trunning\nagent-os-platform-web-1\trunning\nagent-os-platform-postgres-1\trunning\nagent-os-platform-agent-runtime-1\trunning\nagent-os-platform-api-1\trunning\nagent-os-platform-api-migrate-1\texited\nagent-os-platform-redis-1\trunning\npet-platform-p02-validation-rabbitmq-1\texited\npet-platform-p02-validation-postgres-1\texited\npet-platform-p02-validation-redis-1\texited\n"
+    },
+    {
+      "label": "卷保全核对",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": [
+        "docker",
+        "-H",
+        "unix:///Users/kimwell/Library/Containers/com.docker.docker/Data/docker.raw.sock",
+        "volume",
+        "ls",
+        "--format",
+        "{{.Name}}"
+      ],
+      "exitCode": 0,
+      "summary": "2f0cb1b43942984d58c21106fc837a7bcd98b4dacbf44ec26a1e4a9a0148f17b\n5cb37b53c5928c8f4f737b744ac423a9de4cefb960877ac2393ec707ee5ae885\n7e8a427e33b700123b7558bef3e44a3ecc2fffe9179fcee0569059d29023e012\n8f6a61721226d88201ab5a33e7a19e7f491882c88211f40b1a8082ded1d10a55\n40a6c79baa0f35024bf15c16dc1eb00aa47c394ca87a4be067560a34a87af6ad\n059c53c40bf888d6635045cc0b100dc072242b6f90831d34af2a5469b2a5e233\n923b5bb0df8e2bb9a7a4a1da6e2b6fc4b15a8066bd954b9eabc2b6714fa0053b\nagent-os-platform_api-storage\nagent-os-platform_artifact-storage\nagent-os-platform_postgres-data\nagent-os-platform_redis-data\nb174c4df1595b3857673ccfae1a93a488ce62fd4330122a513f08fdb44f26478\nd84ff1d2cdc05ebaf6970d272c5c0d2f36348000fb1caebebfbad08748d6b36b\npet-platform-p02-validation_postgres-data\npet-platform-p02-validation_rabbitmq-data\npet-platform-p02-validation_redis-data\n"
+    },
+    {
+      "label": "结束本轮阻塞只读Docker客户端",
+      "command": [
+        "kill",
+        "-TERM",
+        73181
+      ],
+      "exitCode": 0
+    }
+  ],
+  "closedPorts": {
+    "18092": true,
+    "5175": true,
+    "18094": true,
+    "18095": true
+  },
+  "existingContainersPreserved": true,
+  "originalContainers": [
+    "agent-os-platform-document-parser-worker-1\trunning",
+    "agent-os-platform-worker-1\trunning",
+    "agent-os-platform-web-1\trunning",
+    "agent-os-platform-postgres-1\trunning",
+    "agent-os-platform-agent-runtime-1\trunning",
+    "agent-os-platform-api-1\trunning",
+    "agent-os-platform-api-migrate-1\texited",
+    "agent-os-platform-redis-1\trunning",
+    "pet-platform-p02-validation-rabbitmq-1\texited",
+    "pet-platform-p02-validation-postgres-1\texited",
+    "pet-platform-p02-validation-redis-1\texited"
+  ],
+  "originalVolumesPreserved": true,
+  "namedVolumesDeleted": false,
+  "restoredReadGrantsAndStoreAndFixtureStatus": true,
+  "restoredOriginalArtifactSHA256": "50ded25e2927b2423f7c2d8844d85a980f3f10ee055d721dc7a09345d7975c10",
+  "removedSecretInputs": [
+    "staff-password",
+    "platform-password",
+    "postgres.env",
+    "redis.conf",
+    "validation-secret.json",
+    "staff-new-password",
+    "staff-final-password",
+    "platform-new-password"
+  ],
+  "remainingSecretInputs": [],
+  "summary": "只清本轮进程/字节隧道/tmpfs容器/唯一Ryuk和临时凭据；既有运行服务、容器、卷保全；标准Docker故障未擅自重启"
+}

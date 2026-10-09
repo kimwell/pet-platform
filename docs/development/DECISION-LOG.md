@@ -309,3 +309,19 @@ P05-04补充安全修复：真实编码登录路径无CSRF探针观察到200，�
 | 模块内可读列/Form/API/queries，正式模板归P11 | 直接官方组件、generated类型；无BaseTable/透传Wrapper/行选择 | 下一仅建议P07-03详情与返回状态，P07仍IN_PROGRESS |
 
 完整门禁、运行与技术替身区分、命令/退出码/原始失败、构建体积及收尾见[P07-02验证](../testing/P07-02-VERIFICATION.md)。没有依赖升级、后端修复或授权放宽；不提交、推送或部署。
+
+## P07-03 详情与列表返回决定（2026-10-09）
+
+| 决定 | 原因与证据 | 边界 |
+| --- | --- | --- |
+| STAFF详情同级保护路由、独立identity:user:detail、navigation:false | 正式Controller/逐权限grants；仅detail直达及仅list拒绝43项真实场景通过 | 不增加无目标静态菜单或默认角色授权 |
+| 正式getEmployee/EmployeeView六字段、目标独立Key | 目标/身份/租户/会话/授权/代际隔离，真实范围与字段核对 | 不用listDTO占位、预热或手写响应 |
+| UUID v4与仅员工列表returnTo白名单 | 复用P07-02原始重复解析、规范化和六参数；地址刷新/历史/非法安全回退均验 | ≤2048；不存草稿、对象、秘密或第二套Store |
+| 无list返回当前身份；返回前重验权限 | detail不授list，撤list权限后导航及时替换，原生后退仍有守卫 | 不依赖history.back；只保证已提交URL查询 |
+| 401/403/404立即移除旧详情；普通刷新失败标旧内容 | 实际撤权/撤门店/统一404与正式Redis503/网络恢复；ErrorNotice只一次、保留trace | 沿用P06空间/代际，不声称即时跨标签同步 |
+| 详情networkMode=always，保留既有GET重试 | 首次断网验证发现默认online模式会暂停查询而未形成错误，最小调整使明确刷新实际尝试并展示故障 | 不退出会话，不新增网络库/依赖、不改变写重试 |
+| 目标离开后等观察者卸载再清Query | 保持取消/旧响应边界，避免StrictMode探测误清仍有观察者的Query | 新员工无placeholder；既有身份清空间逻辑不改 |
+| 官方Descriptions完整换行、页面标题焦点与明确按钮名称 | 六字段、空文本/null技术边界、真实390px及键盘通过 | 没有编辑/删除/重置或角色/门店伪字段 |
+| Docker故障仅采用本轮回环字节隧道支持真实业务联调 | 正式迁移/生产JAR/受限PG/Redis/STAFF真实43项通过，隧道不替换协议或查询 | 默认Docker/Testcontainers契约命令仍单独记失败/未完成，不将环境替代写成该命令PASS |
+
+当前P07-03门禁状态与失败修复、资源保全见[P07-03验证](../testing/P07-03-VERIFICATION.md)，P07整体仍IN_PROGRESS，不自动授权后续写入。

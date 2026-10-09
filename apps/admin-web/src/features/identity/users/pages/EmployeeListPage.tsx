@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { useQuery, useQueryClient } from '@tanstack/react-query';
 import { useLocation, useRouter, useSearch } from '@tanstack/react-router';
 import { Alert, Button, Empty, Form, Input, Pagination, Select, Space, Spin, Table, Tag, Typography } from 'antd';
@@ -7,7 +7,9 @@ import type { WebIdentity } from '../../../../shared/auth/spaces';
 import { useSession } from '../../../../shared/auth/useSession';
 import { ApiError } from '../../../../shared/api/ApiError';
 import { ErrorNotice } from '../../../../shared/api/ErrorNotice';
-import { displayInstant, displayText, displayTimeZone } from '../../../../shared/format';
+import { displayInstant, displayText, displayTimeZone, employeeStatusText } from '../../../../shared/format';
+import { hasPermission } from '../../../../shared/auth/permissions';
+import { employeeDetailHref } from '../queries/detailSearch';
 import { employeeListOptions } from '../queries/employees';
 import { correctedPage, safePagination } from '../queries/pagination';
 import { defaultSearch, employeeHref, keywordError, submitFilters, tableSort } from '../queries/search';
@@ -16,6 +18,7 @@ import type { Employee } from '../api/employees';
 
 export function EmployeeListPage({ identity }: { identity: WebIdentity }) {
   const router = useRouter(), location = useLocation(), queryClient = useQueryClient();
+  const heading = useRef<HTMLHeadingElement>(null);
   const search = useSearch({ from: '/admin/identity/users' });
   const { auth } = useSession('STAFF', false);
   const options = useMemo(() => employeeListOptions(auth, identity, search), [auth, identity, search]);
@@ -26,6 +29,7 @@ export function EmployeeListPage({ identity }: { identity: WebIdentity }) {
   const pagination = query.data ? safePagination(query.data.total, search.page, search.pageSize) : undefined;
   const correction = pagination ? correctedPage(pagination, search.page, Boolean(location.state.employeePageCorrected)) : undefined;
   const fingerprint = JSON.stringify(search);
+  useEffect(() => { heading.current?.focus(); }, []);
   useEffect(() => {
     // 前进后退、刷新及新查询均以 URL 为准，覆盖尚未提交的草稿。
     form.setFieldsValue({ keyword: search.keyword ?? '', status: search.status });
@@ -53,17 +57,19 @@ export function EmployeeListPage({ identity }: { identity: WebIdentity }) {
     { title: '员工 ID', dataIndex: 'id', key: 'id', width: 310, render: longText },
     { title: '账号', dataIndex: 'loginName', key: 'loginName', width: 220, render: longText },
     { title: '姓名', dataIndex: 'displayName', key: 'displayName', width: 200, render: longText },
-    { title: '状态', dataIndex: 'status', key: 'status', width: 100, render: (status: Employee['status']) => <Tag color={status === 'ACTIVE' ? 'success' : 'default'}>{status === 'ACTIVE' ? '启用' : '停用'}</Tag> },
+    { title: '状态', dataIndex: 'status', key: 'status', width: 100, render: (status: Employee['status']) => <Tag color={status === 'ACTIVE' ? 'success' : 'default'}>{employeeStatusText(status)}</Tag> },
     { title: '创建时间', dataIndex: 'createdAt', key: 'createdAt', width: 200, render: displayInstant },
     { title: '更新时间', dataIndex: 'updatedAt', key: 'updatedAt', width: 200, render: displayInstant },
   ].map(column => ({ ...column, sorter: true, sortOrder: column.key === search.sortBy ? sortOrder : null,
     // 默认降序列先切升序，清除时恢复默认；否则受控默认值会使点击一直落回降序。
     sortDirections: column.key === 'createdAt' ? ['descend', 'ascend'] : ['ascend', 'descend'], showSorterTooltip: { title: '按此列进行服务端排序' } }));
+  if (hasPermission(identity, 'STAFF', 'identity:user:detail')) columns.push({ title: '操作', key: 'actions', width: 120,
+    render: (_, employee) => <Button type="link" onClick={() => void router.navigate({ href: employeeDetailHref(employee.id, employeeHref(search)) })} aria-label={`查看 ${employee.displayName} 的详情`}>查看详情</Button> });
   const failed = query.isError && !(query.error instanceof ApiError && query.error.kind === 'CANCELLED');
   // 权限错误立即隐藏已有行；统一 401 的身份失效仍交由会话层处理。
   const data = forbidden ? undefined : query.data;
   return <section className="employee-list" aria-labelledby="employees-heading">
-    <div className="page-heading"><div><Typography.Title level={1} id="employees-heading">员工列表</Typography.Title><Typography.Paragraph type="secondary">当前授权范围内的员工。时间：{displayTimeZone}</Typography.Paragraph></div>
+    <div className="page-heading"><div><Typography.Title ref={heading} tabIndex={-1} level={1} id="employees-heading">员工列表</Typography.Title><Typography.Paragraph type="secondary">当前授权范围内的员工。时间：{displayTimeZone}</Typography.Paragraph></div>
       <Button onClick={refresh} disabled={query.isFetching || forbidden} loading={Boolean(data && query.isFetching)}>刷新列表</Button></div>
     {location.state.employeeUrlNotice && <Alert showIcon type="warning" title={location.state.employeeUrlNotice} closable />}
     <Form form={form} layout="vertical" className="employee-filters" onFinish={draft => change(submitFilters(search, draft))} scrollToFirstError={{ focus: true }}>

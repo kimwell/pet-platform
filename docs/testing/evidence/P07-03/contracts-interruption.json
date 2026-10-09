@@ -1,0 +1,10 @@
+{
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "command": [
+    "kill",
+    "-TERM",
+    "89123"
+  ],
+  "exitCode": 0,
+  "reason": "指定契约检查子JVM在Docker默认socket发现阶段持续无响应；仅停止本轮子进程，没有结束已有Java或Docker进程"
+}

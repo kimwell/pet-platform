@@ -1,0 +1,22 @@
+
+> @pet/admin-web@0.0.0 typecheck /Users/kimwell/work/pet-platform/apps/admin-web
+> tsc --noEmit
+
+src/features/identity/users/queries/detail.test.ts(45,76): error TS2345: Argument of type '(permissionCodes: string | undefined) => Promise<void>' is not assignable to parameter of type '(...args: [] | [string]) => Awaitable<void>'.
+  Types of parameters 'permissionCodes' and 'args' are incompatible.
+    Type '[] | [string]' is not assignable to type '[permissionCodes: string | undefined]'.
+      Type '[]' is not assignable to type '[permissionCodes: string | undefined]'.
+        Source has 0 element(s) but target requires 1.
+src/features/identity/users/queries/detail.test.ts(48,68): error TS2345: Argument of type '{ permissionCodes: string | undefined; authorizationVersion: string; authorizedStoreIds: string[]; dataScope: components["schemas"]["ScopeData"]; displayName: string; ... 6 more ...; tenantId: string; }' is not assignable to parameter of type 'WebIdentity | null | undefined'.
+  Type '{ permissionCodes: string | undefined; authorizationVersion: string; authorizedStoreIds: string[]; dataScope: components["schemas"]["ScopeData"]; displayName: string; ... 6 more ...; tenantId: string; }' is not assignable to type '{ authorizationVersion: string; authorizedStoreIds: string[]; dataScope: { grants: { permissionCode: string; scopes: ({ type: "TENANT"; } | { storeIds: string[]; type: "STORES"; } | { type: "SELF"; })[]; }[]; }; ... 8 more ...; tenantId: string; }'.
+    Types of property 'permissionCodes' are incompatible.
+      Type 'string | undefined' is not assignable to type 'string[]'.
+        Type 'undefined' is not assignable to type 'string[]'.
+src/features/identity/users/queries/detail.test.ts(50,58): error TS2345: Argument of type '{ permissionCodes: string | undefined; authorizationVersion: string; authorizedStoreIds: string[]; dataScope: components["schemas"]["ScopeData"]; displayName: string; ... 6 more ...; tenantId: string; }' is not assignable to parameter of type 'WebIdentity'.
+  Type '{ permissionCodes: string | undefined; authorizationVersion: string; authorizedStoreIds: string[]; dataScope: components["schemas"]["ScopeData"]; displayName: string; ... 6 more ...; tenantId: string; }' is not assignable to type '{ authorizationVersion: string; authorizedStoreIds: string[]; dataScope: { grants: { permissionCode: string; scopes: ({ type: "TENANT"; } | { storeIds: string[]; type: "STORES"; } | { type: "SELF"; })[]; }[]; }; ... 8 more ...; tenantId: string; }'.
+    Types of property 'permissionCodes' are incompatible.
+      Type 'string | undefined' is not assignable to type 'string[]'.
+        Type 'undefined' is not assignable to type 'string[]'.
+/Users/kimwell/work/pet-platform/apps/admin-web:
+ ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL  @pet/admin-web@0.0.0 typecheck: `tsc --noEmit`
+Exit status 2

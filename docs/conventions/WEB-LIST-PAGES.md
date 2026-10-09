@@ -62,3 +62,7 @@ Query Key 复用 authKeys.protected：STAFF、可信tenant/principal/session、a
 4. 复用 authKeys.protected/runtime/queryRetry，传 signal，禁止跨scope placeholder；声明范围重验和错误owner。
 5. 用确定性测试证明参数/竞争/超限，再用正式认证/隔离PG/Redis/真实浏览器核对集合total、范围、桌面/窄屏/键盘；保留失败、命令和恢复证据。
 6. 更新本模块契约及验收；详情返回状态单独依独立detail权限接入，写入/批量按后续任务冻结。正式工程模板留 P11。
+
+## P07-03 已接详情入口（2026-10-09）
+
+前文“未实现详情/不放详情链接”为P07-02历史。当前列表额外有明确官方“查看详情”按钮，仅按独立identity:user:detail显示，不能证明该行在详情范围内。只携规范化已提交URL为受限returnTo，草稿不带出；确定返回、刷新与历史恢复、撤list权限安全去向及页越界复用见[详情规范](WEB-DETAIL-PAGES.md)。六字段排序/查询/total适配未改，返回列表聚焦标题；未增加写入或选择框。

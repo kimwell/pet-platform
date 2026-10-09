@@ -1,0 +1,30 @@
+[
+  {
+    "label": "已有卷保全基线",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "docker",
+      "volume",
+      "ls",
+      "--format",
+      "{{.Name}}"
+    ],
+    "startedAt": "2026-10-09T11:25:02.765659+08:00",
+    "exitCode": 0,
+    "summary": "2f0cb1b43942984d58c21106fc837a7bcd98b4dacbf44ec26a1e4a9a0148f17b\n5cb37b53c5928c8f4f737b744ac423a9de4cefb960877ac2393ec707ee5ae885\n7e8a427e33b700123b7558bef3e44a3ecc2fffe9179fcee0569059d29023e012\n8f6a61721226d88201ab5a33e7a19e7f491882c88211f40b1a8082ded1d10a55\n40a6c79baa0f35024bf15c16dc1eb00aa47c394ca87a4be067560a34a87af6ad\n059c53c40bf888d6635045cc0b100dc072242b6f90831d34af2a5469b2a5e233\n923b5bb0df8e2bb9a7a4a1da6e2b6fc4b15a8066bd954b9eabc2b6714fa0053b\nagent-os-platform_api-storage\nagent-os-platform_artifact-storage\nagent-os-platform_postgres-data\nagent-os-platform_redis-data\nb174c4df1595b3857673ccfae1a93a488ce62fd4330122a513f08fdb44f26478\nd84ff1d2cdc05ebaf6970d272c5c0d2f36348000fb1caebebfbad08748d6b36b\npet-platform-p02-validation_postgres-data\npet-platform-p02-validation_rabbitmq-data\npet-platform-p02-validation_redis-data\n"
+  },
+  {
+    "label": "已有容器保全基线",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "docker",
+      "ps",
+      "-a",
+      "--format",
+      "{{.Names}}\t{{.State}}"
+    ],
+    "startedAt": "2026-10-09T11:25:02.819558+08:00",
+    "exitCode": 0,
+    "summary": "agent-os-platform-document-parser-worker-1\trunning\nagent-os-platform-worker-1\trunning\nagent-os-platform-web-1\trunning\nagent-os-platform-postgres-1\trunning\nagent-os-platform-agent-runtime-1\trunning\nagent-os-platform-api-1\trunning\nagent-os-platform-api-migrate-1\texited\nagent-os-platform-redis-1\trunning\npet-platform-p02-validation-rabbitmq-1\texited\npet-platform-p02-validation-postgres-1\texited\npet-platform-p02-validation-redis-1\texited\n"
+  }
+]
