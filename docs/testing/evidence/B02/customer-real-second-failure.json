@@ -1,0 +1,9 @@
+{
+  "status": "FAIL",
+  "steps": [],
+  "codeLogged": false,
+  "tokenLogged": false,
+  "productionGateway": true,
+  "failedStage": "TOOL_LAUNCH",
+  "finishedAt": "2026-10-09T05:51:17.948Z"
+}

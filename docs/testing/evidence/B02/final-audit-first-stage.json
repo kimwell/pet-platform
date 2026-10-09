@@ -1,0 +1,144 @@
+{
+  "technicalChecks": "PASS",
+  "B02": "IN_PROGRESS",
+  "P07": "IN_PROGRESS",
+  "B03": "NOT_STARTED",
+  "remainingGate": "真实CUSTOMER生命周期NOT_EXECUTED；开发者工具服务端口安全设置的单次确认未收到",
+  "backendTests": 490,
+  "webTests": 266,
+  "requiredCommandResults": {
+    "backend-verify-final": 0,
+    "web-typecheck-final": 0,
+    "web-lint-final": 0,
+    "web-test-final": 0,
+    "web-build-final": 0,
+    "contracts-generate-final": 0,
+    "contracts-check-final": 0,
+    "contracts-typecheck-final": 0,
+    "miniprogram-types-final": 0,
+    "repo-final": 0,
+    "diff-check-final": 0,
+    "cleanup-accepted": 0,
+    "final-database-accepted": 0
+  },
+  "failureCommandCount": 19,
+  "cleanup": {
+    "dedicatedProcessIds": [
+      {
+        "pid": 66012,
+        "status": "ALREADY_STOPPED"
+      },
+      {
+        "pid": 66056,
+        "status": "ALREADY_STOPPED"
+      }
+    ],
+    "containers": [
+      {
+        "name": "pet-b02-pg",
+        "stopExitCode": null,
+        "status": "ALREADY_REMOVED_BY_FIRST_ATTEMPT"
+      },
+      {
+        "name": "pet-b02-redis",
+        "stopExitCode": null,
+        "status": "ALREADY_REMOVED_BY_FIRST_ATTEMPT"
+      }
+    ],
+    "ports": [
+      {
+        "port": 18101,
+        "noListener": true
+      },
+      {
+        "port": 18102,
+        "noListener": true
+      },
+      {
+        "port": 54643,
+        "noListener": true
+      },
+      {
+        "port": 54644,
+        "noListener": true
+      },
+      {
+        "port": 9421,
+        "noListener": true
+      },
+      {
+        "port": 9422,
+        "noListener": true
+      }
+    ],
+    "existingVolumesTouched": false,
+    "devtoolsServicePortChanged": false,
+    "dedicatedProbeLaunched": false,
+    "loggedContainerCount": 88,
+    "loggedContainersStillPresent": [],
+    "existingNamedInfrastructurePreserved": true,
+    "baselineTemporaryContainerChanges": [
+      {
+        "name": "vigorous_ganguly",
+        "before": "running",
+        "after": null,
+        "directCleanupCommand": false
+      },
+      {
+        "name": "adoring_ride",
+        "before": "running",
+        "after": null,
+        "directCleanupCommand": false
+      },
+      {
+        "name": "angry_jackson",
+        "before": "running",
+        "after": null,
+        "directCleanupCommand": false
+      },
+      {
+        "name": "testcontainers-ryuk-acf42260-c000-4fe7-a199-7605d739ab8d",
+        "before": "running",
+        "after": null,
+        "directCleanupCommand": false
+      }
+    ],
+    "baselineChangeNote": "初始快照处于Maven容器运行期间；4个临时容器后来消失。仅本轮两个命名容器执行stop，不把全快照不变写PASS。",
+    "privateTaskDirectoryRemoved": true,
+    "removedPrivateFiles": 3420,
+    "status": "PASS"
+  },
+  "secretScan": {
+    "status": "PASS",
+    "exactSecretValueCandidates": 8,
+    "filesScanned": 3671,
+    "matchingPaths": [],
+    "valuesPrinted": false,
+    "images": "截图已目视检查，未显示密码/Token/code/数据库凭据"
+  },
+  "preservation": {
+    "b01ExecutedBaseline": 469,
+    "b02ActuallyExecuted": 490,
+    "b01MethodsMissing": [],
+    "protectedBaselineFileCount": 369,
+    "protectedFilesChanged": []
+  },
+  "runtimeReports": {
+    "browser-stage1.json": "PASS",
+    "browser-staff-lifecycle.json": "PASS",
+    "browser-draft-authority.json": "PASS",
+    "browser-supplement.json": "PASS"
+  },
+  "accountScenariosCompleted": 9,
+  "accountCombinedRunExitCode": 1,
+  "customerLoginRequestsExecuted": 0,
+  "submitted": false,
+  "pushed": false,
+  "deployed": false,
+  "manifestSHA256": "f6bb8fd11af5a045d9b68c5a7fe2692af8511f906021587023ab011ca6d58876",
+  "reportLinks": "PASS",
+  "finalClosureChecks": {
+    "repo-closure": 0,
+    "diff-check-closure": 0
+  }
+}

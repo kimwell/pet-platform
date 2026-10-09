@@ -1,3 +1,4 @@
+import { EmployeeActions } from '../../management/EmployeeActions';
 import { useEffect, useMemo, useRef } from 'react';
 import { useQuery, useQueryClient } from '@tanstack/react-query';
 import { useParams, useRouter, useSearch } from '@tanstack/react-router';
@@ -63,7 +64,7 @@ export function EmployeeDetailPage({ identity }: { identity: WebIdentity }) {
         {data && <>
           <div role="status" aria-live="polite">{query.isFetching ? '正在刷新，以下仍为上次成功结果。' : query.isError ? '刷新失败，以下仍为上次成功结果。' : '员工详情已加载。'}</div>
           <Button onClick={retry} disabled={query.isFetching} loading={query.isFetching}>刷新详情</Button>
-          <Descriptions bordered column={{ xs: 1, sm: 1, md: 2 }} items={[
+          <EmployeeActions identity={identity} employeeId={employeeId} /><Descriptions bordered column={{ xs: 1, sm: 1, md: 2 }} items={[
             { key: 'id', label: '员工 ID', children: text(data.id) },
             { key: 'loginName', label: '账号', children: text(data.loginName) },
             { key: 'displayName', label: '姓名', children: text(data.displayName) },

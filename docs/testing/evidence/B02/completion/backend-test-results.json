@@ -1,0 +1,2382 @@
+[
+  {
+    "kind": "surefire",
+    "name": "com.pet.platform.ApplicationTest",
+    "tests": "3",
+    "failures": "0",
+    "errors": "0",
+    "skipped": "0",
+    "methods": [
+      {
+        "name": "startsRealHttpServerWithoutBusinessEndpoints",
+        "result": "PASS"
+      },
+      {
+        "name": "rejectsMissingEnvironmentAndInsecureProductionOrigin",
+        "result": "PASS"
+      },
+      {
+        "name": "defaultApplicationScanDoesNotLoadTestEntities",
+        "result": "PASS"
+      }
+    ]
+  },
+  {
+    "kind": "surefire",
+    "name": "com.pet.platform.customeridentity.infrastructure.WechatConfigTest",
+    "tests": "5",
+    "failures": "0",
+    "errors": "0",
+    "skipped": "0",
+    "methods": [
+      {
+        "name": "serverEntryRejectsOtherTenantBeforeDatabaseLookup",
+        "result": "PASS"
+      },
+      {
+        "name": "arbitrarySecretPropertyAndUnboundedTimeoutAreRejected",
+        "result": "PASS"
+      },
+      {
+        "name": "secretIsReadFromNamedServerPropertyAndNeverToString",
+        "result": "PASS"
+      },
+      {
+        "name": "missingSecretFailsOnlyConfiguredEntryWithExplicitError",
+        "result": "PASS"
+      },
+      {
+        "name": "defaultDisabledDoesNotRequireSecretsOrPerformDatabaseQuery",
+        "result": "PASS"
+      }
+    ]
+  },
+  {
+    "kind": "surefire",
+    "name": "com.pet.platform.customeridentity.infrastructure.WxJavaGatewayTest",
+    "tests": "8",
+    "failures": "0",
+    "errors": "0",
+    "skipped": "0",
+    "methods": [
+      {
+        "name": "networkAndTimeoutAreUncertainInsteadOfSuccess",
+        "result": "PASS"
+      },
+      {
+        "name": "alreadyConsumedCodeMapped",
+        "result": "PASS"
+      },
+      {
+        "name": "invalidCodeMappedWithoutRetryOrRawResponse",
+        "result": "PASS"
+      },
+      {
+        "name": "clientsAreIsolatedByConfigurationVersionAndSecret",
+        "result": "PASS"
+      },
+      {
+        "name": "malformedOrMissingOpenIdIsSafeFailure",
+        "result": "PASS"
+      },
+      {
+        "name": "busyResponseNeverRetriesCode",
+        "result": "PASS"
+      },
+      {
+        "name": "sdkCodeExchangeHasFixedEndpointOneRequestAndNoAccessTokenOrSessionKeyOutput",
+        "result": "PASS"
+      },
+      {
+        "name": "ioFailureHasSameUncertainSemantics",
+        "result": "PASS"
+      }
+    ]
+  },
+  {
+    "kind": "surefire",
+    "name": "com.pet.platform.protocol.ApiProtocolTest",
+    "tests": "30",
+    "failures": "0",
+    "errors": "0",
+    "skipped": "0",
+    "methods": [
+      {
+        "name": "registeredBusinessMappingsAndSafeUnknownErrors",
+        "result": "PASS"
+      },
+      {
+        "name": "rejectsDuplicatePaginationAndPageSizeLimit",
+        "result": "PASS"
+      },
+      {
+        "name": "explicitSuccessNullAndResponseEntityKeepExactShape",
+        "result": "PASS"
+      },
+      {
+        "name": "fileBytesAndDispositionAreNotWrapped",
+        "result": "PASS"
+      },
+      {
+        "name": "rejectsIllegalPagination(String)[1]",
+        "result": "PASS"
+      },
+      {
+        "name": "rejectsIllegalPagination(String)[2]",
+        "result": "PASS"
+      },
+      {
+        "name": "rejectsIllegalPagination(String)[3]",
+        "result": "PASS"
+      },
+      {
+        "name": "rejectsIllegalPagination(String)[4]",
+        "result": "PASS"
+      },
+      {
+        "name": "rejectsIllegalPagination(String)[5]",
+        "result": "PASS"
+      },
+      {
+        "name": "rejectsIllegalPagination(String)[6]",
+        "result": "PASS"
+      },
+      {
+        "name": "rejectsIllegalPagination(String)[7]",
+        "result": "PASS"
+      },
+      {
+        "name": "rejectsIllegalPagination(String)[8]",
+        "result": "PASS"
+      },
+      {
+        "name": "rejectsIllegalPagination(String)[9]",
+        "result": "PASS"
+      },
+      {
+        "name": "rejectsIllegalPagination(String)[10]",
+        "result": "PASS"
+      },
+      {
+        "name": "traceIsGeneratedOrPassedAndContextRestoresOnlyOwnedKeys",
+        "result": "PASS"
+      },
+      {
+        "name": "parameterSyntaxAndMethodValidationHaveDifferentStatuses",
+        "result": "PASS"
+      },
+      {
+        "name": "bodyValidationHasStableNestedPathsAndMultipleCodes",
+        "result": "PASS"
+      },
+      {
+        "name": "rejectsMalformedUnknownDuplicateAndWrongTypesWithoutEcho(String)[1]",
+        "result": "PASS"
+      },
+      {
+        "name": "rejectsMalformedUnknownDuplicateAndWrongTypesWithoutEcho(String)[2]",
+        "result": "PASS"
+      },
+      {
+        "name": "rejectsMalformedUnknownDuplicateAndWrongTypesWithoutEcho(String)[3]",
+        "result": "PASS"
+      },
+      {
+        "name": "rejectsMalformedUnknownDuplicateAndWrongTypesWithoutEcho(String)[4]",
+        "result": "PASS"
+      },
+      {
+        "name": "rejectsMalformedUnknownDuplicateAndWrongTypesWithoutEcho(String)[5]",
+        "result": "PASS"
+      },
+      {
+        "name": "rejectsMalformedUnknownDuplicateAndWrongTypesWithoutEcho(String)[6]",
+        "result": "PASS"
+      },
+      {
+        "name": "rejectsMalformedUnknownDuplicateAndWrongTypesWithoutEcho(String)[7]",
+        "result": "PASS"
+      },
+      {
+        "name": "rejectsMalformedUnknownDuplicateAndWrongTypesWithoutEcho(String)[8]",
+        "result": "PASS"
+      },
+      {
+        "name": "rejectsMalformedUnknownDuplicateAndWrongTypesWithoutEcho(String)[9]",
+        "result": "PASS"
+      },
+      {
+        "name": "rejectsMalformedUnknownDuplicateAndWrongTypesWithoutEcho(String)[10]",
+        "result": "PASS"
+      },
+      {
+        "name": "framework404405415AndAllowHeaderArePreserved",
+        "result": "PASS"
+      },
+      {
+        "name": "paginationDefaultBoundaryEmptyAndTotalPrecision",
+        "result": "PASS"
+      },
+      {
+        "name": "sortWhitelistDefaultDirectionAndUniqueTieBreakAreStable",
+        "result": "PASS"
+      }
+    ]
+  },
+  {
+    "kind": "surefire",
+    "name": "com.pet.platform.shared.persistence.DatabaseConfigurationRulesTest",
+    "tests": "6",
+    "failures": "0",
+    "errors": "0",
+    "skipped": "0",
+    "methods": [
+      {
+        "name": "localAndProductionDefaultsHaveExplicitSafeStrategies",
+        "result": "PASS"
+      },
+      {
+        "name": "externalOverridesCannotEnableDangerousDefaults",
+        "result": "PASS"
+      },
+      {
+        "name": "missingConfigurationNamesAreReportedWithoutValues",
+        "result": "PASS"
+      },
+      {
+        "name": "sharedEntityCachesCannotBeEnabledByOverrides",
+        "result": "PASS"
+      },
+      {
+        "name": "refusesSecretsInUrlAndOtherDatabaseSystems",
+        "result": "PASS"
+      },
+      {
+        "name": "productionCannotRunStartupMigrations",
+        "result": "PASS"
+      }
+    ]
+  },
+  {
+    "kind": "surefire",
+    "name": "com.pet.platform.shared.persistence.JpaPageAdapterTest",
+    "tests": "5",
+    "failures": "0",
+    "errors": "0",
+    "skipped": "0",
+    "methods": [
+      {
+        "name": "mapsEmptyOutOfRangePageWithoutChangingRequestedNumber",
+        "result": "PASS"
+      },
+      {
+        "name": "rejectsOffsetBeyondJpaIntWithoutOverflow",
+        "result": "PASS"
+      },
+      {
+        "name": "preservesLargeTotalAsStringAndExactResponseShape",
+        "result": "PASS"
+      },
+      {
+        "name": "mapsOnlyWhitelistedPropertiesAndDoesNotDuplicateUniqueSort",
+        "result": "PASS"
+      },
+      {
+        "name": "convertsOneBasedPageAndDefaultSize",
+        "result": "PASS"
+      }
+    ]
+  },
+  {
+    "kind": "surefire",
+    "name": "com.pet.platform.shared.redis.RedisConfigurationTest",
+    "tests": "2",
+    "failures": "0",
+    "errors": "0",
+    "skipped": "0",
+    "methods": [
+      {
+        "name": "validConfigurationAndMissingRequiredNames",
+        "result": "PASS"
+      },
+      {
+        "name": "rejectsAmbiguousPrefixUnboundedTimeoutAndUnsupportedTopologies",
+        "result": "PASS"
+      }
+    ]
+  },
+  {
+    "kind": "surefire",
+    "name": "com.pet.platform.shared.tenancy.TenantTaskExecutorTest",
+    "tests": "23",
+    "failures": "0",
+    "errors": "0",
+    "skipped": "0",
+    "methods": [
+      {
+        "name": "fullQueueRejectsWithoutCallerExecutionOrMdcPollution",
+        "result": "PASS"
+      },
+      {
+        "name": "gracefulCloseDrainsQueuedTasksAndRejectsFurtherSubmissions",
+        "result": "PASS"
+      },
+      {
+        "name": "residualWorkerIdentityIsRejectedAndThreadIsReplaced",
+        "result": "PASS"
+      },
+      {
+        "name": "emptyStoresRemainEmptyAndCannotRecoverTenantOrSwitchPermission",
+        "result": "PASS"
+      },
+      {
+        "name": "runningCancellationRetainsScopeUntilActualCooperativeExit",
+        "result": "PASS"
+      },
+      {
+        "name": "sameWorkerRunsAThenBThenAnonymousWithoutResidue",
+        "result": "PASS"
+      },
+      {
+        "name": "selfRetainsSubjectDomainAndOwnerAndRejectsExpansion",
+        "result": "PASS"
+      },
+      {
+        "name": "exceptionIsObservableAndFollowingTaskIsClean",
+        "result": "PASS"
+      },
+      {
+        "name": "runningExpiryBlocksGuardsAndNestedSubmissionCannotRenewSnapshot",
+        "result": "PASS"
+      },
+      {
+        "name": "resourceBoundsAndNonForgedSnapshotConstructors",
+        "result": "PASS"
+      },
+      {
+        "name": "traceWhitelistDoesNotCopyOtherMdcOrDamageCaller",
+        "result": "PASS"
+      },
+      {
+        "name": "preexistingWorkerResidueRejectsNextTaskWithoutRunningIt",
+        "result": "PASS"
+      },
+      {
+        "name": "queuedSnapshotExpiresDeterministicallyBeforeExecution",
+        "result": "PASS"
+      },
+      {
+        "name": "activeTransactionOrSynchronizationRejectsSubmission",
+        "result": "PASS"
+      },
+      {
+        "name": "leakedNestedScopeIsRejectedAndCleanedByActualWorker",
+        "result": "PASS"
+      },
+      {
+        "name": "selectedStoreAndNarrowedScopeAreCaptured",
+        "result": "PASS"
+      },
+      {
+        "name": "workerCreationDoesNotInheritThirdPartyThreadLocals",
+        "result": "PASS"
+      },
+      {
+        "name": "queuedCancellationDoesNotInstallIdentityAndReleasesCapacity",
+        "result": "PASS"
+      },
+      {
+        "name": "immutableSnapshotSurvivesCallerBoundaryAndExcludesSessionAndOtherGrants",
+        "result": "PASS"
+      },
+      {
+        "name": "stopNowCancelsQueueAndInterruptsRunningTaskWithoutCallerPollution",
+        "result": "PASS"
+      },
+      {
+        "name": "concurrentTasksKeepIndependentIdentityAndTrace",
+        "result": "PASS"
+      },
+      {
+        "name": "noIdentityCannotSubmitAndTenantCannotSubmitUnscoped",
+        "result": "PASS"
+      },
+      {
+        "name": "closeReportsNonCooperativeRunningTaskWithoutPrematureContextCleanup",
+        "result": "PASS"
+      }
+    ]
+  },
+  {
+    "kind": "surefire",
+    "name": "com.pet.testing.architecture.StructureRulesTest",
+    "tests": "16",
+    "failures": "0",
+    "errors": "0",
+    "skipped": "0",
+    "methods": [
+      {
+        "name": "rejectsBytecodeStorageMutationAndUnauthorizedIdentityOpening",
+        "result": "PASS"
+      },
+      {
+        "name": "detectsRawPersistenceInBusinessLayersAndRepositoryInheritance",
+        "result": "PASS"
+      },
+      {
+        "name": "actualProductionBytecodeObeysRules",
+        "result": "PASS"
+      },
+      {
+        "name": "rejectsUnapprovedExecutorsAndAsyncAnnotationsOnlyInProjectClasses",
+        "result": "PASS"
+      },
+      {
+        "name": "controlPlanePortsAndDatabaseAdaptersHaveExactBoundaries",
+        "result": "PASS"
+      },
+      {
+        "name": "infrastructurePackageDoesNotAuthorizeNativeQueriesMergeOrBulkBypass",
+        "result": "PASS"
+      },
+      {
+        "name": "rejectsKeyForgeryUnscopedTasksAndInternalSnapshotOpeningViaMethodHandles",
+        "result": "PASS"
+      },
+      {
+        "name": "nativeMethodReferenceIsAlsoDetectedInInfrastructure",
+        "result": "PASS"
+      },
+      {
+        "name": "contextStorageAndIdentityOpeningHaveNoPublicMutators",
+        "result": "PASS"
+      },
+      {
+        "name": "storeFactCapabilityCannotBeBorrowedByOtherAdapters",
+        "result": "PASS"
+      },
+      {
+        "name": "rejectsEveryRequiredNegativeFixtureIncludingGenericOnlyReferences",
+        "result": "PASS"
+      },
+      {
+        "name": "rejectsTestClassesAndMigrationInArtifactFixture",
+        "result": "PASS"
+      },
+      {
+        "name": "restrictedIdentityAndBootstrapEntriesRejectOrdinaryBusinessAndControllers",
+        "result": "PASS"
+      },
+      {
+        "name": "controlledBaseDoesNotExposeDetachedSaveOrDatabaseHandles",
+        "result": "PASS"
+      },
+      {
+        "name": "rejectsRawRedisAndCacheAbstractionsEvenInInfrastructureAndGenericSignatures",
+        "result": "PASS"
+      },
+      {
+        "name": "customerGatewayAndRegistrationCannotBeCalledByControllersOrBusinessModules",
+        "result": "PASS"
+      }
+    ]
+  },
+  {
+    "kind": "surefire",
+    "name": "com.pet.testing.contracts.ContractExportTest",
+    "tests": "9",
+    "failures": "0",
+    "errors": "0",
+    "skipped": "0",
+    "methods": [
+      {
+        "name": "dateTimeDoesNotShiftDateAndRejectsUnspecifiedPrecision",
+        "result": "PASS"
+      },
+      {
+        "name": "exportsSeparateProductionAndTestDocumentsFromActualHttp",
+        "result": "PASS"
+      },
+      {
+        "name": "actualHttpBodiesMatchConcreteOpenApiSchemas",
+        "result": "PASS"
+      },
+      {
+        "name": "moneyNeverUsesFloatingPointAndHasTwoOutputDecimals(String)[1]",
+        "result": "PASS"
+      },
+      {
+        "name": "moneyNeverUsesFloatingPointAndHasTwoOutputDecimals(String)[2]",
+        "result": "PASS"
+      },
+      {
+        "name": "moneyNeverUsesFloatingPointAndHasTwoOutputDecimals(String)[3]",
+        "result": "PASS"
+      },
+      {
+        "name": "moneyNeverUsesFloatingPointAndHasTwoOutputDecimals(String)[4]",
+        "result": "PASS"
+      },
+      {
+        "name": "malformedTypesAndValuesAreSafe400AndSemanticErrors422",
+        "result": "PASS"
+      },
+      {
+        "name": "actualHttpScalarsPreservePrecisionAndNullablePresence",
+        "result": "PASS"
+      }
+    ]
+  },
+  {
+    "kind": "surefire",
+    "name": "com.pet.testing.contracts.DocumentPolicyTest",
+    "tests": "1",
+    "failures": "0",
+    "errors": "0",
+    "skipped": "0",
+    "methods": [
+      {
+        "name": "environmentCannotEnableProductionDocumentsOrPublicBind",
+        "result": "PASS"
+      }
+    ]
+  },
+  {
+    "kind": "surefire",
+    "name": "com.pet.testing.contracts.ProductionOpenApiExportTest",
+    "tests": "1",
+    "failures": "0",
+    "errors": "0",
+    "skipped": "0",
+    "methods": [
+      {
+        "name": "exportsActualProductionModelsWithoutTestPaths",
+        "result": "PASS"
+      }
+    ]
+  },
+  {
+    "kind": "surefire",
+    "name": "com.pet.testing.identity.PasswordServiceTest",
+    "tests": "6",
+    "failures": "0",
+    "errors": "0",
+    "skipped": "0",
+    "methods": [
+      {
+        "name": "malformedUnknownAndExcessiveCostEncodingsFailSafely",
+        "result": "PASS"
+      },
+      {
+        "name": "identityNamesNormalizeOnlyApprovedAsciiNames",
+        "result": "PASS"
+      },
+      {
+        "name": "unicodeMatchesIndependentUtf8ReferenceVector",
+        "result": "PASS"
+      },
+      {
+        "name": "rejectsTooShortLongAndBrokenUnicodeWithoutTruncation",
+        "result": "PASS"
+      },
+      {
+        "name": "randomSaltAndCorrectIncorrectPasswords",
+        "result": "PASS"
+      },
+      {
+        "name": "doesNotTrimCaseFoldOrNormalizePasswords",
+        "result": "PASS"
+      }
+    ]
+  },
+  {
+    "kind": "surefire",
+    "name": "com.pet.testing.tenancy.TenantExecutionTest",
+    "tests": "19",
+    "failures": "0",
+    "errors": "0",
+    "skipped": "0",
+    "methods": [
+      {
+        "name": "exceptionAndLeakedInnerScopesBothCleanAtTrustedBoundary",
+        "result": "PASS"
+      },
+      {
+        "name": "nestedSameTenantRestoresOuterAndNeverWidens",
+        "result": "PASS"
+      },
+      {
+        "name": "currentStoreCanOnlyBeBoundAfterOwnershipAndCannotSwitchNested",
+        "result": "PASS"
+      },
+      {
+        "name": "emptyStoresAndSelfNeverAuthorizeAWholeStore",
+        "result": "PASS"
+      },
+      {
+        "name": "absentOperationPermissionRejectsIndependentlyOfTenantRange",
+        "result": "PASS"
+      },
+      {
+        "name": "concurrentThreadsDoNotShareAndChildThreadDoesNotInherit",
+        "result": "PASS"
+      },
+      {
+        "name": "mergesOnlySamePermissionAndIntersectsStoreUpperBound",
+        "result": "PASS"
+      },
+      {
+        "name": "outOfOrderCloseRejectsWithoutChangingContextAndIsRecoverable",
+        "result": "PASS"
+      },
+      {
+        "name": "storeOwnershipAndPermissionAreBothRequired",
+        "result": "PASS"
+      },
+      {
+        "name": "mdcOnlyRestoresOwnedFieldsAndStoreMustBeExplicit",
+        "result": "PASS"
+      },
+      {
+        "name": "invalidPrincipalAndScopeCombinationsAreRejected",
+        "result": "PASS"
+      },
+      {
+        "name": "identityAndScopeDefensivelyCopyCollections",
+        "result": "PASS"
+      },
+      {
+        "name": "closingOnOtherThreadRejectsAndOwnerCanStillClose",
+        "result": "PASS"
+      },
+      {
+        "name": "noContextAlwaysRejectsTenantOperations",
+        "result": "PASS"
+      },
+      {
+        "name": "defaultProviderIsAnonymousAndDefaultStoreReaderIsUnavailable",
+        "result": "PASS"
+      },
+      {
+        "name": "crossTenantSubjectAndScopeExpansionAreRejected",
+        "result": "PASS"
+      },
+      {
+        "name": "staffAndCustomerAreDistinctTrustedTenantSubjects",
+        "result": "PASS"
+      },
+      {
+        "name": "tenantScopeStillChecksOwnershipAndIdentityStoreUpperBound",
+        "result": "PASS"
+      },
+      {
+        "name": "platformOnlyUsesExplicitControlPlaneGuard",
+        "result": "PASS"
+      }
+    ]
+  },
+  {
+    "kind": "surefire",
+    "name": "com.pet.testing.tenancy.TenantMvcTest",
+    "tests": "13",
+    "failures": "0",
+    "errors": "0",
+    "skipped": "0",
+    "methods": [
+      {
+        "name": "synchronousErrorRedispatchUsesServerSnapshotWithoutProviderReread",
+        "result": "PASS"
+      },
+      {
+        "name": "anonymousPublicRequestHasNoTenantAndProtectedOperationDenies",
+        "result": "PASS"
+      },
+      {
+        "name": "headerTenantAndClientAuthorityCannotCreateOrOverrideIdentity",
+        "result": "PASS"
+      },
+      {
+        "name": "requestStartingAsyncDoesNotRebindIdentityOnLaterError",
+        "result": "PASS"
+      },
+      {
+        "name": "controllerExceptionAndValidationErrorCleanWithTrace",
+        "result": "PASS"
+      },
+      {
+        "name": "exactSameWorkerHandlesAThenBThenAnonymousWithoutResidue",
+        "result": "PASS"
+      },
+      {
+        "name": "asyncRedispatchDoesNotAutomaticallyBindIdentityOrBlockPublicWork",
+        "result": "PASS"
+      },
+      {
+        "name": "leakedApplicationScopeIsRejectedAndBoundaryStillCleans",
+        "result": "PASS"
+      },
+      {
+        "name": "nestedErrorDispatchRetainsNarrowedScopeAndTrace",
+        "result": "PASS"
+      },
+      {
+        "name": "queryTenantCannotCreateOrOverrideIdentity",
+        "result": "PASS"
+      },
+      {
+        "name": "trustedStaffCustomerAndPlatformHaveExplicitDifferentBoundaries",
+        "result": "PASS"
+      },
+      {
+        "name": "filterFailureUsesExistingJsonResolverAndTrace",
+        "result": "PASS"
+      },
+      {
+        "name": "bodyTenantIsOnlyTestIntentAndCannotCreateOrOverrideIdentity",
+        "result": "PASS"
+      }
+    ]
+  },
+  {
+    "kind": "failsafe",
+    "name": "com.pet.platform.protocol.ApiProtocolIT",
+    "tests": "2",
+    "failures": "0",
+    "errors": "0",
+    "skipped": "0",
+    "methods": [
+      {
+        "name": "realHttpMvcAndContainerErrorsKeepSafeEnvelopeAndTrace",
+        "result": "PASS"
+      },
+      {
+        "name": "realServerRejectsMultipleTraceHeadersAndKeepsFileBytes",
+        "result": "PASS"
+      }
+    ]
+  },
+  {
+    "kind": "failsafe",
+    "name": "com.pet.platform.shared.redis.RedisIsolationIT",
+    "tests": "17",
+    "failures": "0",
+    "errors": "0",
+    "skipped": "0",
+    "methods": [
+      {
+        "name": "foreignUnauthorizedEmptyAndSelfStoreScopesAreDenied",
+        "result": "PASS"
+      },
+      {
+        "name": "rawResourceHitRequiresCurrentStorePolicyAndFilteredListsHaveNoApi",
+        "result": "PASS"
+      },
+      {
+        "name": "realTtlExpiresWithBoundedPolling",
+        "result": "PASS"
+      },
+      {
+        "name": "noContextRejectsConstructionAndAllOperations",
+        "result": "PASS"
+      },
+      {
+        "name": "realReadWriteDeleteAndEmptyValueHaveDefinedSemantics",
+        "result": "PASS"
+      },
+      {
+        "name": "platformIsIndependentPermissionCheckedAndNeverFallsBackFromTenant",
+        "result": "PASS"
+      },
+      {
+        "name": "addressFromDifferentBuilderCannotSelectAnotherPrefixOrEnvironment",
+        "result": "PASS"
+      },
+      {
+        "name": "actualRedisOutageIsInfrastructureFailureForReadWriteAndDelete",
+        "result": "PASS"
+      },
+      {
+        "name": "missingStoreFactsNeverAllowAddressOrOperation",
+        "result": "PASS"
+      },
+      {
+        "name": "storeFactsAreRecheckedWhenAddressIsUsed",
+        "result": "PASS"
+      },
+      {
+        "name": "delimiterWildcardAndUnicodeEncodingIsRepeatableAndCollisionFree",
+        "result": "PASS"
+      },
+      {
+        "name": "addressCapturedInACannotBeUsedInBOrNarrowerScope",
+        "result": "PASS"
+      },
+      {
+        "name": "sameTenantDifferentStoresHaveIndependentValues",
+        "result": "PASS"
+      },
+      {
+        "name": "invalidTtlNullAndOversizedValuesRejectBeforeWrite",
+        "result": "PASS"
+      },
+      {
+        "name": "unknownSerializationVersionMalformedUtf8AndOversizedStoredValueFailExplicitly",
+        "result": "PASS"
+      },
+      {
+        "name": "sameBusinessKeyInTwoTenantsReadsIndependentRealValues",
+        "result": "PASS"
+      },
+      {
+        "name": "invalidPrefixModuleLengthAndUnicodeAreRejected",
+        "result": "PASS"
+      }
+    ]
+  },
+  {
+    "kind": "failsafe",
+    "name": "com.pet.testing.RedisHealthIT",
+    "tests": "1",
+    "failures": "0",
+    "errors": "0",
+    "skipped": "0",
+    "methods": [
+      {
+        "name": "redisOutageFailsOverallAndReadinessWhileLivenessRemainsHealthy",
+        "result": "PASS"
+      }
+    ]
+  },
+  {
+    "kind": "failsafe",
+    "name": "com.pet.testing.architecture.ProductionArtifactIT",
+    "tests": "2",
+    "failures": "0",
+    "errors": "0",
+    "skipped": "0",
+    "methods": [
+      {
+        "name": "packagedJarContainsNoTestClassResourceMigrationOrDependency",
+        "result": "PASS"
+      },
+      {
+        "name": "customerProductionClassesContainNoTechnicalWechatCredentialsOrProbe",
+        "result": "PASS"
+      }
+    ]
+  },
+  {
+    "kind": "failsafe",
+    "name": "com.pet.testing.authentication.CustomerAuthenticationIT",
+    "tests": "39",
+    "failures": "0",
+    "errors": "0",
+    "skipped": "0",
+    "methods": [
+      {
+        "name": "customerAsyncIsExplicitlyRejectedBeforeQueueing",
+        "result": "PASS"
+      },
+      {
+        "name": "wrongApplicationResultIsRejected",
+        "result": "PASS"
+      },
+      {
+        "name": "currentIdentityComesFromDatabaseAndProviderSelfDomain",
+        "result": "PASS"
+      },
+      {
+        "name": "exchangeRateIsDistributedAndLimitsFailureAsWellAsSuccess",
+        "result": "PASS"
+      },
+      {
+        "name": "timeoutRequiresFreshCodeAndNeverCreatesIdentity",
+        "result": "PASS"
+      },
+      {
+        "name": "auditWriteFailureCannotReturnSuccessfulToken",
+        "result": "PASS"
+      },
+      {
+        "name": "compositeForeignKeyRefusesCustomerFromAnotherTenant",
+        "result": "PASS"
+      },
+      {
+        "name": "unknownEntryAndTenantNeverExchangeCode",
+        "result": "PASS"
+      },
+      {
+        "name": "concurrentHttpLoginsNeverLeaveAnOrphanAndFreshCodeRecovers",
+        "result": "PASS"
+      },
+      {
+        "name": "eventsContainKnownIdsOnlyAndNeverExternalSecrets",
+        "result": "PASS"
+      },
+      {
+        "name": "nonUniqueDatabaseFailureRollsBackAndIsNotTreatedAsExisting",
+        "result": "PASS"
+      },
+      {
+        "name": "upstreamAndMissingIdentityErrorsAreRecognizable",
+        "result": "PASS"
+      },
+      {
+        "name": "disabledCustomerCannotBeRecreatedThroughLogin",
+        "result": "PASS"
+      },
+      {
+        "name": "concurrentCustomerLogoutAllIncrementsVersionOnlyOnce",
+        "result": "PASS"
+      },
+      {
+        "name": "actualDatabasePermissionFaultIs503AndDoesNotDeleteSession",
+        "result": "PASS"
+      },
+      {
+        "name": "deviceLimitUsesSharedRedisAccountLock",
+        "result": "PASS"
+      },
+      {
+        "name": "concurrentFirstRegistrationHasOneBindingAndNoOrphan",
+        "result": "PASS"
+      },
+      {
+        "name": "allLogoutInvalidatesEveryOldCustomerDeviceAndFreshLoginWorks",
+        "result": "PASS"
+      },
+      {
+        "name": "unknownIdentityFieldsAndEncodedPathsAreRejected",
+        "result": "PASS"
+      },
+      {
+        "name": "delayedCustomerCleanupNeverDeletesFreshGeneration",
+        "result": "PASS"
+      },
+      {
+        "name": "noHeaderCookieQueryAndMixedCredentialsNeverBecomeCustomer",
+        "result": "PASS"
+      },
+      {
+        "name": "currentLogoutInvalidatesOnlyCurrentCustomerDevice",
+        "result": "PASS"
+      },
+      {
+        "name": "redisCleanupFailureStillRevokesByDatabaseVersion",
+        "result": "PASS"
+      },
+      {
+        "name": "customerCannotAccessStaffOrPlatformAndReverseIsRejected",
+        "result": "PASS"
+      },
+      {
+        "name": "disabledTenantNeverExchangesAndExistingSessionRevoked",
+        "result": "PASS"
+      },
+      {
+        "name": "absoluteAndIdlePoliciesDoNotSlideOnMe",
+        "result": "PASS"
+      },
+      {
+        "name": "sessionCreationFailureKeepsIdentityAndFreshCodeCanRetry",
+        "result": "PASS"
+      },
+      {
+        "name": "runtimeRlsHasNoContextNoRowsAndCannotReadOpenIdOrElevate",
+        "result": "PASS"
+      },
+      {
+        "name": "invalidCodeCreatesNoCustomerOrSession",
+        "result": "PASS"
+      },
+      {
+        "name": "customerAndTenantVersionInvalidateOldSessions",
+        "result": "PASS"
+      },
+      {
+        "name": "invalidInputsCannotConsumeUnlimitedGatewayCalls",
+        "result": "PASS"
+      },
+      {
+        "name": "tenantAppAndOpenIdAreAllPartOfBindingKey",
+        "result": "PASS"
+      },
+      {
+        "name": "sameUuidAcrossThreeDomainsStillIsolated",
+        "result": "PASS"
+      },
+      {
+        "name": "missingUnionIdDoesNotBlockAndSameUnionDoesNotMerge",
+        "result": "PASS"
+      },
+      {
+        "name": "idleExpiryRefusesExistingToken",
+        "result": "PASS"
+      },
+      {
+        "name": "repeatLoginReusesCustomerWithIndependentDevice",
+        "result": "PASS"
+      },
+      {
+        "name": "actualRedisOutageFailsClosedAndRecoversExistingSession",
+        "result": "PASS"
+      },
+      {
+        "name": "disabledBindingCannotBeBypassed",
+        "result": "PASS"
+      },
+      {
+        "name": "firstLoginCreatesAtomicFormalIdentityAndRealSession",
+        "result": "PASS"
+      }
+    ]
+  },
+  {
+    "kind": "failsafe",
+    "name": "com.pet.testing.authentication.PlatformAuthenticationIT",
+    "tests": "36",
+    "failures": "0",
+    "errors": "0",
+    "skipped": "0",
+    "methods": [
+      {
+        "name": "wrongMissingAndDisabledCredentialsHaveSamePublicFailure",
+        "result": "PASS"
+      },
+      {
+        "name": "loginWithPreviouslyVerifiedOldPasswordCannotIssueNewGeneration",
+        "result": "PASS"
+      },
+      {
+        "name": "concurrentChangesCommitExactlyOnce",
+        "result": "PASS"
+      },
+      {
+        "name": "correctWebLoginReturnsPlatformIdentityWithoutTenantOrToken",
+        "result": "PASS"
+      },
+      {
+        "name": "initializerCreatesOnlyIndependentCanonicalAccountAndExplicitPermissions",
+        "result": "PASS"
+      },
+      {
+        "name": "initializerRejectsParameterPasswordAndMalformedInput",
+        "result": "PASS"
+      },
+      {
+        "name": "repeatedBootstrapNeverResetsOrAddsAnotherAccount",
+        "result": "PASS"
+      },
+      {
+        "name": "csrfOriginAndBodyUnknownFieldsFailClosed",
+        "result": "PASS"
+      },
+      {
+        "name": "platformRedisEntryAcceptsOnlyRealAuthorizedPlatformAndAsyncRejects",
+        "result": "PASS"
+      },
+      {
+        "name": "realDatabaseFaultIs503RatherThanWrongPassword",
+        "result": "PASS"
+      },
+      {
+        "name": "runtimeCannotReadHashBootstrapOrElevateDatabaseRole",
+        "result": "PASS"
+      },
+      {
+        "name": "loginRateLimitIsIndependentFromStaffAndHasRetryAfter",
+        "result": "PASS"
+      },
+      {
+        "name": "platformCookieAndClientTenantCannotEnterTenantPersistence",
+        "result": "PASS"
+      },
+      {
+        "name": "twoValidDomainCookiesRouteIndependentlyInEitherOrder",
+        "result": "PASS"
+      },
+      {
+        "name": "tenantBootstrapIdentityCannotInitializePlatform",
+        "result": "PASS"
+      },
+      {
+        "name": "cookiesCsrfRotationAndSessionFixationDefenseAreReal",
+        "result": "PASS"
+      },
+      {
+        "name": "changePasswordRevokesEveryPlatformSessionButLeavesStaff",
+        "result": "PASS"
+      },
+      {
+        "name": "recordsHaveExplicitPlatformScopeAndNoSecrets",
+        "result": "PASS"
+      },
+      {
+        "name": "duplicatePlatformCookieAndHeaderSelectionAreRejected",
+        "result": "PASS"
+      },
+      {
+        "name": "realRedisFaultFailsClosedAndRetainsCookie",
+        "result": "PASS"
+      },
+      {
+        "name": "staffTokenAndCookieCannotAccessPlatform",
+        "result": "PASS"
+      },
+      {
+        "name": "realRedisCleanupPauseLeavesCommittedPasswordAndOldGenerationInvalid",
+        "result": "PASS"
+      },
+      {
+        "name": "sameUuidInStaffAndPlatformHasIndependentPermissionsAndRevocation",
+        "result": "PASS"
+      },
+      {
+        "name": "oldPasswordConfirmationNewRulesAndSamePasswordAreRejected",
+        "result": "PASS"
+      },
+      {
+        "name": "concurrentBootstrapHasOneCompleteWinner",
+        "result": "PASS"
+      },
+      {
+        "name": "sensitiveAttemptsUseAtomicIndependentPlatformFrequencyControl",
+        "result": "PASS"
+      },
+      {
+        "name": "currentLogoutInvalidatesOnlyCurrentPlatformSession",
+        "result": "PASS"
+      },
+      {
+        "name": "requestExceptionsLeaveNoContextOrMdcOnReusedThread",
+        "result": "PASS"
+      },
+      {
+        "name": "permissionsAreRequiredRatherThanIsLogin",
+        "result": "PASS"
+      },
+      {
+        "name": "secureCookiePolicyIsSharedAndInsecureProductionIsRejected",
+        "result": "PASS"
+      },
+      {
+        "name": "bootstrapFailureRollsBackAccountPermissionsAndMarker",
+        "result": "PASS"
+      },
+      {
+        "name": "redisCleanupFailureKeepsOldSessionsLogicallyInvalidAndCompensates",
+        "result": "PASS"
+      },
+      {
+        "name": "twoCsrfDomainsCannotBeInterchanged",
+        "result": "PASS"
+      },
+      {
+        "name": "securityRecordFailureRollsBackCredentialGenerationAndIntent",
+        "result": "PASS"
+      },
+      {
+        "name": "reloginRotatesCurrentPlatformSessionAndPreservesStaff",
+        "result": "PASS"
+      },
+      {
+        "name": "delayedCleanupDoesNotDeleteNewGeneration",
+        "result": "PASS"
+      }
+    ]
+  },
+  {
+    "kind": "failsafe",
+    "name": "com.pet.testing.authentication.StaffAuthenticationIT",
+    "tests": "31",
+    "failures": "0",
+    "errors": "0",
+    "skipped": "0",
+    "methods": [
+      {
+        "name": "clientTenantFieldsCannotOverrideTrustedIdentity",
+        "result": "PASS"
+      },
+      {
+        "name": "webAndMiniLogoutAreDeviceIsolated",
+        "result": "PASS"
+      },
+      {
+        "name": "storeAssignmentsAndPermissionScopesReload",
+        "result": "PASS"
+      },
+      {
+        "name": "absentTenantAndAccountHaveSameSafeFailure",
+        "result": "PASS"
+      },
+      {
+        "name": "cookieAttributesAndWebBodyContainNoToken",
+        "result": "PASS"
+      },
+      {
+        "name": "disabledTenantLoginRejected",
+        "result": "PASS"
+      },
+      {
+        "name": "realUserAsyncSnapshotsAreRevalidatedBeforeExecution",
+        "result": "PASS"
+      },
+      {
+        "name": "forwardedHeadersCannotBypassIpLimit",
+        "result": "PASS"
+      },
+      {
+        "name": "requestFailureAndAnonymousReuseDoNotLeakIdentity",
+        "result": "PASS"
+      },
+      {
+        "name": "concurrentAttemptCountersAreAtomicAndNormalizationShared",
+        "result": "PASS"
+      },
+      {
+        "name": "miniRejectsWebCookiesAndWebRejectsMiniToken",
+        "result": "PASS"
+      },
+      {
+        "name": "credentialVersionChangeInvalidatesSession",
+        "result": "PASS"
+      },
+      {
+        "name": "formalStoreUsesProviderTenantTransactionAndRls",
+        "result": "PASS"
+      },
+      {
+        "name": "otherSaSpacesCannotResolveStaffToken",
+        "result": "PASS"
+      },
+      {
+        "name": "invalidSerializationAndNamespaceRejected",
+        "result": "PASS"
+      },
+      {
+        "name": "credentialAmbiguityDomainAndHeaderGrammar",
+        "result": "PASS"
+      },
+      {
+        "name": "maximumFiveDevicesDoesNotSilentlyEvict",
+        "result": "PASS"
+      },
+      {
+        "name": "rolePermissionAndAssignmentsReloadEvenWithoutVersionBump",
+        "result": "PASS"
+      },
+      {
+        "name": "redisFailureIs503AndDoesNotBecomeAuthenticationFailure",
+        "result": "PASS"
+      },
+      {
+        "name": "realLoginAndCurrentIdentityAreFormalDatabaseFacts",
+        "result": "PASS"
+      },
+      {
+        "name": "disabledEmployeeLoginRejected",
+        "result": "PASS"
+      },
+      {
+        "name": "wrongPasswordDoesNotCreateSession",
+        "result": "PASS"
+      },
+      {
+        "name": "sourceRequiredAndExactRefererFallback",
+        "result": "PASS"
+      },
+      {
+        "name": "webLogoutInvalidatesCookieAndCsrf",
+        "result": "PASS"
+      },
+      {
+        "name": "invalidWebCookieCanRecoverButDependencyFailureKeepsCookie",
+        "result": "PASS"
+      },
+      {
+        "name": "csrfRotationAndSessionFixationProtection",
+        "result": "PASS"
+      },
+      {
+        "name": "publicEndpointIgnoresCredentialsAndUrlTokenRejected",
+        "result": "PASS"
+      },
+      {
+        "name": "databaseFailureIs503AndDoesNotDeleteValidSession",
+        "result": "PASS"
+      },
+      {
+        "name": "expiredAnonymousCsrfRejected",
+        "result": "PASS"
+      },
+      {
+        "name": "tenantAndEmployeeDisableInvalidateExistingSessions",
+        "result": "PASS"
+      },
+      {
+        "name": "missingAndWrongCsrfRejected",
+        "result": "PASS"
+      }
+    ]
+  },
+  {
+    "kind": "failsafe",
+    "name": "com.pet.testing.authentication.StaffCredentialSecurityIT",
+    "tests": "34",
+    "failures": "0",
+    "errors": "0",
+    "skipped": "0",
+    "methods": [
+      {
+        "name": "wrongConfirmationDoesNotChangeCredentialVersionOrSessionsAndHasIndependentFailureRecord",
+        "result": "PASS"
+      },
+      {
+        "name": "storeManagerCanManageOnlyTargetsWhoseEntireStoreAndAuthorityAreCovered",
+        "result": "PASS"
+      },
+      {
+        "name": "realRedisFrequencyFailureNeverSilentlyAllowsChange",
+        "result": "PASS"
+      },
+      {
+        "name": "concurrentSensitiveLimitsAreAtomicAndFailuresDoNotLockEmployeePermanently",
+        "result": "PASS"
+      },
+      {
+        "name": "independentPermissionsAreRequiredAndOrdinaryStartupDoesNotGrantNewCode",
+        "result": "PASS"
+      },
+      {
+        "name": "loginCheckedOldPasswordCannotAcquireNewVersionDuringPasswordChange",
+        "result": "PASS"
+      },
+      {
+        "name": "oldCleanupRunningAfterFreshLoginNeverDeletesFreshSession",
+        "result": "PASS"
+      },
+      {
+        "name": "adminResetForcesChangeAndInvalidatesAllTargetDevicesWithoutChangingActor",
+        "result": "PASS"
+      },
+      {
+        "name": "crossTenantUnknownAndStoreOutsideTargetsAreHidden",
+        "result": "PASS"
+      },
+      {
+        "name": "queuedAuthorityQueryFailureRefusesActionInsteadOfAssumingVersionIsUnchanged",
+        "result": "PASS"
+      },
+      {
+        "name": "adminRevokeLeavesPasswordAndMustChangeFlagAndActorIntactAndOldVersionCannotRepeat",
+        "result": "PASS"
+      },
+      {
+        "name": "adminResetCompetesWithSelfChangeWithoutLosingEitherVersionRule",
+        "result": "PASS"
+      },
+      {
+        "name": "twoAdminsUsingSameResourceVersionHaveOneWinner",
+        "result": "PASS"
+      },
+      {
+        "name": "invalidSameAndOversizedPasswordsAndUnknownFieldsAreRejectedWithoutSecrets",
+        "result": "PASS"
+      },
+      {
+        "name": "databaseFailureAfterPasswordVersionAndIntentRollsEverythingBack",
+        "result": "PASS"
+      },
+      {
+        "name": "queuedTasksRecheckDatabaseGenerationAfterLogoutAll",
+        "result": "PASS"
+      },
+      {
+        "name": "selfTenantAdminSystemAccountsCannotBeResetButAdminSessionsCanBeRevoked",
+        "result": "PASS"
+      },
+      {
+        "name": "missingWrongCsrfAndSourcesDoNotMutate",
+        "result": "PASS"
+      },
+      {
+        "name": "partiallyDeletedTokenIndexStillCleansOrphanSessionAndTerminal",
+        "result": "PASS"
+      },
+      {
+        "name": "queuedTasksRecheckDatabaseGenerationAfterPasswordChange",
+        "result": "PASS"
+      },
+      {
+        "name": "mandatoryAuditInsertFailureRollsBackCredentialAndIntent",
+        "result": "PASS"
+      },
+      {
+        "name": "successfulAndFailedRecordsContainOnlyAllowlistedFieldsAndRlsRemainsForced",
+        "result": "PASS"
+      },
+      {
+        "name": "redisCleanupFailurePreservesLogicalRevocationAndLazyCompensationRemovesOnlyOldVersions",
+        "result": "PASS"
+      },
+      {
+        "name": "selfLogoutAllRequiresConfirmationAndReplaysWithOldSessionFail",
+        "result": "PASS"
+      },
+      {
+        "name": "correctPasswordChangesAndAllChannelsAndCsrfArePhysicallyRemoved",
+        "result": "PASS"
+      },
+      {
+        "name": "loginCompetingWithLogoutAllRejectsOldGenerationAndFreshLoginRemains",
+        "result": "PASS"
+      },
+      {
+        "name": "sensitiveWriteRechecksCurrentAuthorityBeforeCommit",
+        "result": "PASS"
+      },
+      {
+        "name": "databaseCommitSurvivesActualRedisOutageDuringPhysicalCleanup",
+        "result": "PASS"
+      },
+      {
+        "name": "queuedTasksCannotExpandCapturedScopeAndCurrentRevokedPermissionRejects",
+        "result": "PASS"
+      },
+      {
+        "name": "passwordsPreserveSpacesCaseUnicodeAndAreNotReadFromQuery",
+        "result": "PASS"
+      },
+      {
+        "name": "concurrentPasswordChangesCannotBothOverwriteSuccessfully",
+        "result": "PASS"
+      },
+      {
+        "name": "adminReconfirmationFailureHasNoChange",
+        "result": "PASS"
+      },
+      {
+        "name": "revokedCurrentDeviceAlsoRejectsQueuedTasksAndDatabaseFailureIsClosed",
+        "result": "PASS"
+      },
+      {
+        "name": "temporaryPasswordCannotUseManagementEvenIfPermissionsAreGrantedAndCanLogout",
+        "result": "PASS"
+      }
+    ]
+  },
+  {
+    "kind": "failsafe",
+    "name": "com.pet.testing.authentication.StaffSessionRuntimeIT",
+    "tests": "4",
+    "failures": "0",
+    "errors": "0",
+    "skipped": "0",
+    "methods": [
+      {
+        "name": "twoProductionInstancesShareAndRevokeTheSameRedisSessionAndSecureCookie",
+        "result": "PASS"
+      },
+      {
+        "name": "twoProductionInstancesObservePasswordChangeAndOldWebMiniSessionsCannotReturn",
+        "result": "PASS"
+      },
+      {
+        "name": "productionJarRejectsInsecureCookieAndUntrustedForwardingConfiguration",
+        "result": "PASS"
+      },
+      {
+        "name": "idleExpiryDoesNotRenewOnMeAndAbsoluteExpiryCannotSlide",
+        "result": "PASS"
+      }
+    ]
+  },
+  {
+    "kind": "failsafe",
+    "name": "com.pet.testing.contracts.PackagedDocumentPolicyIT",
+    "tests": "1",
+    "failures": "0",
+    "errors": "0",
+    "skipped": "0",
+    "methods": [
+      {
+        "name": "localAndProductionJarHaveActualDocumentAndUiPolicies",
+        "result": "PASS"
+      }
+    ]
+  },
+  {
+    "kind": "failsafe",
+    "name": "com.pet.testing.contracts.ScalarPostgresIT",
+    "tests": "1",
+    "failures": "0",
+    "errors": "0",
+    "skipped": "0",
+    "methods": [
+      {
+        "name": "protocolScalarTypesSurvivePostgresWithoutFloatingPointOrTimezoneShift",
+        "result": "PASS"
+      }
+    ]
+  },
+  {
+    "kind": "failsafe",
+    "name": "com.pet.testing.identity.ControlManagementIT",
+    "tests": "20",
+    "failures": "0",
+    "errors": "0",
+    "skipped": "0",
+    "methods": [
+      {
+        "name": "auditFailureRollsBackAllAccountRelationsVersionsAndCleanup",
+        "result": "PASS"
+      },
+      {
+        "name": "runtimeHasNoDirectControlTablesOwnersOrSqlBypass",
+        "result": "PASS"
+      },
+      {
+        "name": "tenantIsolationAndPlatformSessionSurviveForeignDisable",
+        "result": "PASS"
+      },
+      {
+        "name": "unknownPartialInitializationIsRejectedWithoutRepair",
+        "result": "PASS"
+      },
+      {
+        "name": "queuedTaskCannotResumeAfterTenantDisableAndReenable",
+        "result": "PASS"
+      },
+      {
+        "name": "readOnlyPlatformCannotWriteOrGrantOutsideAuthority",
+        "result": "PASS"
+      },
+      {
+        "name": "duplicateIdentifiersAndUnknownFieldsReturn422And400",
+        "result": "PASS"
+      },
+      {
+        "name": "lastManagerCannotBeRemovedByRestrictedDelegator",
+        "result": "PASS"
+      },
+      {
+        "name": "grantOperatorCannotGivePermissionTheyDoNotHold",
+        "result": "PASS"
+      },
+      {
+        "name": "databaseFailureFailsClosedAndRestoresRead",
+        "result": "PASS"
+      },
+      {
+        "name": "filtersPaginationSortingAndMalformedParametersAreReal",
+        "result": "PASS"
+      },
+      {
+        "name": "staffCustomerAndIdenticalUuidCannotEnterControlPlane",
+        "result": "PASS"
+      },
+      {
+        "name": "tenantCreationInitializationAndLifecycleNeverRevivesOldStaffOrCustomer",
+        "result": "PASS"
+      },
+      {
+        "name": "initializationFailureRollsBackAndRetryCreatesExactlyOneIdentity",
+        "result": "PASS"
+      },
+      {
+        "name": "redisFailureFailsClosedAndRecoveryPreservesVersions",
+        "result": "PASS"
+      },
+      {
+        "name": "concurrentTenantEditsHaveOneWinner",
+        "result": "PASS"
+      },
+      {
+        "name": "accountGrantsStatusResetAndRevokeInvalidateOldSessions",
+        "result": "PASS"
+      },
+      {
+        "name": "selfDisableAndSelfGrantChangesAreRejected",
+        "result": "PASS"
+      },
+      {
+        "name": "storesAndOrganizationsRemainSeparateAndTenantBound",
+        "result": "PASS"
+      },
+      {
+        "name": "concurrentMutualDisableRetainsAnEffectiveManager",
+        "result": "PASS"
+      }
+    ]
+  },
+  {
+    "kind": "failsafe",
+    "name": "com.pet.testing.identity.CustomerMigrationIT",
+    "tests": "1",
+    "failures": "0",
+    "errors": "0",
+    "skipped": "0",
+    "methods": [
+      {
+        "name": "versionThreeUpgradesWithoutChangingEarlierMigrationsOrCreatingCustomers",
+        "result": "PASS"
+      }
+    ]
+  },
+  {
+    "kind": "failsafe",
+    "name": "com.pet.testing.identity.EmployeeDirectoryIT",
+    "tests": "32",
+    "failures": "0",
+    "errors": "0",
+    "skipped": "0",
+    "methods": [
+      {
+        "name": "invalidPaginationAndSortFollowFrozenErrors",
+        "result": "PASS"
+      },
+      {
+        "name": "tenantListAndDetailContainOnlyThisTenant",
+        "result": "PASS"
+      },
+      {
+        "name": "targetStatusDoesNotGrantOrRemoveReadVisibility",
+        "result": "PASS"
+      },
+      {
+        "name": "tenantMixedWithOtherScopesNormalizesWithoutCrossTenant",
+        "result": "PASS"
+      },
+      {
+        "name": "publicOpenApiSchemaMatchesActualDtoAndQueryFields",
+        "result": "PASS"
+      },
+      {
+        "name": "permissionAndRoleRemovalImmediatelyAffectNewRequests",
+        "result": "PASS"
+      },
+      {
+        "name": "databaseReadFailureReturns503ThenRecovers",
+        "result": "PASS"
+      },
+      {
+        "name": "missingIndependentReadPermissionsAre403",
+        "result": "PASS"
+      },
+      {
+        "name": "accountAndSingleConnectionReuseNeverMixTenantRows",
+        "result": "PASS"
+      },
+      {
+        "name": "noAuthorizedStoresMeansEmptyStoresScope",
+        "result": "PASS"
+      },
+      {
+        "name": "tenantStoreFilterStillChecksIdentityStoreCeiling",
+        "result": "PASS"
+      },
+      {
+        "name": "validCustomerAndPlatformCredentialsCannotReadStaffDirectory",
+        "result": "PASS"
+      },
+      {
+        "name": "explicitUpgradeIsLimitedIdempotentAndChangesCurrentAuthority",
+        "result": "PASS"
+      },
+      {
+        "name": "nextRequestRechecksStoreAssignmentEvenWithoutVersionBump",
+        "result": "PASS"
+      },
+      {
+        "name": "webCookieUsesTheSameFormalReadContract",
+        "result": "PASS"
+      },
+      {
+        "name": "rlsRestrictedRoleDefaultsToNoRowsAndCannotSelectCredentials",
+        "result": "PASS"
+      },
+      {
+        "name": "listAndDetailProjectionHaveNoNPlusOne",
+        "result": "PASS"
+      },
+      {
+        "name": "storesUseAnySharedActiveAuthorizedStoreWithoutRelationLeak",
+        "result": "PASS"
+      },
+      {
+        "name": "emptyFilterAndBeyondLastPagePreserveTotalAndRequestedPage",
+        "result": "PASS"
+      },
+      {
+        "name": "illegalStatusIdUnknownAndRepeatedFiltersAre400",
+        "result": "PASS"
+      },
+      {
+        "name": "sameValueSortAndManyToManyPagesHaveStableUniqueIds",
+        "result": "PASS"
+      },
+      {
+        "name": "keywordMatchesAccountAndNameIgnoringCaseLiterally",
+        "result": "PASS"
+      },
+      {
+        "name": "storeFilterNeverEnlargesCurrentScope",
+        "result": "PASS"
+      },
+      {
+        "name": "listScopeCannotEnlargeDetailOrSensitiveManagement",
+        "result": "PASS"
+      },
+      {
+        "name": "selfListAndDetailMapToStaffSubjectId",
+        "result": "PASS"
+      },
+      {
+        "name": "inactiveStoreRevokesStoresVisibilityOnNextRequest",
+        "result": "PASS"
+      },
+      {
+        "name": "noReadPermissionDoesNotBlockSelfPasswordChange",
+        "result": "PASS"
+      },
+      {
+        "name": "hiddenUnknownAndForeignDetailsHaveIdenticalErrors",
+        "result": "PASS"
+      },
+      {
+        "name": "keywordLengthAndBlankBoundaries",
+        "result": "PASS"
+      },
+      {
+        "name": "anonymousListAndDetailRequireIdentity",
+        "result": "PASS"
+      },
+      {
+        "name": "allPublicSortFieldsWorkInBothDirections",
+        "result": "PASS"
+      },
+      {
+        "name": "storesAndSelfUnionIncludesNoStoreSelfOnly",
+        "result": "PASS"
+      }
+    ]
+  },
+  {
+    "kind": "failsafe",
+    "name": "com.pet.testing.identity.EmployeeReadMigrationIT",
+    "tests": "1",
+    "failures": "0",
+    "errors": "0",
+    "skipped": "0",
+    "methods": [
+      {
+        "name": "versionFourDataIsPreservedAndOnlyExplicitUpgradeAddsDetail",
+        "result": "PASS"
+      }
+    ]
+  },
+  {
+    "kind": "failsafe",
+    "name": "com.pet.testing.identity.EmployeeReadUpgradeRuntimeIT",
+    "tests": "1",
+    "failures": "0",
+    "errors": "0",
+    "skipped": "0",
+    "methods": [
+      {
+        "name": "packagedExplicitCommandRunsAndRejectsRuntimeCredentials(Path)",
+        "result": "PASS"
+      }
+    ]
+  },
+  {
+    "kind": "failsafe",
+    "name": "com.pet.testing.identity.IdentityFoundationIT",
+    "tests": "27",
+    "failures": "0",
+    "errors": "0",
+    "skipped": "0",
+    "methods": [
+      {
+        "name": "plaintextNeverStoredAndPasswordInputLifecycleCleared",
+        "result": "PASS"
+      },
+      {
+        "name": "emptyStoresAndUnknownPermissionFailClosed",
+        "result": "PASS"
+      },
+      {
+        "name": "disabledTenantEmployeeRoleAndStoreAreReflectedByAuthorityLoad",
+        "result": "PASS"
+      },
+      {
+        "name": "bootstrapCommandRejectsPrivilegedOrOrdinaryRuntimeLogin",
+        "result": "PASS"
+      },
+      {
+        "name": "tenantNormalizationUniqueAndDifferentTenantsShareLogin",
+        "result": "PASS"
+      },
+      {
+        "name": "formalRlsWithCheckRejectsForeignInsertAndTenantMoveWithIndependentRead",
+        "result": "PASS"
+      },
+      {
+        "name": "concurrentBootstrapHasExactlyOneCompleteAdministrator",
+        "result": "PASS"
+      },
+      {
+        "name": "formalMigrationRepeatedAndJpaValidationWithSevenModels",
+        "result": "PASS"
+      },
+      {
+        "name": "requestClonesAndClearsPasswordWithoutSerializingIt",
+        "result": "PASS"
+      },
+      {
+        "name": "storeProductionBeanAndGuardReadOfficialTenantAndStatus",
+        "result": "PASS"
+      },
+      {
+        "name": "authenticationCannotBeHijackedByTemporaryShadowTables",
+        "result": "PASS"
+      },
+      {
+        "name": "bootstrapLoginCannotReadTablesOrExecuteAuthentication",
+        "result": "PASS"
+      },
+      {
+        "name": "sameTenantUnauthorizedStoreDeniedAfterFactFound",
+        "result": "PASS"
+      },
+      {
+        "name": "noRealSessionDoesNotCreatePrincipalAndBootstrapNotSpringBean",
+        "result": "PASS"
+      },
+      {
+        "name": "perPermissionRoleUnionDoesNotEnlargeOtherPermissions",
+        "result": "PASS"
+      },
+      {
+        "name": "explicitPackagedCommandsMigrateBootstrapAndConflictWithSafeOutput",
+        "result": "PASS"
+      },
+      {
+        "name": "unavailableStoreSourceIsDependencyFailureWithoutGuardRecursion",
+        "result": "PASS"
+      },
+      {
+        "name": "commandRejectsPasswordArgumentAndMissingConsoleBeforeDatabase",
+        "result": "PASS"
+      },
+      {
+        "name": "bootstrapRelationsCompleteAndOptionalStoreReallyOptional",
+        "result": "PASS"
+      },
+      {
+        "name": "bootstrapIntermediateFailureRollsBackAllTablesIndependentConnection",
+        "result": "PASS"
+      },
+      {
+        "name": "roleAndStoreCompositeReferencesRejectForeignTenantAndRestrictDelete",
+        "result": "PASS"
+      },
+      {
+        "name": "runtimeRlsNoContextNoForeignTenantAndCredentialColumnDenied",
+        "result": "PASS"
+      },
+      {
+        "name": "authenticationFunctionsOwnedByMinimalNoLoginRolesAndNotPublic",
+        "result": "PASS"
+      },
+      {
+        "name": "sameTenantLoginUniquenessAndCanonicalDatabaseConstraint",
+        "result": "PASS"
+      },
+      {
+        "name": "bootstrapRepeatDoesNotChangeHashPermissionsOrRepairHalfState",
+        "result": "PASS"
+      },
+      {
+        "name": "authenticationBeforeContextReturnsMinimalCredentialWithoutSerialization",
+        "result": "PASS"
+      },
+      {
+        "name": "runtimeStartupCheckRejectsCredentialAccessAndBootstrapMembership",
+        "result": "PASS"
+      }
+    ]
+  },
+  {
+    "kind": "failsafe",
+    "name": "com.pet.testing.identity.IdentityManagementIT",
+    "tests": "14",
+    "failures": "0",
+    "errors": "0",
+    "skipped": "0",
+    "methods": [
+      {
+        "name": "redisFailureRefusesMutationAndRecoveryKeepsVersions",
+        "result": "PASS"
+      },
+      {
+        "name": "runtimeRlsAndCredentialRestrictionsRemainEnforced",
+        "result": "PASS"
+      },
+      {
+        "name": "tenantGrantCannotBeGrantedBySelfScope",
+        "result": "PASS"
+      },
+      {
+        "name": "resetAndExplicitSessionRevokeReuseFormalSecurityService",
+        "result": "PASS"
+      },
+      {
+        "name": "realOptionsArePagedAndRespectStoreCeiling",
+        "result": "PASS"
+      },
+      {
+        "name": "foreignTargetsAndAssociationsNeverMutate",
+        "result": "PASS"
+      },
+      {
+        "name": "duplicateAndInvalidFieldsArePreciseAndNoTenantInputAccepted",
+        "result": "PASS"
+      },
+      {
+        "name": "associationAndSecurityIntentRollbackWhenFinalEventFails",
+        "result": "PASS"
+      },
+      {
+        "name": "explicitUpgradeIsIdempotentAndDoesNotTouchForeignTenant",
+        "result": "PASS"
+      },
+      {
+        "name": "protectedAdminAndRoleCannotBeDisabledOrReassigned",
+        "result": "PASS"
+      },
+      {
+        "name": "completeBusinessLifecycleAndPermissionSpecificUnion",
+        "result": "PASS"
+      },
+      {
+        "name": "absentIndependentPermissionsAndReadWriteSeparation",
+        "result": "PASS"
+      },
+      {
+        "name": "grantCeilingRejectsDifferentPermissionAndStoreUpperBound",
+        "result": "PASS"
+      },
+      {
+        "name": "versionConcurrentEditsHaveExactlyOneWinner",
+        "result": "PASS"
+      }
+    ]
+  },
+  {
+    "kind": "failsafe",
+    "name": "com.pet.testing.identity.IdentityMigrationIT",
+    "tests": "1",
+    "failures": "0",
+    "errors": "0",
+    "skipped": "0",
+    "methods": [
+      {
+        "name": "previouslyEmptyProductionHistoryUpgradesThenRemainsIdempotent(Path)",
+        "result": "PASS"
+      }
+    ]
+  },
+  {
+    "kind": "failsafe",
+    "name": "com.pet.testing.identity.PlatformBootstrapRuntimeIT",
+    "tests": "1",
+    "failures": "0",
+    "errors": "0",
+    "skipped": "0",
+    "methods": [
+      {
+        "name": "packagedPlatformBootstrapUsesStdinAndDistinctCapabilityAndIsNotRepeatableCreation",
+        "result": "PASS"
+      }
+    ]
+  },
+  {
+    "kind": "failsafe",
+    "name": "com.pet.testing.identity.PlatformMigrationIT",
+    "tests": "1",
+    "failures": "0",
+    "errors": "0",
+    "skipped": "0",
+    "methods": [
+      {
+        "name": "previousVersionTwoUpgradesWithoutTouchingTenantDataAndDoesNotBootstrap",
+        "result": "PASS"
+      }
+    ]
+  },
+  {
+    "kind": "failsafe",
+    "name": "com.pet.testing.identity.StaffSecurityMigrationIT",
+    "tests": "1",
+    "failures": "0",
+    "errors": "0",
+    "skipped": "0",
+    "methods": [
+      {
+        "name": "versionOneDataAndChecksumSurviveUpgradeAndNewTablesKeepRestrictedRls",
+        "result": "PASS"
+      }
+    ]
+  },
+  {
+    "kind": "failsafe",
+    "name": "com.pet.testing.persistence.JpaPersistenceIT",
+    "tests": "12",
+    "failures": "0",
+    "errors": "0",
+    "skipped": "0",
+    "methods": [
+      {
+        "name": "runtimeFailureRollsBackAllWritesInSameServiceTransaction",
+        "result": "PASS"
+      },
+      {
+        "name": "runtimeFailureRollsBackFlushedWrite",
+        "result": "PASS"
+      },
+      {
+        "name": "migrationCompletedBeforeJpaValidationAndDoesNotRepeat",
+        "result": "PASS"
+      },
+      {
+        "name": "filtersComposeWithPageAndEmptyOrOutOfRangeResults",
+        "result": "PASS"
+      },
+      {
+        "name": "nullableSortUsesNullsLastForBothDirectionsAndSpecifications",
+        "result": "PASS"
+      },
+      {
+        "name": "databaseConstraintFailureAtFlushRollsBackEarlierWrite",
+        "result": "PASS"
+      },
+      {
+        "name": "directUniqueSortIsNotDuplicatedAndCountReflectsLaterChanges",
+        "result": "PASS"
+      },
+      {
+        "name": "auditUpdatesOnlyOnActualChangeAndKeepsCreatedAt",
+        "result": "PASS"
+      },
+      {
+        "name": "timestampHasMillisecondPrecisionAndUtcInstantAcrossSessionTimezone",
+        "result": "PASS"
+      },
+      {
+        "name": "applicationServiceCommitsOutsideTestTransaction",
+        "result": "PASS"
+      },
+      {
+        "name": "databasePagesKeepStableUniqueOrderAndActualTotal",
+        "result": "PASS"
+      },
+      {
+        "name": "uuidV4AndAuditingSurviveRealPostgresRoundTrip",
+        "result": "PASS"
+      }
+    ]
+  },
+  {
+    "kind": "failsafe",
+    "name": "com.pet.testing.persistence.MigrationSafetyIT",
+    "tests": "5",
+    "failures": "0",
+    "errors": "0",
+    "skipped": "0",
+    "methods": [
+      {
+        "name": "checksumConflictFailsAgainstTemporaryCopy(Path)",
+        "result": "PASS"
+      },
+      {
+        "name": "nonEmptySchemaWithoutHistoryCannotBeAutomaticallyBaselined",
+        "result": "PASS"
+      },
+      {
+        "name": "mismatchedStructureFailsJpaValidation",
+        "result": "PASS"
+      },
+      {
+        "name": "cleanIsRefused",
+        "result": "PASS"
+      },
+      {
+        "name": "emptyDatabaseCreatesHistoryAndRepeatedMigrationIsIdempotent",
+        "result": "PASS"
+      }
+    ]
+  },
+  {
+    "kind": "failsafe",
+    "name": "com.pet.testing.tenancy.TenantHttpIT",
+    "tests": "1",
+    "failures": "0",
+    "errors": "0",
+    "skipped": "0",
+    "methods": [
+      {
+        "name": "actualRegisteredRequestAndContainerErrorChainsKeepProtocol",
+        "result": "PASS"
+      }
+    ]
+  },
+  {
+    "kind": "failsafe",
+    "name": "com.pet.testing.tenantpersistence.AsyncTenantPersistenceIT",
+    "tests": "9",
+    "failures": "0",
+    "errors": "0",
+    "skipped": "0",
+    "methods": [
+      {
+        "name": "sameThreadAndSingleDatabaseConnectionRunAThenBThenAnonymous",
+        "result": "PASS"
+      },
+      {
+        "name": "expiredScopeAtRealTransactionCommitRollsBackAndConnectionCanServeB",
+        "result": "PASS"
+      },
+      {
+        "name": "asyncStoresEmptyScopesAndSelfSubjectDomainsUseActualPostgresPolicies",
+        "result": "PASS"
+      },
+      {
+        "name": "exceptionAfterFlushRollsBackAndFollowingBHasNoAState",
+        "result": "PASS"
+      },
+      {
+        "name": "concurrentSnapshotScopesStayIndependentEvenWithOneDatabaseConnection",
+        "result": "PASS"
+      },
+      {
+        "name": "runtimeIsNonOwnerNonSuperuserNonBypassAndFiveTablesHaveForcedRls",
+        "result": "PASS"
+      },
+      {
+        "name": "configuredBeanCreatesIndependentWorkerTransactionAfterCommittedCaller",
+        "result": "PASS"
+      },
+      {
+        "name": "asyncAAndBQueriesAndWritesNeverReachForeignRows",
+        "result": "PASS"
+      },
+      {
+        "name": "submissionInsideActualJpaTransactionIsRejectedAndCommittedDataIsVisibleAfterReturn",
+        "result": "PASS"
+      }
+    ]
+  },
+  {
+    "kind": "failsafe",
+    "name": "com.pet.testing.tenantpersistence.TenantPersistenceIT",
+    "tests": "48",
+    "failures": "0",
+    "errors": "0",
+    "skipped": "0",
+    "methods": [
+      {
+        "name": "detachedEntityCannotBeInsertedOrMergedThroughControlledPort",
+        "result": "PASS"
+      },
+      {
+        "name": "rlsRejectsWithoutTenantAndRuntimeCannotDdlTruncateOrEscalate",
+        "result": "PASS"
+      },
+      {
+        "name": "transactionCannotWriteEntityLoadedInWiderExecutionScope",
+        "result": "PASS"
+      },
+      {
+        "name": "existsCountAndIdSetsDoNotLeakOtherTenant",
+        "result": "PASS"
+      },
+      {
+        "name": "selfWritesUseOwnerTypeAndIdAndDoNotAffectOtherOwners",
+        "result": "PASS"
+      },
+      {
+        "name": "creationAssignsOnlyCurrentTenantAndTenantBusinessCodeIsNotGlobal",
+        "result": "PASS"
+      },
+      {
+        "name": "tenantStoreQueriesAndWritesStillRespectIdentityStoreCeiling",
+        "result": "PASS"
+      },
+      {
+        "name": "nestedNarrowRepositoryCannotRecoverOuterGrant",
+        "result": "PASS"
+      },
+      {
+        "name": "idDetailUnifiesMissingAndOtherTenant",
+        "result": "PASS"
+      },
+      {
+        "name": "mixedUnauthorizedStoreBatchUpdatesNothing",
+        "result": "PASS"
+      },
+      {
+        "name": "requiresNewRestoresOuterTransactionBindingAndLocalRls",
+        "result": "PASS"
+      },
+      {
+        "name": "batchBoundsAndSafetyAttributeWhitelistRejectBeforeWrite",
+        "result": "PASS"
+      },
+      {
+        "name": "validAtomicBatchUpdatesActualUniqueRowsAndVersion",
+        "result": "PASS"
+      },
+      {
+        "name": "declaredStoreAndSelfUnionStaysInsideTenant",
+        "result": "PASS"
+      },
+      {
+        "name": "mixedTenantBatchUpdatesNothing",
+        "result": "PASS"
+      },
+      {
+        "name": "tenantLevelResourceRejectsUndeclaredStoresAndSelf",
+        "result": "PASS"
+      },
+      {
+        "name": "crossTenantAssociationRejectedByApplicationWithoutWrite",
+        "result": "PASS"
+      },
+      {
+        "name": "affectedRowMismatchRollsBackRealPartialDml",
+        "result": "PASS"
+      },
+      {
+        "name": "compositeForeignKeyRejectsAssociationEvenWhenApplicationIsBypassed",
+        "result": "PASS"
+      },
+      {
+        "name": "allFixtureTenantTablesHaveForcedRlsPoliciesAndCompositeReferences",
+        "result": "PASS"
+      },
+      {
+        "name": "missingTargetRejectsWholeBatchAndNoIdIsDisclosed",
+        "result": "PASS"
+      },
+      {
+        "name": "noContextAndAuthorityReadCannotUseControlledPersistence",
+        "result": "PASS"
+      },
+      {
+        "name": "reflectedForgeryBeforePersistIsRejectedAndNothingInserted",
+        "result": "PASS"
+      },
+      {
+        "name": "persistenceCapabilityCannotBorrowAnotherPermissionRange",
+        "result": "PASS"
+      },
+      {
+        "name": "alreadyFlushedWriteRollsBackAtApplicationFailure",
+        "result": "PASS"
+      },
+      {
+        "name": "compositeStoreForeignKeyRejectsCrossTenantFact",
+        "result": "PASS"
+      },
+      {
+        "name": "controlledRepositoryRequiresActualTransaction",
+        "result": "PASS"
+      },
+      {
+        "name": "authorityRootWithoutBusinessPurposeRefusesDatabaseAccess",
+        "result": "PASS"
+      },
+      {
+        "name": "storeCreateRejectsSameTenantUnauthorizedAndForeignStore",
+        "result": "PASS"
+      },
+      {
+        "name": "repeatedTenantsDoNotReusePredicatesEntitiesOrConnectionGuc",
+        "result": "PASS"
+      },
+      {
+        "name": "businessOrCannotEscapeOuterTenantAndCount",
+        "result": "PASS"
+      },
+      {
+        "name": "legalAssociationUsesControlledParentProjectionAndRestrictsDelete",
+        "result": "PASS"
+      },
+      {
+        "name": "atomicStoreDeleteRejectsUnauthorizedTarget",
+        "result": "PASS"
+      },
+      {
+        "name": "rlsWithCheckRejectsNativeTenantMoveAndForgedInsert",
+        "result": "PASS"
+      },
+      {
+        "name": "deleteOtherTenantDoesNotChangeDatabase",
+        "result": "PASS"
+      },
+      {
+        "name": "storeRangeExcludesSameTenantOtherStoreAndOtherTenant",
+        "result": "PASS"
+      },
+      {
+        "name": "duplicateBatchIdsAreDeduplicatedBeforeCountAndWrite",
+        "result": "PASS"
+      },
+      {
+        "name": "updateOtherTenantDoesNotChangeDatabase",
+        "result": "PASS"
+      },
+      {
+        "name": "pagesExcludeOtherTenantAndUseSecuredActualCount",
+        "result": "PASS"
+      },
+      {
+        "name": "rlsProtectsUnscopedNativeAndJpqlDmlAgainstForeignTenant",
+        "result": "PASS"
+      },
+      {
+        "name": "storeSingleWritesRejectOutOfScopeAndLegitimateUpdateCommits",
+        "result": "PASS"
+      },
+      {
+        "name": "selfUsesExplicitOwnerAndPrincipalTypeAcrossSameUuid",
+        "result": "PASS"
+      },
+      {
+        "name": "legitimateManagedUpdateAndScopedDeleteCommit",
+        "result": "PASS"
+      },
+      {
+        "name": "associationDoesNotIntroduceImplicitJpaNavigationOrCascade",
+        "result": "PASS"
+      },
+      {
+        "name": "commitRejectsScopeThatChangedAfterFirstDatabaseAccess",
+        "result": "PASS"
+      },
+      {
+        "name": "ordinaryUpdatesCannotMoveTenantOrStoreEvenUsingReflection",
+        "result": "PASS"
+      },
+      {
+        "name": "emptyStoresHaveNoRowsTotalsOrExistence",
+        "result": "PASS"
+      },
+      {
+        "name": "atomicDeleteRejectsMixedTenantAndCommitsLegalBatch",
+        "result": "PASS"
+      }
+    ]
+  }
+]

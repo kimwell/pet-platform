@@ -24,6 +24,23 @@ public final class BootstrapJdbc implements BootstrapWriter {
             } catch(SQLException | RuntimeException failure) { c.rollback();throw failure; }
         } catch(SQLException failure) { throw new IllegalStateException("员工读取权限补充未确认成功；请核查独立初始化角色、迁移及保留管理员角色"); }
     }
+    public int upgradeIdentityManagement(UUID tenantId) {
+        try(var c=CommandDatabase.connect(environment,"PET_BOOTSTRAP","pet_bootstrap")) {
+            c.setAutoCommit(false);
+            try {
+                try(var s=c.createStatement()){s.execute("SET LOCAL ROLE pet_bootstrap");}
+                int changed;
+                try(var q=c.prepareStatement("select pet_identity.upgrade_identity_management(?)")) {
+                    q.setObject(1,tenantId);try(var r=q.executeQuery()){r.next();changed=r.getInt(1);}
+                }
+                c.commit();return changed;
+            }catch(SQLException|RuntimeException e){c.rollback();throw e;}
+        }catch(SQLException e){throw new IllegalStateException("管理权限升级未确认成功；请核查迁移及保留角色");}
+    }
+    public int upgradeOrganizations(UUID tenantId){
+        try(var c=CommandDatabase.connect(environment,"PET_BOOTSTRAP","pet_bootstrap")){c.setAutoCommit(false);try{try(var s=c.createStatement()){s.execute("SET LOCAL ROLE pet_bootstrap");}int changed;try(var q=c.prepareStatement("select pet_identity.upgrade_organizations(?)")){q.setObject(1,tenantId);try(var result=q.executeQuery()){result.next();changed=result.getInt(1);}}c.commit();return changed;}catch(SQLException|RuntimeException e){c.rollback();throw e;}}
+        catch(SQLException e){throw new IllegalStateException("组织权限升级未确认成功；请核查独立角色及保留管理员");}
+    }
     @Override public BootstrapResult initialize(String code,String name,String login,String hash,String storeCode,String storeName) {
         try(var c=CommandDatabase.connect(environment,"PET_BOOTSTRAP","pet_bootstrap")) {
             c.setAutoCommit(false);

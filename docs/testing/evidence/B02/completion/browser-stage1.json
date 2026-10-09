@@ -1,0 +1,189 @@
+{
+  "status": "PASS",
+  "scenarios": [
+    {
+      "name": "平台正式页面登录",
+      "status": "PASS"
+    },
+    {
+      "name": "租户经正式页面创建，详情明确待初始化",
+      "status": "PASS",
+      "tenantId": "7cf09d03-687b-46fe-8cd2-e9ffe505d1f7"
+    },
+    {
+      "name": "生产JAR受控bootstrap与两个显式权限升级",
+      "status": "PASS",
+      "tenantId": "7cf09d03-687b-46fe-8cd2-e9ffe505d1f7",
+      "commands": [
+        [
+          "scripts/backend-identity.sh",
+          "bootstrap",
+          "--tenant-code",
+          "b02-acceptance",
+          "--tenant-name",
+          "B02真实验收租户",
+          "--admin-login",
+          "admin",
+          "--password-stdin"
+        ],
+        [
+          "scripts/backend-identity.sh",
+          "identity-management-upgrade",
+          "--tenant-id",
+          "7cf09d03-687b-46fe-8cd2-e9ffe505d1f7"
+        ],
+        [
+          "scripts/backend-identity.sh",
+          "organization-upgrade",
+          "--tenant-id",
+          "7cf09d03-687b-46fe-8cd2-e9ffe505d1f7"
+        ]
+      ],
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "exitCodes": [
+        0,
+        0,
+        0
+      ],
+      "secretInput": "受控stdin，不进入记录"
+    },
+    {
+      "name": "详情刷新确认已初始化且无假门店",
+      "status": "PASS"
+    },
+    {
+      "name": "租户正式页面资料编辑",
+      "status": "PASS"
+    },
+    {
+      "name": "正式页面创建最小门店元数据",
+      "status": "PASS"
+    },
+    {
+      "name": "正式STAFF登录并使用B01员工列表，双空间Cookie并存",
+      "status": "PASS"
+    },
+    {
+      "name": "独立租户组织页面创建、详情、编辑",
+      "status": "PASS"
+    },
+    {
+      "name": "390px组织状态确认与Enter提交",
+      "status": "PASS"
+    }
+  ],
+  "requests": [
+    {
+      "path": "/api/platform/auth/me",
+      "status": 401,
+      "code": "AUTH_REQUIRED"
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 401,
+      "code": "AUTH_REQUIRED"
+    },
+    {
+      "path": "/api/platform/auth/csrf",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/login",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/csrf",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/tenants",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/tenants",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/tenants",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/tenants/7cf09d03-687b-46fe-8cd2-e9ffe505d1f7",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/tenants/7cf09d03-687b-46fe-8cd2-e9ffe505d1f7/stores",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/tenants/7cf09d03-687b-46fe-8cd2-e9ffe505d1f7",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/tenants/7cf09d03-687b-46fe-8cd2-e9ffe505d1f7",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/tenants/7cf09d03-687b-46fe-8cd2-e9ffe505d1f7/stores",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/tenants/7cf09d03-687b-46fe-8cd2-e9ffe505d1f7",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/tenants/7cf09d03-687b-46fe-8cd2-e9ffe505d1f7/stores",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/tenants/7cf09d03-687b-46fe-8cd2-e9ffe505d1f7",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/tenants/7cf09d03-687b-46fe-8cd2-e9ffe505d1f7/stores",
+      "status": 200
+    }
+  ],
+  "pageErrors": [],
+  "environment": "生产JAR local、受限runtime、正式PLATFORM及STAFF密码认证；PG/Redis独立，无路由或数据替身"
+}

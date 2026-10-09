@@ -1,0 +1,23 @@
+import {chromium} from '/Users/kimwell/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright/index.mjs';
+import fs from 'node:fs';
+const root=process.cwd(),local=root+'/.local-data/b02',ev=root+'/docs/testing/evidence/B02',origin='http://127.0.0.1:18102';
+const secret=JSON.parse(fs.readFileSync(local+'/credentials.json','utf8')),tenant=fs.readFileSync(local+'/tenant-id','utf8');
+const browser=await chromium.launch({executablePath:'/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',headless:true});
+const context=await browser.newContext({viewport:{width:1280,height:900},storageState:local+'/before-lifecycle-state.json'}),p=await context.newPage(),staff=await context.newPage(),readerContext=await browser.newContext({viewport:{width:390,height:844}}),reader=await readerContext.newPage();
+const result={status:'IN_PROGRESS',scenarios:[],requests:[],pageErrors:[]};let stage='customer-ready';const save=()=>fs.writeFileSync(ev+'/browser-staff-lifecycle.json',JSON.stringify(result,null,2));
+const assert=v=>{if(!v)throw Error();};const record=(name,details={})=>{result.scenarios.push({name,status:'PASS',...details});save();};
+for(const page of [p,staff,reader]){page.on('pageerror',()=>result.pageErrors.push('页面脚本错误'));page.on('response',async r=>{const path=new URL(r.url()).pathname;if(path.startsWith('/api/')){let code;try{code=(await r.json()).error?.code;}catch{}result.requests.push({path,status:r.status(),code});save();}});}
+async function login(page,space,name,password,code){await page.goto(origin+'/'+space+'/login');await page.getByLabel('账号',{exact:true}).fill(name);await page.getByLabel('密码',{exact:true}).fill(password);if(code)await page.getByLabel('租户编码',{exact:true}).fill(code);await page.getByRole('button',{name:/登\s*录/}).click();await page.waitForURL(origin+'/'+space);}
+async function api(page,method,path,body){return page.evaluate(async({method,path,body})=>{let headers={'Content-Type':'application/json'};if(method!=='GET'){const space=path.startsWith('/api/admin/')?'admin':'platform';const csrf=await fetch('/api/'+space+'/auth/csrf').then(r=>r.json());headers['X-CSRF-Token']=csrf.data.csrfToken;}const response=await fetch(path,{method,headers,body:body?JSON.stringify(body):undefined});return {status:response.status,body:await response.json()};},{method,path,body});}
+async function statusTenant(){await p.getByRole('button',{name:/^(停用|启用)租户$/}).click();await p.getByRole('dialog').getByRole('button',{name:'确认状态操作',exact:true}).click();await p.getByRole('dialog').waitFor({state:'hidden'});}
+async function flag(name){const deadline=Date.now()+240000;while(Date.now()<deadline){if(fs.existsSync(local+'/'+name))return;const f=ev+'/customer-real.json';if(fs.existsSync(f)&&JSON.parse(fs.readFileSync(f,'utf8')).status==='FAIL')throw Error('真实客户链路失败');await new Promise(r=>setTimeout(r,300));}throw Error('客户标志超时');}
+try{
+ await staff.goto(origin+'/admin/identity/users');
+ stage='tenant-disable';
+ stage='tenant-disable';await p.goto(origin+'/platform/tenants/'+tenant);await p.getByRole('button',{name:'停用租户',exact:true}).waitFor();await statusTenant();assert((await api(staff,'GET','/api/admin/auth/me')).status===401);await staff.reload();await staff.waitForURL(/\/admin\/login/);record('正式页面停用租户，旧STAFF失效（CUSTOMER真实链路另验）');
+ const secondContext=await browser.newContext(),second=await secondContext.newPage();await login(second,'admin','admin',secret.staffPassword,'b02-second');assert((await api(second,'GET','/api/admin/auth/me')).status===200);assert((await api(p,'GET','/api/platform/auth/me')).status===200);record('租户A停用不影响租户B与PLATFORM');await secondContext.close();
+ stage='tenant-reenable';await statusTenant();assert((await api(staff,'GET','/api/admin/auth/me')).status===401);await login(staff,'admin','admin',secret.staffPassword,'b02-acceptance');await staff.getByRole('link',{name:'员工列表',exact:true}).click();await staff.getByRole('cell',{name:'admin',exact:true}).waitFor();record('正式页面重新启用，旧STAFF不复活，新STAFF登录与B01模块有效');
+ await context.storageState({path:local+'/accepted-state.json'});fs.chmodSync(local+'/accepted-state.json',0o600);
+ stage='logout-isolation';assert((await api(staff,'POST','/api/admin/auth/logout')).status===200);assert((await api(p,'GET','/api/platform/auth/me')).status===200);record('同一浏览器STAFF退出而PLATFORM仍有效');assert((await api(p,'POST','/api/platform/auth/logout')).status===200);record('PLATFORM独立退出');
+ assert(result.pageErrors.length===0);result.status='PASS';save();
+}catch{result.status='FAIL';result.failedStage=stage;save();await p.screenshot({path:local+'/browser-stage2-failure.png',fullPage:true});throw Error('正式链路失败：'+stage);}finally{await browser.close();}

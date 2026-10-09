@@ -1,0 +1,221 @@
+[
+  {
+    "label": "既有容器只读保全基线",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "docker",
+      "ps",
+      "-a",
+      "--format",
+      "{{.Names}}\t{{.State}}"
+    ],
+    "exitCode": 0,
+    "durationSeconds": 0.08,
+    "summary": "pet-platform-p02-validation-rabbitmq-1\texited\npet-platform-p02-validation-postgres-1\texited\npet-platform-p02-validation-redis-1\texited\n"
+  },
+  {
+    "label": "本轮冻结PG",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "docker",
+      "run",
+      "-d",
+      "--rm",
+      "--name",
+      "pet-b02-pg",
+      "--label",
+      "pet.validation=B02",
+      "--tmpfs",
+      "/var/lib/postgresql/data",
+      "--env-file",
+      "/Users/kimwell/work/pet-platform/.local-data/b02/postgres.env",
+      "-p",
+      "127.0.0.1::5432",
+      "postgres:17.11-bookworm@sha256:3645570cccdfa447589da9f57dd740faa29b30938e861289a5574b6ca6b03826",
+      "-c",
+      "log_statement=none",
+      "-c",
+      "log_min_error_statement=panic",
+      "-c",
+      "log_parameter_max_length=0",
+      "-c",
+      "log_parameter_max_length_on_error=0"
+    ],
+    "exitCode": 0,
+    "durationSeconds": 2.19,
+    "summary": "1d06b6ba560685204bd056b1e993b1cb3009461fe3cd117069a3896a425a38b4\n"
+  },
+  {
+    "label": "本轮冻结Redis",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "docker",
+      "run",
+      "-d",
+      "--rm",
+      "--name",
+      "pet-b02-redis",
+      "--label",
+      "pet.validation=B02",
+      "--tmpfs",
+      "/data",
+      "-v",
+      "/Users/kimwell/work/pet-platform/.local-data/b02/redis.conf:/tmp/validation.conf:ro",
+      "-p",
+      "127.0.0.1::6379",
+      "redis:8.2.10-bookworm@sha256:47670742d7924adbcdb404d1288b6327815b23141969c0939b8e5d61f78c2634",
+      "redis-server",
+      "/tmp/validation.conf"
+    ],
+    "exitCode": 0,
+    "durationSeconds": 0.13,
+    "summary": "3ccf65ea981da9936cce34b26154d0fb93ccbba8f212b0fbf7a796f3d0ebf2fc\n"
+  },
+  {
+    "label": "PG回环端口",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "docker",
+      "port",
+      "pet-b02-pg",
+      "5432"
+    ],
+    "exitCode": 0,
+    "durationSeconds": 0.02,
+    "summary": "127.0.0.1:49410\n"
+  },
+  {
+    "label": "Redis回环端口",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "docker",
+      "port",
+      "pet-b02-redis",
+      "6379"
+    ],
+    "exitCode": 0,
+    "durationSeconds": 0.02,
+    "summary": "127.0.0.1:49411\n"
+  },
+  {
+    "label": "正式角色:identity",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "docker",
+      "exec",
+      "-i",
+      "pet-b02-pg",
+      "psql",
+      "-X",
+      "-qAt",
+      "-v",
+      "ON_ERROR_STOP=1",
+      "-U",
+      "postgres",
+      "-d",
+      "b02_acceptance"
+    ],
+    "exitCode": 0,
+    "durationSeconds": 0.08,
+    "summary": ""
+  },
+  {
+    "label": "正式角色:platform",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "docker",
+      "exec",
+      "-i",
+      "pet-b02-pg",
+      "psql",
+      "-X",
+      "-qAt",
+      "-v",
+      "ON_ERROR_STOP=1",
+      "-U",
+      "postgres",
+      "-d",
+      "b02_acceptance"
+    ],
+    "exitCode": 0,
+    "durationSeconds": 0.07,
+    "summary": ""
+  },
+  {
+    "label": "正式角色:customer",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "docker",
+      "exec",
+      "-i",
+      "pet-b02-pg",
+      "psql",
+      "-X",
+      "-qAt",
+      "-v",
+      "ON_ERROR_STOP=1",
+      "-U",
+      "postgres",
+      "-d",
+      "b02_acceptance"
+    ],
+    "exitCode": 0,
+    "durationSeconds": 0.06,
+    "summary": ""
+  },
+  {
+    "label": "正式角色:control-management",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "docker",
+      "exec",
+      "-i",
+      "pet-b02-pg",
+      "psql",
+      "-X",
+      "-qAt",
+      "-v",
+      "ON_ERROR_STOP=1",
+      "-U",
+      "postgres",
+      "-d",
+      "b02_acceptance"
+    ],
+    "exitCode": 0,
+    "durationSeconds": 0.08,
+    "summary": ""
+  },
+  {
+    "label": "本轮独立受限登录身份",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "docker",
+      "exec",
+      "-i",
+      "pet-b02-pg",
+      "psql",
+      "-X",
+      "-qAt",
+      "-v",
+      "ON_ERROR_STOP=1",
+      "-U",
+      "postgres",
+      "-d",
+      "b02_acceptance"
+    ],
+    "exitCode": 0,
+    "durationSeconds": 0.09,
+    "summary": ""
+  },
+  {
+    "label": "生产JAR独立迁移",
+    "cwd": "/Users/kimwell/work/pet-platform",
+    "command": [
+      "scripts/backend-identity.sh",
+      "migrate"
+    ],
+    "exitCode": 2,
+    "durationSeconds": 0.01,
+    "summary": "缺少生产JAR；请先在apps/backend执行./mvnw clean verify\n"
+  }
+]

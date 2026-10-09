@@ -1,0 +1,864 @@
+{
+  "source": "backend-verify-final-accepted.log对应本次XML，排除单独指定的浏览器等待环境及其他旧报告",
+  "groups": {
+    "unit": {
+      "totals": {
+        "tests": 146,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      "suites": [
+        {
+          "class": "com.pet.platform.ApplicationTest",
+          "tests": 3,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "methods": [
+            "startsRealHttpServerWithoutBusinessEndpoints",
+            "rejectsMissingEnvironmentAndInsecureProductionOrigin",
+            "defaultApplicationScanDoesNotLoadTestEntities"
+          ]
+        },
+        {
+          "class": "com.pet.platform.customeridentity.infrastructure.WechatConfigTest",
+          "tests": 5,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "methods": [
+            "serverEntryRejectsOtherTenantBeforeDatabaseLookup",
+            "arbitrarySecretPropertyAndUnboundedTimeoutAreRejected",
+            "secretIsReadFromNamedServerPropertyAndNeverToString",
+            "missingSecretFailsOnlyConfiguredEntryWithExplicitError",
+            "defaultDisabledDoesNotRequireSecretsOrPerformDatabaseQuery"
+          ]
+        },
+        {
+          "class": "com.pet.platform.customeridentity.infrastructure.WxJavaGatewayTest",
+          "tests": 8,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "methods": [
+            "networkAndTimeoutAreUncertainInsteadOfSuccess",
+            "alreadyConsumedCodeMapped",
+            "invalidCodeMappedWithoutRetryOrRawResponse",
+            "clientsAreIsolatedByConfigurationVersionAndSecret",
+            "malformedOrMissingOpenIdIsSafeFailure",
+            "busyResponseNeverRetriesCode",
+            "sdkCodeExchangeHasFixedEndpointOneRequestAndNoAccessTokenOrSessionKeyOutput",
+            "ioFailureHasSameUncertainSemantics"
+          ]
+        },
+        {
+          "class": "com.pet.platform.protocol.ApiProtocolTest",
+          "tests": 30,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "methods": [
+            "registeredBusinessMappingsAndSafeUnknownErrors",
+            "rejectsDuplicatePaginationAndPageSizeLimit",
+            "explicitSuccessNullAndResponseEntityKeepExactShape",
+            "fileBytesAndDispositionAreNotWrapped",
+            "rejectsIllegalPagination(String)[1]",
+            "rejectsIllegalPagination(String)[2]",
+            "rejectsIllegalPagination(String)[3]",
+            "rejectsIllegalPagination(String)[4]",
+            "rejectsIllegalPagination(String)[5]",
+            "rejectsIllegalPagination(String)[6]",
+            "rejectsIllegalPagination(String)[7]",
+            "rejectsIllegalPagination(String)[8]",
+            "rejectsIllegalPagination(String)[9]",
+            "rejectsIllegalPagination(String)[10]",
+            "traceIsGeneratedOrPassedAndContextRestoresOnlyOwnedKeys",
+            "parameterSyntaxAndMethodValidationHaveDifferentStatuses",
+            "bodyValidationHasStableNestedPathsAndMultipleCodes",
+            "rejectsMalformedUnknownDuplicateAndWrongTypesWithoutEcho(String)[1]",
+            "rejectsMalformedUnknownDuplicateAndWrongTypesWithoutEcho(String)[2]",
+            "rejectsMalformedUnknownDuplicateAndWrongTypesWithoutEcho(String)[3]",
+            "rejectsMalformedUnknownDuplicateAndWrongTypesWithoutEcho(String)[4]",
+            "rejectsMalformedUnknownDuplicateAndWrongTypesWithoutEcho(String)[5]",
+            "rejectsMalformedUnknownDuplicateAndWrongTypesWithoutEcho(String)[6]",
+            "rejectsMalformedUnknownDuplicateAndWrongTypesWithoutEcho(String)[7]",
+            "rejectsMalformedUnknownDuplicateAndWrongTypesWithoutEcho(String)[8]",
+            "rejectsMalformedUnknownDuplicateAndWrongTypesWithoutEcho(String)[9]",
+            "rejectsMalformedUnknownDuplicateAndWrongTypesWithoutEcho(String)[10]",
+            "framework404405415AndAllowHeaderArePreserved",
+            "paginationDefaultBoundaryEmptyAndTotalPrecision",
+            "sortWhitelistDefaultDirectionAndUniqueTieBreakAreStable"
+          ]
+        },
+        {
+          "class": "com.pet.platform.shared.persistence.DatabaseConfigurationRulesTest",
+          "tests": 6,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "methods": [
+            "localAndProductionDefaultsHaveExplicitSafeStrategies",
+            "externalOverridesCannotEnableDangerousDefaults",
+            "missingConfigurationNamesAreReportedWithoutValues",
+            "sharedEntityCachesCannotBeEnabledByOverrides",
+            "refusesSecretsInUrlAndOtherDatabaseSystems",
+            "productionCannotRunStartupMigrations"
+          ]
+        },
+        {
+          "class": "com.pet.platform.shared.persistence.JpaPageAdapterTest",
+          "tests": 5,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "methods": [
+            "mapsEmptyOutOfRangePageWithoutChangingRequestedNumber",
+            "rejectsOffsetBeyondJpaIntWithoutOverflow",
+            "preservesLargeTotalAsStringAndExactResponseShape",
+            "mapsOnlyWhitelistedPropertiesAndDoesNotDuplicateUniqueSort",
+            "convertsOneBasedPageAndDefaultSize"
+          ]
+        },
+        {
+          "class": "com.pet.platform.shared.redis.RedisConfigurationTest",
+          "tests": 2,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "methods": [
+            "validConfigurationAndMissingRequiredNames",
+            "rejectsAmbiguousPrefixUnboundedTimeoutAndUnsupportedTopologies"
+          ]
+        },
+        {
+          "class": "com.pet.platform.shared.tenancy.TenantTaskExecutorTest",
+          "tests": 23,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "methods": [
+            "fullQueueRejectsWithoutCallerExecutionOrMdcPollution",
+            "gracefulCloseDrainsQueuedTasksAndRejectsFurtherSubmissions",
+            "residualWorkerIdentityIsRejectedAndThreadIsReplaced",
+            "emptyStoresRemainEmptyAndCannotRecoverTenantOrSwitchPermission",
+            "runningCancellationRetainsScopeUntilActualCooperativeExit",
+            "sameWorkerRunsAThenBThenAnonymousWithoutResidue",
+            "selfRetainsSubjectDomainAndOwnerAndRejectsExpansion",
+            "exceptionIsObservableAndFollowingTaskIsClean",
+            "runningExpiryBlocksGuardsAndNestedSubmissionCannotRenewSnapshot",
+            "resourceBoundsAndNonForgedSnapshotConstructors",
+            "traceWhitelistDoesNotCopyOtherMdcOrDamageCaller",
+            "preexistingWorkerResidueRejectsNextTaskWithoutRunningIt",
+            "queuedSnapshotExpiresDeterministicallyBeforeExecution",
+            "activeTransactionOrSynchronizationRejectsSubmission",
+            "leakedNestedScopeIsRejectedAndCleanedByActualWorker",
+            "selectedStoreAndNarrowedScopeAreCaptured",
+            "workerCreationDoesNotInheritThirdPartyThreadLocals",
+            "queuedCancellationDoesNotInstallIdentityAndReleasesCapacity",
+            "immutableSnapshotSurvivesCallerBoundaryAndExcludesSessionAndOtherGrants",
+            "stopNowCancelsQueueAndInterruptsRunningTaskWithoutCallerPollution",
+            "concurrentTasksKeepIndependentIdentityAndTrace",
+            "noIdentityCannotSubmitAndTenantCannotSubmitUnscoped",
+            "closeReportsNonCooperativeRunningTaskWithoutPrematureContextCleanup"
+          ]
+        },
+        {
+          "class": "com.pet.testing.architecture.StructureRulesTest",
+          "tests": 15,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "methods": [
+            "rejectsBytecodeStorageMutationAndUnauthorizedIdentityOpening",
+            "detectsRawPersistenceInBusinessLayersAndRepositoryInheritance",
+            "actualProductionBytecodeObeysRules",
+            "rejectsUnapprovedExecutorsAndAsyncAnnotationsOnlyInProjectClasses",
+            "infrastructurePackageDoesNotAuthorizeNativeQueriesMergeOrBulkBypass",
+            "rejectsKeyForgeryUnscopedTasksAndInternalSnapshotOpeningViaMethodHandles",
+            "nativeMethodReferenceIsAlsoDetectedInInfrastructure",
+            "contextStorageAndIdentityOpeningHaveNoPublicMutators",
+            "storeFactCapabilityCannotBeBorrowedByOtherAdapters",
+            "rejectsEveryRequiredNegativeFixtureIncludingGenericOnlyReferences",
+            "rejectsTestClassesAndMigrationInArtifactFixture",
+            "restrictedIdentityAndBootstrapEntriesRejectOrdinaryBusinessAndControllers",
+            "controlledBaseDoesNotExposeDetachedSaveOrDatabaseHandles",
+            "rejectsRawRedisAndCacheAbstractionsEvenInInfrastructureAndGenericSignatures",
+            "customerGatewayAndRegistrationCannotBeCalledByControllersOrBusinessModules"
+          ]
+        },
+        {
+          "class": "com.pet.testing.contracts.ContractExportTest",
+          "tests": 9,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "methods": [
+            "dateTimeDoesNotShiftDateAndRejectsUnspecifiedPrecision",
+            "exportsSeparateProductionAndTestDocumentsFromActualHttp",
+            "actualHttpBodiesMatchConcreteOpenApiSchemas",
+            "moneyNeverUsesFloatingPointAndHasTwoOutputDecimals(String)[1]",
+            "moneyNeverUsesFloatingPointAndHasTwoOutputDecimals(String)[2]",
+            "moneyNeverUsesFloatingPointAndHasTwoOutputDecimals(String)[3]",
+            "moneyNeverUsesFloatingPointAndHasTwoOutputDecimals(String)[4]",
+            "malformedTypesAndValuesAreSafe400AndSemanticErrors422",
+            "actualHttpScalarsPreservePrecisionAndNullablePresence"
+          ]
+        },
+        {
+          "class": "com.pet.testing.contracts.DocumentPolicyTest",
+          "tests": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "methods": [
+            "environmentCannotEnableProductionDocumentsOrPublicBind"
+          ]
+        },
+        {
+          "class": "com.pet.testing.contracts.ProductionOpenApiExportTest",
+          "tests": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "methods": [
+            "exportsActualProductionModelsWithoutTestPaths"
+          ]
+        },
+        {
+          "class": "com.pet.testing.identity.PasswordServiceTest",
+          "tests": 6,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "methods": [
+            "malformedUnknownAndExcessiveCostEncodingsFailSafely",
+            "identityNamesNormalizeOnlyApprovedAsciiNames",
+            "unicodeMatchesIndependentUtf8ReferenceVector",
+            "rejectsTooShortLongAndBrokenUnicodeWithoutTruncation",
+            "randomSaltAndCorrectIncorrectPasswords",
+            "doesNotTrimCaseFoldOrNormalizePasswords"
+          ]
+        },
+        {
+          "class": "com.pet.testing.tenancy.TenantExecutionTest",
+          "tests": 19,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "methods": [
+            "exceptionAndLeakedInnerScopesBothCleanAtTrustedBoundary",
+            "nestedSameTenantRestoresOuterAndNeverWidens",
+            "currentStoreCanOnlyBeBoundAfterOwnershipAndCannotSwitchNested",
+            "emptyStoresAndSelfNeverAuthorizeAWholeStore",
+            "absentOperationPermissionRejectsIndependentlyOfTenantRange",
+            "concurrentThreadsDoNotShareAndChildThreadDoesNotInherit",
+            "mergesOnlySamePermissionAndIntersectsStoreUpperBound",
+            "outOfOrderCloseRejectsWithoutChangingContextAndIsRecoverable",
+            "storeOwnershipAndPermissionAreBothRequired",
+            "mdcOnlyRestoresOwnedFieldsAndStoreMustBeExplicit",
+            "invalidPrincipalAndScopeCombinationsAreRejected",
+            "identityAndScopeDefensivelyCopyCollections",
+            "closingOnOtherThreadRejectsAndOwnerCanStillClose",
+            "noContextAlwaysRejectsTenantOperations",
+            "defaultProviderIsAnonymousAndDefaultStoreReaderIsUnavailable",
+            "crossTenantSubjectAndScopeExpansionAreRejected",
+            "staffAndCustomerAreDistinctTrustedTenantSubjects",
+            "tenantScopeStillChecksOwnershipAndIdentityStoreUpperBound",
+            "platformOnlyUsesExplicitControlPlaneGuard"
+          ]
+        },
+        {
+          "class": "com.pet.testing.tenancy.TenantMvcTest",
+          "tests": 13,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "methods": [
+            "synchronousErrorRedispatchUsesServerSnapshotWithoutProviderReread",
+            "anonymousPublicRequestHasNoTenantAndProtectedOperationDenies",
+            "headerTenantAndClientAuthorityCannotCreateOrOverrideIdentity",
+            "requestStartingAsyncDoesNotRebindIdentityOnLaterError",
+            "controllerExceptionAndValidationErrorCleanWithTrace",
+            "exactSameWorkerHandlesAThenBThenAnonymousWithoutResidue",
+            "asyncRedispatchDoesNotAutomaticallyBindIdentityOrBlockPublicWork",
+            "leakedApplicationScopeIsRejectedAndBoundaryStillCleans",
+            "nestedErrorDispatchRetainsNarrowedScopeAndTrace",
+            "queryTenantCannotCreateOrOverrideIdentity",
+            "trustedStaffCustomerAndPlatformHaveExplicitDifferentBoundaries",
+            "filterFailureUsesExistingJsonResolverAndTrace",
+            "bodyTenantIsOnlyTestIntentAndCannotCreateOrOverrideIdentity"
+          ]
+        }
+      ]
+    },
+    "integration": {
+      "totals": {
+        "tests": 323,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      "suites": [
+        {
+          "class": "com.pet.platform.protocol.ApiProtocolIT",
+          "tests": 2,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "methods": [
+            "realHttpMvcAndContainerErrorsKeepSafeEnvelopeAndTrace",
+            "realServerRejectsMultipleTraceHeadersAndKeepsFileBytes"
+          ]
+        },
+        {
+          "class": "com.pet.platform.shared.redis.RedisIsolationIT",
+          "tests": 17,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "methods": [
+            "foreignUnauthorizedEmptyAndSelfStoreScopesAreDenied",
+            "rawResourceHitRequiresCurrentStorePolicyAndFilteredListsHaveNoApi",
+            "realTtlExpiresWithBoundedPolling",
+            "noContextRejectsConstructionAndAllOperations",
+            "realReadWriteDeleteAndEmptyValueHaveDefinedSemantics",
+            "platformIsIndependentPermissionCheckedAndNeverFallsBackFromTenant",
+            "addressFromDifferentBuilderCannotSelectAnotherPrefixOrEnvironment",
+            "actualRedisOutageIsInfrastructureFailureForReadWriteAndDelete",
+            "missingStoreFactsNeverAllowAddressOrOperation",
+            "storeFactsAreRecheckedWhenAddressIsUsed",
+            "delimiterWildcardAndUnicodeEncodingIsRepeatableAndCollisionFree",
+            "addressCapturedInACannotBeUsedInBOrNarrowerScope",
+            "sameTenantDifferentStoresHaveIndependentValues",
+            "invalidTtlNullAndOversizedValuesRejectBeforeWrite",
+            "unknownSerializationVersionMalformedUtf8AndOversizedStoredValueFailExplicitly",
+            "sameBusinessKeyInTwoTenantsReadsIndependentRealValues",
+            "invalidPrefixModuleLengthAndUnicodeAreRejected"
+          ]
+        },
+        {
+          "class": "com.pet.testing.RedisHealthIT",
+          "tests": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "methods": [
+            "redisOutageFailsOverallAndReadinessWhileLivenessRemainsHealthy"
+          ]
+        },
+        {
+          "class": "com.pet.testing.architecture.ProductionArtifactIT",
+          "tests": 2,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "methods": [
+            "packagedJarContainsNoTestClassResourceMigrationOrDependency",
+            "customerProductionClassesContainNoTechnicalWechatCredentialsOrProbe"
+          ]
+        },
+        {
+          "class": "com.pet.testing.authentication.CustomerAuthenticationIT",
+          "tests": 39,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "methods": [
+            "customerAsyncIsExplicitlyRejectedBeforeQueueing",
+            "wrongApplicationResultIsRejected",
+            "currentIdentityComesFromDatabaseAndProviderSelfDomain",
+            "exchangeRateIsDistributedAndLimitsFailureAsWellAsSuccess",
+            "timeoutRequiresFreshCodeAndNeverCreatesIdentity",
+            "auditWriteFailureCannotReturnSuccessfulToken",
+            "compositeForeignKeyRefusesCustomerFromAnotherTenant",
+            "unknownEntryAndTenantNeverExchangeCode",
+            "concurrentHttpLoginsNeverLeaveAnOrphanAndFreshCodeRecovers",
+            "eventsContainKnownIdsOnlyAndNeverExternalSecrets",
+            "nonUniqueDatabaseFailureRollsBackAndIsNotTreatedAsExisting",
+            "upstreamAndMissingIdentityErrorsAreRecognizable",
+            "disabledCustomerCannotBeRecreatedThroughLogin",
+            "concurrentCustomerLogoutAllIncrementsVersionOnlyOnce",
+            "actualDatabasePermissionFaultIs503AndDoesNotDeleteSession",
+            "deviceLimitUsesSharedRedisAccountLock",
+            "concurrentFirstRegistrationHasOneBindingAndNoOrphan",
+            "allLogoutInvalidatesEveryOldCustomerDeviceAndFreshLoginWorks",
+            "unknownIdentityFieldsAndEncodedPathsAreRejected",
+            "delayedCustomerCleanupNeverDeletesFreshGeneration",
+            "noHeaderCookieQueryAndMixedCredentialsNeverBecomeCustomer",
+            "currentLogoutInvalidatesOnlyCurrentCustomerDevice",
+            "redisCleanupFailureStillRevokesByDatabaseVersion",
+            "customerCannotAccessStaffOrPlatformAndReverseIsRejected",
+            "disabledTenantNeverExchangesAndExistingSessionRevoked",
+            "absoluteAndIdlePoliciesDoNotSlideOnMe",
+            "sessionCreationFailureKeepsIdentityAndFreshCodeCanRetry",
+            "runtimeRlsHasNoContextNoRowsAndCannotReadOpenIdOrElevate",
+            "invalidCodeCreatesNoCustomerOrSession",
+            "customerAndTenantVersionInvalidateOldSessions",
+            "invalidInputsCannotConsumeUnlimitedGatewayCalls",
+            "tenantAppAndOpenIdAreAllPartOfBindingKey",
+            "sameUuidAcrossThreeDomainsStillIsolated",
+            "missingUnionIdDoesNotBlockAndSameUnionDoesNotMerge",
+            "idleExpiryRefusesExistingToken",
+            "repeatLoginReusesCustomerWithIndependentDevice",
+            "actualRedisOutageFailsClosedAndRecoversExistingSession",
+            "disabledBindingCannotBeBypassed",
+            "firstLoginCreatesAtomicFormalIdentityAndRealSession"
+          ]
+        },
+        {
+          "class": "com.pet.testing.authentication.PlatformAuthenticationIT",
+          "tests": 36,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "methods": [
+            "wrongMissingAndDisabledCredentialsHaveSamePublicFailure",
+            "loginWithPreviouslyVerifiedOldPasswordCannotIssueNewGeneration",
+            "concurrentChangesCommitExactlyOnce",
+            "correctWebLoginReturnsPlatformIdentityWithoutTenantOrToken",
+            "initializerCreatesOnlyIndependentCanonicalAccountAndExplicitPermissions",
+            "initializerRejectsParameterPasswordAndMalformedInput",
+            "repeatedBootstrapNeverResetsOrAddsAnotherAccount",
+            "csrfOriginAndBodyUnknownFieldsFailClosed",
+            "platformRedisEntryAcceptsOnlyRealAuthorizedPlatformAndAsyncRejects",
+            "realDatabaseFaultIs503RatherThanWrongPassword",
+            "runtimeCannotReadHashBootstrapOrElevateDatabaseRole",
+            "loginRateLimitIsIndependentFromStaffAndHasRetryAfter",
+            "platformCookieAndClientTenantCannotEnterTenantPersistence",
+            "twoValidDomainCookiesRouteIndependentlyInEitherOrder",
+            "tenantBootstrapIdentityCannotInitializePlatform",
+            "cookiesCsrfRotationAndSessionFixationDefenseAreReal",
+            "changePasswordRevokesEveryPlatformSessionButLeavesStaff",
+            "recordsHaveExplicitPlatformScopeAndNoSecrets",
+            "duplicatePlatformCookieAndHeaderSelectionAreRejected",
+            "realRedisFaultFailsClosedAndRetainsCookie",
+            "staffTokenAndCookieCannotAccessPlatform",
+            "realRedisCleanupPauseLeavesCommittedPasswordAndOldGenerationInvalid",
+            "sameUuidInStaffAndPlatformHasIndependentPermissionsAndRevocation",
+            "oldPasswordConfirmationNewRulesAndSamePasswordAreRejected",
+            "concurrentBootstrapHasOneCompleteWinner",
+            "sensitiveAttemptsUseAtomicIndependentPlatformFrequencyControl",
+            "currentLogoutInvalidatesOnlyCurrentPlatformSession",
+            "requestExceptionsLeaveNoContextOrMdcOnReusedThread",
+            "permissionsAreRequiredRatherThanIsLogin",
+            "secureCookiePolicyIsSharedAndInsecureProductionIsRejected",
+            "bootstrapFailureRollsBackAccountPermissionsAndMarker",
+            "redisCleanupFailureKeepsOldSessionsLogicallyInvalidAndCompensates",
+            "twoCsrfDomainsCannotBeInterchanged",
+            "securityRecordFailureRollsBackCredentialGenerationAndIntent",
+            "reloginRotatesCurrentPlatformSessionAndPreservesStaff",
+            "delayedCleanupDoesNotDeleteNewGeneration"
+          ]
+        },
+        {
+          "class": "com.pet.testing.authentication.StaffAuthenticationIT",
+          "tests": 31,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "methods": [
+            "clientTenantFieldsCannotOverrideTrustedIdentity",
+            "webAndMiniLogoutAreDeviceIsolated",
+            "storeAssignmentsAndPermissionScopesReload",
+            "absentTenantAndAccountHaveSameSafeFailure",
+            "cookieAttributesAndWebBodyContainNoToken",
+            "disabledTenantLoginRejected",
+            "realUserAsyncSnapshotsAreRevalidatedBeforeExecution",
+            "forwardedHeadersCannotBypassIpLimit",
+            "requestFailureAndAnonymousReuseDoNotLeakIdentity",
+            "concurrentAttemptCountersAreAtomicAndNormalizationShared",
+            "miniRejectsWebCookiesAndWebRejectsMiniToken",
+            "credentialVersionChangeInvalidatesSession",
+            "formalStoreUsesProviderTenantTransactionAndRls",
+            "otherSaSpacesCannotResolveStaffToken",
+            "invalidSerializationAndNamespaceRejected",
+            "credentialAmbiguityDomainAndHeaderGrammar",
+            "maximumFiveDevicesDoesNotSilentlyEvict",
+            "rolePermissionAndAssignmentsReloadEvenWithoutVersionBump",
+            "redisFailureIs503AndDoesNotBecomeAuthenticationFailure",
+            "realLoginAndCurrentIdentityAreFormalDatabaseFacts",
+            "disabledEmployeeLoginRejected",
+            "wrongPasswordDoesNotCreateSession",
+            "sourceRequiredAndExactRefererFallback",
+            "webLogoutInvalidatesCookieAndCsrf",
+            "invalidWebCookieCanRecoverButDependencyFailureKeepsCookie",
+            "csrfRotationAndSessionFixationProtection",
+            "publicEndpointIgnoresCredentialsAndUrlTokenRejected",
+            "databaseFailureIs503AndDoesNotDeleteValidSession",
+            "expiredAnonymousCsrfRejected",
+            "tenantAndEmployeeDisableInvalidateExistingSessions",
+            "missingAndWrongCsrfRejected"
+          ]
+        },
+        {
+          "class": "com.pet.testing.authentication.StaffCredentialSecurityIT",
+          "tests": 34,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "methods": [
+            "wrongConfirmationDoesNotChangeCredentialVersionOrSessionsAndHasIndependentFailureRecord",
+            "storeManagerCanManageOnlyTargetsWhoseEntireStoreAndAuthorityAreCovered",
+            "realRedisFrequencyFailureNeverSilentlyAllowsChange",
+            "concurrentSensitiveLimitsAreAtomicAndFailuresDoNotLockEmployeePermanently",
+            "independentPermissionsAreRequiredAndOrdinaryStartupDoesNotGrantNewCode",
+            "loginCheckedOldPasswordCannotAcquireNewVersionDuringPasswordChange",
+            "oldCleanupRunningAfterFreshLoginNeverDeletesFreshSession",
+            "adminResetForcesChangeAndInvalidatesAllTargetDevicesWithoutChangingActor",
+            "crossTenantUnknownAndStoreOutsideTargetsAreHidden",
+            "queuedAuthorityQueryFailureRefusesActionInsteadOfAssumingVersionIsUnchanged",
+            "adminRevokeLeavesPasswordAndMustChangeFlagAndActorIntactAndOldVersionCannotRepeat",
+            "adminResetCompetesWithSelfChangeWithoutLosingEitherVersionRule",
+            "twoAdminsUsingSameResourceVersionHaveOneWinner",
+            "invalidSameAndOversizedPasswordsAndUnknownFieldsAreRejectedWithoutSecrets",
+            "databaseFailureAfterPasswordVersionAndIntentRollsEverythingBack",
+            "queuedTasksRecheckDatabaseGenerationAfterLogoutAll",
+            "selfTenantAdminSystemAccountsCannotBeResetButAdminSessionsCanBeRevoked",
+            "missingWrongCsrfAndSourcesDoNotMutate",
+            "partiallyDeletedTokenIndexStillCleansOrphanSessionAndTerminal",
+            "queuedTasksRecheckDatabaseGenerationAfterPasswordChange",
+            "mandatoryAuditInsertFailureRollsBackCredentialAndIntent",
+            "successfulAndFailedRecordsContainOnlyAllowlistedFieldsAndRlsRemainsForced",
+            "redisCleanupFailurePreservesLogicalRevocationAndLazyCompensationRemovesOnlyOldVersions",
+            "selfLogoutAllRequiresConfirmationAndReplaysWithOldSessionFail",
+            "correctPasswordChangesAndAllChannelsAndCsrfArePhysicallyRemoved",
+            "loginCompetingWithLogoutAllRejectsOldGenerationAndFreshLoginRemains",
+            "sensitiveWriteRechecksCurrentAuthorityBeforeCommit",
+            "databaseCommitSurvivesActualRedisOutageDuringPhysicalCleanup",
+            "queuedTasksCannotExpandCapturedScopeAndCurrentRevokedPermissionRejects",
+            "passwordsPreserveSpacesCaseUnicodeAndAreNotReadFromQuery",
+            "concurrentPasswordChangesCannotBothOverwriteSuccessfully",
+            "adminReconfirmationFailureHasNoChange",
+            "revokedCurrentDeviceAlsoRejectsQueuedTasksAndDatabaseFailureIsClosed",
+            "temporaryPasswordCannotUseManagementEvenIfPermissionsAreGrantedAndCanLogout"
+          ]
+        },
+        {
+          "class": "com.pet.testing.authentication.StaffSessionRuntimeIT",
+          "tests": 4,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "methods": [
+            "twoProductionInstancesShareAndRevokeTheSameRedisSessionAndSecureCookie",
+            "twoProductionInstancesObservePasswordChangeAndOldWebMiniSessionsCannotReturn",
+            "productionJarRejectsInsecureCookieAndUntrustedForwardingConfiguration",
+            "idleExpiryDoesNotRenewOnMeAndAbsoluteExpiryCannotSlide"
+          ]
+        },
+        {
+          "class": "com.pet.testing.contracts.PackagedDocumentPolicyIT",
+          "tests": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "methods": [
+            "localAndProductionJarHaveActualDocumentAndUiPolicies"
+          ]
+        },
+        {
+          "class": "com.pet.testing.contracts.ScalarPostgresIT",
+          "tests": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "methods": [
+            "protocolScalarTypesSurvivePostgresWithoutFloatingPointOrTimezoneShift"
+          ]
+        },
+        {
+          "class": "com.pet.testing.identity.CustomerMigrationIT",
+          "tests": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "methods": [
+            "versionThreeUpgradesWithoutChangingEarlierMigrationsOrCreatingCustomers"
+          ]
+        },
+        {
+          "class": "com.pet.testing.identity.EmployeeDirectoryIT",
+          "tests": 32,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "methods": [
+            "invalidPaginationAndSortFollowFrozenErrors",
+            "tenantListAndDetailContainOnlyThisTenant",
+            "targetStatusDoesNotGrantOrRemoveReadVisibility",
+            "tenantMixedWithOtherScopesNormalizesWithoutCrossTenant",
+            "publicOpenApiSchemaMatchesActualDtoAndQueryFields",
+            "permissionAndRoleRemovalImmediatelyAffectNewRequests",
+            "databaseReadFailureReturns503ThenRecovers",
+            "missingIndependentReadPermissionsAre403",
+            "accountAndSingleConnectionReuseNeverMixTenantRows",
+            "noAuthorizedStoresMeansEmptyStoresScope",
+            "tenantStoreFilterStillChecksIdentityStoreCeiling",
+            "validCustomerAndPlatformCredentialsCannotReadStaffDirectory",
+            "explicitUpgradeIsLimitedIdempotentAndChangesCurrentAuthority",
+            "nextRequestRechecksStoreAssignmentEvenWithoutVersionBump",
+            "webCookieUsesTheSameFormalReadContract",
+            "rlsRestrictedRoleDefaultsToNoRowsAndCannotSelectCredentials",
+            "listAndDetailProjectionHaveNoNPlusOne",
+            "storesUseAnySharedActiveAuthorizedStoreWithoutRelationLeak",
+            "emptyFilterAndBeyondLastPagePreserveTotalAndRequestedPage",
+            "illegalStatusIdUnknownAndRepeatedFiltersAre400",
+            "sameValueSortAndManyToManyPagesHaveStableUniqueIds",
+            "keywordMatchesAccountAndNameIgnoringCaseLiterally",
+            "storeFilterNeverEnlargesCurrentScope",
+            "listScopeCannotEnlargeDetailOrSensitiveManagement",
+            "selfListAndDetailMapToStaffSubjectId",
+            "inactiveStoreRevokesStoresVisibilityOnNextRequest",
+            "noReadPermissionDoesNotBlockSelfPasswordChange",
+            "hiddenUnknownAndForeignDetailsHaveIdenticalErrors",
+            "keywordLengthAndBlankBoundaries",
+            "anonymousListAndDetailRequireIdentity",
+            "allPublicSortFieldsWorkInBothDirections",
+            "storesAndSelfUnionIncludesNoStoreSelfOnly"
+          ]
+        },
+        {
+          "class": "com.pet.testing.identity.EmployeeReadMigrationIT",
+          "tests": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "methods": [
+            "versionFourDataIsPreservedAndOnlyExplicitUpgradeAddsDetail"
+          ]
+        },
+        {
+          "class": "com.pet.testing.identity.EmployeeReadUpgradeRuntimeIT",
+          "tests": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "methods": [
+            "packagedExplicitCommandRunsAndRejectsRuntimeCredentials(Path)"
+          ]
+        },
+        {
+          "class": "com.pet.testing.identity.IdentityFoundationIT",
+          "tests": 27,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "methods": [
+            "plaintextNeverStoredAndPasswordInputLifecycleCleared",
+            "emptyStoresAndUnknownPermissionFailClosed",
+            "disabledTenantEmployeeRoleAndStoreAreReflectedByAuthorityLoad",
+            "bootstrapCommandRejectsPrivilegedOrOrdinaryRuntimeLogin",
+            "tenantNormalizationUniqueAndDifferentTenantsShareLogin",
+            "formalRlsWithCheckRejectsForeignInsertAndTenantMoveWithIndependentRead",
+            "concurrentBootstrapHasExactlyOneCompleteAdministrator",
+            "formalMigrationRepeatedAndJpaValidationWithSevenModels",
+            "requestClonesAndClearsPasswordWithoutSerializingIt",
+            "storeProductionBeanAndGuardReadOfficialTenantAndStatus",
+            "authenticationCannotBeHijackedByTemporaryShadowTables",
+            "bootstrapLoginCannotReadTablesOrExecuteAuthentication",
+            "sameTenantUnauthorizedStoreDeniedAfterFactFound",
+            "noRealSessionDoesNotCreatePrincipalAndBootstrapNotSpringBean",
+            "perPermissionRoleUnionDoesNotEnlargeOtherPermissions",
+            "explicitPackagedCommandsMigrateBootstrapAndConflictWithSafeOutput",
+            "unavailableStoreSourceIsDependencyFailureWithoutGuardRecursion",
+            "commandRejectsPasswordArgumentAndMissingConsoleBeforeDatabase",
+            "bootstrapRelationsCompleteAndOptionalStoreReallyOptional",
+            "bootstrapIntermediateFailureRollsBackAllTablesIndependentConnection",
+            "roleAndStoreCompositeReferencesRejectForeignTenantAndRestrictDelete",
+            "runtimeRlsNoContextNoForeignTenantAndCredentialColumnDenied",
+            "authenticationFunctionsOwnedByMinimalNoLoginRolesAndNotPublic",
+            "sameTenantLoginUniquenessAndCanonicalDatabaseConstraint",
+            "bootstrapRepeatDoesNotChangeHashPermissionsOrRepairHalfState",
+            "authenticationBeforeContextReturnsMinimalCredentialWithoutSerialization",
+            "runtimeStartupCheckRejectsCredentialAccessAndBootstrapMembership"
+          ]
+        },
+        {
+          "class": "com.pet.testing.identity.IdentityManagementIT",
+          "tests": 14,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "methods": [
+            "redisFailureRefusesMutationAndRecoveryKeepsVersions",
+            "runtimeRlsAndCredentialRestrictionsRemainEnforced",
+            "tenantGrantCannotBeGrantedBySelfScope",
+            "resetAndExplicitSessionRevokeReuseFormalSecurityService",
+            "realOptionsArePagedAndRespectStoreCeiling",
+            "foreignTargetsAndAssociationsNeverMutate",
+            "duplicateAndInvalidFieldsArePreciseAndNoTenantInputAccepted",
+            "associationAndSecurityIntentRollbackWhenFinalEventFails",
+            "explicitUpgradeIsIdempotentAndDoesNotTouchForeignTenant",
+            "protectedAdminAndRoleCannotBeDisabledOrReassigned",
+            "completeBusinessLifecycleAndPermissionSpecificUnion",
+            "absentIndependentPermissionsAndReadWriteSeparation",
+            "grantCeilingRejectsDifferentPermissionAndStoreUpperBound",
+            "versionConcurrentEditsHaveExactlyOneWinner"
+          ]
+        },
+        {
+          "class": "com.pet.testing.identity.IdentityMigrationIT",
+          "tests": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "methods": [
+            "previouslyEmptyProductionHistoryUpgradesThenRemainsIdempotent(Path)"
+          ]
+        },
+        {
+          "class": "com.pet.testing.identity.PlatformBootstrapRuntimeIT",
+          "tests": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "methods": [
+            "packagedPlatformBootstrapUsesStdinAndDistinctCapabilityAndIsNotRepeatableCreation"
+          ]
+        },
+        {
+          "class": "com.pet.testing.identity.PlatformMigrationIT",
+          "tests": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "methods": [
+            "previousVersionTwoUpgradesWithoutTouchingTenantDataAndDoesNotBootstrap"
+          ]
+        },
+        {
+          "class": "com.pet.testing.identity.StaffSecurityMigrationIT",
+          "tests": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "methods": [
+            "versionOneDataAndChecksumSurviveUpgradeAndNewTablesKeepRestrictedRls"
+          ]
+        },
+        {
+          "class": "com.pet.testing.persistence.JpaPersistenceIT",
+          "tests": 12,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "methods": [
+            "runtimeFailureRollsBackAllWritesInSameServiceTransaction",
+            "runtimeFailureRollsBackFlushedWrite",
+            "migrationCompletedBeforeJpaValidationAndDoesNotRepeat",
+            "filtersComposeWithPageAndEmptyOrOutOfRangeResults",
+            "nullableSortUsesNullsLastForBothDirectionsAndSpecifications",
+            "databaseConstraintFailureAtFlushRollsBackEarlierWrite",
+            "directUniqueSortIsNotDuplicatedAndCountReflectsLaterChanges",
+            "auditUpdatesOnlyOnActualChangeAndKeepsCreatedAt",
+            "timestampHasMillisecondPrecisionAndUtcInstantAcrossSessionTimezone",
+            "applicationServiceCommitsOutsideTestTransaction",
+            "databasePagesKeepStableUniqueOrderAndActualTotal",
+            "uuidV4AndAuditingSurviveRealPostgresRoundTrip"
+          ]
+        },
+        {
+          "class": "com.pet.testing.persistence.MigrationSafetyIT",
+          "tests": 5,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "methods": [
+            "checksumConflictFailsAgainstTemporaryCopy(Path)",
+            "nonEmptySchemaWithoutHistoryCannotBeAutomaticallyBaselined",
+            "mismatchedStructureFailsJpaValidation",
+            "cleanIsRefused",
+            "emptyDatabaseCreatesHistoryAndRepeatedMigrationIsIdempotent"
+          ]
+        },
+        {
+          "class": "com.pet.testing.tenancy.TenantHttpIT",
+          "tests": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "methods": [
+            "actualRegisteredRequestAndContainerErrorChainsKeepProtocol"
+          ]
+        },
+        {
+          "class": "com.pet.testing.tenantpersistence.AsyncTenantPersistenceIT",
+          "tests": 9,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "methods": [
+            "sameThreadAndSingleDatabaseConnectionRunAThenBThenAnonymous",
+            "expiredScopeAtRealTransactionCommitRollsBackAndConnectionCanServeB",
+            "asyncStoresEmptyScopesAndSelfSubjectDomainsUseActualPostgresPolicies",
+            "exceptionAfterFlushRollsBackAndFollowingBHasNoAState",
+            "concurrentSnapshotScopesStayIndependentEvenWithOneDatabaseConnection",
+            "runtimeIsNonOwnerNonSuperuserNonBypassAndFiveTablesHaveForcedRls",
+            "configuredBeanCreatesIndependentWorkerTransactionAfterCommittedCaller",
+            "asyncAAndBQueriesAndWritesNeverReachForeignRows",
+            "submissionInsideActualJpaTransactionIsRejectedAndCommittedDataIsVisibleAfterReturn"
+          ]
+        },
+        {
+          "class": "com.pet.testing.tenantpersistence.TenantPersistenceIT",
+          "tests": 48,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "methods": [
+            "detachedEntityCannotBeInsertedOrMergedThroughControlledPort",
+            "rlsRejectsWithoutTenantAndRuntimeCannotDdlTruncateOrEscalate",
+            "transactionCannotWriteEntityLoadedInWiderExecutionScope",
+            "existsCountAndIdSetsDoNotLeakOtherTenant",
+            "selfWritesUseOwnerTypeAndIdAndDoNotAffectOtherOwners",
+            "creationAssignsOnlyCurrentTenantAndTenantBusinessCodeIsNotGlobal",
+            "tenantStoreQueriesAndWritesStillRespectIdentityStoreCeiling",
+            "nestedNarrowRepositoryCannotRecoverOuterGrant",
+            "idDetailUnifiesMissingAndOtherTenant",
+            "mixedUnauthorizedStoreBatchUpdatesNothing",
+            "requiresNewRestoresOuterTransactionBindingAndLocalRls",
+            "batchBoundsAndSafetyAttributeWhitelistRejectBeforeWrite",
+            "validAtomicBatchUpdatesActualUniqueRowsAndVersion",
+            "declaredStoreAndSelfUnionStaysInsideTenant",
+            "mixedTenantBatchUpdatesNothing",
+            "tenantLevelResourceRejectsUndeclaredStoresAndSelf",
+            "crossTenantAssociationRejectedByApplicationWithoutWrite",
+            "affectedRowMismatchRollsBackRealPartialDml",
+            "compositeForeignKeyRejectsAssociationEvenWhenApplicationIsBypassed",
+            "allFixtureTenantTablesHaveForcedRlsPoliciesAndCompositeReferences",
+            "missingTargetRejectsWholeBatchAndNoIdIsDisclosed",
+            "noContextAndAuthorityReadCannotUseControlledPersistence",
+            "reflectedForgeryBeforePersistIsRejectedAndNothingInserted",
+            "persistenceCapabilityCannotBorrowAnotherPermissionRange",
+            "alreadyFlushedWriteRollsBackAtApplicationFailure",
+            "compositeStoreForeignKeyRejectsCrossTenantFact",
+            "controlledRepositoryRequiresActualTransaction",
+            "authorityRootWithoutBusinessPurposeRefusesDatabaseAccess",
+            "storeCreateRejectsSameTenantUnauthorizedAndForeignStore",
+            "repeatedTenantsDoNotReusePredicatesEntitiesOrConnectionGuc",
+            "businessOrCannotEscapeOuterTenantAndCount",
+            "legalAssociationUsesControlledParentProjectionAndRestrictsDelete",
+            "atomicStoreDeleteRejectsUnauthorizedTarget",
+            "rlsWithCheckRejectsNativeTenantMoveAndForgedInsert",
+            "deleteOtherTenantDoesNotChangeDatabase",
+            "storeRangeExcludesSameTenantOtherStoreAndOtherTenant",
+            "duplicateBatchIdsAreDeduplicatedBeforeCountAndWrite",
+            "updateOtherTenantDoesNotChangeDatabase",
+            "pagesExcludeOtherTenantAndUseSecuredActualCount",
+            "rlsProtectsUnscopedNativeAndJpqlDmlAgainstForeignTenant",
+            "storeSingleWritesRejectOutOfScopeAndLegitimateUpdateCommits",
+            "selfUsesExplicitOwnerAndPrincipalTypeAcrossSameUuid",
+            "legitimateManagedUpdateAndScopedDeleteCommit",
+            "associationDoesNotIntroduceImplicitJpaNavigationOrCascade",
+            "commitRejectsScopeThatChangedAfterFirstDatabaseAccess",
+            "ordinaryUpdatesCannotMoveTenantOrStoreEvenUsingReflection",
+            "emptyStoresHaveNoRowsTotalsOrExistence",
+            "atomicDeleteRejectsMixedTenantAndCommitsLegalBatch"
+          ]
+        }
+      ]
+    }
+  },
+  "totalTests": 469
+}

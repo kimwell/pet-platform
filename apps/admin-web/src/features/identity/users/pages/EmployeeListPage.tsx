@@ -1,3 +1,4 @@
+import { EmployeeCreate } from '../../management/EmployeeCreate';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { useQuery, useQueryClient } from '@tanstack/react-query';
 import { useLocation, useRouter, useSearch } from '@tanstack/react-router';
@@ -69,7 +70,7 @@ export function EmployeeListPage({ identity }: { identity: WebIdentity }) {
   // 权限错误立即隐藏已有行；统一 401 的身份失效仍交由会话层处理。
   const data = forbidden ? undefined : query.data;
   return <section className="employee-list" aria-labelledby="employees-heading">
-    <div className="page-heading"><div><Typography.Title ref={heading} tabIndex={-1} level={1} id="employees-heading">员工列表</Typography.Title><Typography.Paragraph type="secondary">当前授权范围内的员工。时间：{displayTimeZone}</Typography.Paragraph></div>
+    <EmployeeCreate identity={identity} /><div className="page-heading"><div><Typography.Title ref={heading} tabIndex={-1} level={1} id="employees-heading">员工列表</Typography.Title><Typography.Paragraph type="secondary">当前授权范围内的员工。时间：{displayTimeZone}</Typography.Paragraph></div>
       <Button onClick={refresh} disabled={query.isFetching || forbidden} loading={Boolean(data && query.isFetching)}>刷新列表</Button></div>
     {location.state.employeeUrlNotice && <Alert showIcon type="warning" title={location.state.employeeUrlNotice} closable />}
     <Form form={form} layout="vertical" className="employee-filters" onFinish={draft => change(submitFilters(search, draft))} scrollToFirstError={{ focus: true }}>

@@ -256,7 +256,7 @@ class EmployeeDirectoryIT extends PostgresIntegrationSupport {
             error(request("GET",PATH+suffix,null,"X-Customer-Token","Bearer "+customerToken),401,"AUTH_DOMAIN_MISMATCH");
             error(get(customerToken,suffix),401,"SESSION_EXPIRED");
         }
-        owner.execute("truncate pet_control.platform_security_event,pet_control.platform_session_cleanup,pet_control.platform_bootstrap,pet_control.platform_permission,pet_control.platform_account");
+        owner.execute("truncate pet_control.management_event,pet_control.platform_security_event,pet_control.platform_session_cleanup,pet_control.platform_bootstrap,pet_control.platform_permission,pet_control.platform_account");
         new PlatformBootstrap(new PlatformBootstrapJdbc(Map.of("PET_PLATFORM_BOOTSTRAP_DATABASE_URL",POSTGRES.getJdbcUrl().split("\\?",2)[0],
                 "PET_PLATFORM_BOOTSTRAP_DATABASE_USERNAME",IdentityDatabaseSupport.PLATFORM_BOOTSTRAP,"PET_PLATFORM_BOOTSTRAP_DATABASE_PASSWORD",POSTGRES.getPassword())),passwords).initialize("root","平台技术管理员",password.toCharArray());
         var pre=request("GET","/api/platform/auth/csrf",null);String preCookie=cookie(pre,"pet_dev_platform_pre");

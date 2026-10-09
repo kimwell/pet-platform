@@ -1,0 +1,39 @@
+
+> @pet/admin-web@0.0.0 typecheck /Users/kimwell/work/pet-platform/apps/admin-web
+> tsc --noEmit
+
+src/features/account/security.test.tsx(16,278): error TS2353: Object literal may only specify known properties, and 'scopes' does not exist in type '{ permissionCode: string; scopeType: "TENANT" | "STORES" | "SELF"; }'.
+src/features/identity/management/EmployeeActions.tsx(31,38): error TS2345: Argument of type '{ name: string; errors: string[]; }[]' is not assignable to parameter of type 'FieldData<Draft>[]'.
+  Type '{ name: string; errors: string[]; }' is not assignable to type 'FieldData<Draft>'.
+    Types of property 'name' are incompatible.
+      Type 'string' is not assignable to type '"version" | "displayName" | "newPassword" | "status" | "currentPassword" | ["newPassword"] | ["currentPassword"] | ["version"] | ["status"] | ["displayName"] | "ids" | ["ids"] | [...] | undefined'.
+src/features/identity/management/EmployeeCreate.tsx(23,90): error TS2345: Argument of type '{ name: string; errors: string[]; }[]' is not assignable to parameter of type 'FieldData<{ displayName: string; initialPassword: string; loginName: string; }>[]'.
+  Type '{ name: string; errors: string[]; }' is not assignable to type 'FieldData<{ displayName: string; initialPassword: string; loginName: string; }>'.
+    Types of property 'name' are incompatible.
+      Type 'string' is not assignable to type '"displayName" | "loginName" | ["loginName"] | "initialPassword" | ["displayName"] | ["initialPassword"]'.
+src/features/identity/management/RolesPage.tsx(41,40): error TS2345: Argument of type '{ name: string; errors: string[]; }[]' is not assignable to parameter of type 'FieldData<{ code: string; name: string; }>[]'.
+  Type '{ name: string; errors: string[]; }' is not assignable to type 'FieldData<{ code: string; name: string; }>'.
+    Types of property 'name' are incompatible.
+      Type 'string' is not assignable to type '"code" | "name" | ["code"] | ["name"]'.
+src/features/identity/management/RolesPage.tsx(59,40): error TS2345: Argument of type '{ name: string; errors: string[]; }[]' is not assignable to parameter of type 'FieldData<{ name: string; status: string; version: string; }>[]'.
+  Type '{ name: string; errors: string[]; }' is not assignable to type 'FieldData<{ name: string; status: string; version: string; }>'.
+    Types of property 'name' are incompatible.
+      Type 'string' is not assignable to type '"version" | "status" | "name" | ["name"] | ["version"] | ["status"]'.
+src/features/identity/management/RolesPage.tsx(59,108): error TS2345: Argument of type '{ name: (string | number)[]; errors: string[]; }[]' is not assignable to parameter of type 'FieldData<{ grants: { permissionCode: string; scopeType: "TENANT" | "STORES" | "SELF"; }[]; version: string; }>[]'.
+  Type '{ name: (string | number)[]; errors: string[]; }' is not assignable to type 'FieldData<{ grants: { permissionCode: string; scopeType: "TENANT" | "STORES" | "SELF"; }[]; version: string; }>'.
+    Types of property 'name' are incompatible.
+      Type '(string | number)[]' is not assignable to type '"version" | "grants" | ["version"] | ["grants"] | ["grants", number] | ["grants", number, "permissionCode"] | ["grants", number, "scopeType"]'.
+        Type '(string | number)[]' is not assignable to type '["version"] | ["grants"] | ["grants", number] | ["grants", number, "permissionCode"] | ["grants", number, "scopeType"]'.
+          Type '(string | number)[]' is not assignable to type '["grants", number, "scopeType"]'.
+            Target requires 3 element(s) but source may have fewer.
+src/features/identity/users/queries/detail.test.ts(20,281): error TS2353: Object literal may only specify known properties, and 'scopes' does not exist in type '{ permissionCode: string; scopeType: "TENANT" | "STORES" | "SELF"; }'.
+src/features/identity/users/queries/detail.test.ts(71,265): error TS2345: Argument of type '{ principalId: string; authorizationVersion: string; authorizedStoreIds: string[]; dataScope: { grants: { permissionCode: string; scopeType: "TENANT" | "STORES" | "SELF"; }[]; }; displayName: string; ... 6 more ...; tenantId: string; } | { ...; } | { ...; } | { ...; }' is not assignable to parameter of type 'WebIdentity'.
+  Type '{ tenantId: string; authorizationVersion: string; authorizedStoreIds: string[]; dataScope: null; displayName: string; expiresAt: string; idleTimeoutSeconds: number; permissionCodes: string[]; principalId: string; principalType: "PLATFORM"; sessionId: string; }' is not assignable to type 'WebIdentity'.
+    Property 'passwordChangeRequired' is missing in type '{ tenantId: string; authorizationVersion: string; authorizedStoreIds: string[]; dataScope: null; displayName: string; expiresAt: string; idleTimeoutSeconds: number; permissionCodes: string[]; principalId: string; principalType: "PLATFORM"; sessionId: string; }' but required in type '{ authorizationVersion: string; authorizedStoreIds: string[]; dataScope: { grants: { permissionCode: string; scopeType: "TENANT" | "STORES" | "SELF"; }[]; }; displayName: string; expiresAt: string; ... 6 more ...; tenantId: string; }'.
+src/features/identity/users/queries/employees.test.ts(20,278): error TS2353: Object literal may only specify known properties, and 'scopes' does not exist in type '{ permissionCode: string; scopeType: "TENANT" | "STORES" | "SELF"; }'.
+src/features/identity/users/queries/employees.test.ts(62,386): error TS2345: Argument of type '{ dataScope: { grants: never[]; }; authorizationVersion: string; authorizedStoreIds: string[]; displayName: string; expiresAt: string; idleTimeoutSeconds: number; passwordChangeRequired: boolean; ... 4 more ...; tenantId: string; } | { ...; }' is not assignable to parameter of type 'WebIdentity'.
+  Type '{ dataScope: { grants: never[]; }; authorizationVersion: string; authorizedStoreIds: string[]; displayName: string; expiresAt: string; idleTimeoutSeconds: number; permissionCodes: string[]; principalId: string; principalType: "PLATFORM"; sessionId: string; tenantId: null; }' is not assignable to type 'WebIdentity'.
+    Property 'passwordChangeRequired' is missing in type '{ dataScope: { grants: never[]; }; authorizationVersion: string; authorizedStoreIds: string[]; displayName: string; expiresAt: string; idleTimeoutSeconds: number; permissionCodes: string[]; principalId: string; principalType: "PLATFORM"; sessionId: string; tenantId: null; }' but required in type '{ authorizationVersion: string; authorizedStoreIds: string[]; dataScope: { grants: { permissionCode: string; scopeType: "TENANT" | "STORES" | "SELF"; }[]; }; displayName: string; expiresAt: string; ... 6 more ...; tenantId: string; }'.
+/Users/kimwell/work/pet-platform/apps/admin-web:
+ ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL  @pet/admin-web@0.0.0 typecheck: `tsc --noEmit`
+Exit status 2

@@ -40,3 +40,7 @@ local/test 默认在应用启动时迁移，Spring Boot 的数据库初始化依
 生产JAR提供scripts/backend-identity.sh migrate独立入口；prod Application仍不迁移，只validate。local启用迁移时PET_MIGRATION_DATABASE_*显式必填且URL必须与运行数据库一致，不回退运行凭据。仍禁止clean、baseline非空库、repair、out-of-order或忽略checksum；生产原迁移不得改写。
 
 容器验证正式迁移/JPA validate/重复无变更及角色权限；正式部署、真实生产账号权限、备份恢复、既有生产数据升级仍NOT_VERIFIED/NOT_EXECUTED。本轮没有实际本地/生产管理员初始化。
+
+## B02 控制面和组织（2026-10-09）
+
+新增 V7__control_plane_management.sql / V8__tenant_organizations.sql。先在目标库显式预配置 infra/database/provision-control-management-roles.sql，再用独立迁移任务执行全部8个版本。旧 V1～V6 不改。V7 创建固定控制面管理函数/事件及 Tenant initialized 状态，V8 创建独立 Organization；结构检查按具体受限 owner、运行权限与 FORCE RLS 扩展。没有 repair/baseline/忽略checksum开关。B02 开发中一次完整回归与同步修改尚未发布的新V7发生checksum冲突，失败保留；之后Maven/迁移源编辑顺序执行，最终空库正式迁移及完整回归通过。本轮专用无持久卷联调环境在新函数修复后重新正式迁移/页面创建；没有改既有库、repair历史或把SQL准备当管理功能成功。实际部署仍须独立角色预配置、备份及生产升级验证，见 [B02](../testing/B02-ACCEPTANCE.md)。

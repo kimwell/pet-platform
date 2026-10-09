@@ -1,0 +1,73 @@
+{
+  "tool": "cua_repl",
+  "browser": "Codex In-app Browser",
+  "origin": "http://127.0.0.1:18098",
+  "checks": [
+    {
+      "scenario": "管理员正式登录→页面创建员工→编辑资料",
+      "status": "PASS",
+      "employeeId": "7115c15b-11c4-4012-9ef8-317e2703a14c"
+    },
+    {
+      "scenario": "页面配置员工门店及角色",
+      "status": "PASS",
+      "employeeId": "7115c15b-11c4-4012-9ef8-317e2703a14c",
+      "roleId": "73013d0b-ea99-457c-a771-2f784929b497"
+    },
+    {
+      "scenario": "员工首次正式登录强制转账号安全",
+      "status": "PASS"
+    },
+    {
+      "scenario": "员工列表门店范围：仅管理员与本人，第二门店员工不可见，无管理入口",
+      "status": "PASS",
+      "total": "2"
+    },
+    {
+      "scenario": "列表STORES与详情SELF分别执行；角色撤权后旧Token401、重登列表403",
+      "status": "PASS"
+    },
+    {
+      "scenario": "并发409后保存禁用，显式读新版本保留姓名草稿；Tab与Enter提交",
+      "status": "PASS"
+    },
+    {
+      "scenario": "390px状态表单无页面溢出；页面正式停用员工",
+      "status": "PASS",
+      "width": 390,
+      "dialogWidth": 374
+    },
+    {
+      "scenario": "390px角色维护与权限表单；选择器ArrowDown/Escape可用",
+      "status": "PASS"
+    },
+    {
+      "scenario": "停本轮Vite产生真实NETWORK；错误明确；恢复Vite后HMR重新读取成功且身份保留",
+      "status": "PASS"
+    },
+    {
+      "scenario": "真实422账号重复准确展示账号字段错误，密码已清空",
+      "status": "PASS"
+    },
+    {
+      "scenario": "未保存新建Modal关闭与角色页面离开：继续编辑保留、放弃清空、正常成功导航不阻挡",
+      "status": "PASS"
+    },
+    {
+      "scenario": "角色草稿存在时全会话撤销：旧提交401，直接回登录且清旧表单，未保存提醒不阻挡身份清理",
+      "status": "PASS"
+    },
+    {
+      "scenario": "角色列表正式读取、字符串total及超末页replace回退到1",
+      "status": "PASS"
+    },
+    {
+      "scenario": "最终敏感表单void Mutation参数：正式创建成功，员工编辑关闭提醒、继续编辑后保存成功",
+      "status": "PASS"
+    },
+    {
+      "scenario": "最终页面启用/停用成功；关闭动画期间按钮禁用，快速连续操作可重新打开正确表单",
+      "status": "PASS"
+    }
+  ]
+}

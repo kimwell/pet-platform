@@ -1,0 +1,64 @@
+{
+  "checkedAt": "2026-10-09T05:06:38.087037+00:00",
+  "containers": [
+    {
+      "runtime": "browser-backend-runtime",
+      "containerId": "85d4e2e5c498afb874dd61afceba6984efc6410c3e3f07de717073938a90218f",
+      "removed": true,
+      "running": false,
+      "inspectionExit": 1
+    },
+    {
+      "runtime": "browser-backend-runtime",
+      "containerId": "1d6a4a6232ca0ad8c6a93bfcc23eb91c11ab669146337bd0a686fe6d10a6f594",
+      "removed": true,
+      "running": false,
+      "inspectionExit": 1
+    },
+    {
+      "runtime": "browser-backend-runtime",
+      "containerId": "18052e3d621259eca3c55de3edc070147399c4719d256801961fed52244f5401",
+      "removed": true,
+      "running": false,
+      "inspectionExit": 1
+    },
+    {
+      "runtime": "browser-draft-runtime",
+      "containerId": "169ef4a1371ac2b2a0c70655bc72da4f7c941a8c9fc970cf02203cf4b92c5832",
+      "removed": true,
+      "running": false,
+      "inspectionExit": 1
+    },
+    {
+      "runtime": "browser-draft-runtime",
+      "containerId": "bf572d7fd841df198963701c7dca41033cf216c1254a27de72a9685883af9df2",
+      "removed": true,
+      "running": false,
+      "inspectionExit": 1
+    },
+    {
+      "runtime": "browser-draft-runtime",
+      "containerId": "07cec079be871e5d2fb71214ae5f1cac87266c9f7a6de539315ca942f29fa055",
+      "removed": true,
+      "running": false,
+      "inspectionExit": 1
+    }
+  ],
+  "ports": [
+    {
+      "port": 18098,
+      "acceptsConnection": false
+    },
+    {
+      "port": 51721,
+      "acceptsConnection": false
+    },
+    {
+      "port": 57644,
+      "acceptsConnection": false
+    }
+  ],
+  "privateCredentialFilesRemaining": [],
+  "actions": "只读检查专用ID与端口；本轮没有停机、删除或重建既有卷/进程",
+  "result": "PASS"
+}

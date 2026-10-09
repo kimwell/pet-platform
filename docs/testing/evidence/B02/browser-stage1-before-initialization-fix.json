@@ -1,0 +1,97 @@
+{
+  "status": "FAIL",
+  "scenarios": [
+    {
+      "name": "平台正式页面登录",
+      "status": "PASS"
+    },
+    {
+      "name": "租户经正式页面创建，详情明确待初始化",
+      "status": "PASS",
+      "tenantId": "199b165e-e6b2-4ef1-89a0-cd5e6d39c984"
+    }
+  ],
+  "requests": [
+    {
+      "path": "/api/platform/auth/me",
+      "status": 401,
+      "code": "AUTH_REQUIRED"
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 401,
+      "code": "AUTH_REQUIRED"
+    },
+    {
+      "path": "/api/platform/auth/csrf",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/login",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/csrf",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/tenants",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/tenants",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/tenants",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/tenants/199b165e-e6b2-4ef1-89a0-cd5e6d39c984",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/tenants/199b165e-e6b2-4ef1-89a0-cd5e6d39c984/stores",
+      "status": 200
+    }
+  ],
+  "pageErrors": [],
+  "environment": "生产JAR local、受限runtime、正式PLATFORM及STAFF密码认证；PG/Redis独立，无路由或数据替身",
+  "failedStage": "bootstrap"
+}

@@ -1,0 +1,34 @@
+
+> @pet/admin-web@0.0.0 typecheck /Users/kimwell/work/pet-platform/apps/admin-web
+> tsc --noEmit
+
+src/features/identity/management/api.ts(51,44): error TS2345: Argument of type '(this: undefined, field: { code: string; field: string; message: string; }) => { name: ["grants"]; errors: string[]; }[] | { name: ["grants", number, "permissionCode"] | ["grants", number, "scopeType"]; errors: string[]; }[]' is not assignable to parameter of type '(this: undefined, value: { code: string; field: string; message: string; }, index: number, array: { code: string; field: string; message: string; }[]) => { name: ["grants"]; errors: string[]; } | readonly { ...; }[]'.
+  Type '{ name: ["grants"]; errors: string[]; }[] | { name: ["grants", number, "permissionCode"] | ["grants", number, "scopeType"]; errors: string[]; }[]' is not assignable to type '{ name: ["grants"]; errors: string[]; } | readonly { name: ["grants"]; errors: string[]; }[]'.
+    Type '{ name: ["grants", number, "permissionCode"] | ["grants", number, "scopeType"]; errors: string[]; }[]' is not assignable to type '{ name: ["grants"]; errors: string[]; } | readonly { name: ["grants"]; errors: string[]; }[]'.
+      Type '{ name: ["grants", number, "permissionCode"] | ["grants", number, "scopeType"]; errors: string[]; }[]' is not assignable to type 'readonly { name: ["grants"]; errors: string[]; }[]'.
+        Type '{ name: ["grants", number, "permissionCode"] | ["grants", number, "scopeType"]; errors: string[]; }' is not assignable to type '{ name: ["grants"]; errors: string[]; }'.
+          Types of property 'name' are incompatible.
+            Type '["grants", number, "permissionCode"] | ["grants", number, "scopeType"]' is not assignable to type '["grants"]'.
+              Type '["grants", number, "permissionCode"]' is not assignable to type '["grants"]'.
+                Source has 3 element(s) but target allows only 1.
+src/features/identity/management/EmployeeActions.tsx(31,38): error TS2345: Argument of type '{ name: string; errors: string[]; }[]' is not assignable to parameter of type 'FieldData<Draft>[]'.
+  Type '{ name: string; errors: string[]; }' is not assignable to type 'FieldData<Draft>'.
+    Types of property 'name' are incompatible.
+      Type 'string' is not assignable to type '"version" | "displayName" | "newPassword" | "status" | "currentPassword" | ["newPassword"] | ["currentPassword"] | ["version"] | ["status"] | ["displayName"] | "ids" | ["ids"] | [...] | undefined'.
+src/features/identity/management/EmployeeCreate.tsx(23,90): error TS2345: Argument of type '{ name: string; errors: string[]; }[]' is not assignable to parameter of type 'FieldData<{ displayName: string; initialPassword: string; loginName: string; }>[]'.
+  Type '{ name: string; errors: string[]; }' is not assignable to type 'FieldData<{ displayName: string; initialPassword: string; loginName: string; }>'.
+    Types of property 'name' are incompatible.
+      Type 'string' is not assignable to type '"displayName" | "loginName" | ["loginName"] | "initialPassword" | ["displayName"] | ["initialPassword"]'.
+src/features/identity/management/RolesPage.tsx(41,40): error TS2345: Argument of type '{ name: string; errors: string[]; }[]' is not assignable to parameter of type 'FieldData<{ code: string; name: string; }>[]'.
+  Type '{ name: string; errors: string[]; }' is not assignable to type 'FieldData<{ code: string; name: string; }>'.
+    Types of property 'name' are incompatible.
+      Type 'string' is not assignable to type '"code" | "name" | ["code"] | ["name"]'.
+src/features/identity/management/RolesPage.tsx(59,40): error TS2345: Argument of type '{ name: string; errors: string[]; }[]' is not assignable to parameter of type 'FieldData<{ name: string; status: string; version: string; }>[]'.
+  Type '{ name: string; errors: string[]; }' is not assignable to type 'FieldData<{ name: string; status: string; version: string; }>'.
+    Types of property 'name' are incompatible.
+      Type 'string' is not assignable to type '"version" | "status" | "name" | ["name"] | ["version"] | ["status"]'.
+src/features/identity/management/RolesPage.tsx(59,108): error TS2345: Argument of type 'unknown[]' is not assignable to parameter of type 'FieldData<{ grants: { permissionCode: string; scopeType: "TENANT" | "STORES" | "SELF"; }[]; version: string; }>[]'.
+  Type 'unknown' is not assignable to type 'FieldData<{ grants: { permissionCode: string; scopeType: "TENANT" | "STORES" | "SELF"; }[]; version: string; }>'.
+/Users/kimwell/work/pet-platform/apps/admin-web:
+ ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL  @pet/admin-web@0.0.0 typecheck: `tsc --noEmit`
+Exit status 2

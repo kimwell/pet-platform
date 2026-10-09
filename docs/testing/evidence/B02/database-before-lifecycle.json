@@ -1,0 +1,87 @@
+{
+  "source": "只读观察已由正式页面/CLI创建和修改的状态；不是SQL准备功能",
+  "exitCode": 0,
+  "snapshot": {
+    "tenant": {
+      "id": "71d0870a-5e42-45f2-823d-7d9575e4aded",
+      "code": "b02-acceptance",
+      "name": "B02真实验收租户最终资料",
+      "status": "ACTIVE",
+      "version": "5",
+      "staffCount": 1,
+      "storeCount": 1,
+      "initialized": true
+    },
+    "account": {
+      "id": "f61c262f-018c-4efa-90b1-aca19af7addf",
+      "status": "DISABLED",
+      "version": "5",
+      "loginName": "b02-reader",
+      "displayName": "B02只读平台账号更新",
+      "permissions": [
+        "platform:account:detail",
+        "platform:account:list",
+        "platform:credential:change",
+        "platform:session:manage",
+        "platform:tenant:list"
+      ]
+    },
+    "organization": [
+      {
+        "code": "ops",
+        "name": "B02内部组织更新",
+        "status": "DISABLED",
+        "version": "2"
+      }
+    ],
+    "managementEvents": [
+      {
+        "count": 1,
+        "operation": "ACCOUNT_GRANTS"
+      },
+      {
+        "count": 1,
+        "operation": "ACCOUNT_STATUS"
+      },
+      {
+        "count": 1,
+        "operation": "CREATE_ACCOUNT"
+      },
+      {
+        "count": 1,
+        "operation": "CREATE_STORE"
+      },
+      {
+        "count": 1,
+        "operation": "CREATE_TENANT"
+      },
+      {
+        "count": 1,
+        "operation": "EDIT_ACCOUNT"
+      },
+      {
+        "count": 1,
+        "operation": "EDIT_STORE"
+      },
+      {
+        "count": 2,
+        "operation": "EDIT_TENANT"
+      },
+      {
+        "count": 1,
+        "operation": "RESET_PASSWORD"
+      },
+      {
+        "count": 1,
+        "operation": "REVOKE_SESSIONS"
+      },
+      {
+        "count": 2,
+        "operation": "STORE_STATUS"
+      }
+    ],
+    "runtimeRestricted": true,
+    "platformCleanupRecordCount": 4
+  },
+  "correction": "原platformCleanupPending标签误指全部历史记录；更正为RecordCount，不推定当时未完成数"
+}

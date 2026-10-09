@@ -6,6 +6,12 @@ import java.util.*;
 public final class PlatformBootstrapJdbc implements PlatformBootstrapWriter {
     private final Map<String,String> environment;
     public PlatformBootstrapJdbc(Map<String,String> environment){this.environment=Map.copyOf(environment);}
+    /** 明确调用时补充首次平台管理员，不向任意账号赋权。 */
+    public int upgradeManagement(){
+        try(var c=CommandDatabase.connect(environment,"PET_PLATFORM_BOOTSTRAP","pet_platform_bootstrap")){
+            c.setAutoCommit(false);try{try(var s=c.createStatement()){s.execute("SET LOCAL ROLE pet_platform_bootstrap");}int count;try(var q=c.prepareStatement("select pet_control.upgrade_management()")){try(var result=q.executeQuery()){result.next();count=result.getInt(1);}}c.commit();return count;}catch(SQLException|RuntimeException e){c.rollback();throw e;}
+        }catch(SQLException e){throw new IllegalStateException("平台管理升级未确认成功；请核查迁移及首次管理员");}
+    }
     @Override public UUID initialize(String login,String name,String hash){
         try(var c=CommandDatabase.connect(environment,"PET_PLATFORM_BOOTSTRAP","pet_platform_bootstrap")){
             c.setAutoCommit(false);

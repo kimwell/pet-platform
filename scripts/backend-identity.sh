@@ -8,10 +8,13 @@ if [[ ! -f "$task_jar" ]]; then
 fi
 case "${1:-}" in
   bootstrap) task_main='com.pet.platform.identity.infrastructure.bootstrap.BootstrapCommand' ;;
+  platform-management-upgrade) task_main='com.pet.platform.identity.infrastructure.bootstrap.PlatformManagementUpgradeCommand' ;;
+  organization-upgrade) task_main='com.pet.platform.identity.infrastructure.bootstrap.OrganizationUpgradeCommand' ;;
   platform-bootstrap) task_main='com.pet.platform.identity.infrastructure.bootstrap.PlatformBootstrapCommand' ;;
   employee-read-upgrade) task_main='com.pet.platform.identity.infrastructure.bootstrap.EmployeeReadUpgradeCommand' ;;
+  identity-management-upgrade) task_main='com.pet.platform.identity.infrastructure.bootstrap.IdentityManagementUpgradeCommand' ;;
   migrate) task_main='com.pet.platform.identity.infrastructure.bootstrap.MigrationCommand' ;;
-  *) echo '用法：scripts/backend-identity.sh migrate | bootstrap | platform-bootstrap | employee-read-upgrade [选项]' >&2; exit 2 ;;
+  *) echo '用法：scripts/backend-identity.sh migrate | bootstrap | platform-bootstrap | platform-management-upgrade | employee-read-upgrade | identity-management-upgrade | organization-upgrade [选项]' >&2; exit 2 ;;
 esac
 shift
 task_java="${JAVA_HOME:+$JAVA_HOME/bin/}java"

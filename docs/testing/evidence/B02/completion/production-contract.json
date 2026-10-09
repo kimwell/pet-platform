@@ -1,0 +1,9 @@
+{
+  "status": "PASS",
+  "paths": 46,
+  "operations": 57,
+  "fixturePathsAbsent": true,
+  "hashAndSecurityVersionAbsent": true,
+  "generatedCompared": 3,
+  "identicalToVerifiedFirstStage": true
+}

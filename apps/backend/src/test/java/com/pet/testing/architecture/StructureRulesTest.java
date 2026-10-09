@@ -106,6 +106,11 @@ class StructureRulesTest {
         String[] parts = name.substring(ROOT.length()).split("/");
         return parts[0].equals("modules") && parts.length > 1 ? "modules/" + parts[1] : parts[0];
     }
+    @Test void controlPlanePortsAndDatabaseAdaptersHaveExactBoundaries(){
+        assertFalse(violations(new Symbols(ROOT+"identity/application/OtherService",Set.of(ROOT+"identity/application/management/ControlAccountStore"),Set.of()),Set.of()).isEmpty());
+        assertFalse(violations(new Symbols(ROOT+"platform/infrastructure/OtherJdbc",Set.of(),Set.of("org/springframework/jdbc/core/JdbcTemplate#query")),Set.of()).isEmpty());
+        assertFalse(violations(new Symbols(ROOT+"modules/orders/application/OtherService",Set.of(ROOT+"platform/application/ControlTenantStore"),Set.of()),Set.of()).isEmpty());
+    }
     private static boolean repository(String target, Set<String> seen) {
         if (!seen.add(target)) return false;
         if (target.equals("org/springframework/data/repository/Repository")) return true;
@@ -158,12 +163,18 @@ class StructureRulesTest {
             boolean authenticationCaller = symbols.name().startsWith(ROOT + "identity/application/authentication/")
                     || symbols.name().equals(ROOT + "identity/infrastructure/AuthenticationJdbc")
                     || symbols.name().equals(ROOT + "identity/infrastructure/StaffSecurityJdbc")
+                    || symbols.name().startsWith(ROOT + "identity/application/management/")
+                    || symbols.name().startsWith(ROOT + "identity/api/management/")
                     || symbols.name().equals(ROOT+"identity/infrastructure/PlatformIdentityJdbc")
+                    || symbols.name().equals(ROOT+"identity/infrastructure/ControlAccountJdbc")
                     || symbols.name().startsWith(ROOT + "identity/api/authentication/")
                     || symbols.name().startsWith(ROOT + "identity/infrastructure/session/");
             boolean restrictedBootstrap = target.startsWith(ROOT + "identity/application/bootstrap/") || target.startsWith(ROOT + "identity/infrastructure/bootstrap/");
             boolean bootstrapCaller = symbols.name().startsWith(ROOT + "identity/application/bootstrap/") || symbols.name().startsWith(ROOT + "identity/infrastructure/bootstrap/");
-            if (restrictedCustomer && !customerAuthCaller) rule = "未批准调用客户认证入口";
+            boolean controlPort = Set.of(ROOT+"platform/application/ControlTenantStore",ROOT+"identity/application/management/ControlAccountStore").contains(target);
+            boolean controlCaller = Set.of(ROOT+"identity/application/management/ControlManagement",ROOT+"identity/infrastructure/ControlAccountJdbc",ROOT+"platform/infrastructure/ControlTenantJdbc").contains(symbols.name());
+            if(controlPort && !controlCaller) rule="未批准调用控制面管理入口";
+            else if (restrictedCustomer && !customerAuthCaller) rule = "未批准调用客户认证入口";
             else if ((target.startsWith("cn/binarywang/wx/") || target.startsWith("me/chanjar/weixin/")) && !symbols.name().startsWith(ROOT+"customeridentity/infrastructure/WxJavaMiniProgramGateway")) rule = "绕过微信Gateway";
             else if (rawSa && !saAdapter && !symbols.name().equals(ROOT + "Application")) rule = "绕过身份会话适配器";
             else if (restrictedSession && !reusedSession && !saAdapter && !symbols.name().equals(ROOT + "Application")) rule = "绕过身份会话适配器";
@@ -202,7 +213,7 @@ class StructureRulesTest {
             String calledOwner = call.substring(0, call.indexOf('#'));
             String calledMethod = call.substring(call.indexOf('#') + 1);
             boolean controlledImplementation = Set.of(ROOT + "shared/persistence/ScopedPersistence", ROOT + "shared/persistence/ScopedTransaction",
-                    ROOT + "customeridentity/infrastructure/CustomerIdentityJdbc", ROOT + "identity/infrastructure/AuthenticationJdbc", ROOT + "identity/infrastructure/StaffSecurityJdbc", ROOT+"identity/infrastructure/PlatformIdentityJdbc", ROOT + "identity/infrastructure/IdentityRuntimePermissions",
+                    ROOT + "customeridentity/infrastructure/CustomerIdentityJdbc", ROOT + "identity/infrastructure/AuthenticationJdbc", ROOT + "identity/infrastructure/StaffSecurityJdbc", ROOT + "identity/infrastructure/ManagementJdbc", ROOT + "identity/infrastructure/ControlAccountJdbc", ROOT + "platform/infrastructure/ControlTenantJdbc", ROOT+"identity/infrastructure/PlatformIdentityJdbc", ROOT + "identity/infrastructure/IdentityRuntimePermissions",
                     ROOT + "identity/infrastructure/bootstrap/MigrationCommand", ROOT + "identity/infrastructure/bootstrap/CommandDatabase", ROOT + "identity/infrastructure/bootstrap/BootstrapJdbc", ROOT+"identity/infrastructure/bootstrap/PlatformBootstrapJdbc").contains(symbols.name());
             boolean databaseCall = calledOwner.equals("jakarta/persistence/EntityManager") || calledOwner.equals("jakarta/persistence/Query")
                     || calledOwner.equals("jakarta/persistence/TypedQuery") || calledOwner.startsWith("org/hibernate/Session")

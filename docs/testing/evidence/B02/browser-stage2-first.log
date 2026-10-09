@@ -1,0 +1,8 @@
+file:///Users/kimwell/work/pet-platform/.local-data/b02/browser-stage2.mjs:33
+}catch{result.status='FAIL';result.failedStage=stage;save();await p.screenshot({path:local+'/browser-stage2-failure.png',fullPage:true});throw Error('正式链路失败：'+stage);}finally{await browser.close();}
+                                                                                                                                               ^
+
+Error: 正式链路失败：customer-ready
+    at file:///Users/kimwell/work/pet-platform/.local-data/b02/browser-stage2.mjs:33:144
+
+Node.js v24.21.0

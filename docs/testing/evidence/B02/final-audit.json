@@ -1,0 +1,165 @@
+{
+  "command": [
+    "python3",
+    "docs/testing/evidence/B02/completion/replay/final-audit.py"
+  ],
+  "cwd": "/Users/kimwell/work/pet-platform",
+  "exitCode": 0,
+  "B02": "COMPLETE",
+  "P07": "IN_PROGRESS",
+  "B03": "NOT_STARTED",
+  "B03EntryConditionsSatisfied": true,
+  "remainingB02Gate": null,
+  "remainingP07": [
+    "A07-02批量部分失败（B03）",
+    "A07-01删除末页回退（B03）"
+  ],
+  "requiredCommandResults": {
+    "backend-verify-serial": 0,
+    "web-check": 0,
+    "web-build": 0,
+    "contracts-generate": 0,
+    "contracts-check": 0,
+    "contracts-typecheck": 0,
+    "miniprogram-check": 0,
+    "repo-closure": 0,
+    "diff-check-closure": 0,
+    "repo-final": 0,
+    "diff-check-final": 0,
+    "runtime-setup-ready": 0,
+    "browser-stage1": 0,
+    "browser-stage2-ready": 0,
+    "customer-real": 0,
+    "final-database": 0,
+    "cleanup": 0
+  },
+  "backend": {
+    "tests": 490,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "webTests": 266,
+  "contractsGenerateTests": 10,
+  "contractsCheckTests": 10,
+  "browserStage1Scenarios": 9,
+  "browserStage2Scenarios": 15,
+  "customerHTTPChecks": 10,
+  "customerLoginRequestsExecuted": 3,
+  "runtimeReports": {
+    "browser-stage1": "PASS",
+    "browser-stage2": "PASS",
+    "customer-real": "PASS"
+  },
+  "preservation": {
+    "B01EvidenceCompared": 97,
+    "B01EvidenceChanged": [],
+    "trackedUIComparedToHEAD": 270,
+    "trackedUIChanged": [],
+    "firstStageSourceCompared": 47,
+    "firstStageSourceChanged": [],
+    "firstStageBackendMethods": 490,
+    "currentBackendTests": 490,
+    "firstStageMethodsMissing": [],
+    "B01BaselineMethods": 469,
+    "B01MethodsMissing": []
+  },
+  "cleanup": {
+    "dedicatedProcessIds": [
+      {
+        "pid": 6492,
+        "status": "SIGTERM_SENT"
+      },
+      {
+        "pid": 6948,
+        "status": "SIGTERM_SENT"
+      }
+    ],
+    "containers": [
+      {
+        "name": "pet-b02-pg",
+        "stopExitCode": 0,
+        "status": "REMOVED"
+      },
+      {
+        "name": "pet-b02-redis",
+        "stopExitCode": 0,
+        "status": "REMOVED"
+      }
+    ],
+    "ports": [
+      {
+        "port": 18101,
+        "noListener": true
+      },
+      {
+        "port": 18102,
+        "noListener": true
+      },
+      {
+        "port": 52086,
+        "noListener": true
+      },
+      {
+        "port": 52099,
+        "noListener": true
+      },
+      {
+        "port": 9421,
+        "noListener": true
+      },
+      {
+        "port": 9422,
+        "noListener": true
+      }
+    ],
+    "existingVolumesTouched": false,
+    "devtoolsServicePortChanged": false,
+    "dedicatedProbeLaunched": true,
+    "loggedContainerCount": 25,
+    "loggedContainersStillPresent": [],
+    "existingNamedInfrastructurePreserved": true,
+    "baselineTemporaryContainerChanges": [
+      {
+        "name": "jovial_zhukovsky",
+        "before": "running",
+        "after": null,
+        "directCleanupCommand": false
+      },
+      {
+        "name": "crazy_mayer",
+        "before": "running",
+        "after": null,
+        "directCleanupCommand": false
+      },
+      {
+        "name": "testcontainers-ryuk-8fdfbffb-1738-49fe-ae51-02edce8e5dea",
+        "before": "running",
+        "after": null,
+        "directCleanupCommand": false
+      }
+    ],
+    "baselineChangeNote": "仅本轮两个命名容器执行stop，Maven临时容器由测试生命周期管理，不把全快照不变写PASS。",
+    "privateTaskDirectoryRemoved": true,
+    "removedPrivateFiles": 3402,
+    "status": "PASS"
+  },
+  "finalLoggedContainerCount": 52,
+  "finalLoggedContainersStillPresent": [],
+  "B02FirstStageRawDatabaseSnapshotLost": true,
+  "evidenceCorrection": "completion/evidence-path-correction.json",
+  "secretScan": {
+    "status": "PASS",
+    "exactSecretValueCandidates": 10,
+    "filesScanned": 5090,
+    "matchingPaths": [],
+    "valuesPrinted": false,
+    "images": "五张续验截图及一次私有失败截图已目视检查，未显示密码、Token、code或技术凭据"
+  },
+  "reportLinks": "PASS",
+  "manifestSHA256": "71518b3be246bb79b609dec0f1226dc479e4c62b84939340af520c7bbf815831",
+  "historicalFailureCommandCount": 3,
+  "submitted": false,
+  "pushed": false,
+  "deployed": false
+}

@@ -1,0 +1,28 @@
+{
+  "status": "FAIL",
+  "scenarios": [],
+  "requests": [
+    {
+      "path": "/api/platform/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/permissions",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/accounts",
+      "status": 200
+    }
+  ],
+  "pageErrors": [],
+  "failedStage": "account-create"
+}

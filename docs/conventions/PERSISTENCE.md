@@ -137,3 +137,11 @@ ResourceAccessPolicy.relatedStoresAndSelf接受模块静态关系实体、目标
 V5增加(tenant_id,created_at DESC,id DESC)默认分页索引，关系已有唯一(tenant_id,employee_id,store_id)和门店索引复用；没有为所有筛选建立无依据索引。keyword字面量包含不保证大规模扫描成本或生产性能。数据库FORCE RLS限租户、应用另限操作/SELF/STORES/字段；生产角色部署另验。
 
 V5显式详情权限补充复用独立NOLOGIN bootstrap函数owner，精确追加必要SELECT/员工授权版本列UPDATE及当前tenant政策，无密码读取。BootstrapJdbc登记原固定SQL适配器新增一个固定命令函数调用，其他普通SQL白名单不扩展；runtime启动新增检查该函数不可执行。迁移不执行补授权，V1～V4不改写。带V4正式初始化数据升级及并发/幂等/受限角色反例见验证报告。
+
+## B01 固定管理SQL登记
+
+新增批准适配器identity.infrastructure.ManagementJdbc，只开放ManagementStore固定用例，不接受表名、列名、排序表达式或客户端tenantId。事务由既有StaffSecurityJdbc承载并设置事务局部pet.tenant_id；员工目标另经ManagementEmployeePolicy受控JPA投影检查及全门店覆盖；角色/关系/门店SQL显式绑定当前tenant。新增V6 DML不授密码SELECT、system_reserved UPDATE、DDL/TRUNCATE或升级函数EXECUTE。管理事件INSERT-only/FORCE RLS，绑定操作主体和trace，不含字段值/凭据。实际验证与限制统一记录于B01主报告，不另建每页门禁。
+
+## B02 固定控制面入口（2026-10-09）
+
+唯一新增全局元数据适配器为 platform.infrastructure.ControlTenantJdbc 和 identity.infrastructure.ControlAccountJdbc，经 identity.application.management.ControlManagement 编排，可信PLATFORM身份/设备/权限在独立事务前后重验。ControlAccountJdbc 只设置可信 actor/security/authorization 的事务局部 GUC，不建立tenant上下文；ControlTenantJdbc 只执行固定 tenant/store read/write 函数，账号适配器只执行固定 account read/write。最小架构规则按这些全名注册及调用者限制，反例覆盖任意identity服务/modules服务/其他Jdbc；不使用包级或全部SQL豁免。runtime无表owner/SUPERUSER/BYPASSRLS能力。Organization 在现有 ManagementJdbc 受租户上下文、逐权限TENANT范围、FORCE RLS 与版本规则保护，独立元数据不能扩员工权限。

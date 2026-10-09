@@ -1,0 +1,13 @@
+{
+  "files": [
+    "docs/testing/B01-ACCEPTANCE.md",
+    "docs/development/ROADMAP.md",
+    "docs/testing/P07-03-VERIFICATION.md",
+    "docs/testing/ACCEPTANCE-MATRIX.md",
+    "docs/contracts/EMPLOYEE-MANAGEMENT.md",
+    "docs/development/IDENTITY-BOOTSTRAP.md"
+  ],
+  "localLinksChecked": 243,
+  "missing": [],
+  "result": "PASS"
+}

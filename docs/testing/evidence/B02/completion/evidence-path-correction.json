@@ -1,0 +1,11 @@
+{
+  "script": "final-database.py",
+  "issue": "克隆脚本输出路径未切换，续验快照覆盖B02第一阶段同名快照",
+  "newSnapshot": "completion/final-database.json",
+  "oldSnapshotSHA256": "eaff62efb056ae3f7133687afa5a1031d4e02202aae83cfead9459cc8cf491d0",
+  "oldRawSnapshotRecoverable": false,
+  "oldExecutionLogPreserved": "final-database-accepted.log",
+  "oldBrowserEvidencePreserved": true,
+  "B01Affected": false,
+  "sourceAndFinalStateAffected": false
+}

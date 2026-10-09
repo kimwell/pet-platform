@@ -14,6 +14,7 @@ public final class IdentityDatabaseSupport {
             s.execute(Files.readString(Path.of("../../infra/database/provision-identity-roles.sql")));
             s.execute(Files.readString(Path.of("../../infra/database/provision-platform-roles.sql")));
             s.execute(Files.readString(Path.of("../../infra/database/provision-customer-roles.sql")));
+            s.execute(Files.readString(Path.of("../../infra/database/provision-control-management-roles.sql")));
             for(String role:java.util.List.of(RUNTIME,MIGRATION,BOOTSTRAP,PLATFORM_BOOTSTRAP)) {
                 s.execute("CREATE ROLE "+role+" LOGIN NOSUPERUSER NOBYPASSRLS NOCREATEROLE NOCREATEDB "+((role.equals(BOOTSTRAP)||role.equals(PLATFORM_BOOTSTRAP))?"NOINHERIT":"INHERIT"));
                 try(var q=c.prepareStatement("select format('ALTER ROLE %I PASSWORD %L',?::text,?::text)")) {

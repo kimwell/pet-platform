@@ -1,0 +1,117 @@
+{
+  "exitCode": 0,
+  "source": "只读观察正式页面/CLI已提交状态，不是SQL准备；不读取秘密或内部安全版本",
+  "snapshot": {
+    "tenant": {
+      "id": "7cf09d03-687b-46fe-8cd2-e9ffe505d1f7",
+      "code": "b02-acceptance",
+      "name": "B02真实验收租户更新",
+      "status": "ACTIVE",
+      "version": "4",
+      "staffCount": 1,
+      "storeCount": 1,
+      "initialized": true
+    },
+    "accounts": [
+      {
+        "id": "1cf10209-4d5a-4763-a225-5d6adc8db36d",
+        "status": "ACTIVE",
+        "version": "1",
+        "loginName": "b02-platform",
+        "displayName": "B02验收平台管理员",
+        "permissions": [
+          "platform:account:create",
+          "platform:account:detail",
+          "platform:account:disable",
+          "platform:account:enable",
+          "platform:account:grant",
+          "platform:account:list",
+          "platform:account:reset-password",
+          "platform:account:revoke-sessions",
+          "platform:account:update",
+          "platform:credential:change",
+          "platform:redis:operate",
+          "platform:session:manage",
+          "platform:store:control-create",
+          "platform:store:control-list",
+          "platform:store:control-status",
+          "platform:store:control-update",
+          "platform:tenant:create",
+          "platform:tenant:detail",
+          "platform:tenant:disable",
+          "platform:tenant:enable",
+          "platform:tenant:list",
+          "platform:tenant:update"
+        ]
+      },
+      {
+        "id": "1573c77c-be7e-44f2-9cc0-715ee2df46e1",
+        "status": "DISABLED",
+        "version": "5",
+        "loginName": "b02-reader",
+        "displayName": "B02只读平台账号更新",
+        "permissions": [
+          "platform:account:detail",
+          "platform:account:list",
+          "platform:credential:change",
+          "platform:session:manage",
+          "platform:tenant:list"
+        ]
+      }
+    ],
+    "organization": [
+      {
+        "code": "ops",
+        "name": "B02内部组织更新",
+        "status": "DISABLED",
+        "version": "2"
+      }
+    ],
+    "managementEvents": [
+      {
+        "count": 1,
+        "operation": "ACCOUNT_GRANTS"
+      },
+      {
+        "count": 1,
+        "operation": "ACCOUNT_STATUS"
+      },
+      {
+        "count": 1,
+        "operation": "CREATE_ACCOUNT"
+      },
+      {
+        "count": 1,
+        "operation": "CREATE_STORE"
+      },
+      {
+        "count": 1,
+        "operation": "CREATE_TENANT"
+      },
+      {
+        "count": 1,
+        "operation": "EDIT_ACCOUNT"
+      },
+      {
+        "count": 1,
+        "operation": "EDIT_TENANT"
+      },
+      {
+        "count": 1,
+        "operation": "RESET_PASSWORD"
+      },
+      {
+        "count": 1,
+        "operation": "REVOKE_SESSIONS"
+      },
+      {
+        "count": 2,
+        "operation": "TENANT_STATUS"
+      }
+    ],
+    "runtimeRestricted": true,
+    "customerIdentityCount": 1,
+    "platformCleanupPending": 0,
+    "platformCleanupRecordCount": 4
+  }
+}

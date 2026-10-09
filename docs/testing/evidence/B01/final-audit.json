@@ -1,0 +1,313 @@
+{
+  "checkedAt": "2026-10-09T05:17:32.389685+00:00",
+  "root": "/Users/kimwell/work/pet-platform",
+  "B01": "COMPLETE",
+  "B02": {
+    "admission": "READY",
+    "status": "NOT_STARTED"
+  },
+  "P07": "IN_PROGRESS",
+  "P07-03": "COMPLETE",
+  "requiredCommands": [
+    {
+      "label": "backend-verify-final-accepted",
+      "cwd": "/Users/kimwell/work/pet-platform/apps/backend",
+      "command": [
+        "./mvnw",
+        "--batch-mode",
+        "verify"
+      ],
+      "exitCode": 0,
+      "log": "backend-verify-final-accepted.log"
+    },
+    {
+      "label": "web-typecheck-final",
+      "cwd": "/Users/kimwell/work/pet-platform/apps/admin-web",
+      "command": [
+        "pnpm",
+        "typecheck"
+      ],
+      "exitCode": 0,
+      "log": "web-typecheck-final.log"
+    },
+    {
+      "label": "web-lint-accepted",
+      "cwd": "/Users/kimwell/work/pet-platform/apps/admin-web",
+      "command": [
+        "pnpm",
+        "lint"
+      ],
+      "exitCode": 0,
+      "log": "web-lint-accepted.log"
+    },
+    {
+      "label": "web-test-accepted",
+      "cwd": "/Users/kimwell/work/pet-platform/apps/admin-web",
+      "command": [
+        "pnpm",
+        "test"
+      ],
+      "exitCode": 0,
+      "log": "web-test-accepted.log"
+    },
+    {
+      "label": "web-build-accepted",
+      "cwd": "/Users/kimwell/work/pet-platform/apps/admin-web",
+      "command": [
+        "pnpm",
+        "build"
+      ],
+      "exitCode": 0,
+      "log": "web-build-accepted.log"
+    },
+    {
+      "label": "contracts-generate-final",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": [
+        "pnpm",
+        "contracts:generate"
+      ],
+      "exitCode": 0,
+      "log": "contracts-generate-final.log"
+    },
+    {
+      "label": "contracts-check-final",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": [
+        "pnpm",
+        "contracts:check"
+      ],
+      "exitCode": 0,
+      "log": "contracts-check-final.log"
+    },
+    {
+      "label": "contracts-typecheck-final",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": [
+        "pnpm",
+        "contracts:typecheck"
+      ],
+      "exitCode": 0,
+      "log": "contracts-typecheck-final.log"
+    },
+    {
+      "label": "miniprogram-types-final",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": [
+        "pnpm",
+        "check:miniprogram"
+      ],
+      "exitCode": 0,
+      "log": "miniprogram-types-final.log"
+    },
+    {
+      "label": "repo-accepted",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": [
+        "pnpm",
+        "check:repo"
+      ],
+      "exitCode": 0,
+      "log": "repo-accepted.log"
+    },
+    {
+      "label": "diff-check-final",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exitCode": 0,
+      "log": "diff-check-final.log"
+    }
+  ],
+  "runtimeStartupRecords": [
+    {
+      "label": "browser-web-runtime",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": [
+        "pnpm",
+        "--filter",
+        "@pet/admin-web",
+        "exec",
+        "vite",
+        "--host",
+        "127.0.0.1",
+        "--port",
+        "18098",
+        "--strictPort"
+      ],
+      "pid": 23746,
+      "exitCode": "NOT_RECORDED",
+      "pidStillExists": false
+    },
+    {
+      "label": "browser-web-runtime",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": [
+        "pnpm",
+        "--filter",
+        "@pet/admin-web",
+        "exec",
+        "vite",
+        "--host",
+        "127.0.0.1",
+        "--port",
+        "18098",
+        "--strictPort"
+      ],
+      "pid": 26584,
+      "exitCode": "NOT_RECORDED",
+      "pidStillExists": false
+    },
+    {
+      "label": "browser-web-runtime",
+      "cwd": "/Users/kimwell/work/pet-platform",
+      "command": [
+        "pnpm",
+        "--filter",
+        "@pet/admin-web",
+        "exec",
+        "vite",
+        "--host",
+        "127.0.0.1",
+        "--port",
+        "18098",
+        "--strictPort"
+      ],
+      "pid": 29568,
+      "exitCode": "NOT_RECORDED",
+      "pidStillExists": false
+    }
+  ],
+  "tests": {
+    "backend": {
+      "unit": 146,
+      "integration": 323,
+      "total": 469,
+      "newManagementIntegration": 14,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "web": {
+      "files": 8,
+      "total": 254,
+      "new": 10
+    },
+    "contracts": {
+      "generateExport": 10,
+      "checkExport": 10,
+      "note": "重复执行的导出检查，不额外累计为新增后端项"
+    },
+    "browser": {
+      "groupedScenarios": 15,
+      "note": "真实页面操作分组，独立于JUnit计数"
+    }
+  },
+  "evidenceLevels": {
+    "routeAndContracts": "DOCUMENTED",
+    "generatedTypesAndFrozenBaseline": "RESOLVED",
+    "typesLintBuildAndBackend": "COMPILED",
+    "postgresRedisAuthenticationHttpBrowserAndFinalDatabase": "RUNTIME_VERIFIED"
+  },
+  "preservation": {
+    "trackedBaselineFilesUnchanged": 272,
+    "dependenciesUpgraded": false,
+    "oldMigrationsChanged": false,
+    "existingResourcesStoppedOrDeleted": false
+  },
+  "cleanup": {
+    "testContainerIdsRemoved": 134,
+    "browserRuntimePortsClosed": 3,
+    "ownedBrowserTabsClosed": 2,
+    "privateRuntimeDirectoryRemoved": true,
+    "cuaCredentialRuntimeReset": true
+  },
+  "failuresPreserved": [
+    {
+      "label": "web-lint",
+      "exitCode": 1,
+      "log": "web-lint.log"
+    },
+    {
+      "label": "web-typecheck",
+      "exitCode": 2,
+      "log": "web-typecheck.log"
+    },
+    {
+      "label": "contracts-generate",
+      "exitCode": 1,
+      "log": "contracts-generate.log"
+    },
+    {
+      "label": "contracts-generate-recovered",
+      "exitCode": 1,
+      "log": "contracts-generate-recovered.log"
+    },
+    {
+      "label": "web-types-generated",
+      "exitCode": 2,
+      "log": "web-types-generated.log"
+    },
+    {
+      "label": "web-types-fixed",
+      "exitCode": 2,
+      "log": "web-types-fixed.log"
+    },
+    {
+      "label": "backend-verify-final",
+      "exitCode": 1,
+      "log": "backend-verify-final.log"
+    },
+    {
+      "label": "web-lint-concentrated-fixed",
+      "exitCode": 1,
+      "log": "web-lint-concentrated-fixed.log"
+    },
+    {
+      "label": "web-typecheck-complete",
+      "exitCode": 2,
+      "log": "web-typecheck-complete.log"
+    },
+    {
+      "label": "web-build-complete",
+      "exitCode": 2,
+      "log": "web-build-complete.log"
+    },
+    {
+      "label": "backend-verify-complete",
+      "exitCode": 1,
+      "log": "backend-verify-complete.log"
+    },
+    {
+      "label": "backend-verify-ipv4",
+      "exitCode": 1,
+      "log": "backend-verify-ipv4.log"
+    },
+    {
+      "label": "backend-verify-accepted",
+      "exitCode": 1,
+      "log": "backend-verify-accepted.log"
+    },
+    {
+      "label": "cleanup-browser-resources",
+      "exitCode": 1,
+      "log": "cleanup-browser-resources.log"
+    },
+    {
+      "label": "final-audit-first",
+      "exitCode": 1,
+      "log": "final-audit-first.log"
+    }
+  ],
+  "limits": {
+    "B02throughB05": "NOT_EXECUTED",
+    "productionTlsProxyCrossOriginRemoteCiOtherOSRealAssistiveTechnologyCapacityDisasterRecovery": "NOT_EXECUTED / NOT_VERIFIED",
+    "miniProgramRealBusinessDevToolsAndDeviceThisBatch": "NOT_EXECUTED",
+    "defaultDockerSocketLocalhostForwardingStability": "NOT_VERIFIED"
+  },
+  "commitPushPublishDeploy": false,
+  "result": "PASS"
+}

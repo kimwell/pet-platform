@@ -148,3 +148,9 @@ DOCUMENTED不替代COMPILED，生成文件不变不替代本轮契约导出，�
 当前唯一未关闭的本项规定门禁是G13标准Docker/Testcontainers契约检查，恢复前保持IN_PROGRESS；既有资源保全要求下没有重启全局Docker/已有进程或绕过Testcontainers。下一建议仅为**P07-03续验：恢复标准连接后重跑contracts:check、关闭G13并重新汇总门禁**，不自动执行新阶段。通过后仍需重读实际路线与P07剩余条件，再提出下一任务；不预设员工写入或角色管理已授权。
 
 本轮完整后端455项 NOT_EXECUTED（源码未改）；生产部署/TLS/代理/跨源、多OS/远程CI、真实性能/海量数据、全套辅助技术、跨标签即时同步、完整视觉位置恢复 NOT_VERIFIED。创建/编辑/启停/删除/重置、角色/门店关系、批量/导入导出不在本项，没有实施或验收。原P07完整范围和历史限制保留，不因详情实现完成将P07标COMPLETE。
+
+## 2026-10-09 B01 集中补证后的最新状态
+
+**P07-03 COMPLETE；P07整体IN_PROGRESS。** 本节补充最新结论，原G13环境失败、10条初始化错误、逐项Gate和历史未执行记录保留。按用户B01授权，本批规定 `pnpm contracts:check` 已通过，实际10项0失败/错误/跳过、退出0；[命令日志](evidence/B01/contracts-check-final.log)与[集中报告](B01-ACCEPTANCE.md)可复核。本轮使用真实Docker/Testcontainers连接真实PG/Redis，进程指定既有引擎原始socket与IPv4，未用旧字节隧道，不宣称默认socket转发稳定。
+
+本批另执行完整后端verify469项及Web254项、构建/类型/lint、契约生成、三端类型、仓库/空白并完成真实员工授权闭环。P07-01/02 COMPLETE保留；原组织及页面模式必选项仍归B02/B03。此补证不增加逐页报告，也不关闭整个P07或自动进入B02。

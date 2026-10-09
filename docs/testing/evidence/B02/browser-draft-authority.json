@@ -1,0 +1,387 @@
+{
+  "status": "PASS",
+  "scenarios": [
+    {
+      "name": "正式页面创建第二有效治理账号，权限来自当前可授集合",
+      "status": "PASS",
+      "delegateId": "ea79862d-b4db-4c83-aa21-87dd976ebe67"
+    },
+    {
+      "name": "当前操作者撤权后正式写入401，旧页与敏感草稿销毁",
+      "status": "PASS"
+    },
+    {
+      "name": "新正式身份无对应编辑入口",
+      "status": "PASS"
+    },
+    {
+      "name": "恢复权限仍需新登录，表单只读取权威新资料，无旧草稿复活",
+      "status": "PASS"
+    },
+    {
+      "name": "正式页面停用本轮额外治理账号，保留有效平台管理入口",
+      "status": "PASS"
+    }
+  ],
+  "requests": [
+    {
+      "path": "/api/platform/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/accounts",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/permissions",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/csrf",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/accounts",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/permissions",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/accounts",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/permissions",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/accounts/ea79862d-b4db-4c83-aa21-87dd976ebe67",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 401,
+      "code": "AUTH_REQUIRED"
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 401,
+      "code": "AUTH_REQUIRED"
+    },
+    {
+      "path": "/api/platform/auth/csrf",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/login",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/csrf",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/permissions",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/accounts/4291c939-1f34-4fd1-9642-91fa08a66c7f",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/tenants/71d0870a-5e42-45f2-823d-7d9575e4aded",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/tenants/71d0870a-5e42-45f2-823d-7d9575e4aded/stores",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/csrf",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/accounts/4291c939-1f34-4fd1-9642-91fa08a66c7f/permissions",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/permissions",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/accounts/4291c939-1f34-4fd1-9642-91fa08a66c7f",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/csrf",
+      "status": 401,
+      "code": "SESSION_EXPIRED"
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 401,
+      "code": "AUTH_REQUIRED"
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 401,
+      "code": "AUTH_REQUIRED"
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 401,
+      "code": "AUTH_REQUIRED"
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 401,
+      "code": "AUTH_REQUIRED"
+    },
+    {
+      "path": "/api/platform/auth/csrf",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/login",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/csrf",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/tenants/71d0870a-5e42-45f2-823d-7d9575e4aded",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/tenants/71d0870a-5e42-45f2-823d-7d9575e4aded/stores",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/accounts/4291c939-1f34-4fd1-9642-91fa08a66c7f",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/accounts/4291c939-1f34-4fd1-9642-91fa08a66c7f/permissions",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/permissions",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/accounts/4291c939-1f34-4fd1-9642-91fa08a66c7f",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 401,
+      "code": "SESSION_EXPIRED"
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 401,
+      "code": "AUTH_REQUIRED"
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 401
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 401,
+      "code": "AUTH_REQUIRED"
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 401,
+      "code": "AUTH_REQUIRED"
+    },
+    {
+      "path": "/api/platform/auth/csrf",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/login",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/csrf",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/tenants/71d0870a-5e42-45f2-823d-7d9575e4aded",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/tenants/71d0870a-5e42-45f2-823d-7d9575e4aded/stores",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/permissions",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/accounts/ea79862d-b4db-4c83-aa21-87dd976ebe67",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/csrf",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/accounts/ea79862d-b4db-4c83-aa21-87dd976ebe67/status",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/permissions",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/accounts/ea79862d-b4db-4c83-aa21-87dd976ebe67",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 401,
+      "code": "SESSION_EXPIRED"
+    },
+    {
+      "path": "/api/admin/auth/me",
+      "status": 401,
+      "code": "SESSION_REVOKED"
+    },
+    {
+      "path": "/api/admin/auth/me",
+      "status": 401,
+      "code": "AUTH_REQUIRED"
+    },
+    {
+      "path": "/api/admin/auth/csrf",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/auth/login",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/auth/csrf",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/auth/me",
+      "status": 200
+    }
+  ],
+  "pageErrors": []
+}

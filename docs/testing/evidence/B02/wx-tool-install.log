@@ -1,0 +1,11 @@
+Scope: all 4 workspace projects
+Done in 453ms using pnpm v10.34.6
+
+   ╭──────────────────────────────────────────╮
+   │                                          │
+   │   Update available! 10.34.6 → 12.10.1.   │
+   │   Changelog: https://pnpm.io/v/12.10.1   │
+   │     To update, run: pnpm self-update     │
+   │                                          │
+   ╰──────────────────────────────────────────╯
+

@@ -1,0 +1,157 @@
+{
+  "status": "FAIL",
+  "scenarios": [
+    {
+      "name": "真实租户列表筛选分页排序与详情返回URL保留",
+      "status": "PASS"
+    },
+    {
+      "name": "正式创建重复编码422准确字段错误",
+      "status": "PASS"
+    },
+    {
+      "name": "真实API并发修改触发页面409，禁重试并保留权威资料",
+      "status": "PASS"
+    },
+    {
+      "name": "最小正式门店页面资料编辑与启停",
+      "status": "PASS"
+    }
+  ],
+  "requests": [
+    {
+      "path": "/api/platform/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/tenants",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/tenants/71d0870a-5e42-45f2-823d-7d9575e4aded",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/tenants/71d0870a-5e42-45f2-823d-7d9575e4aded/stores",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/tenants",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/csrf",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/tenants",
+      "status": 422,
+      "code": "VALIDATION_FAILED"
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/tenants/71d0870a-5e42-45f2-823d-7d9575e4aded",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/tenants/71d0870a-5e42-45f2-823d-7d9575e4aded/stores",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/tenants/71d0870a-5e42-45f2-823d-7d9575e4aded",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/csrf",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/tenants/71d0870a-5e42-45f2-823d-7d9575e4aded",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/tenants/71d0870a-5e42-45f2-823d-7d9575e4aded",
+      "status": 409,
+      "code": "VERSION_CONFLICT"
+    },
+    {
+      "path": "/api/platform/tenants/71d0870a-5e42-45f2-823d-7d9575e4aded",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/tenants/71d0870a-5e42-45f2-823d-7d9575e4aded/stores/740dfbc0-9661-43e0-a696-bea1870aafbf",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/tenants/71d0870a-5e42-45f2-823d-7d9575e4aded/stores",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/tenants/71d0870a-5e42-45f2-823d-7d9575e4aded",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/tenants/71d0870a-5e42-45f2-823d-7d9575e4aded/stores/740dfbc0-9661-43e0-a696-bea1870aafbf/status",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/tenants/71d0870a-5e42-45f2-823d-7d9575e4aded/stores",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/tenants/71d0870a-5e42-45f2-823d-7d9575e4aded",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/tenants/71d0870a-5e42-45f2-823d-7d9575e4aded/stores/740dfbc0-9661-43e0-a696-bea1870aafbf/status",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/tenants/71d0870a-5e42-45f2-823d-7d9575e4aded",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/tenants/71d0870a-5e42-45f2-823d-7d9575e4aded/stores",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/tenants/00000000-0000-0000-0000-000000000001",
+      "status": 400,
+      "code": "BAD_REQUEST"
+    }
+  ],
+  "pageErrors": [],
+  "diagnostic": "",
+  "failedStage": "http-errors"
+}

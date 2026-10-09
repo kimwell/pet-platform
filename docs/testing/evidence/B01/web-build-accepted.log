@@ -1,0 +1,27 @@
+
+> @pet/admin-web@0.0.0 build /Users/kimwell/work/pet-platform/apps/admin-web
+> tsc --noEmit && vite build
+
+vite v7.3.7 building client environment for production...
+transforming...
+✓ 1711 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                               0.41 kB │ gzip:   0.31 kB
+dist/assets/index-IYXU_BZ_.css                6.90 kB │ gzip:   2.18 kB
+dist/assets/employees-CZM_dfSc.js             2.41 kB │ gzip:   1.17 kB
+dist/assets/LoginPage-DLRtbyhV.js             3.60 kB │ gzip:   1.79 kB
+dist/assets/RolesPage-BeYMNYUR.js             9.34 kB │ gzip:   3.79 kB
+dist/assets/EmployeeListPage-Byhy8PeS.js      9.61 kB │ gzip:   4.33 kB
+dist/assets/EmployeeDetailPage-g3RP-5gF.js    9.81 kB │ gzip:   4.05 kB
+dist/assets/SessionFailure-BNsle4is.js       61.07 kB │ gzip:  22.86 kB
+dist/assets/SessionLayout-C0fuwdpH.js        95.72 kB │ gzip:  30.20 kB
+dist/assets/pagination-VBMMvl9L.js          114.34 kB │ gzip:  39.55 kB
+dist/assets/Table-CA7CPeR7.js               185.54 kB │ gzip:  58.92 kB
+dist/assets/index-BfSJkpUF.js               723.66 kB │ gzip: 238.96 kB
+
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+✓ built in 5.33s

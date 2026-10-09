@@ -12,6 +12,7 @@ import { ApiError } from '../../shared/api/ApiError';
 import { isRestricted } from '../../shared/auth/permissions';
 import { spaces } from '../../shared/auth/spaces';
 import { employeeHref, employeeSearchValues, initialEmployeeHistoryState, normalizeSearch, parseWebSearch, stringifyWebSearch } from '../../features/identity/users/queries/search';
+import { controlSearch, listHref } from '../../features/platform/api';
 import { detailSearch, employeeDetailPath } from '../../features/identity/users/queries/detailSearch';
 
 const rootRoute = createRootRouteWithContext<Services>()({ component: SystemLayout, errorComponent: SystemError, notFoundComponent: SystemNotFound });
@@ -72,7 +73,58 @@ const staffUserDetail = createRoute({ getParentRoute: () => rootRoute, path: emp
   beforeLoad: ({ context, location }) => requireSession(context.auth, 'STAFF', location.href),
   component: lazyRouteComponent(() => import('../layout/SessionLayout'), 'StaffLayout'),
 });
-export const routeTree = rootRoute.addChildren([entryRoute, staffLogin, platformLogin, staff, platform, staffSecurity, platformSecurity, staffUsers, staffUserDetail]);
+const staffRoles = createRoute({ getParentRoute: () => rootRoute, path: '/admin/identity/roles',
+  validateSearch: (search: Record<string, unknown>) => ({ page: typeof search.page === 'string' && /^[1-9][0-9]{0,9}$/.test(search.page) && Number(search.page) <= 2147483647 ? Number(search.page) : typeof search.page === 'number' && Number.isInteger(search.page) && search.page > 0 && search.page <= 2147483647 ? search.page : 1 }),
+  beforeLoad: ({ context, location }) => requireSession(context.auth, 'STAFF', location.href),
+  component: lazyRouteComponent(() => import('../layout/SessionLayout'), 'StaffLayout'),
+});
+const staffRoleDetail = createRoute({ getParentRoute: () => rootRoute, path: '/admin/identity/roles/$roleId',
+  beforeLoad: ({ context, location }) => requireSession(context.auth, 'STAFF', location.href),
+  component: lazyRouteComponent(() => import('../layout/SessionLayout'), 'StaffLayout'),
+});
+const platformTenants = createRoute({ getParentRoute: () => rootRoute, path: '/platform/tenants',
+  validateSearch: (search: Record<string, unknown>) => search,
+  beforeLoad: async ({ context, location }) => {
+    const access = await requireSession(context.auth, 'PLATFORM', location.href);
+    if (access.sessionError) return access;
+    const canonical = listHref('/platform/tenants', controlSearch(location.searchStr, false));
+    if (location.pathname + location.searchStr !== canonical) throw redirect({ href: canonical, replace: true });
+    return access;
+  },
+  component: lazyRouteComponent(() => import('../layout/SessionLayout'), 'PlatformLayout'),
+});
+const platformTenant = createRoute({ getParentRoute: () => rootRoute, path: '/platform/tenants/$tenantId',
+  validateSearch: (search: Record<string, unknown>) => search,
+  beforeLoad: ({ context, location }) => requireSession(context.auth, 'PLATFORM', location.href),
+  component: lazyRouteComponent(() => import('../layout/SessionLayout'), 'PlatformLayout'),
+});
+const platformAccounts = createRoute({ getParentRoute: () => rootRoute, path: '/platform/accounts',
+  validateSearch: (search: Record<string, unknown>) => search,
+  beforeLoad: async ({ context, location }) => {
+    const access = await requireSession(context.auth, 'PLATFORM', location.href);
+    if (access.sessionError) return access;
+    const canonical = listHref('/platform/accounts', controlSearch(location.searchStr, true));
+    if (location.pathname + location.searchStr !== canonical) throw redirect({ href: canonical, replace: true });
+    return access;
+  },
+  component: lazyRouteComponent(() => import('../layout/SessionLayout'), 'PlatformLayout'),
+});
+const platformAccount = createRoute({ getParentRoute: () => rootRoute, path: '/platform/accounts/$accountId',
+  validateSearch: (search: Record<string, unknown>) => search,
+  beforeLoad: ({ context, location }) => requireSession(context.auth, 'PLATFORM', location.href),
+  component: lazyRouteComponent(() => import('../layout/SessionLayout'), 'PlatformLayout'),
+});
+const organizations = createRoute({ getParentRoute: () => rootRoute, path: '/admin/identity/organizations',
+  validateSearch: (search: Record<string, unknown>) => search,
+  beforeLoad: ({ context, location }) => requireSession(context.auth, 'STAFF', location.href),
+  component: lazyRouteComponent(() => import('../layout/SessionLayout'), 'StaffLayout'),
+});
+const organization = createRoute({ getParentRoute: () => rootRoute, path: '/admin/identity/organizations/$organizationId',
+  validateSearch: (search: Record<string, unknown>) => search,
+  beforeLoad: ({ context, location }) => requireSession(context.auth, 'STAFF', location.href),
+  component: lazyRouteComponent(() => import('../layout/SessionLayout'), 'StaffLayout'),
+});
+export const routeTree = rootRoute.addChildren([entryRoute, staffLogin, platformLogin, staff, platform, staffSecurity, platformSecurity, staffUsers, staffUserDetail, staffRoles, staffRoleDetail, platformTenants, platformTenant, platformAccounts, platformAccount, organizations, organization]);
 export const services = createServices();
 export const router = createRouter({ routeTree, context: services, defaultPreload: false,
   parseSearch: parseWebSearch, stringifySearch: stringifyWebSearch,

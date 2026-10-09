@@ -1,0 +1,71 @@
+{
+  "status": "FAIL",
+  "scenarios": [
+    {
+      "name": "真实租户列表筛选分页排序与详情返回URL保留",
+      "status": "PASS"
+    },
+    {
+      "name": "正式创建重复编码422准确字段错误",
+      "status": "PASS"
+    }
+  ],
+  "requests": [
+    {
+      "path": "/api/platform/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/tenants",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/tenants/71d0870a-5e42-45f2-823d-7d9575e4aded",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/tenants/71d0870a-5e42-45f2-823d-7d9575e4aded/stores",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/tenants",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/csrf",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/tenants",
+      "status": 422,
+      "code": "VALIDATION_FAILED"
+    }
+  ],
+  "pageErrors": [],
+  "diagnostic": "locator.waitFor: Error: strict mode violation: getByRole('dialog') resolved to 2 elements:\n    1) <div role=\"dialog\" tabindex=\"-1\" aria-modal=\"true\" aria-labelledby=\"_r_1j_\" class=\"ant-modal css-dev-only-do-not-override-oc1rc0 ant-zoom-leave ant-zoom-leave-active ant-zoom\">…</div> aka getByRole('dialog', { name: '新建租户' })\n    2) <div role=\"dialog\" tabindex=\"-1\" aria-modal=\"true\" aria-labelledby=\"_r_1p_\" class=\"ant-modal css-dev-only-do-not-override-oc1rc0 ant-modal-confirm ant-modal-confirm-confirm ant-zoom-leave ant-zoom-leave-active ant-zoom\">…</div> aka getByRole('dialog', { name: '放弃未保存内容？' })\n\nCall log:\n\u001b[2m  - waiting for getByRole('dialog') to be hidden\u001b[22m\n",
+  "failedStage": "duplicate"
+}

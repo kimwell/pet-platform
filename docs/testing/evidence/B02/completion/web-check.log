@@ -1,0 +1,25 @@
+
+> pet-platform@0.0.0 check:web /Users/kimwell/work/pet-platform
+> pnpm --filter @pet/admin-web typecheck && pnpm --filter @pet/admin-web lint && pnpm --filter @pet/admin-web test
+
+
+> @pet/admin-web@0.0.0 typecheck /Users/kimwell/work/pet-platform/apps/admin-web
+> tsc --noEmit
+
+
+> @pet/admin-web@0.0.0 lint /Users/kimwell/work/pet-platform/apps/admin-web
+> eslint src vite.config.ts dev-config.ts --max-warnings=0
+
+
+> @pet/admin-web@0.0.0 test /Users/kimwell/work/pet-platform/apps/admin-web
+> vitest run
+
+
+ RUN  v4.1.11 /Users/kimwell/work/pet-platform/apps/admin-web
+
+
+ Test Files  9 passed (9)
+      Tests  266 passed (266)
+   Start at  14:30:27
+   Duration  1.98s (transform 999ms, setup 0ms, import 7.27s, tests 774ms, environment 1ms)
+

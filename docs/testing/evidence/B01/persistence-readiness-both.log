@@ -1,0 +1,189 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ---------------< com.pet.platform:pet-platform-backend >----------------
+[INFO] Building pet-platform-backend 0.0.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ pet-platform-backend ---
+[INFO] Copying 3 resources from src/main/resources to target/classes
+[INFO] Copying 7 resources from src/main/resources to target/classes
+[INFO] 
+[INFO] --- compiler:3.14.1:compile (default-compile) @ pet-platform-backend ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ pet-platform-backend ---
+[INFO] Copying 3 resources from src/test/resources to target/test-classes
+[INFO] 
+[INFO] --- compiler:3.14.1:testCompile (default-testCompile) @ pet-platform-backend ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- surefire:3.5.6:test (default-test) @ pet-platform-backend ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running com.pet.testing.architecture.StructureRulesTest
+[INFO] Tests run: 15, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.771 s -- in com.pet.testing.architecture.StructureRulesTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 15, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] 
+[INFO] --- jar:3.4.2:jar (default-jar) @ pet-platform-backend ---
+[INFO] 
+[INFO] --- spring-boot:4.0.8:repackage (repackage) @ pet-platform-backend ---
+[INFO] Replacing main artifact /Users/kimwell/work/pet-platform/apps/backend/target/pet-platform-backend-0.0.0-SNAPSHOT.jar with repackaged archive, adding nested dependencies in BOOT-INF/.
+[INFO] The original artifact has been renamed to /Users/kimwell/work/pet-platform/apps/backend/target/pet-platform-backend-0.0.0-SNAPSHOT.jar.original
+[INFO] 
+[INFO] --- failsafe:3.5.6:integration-test (default) @ pet-platform-backend ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running com.pet.testing.tenantpersistence.AsyncTenantPersistenceIT
+13:05:46.129 [main] INFO org.testcontainers.images.PullPolicy -- Image pull policy will be performed by: DefaultPullPolicy()
+13:05:46.131 [main] INFO org.testcontainers.utility.ImageNameSubstitutor -- Image name substitution will be performed by: DefaultImageNameSubstitutor (composite of 'ConfigurationFileImageNameSubstitutor' and 'PrefixingImageNameSubstitutor')
+13:05:46.135 [main] INFO org.testcontainers.DockerClientFactory -- Testcontainers version: 2.0.5
+13:05:46.546 [main] INFO org.testcontainers.dockerclient.DockerClientProviderStrategy -- Found Docker environment with Environment variables, system properties and defaults. Resolved dockerHost=unix:///Users/kimwell/Library/Containers/com.docker.docker/Data/docker.raw.sock
+13:05:46.547 [main] INFO org.testcontainers.DockerClientFactory -- Docker host IP address is 127.0.0.1
+13:05:46.560 [main] INFO org.testcontainers.DockerClientFactory -- Connected to docker: 
+  Server Version: 29.4.0
+  API Version: 1.54
+  Operating System: Docker Desktop
+  Total Memory: 9936 MB
+13:05:46.589 [main] INFO tc.testcontainers/ryuk:0.14.0 -- Creating container for image: testcontainers/ryuk:0.14.0
+13:05:46.676 [main] INFO org.testcontainers.utility.RegistryAuthLocator -- Credential helper/store (docker-credential-desktop) does not have credentials for https://index.docker.io/v1/
+13:05:46.734 [main] INFO tc.testcontainers/ryuk:0.14.0 -- Container testcontainers/ryuk:0.14.0 is starting: 510cba95820a3d3d15aac091d24333fa24a07356000ca3374b6b9aaec0a2d743
+13:05:47.017 [main] INFO tc.testcontainers/ryuk:0.14.0 -- Container testcontainers/ryuk:0.14.0 started in PT0.428844S
+13:05:47.025 [main] INFO org.testcontainers.utility.RyukResourceReaper -- Ryuk started - will monitor and terminate Testcontainers containers on JVM exit
+13:05:47.025 [main] INFO org.testcontainers.DockerClientFactory -- Checking the system...
+13:05:47.026 [main] INFO org.testcontainers.DockerClientFactory -- ✔︎ Docker server version should be at least 1.6.0
+13:05:47.033 [main] INFO tc.postgres:17.11-bookworm@sha256:364557... -- Creating container for image: postgres:17.11-bookworm@sha256:3645570cccdfa447589da9f57dd740faa29b30938e861289a5574b6ca6b03826
+13:05:47.051 [main] INFO tc.postgres:17.11-bookworm@sha256:364557... -- Container postgres:17.11-bookworm@sha256:3645570cccdfa447589da9f57dd740faa29b30938e861289a5574b6ca6b03826 is starting: c761ad762591e97e119f06d93019969f9349dad4dc72a2fb9e10f127b953fb2a
+13:05:47.961 [main] INFO tc.postgres:17.11-bookworm@sha256:364557... -- Container postgres:17.11-bookworm@sha256:3645570cccdfa447589da9f57dd740faa29b30938e861289a5574b6ca6b03826 started in PT0.927688S
+13:05:47.962 [main] INFO tc.postgres:17.11-bookworm@sha256:364557... -- Container is started (JDBC URL: jdbc:postgresql://127.0.0.1:55103/p04_async_fixture?loggerLevel=OFF)
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v4.0.8)
+
+2026-10-09T13:05:48.322+08:00  INFO 38696 --- [pet-platform-backend] [           main] t.r.2.10-bookworm@sha256:476707...       : Creating container for image: redis:8.2.10-bookworm@sha256:47670742d7924adbcdb404d1288b6327815b23141969c0939b8e5d61f78c2634
+2026-10-09T13:05:48.387+08:00  INFO 38696 --- [pet-platform-backend] [           main] t.r.2.10-bookworm@sha256:476707...       : Container redis:8.2.10-bookworm@sha256:47670742d7924adbcdb404d1288b6327815b23141969c0939b8e5d61f78c2634 is starting: e6b3042ebed100c288b12a47c5eedddad8bf390245304243c4c410f0144a0a08
+2026-10-09T13:05:48.577+08:00  INFO 38696 --- [pet-platform-backend] [           main] t.r.2.10-bookworm@sha256:476707...       : Container redis:8.2.10-bookworm@sha256:47670742d7924adbcdb404d1288b6327815b23141969c0939b8e5d61f78c2634 started in PT0.254517S
+2026-10-09T13:05:48.583+08:00  INFO 38696 --- [pet-platform-backend] [           main] c.p.t.t.AsyncTenantPersistenceIT         : Starting AsyncTenantPersistenceIT using Java 21.0.12.1 with PID 38696 (started by kimwell in /Users/kimwell/work/pet-platform/apps/backend)
+2026-10-09T13:05:48.584+08:00  INFO 38696 --- [pet-platform-backend] [           main] c.p.t.t.AsyncTenantPersistenceIT         : The following 1 profile is active: "test"
+2026-10-09T13:05:49.152+08:00  INFO 38696 --- [pet-platform-backend] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2026-10-09T13:05:49.153+08:00  INFO 38696 --- [pet-platform-backend] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-10-09T13:05:49.181+08:00  INFO 38696 --- [pet-platform-backend] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 22 ms. Found 0 JPA repository interfaces.
+2026-10-09T13:05:49.743+08:00  INFO 38696 --- [pet-platform-backend] [           main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:postgresql://127.0.0.1:55103/p04_async_fixture (PostgreSQL 17.11)
+2026-10-09T13:05:49.772+08:00  INFO 38696 --- [pet-platform-backend] [           main] o.f.c.i.s.JdbcTableSchemaHistory         : Schema history table "public"."flyway_schema_history" does not exist yet
+2026-10-09T13:05:49.774+08:00  INFO 38696 --- [pet-platform-backend] [           main] o.f.core.internal.command.DbValidate     : Successfully validated 1 migration (execution time 00:00.012s)
+2026-10-09T13:05:49.787+08:00  INFO 38696 --- [pet-platform-backend] [           main] o.f.c.i.s.JdbcTableSchemaHistory         : Creating Schema History table "public"."flyway_schema_history" ...
+2026-10-09T13:05:49.827+08:00  INFO 38696 --- [pet-platform-backend] [           main] o.f.core.internal.command.DbMigrate      : Current version of schema "public": << Empty Schema >>
+2026-10-09T13:05:49.840+08:00  INFO 38696 --- [pet-platform-backend] [           main] o.f.core.internal.command.DbMigrate      : Migrating schema "public" to version "1 - tenant security fixtures"
+2026-10-09T13:05:49.877+08:00  INFO 38696 --- [pet-platform-backend] [           main] o.f.core.internal.command.DbMigrate      : Successfully applied 1 migration to schema "public", now at version v1 (execution time 00:00.024s)
+2026-10-09T13:05:49.927+08:00  INFO 38696 --- [pet-platform-backend] [           main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-10-09T13:05:49.958+08:00  INFO 38696 --- [pet-platform-backend] [           main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.24.Final
+2026-10-09T13:05:50.172+08:00  INFO 38696 --- [pet-platform-backend] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-10-09T13:05:50.189+08:00  INFO 38696 --- [pet-platform-backend] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-10-09T13:05:50.214+08:00  INFO 38696 --- [pet-platform-backend] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@59cc46a4
+2026-10-09T13:05:50.215+08:00  INFO 38696 --- [pet-platform-backend] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-10-09T13:05:50.258+08:00  INFO 38696 --- [pet-platform-backend] [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://127.0.0.1:55103/p04_async_fixture]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 17.11
+	Default catalog/schema: p04_async_fixture/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-10-09T13:05:50.751+08:00  INFO 38696 --- [pet-platform-backend] [           main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-10-09T13:05:50.781+08:00  INFO 38696 --- [pet-platform-backend] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-10-09T13:05:50.868+08:00  WARN 38696 --- [pet-platform-backend] [           main] i.n.r.d.DnsServerAddressStreamProviders  : Can not find io.netty.resolver.dns.macos.MacOSDnsServerAddressStreamProvider in the classpath, fallback to system defaults. This may result in incorrect DNS resolutions on MacOS. Check whether you have a dependency on 'io.netty:netty-resolver-dns-native-macos'
+2026-10-09T13:05:51.893+08:00  INFO 38696 --- [pet-platform-backend] [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2026-10-09T13:05:51.940+08:00  INFO 38696 --- [pet-platform-backend] [           main] c.p.t.t.AsyncTenantPersistenceIT         : Started AsyncTenantPersistenceIT in 3.812 seconds (process running for 6.418)
+OpenJDK 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
+2026-10-09T13:05:52.474+08:00  WARN 38696 --- [pet-platform-backend] [t-tenant-task-1] c.p.p.shared.tenancy.TenantTaskExecutor  : 受控任务执行失败，任务=1a57dc96-46c8-46b6-8b72-e454b0e9f20e，异常类型=RejectedExecutionException
+2026-10-09T13:05:52.649+08:00  WARN 38696 --- [pet-platform-backend] [t-tenant-task-1] c.p.p.shared.tenancy.TenantTaskExecutor  : 受控任务执行失败，任务=994dd47a-e004-4753-b368-289065d8d4fd，异常类型=IllegalStateException
+[INFO] Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 7.393 s -- in com.pet.testing.tenantpersistence.AsyncTenantPersistenceIT
+[INFO] Running com.pet.testing.persistence.JpaPersistenceIT
+2026-10-09T13:05:53.354+08:00  INFO 38696 --- [pet-platform-backend] [           main] t.p.11-bookworm@sha256:364557...         : Creating container for image: postgres:17.11-bookworm@sha256:3645570cccdfa447589da9f57dd740faa29b30938e861289a5574b6ca6b03826
+2026-10-09T13:05:53.405+08:00  INFO 38696 --- [pet-platform-backend] [           main] t.p.11-bookworm@sha256:364557...         : Container postgres:17.11-bookworm@sha256:3645570cccdfa447589da9f57dd740faa29b30938e861289a5574b6ca6b03826 is starting: 82b9de2244eadbb528ff70cde037ef3ccbc55a344412a032ea52bdce04f011f0
+2026-10-09T13:05:54.459+08:00  INFO 38696 --- [pet-platform-backend] [           main] t.p.11-bookworm@sha256:364557...         : Container postgres:17.11-bookworm@sha256:3645570cccdfa447589da9f57dd740faa29b30938e861289a5574b6ca6b03826 started in PT1.105038S
+2026-10-09T13:05:54.459+08:00  INFO 38696 --- [pet-platform-backend] [           main] t.p.11-bookworm@sha256:364557...         : Container is started (JDBC URL: jdbc:postgresql://127.0.0.1:55105/test?loggerLevel=OFF)
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v4.0.8)
+
+2026-10-09T13:05:54.499+08:00  INFO 38696 --- [pet-platform-backend] [           main] c.p.t.persistence.JpaPersistenceIT       : Starting JpaPersistenceIT using Java 21.0.12.1 with PID 38696 (started by kimwell in /Users/kimwell/work/pet-platform/apps/backend)
+2026-10-09T13:05:54.500+08:00  INFO 38696 --- [pet-platform-backend] [           main] c.p.t.persistence.JpaPersistenceIT       : The following 1 profile is active: "test"
+2026-10-09T13:05:54.639+08:00  INFO 38696 --- [pet-platform-backend] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2026-10-09T13:05:54.639+08:00  INFO 38696 --- [pet-platform-backend] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-10-09T13:05:54.652+08:00  INFO 38696 --- [pet-platform-backend] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 12 ms. Found 1 JPA repository interface.
+2026-10-09T13:05:54.759+08:00  INFO 38696 --- [pet-platform-backend] [           main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:postgresql://127.0.0.1:55105/test (PostgreSQL 17.11)
+2026-10-09T13:05:54.769+08:00  INFO 38696 --- [pet-platform-backend] [           main] o.f.c.i.s.JdbcTableSchemaHistory         : Schema history table "public"."flyway_schema_history" does not exist yet
+2026-10-09T13:05:54.769+08:00  INFO 38696 --- [pet-platform-backend] [           main] o.f.core.internal.command.DbValidate     : Successfully validated 1 migration (execution time 00:00.002s)
+2026-10-09T13:05:54.774+08:00  INFO 38696 --- [pet-platform-backend] [           main] o.f.c.i.s.JdbcTableSchemaHistory         : Creating Schema History table "public"."flyway_schema_history" ...
+2026-10-09T13:05:54.791+08:00  INFO 38696 --- [pet-platform-backend] [           main] o.f.core.internal.command.DbMigrate      : Current version of schema "public": << Empty Schema >>
+2026-10-09T13:05:54.793+08:00  INFO 38696 --- [pet-platform-backend] [           main] o.f.core.internal.command.DbMigrate      : Migrating schema "public" to version "1 - shared persistence probe"
+2026-10-09T13:05:54.802+08:00  INFO 38696 --- [pet-platform-backend] [           main] o.f.core.internal.command.DbMigrate      : Successfully applied 1 migration to schema "public", now at version v1 (execution time 00:00.004s)
+2026-10-09T13:05:54.811+08:00  INFO 38696 --- [pet-platform-backend] [           main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-10-09T13:05:54.821+08:00  INFO 38696 --- [pet-platform-backend] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-10-09T13:05:54.822+08:00  INFO 38696 --- [pet-platform-backend] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2026-10-09T13:05:54.828+08:00  INFO 38696 --- [pet-platform-backend] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Added connection org.postgresql.jdbc.PgConnection@71f1a533
+2026-10-09T13:05:54.828+08:00  INFO 38696 --- [pet-platform-backend] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2026-10-09T13:05:54.834+08:00  INFO 38696 --- [pet-platform-backend] [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://127.0.0.1:55105/test]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 17.11
+	Default catalog/schema: test/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-10-09T13:05:54.856+08:00  INFO 38696 --- [pet-platform-backend] [           main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-10-09T13:05:54.864+08:00  INFO 38696 --- [pet-platform-backend] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-10-09T13:05:55.129+08:00  INFO 38696 --- [pet-platform-backend] [           main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-10-09T13:05:55.260+08:00  INFO 38696 --- [pet-platform-backend] [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2026-10-09T13:05:55.270+08:00  INFO 38696 --- [pet-platform-backend] [           main] c.p.t.persistence.JpaPersistenceIT       : Started JpaPersistenceIT in 0.798 seconds (process running for 9.748)
+2026-10-09T13:05:55.494+08:00  INFO 38696 --- [pet-platform-backend] [           main] o.f.core.internal.command.DbValidate     : Successfully validated 1 migration (execution time 00:00.003s)
+2026-10-09T13:05:55.504+08:00  INFO 38696 --- [pet-platform-backend] [           main] o.f.core.internal.command.DbMigrate      : Current version of schema "public": 1
+2026-10-09T13:05:55.505+08:00  INFO 38696 --- [pet-platform-backend] [           main] o.f.core.internal.command.DbMigrate      : Schema "public" is up to date. No migration necessary.
+2026-10-09T13:05:55.617+08:00  WARN 38696 --- [pet-platform-backend] [           main] org.hibernate.orm.jdbc.error             : HHH000247: ErrorCode: 0, SQLState: 23505
+2026-10-09T13:05:55.617+08:00  WARN 38696 --- [pet-platform-backend] [           main] org.hibernate.orm.jdbc.error             : ERROR: duplicate key value violates unique constraint "persistence_probe_code_key"
+  详细：Key (code)=(duplicate) already exists.
+[INFO] Tests run: 12, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.583 s -- in com.pet.testing.persistence.JpaPersistenceIT
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 21, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] 
+[INFO] --- failsafe:3.5.6:verify (default) @ pet-platform-backend ---
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  13.555 s
+[INFO] Finished at: 2026-10-09T13:05:56+08:00
+[INFO] ------------------------------------------------------------------------

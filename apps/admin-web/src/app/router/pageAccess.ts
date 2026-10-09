@@ -8,7 +8,15 @@ export const sessionPages: readonly PageAccess[] = [
   { space: 'STAFF', path: '/admin/security', title: '账号安全', condition: 'self-session', allowRestricted: true },
   { space: 'STAFF', path: '/admin/identity/users', title: '员工列表', condition: 'session', permissions: ['identity:user:list'], allowRestricted: false },
   { space: 'STAFF', path: employeeDetailPath, title: '员工详情', condition: 'session', permissions: ['identity:user:detail'], allowRestricted: false, navigation: false },
+  { space: 'STAFF', path: '/admin/identity/roles', title: '角色管理', condition: 'session', permissions: ['identity:role:list'], allowRestricted: false },
+  { space: 'STAFF', path: '/admin/identity/roles/$roleId', title: '角色详情', condition: 'session', permissions: ['identity:role:detail'], allowRestricted: false, navigation: false },
   { space: 'PLATFORM', path: '/platform', title: '当前身份', condition: 'session', permissions: ['platform:session:manage'], allowRestricted: false },
+  { space: 'PLATFORM', path: '/platform/tenants', title: '租户管理', condition: 'session', permissions: ['platform:tenant:list'], allowRestricted: false },
+  { space: 'PLATFORM', path: '/platform/tenants/$tenantId', title: '租户详情', condition: 'session', permissions: ['platform:tenant:detail'], allowRestricted: false, navigation: false },
+  { space: 'PLATFORM', path: '/platform/accounts', title: '平台账号管理', condition: 'session', permissions: ['platform:account:list'], allowRestricted: false },
+  { space: 'PLATFORM', path: '/platform/accounts/$accountId', title: '平台账号详情', condition: 'session', permissions: ['platform:account:detail'], allowRestricted: false, navigation: false },
+  { space: 'STAFF', path: '/admin/identity/organizations', title: '内部组织管理', condition: 'session', permissions: ['identity:organization:list'], allowRestricted: false },
+  { space: 'STAFF', path: '/admin/identity/organizations/$organizationId', title: '内部组织详情', condition: 'session', permissions: ['identity:organization:detail'], allowRestricted: false, navigation: false },
   { space: 'PLATFORM', path: '/platform/security', title: '账号安全', condition: 'self-session', allowRestricted: false },
 ];
 export function canAccessPage(page: PageAccess, identity: WebIdentity | null | undefined): boolean {
@@ -20,7 +28,7 @@ export function navigationFor(space: AuthSpace, identity: WebIdentity | null | u
   return sessionPages.filter(page => page.space === space && page.navigation !== false && canAccessPage(page, identity));
 }
 export function pageFor(space: AuthSpace, path: string): PageAccess {
-  const page = sessionPages.find(item => item.space === space && (item.path === path || (item.path === employeeDetailPath && /^\/admin\/identity\/users\/[^/]+$/.test(path))));
+  const page = sessionPages.find(item => item.space === space && (item.path === path || (item.path.includes('$') && new RegExp('^' + item.path.replace(/\$[A-Za-z]+/g, '[^/]+') + '$').test(path)) || (item.path === '/admin/identity/roles/$roleId' && /^\/admin\/identity\/roles\/[^/]+$/.test(path)) || (item.path === employeeDetailPath && /^\/admin\/identity\/users\/[^/]+$/.test(path))));
   if (!page) throw new Error('页面未登记访问条件');
   return page;
 }

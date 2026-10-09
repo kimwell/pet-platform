@@ -27,7 +27,11 @@ class ProductionOpenApiExportTest extends PostgresIntegrationSupport {
         assertEquals(200, response.statusCode());
         var doc = mapper.readTree(response.body());
         assertEquals("3.1.0", doc.path("openapi").asText());
-        assertEquals(21, doc.path("paths").size());
+        assertEquals(46, doc.path("paths").size());
+        assertTrue(doc.path("paths").has("/api/platform/tenants"));
+        assertTrue(doc.path("paths").has("/api/platform/accounts/{id}/permissions"));
+        assertFalse(doc.path("components").path("schemas").path("ControlAccountView").path("properties").has("passwordHash"));
+        assertTrue(doc.path("components").path("schemas").path("CreateControlAccount").path("properties").path("initialPassword").path("writeOnly").asBoolean());
         assertTrue(doc.path("paths").has("/api/admin/identity/users"));
         assertTrue(doc.path("paths").has("/api/admin/identity/users/{employeeId}"));
         for(String path:java.util.List.of("/api/admin/auth/csrf","/api/admin/auth/login","/api/admin/auth/token/login","/api/admin/auth/me","/api/admin/auth/logout","/api/admin/auth/password","/api/admin/auth/logout-all","/api/admin/identity/users/{employeeId}/password","/api/admin/identity/users/{employeeId}/revoke-sessions"))assertTrue(doc.path("paths").has(path));
@@ -49,8 +53,13 @@ class ProductionOpenApiExportTest extends PostgresIntegrationSupport {
         assertFalse(doc.path("paths").toString().contains("__authentication-test"));
         var cleanup=doc.path("paths").path("/api/admin/auth/logout-all").path("post").path("responses").path("200").path("headers").path("X-Session-Cleanup").path("schema");
         assertEquals("string",cleanup.path("type").asText());assertEquals("COMPLETE",cleanup.path("enum").get(0).asText());assertEquals("PENDING",cleanup.path("enum").get(1).asText());
+        assertTrue(doc.path("paths").has("/api/admin/identity/roles/{roleId}/grants"));
+        assertTrue(doc.path("components").path("schemas").path("CreateEmployee").path("properties").path("initialPassword").path("writeOnly").asBoolean());
         var schemas = doc.path("components").path("schemas");
         assertTrue(schemas.size() >= 7);
+        assertTrue(schemas.path("Grant").path("properties").has("scopes"),"既有正式身份Grant不得被管理DTO同名覆盖");
+        assertFalse(schemas.path("Grant").path("properties").has("scopeType"));
+        assertTrue(schemas.path("PermissionGrant").path("properties").has("scopeType"));
         for(String input:java.util.List.of("ChangePasswordInput","ConfirmationInput","ResetPasswordInput","RevokeSessionsInput"))assertTrue(schemas.path(input).path("properties").path("currentPassword").path("writeOnly").asBoolean(),input);
         assertTrue(schemas.path("CurrentIdentity").path("required").toString().contains("passwordChangeRequired"));
         for(String schema:java.util.List.of("CurrentIdentity","SuccessCurrentIdentity","TokenLoginResult","SuccessTokenLoginResult","CsrfResult","SuccessCsrfResult"))assertTrue(schemas.has(schema),schema);

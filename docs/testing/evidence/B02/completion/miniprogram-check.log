@@ -1,0 +1,12 @@
+
+> pet-platform@0.0.0 check:miniprogram /Users/kimwell/work/pet-platform
+> pnpm --filter @pet/wechat-miniprogram typecheck && pnpm --filter @pet/wechat-miniprogram lint
+
+
+> @pet/wechat-miniprogram@0.0.0 typecheck /Users/kimwell/work/pet-platform/apps/wechat-miniprogram
+> tsc --noEmit
+
+
+> @pet/wechat-miniprogram@0.0.0 lint /Users/kimwell/work/pet-platform/apps/wechat-miniprogram
+> eslint miniprogram --max-warnings=0
+

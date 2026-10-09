@@ -1,0 +1,8 @@
+file:///Users/kimwell/work/pet-platform/.local-data/b02/browser-stage1.mjs:27
+}catch{result.status='FAIL';result.failedStage=stage;save();await p.screenshot({path:local+'/browser-failure.png',fullPage:true});throw Error('浏览器阶段失败：'+stage);}
+                                                                                                                                        ^
+
+Error: 浏览器阶段失败：login
+    at file:///Users/kimwell/work/pet-platform/.local-data/b02/browser-stage1.mjs:27:137
+
+Node.js v24.21.0

@@ -1,0 +1,278 @@
+[
+  {
+    "class": "com.pet.testing.identity.EmployeeReadUpgradeRuntimeIT",
+    "tests": "1",
+    "failures": "0",
+    "errors": "0",
+    "skipped": "0",
+    "failedMethods": []
+  },
+  {
+    "class": "com.pet.testing.identity.IdentityManagementIT",
+    "tests": "14",
+    "failures": "14",
+    "errors": "0",
+    "skipped": "0",
+    "failedMethods": [
+      "redisFailureRefusesMutationAndRecoveryKeepsVersions",
+      "runtimeRlsAndCredentialRestrictionsRemainEnforced",
+      "tenantGrantCannotBeGrantedBySelfScope",
+      "resetAndExplicitSessionRevokeReuseFormalSecurityService",
+      "realOptionsArePagedAndRespectStoreCeiling",
+      "foreignTargetsAndAssociationsNeverMutate",
+      "duplicateAndInvalidFieldsArePreciseAndNoTenantInputAccepted",
+      "associationAndSecurityIntentRollbackWhenFinalEventFails",
+      "explicitUpgradeIsIdempotentAndDoesNotTouchForeignTenant",
+      "protectedAdminAndRoleCannotBeDisabledOrReassigned",
+      "completeBusinessLifecycleAndPermissionSpecificUnion",
+      "absentIndependentPermissionsAndReadWriteSeparation",
+      "grantCeilingRejectsDifferentPermissionAndStoreUpperBound",
+      "versionConcurrentEditsHaveExactlyOneWinner"
+    ]
+  },
+  {
+    "class": "com.pet.testing.architecture.ProductionArtifactIT",
+    "tests": "2",
+    "failures": "0",
+    "errors": "0",
+    "skipped": "0",
+    "failedMethods": []
+  },
+  {
+    "class": "com.pet.platform.shared.redis.RedisIsolationIT",
+    "tests": "17",
+    "failures": "0",
+    "errors": "0",
+    "skipped": "0",
+    "failedMethods": []
+  },
+  {
+    "class": "com.pet.testing.identity.EmployeeDirectoryIT",
+    "tests": "32",
+    "failures": "0",
+    "errors": "0",
+    "skipped": "0",
+    "failedMethods": []
+  },
+  {
+    "class": "com.pet.testing.authentication.StaffAuthenticationIT",
+    "tests": "1",
+    "failures": "0",
+    "errors": "1",
+    "skipped": "0",
+    "failedMethods": [
+      ""
+    ]
+  },
+  {
+    "class": "com.pet.testing.tenantpersistence.TenantPersistenceIT",
+    "tests": "48",
+    "failures": "0",
+    "errors": "0",
+    "skipped": "0",
+    "failedMethods": []
+  },
+  {
+    "class": "com.pet.testing.persistence.JpaPersistenceIT",
+    "tests": "12",
+    "failures": "0",
+    "errors": "0",
+    "skipped": "0",
+    "failedMethods": []
+  },
+  {
+    "class": "com.pet.testing.tenantpersistence.AsyncTenantPersistenceIT",
+    "tests": "9",
+    "failures": "0",
+    "errors": "0",
+    "skipped": "0",
+    "failedMethods": []
+  },
+  {
+    "class": "com.pet.testing.contracts.PackagedDocumentPolicyIT",
+    "tests": "1",
+    "failures": "1",
+    "errors": "0",
+    "skipped": "0",
+    "failedMethods": [
+      "localAndProductionJarHaveActualDocumentAndUiPolicies"
+    ]
+  },
+  {
+    "class": "com.pet.testing.authentication.StaffCredentialSecurityIT",
+    "tests": "1",
+    "failures": "0",
+    "errors": "1",
+    "skipped": "0",
+    "failedMethods": [
+      ""
+    ]
+  },
+  {
+    "class": "com.pet.testing.identity.CustomerMigrationIT",
+    "tests": "1",
+    "failures": "0",
+    "errors": "0",
+    "skipped": "0",
+    "failedMethods": []
+  },
+  {
+    "class": "com.pet.testing.authentication.PlatformAuthenticationIT",
+    "tests": "1",
+    "failures": "0",
+    "errors": "1",
+    "skipped": "0",
+    "failedMethods": [
+      ""
+    ]
+  },
+  {
+    "class": "com.pet.testing.identity.IdentityMigrationIT",
+    "tests": "1",
+    "failures": "0",
+    "errors": "0",
+    "skipped": "0",
+    "failedMethods": []
+  },
+  {
+    "class": "com.pet.testing.tenancy.TenantHttpIT",
+    "tests": "1",
+    "failures": "0",
+    "errors": "1",
+    "skipped": "0",
+    "failedMethods": [
+      "actualRegisteredRequestAndContainerErrorChainsKeepProtocol"
+    ]
+  },
+  {
+    "class": "com.pet.testing.identity.StaffSecurityMigrationIT",
+    "tests": "1",
+    "failures": "0",
+    "errors": "0",
+    "skipped": "0",
+    "failedMethods": []
+  },
+  {
+    "class": "com.pet.testing.identity.IdentityFoundationIT",
+    "tests": "27",
+    "failures": "0",
+    "errors": "27",
+    "skipped": "0",
+    "failedMethods": [
+      "plaintextNeverStoredAndPasswordInputLifecycleCleared",
+      "emptyStoresAndUnknownPermissionFailClosed",
+      "disabledTenantEmployeeRoleAndStoreAreReflectedByAuthorityLoad",
+      "bootstrapCommandRejectsPrivilegedOrOrdinaryRuntimeLogin",
+      "tenantNormalizationUniqueAndDifferentTenantsShareLogin",
+      "formalRlsWithCheckRejectsForeignInsertAndTenantMoveWithIndependentRead",
+      "concurrentBootstrapHasExactlyOneCompleteAdministrator",
+      "formalMigrationRepeatedAndJpaValidationWithSevenModels",
+      "requestClonesAndClearsPasswordWithoutSerializingIt",
+      "storeProductionBeanAndGuardReadOfficialTenantAndStatus",
+      "authenticationCannotBeHijackedByTemporaryShadowTables",
+      "bootstrapLoginCannotReadTablesOrExecuteAuthentication",
+      "sameTenantUnauthorizedStoreDeniedAfterFactFound",
+      "noRealSessionDoesNotCreatePrincipalAndBootstrapNotSpringBean",
+      "perPermissionRoleUnionDoesNotEnlargeOtherPermissions",
+      "explicitPackagedCommandsMigrateBootstrapAndConflictWithSafeOutput",
+      "unavailableStoreSourceIsDependencyFailureWithoutGuardRecursion",
+      "commandRejectsPasswordArgumentAndMissingConsoleBeforeDatabase",
+      "bootstrapRelationsCompleteAndOptionalStoreReallyOptional",
+      "bootstrapIntermediateFailureRollsBackAllTablesIndependentConnection",
+      "roleAndStoreCompositeReferencesRejectForeignTenantAndRestrictDelete",
+      "runtimeRlsNoContextNoForeignTenantAndCredentialColumnDenied",
+      "authenticationFunctionsOwnedByMinimalNoLoginRolesAndNotPublic",
+      "sameTenantLoginUniquenessAndCanonicalDatabaseConstraint",
+      "bootstrapRepeatDoesNotChangeHashPermissionsOrRepairHalfState",
+      "authenticationBeforeContextReturnsMinimalCredentialWithoutSerialization",
+      "runtimeStartupCheckRejectsCredentialAccessAndBootstrapMembership"
+    ]
+  },
+  {
+    "class": "com.pet.testing.authentication.StaffSessionRuntimeIT",
+    "tests": "4",
+    "failures": "0",
+    "errors": "4",
+    "skipped": "0",
+    "failedMethods": [
+      "twoProductionInstancesShareAndRevokeTheSameRedisSessionAndSecureCookie",
+      "twoProductionInstancesObservePasswordChangeAndOldWebMiniSessionsCannotReturn",
+      "productionJarRejectsInsecureCookieAndUntrustedForwardingConfiguration",
+      "idleExpiryDoesNotRenewOnMeAndAbsoluteExpiryCannotSlide"
+    ]
+  },
+  {
+    "class": "com.pet.platform.protocol.ApiProtocolIT",
+    "tests": "2",
+    "failures": "0",
+    "errors": "0",
+    "skipped": "0",
+    "failedMethods": []
+  },
+  {
+    "class": "com.pet.testing.RedisHealthIT",
+    "tests": "1",
+    "failures": "0",
+    "errors": "0",
+    "skipped": "0",
+    "failedMethods": []
+  },
+  {
+    "class": "com.pet.testing.persistence.MigrationSafetyIT",
+    "tests": "5",
+    "failures": "0",
+    "errors": "0",
+    "skipped": "0",
+    "failedMethods": []
+  },
+  {
+    "class": "com.pet.testing.identity.ControlManagementIT",
+    "tests": "18",
+    "failures": "0",
+    "errors": "0",
+    "skipped": "0",
+    "failedMethods": []
+  },
+  {
+    "class": "com.pet.testing.identity.PlatformBootstrapRuntimeIT",
+    "tests": "1",
+    "failures": "0",
+    "errors": "0",
+    "skipped": "0",
+    "failedMethods": []
+  },
+  {
+    "class": "com.pet.testing.contracts.ScalarPostgresIT",
+    "tests": "1",
+    "failures": "0",
+    "errors": "0",
+    "skipped": "0",
+    "failedMethods": []
+  },
+  {
+    "class": "com.pet.testing.identity.PlatformMigrationIT",
+    "tests": "1",
+    "failures": "0",
+    "errors": "0",
+    "skipped": "0",
+    "failedMethods": []
+  },
+  {
+    "class": "com.pet.testing.identity.EmployeeReadMigrationIT",
+    "tests": "1",
+    "failures": "0",
+    "errors": "0",
+    "skipped": "0",
+    "failedMethods": []
+  },
+  {
+    "class": "com.pet.testing.authentication.CustomerAuthenticationIT",
+    "tests": "1",
+    "failures": "0",
+    "errors": "1",
+    "skipped": "0",
+    "failedMethods": [
+      ""
+    ]
+  }
+]

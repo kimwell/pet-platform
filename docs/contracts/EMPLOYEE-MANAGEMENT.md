@@ -116,3 +116,36 @@ total协议与生成string完全未改；BigInt无损检查后仅安全值给官
 STAFF页面 `/admin/identity/users/$employeeId` 已接现有正式getEmployee/EmployeeView与独立identity:user:detail，只有detail可合法直达；list不授detail，detail不授list，PLATFORM不借STAFF路由。UUID v4校验失败不请求；后端详情仍不接受Query，页面returnTo仅供路由使用，不发送给接口。六字段及非null/时间/枚举契约、公开接口、行范围和默认角色授权均未改。
 
 列表仅按当前detail权限显示明确入口；列表可见而详情范围外统一“员工不存在或不可访问”。目标独立Query包含完整正式身份/授权/代际，无列表DTO占位；重验清理和错误处理见[详情规范](../conventions/WEB-DETAIL-PAGES.md)。返回仅当前员工列表及原六参数白名单，复用P07-02规范化；没有list权限返回当前身份。详情刷新/原生历史保留已提交URL，不承诺草稿/滚动位置。正式浏览器与未执行门禁见[P07-03验证](../testing/P07-03-VERIFICATION.md)。没有任何写入、角色/门店关系或管理能力字段。
+
+## B01 员工与授权管理（2026-10-09）
+
+以上P07读取及页面历史契约保留。B01在既有六字段读取之外提供单独管理投影，不改变EmployeeView或旧列表/详情范围。公开类型全部从生产Controller生成。
+
+| 方法 / 路径（前缀 /api/admin） | 独立权限 | 范围与行为 |
+| --- | --- | --- |
+| GET /identity/users/{id}/management | identity:user:detail | 独立详情范围；关联资料要求TENANT或全部目标门店覆盖，SELF仅本人；version、roleIds/storeIds、protectedAccount、passwordChangeRequired，不含凭据 |
+| POST /identity/users | identity:user:create | TENANT；loginName规范化并唯一，displayName；人工临时密码经既有PasswordService，ACTIVE/空关联/强制改密 |
+| PUT /identity/users/{id} | identity:user:update | 独立目标范围及全部门店覆盖；仅displayName，不改变账号 |
+| PUT /identity/users/{id}/status | identity:user:enable 或 disable | ACTIVE/DISABLED；版本防重放，不物理删除；禁止本人及受保护管理员；安全代际失效 |
+| PUT /identity/users/{id}/roles | identity:user:roles | 全量角色ID替换（0～100、不重复），同租户ACTIVE非保留角色，逐权限授予上限，撤销旧身份 |
+| PUT /identity/users/{id}/stores | identity:user:stores | 全量门店ID替换（0～100、不重复），同租户ACTIVE/本操作范围/身份门店上限，重新检查全部角色权限，撤销旧身份 |
+| GET /identity/roles | identity:role:list | TENANT，page/pageSize，字符串total，稳定code/id排序 |
+| GET /identity/roles/{id} | identity:role:detail | TENANT，角色摘要/version、逐权限scopeType；不借list权限 |
+| POST /identity/roles | identity:role:create | TENANT，编码唯一/创建后固定，名称、ACTIVE/空权限 |
+| PUT /identity/roles/{id} | identity:role:update | TENANT，名称/ACTIVE或DISABLED；全体关联员工失效 |
+| PUT /identity/roles/{id}/grants | identity:role:grant | TENANT，完整替换permissionCode/scopeType集合；同权限并集、不同权限独立；全体关联员工失效 |
+| GET /identity/permissions | identity:role:detail | 正式目录与当前可授予范围，只供表单；不授写入权限 |
+| GET /platform/stores/options | platform:store:list | page/pageSize；当前可信租户ACTIVE、本操作范围与身份门店上限交集；仅id/code/name |
+| PUT /identity/users/{id}/password、POST /identity/users/{id}/revoke-sessions | 既有reset-password / revoke-sessions | 直接复用P05正式安全服务、操作者当前密码确认/version/频控/强制改密/可补偿撤销，不另建凭据体系 |
+
+普通读取不授写权限，写权限不授读取；Web入口同时要求对应独立读取以取得正式版本/选择事实。管理关联读取比基础详情更严格，多店交集不能暴露其他门店授权ID。无权限403；具有权限但目标或关联跨租户/不存在/范围外统一404；保护账号/授予上限403；version不一致409 VERSION_CONFLICT；字段校验422及准确fieldErrors；未知tenantId/未知Body或Query字段400；依赖503不当成身份401。列表及详情沿用P07原状态返回与列表returnTo。
+
+version为资源非负long十进制字符串，写输入必须提供当前版本；不以updatedAt、安全或授权代际替代。创建账号和名称沿用IdentityNames；不新增部门、岗位、联系方式或Organization持久化模型。角色保留tenant-admin不可创建/修改/停用/授予；持有该角色（含停用角色）或systemReserved账号不允许授权和状态变更，防止失去最后管理路径。本人授权修改拒绝；本人资料允许独立SELF更新。
+
+授予上限按每个permissionCode检查：操作者TENANT可授该权限支持的范围；STORES只能授STORES且覆盖被授权员工全部门店；操作者SELF不授另一主体SELF；缺某权限不能借其他管理/列表权限。角色修改还检查所有关联员工的全部既有角色与门店，停用角色不能藏高权限后再启用。无关联角色的STORES授权未来分配时仍检查员工实际门店。关联撤销也要求完整管理目标策略，不能接管操作者无权管理的高权限员工。
+
+V6只追加正式DML和强制RLS的管理事件，不改V1～V5，不在迁移或普通启动扩大角色权限。唯一显式补充为 `scripts/backend-identity.sh identity-management-upgrade --tenant-id <UUID-v4>`，使用既有独立PET_BOOTSTRAP环境；将保留管理员既有list/update/disable/role-list/role-update/reset范围对应补充到detail/roles/stores/enable/role-detail/create/grant/revoke-sessions，角色范围只TENANT、revoke只TENANT/STORES。同事务authorizationVersion递增，重跑0变化，runtime/PUBLIC不能EXECUTE。不接受任意角色/权限/范围参数。
+
+所有管理写事务先锁租户、使用同租户advisory lock及UUID顺序员工锁，锁内重验正式会话/安全和授权版本；目标检查使用原受控JPA投影，固定登记SQL写关联，所有SQL含可信tenant条件并受RLS/复合FK。为避免与P05固定员工锁顺序形成死锁，管理写串行锁定该租户员工行；这是管理模块的保守并发策略，未来容量优化须保留原安全测试。资料/角色/关联、版本、撤销意图和管理事件全部原子提交；任何失败完整回滚。授权/状态变更同时递增authorizationVersion与既有securityVersion，成功后P05清理旧会话；Redis清理失败返回sessionCleanupComplete=false，数据库逻辑失效仍成立。
+
+Web使用官方Ant Design Form/Table/Modal/Select及现有fetch/Query/Router。密码只存在短期表单与请求中，关闭/提交完成即清理，无Token/localStorage持久化。身份/权限代际变化通过原SessionRuntime取消请求、清缓存、重新挂载清草稿。防重复提交使用同步提交锁与pending禁用；不自动重试写入。409或网络/503结果不确定时锁定提交，显式重新读取版本、核对状态后才允许再次保存；保留非敏感草稿。创建结果不确定须回列表核对唯一账号/编码。角色和员工成功后失效相关身份范围内Query。门店及角色选择从正式分页接口读取全部页面，不以任意UUID造选项。

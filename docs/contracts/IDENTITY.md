@@ -1,3 +1,5 @@
+当前 B02 控制面管理、19项新增平台权限及安全治理见 [CONTROL-MANAGEMENT](CONTROL-MANAGEMENT.md)。下文各 P05 历史“只有三项/无管理接口”陈述保留其阶段范围。
+
 # 身份字段与认证接口
 
 P07-01正式员工管理读取契约见[EMPLOYEE-MANAGEMENT](EMPLOYEE-MANAGEMENT.md)，与本文件本人/auth会话接口分开；不把读取员工能力等同敏感管理能力。

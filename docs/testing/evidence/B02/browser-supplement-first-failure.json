@@ -1,0 +1,70 @@
+{
+  "status": "FAIL",
+  "scenarios": [
+    {
+      "name": "真实租户列表筛选分页排序与详情返回URL保留",
+      "status": "PASS"
+    },
+    {
+      "name": "正式创建重复编码422准确字段错误",
+      "status": "PASS"
+    }
+  ],
+  "requests": [
+    {
+      "path": "/api/platform/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/tenants",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/tenants/71d0870a-5e42-45f2-823d-7d9575e4aded",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/tenants/71d0870a-5e42-45f2-823d-7d9575e4aded/stores",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/tenants",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/csrf",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/tenants",
+      "status": 422,
+      "code": "VALIDATION_FAILED"
+    }
+  ],
+  "pageErrors": [],
+  "failedStage": "duplicate"
+}

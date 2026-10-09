@@ -26,7 +26,7 @@ class EmployeeReadMigrationIT {
             try(var request=new BootstrapRequest("upgrade","升级技术租户","admin",(UUID.randomUUID()+"临时技术").toCharArray(),null,null)) {
                 initialized=new IdentityBootstrap(new BootstrapJdbc(env),new PasswordService()).initialize(request);
             }
-            var latest=Flyway.configure().dataSource(db.getJdbcUrl(),IdentityDatabaseSupport.MIGRATION,db.getPassword()).locations("classpath:db/migration").load();
+            var latest=Flyway.configure().dataSource(db.getJdbcUrl(),IdentityDatabaseSupport.MIGRATION,db.getPassword()).locations("classpath:db/migration").target("5").load();
             assertEquals(1,latest.migrate().migrationsExecuted);assertEquals(0,latest.migrate().migrationsExecuted);
             assertEquals(checksums,Arrays.stream(latest.info().applied()).limit(4).map(i->i.getChecksum()).toList());
             try(var c=DriverManager.getConnection(db.getJdbcUrl(),db.getUsername(),db.getPassword());var s=c.createStatement()) {

@@ -90,3 +90,7 @@ PUT 全量替换所有可编辑字段：必填全部存在，可空字段明确n
 真实处理链与生产包检查见 [P03-01 验证](../testing/P03-01-VERIFICATION.md)。协议夹具只位于测试源码，由测试配置导入；不存在可调用的生产示例接口。PUT/PATCH/version/幂等/批量业务语义仍是冻结设计，未由公共错误类型实现。
 
 P05-05新增微信错误注册：401 WECHAT_CODE_INVALID；503 WECHAT_RESULT_UNCERTAIN/WECHAT_UPSTREAM_ERROR/WECHAT_RESPONSE_INVALID/WECHAT_CONFIGURATION_MISSING，均固定中文安全消息，无原始响应或秘密。实际客户四路径及身份判别唯一见[IDENTITY](IDENTITY.md#p05-05-客户正式接口2026-10-08)，没有改动ID/total字符串或时间/trace/信封协议。
+
+## B02 控制面（2026-10-09）
+
+正式 /api/platform 租户/最小门店/平台账号管理与 /api/admin/identity/organizations 的路径、逐操作权限、普通投影、分页排序、422字段错误、409并发/治理、受控初始化和身份失效统一见 [CONTROL-MANAGEMENT](CONTROL-MANAGEMENT.md)。不引入通用CRUD引擎、生产Mock或任意SQL。

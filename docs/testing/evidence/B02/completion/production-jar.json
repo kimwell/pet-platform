@@ -1,0 +1,8 @@
+{
+  "runtimeJarSHA256": "90f94f7015f026093f3bbf24ac5a92437afe51a3f43ae4c13980c3b4a7ba0495",
+  "testClasses": [],
+  "sourceChangesDuringExecution": false,
+  "mainProfile": "local",
+  "formalRuntimeIdentity": "b02_runtime",
+  "runtimeReady": true
+}

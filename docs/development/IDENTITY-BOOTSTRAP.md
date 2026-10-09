@@ -116,3 +116,34 @@ PasswordService沿用[IDENTITY密码冻结](../contracts/IDENTITY.md)：PBKDF2Wi
 现有租户或未知半成品不会被初始化命令修复。本轮不提供密码重置、账号/角色CRUD、数据删除、权限补授、半成品恢复命令；需要独立授权和可审查的恢复方案。完整登录HTTP、Sa-Token会话、Cookie/CSRF、限流、平台账号、客户微信身份、Organization、会话撤销及异步执行前重验尚未实现。后续合法任务以[路线图](ROADMAP.md)为准，P05-02只建议、不自动执行。
 
 P05-04补充：本文命令只创建租户/员工管理员。平台管理员使用独立账号表、初始化角色和`platform-bootstrap`入口，首次全库创建策略与部署/升级顺序见[PLATFORM-BOOTSTRAP](PLATFORM-BOOTSTRAP.md)。两种初始化凭据不得混用；普通启动均不创建或重置账号。
+
+## B01 管理能力显式补充（2026-10-09）
+
+V6迁移只安装管理表权限和受限函数，不自动扩大现有租户角色。初始化/升级并核对正确租户后，以既有独立 `PET_BOOTSTRAP_*` 配置执行：
+
+```sh
+scripts/backend-identity.sh identity-management-upgrade --tenant-id <规范UUID-v4>
+```
+
+该命令只补充指定租户保留管理员既有权限的对应管理能力，输出新增范围条数，不输出凭据。重复执行新增0；运行账号/PUBLIC不能调用；无活动保留角色失败。受影响管理员授权版本更新，须重新读取身份。新租户也需显式执行，默认九权限初始化策略保持原样。[具体权限映射](../contracts/EMPLOYEE-MANAGEMENT.md#b01-员工与授权管理2026-10-09)与[B01验收](../testing/B01-ACCEPTANCE.md)为本次新增能力事实源；前文“未实现CRUD/会话”的表述保留为P05-01历史边界。
+
+## B02 页面创建后的受控初始化（2026-10-09）
+
+正式平台创建仅建立 ACTIVE、initialized=false 的 Tenant 元数据，不创建员工或门店，客户入口仅接受已初始化 ACTIVE 租户。现有 bootstrap 兼容两条路径：全新编码原子创建；同编码/当前名称、ACTIVE 且待初始化租户原子完成首位 STAFF 管理员及保留角色。未提供 Store 参数仍合法，不自动创建假门店；初始化后可通过平台正式门店元数据入口建立 Store，再通过 B01 员工授权明确关联。
+
+```sh
+scripts/backend-identity.sh bootstrap \
+  --tenant-code '<页面创建的编码>' --tenant-name '<当前租户名称>' \
+  --admin-login '<首位员工账号>'
+```
+
+Console 安全输入，自动化使用已有 --password-stdin 与受控0600文件。独立初始化数据库身份、实际迁移/成员检查及密码输入规则沿用原文。名称不匹配、停用、已初始化或未知员工/角色/门店半成品均拒绝；密码/角色/授权/可选门店/initialized 在同一PG事务，任何失败全回滚。确认未提交后重试；完成后重复拒绝，不覆盖或重复。连接提交结果不明确时核查详情/身份状态，不把重跑当自动恢复。
+
+新管理员的 B01 管理能力和 Organization 能力分别显式升级（UUID为该租户正式ID，不携带密码）：
+
+```sh
+scripts/backend-identity.sh identity-management-upgrade --tenant-id '<租户UUID>'
+scripts/backend-identity.sh organization-upgrade --tenant-id '<租户UUID>'
+```
+
+Organization 升级仅保留 tenant-admin 固定6项TENANT范围权限，依赖原 identity:role:update TENANT 授权；只影响该角色关联员工的授权版本，重复新增0。普通迁移/启动不补权限。最小独立组织没有部门/岗位/层级或隐式员工数据范围。正式生产JAR受控命令与页面链路证据见 [B02](../testing/B02-ACCEPTANCE.md)。

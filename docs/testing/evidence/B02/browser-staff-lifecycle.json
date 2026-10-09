@@ -1,0 +1,187 @@
+{
+  "status": "PASS",
+  "scenarios": [
+    {
+      "name": "正式页面停用租户，旧STAFF失效（CUSTOMER真实链路另验）",
+      "status": "PASS"
+    },
+    {
+      "name": "租户A停用不影响租户B与PLATFORM",
+      "status": "PASS"
+    },
+    {
+      "name": "正式页面重新启用，旧STAFF不复活，新STAFF登录与B01模块有效",
+      "status": "PASS"
+    },
+    {
+      "name": "同一浏览器STAFF退出而PLATFORM仍有效",
+      "status": "PASS"
+    },
+    {
+      "name": "PLATFORM独立退出",
+      "status": "PASS"
+    }
+  ],
+  "requests": [
+    {
+      "path": "/api/admin/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/identity/users",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/tenants/71d0870a-5e42-45f2-823d-7d9575e4aded",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/tenants/71d0870a-5e42-45f2-823d-7d9575e4aded/stores",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/csrf",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/tenants/71d0870a-5e42-45f2-823d-7d9575e4aded/status",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/tenants/71d0870a-5e42-45f2-823d-7d9575e4aded/stores",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/tenants/71d0870a-5e42-45f2-823d-7d9575e4aded",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/auth/me",
+      "status": 401,
+      "code": "SESSION_REVOKED"
+    },
+    {
+      "path": "/api/admin/auth/me",
+      "status": 401,
+      "code": "AUTH_REQUIRED"
+    },
+    {
+      "path": "/api/admin/auth/me",
+      "status": 401,
+      "code": "AUTH_REQUIRED"
+    },
+    {
+      "path": "/api/admin/auth/me",
+      "status": 401,
+      "code": "AUTH_REQUIRED"
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/tenants/71d0870a-5e42-45f2-823d-7d9575e4aded/status",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/tenants/71d0870a-5e42-45f2-823d-7d9575e4aded",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/tenants/71d0870a-5e42-45f2-823d-7d9575e4aded/stores",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/auth/me",
+      "status": 401,
+      "code": "AUTH_REQUIRED"
+    },
+    {
+      "path": "/api/admin/auth/me",
+      "status": 401,
+      "code": "AUTH_REQUIRED"
+    },
+    {
+      "path": "/api/admin/auth/me",
+      "status": 401,
+      "code": "AUTH_REQUIRED"
+    },
+    {
+      "path": "/api/admin/auth/csrf",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/auth/login",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/auth/csrf",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/identity/users",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/auth/csrf",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/auth/logout",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/csrf",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/logout",
+      "status": 200
+    }
+  ],
+  "pageErrors": []
+}

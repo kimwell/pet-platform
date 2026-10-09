@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/Users/kimwell/work/pet-platform/docs/testing/evidence/B02/completion/replay/setup.py", line 39, in <module>
+    run('生产JAR独立迁移',['scripts/backend-identity.sh','migrate'],env=env)
+    ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kimwell/work/pet-platform/docs/testing/evidence/B02/completion/replay/setup.py", line 17, in run
+    if p.returncode:raise RuntimeError(label+'失败；见脱敏证据')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: 生产JAR独立迁移失败；见脱敏证据

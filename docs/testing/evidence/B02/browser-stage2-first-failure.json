@@ -1,0 +1,433 @@
+{
+  "status": "FAIL",
+  "scenarios": [
+    {
+      "name": "正式页面创建平台账号与可授只读权限",
+      "status": "PASS",
+      "accountId": "f61c262f-018c-4efa-90b1-aca19af7addf"
+    },
+    {
+      "name": "平台账号详情与资料编辑",
+      "status": "PASS"
+    },
+    {
+      "name": "新账号正式登录，只读入口与服务端写入403，390px详情",
+      "status": "PASS"
+    },
+    {
+      "name": "正式权限撤销使旧账号身份401并清理旧控制面数据，Enter确认",
+      "status": "PASS"
+    },
+    {
+      "name": "新身份直达无detail权限路由被拒绝",
+      "status": "PASS"
+    },
+    {
+      "name": "正式页面重置平台密码使旧身份失效且普通详情无秘密",
+      "status": "PASS"
+    },
+    {
+      "name": "独立平台会话撤销",
+      "status": "PASS"
+    },
+    {
+      "name": "正式页面停用平台账号，旧身份失效",
+      "status": "PASS"
+    },
+    {
+      "name": "平台账号安全操作未误伤STAFF及操作者",
+      "status": "PASS"
+    }
+  ],
+  "requests": [
+    {
+      "path": "/api/platform/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/permissions",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/accounts",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/csrf",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/accounts",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/accounts",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/permissions",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/accounts/f61c262f-018c-4efa-90b1-aca19af7addf",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/permissions",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/accounts/f61c262f-018c-4efa-90b1-aca19af7addf",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/permissions",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/accounts/f61c262f-018c-4efa-90b1-aca19af7addf",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 401,
+      "code": "AUTH_REQUIRED"
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 401,
+      "code": "AUTH_REQUIRED"
+    },
+    {
+      "path": "/api/platform/auth/csrf",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/login",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/csrf",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/tenants",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/tenants/71d0870a-5e42-45f2-823d-7d9575e4aded",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/csrf",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/tenants",
+      "status": 403,
+      "code": "PERMISSION_DENIED"
+    },
+    {
+      "path": "/api/platform/accounts/f61c262f-018c-4efa-90b1-aca19af7addf/permissions",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/permissions",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/accounts/f61c262f-018c-4efa-90b1-aca19af7addf",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 401,
+      "code": "SESSION_EXPIRED"
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 401,
+      "code": "AUTH_REQUIRED"
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 401,
+      "code": "AUTH_REQUIRED"
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 401,
+      "code": "AUTH_REQUIRED"
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 401,
+      "code": "AUTH_REQUIRED"
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 401,
+      "code": "AUTH_REQUIRED"
+    },
+    {
+      "path": "/api/platform/auth/csrf",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/login",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/csrf",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/accounts/f61c262f-018c-4efa-90b1-aca19af7addf/password",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/permissions",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/accounts/f61c262f-018c-4efa-90b1-aca19af7addf",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 401,
+      "code": "SESSION_EXPIRED"
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 401,
+      "code": "AUTH_REQUIRED"
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 401,
+      "code": "AUTH_REQUIRED"
+    },
+    {
+      "path": "/api/platform/auth/csrf",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/login",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/csrf",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/accounts/f61c262f-018c-4efa-90b1-aca19af7addf/sessions/revoke",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/permissions",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/accounts/f61c262f-018c-4efa-90b1-aca19af7addf",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 401,
+      "code": "SESSION_EXPIRED"
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 401,
+      "code": "AUTH_REQUIRED"
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 401,
+      "code": "AUTH_REQUIRED"
+    },
+    {
+      "path": "/api/platform/auth/csrf",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/login",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/csrf",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/accounts/f61c262f-018c-4efa-90b1-aca19af7addf/status",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/permissions",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/accounts/f61c262f-018c-4efa-90b1-aca19af7addf",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 401,
+      "code": "SESSION_EXPIRED"
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 401,
+      "code": "AUTH_REQUIRED"
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 401,
+      "code": "AUTH_REQUIRED"
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 401,
+      "code": "AUTH_REQUIRED"
+    },
+    {
+      "path": "/api/admin/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/identity/users",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/auth/me",
+      "status": 200
+    }
+  ],
+  "pageErrors": [],
+  "failedStage": "customer-ready"
+}

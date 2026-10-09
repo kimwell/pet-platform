@@ -1,0 +1,32 @@
+node:internal/modules/cjs/loader:1568
+  throw err;
+  ^
+
+Error: Cannot find module 'debug'
+Require stack:
+- /private/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/pet-platform-p05-05-real-38odrkh8/node_modules/.pnpm/miniprogram-automator@0.12.1/node_modules/miniprogram-automator/out/Connection.js
+- /private/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/pet-platform-p05-05-real-38odrkh8/node_modules/.pnpm/miniprogram-automator@0.12.1/node_modules/miniprogram-automator/out/Launcher.js
+- /private/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/pet-platform-p05-05-real-38odrkh8/node_modules/.pnpm/miniprogram-automator@0.12.1/node_modules/miniprogram-automator/out/Automator.js
+- /private/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/pet-platform-p05-05-real-38odrkh8/node_modules/.pnpm/miniprogram-automator@0.12.1/node_modules/miniprogram-automator/out/index.js
+- /var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/pet-platform-p05-05-real-38odrkh8/package.json
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1564:15)
+    at wrapResolveFilename (node:internal/modules/cjs/loader:1118:27)
+    at defaultResolveImplForCJSLoading (node:internal/modules/cjs/loader:1142:10)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1169:12)
+    at Module._load (node:internal/modules/cjs/loader:1341:5)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:261:19)
+    at Module.require (node:internal/modules/cjs/loader:1674:12)
+    at require (node:internal/modules/helpers:157:16)
+    at Object.<anonymous> (/private/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/pet-platform-p05-05-real-38odrkh8/node_modules/.pnpm/miniprogram-automator@0.12.1/node_modules/miniprogram-automator/out/Connection.js:1:285)
+    at Module._compile (node:internal/modules/cjs/loader:1929:14) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    '/private/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/pet-platform-p05-05-real-38odrkh8/node_modules/.pnpm/miniprogram-automator@0.12.1/node_modules/miniprogram-automator/out/Connection.js',
+    '/private/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/pet-platform-p05-05-real-38odrkh8/node_modules/.pnpm/miniprogram-automator@0.12.1/node_modules/miniprogram-automator/out/Launcher.js',
+    '/private/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/pet-platform-p05-05-real-38odrkh8/node_modules/.pnpm/miniprogram-automator@0.12.1/node_modules/miniprogram-automator/out/Automator.js',
+    '/private/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/pet-platform-p05-05-real-38odrkh8/node_modules/.pnpm/miniprogram-automator@0.12.1/node_modules/miniprogram-automator/out/index.js',
+    '/var/folders/5y/tt1690cx7k1gcq12252yf5rh0000gn/T/pet-platform-p05-05-real-38odrkh8/package.json'
+  ]
+}
+
+Node.js v24.21.0

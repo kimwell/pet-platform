@@ -36,12 +36,25 @@ class AsyncTenantPersistenceIT {
             .withDatabaseName("p04_async_fixture");
     static {
         POSTGRES.start(); Runtime.getRuntime().addShutdownHook(new Thread(POSTGRES::stop,"p04-async-postgres-cleanup"));
-        try (var c=DriverManager.getConnection(POSTGRES.getJdbcUrl(),POSTGRES.getUsername(),POSTGRES.getPassword()); var s=c.createStatement()) {
+        try (var c=openReadyConnection(); var s=c.createStatement()) {
             s.execute("CREATE ROLE security_probe_runtime LOGIN NOSUPERUSER NOBYPASSRLS NOCREATEDB NOCREATEROLE NOINHERIT");
             try(var q=c.prepareStatement("select format('ALTER ROLE security_probe_runtime PASSWORD %L', ?::text)")) {
                 q.setString(1,POSTGRES.getPassword()); try(var r=q.executeQuery()) { r.next(); s.execute(r.getString(1)); }
             }
         } catch(SQLException failure) { throw new IllegalStateException("异步测试受限角色初始化失败",failure); }
+    }
+    /** 容器日志就绪后仍验证真实宿主JDBC连接；只重试连接异常，不重试角色写入或测试断言。 */
+    private static Connection openReadyConnection() throws SQLException {
+        for(int attempt=0;;attempt++) {
+            try { return DriverManager.getConnection(POSTGRES.getJdbcUrl(),POSTGRES.getUsername(),POSTGRES.getPassword()); }
+            catch(SQLException failure) {
+                if(attempt>=9 || failure.getSQLState()==null || !failure.getSQLState().startsWith("08")) throw failure;
+                try { Thread.sleep(250); }
+                catch(InterruptedException interrupted) {
+                    Thread.currentThread().interrupt(); throw new SQLException("专用PG连接等待被中断",interrupted);
+                }
+            }
+        }
     }
     @DynamicPropertySource static void database(DynamicPropertyRegistry r) {
         RedisTestSupport.properties(r);

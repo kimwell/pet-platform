@@ -1,0 +1,154 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ---------------< com.pet.platform:pet-platform-backend >----------------
+[INFO] Building pet-platform-backend 0.0.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ pet-platform-backend ---
+[INFO] Copying 3 resources from src/main/resources to target/classes
+[INFO] Copying 9 resources from src/main/resources to target/classes
+[INFO] 
+[INFO] --- compiler:3.14.1:compile (default-compile) @ pet-platform-backend ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ pet-platform-backend ---
+[INFO] Copying 3 resources from src/test/resources to target/test-classes
+[INFO] 
+[INFO] --- compiler:3.14.1:testCompile (default-testCompile) @ pet-platform-backend ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- surefire:3.5.6:test (default-test) @ pet-platform-backend ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running com.pet.testing.architecture.StructureRulesTest
+[INFO] Tests run: 16, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.793 s -- in com.pet.testing.architecture.StructureRulesTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 16, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] 
+[INFO] --- jar:3.4.2:jar (default-jar) @ pet-platform-backend ---
+[INFO] Building jar: /Users/kimwell/work/pet-platform/apps/backend/target/pet-platform-backend-0.0.0-SNAPSHOT.jar
+[INFO] 
+[INFO] --- spring-boot:4.0.8:repackage (repackage) @ pet-platform-backend ---
+[INFO] Replacing main artifact /Users/kimwell/work/pet-platform/apps/backend/target/pet-platform-backend-0.0.0-SNAPSHOT.jar with repackaged archive, adding nested dependencies in BOOT-INF/.
+[INFO] The original artifact has been renamed to /Users/kimwell/work/pet-platform/apps/backend/target/pet-platform-backend-0.0.0-SNAPSHOT.jar.original
+[INFO] 
+[INFO] --- failsafe:3.5.6:integration-test (default) @ pet-platform-backend ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running com.pet.testing.identity.ControlManagementIT
+13:47:47.464 [main] INFO org.testcontainers.images.PullPolicy -- Image pull policy will be performed by: DefaultPullPolicy()
+13:47:47.466 [main] INFO org.testcontainers.utility.ImageNameSubstitutor -- Image name substitution will be performed by: DefaultImageNameSubstitutor (composite of 'ConfigurationFileImageNameSubstitutor' and 'PrefixingImageNameSubstitutor')
+13:47:47.483 [main] INFO org.testcontainers.DockerClientFactory -- Testcontainers version: 2.0.5
+13:47:47.641 [main] INFO org.testcontainers.dockerclient.DockerClientProviderStrategy -- Loaded org.testcontainers.dockerclient.UnixSocketClientProviderStrategy from ~/.testcontainers.properties, will try it first
+13:47:47.918 [main] INFO org.testcontainers.dockerclient.DockerClientProviderStrategy -- Found Docker environment with Environment variables, system properties and defaults. Resolved dockerHost=unix:///Users/kimwell/.docker/run/docker.sock
+13:47:47.924 [main] INFO org.testcontainers.DockerClientFactory -- Docker host IP address is 127.0.0.1
+13:47:47.942 [main] INFO org.testcontainers.DockerClientFactory -- Connected to docker: 
+  Server Version: 29.4.0
+  API Version: 1.54
+  Operating System: Docker Desktop
+  Total Memory: 9936 MB
+  Labels: 
+    com.docker.desktop.address=unix:///Users/kimwell/Library/Containers/com.docker.docker/Data/docker-cli.sock
+13:47:47.957 [main] INFO tc.testcontainers/ryuk:0.14.0 -- Creating container for image: testcontainers/ryuk:0.14.0
+13:47:48.066 [main] INFO org.testcontainers.utility.RegistryAuthLocator -- Credential helper/store (docker-credential-desktop) does not have credentials for https://index.docker.io/v1/
+13:47:48.131 [main] INFO tc.testcontainers/ryuk:0.14.0 -- Container testcontainers/ryuk:0.14.0 is starting: 6ae7121d644f2605a0c9b68efa4b6cff74df25f03db2483e2036fc37d67fa581
+13:47:48.391 [main] INFO tc.testcontainers/ryuk:0.14.0 -- Container testcontainers/ryuk:0.14.0 started in PT0.433869S
+13:47:48.397 [main] INFO org.testcontainers.utility.RyukResourceReaper -- Ryuk started - will monitor and terminate Testcontainers containers on JVM exit
+13:47:48.398 [main] INFO org.testcontainers.DockerClientFactory -- Checking the system...
+13:47:48.398 [main] INFO org.testcontainers.DockerClientFactory -- ✔︎ Docker server version should be at least 1.6.0
+13:47:48.405 [main] INFO tc.postgres:17.11-bookworm@sha256:364557... -- Creating container for image: postgres:17.11-bookworm@sha256:3645570cccdfa447589da9f57dd740faa29b30938e861289a5574b6ca6b03826
+13:47:48.429 [main] INFO tc.postgres:17.11-bookworm@sha256:364557... -- Container postgres:17.11-bookworm@sha256:3645570cccdfa447589da9f57dd740faa29b30938e861289a5574b6ca6b03826 is starting: 69c9f8e545e8e6d9999156f07ec3aa4937e511a2493a56d4aa1e4c33df880749
+13:47:49.341 [main] INFO tc.postgres:17.11-bookworm@sha256:364557... -- Container postgres:17.11-bookworm@sha256:3645570cccdfa447589da9f57dd740faa29b30938e861289a5574b6ca6b03826 started in PT0.936305S
+13:47:49.342 [main] INFO tc.postgres:17.11-bookworm@sha256:364557... -- Container is started (JDBC URL: jdbc:postgresql://127.0.0.1:54191/p03_technical_fixture?loggerLevel=OFF)
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v4.0.8)
+
+2026-10-09T13:47:49.825+08:00  INFO 64507 --- [pet-platform-backend] [           main] t.r.2.10-bookworm@sha256:476707...       : Creating container for image: redis:8.2.10-bookworm@sha256:47670742d7924adbcdb404d1288b6327815b23141969c0939b8e5d61f78c2634
+2026-10-09T13:47:49.900+08:00  INFO 64507 --- [pet-platform-backend] [           main] t.r.2.10-bookworm@sha256:476707...       : Container redis:8.2.10-bookworm@sha256:47670742d7924adbcdb404d1288b6327815b23141969c0939b8e5d61f78c2634 is starting: 68ca9e129661c8fa1d720b60657ce04ee9dffdf2c7de2473bae234ee74e5bc08
+2026-10-09T13:47:50.065+08:00  INFO 64507 --- [pet-platform-backend] [           main] t.r.2.10-bookworm@sha256:476707...       : Container redis:8.2.10-bookworm@sha256:47670742d7924adbcdb404d1288b6327815b23141969c0939b8e5d61f78c2634 started in PT0.239694S
+2026-10-09T13:47:50.070+08:00  INFO 64507 --- [pet-platform-backend] [           main] c.p.t.identity.ControlManagementIT       : Starting ControlManagementIT using Java 21.0.12.1 with PID 64507 (started by kimwell in /Users/kimwell/work/pet-platform/apps/backend)
+2026-10-09T13:47:50.071+08:00  INFO 64507 --- [pet-platform-backend] [           main] c.p.t.identity.ControlManagementIT       : The following 1 profile is active: "test"
+2026-10-09T13:47:50.636+08:00  INFO 64507 --- [pet-platform-backend] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2026-10-09T13:47:50.637+08:00  INFO 64507 --- [pet-platform-backend] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-10-09T13:47:50.664+08:00  INFO 64507 --- [pet-platform-backend] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 21 ms. Found 0 JPA repository interfaces.
+2026-10-09T13:47:51.201+08:00  INFO 64507 --- [pet-platform-backend] [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 0 (http)
+2026-10-09T13:47:51.214+08:00  INFO 64507 --- [pet-platform-backend] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-10-09T13:47:51.215+08:00  INFO 64507 --- [pet-platform-backend] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.24]
+2026-10-09T13:47:51.262+08:00  INFO 64507 --- [pet-platform-backend] [           main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 1185 ms
+2026-10-09T13:47:51.437+08:00  INFO 64507 --- [pet-platform-backend] [           main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:postgresql://127.0.0.1:54191/p03_technical_fixture (PostgreSQL 17.11)
+2026-10-09T13:47:51.474+08:00  INFO 64507 --- [pet-platform-backend] [           main] o.f.c.i.s.JdbcTableSchemaHistory         : Schema history table "public"."flyway_schema_history" does not exist yet
+2026-10-09T13:47:51.477+08:00  INFO 64507 --- [pet-platform-backend] [           main] o.f.core.internal.command.DbValidate     : Successfully validated 8 migrations (execution time 00:00.016s)
+2026-10-09T13:47:51.491+08:00  INFO 64507 --- [pet-platform-backend] [           main] o.f.c.i.s.JdbcTableSchemaHistory         : Creating Schema History table "public"."flyway_schema_history" ...
+2026-10-09T13:47:51.533+08:00  INFO 64507 --- [pet-platform-backend] [           main] o.f.core.internal.command.DbMigrate      : Current version of schema "public": << Empty Schema >>
+2026-10-09T13:47:51.559+08:00  INFO 64507 --- [pet-platform-backend] [           main] o.f.core.internal.command.DbMigrate      : Migrating schema "public" to version "1 - platform identity foundation"
+2026-10-09T13:47:51.568+08:00  WARN 64507 --- [pet-platform-backend] [           main] o.f.c.i.s.DefaultSqlScriptExecutor       : DB: no privileges were granted for "public" (SQL State: 01007 - Error Code: 0)
+2026-10-09T13:47:51.643+08:00  INFO 64507 --- [pet-platform-backend] [           main] o.f.core.internal.command.DbMigrate      : Migrating schema "public" to version "2 - staff credential security"
+2026-10-09T13:47:51.677+08:00  INFO 64507 --- [pet-platform-backend] [           main] o.f.core.internal.command.DbMigrate      : Migrating schema "public" to version "3 - platform administrator"
+2026-10-09T13:47:51.725+08:00  INFO 64507 --- [pet-platform-backend] [           main] o.f.core.internal.command.DbMigrate      : Migrating schema "public" to version "4 - customer wechat identity"
+2026-10-09T13:47:51.728+08:00  WARN 64507 --- [pet-platform-backend] [           main] o.f.c.i.s.DefaultSqlScriptExecutor       : DB: no privileges were granted for "public" (SQL State: 01007 - Error Code: 0)
+2026-10-09T13:47:51.752+08:00  INFO 64507 --- [pet-platform-backend] [           main] o.f.core.internal.command.DbMigrate      : Migrating schema "public" to version "5 - employee read contract"
+2026-10-09T13:47:51.769+08:00  INFO 64507 --- [pet-platform-backend] [           main] o.f.core.internal.command.DbMigrate      : Migrating schema "public" to version "6 - identity management"
+2026-10-09T13:47:51.791+08:00  INFO 64507 --- [pet-platform-backend] [           main] o.f.core.internal.command.DbMigrate      : Migrating schema "public" to version "7 - control plane management"
+2026-10-09T13:47:51.797+08:00  WARN 64507 --- [pet-platform-backend] [           main] o.f.c.i.s.DefaultSqlScriptExecutor       : DB: no privileges were granted for "public" (SQL State: 01007 - Error Code: 0)
+2026-10-09T13:47:51.830+08:00  INFO 64507 --- [pet-platform-backend] [           main] o.f.core.internal.command.DbMigrate      : Migrating schema "public" to version "8 - tenant organizations"
+2026-10-09T13:47:51.850+08:00  INFO 64507 --- [pet-platform-backend] [           main] o.f.core.internal.command.DbMigrate      : Successfully applied 8 migrations to schema "public", now at version v8 (execution time 00:00.207s)
+2026-10-09T13:47:52.034+08:00  WARN 64507 --- [pet-platform-backend] [           main] i.n.r.d.DnsServerAddressStreamProviders  : Can not find io.netty.resolver.dns.macos.MacOSDnsServerAddressStreamProvider in the classpath, fallback to system defaults. This may result in incorrect DNS resolutions on MacOS. Check whether you have a dependency on 'io.netty:netty-resolver-dns-native-macos'
+2026-10-09T13:47:52.299+08:00  INFO 64507 --- [pet-platform-backend] [           main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-10-09T13:47:52.332+08:00  INFO 64507 --- [pet-platform-backend] [           main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.24.Final
+2026-10-09T13:47:52.589+08:00  INFO 64507 --- [pet-platform-backend] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-10-09T13:47:52.608+08:00  INFO 64507 --- [pet-platform-backend] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-10-09T13:47:52.625+08:00  INFO 64507 --- [pet-platform-backend] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@281f2d6c
+2026-10-09T13:47:52.626+08:00  INFO 64507 --- [pet-platform-backend] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-10-09T13:47:52.668+08:00  INFO 64507 --- [pet-platform-backend] [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://127.0.0.1:54191/p03_technical_fixture]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 17.11
+	Default catalog/schema: p03_technical_fixture/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-10-09T13:47:53.245+08:00  INFO 64507 --- [pet-platform-backend] [           main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-10-09T13:47:53.290+08:00  INFO 64507 --- [pet-platform-backend] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-10-09T13:47:53.964+08:00  INFO 64507 --- [pet-platform-backend] [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2026-10-09T13:47:54.010+08:00  INFO 64507 --- [pet-platform-backend] [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 54201 (http) with context path '/'
+2026-10-09T13:47:54.017+08:00  INFO 64507 --- [pet-platform-backend] [           main] c.p.t.identity.ControlManagementIT       : Started ControlManagementIT in 4.377 seconds (process running for 7.006)
+OpenJDK 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
+2026-10-09T13:47:54.551+08:00  INFO 64507 --- [pet-platform-backend] [1-auto-1-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-10-09T13:47:54.551+08:00  INFO 64507 --- [pet-platform-backend] [1-auto-1-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-10-09T13:47:54.552+08:00  INFO 64507 --- [pet-platform-backend] [1-auto-1-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2026-10-09T13:47:57.503+08:00  WARN 64507 --- [pet-platform-backend] [t-tenant-task-1] c.p.p.shared.tenancy.TenantTaskExecutor  : 受控任务执行失败，任务=f2783d46-1af2-4b58-8b4e-3e29300ff983，异常类型=BusinessException
+[INFO] Tests run: 20, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 19.77 s -- in com.pet.testing.identity.ControlManagementIT
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 20, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] 
+[INFO] --- failsafe:3.5.6:verify (default) @ pet-platform-backend ---
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  24.910 s
+[INFO] Finished at: 2026-10-09T13:48:07+08:00
+[INFO] ------------------------------------------------------------------------

@@ -1,0 +1,603 @@
+{
+  "status": "PASS",
+  "scenarios": [
+    {
+      "name": "正式页面创建平台账号与可授只读权限",
+      "status": "PASS",
+      "accountId": "1573c77c-be7e-44f2-9cc0-715ee2df46e1"
+    },
+    {
+      "name": "平台账号详情与资料编辑",
+      "status": "PASS"
+    },
+    {
+      "name": "新账号正式登录，只读入口与服务端写入403，390px详情",
+      "status": "PASS"
+    },
+    {
+      "name": "正式权限撤销使旧账号身份401并清理旧控制面数据，Enter确认",
+      "status": "PASS"
+    },
+    {
+      "name": "新身份直达无detail权限路由被拒绝",
+      "status": "PASS"
+    },
+    {
+      "name": "正式页面重置平台密码使旧身份失效且普通详情无秘密",
+      "status": "PASS"
+    },
+    {
+      "name": "独立平台会话撤销",
+      "status": "PASS"
+    },
+    {
+      "name": "正式页面停用平台账号，旧身份失效",
+      "status": "PASS"
+    },
+    {
+      "name": "平台账号安全操作未误伤STAFF及操作者",
+      "status": "PASS"
+    },
+    {
+      "name": "正式页面停用租户，旧STAFF与真实CUSTOMER失效，客户新登录拒绝",
+      "status": "PASS"
+    },
+    {
+      "name": "停用期间新STAFF经正式登录页面被服务端拒绝401",
+      "status": "PASS"
+    },
+    {
+      "name": "租户A停用不影响租户B与PLATFORM",
+      "status": "PASS"
+    },
+    {
+      "name": "正式页面重新启用，旧STAFF不复活，新STAFF登录与B01模块有效",
+      "status": "PASS"
+    },
+    {
+      "name": "同一浏览器STAFF退出而PLATFORM仍有效",
+      "status": "PASS"
+    },
+    {
+      "name": "PLATFORM独立退出",
+      "status": "PASS"
+    }
+  ],
+  "requests": [
+    {
+      "path": "/api/platform/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/permissions",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/accounts",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/csrf",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/accounts",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/permissions",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/accounts",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/permissions",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/accounts/1573c77c-be7e-44f2-9cc0-715ee2df46e1",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/accounts/1573c77c-be7e-44f2-9cc0-715ee2df46e1",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/permissions",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/accounts/1573c77c-be7e-44f2-9cc0-715ee2df46e1",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 401,
+      "code": "AUTH_REQUIRED"
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 401,
+      "code": "AUTH_REQUIRED"
+    },
+    {
+      "path": "/api/platform/auth/csrf",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/login",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/csrf",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/tenants",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/tenants/7cf09d03-687b-46fe-8cd2-e9ffe505d1f7",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/csrf",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/tenants",
+      "status": 403,
+      "code": "PERMISSION_DENIED"
+    },
+    {
+      "path": "/api/platform/accounts/1573c77c-be7e-44f2-9cc0-715ee2df46e1/permissions",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/permissions",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/accounts/1573c77c-be7e-44f2-9cc0-715ee2df46e1",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 401,
+      "code": "SESSION_EXPIRED"
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 401,
+      "code": "AUTH_REQUIRED"
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 401,
+      "code": "AUTH_REQUIRED"
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 401,
+      "code": "AUTH_REQUIRED"
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 401,
+      "code": "AUTH_REQUIRED"
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 401,
+      "code": "AUTH_REQUIRED"
+    },
+    {
+      "path": "/api/platform/auth/csrf",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/login",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/csrf",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/accounts/1573c77c-be7e-44f2-9cc0-715ee2df46e1/password",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/permissions",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/accounts/1573c77c-be7e-44f2-9cc0-715ee2df46e1",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 401,
+      "code": "SESSION_EXPIRED"
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 401,
+      "code": "AUTH_REQUIRED"
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 401,
+      "code": "AUTH_REQUIRED"
+    },
+    {
+      "path": "/api/platform/auth/csrf",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/login",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/csrf",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/accounts/1573c77c-be7e-44f2-9cc0-715ee2df46e1/sessions/revoke",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/permissions",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/accounts/1573c77c-be7e-44f2-9cc0-715ee2df46e1",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 401,
+      "code": "SESSION_EXPIRED"
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 401,
+      "code": "AUTH_REQUIRED"
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 401,
+      "code": "AUTH_REQUIRED"
+    },
+    {
+      "path": "/api/platform/auth/csrf",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/login",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/csrf",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/accounts/1573c77c-be7e-44f2-9cc0-715ee2df46e1/status",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/permissions",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/accounts/1573c77c-be7e-44f2-9cc0-715ee2df46e1",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 401,
+      "code": "SESSION_EXPIRED"
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 401,
+      "code": "AUTH_REQUIRED"
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 401,
+      "code": "AUTH_REQUIRED"
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 401,
+      "code": "AUTH_REQUIRED"
+    },
+    {
+      "path": "/api/admin/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/identity/users",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/tenants/7cf09d03-687b-46fe-8cd2-e9ffe505d1f7",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/tenants/7cf09d03-687b-46fe-8cd2-e9ffe505d1f7/stores",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/csrf",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/tenants/7cf09d03-687b-46fe-8cd2-e9ffe505d1f7/status",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/tenants/7cf09d03-687b-46fe-8cd2-e9ffe505d1f7",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/tenants/7cf09d03-687b-46fe-8cd2-e9ffe505d1f7/stores",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/auth/me",
+      "status": 401,
+      "code": "SESSION_REVOKED"
+    },
+    {
+      "path": "/api/admin/auth/me",
+      "status": 401,
+      "code": "AUTH_REQUIRED"
+    },
+    {
+      "path": "/api/admin/auth/me",
+      "status": 401,
+      "code": "AUTH_REQUIRED"
+    },
+    {
+      "path": "/api/admin/auth/me",
+      "status": 401,
+      "code": "AUTH_REQUIRED"
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/tenants/7cf09d03-687b-46fe-8cd2-e9ffe505d1f7/status",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/tenants/7cf09d03-687b-46fe-8cd2-e9ffe505d1f7/stores",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/tenants/7cf09d03-687b-46fe-8cd2-e9ffe505d1f7",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/auth/me",
+      "status": 401,
+      "code": "AUTH_REQUIRED"
+    },
+    {
+      "path": "/api/admin/auth/me",
+      "status": 401,
+      "code": "AUTH_REQUIRED"
+    },
+    {
+      "path": "/api/admin/auth/me",
+      "status": 401,
+      "code": "AUTH_REQUIRED"
+    },
+    {
+      "path": "/api/admin/auth/csrf",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/auth/login",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/auth/csrf",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/identity/users",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/auth/csrf",
+      "status": 200
+    },
+    {
+      "path": "/api/admin/auth/logout",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/csrf",
+      "status": 200
+    },
+    {
+      "path": "/api/platform/auth/logout",
+      "status": 200
+    }
+  ],
+  "pageErrors": []
+}

@@ -1,0 +1,13 @@
+
+> @pet/admin-web@0.0.0 test /Users/kimwell/work/pet-platform/apps/admin-web
+> vitest run
+
+
+ RUN  v4.1.11 /Users/kimwell/work/pet-platform/apps/admin-web
+
+
+ Test Files  8 passed (8)
+      Tests  252 passed (252)
+   Start at  12:40:39
+   Duration  2.76s (transform 1.75s, setup 0ms, import 9.94s, tests 836ms, environment 1ms)
+

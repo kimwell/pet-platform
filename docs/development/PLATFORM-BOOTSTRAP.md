@@ -1,5 +1,7 @@
 # 平台管理员独立初始化与控制面
 
+当前 B02 扩展以 [控制面契约](../contracts/CONTROL-MANAGEMENT.md) 和 [集中验收](../testing/B02-ACCEPTANCE.md) 为准；以下 P05-04 三权限/七函数/未实现管理描述为当时范围。
+
 P05-04，2026-10-08。平台账号的凭据、安全事务和认证由 `identity` 拥有；Tenant/Store目录仍由 `platform` 拥有。本任务明确允许账号放在identity，集中复用密码与认证机制，不增加platform对identity内部实现的依赖。平台管理员不是STAFF租户管理员，没有tenantId，不继承TenantScopedEntity，没有租户业务全权。
 
 正式账号为 `pet_control.platform_account`：UUID、全局唯一规范化login_name、display_name、PBKDF2哈希、ACTIVE/DISABLED、security_version、authorization_version、资源version、UTC毫秒审计。IdentityNames规范化登录名：strip首尾空白、ASCII小写，1～64位字母数字及点/下划线/连字符，首位字母数字；数据库CHECK/UNIQUE兜底。密码复用原PasswordService，不trim、不改大小写、不归一化或截断；12～128 Unicode码点，最多256 UTF-16单位。
@@ -62,3 +64,17 @@ Sa-Token loginType=platform，键pet:<env>:platform:platform:*；辅助频控/pr
 最小平台记录是独立platform_security_event：PLATFORM主体类型、可识别actor/target、动作、结果、时间、traceId，无tenantId/密码/哈希/Token/CSRF。不存在/错误登录统一LOGIN_FAILED，失败记录不存登录名线索；敏感成功记录同事务，业务失败独立记录。普通租户无该表查询权。P08后续整合追加记录，不能把租户事件表约束简单全局放开。当前退出的Redis删除与随后DB记录不构成跨资源原子事务，503意味着结果未确认，按实际会话状态核查；敏感安全代际的原子承诺是数据库事务。
 
 部署前仍需实际目标角色预配置/迁移、HTTPS与固定来源、独立秘密/数据库日志参数屏蔽、Redis TLS/ACL/持久化/HA、容量与恢复检查；现有server.forward-headers-strategy=none，不能直接开启可信代理头。没有平台账号管理页面/邀请体系、完整租户CRUD、客户微信认证、模拟登录、跨租户导出或生产部署。
+
+## B02 正式管理升级（2026-10-09）
+
+追加 V7/V8，依然不修改旧 V1～V6。管理员先在明确目标库执行 `infra/database/provision-control-management-roles.sql`，之后用独立迁移登录身份执行 migrate。新 pet_control_manager_owner 为 NOLOGIN、NOSUPERUSER、NOBYPASSRLS、非表owner，迁移身份可SET、runtime不得成为成员。仅 Tenant/Store 元数据、平台账号/权限、安全清理意图及固定管理事件的必要列权限，受 ENABLE/FORCE RLS 和固定函数约束；没有租户员工/业务表读取特权。运行角色只新增固定控制面函数 EXECUTE，不授表 DML 或任意 SQL。部署端仍需实际预配置和日志参数屏蔽，本轮本地通过不替代生产部署。
+
+首次 bootstrap 仍只授旧三项；明确批准升级后，项目根目录使用现有独立 `PET_PLATFORM_BOOTSTRAP_DATABASE_*`：
+
+```sh
+scripts/backend-identity.sh platform-management-upgrade
+```
+
+仅升级 platform_bootstrap singleton 登记的首次账号，固定19项新增代码，事务 advisory 锁、权限/版本原子提交；重复退出0且新增0，不恢复密码或自动创建账号。函数owner仅取得该固定升级所需账号安全/授权/资源版本更新及平台权限读写，没有通用重置/授权入口。runtime/PUBLIC/租户bootstrap不得执行。
+
+账号随后通过正式 /platform/accounts 页面创建和安全输入初始密码；允许授予范围是当前账号实际权限子集。权限、停用、重置、会话撤销复用权威安全版本及精确Redis清理。本人危险管理操作拒绝，最后有效管理入口全局事务锁保护；最小治理定义、具体权限/HTTP错误与独立 Organization 见控制面契约。邀请没有原路线必选模型，不新增邮件/链接/接受后门。

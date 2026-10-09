@@ -1,0 +1,11 @@
+Progress: resolved 1, reused 0, downloaded 0, added 0
+Progress: resolved 64, reused 64, downloaded 0, added 0
+ WARN  4 deprecated subdependencies found: core-js@2.6.12, mkdirp@0.5.1, phin@2.9.3, phin@3.7.1
+Packages: +77
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Progress: resolved 77, reused 77, downloaded 0, added 77, done
+
+dependencies:
++ miniprogram-automator 0.12.1
+
+Done in 1.8s using pnpm v10.34.6

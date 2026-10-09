@@ -1,0 +1,8 @@
+file:///Users/kimwell/work/pet-platform/.local-data/b02/browser-supplement.mjs:26
+}catch(error){result.diagnostic=Object.values(secret).reduce((s,v)=>s.replaceAll(v,'<私有值>'),String(error?.message)).slice(0,800);result.status='FAIL';result.failedStage=stage;save();await p.screenshot({path:local+'/browser-supplement-failure.png',fullPage:true});throw Error('补验失败：'+stage);}finally{await context.setOffline(false);await browser.close();}
+                                                                                                                                                                                                                                                                             ^
+
+Error: 补验失败：duplicate
+    at file:///Users/kimwell/work/pet-platform/.local-data/b02/browser-supplement.mjs:26:270
+
+Node.js v24.21.0

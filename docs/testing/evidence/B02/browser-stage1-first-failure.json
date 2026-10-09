@@ -1,0 +1,19 @@
+{
+  "status": "FAIL",
+  "scenarios": [],
+  "requests": [
+    {
+      "path": "/api/platform/auth/me",
+      "status": 401,
+      "code": "AUTH_REQUIRED"
+    },
+    {
+      "path": "/api/platform/auth/me",
+      "status": 401,
+      "code": "AUTH_REQUIRED"
+    }
+  ],
+  "pageErrors": [],
+  "environment": "生产JAR local、受限runtime、正式PLATFORM及STAFF密码认证；PG/Redis独立，无路由或数据替身",
+  "failedStage": "login"
+}

@@ -1,0 +1,8 @@
+file:///Users/kimwell/work/pet-platform/docs/testing/evidence/B02/completion/replay/browser-stage2.mjs:34
+}catch{result.status='FAIL';result.failedStage=stage;save();await p.screenshot({path:local+'/browser-stage2-failure.png',fullPage:true});throw Error('正式链路失败：'+stage);}finally{await browser.close();}
+                                                                                                                                               ^
+
+Error: 正式链路失败：account-create
+    at file:///Users/kimwell/work/pet-platform/docs/testing/evidence/B02/completion/replay/browser-stage2.mjs:34:144
+
+Node.js v24.21.0

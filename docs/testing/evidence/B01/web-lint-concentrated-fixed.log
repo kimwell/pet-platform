@@ -1,0 +1,42 @@
+
+> @pet/admin-web@0.0.0 lint /Users/kimwell/work/pet-platform/apps/admin-web
+> eslint src vite.config.ts dev-config.ts --max-warnings=0
+
+
+/Users/kimwell/work/pet-platform/apps/admin-web/src/features/identity/management/RolesPage.tsx
+  30:80  error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+/Users/kimwell/work/pet-platform/apps/admin-web/src/features/identity/management/RolesPage.tsx:30:80
+  28 |   useEffect(() => {
+  29 |     const canonical = `?page=${page}`;
+> 30 |     if (listing && location.searchStr !== canonical) { if (location.searchStr) setQueryNotice('查询参数已规范化为有效页码。'); void router.navigate({ href: `/admin/identity/roles${canonical}`, replace: true }); }
+     |                                                                                ^^^^^^^^^^^^^^ Avoid calling setState() directly within an effect
+  31 |   }, [listing, location.searchStr, page, router]);
+  32 |   const correction = pagination && list.data?.page === page ? correctedPage(pagination, page, Boolean(location.state.rolePageCorrected)) : undefined;
+  33 |   useEffect(() => {                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       react-hooks/set-state-in-effect
+  34:85  error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+/Users/kimwell/work/pet-platform/apps/admin-web/src/features/identity/management/RolesPage.tsx:34:85
+  32 |   const correction = pagination && list.data?.page === page ? correctedPage(pagination, page, Boolean(location.state.rolePageCorrected)) : undefined;
+  33 |   useEffect(() => {
+> 34 |     if (listing && !list.isFetching && !list.isError && correction !== undefined) { setQueryNotice('请求页码超过末页，已返回最后一页。'); void router.navigate({ href: `/admin/identity/roles?page=${correction}`, replace: true, state: { rolePageCorrected: true, roleUrlNotice: '请求页码超过末页，已返回最后一页。' } }); }
+     |                                                                                     ^^^^^^^^^^^^^^ Avoid calling setState() directly within an effect
+  35 |   }, [listing, list.isFetching, list.isError, correction, router]);
+  36 |   return <section aria-labelledby="roles-heading"><div className="page-heading"><Typography.Title level={1} id="roles-heading" tabIndex={-1}>{listing ? '角色管理' : '角色详情'}</Typography.Title>
+  37 |     <Space wrap>{listing && can('identity:role:create') && <RoleCreate identity={identity} />}{!listing && can('identity:role:list') && <Button onClick={() => void router.navigate({ href: '/admin/identity/roles' })}>返回角色列表</Button>}</Space></div>  react-hooks/set-state-in-effect
+
+✖ 2 problems (2 errors, 0 warnings)
+
+ ELIFECYCLE  Command failed with exit code 1.

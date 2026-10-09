@@ -1,0 +1,32 @@
+{
+  "baseline": "HEAD",
+  "oldPathCount": 21,
+  "newPathCount": 30,
+  "oldSchemaCount": 41,
+  "modifiedOrMissingOldSchemas": [],
+  "newSchemas": [
+    "ChangeStatus",
+    "CreateEmployee",
+    "CreateRole",
+    "EditEmployee",
+    "EditRole",
+    "EmployeeAssignments",
+    "EmployeeManagement",
+    "MutationResult",
+    "PageResponseRoleSummary",
+    "PageResponseStoreOption",
+    "PermissionGrant",
+    "PermissionOption",
+    "RoleDetail",
+    "RoleGrants",
+    "RoleSummary",
+    "StoreOption",
+    "SuccessEmployeeManagement",
+    "SuccessListPermissionOption",
+    "SuccessMutationResult",
+    "SuccessPageResponseRoleSummary",
+    "SuccessPageResponseStoreOption",
+    "SuccessRoleDetail"
+  ],
+  "result": "PASS"
+}

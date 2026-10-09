@@ -21,10 +21,11 @@ import org.springframework.transaction.support.TransactionSynchronizationManager
 
 import static org.junit.jupiter.api.Assertions.*;
 
-@SpringBootTest(classes = Application.class, properties = "spring.flyway.locations=classpath:persistence-migrations")
+@SpringBootTest(classes = Application.class, properties = {"spring.flyway.locations=classpath:persistence-migrations", "spring.flyway.connect-retries=3"})
 @ActiveProfiles("test")
 @Import(PersistenceFixtures.class)
 @org.testcontainers.junit.jupiter.Testcontainers
+/** 专用容器日志就绪后宿主端口可能短暂未就绪；仅本测试允许Flyway有限重连，仍必须连接真实PG。 */
 class JpaPersistenceIT {
     @org.testcontainers.junit.jupiter.Container
     static final org.testcontainers.postgresql.PostgreSQLContainer POSTGRES = new org.testcontainers.postgresql.PostgreSQLContainer(

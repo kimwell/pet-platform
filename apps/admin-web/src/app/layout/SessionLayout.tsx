@@ -13,6 +13,10 @@ import { canManageSelf, isRestricted } from '../../shared/auth/permissions';
 import { canAccessPage, navigationFor, pageFor } from '../router/pageAccess';
 import { AccountSecurity } from '../../features/account/AccountSecurity';
 import { employeeDetailPath } from '../../features/identity/users/queries/detailSearch';
+const TenantsPage = lazy(() => import('../../features/platform/TenantsPage').then(module => ({ default: module.TenantsPage })));
+const AccountsPage = lazy(() => import('../../features/platform/AccountsPage').then(module => ({ default: module.AccountsPage })));
+const OrganizationsPage = lazy(() => import('../../features/platform/OrganizationsPage').then(module => ({ default: module.OrganizationsPage })));
+const RolesPage = lazy(() => import('../../features/identity/management/RolesPage').then(module => ({ default: module.RolesPage })));
 const EmployeeListPage = lazy(() => import('../../features/identity/users/pages/EmployeeListPage').then(module => ({ default: module.EmployeeListPage })));
 const EmployeeDetailPage = lazy(() => import('../../features/identity/users/pages/EmployeeDetailPage').then(module => ({ default: module.EmployeeDetailPage })));
 
@@ -64,7 +68,7 @@ function SessionLayout({ space }: { space: AuthSpace }) {
           // 同源标签可改变Cookie；新身份/授权范围不能沿用旧主体的敏感草稿。
           key={JSON.stringify([identity.principalId, identity.tenantId, identity.sessionId, identity.authorizationVersion,
             [...identity.permissionCodes].sort(), [...identity.authorizedStoreIds].sort(), identity.dataScope, isRestricted(identity)])}
-          identity={identity} disabled={session.busy} refreshing={session.isFetching} refresh={() => void session.refetch()} /> : page.path === '/admin/identity/users' ? <Suspense fallback={<div role="status"><Spin /> 正在加载员工列表页面…</div>}><EmployeeListPage
+          identity={identity} disabled={session.busy} refreshing={session.isFetching} refresh={() => void session.refetch()} /> : page.path.startsWith('/platform/tenants') ? <Suspense fallback={<Spin />}><TenantsPage key={`${identity.principalId}:${runtime.epoch(space)}:${location.pathname}`} identity={identity} /></Suspense> : page.path.startsWith('/platform/accounts') ? <Suspense fallback={<Spin />}><AccountsPage key={`${identity.principalId}:${runtime.epoch(space)}:${location.pathname}`} identity={identity} /></Suspense> : page.path.startsWith('/admin/identity/organizations') ? <Suspense fallback={<Spin />}><OrganizationsPage key={`${identity.principalId}:${runtime.epoch(space)}:${location.pathname}`} identity={identity} /></Suspense> : page.path.startsWith('/admin/identity/roles') ? <Suspense fallback={<Spin />}><RolesPage key={`${identity.principalId}:${runtime.epoch(space)}:${location.pathname}`} identity={identity} /></Suspense> : page.path === '/admin/identity/users' ? <Suspense fallback={<div role="status"><Spin /> 正在加载员工列表页面…</div>}><EmployeeListPage
             key={`${identity.principalId}:${runtime.epoch(space)}`} identity={identity} /></Suspense> : page.path === employeeDetailPath ? <Suspense fallback={<div role="status"><Spin /> 正在加载员工详情页面…</div>}><EmployeeDetailPage
               key={`${identity.principalId}:${runtime.epoch(space)}:${location.pathname}`} identity={identity} /></Suspense> : <AccountHome identity={identity} refreshing={session.isFetching} refresh={() => void session.refetch()} />}
         {isRestricted(identity) && <Typography.Text type="secondary">请完成密码修改后继续使用工作台。</Typography.Text>}

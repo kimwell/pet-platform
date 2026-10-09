@@ -1,0 +1,16 @@
+{
+  "reason": "V7未发布的新初始化函数输出参数重名修复；重建仅本轮专用无卷容器并重新正式创建，不用SQL数据准备冒充成功",
+  "stoppedPids": [
+    60343,
+    60362
+  ],
+  "stoppedContainers": [
+    "pet-b02-pg",
+    "pet-b02-redis"
+  ],
+  "exitCodes": [
+    0,
+    0
+  ],
+  "existingVolumesTouched": false
+}

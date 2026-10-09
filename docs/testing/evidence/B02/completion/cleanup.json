@@ -1,0 +1,80 @@
+{
+  "dedicatedProcessIds": [
+    {
+      "pid": 6492,
+      "status": "SIGTERM_SENT"
+    },
+    {
+      "pid": 6948,
+      "status": "SIGTERM_SENT"
+    }
+  ],
+  "containers": [
+    {
+      "name": "pet-b02-pg",
+      "stopExitCode": 0,
+      "status": "REMOVED"
+    },
+    {
+      "name": "pet-b02-redis",
+      "stopExitCode": 0,
+      "status": "REMOVED"
+    }
+  ],
+  "ports": [
+    {
+      "port": 18101,
+      "noListener": true
+    },
+    {
+      "port": 18102,
+      "noListener": true
+    },
+    {
+      "port": 52086,
+      "noListener": true
+    },
+    {
+      "port": 52099,
+      "noListener": true
+    },
+    {
+      "port": 9421,
+      "noListener": true
+    },
+    {
+      "port": 9422,
+      "noListener": true
+    }
+  ],
+  "existingVolumesTouched": false,
+  "devtoolsServicePortChanged": false,
+  "dedicatedProbeLaunched": true,
+  "loggedContainerCount": 25,
+  "loggedContainersStillPresent": [],
+  "existingNamedInfrastructurePreserved": true,
+  "baselineTemporaryContainerChanges": [
+    {
+      "name": "jovial_zhukovsky",
+      "before": "running",
+      "after": null,
+      "directCleanupCommand": false
+    },
+    {
+      "name": "crazy_mayer",
+      "before": "running",
+      "after": null,
+      "directCleanupCommand": false
+    },
+    {
+      "name": "testcontainers-ryuk-8fdfbffb-1738-49fe-ae51-02edce8e5dea",
+      "before": "running",
+      "after": null,
+      "directCleanupCommand": false
+    }
+  ],
+  "baselineChangeNote": "仅本轮两个命名容器执行stop，Maven临时容器由测试生命周期管理，不把全快照不变写PASS。",
+  "privateTaskDirectoryRemoved": true,
+  "removedPrivateFiles": 3402,
+  "status": "PASS"
+}

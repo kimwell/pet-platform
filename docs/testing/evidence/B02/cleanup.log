@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "/Users/kimwell/work/pet-platform/.local-data/b02/cleanup.py", line 28, in <module>
+    out['existingContainerStatesPreserved']=all(states.get(x.split('\t')[0])==x.split('\t')[1] for x in before if '\t' in x);assert out['existingContainerStatesPreserved']
+                                                                                                                                    ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError

@@ -1,0 +1,14 @@
+{
+  "status": "PASS",
+  "publicPathCount": 46,
+  "publicOperationCount": 57,
+  "issues": [],
+  "runtimeJarSHA256": "1b678a72aa838d46d03b425669bba99f5a77a2a467fa2919417b15d8c837395a",
+  "newMigrationEntries": [
+    "BOOT-INF/classes/db/migration/V7__control_plane_management.sql",
+    "BOOT-INF/classes/db/migration/V8__tenant_organizations.sql"
+  ],
+  "publicReadDtosSafe": true,
+  "passwordRequestWriteOnly": true,
+  "oldV1ToV6Untouched": true
+}

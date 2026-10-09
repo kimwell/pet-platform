@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "/Users/kimwell/work/pet-platform/.local-data/b02/final-database.py", line 6, in <module>
+    value=json.loads(r.stdout);assert value['tenant']['initialized'] and value['tenant']['status']=='ACTIVE' and value['tenant']['staffCount']==1 and value['tenant']['storeCount']==1;assert value['customerIdentityCount']==0 and value['runtimeRestricted'];assert value['platformCleanupPending']==0
+                                                                                                                                                                                                                                                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError

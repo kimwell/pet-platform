@@ -1,0 +1,88 @@
+{
+  "status": "PASS",
+  "steps": [
+    {
+      "stage": "INITIAL_LOGIN",
+      "method": "POST",
+      "path": "/api/customer/auth/wechat/login",
+      "status": 200,
+      "traceId": "de8a8a1639f24ab989726f0374549544"
+    },
+    {
+      "stage": "INITIAL_ME",
+      "method": "GET",
+      "path": "/api/customer/auth/me",
+      "status": 200,
+      "traceId": "e8e59c3383484a9fac028930248c7058"
+    },
+    {
+      "stage": "CUSTOMER_CANNOT_CONTROL",
+      "method": "GET",
+      "path": "/api/platform/tenants",
+      "status": 401,
+      "code": "AUTH_DOMAIN_MISMATCH",
+      "traceId": "bca0605f51df4514b4a3341e0c3b2197"
+    },
+    {
+      "stage": "CUSTOMER_CANNOT_STAFF",
+      "method": "GET",
+      "path": "/api/admin/identity/users",
+      "status": 401,
+      "code": "AUTH_DOMAIN_MISMATCH",
+      "traceId": "406f15f2c3d646ce961dce6f93632636"
+    },
+    {
+      "stage": "OLD_ME_AFTER_DISABLE",
+      "method": "GET",
+      "path": "/api/customer/auth/me",
+      "status": 401,
+      "code": "SESSION_REVOKED",
+      "traceId": "332e0a48a1bb44999471036f1d1f1f7b"
+    },
+    {
+      "stage": "NEW_LOGIN_WHILE_DISABLED",
+      "method": "POST",
+      "path": "/api/customer/auth/wechat/login",
+      "status": 401,
+      "code": "LOGIN_FAILED",
+      "traceId": "ed6a881ea3ab4690a7b81cbab4e460fe"
+    },
+    {
+      "stage": "OLD_ME_AFTER_REENABLE",
+      "method": "GET",
+      "path": "/api/customer/auth/me",
+      "status": 401,
+      "code": "SESSION_REVOKED",
+      "traceId": "09c7cfe8a43b454b9a6190132a53aa8f"
+    },
+    {
+      "stage": "NEW_LOGIN_AFTER_REENABLE",
+      "method": "POST",
+      "path": "/api/customer/auth/wechat/login",
+      "status": 200,
+      "traceId": "d1afaa156e9d410c8df78d1eb102c6e8"
+    },
+    {
+      "stage": "NEW_ME",
+      "method": "GET",
+      "path": "/api/customer/auth/me",
+      "status": 200,
+      "traceId": "0737af084ea04fe09687e17001af157b"
+    },
+    {
+      "stage": "NEW_LOGOUT",
+      "method": "POST",
+      "path": "/api/customer/auth/logout",
+      "status": 200,
+      "traceId": "4afbcb38f0d94fb1abd75e2bf3e02a26"
+    }
+  ],
+  "codeLogged": false,
+  "tokenLogged": false,
+  "productionGateway": true,
+  "libraryVersion": "3.17.2",
+  "appIdMatches": true,
+  "principalId": "c92b4c18-e95e-4d2e-a2b1-f262ee709586",
+  "probeClosed": true,
+  "finishedAt": "2026-10-09T06:37:23.128Z"
+}

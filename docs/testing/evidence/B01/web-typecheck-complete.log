@@ -1,0 +1,14 @@
+
+> @pet/admin-web@0.0.0 typecheck /Users/kimwell/work/pet-platform/apps/admin-web
+> tsc --noEmit
+
+src/features/identity/management/RolesPage.tsx(29,146): error TS2353: Object literal may only specify known properties, and 'rolePageCorrected' does not exist in type 'NonNullableUpdater<ParsedHistoryState, HistoryState>'.
+src/features/identity/management/RolesPage.tsx(29,180): error TS2339: Property 'rolePageCorrected' does not exist on type 'ParsedHistoryState'.
+src/features/identity/management/RolesPage.tsx(29,269): error TS2339: Property 'roleUrlNotice' does not exist on type 'ParsedHistoryState'.
+src/features/identity/management/RolesPage.tsx(31,118): error TS2339: Property 'rolePageCorrected' does not exist on type 'ParsedHistoryState'.
+src/features/identity/management/RolesPage.tsx(33,182): error TS2353: Object literal may only specify known properties, and 'rolePageCorrected' does not exist in type 'NonNullableUpdater<ParsedHistoryState, HistoryState>'.
+src/features/identity/management/RolesPage.tsx(37,21): error TS2339: Property 'roleUrlNotice' does not exist on type 'ParsedHistoryState'.
+src/features/identity/management/RolesPage.tsx(37,79): error TS2339: Property 'roleUrlNotice' does not exist on type 'ParsedHistoryState'.
+src/features/identity/management/RolesPage.tsx(42,228): error TS2353: Object literal may only specify known properties, and 'rolePageCorrected' does not exist in type 'NonNullableUpdater<ParsedHistoryState, HistoryState>'.
+src/features/identity/management/RolesPage.tsx(102,16): error TS2664: Invalid module name in augmentation, module '@tanstack/history' cannot be found.
+ ELIFECYCLE  Command failed with exit code 2.

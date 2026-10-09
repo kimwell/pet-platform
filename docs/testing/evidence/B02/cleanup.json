@@ -1,0 +1,86 @@
+{
+  "dedicatedProcessIds": [
+    {
+      "pid": 66012,
+      "status": "ALREADY_STOPPED"
+    },
+    {
+      "pid": 66056,
+      "status": "ALREADY_STOPPED"
+    }
+  ],
+  "containers": [
+    {
+      "name": "pet-b02-pg",
+      "stopExitCode": null,
+      "status": "ALREADY_REMOVED_BY_FIRST_ATTEMPT"
+    },
+    {
+      "name": "pet-b02-redis",
+      "stopExitCode": null,
+      "status": "ALREADY_REMOVED_BY_FIRST_ATTEMPT"
+    }
+  ],
+  "ports": [
+    {
+      "port": 18101,
+      "noListener": true
+    },
+    {
+      "port": 18102,
+      "noListener": true
+    },
+    {
+      "port": 54643,
+      "noListener": true
+    },
+    {
+      "port": 54644,
+      "noListener": true
+    },
+    {
+      "port": 9421,
+      "noListener": true
+    },
+    {
+      "port": 9422,
+      "noListener": true
+    }
+  ],
+  "existingVolumesTouched": false,
+  "devtoolsServicePortChanged": false,
+  "dedicatedProbeLaunched": false,
+  "loggedContainerCount": 88,
+  "loggedContainersStillPresent": [],
+  "existingNamedInfrastructurePreserved": true,
+  "baselineTemporaryContainerChanges": [
+    {
+      "name": "vigorous_ganguly",
+      "before": "running",
+      "after": null,
+      "directCleanupCommand": false
+    },
+    {
+      "name": "adoring_ride",
+      "before": "running",
+      "after": null,
+      "directCleanupCommand": false
+    },
+    {
+      "name": "angry_jackson",
+      "before": "running",
+      "after": null,
+      "directCleanupCommand": false
+    },
+    {
+      "name": "testcontainers-ryuk-acf42260-c000-4fe7-a199-7605d739ab8d",
+      "before": "running",
+      "after": null,
+      "directCleanupCommand": false
+    }
+  ],
+  "baselineChangeNote": "初始快照处于Maven容器运行期间；4个临时容器后来消失。仅本轮两个命名容器执行stop，不把全快照不变写PASS。",
+  "privateTaskDirectoryRemoved": true,
+  "removedPrivateFiles": 3420,
+  "status": "PASS"
+}
